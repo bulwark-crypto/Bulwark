@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Bulwark
+Comment=Bulwark P2P Cryptocurrency
+Comment[fr]=Bulwark, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Bulwark, eşten eşe kriptografik sanal para birimi
+Exec=bulwark-qt %u
+Terminal=false
+Type=Application
+Icon=bulwark128
+MimeType=x-scheme-handler/bulwark;
+Categories=Office;Finance;

@@ -1,0 +1,2 @@
+#define BUILD_SUFFIX 0604cd9-dirty
+#define BUILD_DATE "2017-10-08 15:43:14 +0200"
