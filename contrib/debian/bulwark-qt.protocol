@@ -1,0 +1,11 @@
+[Protocol]
+exec=bulwark-qt '%u'
+protocol=bulwark
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

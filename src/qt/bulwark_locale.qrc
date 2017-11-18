@@ -1,0 +1,17 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ca">locale/bulwark_ca.qm</file>
+        <file alias="da">locale/bulwark_da.qm</file>
+        <file alias="de">locale/bulwark_de.qm</file>
+        <file alias="en">locale/bulwark_en.qm</file>
+        <file alias="en_US">locale/bulwark_en_US.qm</file>
+        <file alias="es">locale/bulwark_es.qm</file>
+        <file alias="fr_FR">locale/bulwark_fr_FR.qm</file>
+        <file alias="it">locale/bulwark_it.qm</file>
+        <file alias="ja">locale/bulwark_ja.qm</file>
+        <file alias="pt">locale/bulwark_pt.qm</file>
+        <file alias="ro_RO">locale/bulwark_ro_RO.qm</file>
+        <file alias="ru">locale/bulwark_ru.qm</file>
+        <file alias="zh_TW">locale/bulwark_zh_TW.qm</file>
+    </qresource>
+</RCC>
