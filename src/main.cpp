@@ -1609,6 +1609,7 @@ int64_t GetBlockValue(int nHeight)
 {
     int64_t nSubsidy = 0;
 
+
     if (nHeight == 0) {
         nSubsidy = 597240 * COIN;
 
@@ -1658,6 +1659,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight < 200)
             return 0;
     }
+    if (nHeight < 200)
+            return 0;
 	
     if (nHeight <= 28800) {
         ret = blockValue / 5;
