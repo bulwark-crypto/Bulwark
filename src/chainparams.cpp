@@ -143,10 +143,10 @@ public:
 
 	vSeeds.clear();
 	vFixedSeeds.clear();
-//        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-04-atl-ga.bulwarkcrypto.com"));
-//		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-05-fremont-ca.bulwarkcrypto.com"));
-//		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-06-newark-nj.bulwarkcrypto.com"));
-//		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed04.bulwarkcrypto.com"));
+        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-04-atl-ga.bulwarkcrypto.com"));
+		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-05-fremont-ca.bulwarkcrypto.com"));
+		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-06-newark-nj.bulwarkcrypto.com"));
+		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed04.bulwarkcrypto.com"));
 		
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 85); // b
@@ -210,9 +210,9 @@ public:
 //FIXME	MineGenesis(genesis);
         vFixedSeeds.clear();
         vSeeds.clear();
-//        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
-//	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test02.bulwarkcrypto.com"));
-//	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test03.bulwarkcrypto.com"));
+        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
+	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test02.bulwarkcrypto.com"));
+	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test03.bulwarkcrypto.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Testnet bulwark addresses start with 'T'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);  // Testnet bulwark script addresses start with '5' or '6'
