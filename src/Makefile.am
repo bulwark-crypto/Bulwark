@@ -102,7 +102,8 @@ BITCOIN_CORE_H = \
   obfuscation-relay.h \
   db.h \
   eccryptoverify.h \
-  ecwrapper.h \  
+  ecwrapper.h \
+  hash.h \
   init.h \
   kernel.h \
   swifttx.h \
@@ -254,13 +255,13 @@ libbitcoin_wallet_a_SOURCES = \
 crypto_libbitcoin_crypto_a_CFLAGS = -fPIC
 crypto_libbitcoin_crypto_a_CPPFLAGS = $(BITCOIN_CONFIG_INCLUDES)
 crypto_libbitcoin_crypto_a_SOURCES = \
-  crypto/common.h \
-  crypto/hmac_sha256.cpp \  
-  crypto/hmac_sha256.h \
-  crypto/hmac_sha512.cpp \
-  crypto/hmac_sha512.h \
+  crypto/sha1.cpp \
+  crypto/sha256.cpp \
+  crypto/sha512.cpp \
+  crypto/hmac_sha256.cpp \
   crypto/rfc6979_hmac_sha256.cpp \
-  crypto/rfc6979_hmac_sha256.h \
+  crypto/hmac_sha512.cpp \
+  crypto/scrypt.cpp \
   crypto/ripemd160.cpp \
   crypto/aes_helper.c \
   crypto/blake.c \
@@ -268,22 +269,21 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/jh.c \
   crypto/keccak.c \
   crypto/skein.c \
-  crypto/ripemd160.h \
-  crypto/sha1.cpp \
-  crypto/sha1.h \
-  crypto/sha256.cpp \
+  crypto/common.h \
   crypto/sha256.h \
   crypto/sha512.h \
-  crypto/sha2.c \
+  crypto/hmac_sha256.h \
+  crypto/rfc6979_hmac_sha256.h \
+  crypto/hmac_sha512.h \
+  crypto/scrypt.h \
+  crypto/sha1.h \
+  crypto/ripemd160.h \
   crypto/sph_blake.h \
   crypto/sph_groestl.h \
   crypto/sph_jh.h \
   crypto/sph_keccak.h \
   crypto/sph_skein.h \
-  crypto/sph_sha2.h \
-  crypto/sph_types.h \
-  crypto/sha512.cpp \
-  crypto/sha512.h
+  crypto/sph_types.h
 
 # univalue JSON library
 univalue_libbitcoin_univalue_a_SOURCES = \
