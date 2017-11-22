@@ -4178,8 +4178,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</translation>
     </message>
     <message>
-        <source>(52542 could be used only on mainnet)</source>
-        <translation>(52542 could be used only on mainnet)</translation>
+        <source>(52543 could be used only on mainnet)</source>
+        <translation>(52543 could be used only on mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4190,8 +4190,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 52542 for mainnet)</source>
-        <translation>(must be 52542 for mainnet)</translation>
+        <source>(must be 52543 for mainnet)</source>
+        <translation>(must be 52543 for mainnet)</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:

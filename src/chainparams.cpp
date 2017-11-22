@@ -69,20 +69,19 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-        (0, uint256("0x000006240d39463e029c05fdd0f5fc82bdefc7e4bdc618613b62589d3dc2c478"))
-        (202, uint256("0x00000001ce6f5cfd4a3e1cfd0078c529fc02df771e1872534219465c41c12ab6"));
+        (0, uint256("0x0000072468ac84211e0aa5f7f4e7e495d870b9c6c0865d8564a076eeaef483ea"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1511020576,// * UNIX timestamp of last checkpoint block
+    1511310463,// * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x000007dc8f3d7c2f841943e7416817eafc5c748867f910d94498f9ce0250af1d"));
+    boost::assign::map_list_of(0, uint256("0x00000666199f20498537e1e01069fa054243cec2edc59f229f3046d352ff32f5"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1509884281,
+    1511311453,
     0,
     250};
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -110,17 +109,18 @@ public:
         pchMessageStart[3] = 0x17;
 
 	vAlertPubKey = ParseHex("04579f18934b3ef39094a9999e45506a1935662d0cd4e504d07beb53b8a1bfd78d81bee47e65119318397809420d5320e3c7b2aaae58580db48c38a4e6d4f0f919");
-        nDefaultPort = 52542;
+        nDefaultPort = 52543;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Bulwark starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 90; // Bulwark: 1.5 minutes
-        nTargetSpacing = 1 * 90;  // Bulwark: 6 Minutes
-        nLastPOWBlock = 1382400;
+        nTargetSpacing = 1 * 90;  // Bulwark: 1 Hour
+        nLastPOWBlock = 345600;
+	nRampToBlock = 960;
         nMaturity = 100;
         nModifierUpdateBlock = 1;
-        const char* pszTimestamp = "Trump Pick, Industry Insider, Calls Shots on Toxic Chemicals NYTIMES Oct-22-2017";
+        const char* pszTimestamp = "Robert Mugabe resigns after 37 years as Zimbabwe's leader 6:16 PM ET, Tue November 21, 2017";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -131,21 +131,21 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1509922046;
+        genesis.nTime = 1511310463;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();;
-        genesis.nNonce = 445825; 
-//	MineGenesis(genesis);
+        genesis.nNonce = 2137262; 
+//FIXME	MineGenesis(genesis);
 	hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0x000006240d39463e029c05fdd0f5fc82bdefc7e4bdc618613b62589d3dc2c478"));
-        assert(genesis.hashMerkleRoot == uint256("0xa327706007dfc17007d7dfed27ad32609816185adda507eab7938184ecb3e6cd"));
+        assert(hashGenesisBlock == uint256("0x0000072468ac84211e0aa5f7f4e7e495d870b9c6c0865d8564a076eeaef483ea"));
+        assert(genesis.hashMerkleRoot == uint256("0x9873d80537d7bf6fcf097a6f9cd6d6a74d6a26ceda5b775a576665ffde76dd11"));
 
 
 	vSeeds.clear();
 	vFixedSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-04-atl-ga.bulwarkcrypto.com"));
-		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-05-fremont-ca.bulwarkcrypto.com"));
-		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-06-newark-nj.bulwarkcrypto.com"));
+//        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-04-atl-ga.bulwarkcrypto.com"));
+//		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-05-fremont-ca.bulwarkcrypto.com"));
+//		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-06-newark-nj.bulwarkcrypto.com"));
 //		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed04.bulwarkcrypto.com"));
 		
 		
@@ -197,22 +197,22 @@ public:
         nDefaultPort = 42133;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 90; // 90 Seconds
-        nTargetSpacing = 6 * 60;  // 360 Seconds
+        nTargetSpacing = 1 * 90;  // 360 Seconds
         nLastPOWBlock = 1000;
         nMaturity = 15;
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1508638280;
-        genesis.nNonce = 214268;
+        genesis.nTime = 1511311453;
+        genesis.nNonce = 746269;
 	genesis.nBits = bnProofOfWorkLimit.GetCompact();
 
-	hashGenesisBlock == uint256("0x00000478c3fb41dfeef07788343fd65e83b7e6cd771b06fdbb79c59dc908926d");
-	genesis.hashMerkleRoot == uint256("0xf35edecd6f145277be79926a8cdff2c53b1b0d781389b5328544b1aa26557cb5");
-
+	hashGenesisBlock == uint256("0x00000666199f20498537e1e01069fa054243cec2edc59f229f3046d352ff32f5");
+	genesis.hashMerkleRoot == uint256("0x9873d80537d7bf6fcf097a6f9cd6d6a74d6a26ceda5b775a576665ffde76dd11");
+//FIXME	MineGenesis(genesis);
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
-	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test02.bulwarkcrypto.com"));
-	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test03.bulwarkcrypto.com"));
+//        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
+//	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test02.bulwarkcrypto.com"));
+//	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test03.bulwarkcrypto.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Testnet bulwark addresses start with 'T'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);  // Testnet bulwark script addresses start with '5' or '6'
@@ -229,7 +229,7 @@ public:
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
-        fMineBlocksOnDemand = true;
+        fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
         nPoolMaxTransactions = 2;
         strSporkKey = "04cd98bc62b2fa05711675243b1d86c181ea4c83e337f30ddcd8fbc1c937f550b4f539d53ee57789ebc8f6548fe3da21800eeea120d9ef8979452b8629526532c4";

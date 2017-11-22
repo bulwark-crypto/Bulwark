@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("bulwark-core", ""
 QT_TRANSLATE_NOOP("bulwark-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("bulwark-core", "(52542 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("bulwark-core", "(52543 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("bulwark-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("bulwark-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("bulwark-core", "(must be 52542 for mainnet)"),
+QT_TRANSLATE_NOOP("bulwark-core", "(must be 52543 for mainnet)"),
 QT_TRANSLATE_NOOP("bulwark-core", "<category> can be:\n"),
 QT_TRANSLATE_NOOP("bulwark-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("bulwark-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
