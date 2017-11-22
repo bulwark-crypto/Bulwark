@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NIST5_H
-#define NIST5_H
+#ifndef BITCOIN_HASH_H
+#define BITCOIN_HASH_H
 
 
 #include "crypto/ripemd160.h"

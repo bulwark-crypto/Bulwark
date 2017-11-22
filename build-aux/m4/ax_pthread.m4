@@ -146,7 +146,7 @@ ax_pthread_flags="pthreads none -Kthread -kthread lthread -pthread -pthreads -mt
 # pthread-config: use pthread-config program (for GNU Pth library)
 
 case ${host_os} in
-        bulwark*)
+        solaris*)
 
         # On Bulwark (at least, for some versions), libc contains stubbed
         # (non-functional) versions of the pthreads routines, so link-based
@@ -271,7 +271,7 @@ if test "x$ax_pthread_ok" = xyes; then
         case ${host_os} in
             aix* | freebsd* | darwin*) flag="-D_THREAD_SAFE";;
             osf* | hpux*) flag="-D_REENTRANT";;
-            bulwark*)
+            solaris*)
             if test "$GCC" = "yes"; then
                 flag="-D_REENTRANT"
             else

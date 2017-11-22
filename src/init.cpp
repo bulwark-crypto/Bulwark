@@ -679,7 +679,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     sigaction(SIGHUP, &sa_hup, NULL);
 
 #if defined(__SVR4) && defined(__sun)
-    // ignore SIGPIPE on Bulwark
+    // ignore SIGPIPE on Solaris
     signal(SIGPIPE, SIG_IGN);
 #endif
 #endif
