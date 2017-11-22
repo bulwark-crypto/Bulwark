@@ -22,10 +22,10 @@ BEGIN
             VALUE "CompanyName",        "Bulwark"
             VALUE "FileDescription",    "Bulwark Core (OSS GUI client for Bulwark)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "solaris-qt"
+            VALUE "InternalName",       "bulwark-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "solaris-qt.exe"
+            VALUE "OriginalFilename",   "bulwark-qt.exe"
             VALUE "ProductName",        "Bulwark Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
