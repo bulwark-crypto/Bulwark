@@ -592,6 +592,7 @@ int CMasternodeMan::GetMasternodeRank(const CTxIn& vin, int64_t nBlockHeight, in
 	if (fOnlyActive) {
             mn.Check();
             if (!mn.IsEnabled()) continue;
+
         }
         uint256 n = mn.CalculateScore(1, nBlockHeight);
         int64_t n2 = n.GetCompact(false);
@@ -627,6 +628,7 @@ std::vector<pair<int, CMasternode> > CMasternodeMan::GetMasternodeRanks(int64_t 
 
         if (mn.protocolVersion < minProtocol) continue;
         if (!mn.IsEnabled()) {
+	    vecMasternodeScores.push_back(make_pair(9999, mn));
             continue;
         }
 
