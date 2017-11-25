@@ -141,7 +141,7 @@ Value masternode(const Array& params, bool fHelp)
             "  genkey       - Generate new masternodeprivkey\n"
             "  enforce      - Enforce masternode payments\n"
             "  outputs      - Print masternode compatible outputs\n"
-            "  start        - Start masternode configured in pivx.conf\n"
+            "  start        - Start masternode configured in bulwark.conf\n"
             "  start-alias  - Start single masternode by assigned alias configured in masternode.conf\n"
             "  start-<mode> - Start masternodes configured in masternode.conf (<mode>: 'all', 'missing', 'disabled')\n"
             "  status       - Print masternode status information\n"
@@ -600,11 +600,9 @@ Value masternodelist(const Array& params, bool fHelp)
 
         CMasternode* mn = mnodeman.Find(s.second.vin);
 
-	
-	if (mn != NULL) {
-		if (strFilter != "" && strTxHash.find(strFilter) == string::npos &&
-				mn->Status().find(strFilter) == string::npos &&
-				CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
+        if (strFilter != "" && strTxHash.find(strFilter) == string::npos &&
+            mn->Status().find(strFilter) == string::npos &&
+            CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
 
         std::string strStatus = mn->Status();
 
@@ -623,3 +621,4 @@ Value masternodelist(const Array& params, bool fHelp)
 
     return ret;
 }
+
