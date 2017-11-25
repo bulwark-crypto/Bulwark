@@ -856,7 +856,6 @@ void CBudgetManager::NewBlock()
 
     //this function should be called 1/14 blocks, allowing up to 100 votes per day on all proposals
     if (chainActive.Height() % 14 != 0) return;
-//FIXME
     // incremental sync with our peers
     if (masternodeSync.IsSynced()) {
         LogPrintf("CBudgetManager::NewBlock - incremental sync started\n");
@@ -979,7 +978,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
         }
 
         Sync(pfrom, nProp);
-        LogPrintf("mnvs - Sent Masternode votes to %s\n", pfrom->addr.ToString());
+	LogPrint("mnbudget", "mnvs - Sent Masternode votes to peer %i\n", pfrom->GetId());
     }
 
     if (strCommand == "mprop") { //Masternode Proposal
@@ -1030,7 +1029,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         CMasternode* pmn = mnodeman.Find(vote.vin);
         if (pmn == NULL) {
-            LogPrint("mnbudget", "mvote - unknown masternode - vin: %s\n", vote.vin.ToString());
+	    LogPrintf("mvote - unknown masternode - vin: %s\n", vote.vin.prevout.hash.ToString());
             mnodeman.AskForMN(pfrom, vote.vin);
             return;
         }
@@ -1050,8 +1049,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
             vote.Relay();
             masternodeSync.AddedBudgetItem(vote.GetHash());
         }
-
-        LogPrintf("mvote - new budget vote - %s\n", vote.GetHash().ToString());
+	LogPrint("mnbudget", "mvote - new budget vote - %s\n", vote.GetHash().ToString());
     }
 
     if (strCommand == "fbs") { //Finalized Budget Suggestion
@@ -1103,7 +1101,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         CMasternode* pmn = mnodeman.Find(vote.vin);
         if (pmn == NULL) {
-            LogPrint("mnbudget", "fbvote - unknown masternode - vin: %s\n", vote.vin.ToString());
+	    LogPrint("mnbudget", "fbvote - unknown masternode - vin: %s\n", vote.vin.prevout.hash.ToString());
             mnodeman.AskForMN(pfrom, vote.vin);
             return;
         }
@@ -1656,7 +1654,7 @@ bool CBudgetVote::SignatureValid(bool fSignatureCheck)
 
     if (pmn == NULL) {
 	    if (fDebug) {
-		    LogPrintf("CBudgetVote::SignatureValid() - Unknown Masternode - %s\n", vin.ToString());
+		    LogPrintf("CBudgetVote::SignatureValid() - Unknown Masternode - %s\n", vin.prevout.hash.ToString());
 	    }
 
         return false;
