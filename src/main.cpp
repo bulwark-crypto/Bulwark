@@ -965,7 +965,7 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
 
 bool MoneyRange(CAmount nValueOut)
 {
-	return nValueOut >= 0 && nValueOut <= Params.MaxMoneyOut();
+	return nValueOut >= 0 && nValueOut <= Params().MaxMoneyOut();
 }
 
 bool CheckTransaction(const CTransaction& tx, CValidationState& state)
@@ -991,7 +991,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState& state)
         if (txout.nValue < 0)
             return state.DoS(100, error("CheckTransaction() : txout.nValue negative"),
                 REJECT_INVALID, "bad-txns-vout-negative");
-        if (txout.nValue > Params.MaxMoneyOut())
+        if (txout.nValue > Params().MaxMoneyOut())
             return state.DoS(100, error("CheckTransaction() : txout.nValue too high"),
                 REJECT_INVALID, "bad-txns-vout-toolarge");
         nValueOut += txout.nValue;
