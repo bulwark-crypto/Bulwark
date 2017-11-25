@@ -73,7 +73,9 @@ public:
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
     int RAMP_TO_BLOCK() const { return nRampToBlock; }
     int COINBASE_MATURITY() const { return nMaturity; }
-	int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
+    int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
+    CAmount MaxMoneyOut() const { return nMaxMoneyOut; }
+
     /** The masternode count that we will allow the see-saw reward payments to be off by */
     int MasternodeCountDrift() const { return nMasternodeCountDrift; }
     /** Make miner stop after a block is found. In RPC, don't return until nGenProcLimit blocks are generated */
@@ -109,7 +111,8 @@ protected:
     int nRampToBlock;
     int nMasternodeCountDrift;
     int nMaturity;
-	int nModifierUpdateBlock;
+    int nModifierUpdateBlock;
+    CAmount nMaxMoneyOut;
     int nMinerThreads;
     std::vector<CDNSSeedData> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];

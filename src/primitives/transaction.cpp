@@ -134,8 +134,12 @@ CAmount CTransaction::GetValueOut() const
     for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
     {
         nValueOut += it->nValue;
-        if (!MoneyRange(it->nValue) || !MoneyRange(nValueOut))
-            throw std::runtime_error("CTransaction::GetValueOut() : value out of range");
+	if (it->nValue < 0)
+		throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
+
+	if ((nValueOut + it->nValue) < nValueOut)
+		throw std::runtime_error("CTransaction::GetValueOut() : value out of range : wraps the int64_t boundary");
+
     }
     return nValueOut;
 }

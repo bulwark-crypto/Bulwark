@@ -121,6 +121,8 @@ public:
         nMaturity = 100;
 	nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
+	nMaxMoneyOut = 21000000 * COIN;
+
         const char* pszTimestamp = "Robert Mugabe resigns after 37 years as Zimbabwe's leader 6:16 PM ET, Tue November 21, 2017";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
@@ -201,7 +203,9 @@ public:
         nTargetSpacing = 1 * 90;  // 360 Seconds
         nLastPOWBlock = 1000;
         nMaturity = 15;
-        //! Modify the testnet genesis block so the timestamp is valid for a later start.
+	nMaxMoneyOut = 21000000 * COIN;
+
+	//! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1511311453;
         genesis.nNonce = 746269;
 	genesis.nBits = bnProofOfWorkLimit.GetCompact();
