@@ -119,6 +119,7 @@ public:
         nLastPOWBlock = 345600;
 	nRampToBlock = 960;
         nMaturity = 100;
+	nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
         const char* pszTimestamp = "Robert Mugabe resigns after 37 years as Zimbabwe's leader 6:16 PM ET, Tue November 21, 2017";
         CMutableTransaction txNew;

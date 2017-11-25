@@ -144,6 +144,8 @@ public:
     /// Return the number of (unique) Masternodes
     int size() { return vMasternodes.size(); }
 
+    int stable_size ();
+
     std::string ToString() const;
 
     void Remove(CTxIn vin);
