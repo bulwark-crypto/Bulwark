@@ -117,12 +117,43 @@ Value getinfo(const Array& params, bool fHelp)
 
 Value mnsync(const Array& params, bool fHelp)
 {
-    if (fHelp || params.size() != 1)
-        throw runtime_error(
-            "mnsync [status|reset]\n"
-            "Returns the sync status or resets sync.\n");
+    std::string strMode;
+    if (params.size() == 1)
+        strMode = params[0].get_str();
 
-    std::string strMode = params[0].get_str();
+    if (fHelp || params.size() != 1 || (strMode != "status" && strMode != "reset")) {
+        throw runtime_error(
+            "mnsync \"status|reset\"\n"
+            "\nReturns the sync status or resets sync.\n"
+
+            "\nArguments:\n"
+            "1. \"mode\"    (string, required) either 'status' or 'reset'\n"
+
+            "\nResult ('status' mode):\n"
+            "{\n"
+            "  \"IsBlockchainSynced\": true|false,    (boolean) 'true' if blockchain is synced\n"
+            "  \"lastMasternodeList\": xxxx,        (numeric) Timestamp of last MN list message\n"
+            "  \"lastMasternodeWinner\": xxxx,      (numeric) Timestamp of last MN winner message\n"
+            "  \"lastBudgetItem\": xxxx,            (numeric) Timestamp of last MN budget message\n"
+            "  \"lastFailure\": xxxx,           (numeric) Timestamp of last failed sync\n"
+            "  \"nCountFailures\": n,           (numeric) Number of failed syncs (total)\n"
+            "  \"sumMasternodeList\": n,        (numeric) Number of MN list messages (total)\n"
+            "  \"sumMasternodeWinner\": n,      (numeric) Number of MN winner messages (total)\n"
+            "  \"sumBudgetItemProp\": n,        (numeric) Number of MN budget messages (total)\n"
+            "  \"sumBudgetItemFin\": n,         (numeric) Number of MN budget finalization messages (total)\n"
+            "  \"countMasternodeList\": n,      (numeric) Number of MN list messages (local)\n"
+            "  \"countMasternodeWinner\": n,    (numeric) Number of MN winner messages (local)\n"
+            "  \"countBudgetItemProp\": n,      (numeric) Number of MN budget messages (local)\n"
+            "  \"countBudgetItemFin\": n,       (numeric) Number of MN budget finalization messages (local)\n"
+            "  \"RequestedMasternodeAssets\": n, (numeric) Status code of last sync phase\n"
+            "  \"RequestedMasternodeAttempt\": n, (numeric) Status code of last sync attempt\n"
+            "}\n"
+
+            "\nResult ('reset' mode):\n"
+            "\"status\"     (string) 'success'\n"
+            "\nExamples:\n" +
+            HelpExampleCli("mnsync", "\"status\"") + HelpExampleRpc("mnsync", "\"status\""));
+    }
 
     if (strMode == "status") {
         Object obj;
@@ -143,7 +174,6 @@ Value mnsync(const Array& params, bool fHelp)
         obj.push_back(Pair("countBudgetItemFin", masternodeSync.countBudgetItemFin));
         obj.push_back(Pair("RequestedMasternodeAssets", masternodeSync.RequestedMasternodeAssets));
         obj.push_back(Pair("RequestedMasternodeAttempt", masternodeSync.RequestedMasternodeAttempt));
-
 
         return obj;
     }
@@ -475,6 +505,7 @@ Value getstakingstatus(const Array& params, bool fHelp)
             "  \"mintablecoins\": true|false,      (boolean) if the wallet has mintable coins\n"
             "  \"enoughcoins\": true|false,        (boolean) if available coins are greater than reserve balance\n"
             "  \"mnsync\": true|false,             (boolean) if masternode data is synced\n"
+            "  \"staking status\": true|false,     (boolean) if the wallet is staking or not\n"
             "}\n"
             "\nExamples:\n" +
             HelpExampleCli("getstakingstatus", "") + HelpExampleRpc("getstakingstatus", ""));
@@ -488,6 +519,14 @@ Value getstakingstatus(const Array& params, bool fHelp)
         obj.push_back(Pair("enoughcoins", nReserveBalance <= pwalletMain->GetBalance()));
     }
     obj.push_back(Pair("mnsync", masternodeSync.IsSynced()));
+
+    bool nStaking = false;
+    if (mapHashedBlocks.count(chainActive.Tip()->nHeight))
+        nStaking = true;
+    else if (mapHashedBlocks.count(chainActive.Tip()->nHeight - 1) && nLastCoinStakeSearchInterval)
+        nStaking = true;
+    obj.push_back(Pair("staking status", nStaking));
+
     return obj;
 }
 #endif // ENABLE_WALLET
