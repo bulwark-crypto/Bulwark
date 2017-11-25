@@ -71,6 +71,7 @@ enum {
     // Bitcoin Core nodes used to support this by default, without advertising this bit,
     // but no longer do as of protocol version 70011 (= NO_BLOOM_VERSION)
     NODE_BLOOM = (1 << 2),
+    NODE_BLOOM_WITHOUT_MN = (1 << 4),
 
     // Bits 24-31 are reserved for temporary experiments. Just pick a bit that
     // isn't getting used, or one not being used much, and notify the
@@ -137,6 +138,7 @@ public:
     friend bool operator<(const CInv& a, const CInv& b);
 
     bool IsKnownType() const;
+    bool IsMasterNodeType() const;
     const char* GetCommand() const;
     std::string ToString() const;
 

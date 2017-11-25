@@ -1613,7 +1613,7 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
-    int64_t nSubsidy = 0;
+    CAmount nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
 
     // POW Year 0
