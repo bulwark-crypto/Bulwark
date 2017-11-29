@@ -210,7 +210,7 @@ bool CWallet::LoadWatchOnly(const CScript& dest)
     return CCryptoKeyStore::AddWatchOnly(dest);
 }
 
-+bool CWallet::AddMultiSig(const CScript& dest)
+bool CWallet::AddMultiSig(const CScript& dest)
 {
     if (!CCryptoKeyStore::AddMultiSig(dest))
         return false;
