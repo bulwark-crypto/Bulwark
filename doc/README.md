@@ -3,7 +3,7 @@ Bulwark Core
 
 Setup
 ---------------------
-[Bulwark Core](http://bulwark.com/wallet) is the original Bulwark client and it builds the backbone of the network. However, it downloads and stores the entire history of Bulwark transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Bulwark Core](https://www.bulwarkcrypto.com/) is the original Bulwark client and it builds the backbone of the network. However, it downloads and stores the entire history of Bulwark transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -26,10 +26,9 @@ Drag Bulwark-Qt to your applications folder, and then run Bulwark-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Bulwark Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [Bulwark Wiki](https://github.com/bulwark-crypto/Bulwark/wiki)
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Bulwark Forum](http://forum.bulwark.com/).
-* Join one of our Slack groups [Bulwark Slack Groups](https://bulwark.com/slack-logins/).
+* Ask for help on [BitcoinTalk](FIXME Add official BCT URL on ANN) or on the [Bulwark Discord](https://discord.gg/a7vhegP).
 
 Building
 ---------------------
@@ -41,7 +40,7 @@ The following are developer notes on how to build Bulwark on your native platfor
 
 Development
 ---------------------
-The Bulwark repo's [root README](https://github.com/Bulwark-Project/Bulwark/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Bulwark repo's [root README](https://github.com/bulwark-crypto/Bulwark/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -55,8 +54,7 @@ The Bulwark repo's [root README](https://github.com/Bulwark-Project/Bulwark/blob
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Bulwark](http://forum.bulwark.com/) forum.
-* Join the [Bulwark-Dev](https://bulwark-dev.slack.com/) Slack group ([Sign-Up](https://bulwark-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](FIXME with URL after ANN) or the [Bulwark Subreddit](http://reddit.com/r/bulwarkcoin).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
