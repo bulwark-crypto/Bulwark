@@ -3316,6 +3316,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>The Bulwark Core developers</translation>
     </message>
     <message>
+        <source>The Bulwark developers</source>
+        <translation>The Bulwark developers</translation>
+    </message>
+    <message>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
@@ -4300,8 +4304,12 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Bulwark Core Developers</translation>
+        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
+        <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
+    </message>
+    <message>
+        <source>Copyright (C) 2017-%i The Bulwark Core Developers</source>
+        <translation>Copyright (C) 2017-%i The Bulwark Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

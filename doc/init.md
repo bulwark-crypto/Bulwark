@@ -89,7 +89,7 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 Copy bulwarkd.init to /etc/init.d/bulwarkd. Test by running "service bulwarkd start".
 
 Using this script, you can adjust the path and flags to the bulwarkd program by
-setting the BulwarkD and FLAGS environment variables in the file
+setting the BULWARKD and FLAGS environment variables in the file
 /etc/sysconfig/bulwarkd. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
