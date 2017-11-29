@@ -45,11 +45,16 @@ public:
     virtual bool RemoveWatchOnly(const CScript& dest) = 0;
     virtual bool HaveWatchOnly(const CScript& dest) const = 0;
     virtual bool HaveWatchOnly() const = 0;
+    virtual bool AddMultiSig(const CScript& dest) = 0;
+    virtual bool RemoveMultiSig(const CScript& dest) = 0;
+    virtual bool HaveMultiSig(const CScript& dest) const = 0;
+    virtual bool HaveMultiSig() const = 0;
 };
 
 typedef std::map<CKeyID, CKey> KeyMap;
 typedef std::map<CScriptID, CScript> ScriptMap;
 typedef std::set<CScript> WatchOnlySet;
+typedef std::set<CScript> MultiSigScriptSet;
 
 /** Basic key store, that keeps keys in an address->secret map */
 class CBasicKeyStore : public CKeyStore
@@ -58,7 +63,8 @@ protected:
     KeyMap mapKeys;
     ScriptMap mapScripts;
     WatchOnlySet setWatchOnly;
-
+    MultiSigScriptSet setMultiSig;
+  
 public:
     bool AddKeyPubKey(const CKey& key, const CPubKey& pubkey);
     bool HaveKey(const CKeyID& address) const
@@ -102,6 +108,11 @@ public:
     virtual bool RemoveWatchOnly(const CScript& dest);
     virtual bool HaveWatchOnly(const CScript& dest) const;
     virtual bool HaveWatchOnly() const;
+    
+    virtual bool AddMultiSig(const CScript& dest);
+    virtual bool RemoveMultiSig(const CScript& dest);
+    virtual bool HaveMultiSig(const CScript& dest) const;
+    virtual bool HaveMultiSig() const;
 };
 
 typedef std::vector<unsigned char, secure_allocator<unsigned char> > CKeyingMaterial;
