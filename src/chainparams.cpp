@@ -123,8 +123,8 @@ public:
         genesis.nNonce = 125854; 
 
 	hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000072468ac84211e0aa5f7f4e7e495d870b9c6c0865d8564a076eeaef483ea"));
-        assert(genesis.hashMerkleRoot == uint256("0x9873d80537d7bf6fcf097a6f9cd6d6a74d6a26ceda5b775a576665ffde76dd11"));
+        hashGenesisBlock == uint256("0x0000080fd394872d6e9ad32e90dadcc2809692f9e4592441dccda26192110a06");
+        genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f");
 
         	vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
 		vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed05.ssus.tech"));
