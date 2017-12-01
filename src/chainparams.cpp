@@ -5,25 +5,32 @@
 // Copyright (c) 2017-2018 The Bulwark developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "chainparams.h"
+
 #include "random.h"
 #include "util.h"
 #include "utilstrencodings.h"
+
 #include <assert.h>
+
 #include <boost/assign/list_of.hpp>
+
 using namespace std;
 using namespace boost::assign;
+
 struct SeedSpec6 {
     uint8_t addr[16];
     uint16_t port;
 };
+
 #include "chainparamsseeds.h"
+
 /**
  * Main network
  */
+
 //! Convert the pnSeeds6 array into usable address objects.
-
-
 static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data, unsigned int count)
 {
     // It'll only connect to one or two seed nodes because once it connects,
@@ -44,21 +51,23 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //   (no blocks before with a timestamp after, none after with
 //    timestamp before)
 // + Contains no strange transactions
+
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-        (0, uint256("0x0000072468ac84211e0aa5f7f4e7e495d870b9c6c0865d8564a076eeaef483ea"));
+        (0, uint256("0x0000068e7ab8e264f6759d2d81b29e8b917c10b04db47a9a0bb3cba3fba5d574"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1511310463,// * UNIX timestamp of last checkpoint block
+    1512131946,// * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
+
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x00000666199f20498537e1e01069fa054243cec2edc59f229f3046d352ff32f5"));
+    boost::assign::map_list_of(0, uint256("0x0x0000080fd394872d6e9ad32e90dadcc2809692f9e4592441dccda26192110a06"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1511311453,
+    1512132893,
     0,
     250};
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -84,50 +93,42 @@ public:
         pchMessageStart[1] = 0x02;
         pchMessageStart[2] = 0x01;
         pchMessageStart[3] = 0x17;
-
 	vAlertPubKey = ParseHex("04579f18934b3ef39094a9999e45506a1935662d0cd4e504d07beb53b8a1bfd78d81bee47e65119318397809420d5320e3c7b2aaae58580db48c38a4e6d4f0f919");
         nDefaultPort = 52543;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Bulwark starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 90; // Bulwark: 1.5 minutes
-        nTargetSpacing = 1 * 90;  // Bulwark: 1 Hour
-        nLastPOWBlock = 345600;
-	nRampToBlock = 960;
-        nMaturity = 100;
+        nTargetSpacing = 5 * 90;  // Bulwark: 7.5 minutes
+        nLastPOWBlock = 345600; // 1 Year
+	nRampToBlock = 960; // Slow start, ramp linearly to this block
+        nMaturity = 66; // 99 Minutes
 	nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
-	nMaxMoneyOut = 21000000 * COIN;
+	nMaxMoneyOut = 21525720 * COIN; // Year 2
 
-        const char* pszTimestamp = "Robert Mugabe resigns after 37 years as Zimbabwe's leader 6:16 PM ET, Tue November 21, 2017";
+        const char* pszTimestamp = "November 30 2017 - Niger Approves Armed U.S. Drone Flights, Expanding Pentagon’s Role in Africa";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 25 * COIN;
+        txNew.vout[0].nValue = 50 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04243e8da79e117dba99d89a2da6ed761af43175227d19caaffea72398514962af9701478a69410b8158e190ae36d50a1f7325eba3df9559ad345db0cb72bfe2e2") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1511310463;
+        genesis.nTime = 1512131946;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();;
-        genesis.nNonce = 2137262; 
-	hashGenesisBlock = genesis.GetHash();
+        genesis.nNonce = 125854; 
 
+	hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000072468ac84211e0aa5f7f4e7e495d870b9c6c0865d8564a076eeaef483ea"));
         assert(genesis.hashMerkleRoot == uint256("0x9873d80537d7bf6fcf097a6f9cd6d6a74d6a26ceda5b775a576665ffde76dd11"));
 
+        	vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
+		vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed05.ssus.tech"));
 
-	vSeeds.clear();
-	vFixedSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-04-atl-ga.bulwarkcrypto.com"));
-		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-05-fremont-ca.bulwarkcrypto.com"));
-		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed-06-newark-nj.bulwarkcrypto.com"));
-		vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "seed04.bulwarkcrypto.com"));
-		
-		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 85); // b
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18); 
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
@@ -135,8 +136,10 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
         //  BIP44 coin type is 'TBD'
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x13)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
-        convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
-        fRequireRPCPassword = true;
+        
+	convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
+        
+	fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
@@ -145,10 +148,11 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
-        nPoolMaxTransactions = 3;
+        
+	nPoolMaxTransactions = 3;
         strSporkKey = "0453748e298a34e32d760a3d64b7b517c952c10024a4160a3a746d9bce572f85e13ac6d4f518ac110ba807ce19fb657bc2696ca02013290e3fbe517adf09c95787";
         strObfuscationPoolDummyAddress = "bDiJwVuKv9dcKBN4KCfX6UmXbkpqLfzGyf";
-        nStartMasternodePayments = 1511092620; //Wed, 25 Jun 2014 20:36:16 GMT
+        nStartMasternodePayments = 1511092620; 
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -175,10 +179,10 @@ public:
         nDefaultPort = 42133;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 90; // 90 Seconds
-        nTargetSpacing = 1 * 90;  // 360 Seconds
+        nTargetSpacing = 5 * 90;  // 360 Seconds
         nLastPOWBlock = 1000;
         nMaturity = 15;
-	nMaxMoneyOut = 21000000 * COIN;
+	nMaxMoneyOut = 33284220 * COIN; // 2032 Maximum
 
 	//! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1511311453;
@@ -236,7 +240,6 @@ public:
         pchMessageStart[1] = 0xcf;
         pchMessageStart[2] = 0x7e;
         pchMessageStart[3] = 0xac;
-        nSubsidyHalvingInterval = 150;
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Bulwark: 1 day
         nTargetSpacing = 1 * 60;        // Bulwark: 1 minutes
@@ -288,7 +291,6 @@ public:
         return data;
     }
     //! Published setters to allow changing values in unit test cases
-    virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
     virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
     virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }

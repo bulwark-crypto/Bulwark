@@ -47,7 +47,6 @@ public:
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     int GetDefaultPort() const { return nDefaultPort; }
     const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
-    int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
     /** Used to check majorities for block version upgrade */
     int MaxReorganizationDepth() const { return nMaxReorganizationDepth; }
 
@@ -71,6 +70,7 @@ public:
     int64_t TargetSpacing() const { return nTargetSpacing; }
     int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
+    /** Slow Start, Ramp up linearly to block **/
     int RAMP_TO_BLOCK() const { return nRampToBlock; }
     int COINBASE_MATURITY() const { return nMaturity; }
     int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
@@ -104,7 +104,6 @@ protected:
     int nDefaultPort;
     uint256 bnProofOfWorkLimit;
     int nMaxReorganizationDepth;
-    int nSubsidyHalvingInterval;
     int64_t nTargetTimespan;
     int64_t nTargetSpacing;
     int nLastPOWBlock;
@@ -145,7 +144,6 @@ class CModifiableParams
 {
 public:
     //! Published setters to allow changing values in unit test cases
-    virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) = 0;
     virtual void setDefaultConsistencyChecks(bool aDefaultConsistencyChecks) = 0;
     virtual void setAllowMinDifficultyBlocks(bool aAllowMinDifficultyBlocks) = 0;
     virtual void setSkipProofOfWorkCheck(bool aSkipProofOfWorkCheck) = 0;
