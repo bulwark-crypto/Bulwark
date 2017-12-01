@@ -282,7 +282,6 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
 {
     CBlockIndex* pindexPrev = chainActive.Tip();
     if (!pindexPrev) return;
-//FIXME
     bool hasPayment = true;
     CScript payee;
 

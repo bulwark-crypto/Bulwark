@@ -24,30 +24,6 @@ struct SeedSpec6 {
 //! Convert the pnSeeds6 array into usable address objects.
 
 
-void MineGenesis(CBlock genesis){
-    // This will figure out a valid hash and Nonce if you're creating a different genesis block:
-    uint256 newhash = genesis.GetHash();
-    uint256 besthash;
-    int64_t nStart = GetTime();
-    uint256 hashTarget = ~uint256(0) >> 20;
-    printf("Target: %s\n", hashTarget.GetHex().c_str());
-    memset(&besthash,0xFF,32);
-    while (newhash > hashTarget) {
-        ++genesis.nNonce;
-        if (genesis.nNonce == 0){
-            printf("NONCE WRAPPED, incrementing time");
-            ++genesis.nTime;
-        }
-        newhash = genesis.GetHash();
-        if(newhash < besthash){
-            besthash=newhash;
-            printf("New best: %s\n", newhash.GetHex().c_str());
-        }
-    }
-    printf("Found Genesis, Nonce: %ld, Hash: %s\n", genesis.nNonce, genesis.GetHash().GetHex().c_str());
-    printf("Gensis Hash Merkle: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-}
-
 static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data, unsigned int count)
 {
     // It'll only connect to one or two seed nodes because once it connects,
@@ -138,7 +114,6 @@ public:
         genesis.nTime = 1511310463;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();;
         genesis.nNonce = 2137262; 
-//FIXME	MineGenesis(genesis);
 	hashGenesisBlock = genesis.GetHash();
 
         assert(hashGenesisBlock == uint256("0x0000072468ac84211e0aa5f7f4e7e495d870b9c6c0865d8564a076eeaef483ea"));
@@ -172,7 +147,6 @@ public:
         fHeadersFirstSyncingActive = false;
         nPoolMaxTransactions = 3;
         strSporkKey = "0453748e298a34e32d760a3d64b7b517c952c10024a4160a3a746d9bce572f85e13ac6d4f518ac110ba807ce19fb657bc2696ca02013290e3fbe517adf09c95787";
-        //FIXME
         strObfuscationPoolDummyAddress = "bDiJwVuKv9dcKBN4KCfX6UmXbkpqLfzGyf";
         nStartMasternodePayments = 1511092620; //Wed, 25 Jun 2014 20:36:16 GMT
     }
@@ -213,7 +187,6 @@ public:
 
 	hashGenesisBlock == uint256("0x00000666199f20498537e1e01069fa054243cec2edc59f229f3046d352ff32f5");
 	genesis.hashMerkleRoot == uint256("0x9873d80537d7bf6fcf097a6f9cd6d6a74d6a26ceda5b775a576665ffde76dd11");
-//FIXME	MineGenesis(genesis);
         vFixedSeeds.clear();
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
