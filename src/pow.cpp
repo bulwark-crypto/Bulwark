@@ -88,7 +88,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 
     uint256 bnNew(PastDifficultyAverage);
 
-    int64_t _nTargetTimespan = CountBlocks * (pindexLast->nHeight > 255 ? Params().TargetSpacing() : Params().TargetSpacingSlowLaunch());
+    int64_t _nTargetTimespan = CountBlocks * (pindexLast->nHeight > 250 ? Params().TargetSpacing() : Params().TargetSpacingSlowLaunch());
 
     if (nActualTimespan < _nTargetTimespan / 3)
         nActualTimespan = _nTargetTimespan / 3;
