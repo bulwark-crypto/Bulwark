@@ -68,6 +68,7 @@ public:
     bool RequireStandard() const { return fRequireStandard; }
     int64_t TargetTimespan() const { return nTargetTimespan; }
     int64_t TargetSpacing() const { return nTargetSpacing; }
+    int64_t TargetSpacingSlowLaunch() const { return nTargetSpacingSlowLaunch; }
     int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
     /** Slow Start, Ramp up linearly to block **/
@@ -106,6 +107,7 @@ protected:
     int nMaxReorganizationDepth;
     int64_t nTargetTimespan;
     int64_t nTargetSpacing;
+    int64_t nTargetSpacingSlowLaunch;
     int nLastPOWBlock;
     int nRampToBlock;
     int nMasternodeCountDrift;
