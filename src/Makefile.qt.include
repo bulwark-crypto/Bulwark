@@ -3,18 +3,29 @@ EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
 # bulwark qt core #
 QT_TS = \
+  qt/locale/bulwark_bg.ts \
   qt/locale/bulwark_ca.ts \
+  qt/locale/bulwark_cs.ts \
   qt/locale/bulwark_da.ts \
   qt/locale/bulwark_de.ts \
   qt/locale/bulwark_en.ts \
   qt/locale/bulwark_en_US.ts \
   qt/locale/bulwark_es.ts \
+  qt/locale/bulwark_fi.ts \
   qt/locale/bulwark_fr_FR.ts \
   qt/locale/bulwark_it.ts \
   qt/locale/bulwark_ja.ts \
+  qt/locale/bulwark_ko_KR.ts \
+  qt/locale/bulwark_nl.ts \
+  qt/locale/bulwark_pl.ts \
   qt/locale/bulwark_pt.ts \
+  qt/locale/bulwark_pt_BR.ts \
   qt/locale/bulwark_ro_RO.ts \
   qt/locale/bulwark_ru.ts \
+  qt/locale/bulwark_sk.ts \
+  qt/locale/bulwark_sv.ts \
+  qt/locale/bulwark_uk.ts \
+  qt/locale/bulwark_zh_CN.ts \
   qt/locale/bulwark_zh_TW.ts
 
 QT_FORMS_UI = \
