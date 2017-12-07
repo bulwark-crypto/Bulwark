@@ -175,7 +175,7 @@
         <translation>For anonymization and staking only</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+42"/>
+        <location filename="../askpassphrasedialog.cpp" line="+44"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
     </message>
@@ -215,13 +215,13 @@
         <translation>Enter the old and new passphrase to the wallet.</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+41"/>
         <source>Confirm wallet encryption</source>
         <translation>Confirm wallet encryption</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</source>
+        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -307,7 +307,7 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a Pivx Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -781,7 +781,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and bulwark: URIs)</source>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1077,7 +1077,7 @@ Address: %4
     </message>
     <message>
         <location filename="../blockexplorer.cpp" line="+473"/>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1506,7 +1506,7 @@ Address: %4
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+32"/>
+        <location filename="../utilitydialog.cpp" line="+37"/>
         <source>version</source>
         <translation>version</translation>
     </message>
@@ -1527,7 +1527,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+20"/>
         <source>Command-line options</source>
         <translation>Command-line options</translation>
     </message>
@@ -1542,17 +1542,22 @@ Address: %4
         <translation>command-line options</translation>
     </message>
     <message>
+        <location line="+8"/>
+        <source>UI Options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Choose data directory on startup (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+4"/>
-        <source>UI options</source>
-        <translation>UI options</translation>
+        <source>Show splash screen on startup (default: %u)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Choose data directory on startup (default: 0)</source>
-        <translation>Choose data directory on startup (default: 0)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="-3"/>
         <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
         <translation>Set language, for example &quot;de_DE&quot; (default: system locale)</translation>
     </message>
@@ -1565,11 +1570,6 @@ Address: %4
         <location line="+1"/>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>Set SSL root certificates for payment request (default: -system-)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show splash screen on startup (default: 1)</source>
-        <translation>Show splash screen on startup (default: 1)</translation>
     </message>
 </context>
 <context>
@@ -1615,7 +1615,7 @@ Address: %4
         <translation>Error: Specified data directory &quot;%1&quot; cannot be created.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+24"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -1638,7 +1638,7 @@ Address: %4
         <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+18"/>
         <source>My Masternodes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1654,42 +1654,36 @@ Address: %4
     </message>
     <message>
         <location line="+5"/>
-        <location line="+160"/>
         <source>Address</source>
         <translation type="unfinished">Address</translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="+5"/>
         <source>Protocol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="+5"/>
         <source>Status</source>
         <translation type="unfinished">Status</translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="+5"/>
         <source>Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="+5"/>
         <source>Last Seen (UTC)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="+5"/>
         <source>Pubkey</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-147"/>
+        <location line="+13"/>
         <source>S&amp;tart alias</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1715,37 +1709,16 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <location line="+159"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-134"/>
-        <source>All Masternodes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+100"/>
-        <source>Filter List:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Filter masternode list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Node Count:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../masternodelist.cpp" line="+51"/>
+        <location filename="../masternodelist.cpp" line="+45"/>
         <source>Start alias</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+261"/>
+        <location line="+190"/>
         <source>Confirm masternode start</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1975,12 +1948,12 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 BWK</source>
+        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 BWK</source>
+        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1990,12 +1963,12 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 BWK to anonymize 10000 BWK</source>
+        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 BWK to anonymize 10000 BWK</source>
+        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2005,7 +1978,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>0.1 BWK per 10000 BWK you anonymize.</source>
+        <source>0.1 PIV per 10000 PIV you anonymize.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2194,7 +2167,7 @@ Please check the address and try again.</source>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2456,7 +2429,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>0 BWK / 0 Rounds</source>
+        <source>0 PIV / 0 Rounds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2688,7 +2661,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="-108"/>
-        <source>Cannot start bulwark: click-to-pay handler</source>
+        <source>Cannot start pivx: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2830,6 +2803,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>NETWORK</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>BLOOM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+3"/>
         <source>UNKNOWN</source>
         <translation>UNKNOWN</translation>
@@ -2886,33 +2864,33 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>&amp;Information</translation>
     </message>
     <message>
-        <location line="+51"/>
+        <location line="+15"/>
         <source>General</source>
         <translation>General</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+164"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location line="-197"/>
+        <location line="-157"/>
         <source>Client name</source>
         <translation>Client name</translation>
     </message>
     <message>
-        <location line="-36"/>
         <location line="+10"/>
-        <location line="+36"/>
-        <location line="+30"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <location line="+62"/>
-        <location line="+23"/>
-        <location line="+36"/>
+        <location line="+26"/>
         <location line="+26"/>
         <location line="+23"/>
-        <location line="+425"/>
+        <location line="+23"/>
+        <location line="+36"/>
+        <location line="+23"/>
+        <location line="+20"/>
+        <location line="+30"/>
+        <location line="+23"/>
+        <location line="+454"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
@@ -2925,81 +2903,82 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
+        <location line="+78"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-927"/>
+        <location line="-891"/>
         <source>Number of connections</source>
         <translation>Number of connections</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+125"/>
         <source>&amp;Open</source>
         <translation>&amp;Open</translation>
     </message>
     <message>
-        <location line="-56"/>
+        <location line="-184"/>
         <source>Startup time</source>
         <translation>Startup time</translation>
     </message>
     <message>
-        <location line="+137"/>
+        <location line="+29"/>
         <source>Network</source>
         <translation>Network</translation>
     </message>
     <message>
-        <location line="-91"/>
+        <location line="+103"/>
         <source>Last block time</source>
         <translation>Last block time</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+42"/>
         <source>Debug log file</source>
         <translation>Debug log file</translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="-249"/>
         <source>Using OpenSSL version</source>
         <translation>Using OpenSSL version</translation>
     </message>
     <message>
-        <location line="-197"/>
+        <location line="+52"/>
         <source>Build date</source>
         <translation>Build date</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+132"/>
         <source>Current number of blocks</source>
         <translation>Current number of blocks</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="-207"/>
         <source>Client version</source>
         <translation>Client version</translation>
     </message>
     <message>
-        <location line="+108"/>
+        <location line="+49"/>
         <source>Using BerkeleyDB version</source>
         <translation>Using BerkeleyDB version</translation>
     </message>
     <message>
-        <location line="-312"/>
+        <location line="+151"/>
         <source>Block chain</source>
         <translation>Block chain</translation>
     </message>
     <message>
-        <location line="+149"/>
+        <location line="+79"/>
         <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+140"/>
+        <location line="-99"/>
         <source>Number of Masternodes</source>
         <translation>Number of Masternodes</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+113"/>
         <source>&amp;Console</source>
         <translation>&amp;Console</translation>
     </message>
@@ -3040,8 +3019,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+41"/>
-        <location filename="../rpcconsole.cpp" line="+262"/>
-        <location line="+439"/>
+        <location filename="../rpcconsole.cpp" line="+261"/>
+        <location line="+460"/>
         <source>Select a peer to view detailed information.</source>
         <translation>Select a peer to view detailed information.</translation>
     </message>
@@ -3116,79 +3095,79 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>&amp;Wallet Repair</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+38"/>
+        <source>Wallet In Use:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
         <source>Salvage wallet</source>
         <translation>Salvage wallet</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+14"/>
+        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Rescan blockchain files</source>
         <translation>Rescan blockchain files</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+14"/>
+        <source>Rescan the block chain for missing wallet transactions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Recover transactions 1</source>
         <translation>Recover transactions 1</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+14"/>
+        <source>Recover transactions from blockchain (keep meta-data, e.g. account owner).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Recover transactions 2</source>
         <translation>Recover transactions 2</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+14"/>
+        <source>Recover transactions from blockchain (drop meta-data).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Upgrade wallet format</source>
         <translation>Upgrade wallet format</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+44"/>
+        <source>Rebuild block chain index from current blk000??.dat files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-216"/>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
         <translation>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>-salvagewallet: Attempt to recover private keys from a corrupt wallet.dat.</source>
-        <translation>-salvagewallet: Attempt to recover private keys from a corrupt wallet.dat.</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>-rescan: Rescan the block chain for missing wallet transactions.</source>
-        <translation>-rescan: Rescan the block chain for missing wallet transactions.</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>-zapwallettxes=1: Recover transactions from blockchain (keep meta-data, e.g. account owner).</source>
-        <translation>-zapwallettxes=1: Recover transactions from blockchain (keep meta-data, e.g. account owner).</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>-zapwallettxes=2: Recover transactions from blockchain (drop meta-data).</source>
-        <translation>-zapwallettxes=2: Recover transactions from blockchain (drop meta-data).</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>-upgradewallet: Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself!)</source>
-        <translation>-upgradewallet: Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself!)</translation>
-    </message>
-    <message>
-        <location line="+23"/>
+        <location line="-13"/>
         <source>Wallet repair options.</source>
         <translation>Wallet repair options.</translation>
+    </message>
+    <message>
+        <location line="+199"/>
+        <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself!)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Rebuild index</source>
         <translation>Rebuild index</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>-reindex: Rebuild block chain index from current blk000??.dat files.</source>
-        <translation>-reindex: Rebuild block chain index from current blk000??.dat files.</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Wallet Path</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-206"/>
@@ -3206,12 +3185,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-209"/>
-        <source>Wallet in use: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+210"/>
+        <location line="+1"/>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
         <translation>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</translation>
     </message>
@@ -3493,10 +3467,9 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+233"/>
+        <location filename="../sendcoinsdialog.cpp" line="+234"/>
         <location line="+25"/>
-        <location line="+383"/>
-        <location line="+12"/>
+        <location line="+413"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
@@ -3597,7 +3570,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>0 BWK</source>
+        <source>0 PIV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3621,12 +3594,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>Minimize</translation>
     </message>
     <message>
-        <location line="+579"/>
+        <location line="+582"/>
         <source>Obfuscation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-498"/>
+        <location line="-501"/>
         <source>per kilobyte</source>
         <translation>per kilobyte</translation>
     </message>
@@ -3646,23 +3619,23 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>Custom:</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
         <translation>(Smart fee not initialized yet. This usually takes a few blocks...)</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-155"/>
         <source>Confirmation time:</source>
         <translation>Confirmation time:</translation>
     </message>
     <message>
         <location line="-165"/>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uBWKs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uBWKs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3687,7 +3660,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="+73"/>
         <source>Send as zero-fee transaction if possible</source>
         <translation>Send as zero-fee transaction if possible</translation>
     </message>
@@ -3737,7 +3710,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>Balance:</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-566"/>
+        <location filename="../sendcoinsdialog.cpp" line="-584"/>
         <source>Copy quantity</source>
         <translation>Copy quantity</translation>
     </message>
@@ -3800,12 +3773,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>anonymous funds</translation>
     </message>
     <message>
-        <location line="+614"/>
+        <location line="+632"/>
         <source>Warning: Invalid Bulwark address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-605"/>
+        <location line="-623"/>
         <source>any available funds (not recommended)</source>
         <translation>any available funds (not recommended)</translation>
     </message>
@@ -3843,12 +3816,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>Confirm send coins</translation>
     </message>
     <message>
-        <location line="+227"/>
+        <location line="+233"/>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>A fee %1 times higher than %2 per kB is considered an insanely high fee.</translation>
     </message>
     <message numerus="yes">
-        <location line="+102"/>
+        <location line="+114"/>
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation>
             <numerusform>Estimated to begin confirmation within %n block.</numerusform>
@@ -3856,12 +3829,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         </translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-145"/>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>The recipient address is not valid, please recheck.</translation>
     </message>
     <message>
-        <location line="-341"/>
+        <location line="-343"/>
         <source>(obfuscation requires this amount to be rounded up to the nearest %1).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3876,7 +3849,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+206"/>
+        <location line="+208"/>
         <source>The amount to pay must be larger than 0.</source>
         <translation>The amount to pay must be larger than 0.</translation>
     </message>
@@ -3906,12 +3879,17 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+8"/>
         <source>Error: The wallet was unlocked only to anonymize coins.</source>
         <translation>Error: The wallet was unlocked only to anonymize coins.</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+16"/>
+        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+84"/>
         <source>Pay only the minimum fee of %1</source>
         <translation>Pay only the minimum fee of %1</translation>
     </message>
@@ -4028,7 +4006,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+42"/>
+        <location filename="../utilitydialog.cpp" line="+75"/>
         <source>Bulwark Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4957,7 +4935,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PIV.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4979,7 +4957,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>Selected amount:</translation>
     </message>
     <message>
-        <location line="+237"/>
+        <location line="+236"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -5010,9 +4988,9 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
 </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
-        <location filename="../bulwarkstrings.cpp" line="+12"/>
+        <location filename="../pivxstrings.cpp" line="+12"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation type="unfinished">(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
@@ -5078,6 +5056,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
+        <source>Enable spork administration functionality with the appropriate private key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
         <translation type="unfinished">Enable swifttx, show confirmations for locked transactions (bool, default: %s)</translation>
     </message>
@@ -5118,12 +5101,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in PIV/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5158,6 +5141,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
+        <source>Keep the specified amount available for spending at all times (default: 0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
         <translation type="unfinished">Log transaction priority and fee per kB when mining blocks (default: %u)</translation>
     </message>
@@ -5233,25 +5221,25 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
+        <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
         <translation type="unfinished">SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation type="unfinished">This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation type="unfinished">This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>To use bulwarkd, or the -server option to bulwark-qt, you must set an rpcpassword in the configuration file:
+        <source>To use pivxd, or the -server option to pivx-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bulwarkrpc
+rpcuser=pivxrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -5273,12 +5261,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 PIV.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 PIV.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5338,8 +5326,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+3"/>
-        <source>(52543 could be used only on mainnet)</source>
-        <translation type="unfinished">(52543 could be used only on mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation type="unfinished">(51472 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5353,18 +5341,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 52543 for mainnet)</source>
+        <source>(must be 51472 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>&lt;category&gt; can be:
-</source>
-        <translation type="unfinished">&lt;category&gt; can be:
-</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation type="unfinished">Accept command line and JSON-RPC commands</translation>
     </message>
@@ -5404,7 +5385,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
         <translation type="unfinished">Always query for peer addresses via DNS lookup (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
         <translation type="unfinished">Attempt to recover private keys from a corrupt wallet.dat</translation>
     </message>
@@ -5529,7 +5510,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
         <translation type="unfinished">Discover own IP address (default: 1 when listening and no -externalip)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Do not load the wallet and disable wallet RPC calls</source>
         <translation type="unfinished">Do not load the wallet and disable wallet RPC calls</translation>
     </message>
@@ -5544,7 +5525,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
         <translation type="unfinished">Done loading</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+8"/>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation type="unfinished">Enable the client to act as a masternode (0-1, default: %u)</translation>
     </message>
@@ -5650,7 +5631,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
-        <source>Fee (in BWK/kB) to add to transactions you send (default: %s)</source>
+        <source>Fee (in PIV/kB) to add to transactions you send (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5804,8 +5785,68 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
         <translation type="unfinished">Invalid script detected.</translation>
     </message>
     <message>
+        <location line="-165"/>
+        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>&lt;category&gt; can be:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Attempt to force blockchain corruption recovery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Display the stake modifier calculations in the debug.log file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+1"/>
-        <source>Keep N BWK anonymized (default: %u)</source>
+        <source>Display verbose coin stake messages in the debug.log file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enable publish hash block in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish hash transaction in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish raw block in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable publish raw transaction in &lt;address&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Enable staking functionality (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Keep N PIV anonymized (default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6030,6 +6071,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
     </message>
     <message>
         <location line="+1"/>
+        <source>Print version and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <translation type="unfinished">RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</translation>
     </message>
@@ -6222,6 +6268,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
         <location line="+1"/>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
         <translation type="unfinished">Spend unconfirmed change when sending transactions (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Staking options:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6487,6 +6538,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Bulwark Alert&quot; admin@foo.
         <location line="+1"/>
         <source>Zapping all transactions from wallet...</source>
         <translation type="unfinished">Zapping all transactions from wallet...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>ZeroMQ notification options:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>

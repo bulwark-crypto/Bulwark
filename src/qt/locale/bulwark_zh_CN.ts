@@ -1,57 +1,41 @@
-<TS language="ro_RO" version="2.1">
+<TS language="zh_CN" version="2.1">
 <context>
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation>Faceți click dreapta pentru a edita adresa sau eticheta</translation>
+        <translation>右键点击编辑地址或标签</translation>
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Creează o nouă adresă</translation>
+        <translation>创建新地址</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Nou/Nouă</translation>
+        <translation>新</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Copiază adresa selectată în clipboard</translation>
+        <translation>复制当前地址至剪贴板</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation>&amp;Copiază</translation>
+        <translation>复制</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Șterge adresa selectată din listă</translation>
+        <translation>从列表移除此地址</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Șterge</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Exportă datele din fila curentă într-un fișier</translation>
+        <translation>导出当前数据至文件</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;Exportă</translation>
-    </message>
-    <message>
-        <source>C&amp;lose</source>
-        <translation>&amp;Închide </translation>
-    </message>
-    <message>
-        <source>Choose the address to send coins to</source>
-        <translation>Alege adresa la care vrei să trimiți monedele</translation>
-    </message>
-    <message>
-        <source>Choose the address to receive coins with</source>
-        <translation>Alege adresa la care vrei să primești monedele</translation>
-    </message>
-    <message>
-        <source>C&amp;hoose</source>
-        <translation>&amp;Alege</translation>
+        <translation>导出</translation>
     </message>
     </context>
 <context>
@@ -172,11 +156,11 @@
     <name>WalletView</name>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;Exportă</translation>
+        <translation>导出</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Exportă datele din fila curentă într-un fișier</translation>
+        <translation>导出当前数据至文件</translation>
     </message>
     </context>
 <context>
