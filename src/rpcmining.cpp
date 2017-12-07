@@ -521,14 +521,8 @@ Value getblocktemplate(const Array& params, bool fHelp)
             delete pblocktemplate;
             pblocktemplate = NULL;
         }
-		
-		/* TODO-- too poor as per performance, but only way */
-		
-		CPubKey pubkey;
-		if (!pMiningKey->GetReservedKey(pubkey))
-			return NULL;
-		
-        CScript scriptDummy = CScript() << ToByteVector(pubkey) << OP_CHECKSIG;
+
+	CScript scriptDummy = CScript() << OP_TRUE;
         pblocktemplate = CreateNewBlock(scriptDummy, pwalletMain, false);
         if (!pblocktemplate)
             throw JSONRPCError(RPC_OUT_OF_MEMORY, "Out of memory");
