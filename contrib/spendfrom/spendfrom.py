@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Use the raw transactions API to spend BWKs received on particular addresses,
+# Use the raw transactions API to spend PIVs received on particular addresses,
 # and send any change back to that same address.
 #
 # Example usage:
@@ -67,7 +67,7 @@ def connect_JSON(config):
     testnet = config.get('testnet', '0')
     testnet = (int(testnet) > 0)  # 0/1 in config file, convert to True/False
     if not 'rpcport' in config:
-        config['rpcport'] = 51475 if testnet else 61020
+        config['rpcport'] = 42132 if testnet else 52541
     connect = "http://%s:%s@127.0.0.1:%s"%(config['rpcuser'], config['rpcpassword'], config['rpcport'])
     try:
         result = ServiceProxy(connect)
@@ -221,9 +221,9 @@ def main():
 
     parser = optparse.OptionParser(usage="%prog [options]")
     parser.add_option("--from", dest="fromaddresses", default=None,
-                      help="addresses to get BWKs from")
+                      help="addresses to get PIVs from")
     parser.add_option("--to", dest="to", default=None,
-                      help="address to get send BWKs to")
+                      help="address to get send PIVs to")
     parser.add_option("--amount", dest="amount", default=None,
                       help="amount to send")
     parser.add_option("--fee", dest="fee", default="0.0",

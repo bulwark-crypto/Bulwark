@@ -1,11 +1,11 @@
 ---
-name: "bulwark-osx-2.2"
+name: "bulwark-osx-3.1"
 enable_cache: true
 suites:
 - "trusty"
 architectures:
 - "amd64"
-packages: 
+packages:
 - "ca-certificates"
 - "curl"
 - "g++"
@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/bulwark-project/bulwark.git"
+- "url": "https://github.com/bulwark-crypto/bulwark.git"
   "dir": "bulwark"
 files:
 - "MacOSX10.11.sdk.tar.gz"
