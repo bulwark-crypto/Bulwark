@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/bulwark-project/bulwark
+url=https://github.com/bulwark-crypto/bulwark
 proc=2
 mem=2000
 lxc=true
@@ -39,12 +39,12 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/bulwark-project/bulwark
+-u|--url	Specify the URL of the repository. Default is https://github.com/bulwark-crypto/bulwark
 -v|--verify 	Verify the gitian build
 -b|--build	Do a gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
 -B|--buildsign	Build both signed and unsigned binaries
--o|--os		Specify which Operating Systems the build is for. Default is lwx. l for linux, w for windows, x for osx
+-o|--os		Specify which Operating Systems the build is for. Default is lwx. l for linux, w for windows, x for osx, a for aarch64
 -j		Number of processes to use. Default 2
 -m		Memory to allocate in MiB. Default 2000
 --kvm           Use KVM instead of LXC
@@ -92,6 +92,7 @@ while :; do
 		linux=false
 		windows=false
 		osx=false
+		aarch64=false
 		if [[ "$2" = *"l"* ]]
 		then
 		    linux=true
@@ -104,9 +105,13 @@ while :; do
 		then
 		    osx=true
 		fi
+		if [[ "$2" = *"a"* ]]
+		then
+		    aarch64=true
+		fi
 		shift
 	    else
-		echo 'Error: "--os" requires an argument containing an l (for linux), w (for windows), or x (for Mac OSX)\n'
+		echo 'Error: "--os" requires an argument containing an l (for linux), w (for windows), x (for Mac OSX), or a (for aarch64)\n'
 		exit 1
 	    fi
 	    ;;
@@ -232,8 +237,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/bulwark-project/gitian.sigs.git
-    git clone https://github.com/bulwark-project/bulwark-detached-sigs.git
+    git clone https://github.com/bulwark-crypto/gitian.sigs.git
+    git clone https://github.com/bulwark-crypto/bulwark-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -300,6 +305,15 @@ then
 	    mv build/out/bulwark-*-osx-unsigned.tar.gz inputs/bulwark-osx-unsigned.tar.gz
 	    mv build/out/bulwark-*.tar.gz build/out/bulwark-*.dmg ../bulwark-binaries/${VERSION}
 	fi
+	# AArch64
+	if [[ $aarch64 = true ]]
+	then
+	    echo ""
+	    echo "Compiling ${VERSION} AArch64"
+	    echo ""
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit bulwark=${COMMIT} --url bulwark=${url} ../bulwark/contrib/gitian-descriptors/gitian-aarch64.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../bulwark/contrib/gitian-descriptors/gitian-aarch64.yml
+	    mv build/out/bulwark-*.tar.gz build/out/src/bulwark-*.tar.gz ../bulwark-binaries/${VERSION}
 	popd
 
         if [[ $commitFiles = true ]]
@@ -310,6 +324,7 @@ then
             echo ""
             pushd gitian.sigs
             git add ${VERSION}-linux/${SIGNER}
+            git add ${VERSION}-aarch64/${SIGNER}
             git add ${VERSION}-win-unsigned/${SIGNER}
             git add ${VERSION}-osx-unsigned/${SIGNER}
             git commit -a -m "Add ${VERSION} unsigned sigs for ${SIGNER}"
@@ -336,6 +351,11 @@ then
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""
 	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bulwark/contrib/gitian-descriptors/gitian-osx.yml
+	# AArch64
+	echo ""
+	echo "Verifying v${VERSION} AArch64"
+	echo ""
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../bulwark/contrib/gitian-descriptors/gitian-aarch64.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
