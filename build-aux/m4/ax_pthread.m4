@@ -135,7 +135,7 @@ ax_pthread_flags="pthreads none -Kthread -kthread lthread -pthread -pthreads -mt
 # -kthread: FreeBSD kernel threads (preferred to -pthread since SMP-able)
 # lthread: LinuxThreads port on FreeBSD (also preferred to -pthread)
 # -pthread: Linux/gcc (kernel threads), BSD/gcc (userland threads)
-# -pthreads: Bulwark/gcc
+# -pthreads: Solaris/gcc
 # -mthreads: Mingw32/gcc, Lynx/gcc
 # -mt: Sun Workshop C (may only link SunOS threads [-lthread], but it
 #      doesn't hurt to check since this sometimes defines pthreads too;
@@ -148,7 +148,7 @@ ax_pthread_flags="pthreads none -Kthread -kthread lthread -pthread -pthreads -mt
 case ${host_os} in
         solaris*)
 
-        # On Bulwark (at least, for some versions), libc contains stubbed
+        # On Solaris (at least, for some versions), libc contains stubbed
         # (non-functional) versions of the pthreads routines, so link-based
         # tests will erroneously succeed.  (We need to link with -pthreads/-mt/
         # -lpthread.)  (The stubs are missing pthread_cleanup_push, or rather
@@ -216,7 +216,7 @@ for flag in $ax_pthread_flags; do
         # while pthread_create is in libc.  We check for pthread_attr_init
         # due to DEC craziness with -lpthreads.  We check for
         # pthread_cleanup_push because it is one of the few pthread
-        # functions on Bulwark that doesn't have a non-functional libc stub.
+        # functions on Solaris that doesn't have a non-functional libc stub.
         # We try pthread_create on general principles.
         AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <pthread.h>
                         static void routine(void *a) { a = 0; }
@@ -275,7 +275,7 @@ if test "x$ax_pthread_ok" = xyes; then
             if test "$GCC" = "yes"; then
                 flag="-D_REENTRANT"
             else
-                # TODO: What about Clang on Bulwark?
+                # TODO: What about Clang on Solaris?
                 flag="-mt -D_REENTRANT"
             fi
             ;;
