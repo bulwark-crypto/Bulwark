@@ -131,8 +131,8 @@ public:
         hashGenesisBlock == uint256("0x0000080fd394872d6e9ad32e90dadcc2809692f9e4592441dccda26192110a06");
         genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f");
 
+		vSeeds.push_back(CDNSSeedData("mempool.pw", "bwkseed.mempool.pw"));
         	vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
-		vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed05.ssus.tech"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 85); // b
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18); 
