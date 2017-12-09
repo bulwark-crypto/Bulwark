@@ -172,16 +172,16 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella PIVien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</source>
+        <translation>Bulwark sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella BWKien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Oletko varma että tahdot salata lompakkosi?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PIV&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki PIVisi&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki BWKisi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1135,32 +1135,32 @@ Please check the address and try again.</source>
         <translation>Valitse yksityisyyden taso.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 PIV</source>
-        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 Bulwark</translation>
+        <source>Use 2 separate masternodes to mix funds up to 5000 BWK</source>
+        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 5000 Bulwark</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 PIV</source>
-        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 Bulwark</translation>
+        <source>Use 8 separate masternodes to mix funds up to 5000 BWK</source>
+        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 5000 Bulwark</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Käytä 16 erillistä masternodea</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 PIV to anonymize 10000 PIV</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 PIV anonymoidaksesi 10000 Bulwark</translation>
+        <source>This option is the quickest and will cost about ~0.025 BWK to anonymize 5000 BWK</source>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 BWK anonymoidaksesi 5000 Bulwark</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 PIV to anonymize 10000 PIV</source>
-        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Bulwark anonymoidaksesi 10000 Bulwark</translation>
+        <source>This option is moderately fast and will cost about 0.05 BWK to anonymize 5000 BWK</source>
+        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Bulwark anonymoidaksesi 5000 Bulwark</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Tämä on hitain ja turvallisin vaihtoehto. Täydesti anonymisoiminen ei maksa mitään.</translation>
     </message>
     <message>
-        <source>0.1 PIV per 10000 PIV you anonymize.</source>
-        <translation>0.1 per 10000 Bulwark, jotka anonymisoit.</translation>
+        <source>0.1 BWK per 5000 BWK you anonymize.</source>
+        <translation>0.1 per 5000 Bulwark, jotka anonymisoit.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1835,8 +1835,8 @@ Please check the address and try again.</source>
         <translation>Muutos:</translation>
     </message>
     <message>
-        <source>0 PIV</source>
-        <translation>0 PIV</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Choose...</source>
