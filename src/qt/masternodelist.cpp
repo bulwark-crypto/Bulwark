@@ -219,14 +219,6 @@ void MasternodeList::updateMyNodeList(bool fForce)
     ui->secondsLabel->setText("0");
 }
 
-void MasternodeList::on_filterLineEdit_textChanged(const QString& strFilterIn)
-{
-    strCurrentFilter = strFilterIn;
-    nTimeFilterUpdated = GetTime();
-    fFilterUpdated = true;
-    ui->countLabel->setText(QString::fromStdString(strprintf("Please wait... %d", MASTERNODELIST_FILTER_COOLDOWN_SECONDS)));
-}
-
 void MasternodeList::on_startButton_clicked()
 {
     // Find selected node alias
