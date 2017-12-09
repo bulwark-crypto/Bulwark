@@ -76,10 +76,10 @@ QT_TRANSLATE_NOOP("bulwark-core", ""
 "Execute command when the best block changes (%s in cmd is replaced by block "
 "hash)"),
 QT_TRANSLATE_NOOP("bulwark-core", ""
-"Fees (in PIV/Kb) smaller than this are considered zero fee for relaying "
+"Fees (in BWK/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("bulwark-core", ""
-"Fees (in PIV/Kb) smaller than this are considered zero fee for transaction "
+"Fees (in BWK/Kb) smaller than this are considered zero fee for transaction "
 "creation (default: %s)"),
 QT_TRANSLATE_NOOP("bulwark-core", ""
 "Flush database activity from memory pool to disk log every <n> megabytes "
@@ -171,10 +171,10 @@ QT_TRANSLATE_NOOP("bulwark-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("bulwark-core", ""
 "Unable to locate enough Obfuscation non-denominated funds for this "
-"transaction that are not equal 10000 PIV."),
+"transaction that are not equal 5000 BWK."),
 QT_TRANSLATE_NOOP("bulwark-core", ""
-"Unable to locate enough funds for this transaction that are not equal 10000 "
-"PIV."),
+"Unable to locate enough funds for this transaction that are not equal 5000 "
+"BWK."),
 QT_TRANSLATE_NOOP("bulwark-core", ""
 "Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: "
 "%s)"),
@@ -280,7 +280,7 @@ QT_TRANSLATE_NOOP("bulwark-core", "Error: Wallet locked, unable to create transa
 QT_TRANSLATE_NOOP("bulwark-core", "Error: You already have pending entries in the Obfuscation pool"),
 QT_TRANSLATE_NOOP("bulwark-core", "Failed to listen on any port. Use -listen=0 if you want this."),
 QT_TRANSLATE_NOOP("bulwark-core", "Failed to read block"),
-QT_TRANSLATE_NOOP("bulwark-core", "Fee (in PIV/kB) to add to transactions you send (default: %s)"),
+QT_TRANSLATE_NOOP("bulwark-core", "Fee (in BWK/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("bulwark-core", "Finalizing transaction."),
 QT_TRANSLATE_NOOP("bulwark-core", "Force safe mode (default: %u)"),
 QT_TRANSLATE_NOOP("bulwark-core", "Found enough users, signing ( waiting %s )"),
@@ -311,7 +311,7 @@ QT_TRANSLATE_NOOP("bulwark-core", "Invalid netmask specified in -whitelist: '%s'
 QT_TRANSLATE_NOOP("bulwark-core", "Invalid port detected in masternode.conf"),
 QT_TRANSLATE_NOOP("bulwark-core", "Invalid private key."),
 QT_TRANSLATE_NOOP("bulwark-core", "Invalid script detected."),
-QT_TRANSLATE_NOOP("bulwark-core", "Keep N PIV anonymized (default: %u)"),
+QT_TRANSLATE_NOOP("bulwark-core", "Keep N BWK anonymized (default: %u)"),
 QT_TRANSLATE_NOOP("bulwark-core", "Keep at most <n> unconnectable transactions in memory (default: %u)"),
 QT_TRANSLATE_NOOP("bulwark-core", "Last Obfuscation was too recent."),
 QT_TRANSLATE_NOOP("bulwark-core", "Last successful Obfuscation action was too recent."),
