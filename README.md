@@ -1,1 +1,1 @@
-Bulwark initial test release
+Bulwark Cryptocurrency
