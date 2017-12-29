@@ -208,9 +208,9 @@ public:
 
     	vFixedSeeds.clear();
     	vSeeds.clear();
-    	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
-    	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test02.bulwarkcrypto.com"));
-    	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test03.bulwarkcrypto.com"));
+    	vSeeds.push_back(CDNSSeedData("testwark-01.leet.fun", "testwark-01.leet.fun"));
+    	vSeeds.push_back(CDNSSeedData("testwark-02.leet.fun", "testwark-02.leet.fun"));
+    	vSeeds.push_back(CDNSSeedData("testwark-03.leet.fun", "testwark-03.leet.fun"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Testnet bulwark addresses start with 'T'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);  // Testnet bulwark script addresses start with '5' or '6'
