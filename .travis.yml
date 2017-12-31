@@ -19,7 +19,7 @@ env:
   - CCACHE_TEMPDIR=/tmp/.ccache-temp
   - CCACHE_COMPRESS=1
   - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
-  - SDK_URL=https://bitcoincore.org/depends-sources/sdks
+  - SDK_URL=https://github.com/phracker/MacOSX-SDKs/releases/download/10.13
   - PYTHON_DEBUG=1
   - WINEDEBUG=fixme-all
   matrix:
@@ -53,11 +53,11 @@ before_script:
 - unset CC; unset CXX
 - if [ "$CHECK_DOC" = 1 ]; then contrib/devtools/check-doc.py; fi
 - mkdir -p depends/SDKs depends/sdk-sources
-- if [ -n "$OSX_SDK" -a ! -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.gz ]; then
-  curl --location --fail $SDK_URL/MacOSX${OSX_SDK}.sdk.tar.gz -o depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.gz;
+- if [ -n "$OSX_SDK" -a ! -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then
+  curl --location --fail $SDK_URL/MacOSX${OSX_SDK}.sdk.tar.xz -o depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz;
   fi
-- if [ -n "$OSX_SDK" -a -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.gz ]; then
-  tar -C depends/SDKs -xf depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.gz; fi
+- if [ -n "$OSX_SDK" -a -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then
+  tar -C depends/SDKs -Jf depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz; fi
 - make $MAKEJOBS -C depends HOST=$HOST $DEP_OPTS
 script:
 - export TRAVIS_COMMIT_LOG=`git log --format=fuller -1`
