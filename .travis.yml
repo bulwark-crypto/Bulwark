@@ -80,7 +80,7 @@ before_deploy:
     - git config --local user.email "SerfyWerfy@protonmail.com"
     - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
     - cd ..
-    - tar -zcf $TRAVIS_JOB_NUMBER-$HOST.tar.gz -C $OUTDIR bin/ lib/
+    - tar -zvcf $TRAVIS_JOB_NUMBER-$HOST.tar.gz -C $OUTDIR bin/
 deploy:
   provider: releases
   api_key:
