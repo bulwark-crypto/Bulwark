@@ -80,7 +80,7 @@ before_deploy:
     - git config --local user.name "heartofgold42"
     - git config --local user.email "SerfyWerfy@protonmail.com"
     - git tag "staging-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-    - then tar -zvcf staging-$HOST.tar.gz -C $OUTDIR bin/
+    - tar -zvcf staging-$HOST.tar.gz -C $OUTDIR bin/
     - echo `pwd`
 deploy:
   provider: releases
