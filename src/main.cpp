@@ -1719,13 +1719,13 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     } else {
         if (nHeight < Params().RAMP_TO_BLOCK()) {
 	        ret = 0;
-        } else if (nHeight <= 28800 && nHeight >= Params().RAMP_TO_BLOCK()) {
+        } else if (nHeight <= 27999 && nHeight >= Params().RAMP_TO_BLOCK()) {
             ret = blockValue / 5;
-        } else if (nHeight <= 57600 && nHeight > 28800) {
+        } else if (nHeight <= 57599 && nHeight >= 28800) {
 	        ret = blockValue / 4;
-        } else if (nHeight <= 86400 && nHeight > 57600) {
+        } else if (nHeight <= 86399 && nHeight >= 57600) {
 	        ret = blockValue / 3;
-        } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 86400) {
+        } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) {
 	        ret = blockValue / 2;
         }
     }
