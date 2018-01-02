@@ -40,7 +40,7 @@ env:
 # No wallet
 #    - HOST=x86_64-unknown-linux-gnu PACKAGES="python3" DEP_OPTS="NO_WALLET=1" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
 # Cross-Mac
-#    - HOST=x86_64-apple-darwin11 PACKAGES="cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python-dev" BITCOIN_CONFIG="--enable-reduce-exports" OSX_SDK=10.11 GOAL="deploy"
+    - HOST=x86_64-apple-darwin11 PACKAGES="cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python-dev" BITCOIN_CONFIG="--enable-reduce-exports" OSX_SDK=10.11 GOAL="deploy"
 
 before_install:
     - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
@@ -79,14 +79,14 @@ before_deploy:
     - git config --local user.name "heartofgold42"
     - git config --local user.email "SerfyWerfy@protonmail.com"
     - git tag "staging-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-    - cd ..
-    - tar -zcf staging-$HOST.tar.gz -C $OUTDIR bin/
+    - if [ -z $OSX_SDK ];then tar -zvcf staging-$HOST.tar.gz -C $OUTDIR bin/;else mv Bulwark-Core.dmg staging-$HOST.dmg;fi
     - echo `pwd`
 deploy:
   provider: releases
   api_key:
     secure: g5l+NHK4HTvmoXNdkYcFPdpU79gAjwOpDyxl2oPrGzEruDJ7G+X/eP92QIP/UBx+0ojUAPSBcALdVo46ys42UN76XLhJKCSFlVnSUTd+XJBquU+n8gB5PTlKswRC7931bYoGlOyhviYiQbGMRvrj4r4yDrJ93PspxCMK/QaMvTJyO9Uv9br7UuOkrz+KAgS9+O4dCrBJ6MQNGenFmdmQDVNZJhsMr7BhEM7kpl4hqw61ZpsFDJU2Ws26VlewPrU6iKmB1GrJ6cbPJOfVXfzihNiTDgMAEsqcUFdTE6trGtIuiNUmN6wlu2PAcVJSzGbzLbCWr79yBLSE7326BLLQrWb7fLikPJiMCm93r5HdVnX7G94t2DLQ4rL3nAR/j5j9GzzewTwCHP12RKcUFdVL0JC39TkmwGVan10LQZcuX1E43q5bb2p0gdnnk4bQMao/pBiBIG7Q9/mkG+e3aQKC21tGx9ghSeLNvI9dyEdfQ7hSFphewhsJG5ivnzDKX/y7ENJeL71i2zm6l3snuxVuI+iWXPxK3G3zksZ/GCrnL+nzBdpJcFqrJTJFqKCoibpydjbUKpzb2p2FKgLLwLHzO2/yTlXwr4eFABnqc0PYrGznOf7BfQU99J88tT0KZY7i513AdnJHhcJEXnyuMIFhhp+CeWbGpPX1xOMorTPRCCs
   file: staging-$HOST.tar.gz
+  file: staging-$HOST.dmg
   skip_cleanup: true
   on:
    repo: heartofgold42/bulwark
