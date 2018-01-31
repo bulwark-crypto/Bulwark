@@ -35,19 +35,20 @@ using namespace std;
 #define GLOBAL extern
 #endif
 
-GLOBAL sph_blake512_context     z_blake;
-GLOBAL sph_groestl512_context   z_groestl;
-GLOBAL sph_jh512_context        z_jh;
-GLOBAL sph_keccak512_context    z_keccak;
-GLOBAL sph_skein512_context     z_skein;
+GLOBAL sph_blake512_context z_blake;
+GLOBAL sph_groestl512_context z_groestl;
+GLOBAL sph_jh512_context z_jh;
+GLOBAL sph_keccak512_context z_keccak;
+GLOBAL sph_skein512_context z_skein;
 
-#define fillz() do { \
-            sph_blake512_init(&z_blake); \
-            sph_groestl512_init(&z_groestl); \
-            sph_jh512_init(&z_jh); \
-            sph_keccak512_init(&z_keccak); \
-            sph_skein512_init(&z_skein); \
-} while (0)
+#define fillz()					\
+	do { 					\
+            sph_blake512_init(&z_blake); 	\
+            sph_groestl512_init(&z_groestl); 	\
+            sph_jh512_init(&z_jh); 		\
+            sph_keccak512_init(&z_keccak); 	\
+            sph_skein512_init(&z_skein); 	\
+	} while (0)
 
 #define ZBLAKE (memcpy(&ctx_blake, &z_blake, sizeof(z_blake)))
 #define ZGROESTL (memcpy(&ctx_groestl, &z_groestl, sizeof(z_groestl)))
@@ -167,7 +168,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end, const T2 p2begin, const T2
     return result;
 }
 
-/** Compute the 256-bit hash of the concatenation of three objects. */
+/** Compute the 256-bit hash of the concatenation of four objects. */
 template <typename T1, typename T2, typename T3, typename T4>
 inline uint256 Hash(const T1 p1begin, const T1 p1end, const T2 p2begin, const T2 p2end, const T3 p3begin, const T3 p3end, const T4 p4begin, const T4 p4end)
 {
@@ -177,7 +178,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end, const T2 p2begin, const T2
     return result;
 }
 
-/** Compute the 256-bit hash of the concatenation of three objects. */
+/** Compute the 256-bit hash of the concatenation of four objects. */
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 inline uint256 Hash(const T1 p1begin, const T1 p1end, const T2 p2begin, const T2 p2end, const T3 p3begin, const T3 p3end, const T4 p4begin, const T4 p4end, const T5 p5begin, const T5 p5end)
 {
@@ -187,7 +188,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end, const T2 p2begin, const T2
     return result;
 }
 
-/** Compute the 256-bit hash of the concatenation of three objects. */
+/** Compute the 256-bit hash of the concatenation of five objects. */
 template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
 inline uint256 Hash(const T1 p1begin, const T1 p1end, const T2 p2begin, const T2 p2end, const T3 p3begin, const T3 p3end, const T4 p4begin, const T4 p4end, const T5 p5begin, const T5 p5end, const T6 p6begin, const T6 p6end)
 {
@@ -203,7 +204,8 @@ inline uint160 Hash160(const T1 pbegin, const T1 pend)
 {
     static unsigned char pblank[1] = {};
     uint160 result;
-    CHash160().Write(pbegin == pend ? pblank : (const unsigned char*)&pbegin[0], (pend - pbegin) * sizeof(pbegin[0])).Finalize((unsigned char*)&result);
+    CHash160().Write(pbegin == pend ? pblank : (const unsigned char*)&pbegin[0], (pend - pbegin) * sizeof(pbegin[0]))
+	    .Finalize((unsigned char*)&result);
     return result;
 }
 
@@ -271,24 +273,29 @@ inline uint256 Nist5(const T1 pbegin, const T1 pend)
     sph_skein512_context     ctx_skein;
 
     static unsigned char pblank[1];
-    uint512 hash[17];
+    uint512 hash[5];
 
     // Blake512
     sph_blake512_init(&ctx_blake);
-    sph_blake512(&ctx_blake, (pbegin == pend ? pblank : (unsigned char*)&pbegin[0]), (pend - pbegin) * sizeof(pbegin[0]));
+    //sph_blake512(&ctx_blake, (pbegin == pend ? pblank : (unsigned char*)&pbegin[0]), (pend - pbegin) * sizeof(pbegin[0]));
+    sph_blake512 (&ctx_blake, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), (pend - pbegin) * sizeof(pbegin[0]));
     sph_blake512_close(&ctx_blake, static_cast<void*>(&hash[0]));
+
     // Groestl512
     sph_groestl512_init(&ctx_groestl);
     sph_groestl512(&ctx_groestl, static_cast<const void*>(&hash[0]), 64);
     sph_groestl512_close(&ctx_groestl, static_cast<void*>(&hash[1]));
+
     // Jh512
     sph_jh512_init(&ctx_jh);
     sph_jh512(&ctx_jh, static_cast<const void*>(&hash[1]), 64);
     sph_jh512_close(&ctx_jh, static_cast<void*>(&hash[2]));
+
     // Keccak512
     sph_keccak512_init(&ctx_keccak);
     sph_keccak512(&ctx_keccak, static_cast<const void*>(&hash[2]), 64);
     sph_keccak512_close(&ctx_keccak, static_cast<void*>(&hash[3]));
+
     // Skein512
     sph_skein512_init(&ctx_skein);
     sph_skein512(&ctx_skein, static_cast<const void*>(&hash[3]), 64);
