@@ -1,6 +1,6 @@
 # Bulwark Cryptocurrency
 
-[![GitHub license](https://img.shields.io/github/license/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/blob/master/COPYING) [![GitHub stars](https://img.shields.io/github/stars/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/stargazers) [![GitHub version](https://badge.fury.io/gh/bulwark-crypto%2FBulwark.svg)](https://badge.fury.io/gh/bulwark-crypto%2FBulwark)
+[![GitHub license](https://img.shields.io/github/license/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/blob/master/COPYING) [![GitHub stars](https://img.shields.io/github/stars/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/stargazers) [![GitHub version](https://badge.fury.io/gh/bulwark-crypto%2FBulwark.svg)](https://badge.fury.io/gh/bulwark-crypto%2FBulwark) [![Github All Releases](https://img.shields.io/github/downloads/bulwark-crypto/Bulwark/total.svg)]() [![Discord](https://img.shields.io/discord/374271866308919296.svg)](https://discord.me/bulwarkcrypto)
 
 Bulwark (BWK) is a privacy oriented digital currency with Masternodes implemented.
 Bulwark offers both PrivateSend and InstantSend to enable speedy transactions with a Seesaw Staking / Masternode reward balancing mechanism to promote strong network security after the Proof of Work phase
