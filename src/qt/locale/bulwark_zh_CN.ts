@@ -164,6 +164,6 @@
     </message>
     </context>
 <context>
-    <name>pivx-core</name>
+    <name>bulwark-core</name>
     </context>
 </TS>

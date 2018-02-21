@@ -223,8 +223,8 @@
         <translation>BIP 38 Kryptering</translation>
     </message>
     <message>
-        <source>Enter a Pivx Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Skriv in en Pivx adress som du vill kryptera med BIP 38.
+        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Skriv in en Bulwark adress som du vill kryptera med BIP 38.
 Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den krypterade privata nyckeln.</translation>
     </message>
     <message>
@@ -591,8 +591,8 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
         <translation>Skicka mynt till en Bulwark adress</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and pivx: URIs)</source>
-        <translation>Begär betalning (genererar QR kod och pivx: URls)</translation>
+        <source>Request payments (generates QR codes and bulwark: URIs)</source>
+        <translation>Begär betalning (genererar QR kod och bulwark: URls)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1365,7 +1365,7 @@ Skriv in en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna d
     </message>
     </context>
 <context>
-    <name>pivx-core</name>
+    <name>bulwark-core</name>
     <message>
         <source>Error</source>
         <translation>Fel</translation>

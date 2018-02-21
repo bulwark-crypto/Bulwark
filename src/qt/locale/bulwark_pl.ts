@@ -526,8 +526,8 @@
         <translation>Wyślij monety do adresu Bulwark</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and pivx: URIs)</source>
-        <translation>Zarządaj płatności (generuje kod QR i pivx:URI)</translation>
+        <source>Request payments (generates QR codes and bulwark: URIs)</source>
+        <translation>Zarządaj płatności (generuje kod QR i bulwark:URI)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1225,9 +1225,9 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/pivx-project/pivx-project-translations</source>
+https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
         <translation>Brakuje języka bądź nieukończona pełnego tłumaczenia? Pomóż w tłumaczeniu tutaj:
-https://www.transifex.com/pivx-project/pivx-project-translations </translation>
+https://www.transifex.com/bulwark-project/bulwark-project-translations </translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
@@ -2024,7 +2024,7 @@ https://www.transifex.com/pivx-project/pivx-project-translations </translation>
     </message>
     </context>
 <context>
-    <name>pivx-core</name>
+    <name>bulwark-core</name>
     <message>
         <source>Error</source>
         <translation>Błąd</translation>

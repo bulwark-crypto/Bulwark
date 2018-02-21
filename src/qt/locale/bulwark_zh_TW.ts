@@ -227,8 +227,8 @@
         <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
-        <source>Enter a Pivx Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>輸入你想 BIP 38 加密的 Pivx 位址, 輸入密碼在中間欄, 按下加密按鈕來產生加密私鑰.</translation>
+        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>輸入你想 BIP 38 加密的 Bulwark 位址, 輸入密碼在中間欄, 按下加密按鈕來產生加密私鑰.</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -590,8 +590,8 @@
         <translation>送出錢幣到 Bulwark 地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and pivx: URIs)</source>
-        <translation>請求付款 (會產生 QR Code跟 pivx 位址)</translation>
+        <source>Request payments (generates QR codes and bulwark: URIs)</source>
+        <translation>請求付款 (會產生 QR Code跟 bulwark 位址)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -952,6 +952,6 @@
     </message>
     </context>
 <context>
-    <name>pivx-core</name>
+    <name>bulwark-core</name>
     </context>
 </TS>
