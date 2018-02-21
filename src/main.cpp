@@ -1613,8 +1613,21 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
+
+
+    /* SerfyWerfy-
+     * Since we didn't do masternode payments until after slow start, this caused PoW mining to jump down from a reward of 50 to 40.
+     * If we had to do it all over again, this should be 40 rather than 50.
+     */
+
     CAmount nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
+
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        // Testnet (New parameters - Feb-2018) -SerfyWerfy
+	if (nHeight < 500)
+	       return 100000 * COIN;
+    }
 
     // POW Year 0
     if (nHeight == 0) {
@@ -1690,6 +1703,12 @@ int64_t GetBlockValue(int nHeight)
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
 {
     int64_t ret = 0;
+
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        // Testnet (New parameters - Feb-2018) -SerfyWerfy
+	if (nHeight < 500)
+	       ret = 0;
+    }
 
     if (nHeight < Params().RAMP_TO_BLOCK()) {
 	ret = 0;
@@ -2354,8 +2373,10 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     unsigned int flags = fStrictPayToScriptHash ? SCRIPT_VERIFY_P2SH : SCRIPT_VERIFY_NONE;
 
-    // DERSIG (BIP66) rules:
-    flags |= SCRIPT_VERIFY_DERSIG;
+    // Start enforcing the DERSIG (BIP66) rules, for block.nVersion=3 blocks, when 75% of the network has upgraded:
+    if (block.nVersion >= 3 && CBlockIndex::IsSuperMajority(3, pindex->pprev, Params().EnforceBlockUpgradeMajority())) {
+	    flags |= SCRIPT_VERIFY_DERSIG;
+    }
 
     CBlockUndo blockundo;
 
@@ -3466,19 +3487,44 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         return state.DoS(0, error("%s : forked chain older than last checkpoint (height %d)", __func__, nHeight));
 
     // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 2) {
+    if (block.nVersion < 2 && CBlockIndex::IsSuperMajority(2, pindexPrev, Params().RejectBlockOutdatedMajority())) {
         return state.Invalid(error("%s : rejected nVersion=1 block", __func__),
             REJECT_OBSOLETE, "bad-version");
     }
 
     // Reject block.nVersion=2 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 3) {
+    if (block.nVersion < 3 && CBlockIndex::IsSuperMajority(3, pindexPrev, Params().RejectBlockOutdatedMajority())) {
         return state.Invalid(error("%s : rejected nVersion=2 block", __func__),
             REJECT_OBSOLETE, "bad-version");
     }
 
     return true;
 }
+
+bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIndex* const pindexPrev)
+{
+    const int nHeight = pindexPrev == NULL ? 0 : pindexPrev->nHeight + 1;
+
+    // Check that all transactions are finalized
+    BOOST_FOREACH (const CTransaction& tx, block.vtx)
+        if (!IsFinalTx(tx, nHeight, block.GetBlockTime())) {
+            return state.DoS(10, error("%s : contains a non-final transaction", __func__), REJECT_INVALID, "bad-txns-nonfinal");
+        }
+
+    // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
+    // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
+    if (block.nVersion >= 2 &&
+        CBlockIndex::IsSuperMajority(2, pindexPrev, Params().EnforceBlockUpgradeMajority())) {
+        CScript expect = CScript() << nHeight;
+        if (block.vtx[0].vin[0].scriptSig.size() < expect.size() ||
+            !std::equal(expect.begin(), expect.end(), block.vtx[0].vin[0].scriptSig.begin())) {
+            return state.DoS(100, error("%s : block height mismatch in coinbase", __func__), REJECT_INVALID, "bad-cb-height");
+        }
+    }
+
+    return true;
+}
+
 
 bool AcceptBlockHeader(const CBlock& block, CValidationState& state, CBlockIndex** ppindex)
 {
@@ -3556,7 +3602,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         return true;
     }
 
-    if ((!CheckBlock(block, state))) {
+    if ((!CheckBlock(block, state)) || !ContextualCheckBlock(block, state, pindex->pprev)) {
         if (state.IsInvalid() && !state.CorruptionPossible()) {
             pindex->nStatus |= BLOCK_FAILED_VALID;
             setDirtyBlockIndex.insert(pindex);
@@ -3584,6 +3630,18 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     }
 
     return true;
+}
+
+bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired)
+{
+    unsigned int nToCheck = Params().ToCheckBlockUpgradeMajority();
+    unsigned int nFound = 0;
+    for (unsigned int i = 0; i < nToCheck && nFound < nRequired && pstart != NULL; i++) {
+        if (pstart->nVersion >= minVersion)
+            ++nFound;
+        pstart = pstart->pprev;
+    }
+    return (nFound >= nRequired);
 }
 
 /** Turn the lowest '1' bit in the binary representation of a number into a '0'. */
@@ -3724,6 +3782,8 @@ bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex
         return false;
     if (!CheckBlock(block, state, fCheckPOW, fCheckMerkleRoot))
         return false;
+    if (!ContextualCheckBlock(block, state, pindexPrev))
+	return false;
     if (!ConnectBlock(block, state, &indexDummy, viewNew, true))
         return false;
     assert(state.IsValid());
