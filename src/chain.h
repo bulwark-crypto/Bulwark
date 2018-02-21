@@ -342,6 +342,8 @@ public:
             nFlags |= BLOCK_STAKE_MODIFIER;
     }
 
+    static bool IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired);
+
     std::string ToString() const
     {
         return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, hashBlock=%s)",
