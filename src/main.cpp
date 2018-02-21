@@ -1679,7 +1679,12 @@ int64_t GetBlockValue(int nHeight)
     } else {
         nSubsidy = 0 * COIN;
     }
-    return nSubsidy > 0 ? nSubsidy : nSlowSubsidy;
+
+    // Make sure we return the correct nSubsidy value -Serfywerfy
+    if (nHeight >= Params().RAMP_TO_BLOCK())
+	return nSubsidy;
+    else
+	return nSlowSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
