@@ -74,10 +74,10 @@ static const Checkpoints::CCheckpointData data = {
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x0x0000080fd394872d6e9ad32e90dadcc2809692f9e4592441dccda26192110a06"));
+	boost::assign::map_list_of(0, uint256("0x000001a2f1a9a313468d66b81dd2cb199f6f8f5d426198a7c4daa9c3f9498285"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1512132893,
+    1514516171,
     0,
     250};
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -117,6 +117,10 @@ public:
 	nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
 	nMaxMoneyOut = 21525720 * COIN; // Year 2
+	
+	nEnforceBlockUpgradeMajority = 750;
+	nRejectBlockOutdatedMajority = 950;
+	nToCheckBlockUpgradeMajority = 1000;
 
         const char* pszTimestamp = "November 30 2017 - Niger Approves Armed U.S. Drone Flights, Expanding Pentagon’s Role in Africa";
         CMutableTransaction txNew;
@@ -134,8 +138,8 @@ public:
         genesis.nNonce = 125854; 
 
 	hashGenesisBlock = genesis.GetHash();
-        hashGenesisBlock == uint256("0x0000080fd394872d6e9ad32e90dadcc2809692f9e4592441dccda26192110a06");
-        genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f");
+        assert(hashGenesisBlock == uint256("0x0000068e7ab8e264f6759d2d81b29e8b917c10b04db47a9a0bb3cba3fba5d574"));
+	assert(genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f"));
 
 	vSeeds.push_back(CDNSSeedData("mempool.pw", "bwkseed.mempool.pw"));
         vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
@@ -145,9 +149,9 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
-        //  BIP44 coin type is 'TBD'
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x13)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
-        
+	//  BIP44 as defined by https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki
+        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >();
+
 	convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
         
 	fRequireRPCPassword = true;
@@ -190,23 +194,31 @@ public:
         nDefaultPort = 42133;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 90; // 90 Seconds
-        nTargetSpacing = 5 * 90;  // 360 Seconds
+        nTargetSpacing = 1 * 90;  // 90 Seconds
+	nTargetSpacingSlowLaunch = 1 * 90 // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
+
         nLastPOWBlock = 1000;
         nMaturity = 15;
 	nMaxMoneyOut = 33284220 * COIN; // 2032 Maximum
+	
+	nEnforceBlockUpgradeMajority = 51;
+	nRejectBlockOutdatedMajority = 75;
+	nToCheckBlockUpgradeMajority = 100;
 
 	//! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1511311453;
-        genesis.nNonce = 746269;
+	genesis.nTime = 1514516171;
+	genesis.nNonce = 250375;
 	genesis.nBits = bnProofOfWorkLimit.GetCompact();
 
-	hashGenesisBlock == uint256("0x00000666199f20498537e1e01069fa054243cec2edc59f229f3046d352ff32f5");
-	genesis.hashMerkleRoot == uint256("0x9873d80537d7bf6fcf097a6f9cd6d6a74d6a26ceda5b775a576665ffde76dd11");
+	hashGenesisBlock = genesis.GetHash();
+	assert(hashGenesisBlock == uint256("0x000001a2f1a9a313468d66b81dd2cb199f6f8f5d426198a7c4daa9c3f9498285"));
+	assert(genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f"));
+
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test01.bulwarkcrypto.com"));
-	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test02.bulwarkcrypto.com"));
-	vSeeds.push_back(CDNSSeedData("bulwarkcrypto.com", "test03.bulwarkcrypto.com"));
+        vSeeds.push_back(CDNSSeedData("testnet01.mempool.pw", "testnet01.mempool.pw"));
+	vSeeds.push_back(CDNSSeedData("testnet02.mempool.pw", "testnet02.mempool.pw"));
+	vSeeds.push_back(CDNSSeedData("testnet03.mempool.pw", "testnet03.mempool.pw"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Testnet bulwark addresses start with 'T'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);  // Testnet bulwark script addresses start with '5' or '6'
