@@ -195,7 +195,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 90; // 90 Seconds
         nTargetSpacing = 1 * 90;  // 90 Seconds
-	nTargetSpacingSlowLaunch = 1 * 90 // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
+	nTargetSpacingSlowLaunch = 1 * 90; // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
 
         nLastPOWBlock = 1000;
         nMaturity = 15;
