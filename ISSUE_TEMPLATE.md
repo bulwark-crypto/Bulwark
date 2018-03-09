@@ -34,7 +34,7 @@ As a <user|developer|...>, I want to <task> so that <goal>.
 
 ### Additional Information
 [comment]: # (Please do your best to fill this out.)
-* Status version: ...
+* Bulwark version: ...
 [comment]: # (Windows, MacOS or Linux.)
 * Operating System: <Windows|macOS|Linux>
 
