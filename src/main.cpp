@@ -5636,10 +5636,13 @@ int ActiveProtocol()
     // SPORK_17 is used for 70920. Nodes < 70920 don't see it and still get their protocol version via SPORK_15 and their 
     // own ModifierUpgradeBlock()
 	
-      if (IsSporkActive(SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    if (IsSporkActive(SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3))
+        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT17;
+	
+    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+    	return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT15;
 
-    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT15;
 }
 
 // requires LOCK(cs_vRecvMsg)
