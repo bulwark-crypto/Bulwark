@@ -144,7 +144,18 @@ public:
 
 	vSeeds.push_back(CDNSSeedData("mempool.pw", "bwkseed.mempool.pw"));
         vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
-
+	vSeeds.push_back(CDNSSeedData("blocksuckernation.com", "bwkseed.blocksuckernation.com"));
+	vSeeds.push_back(CDNSSeedData("bwk1.masterhash.us", "bwk1.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk2.masterhash.us", "bwk2.masterhash.us")); 	 // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk3.masterhash.us", "bwk3.masterhash.us"));      // Single node address
+	vSeeds.push_back(CDNSSeedData("bwk4.masterhash.us", "bwk4.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk5.masterhash.us", "bwk5.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk6.masterhash.us", "bwk6.masterhash.us"));      // Single node address
+	vSeeds.push_back(CDNSSeedData("bwk7.masterhash.us", "bwk7.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk8.masterhash.us", "bwk8.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk9.masterhash.us", "bwk9.masterhash.us"));      // Single node address
+	vSeeds.push_back(CDNSSeedData("bwk10.masterhash.us", "bwk10.masterhash.us"));    // Single node address
+        
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 85); // b
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18); 
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
