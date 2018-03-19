@@ -84,7 +84,7 @@ static CNode* pnodeLocalHost = NULL;
 uint64_t nLocalHostNonce = 0;
 static std::vector<ListenSocket> vhListenSocket;
 CAddrMan addrman;
-int nMaxConnections = 512;
+int nMaxConnections = 256;
 bool fAddressesInitialized = false;
 
 vector<CNode*> vNodes;
