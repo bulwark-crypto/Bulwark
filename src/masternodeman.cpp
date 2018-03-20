@@ -357,7 +357,7 @@ int CMasternodeMan::stable_size ()
 		if (mn.protocolVersion < nMinProtocol) {
 			continue; // Skip obsolete versions
 		}
-		
+
 		if (IsSporkActive (SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT)) {
 			nMasternode_Age = GetAdjustedTime() - mn.sigTime;
 
@@ -369,12 +369,12 @@ int CMasternodeMan::stable_size ()
 		mn.Check ();
 		if (!mn.IsEnabled ())
 			continue; // Skip not-enabled masternodes
-		
+
 		nStable_size++;
 	}
 	return nStable_size;
 }
-   
+
 int CMasternodeMan::CountEnabled(int protocolVersion)
 {
     int i = 0;
@@ -603,10 +603,11 @@ int CMasternodeMan::GetMasternodeRank(const CTxIn& vin, int64_t nBlockHeight, in
 
     // scan for winner
     BOOST_FOREACH (CMasternode& mn, vMasternodes) {
-	    if (mn.protocolVersion < minProtocol) {
-		 if (fDebug) {
-			 LogPrintf("Skipping Masternode with obsolete version %d\n", mn.protocolVersion);
-		continue;
+	  if (mn.protocolVersion < minProtocol) {
+		  if (fDebug) {
+			   LogPrintf("Skipping Masternode with obsolete version %d\n", mn.protocolVersion);
+      }
+		  continue;
 	}
 	if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT)) {
 		nMasternode_Age = GetAdjustedTime() - mn.sigTime;
