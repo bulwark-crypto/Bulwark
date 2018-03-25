@@ -18,6 +18,7 @@ import datetime
 import time
 from collections import namedtuple
 from binascii import hexlify, unhexlify
+import nist5_hash
 
 settings = {}
 
@@ -49,15 +50,7 @@ def wordreverse(in_buf):
 	return b''.join(out_words)
 
 def calc_hdr_hash(blk_hdr):
-	hash1 = hashlib.sha256()
-	hash1.update(blk_hdr)
-	hash1_o = hash1.digest()
-
-	hash2 = hashlib.sha256()
-	hash2.update(hash1_o)
-	hash2_o = hash2.digest()
-
-	return hash2_o
+	return nist5_hash.getPoWHash(blk_hdr)
 
 def calc_hash_str(blk_hdr):
 	hash = calc_hdr_hash(blk_hdr)

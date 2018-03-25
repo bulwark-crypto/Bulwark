@@ -2,6 +2,8 @@
 Construct a linear, no-fork, best version of the Bitcoin blockchain. The scripts
 run using Python 3 but are compatible with Python 2.
 
+REQUIRED: [nist5_hash](https://github.com/bulwark-crypto/nist5_hash)
+
 ## Step 1: Download hash list
 
     $ ./linearize-hashes.py linearize.cfg > hashlist.txt
