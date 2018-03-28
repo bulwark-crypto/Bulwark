@@ -63,12 +63,13 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 	(58930, uint256("00000000000211bd4c6d6d6b5fa388071c4bcae5dbbf4f3336e008f18f894fed"))
 	(58980, uint256("00000000000313699ff390ec65e128ea858eac8632751e9902193e26f2e54bc6"))
   	(59200, uint256("000000000000a4d9ec8b2fa71028b1def77606b015622949a997d92503bbcc37"))
-   	(59400, uint256("000000000000880f972b364e7dc7c67093109e862b23ffecf2d3f2f87c24d0cf"));
+   	(59400, uint256("000000000000880f972b364e7dc7c67093109e862b23ffecf2d3f2f87c24d0cf"))
+	(95600, uint256("0000000000084e401f85d9f393e2d61428352f20bbb51ccfe2483e49423b89ce"));
  
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1517815551,// * UNIX timestamp of last checkpoint block
-    116418,    // * total number of transactions between genesis and last checkpoint
+    1521289182,// * UNIX timestamp of last checkpoint block
+    176870,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -143,7 +144,18 @@ public:
 
 	vSeeds.push_back(CDNSSeedData("mempool.pw", "bwkseed.mempool.pw"));
         vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
-
+	vSeeds.push_back(CDNSSeedData("blocksuckernation.com", "bwkseed.blocksuckernation.com"));
+	vSeeds.push_back(CDNSSeedData("bwk1.masterhash.us", "bwk1.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk2.masterhash.us", "bwk2.masterhash.us")); 	 // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk3.masterhash.us", "bwk3.masterhash.us"));      // Single node address
+	vSeeds.push_back(CDNSSeedData("bwk4.masterhash.us", "bwk4.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk5.masterhash.us", "bwk5.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk6.masterhash.us", "bwk6.masterhash.us"));      // Single node address
+	vSeeds.push_back(CDNSSeedData("bwk7.masterhash.us", "bwk7.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk8.masterhash.us", "bwk8.masterhash.us"));      // Single node address
+        vSeeds.push_back(CDNSSeedData("bwk9.masterhash.us", "bwk9.masterhash.us"));      // Single node address
+	vSeeds.push_back(CDNSSeedData("bwk10.masterhash.us", "bwk10.masterhash.us"));    // Single node address
+        
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 85); // b
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18); 
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
