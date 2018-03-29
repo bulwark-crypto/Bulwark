@@ -178,7 +178,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>NA</p>
          </td>
          <td>
-            <p>489200</p>
+            <p>489720</p>
          </td>
       </tr>
       <tr>
@@ -195,7 +195,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>NA</p>
          </td>
          <td>
-            <p>513150</p>
+            <p>513695</p>
          </td>
       </tr>
       <tr>
@@ -212,7 +212,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>20%</p>
          </td>
          <td>
-            <p>1953150</p>
+            <p>1905695</p>
          </td>
       </tr>
       <tr>
@@ -229,7 +229,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>25%</p>
          </td>
          <td>
-            <p>3393150</p>
+            <p>3345695</p>
          </td>
       </tr>
       <tr>
@@ -246,7 +246,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>33%</p>
          </td>
          <td>
-            <p>4833150</p>
+            <p>4785695</p>
          </td>
       </tr>
       <tr>
@@ -263,7 +263,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>50%</p>
          </td>
          <td>
-            <p>8613150</p>
+            <p>8565695</p>
          </td>
       </tr>
       <tr>
@@ -280,7 +280,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>50%</p>
          </td>
          <td>
-            <p>11853150</p>
+            <p>11805695</p>
          </td>
       </tr>
       <tr>
@@ -297,7 +297,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>50%</p>
          </td>
          <td>
-            <p>14553150</p>
+            <p>14505695</p>
          </td>
       </tr>
    </tbody>
