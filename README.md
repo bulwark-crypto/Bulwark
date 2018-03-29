@@ -271,7 +271,7 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
             <p>37.500</p>
          </td>
          <td>
-            <p>172801-2 59200</p>
+            <p>172801-259200</p>
          </td>
          <td>
             <p>50%</p>
