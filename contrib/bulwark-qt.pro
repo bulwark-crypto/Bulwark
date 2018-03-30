@@ -62,6 +62,7 @@ HEADERS += src/activemasternode.h \
            src/allocators.h \
            src/amount.h \
            src/base58.h \
+           src/bignum.h \
            src/bloom.h \
            src/chain.h \
            src/chainparams.h \
