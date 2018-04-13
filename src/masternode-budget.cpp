@@ -790,8 +790,9 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
 	if (nHeight > Params().LAST_POW_BLOCK()) {
-        CAmount nSubsidy = 100 * COIN;
-        return ((nSubsidy / 100) * 10) * 960 * 1;
+        	CAmount nSubsidy = 100 * COIN;
+        	return ((nSubsidy / 100) * 10) * 960 * 1;
+	}
     }
 
     //get block value and calculate from that
