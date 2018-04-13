@@ -1627,7 +1627,7 @@ int64_t GetBlockValue(int nHeight)
         // Testnet (New parameters - Feb-2018) -SerfyWerfy
 	if (nHeight < 200) {
 	       return 10000 * COIN;
-	} else if (nHeight <= Params().LAST_POW_BLOCK() && >= 200) {
+	} else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 200) {
 		return 1000 * COIN;
 	} else if (nHeight > Params().LAST_POW_BLOCK()) {
 		return 100 * COIN;
