@@ -1625,8 +1625,13 @@ int64_t GetBlockValue(int nHeight)
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         // Testnet (New parameters - Feb-2018) -SerfyWerfy
-	if (nHeight < 500)
-	       return 100000 * COIN;
+	if (nHeight < 200 && nHeight > 0) {
+	       return 10000 * COIN;
+	} else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 200) {
+		return 1000 * COIN;
+	} else if (nHeight > Params().LAST_POW_BLOCK()) {
+		return 100 * COIN;
+	}
     }
 
     // POW Year 0
@@ -1705,9 +1710,14 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Testnet (New parameters - Feb-2018) -SerfyWerfy
-	if (nHeight < 500)
+        // Testnet (New parameters - April-2018)
+	if (nHeight < 200) {
 	       ret = 0;
+	} else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 200) {
+		ret = blockValue / 4;
+	} else if (nHeight > Params().LAST_POW_BLOCK()) {
+		ret = blockValue / 2;
+	}
     }
 
     if (nHeight < Params().RAMP_TO_BLOCK()) {

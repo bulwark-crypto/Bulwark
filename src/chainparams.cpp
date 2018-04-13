@@ -197,10 +197,10 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0xb5;
-        pchMessageStart[1] = 0xd9;
-        pchMessageStart[2] = 0xf4;
-        pchMessageStart[3] = 0xa0;
+        pchMessageStart[0] = 0xc5;
+        pchMessageStart[1] = 0xd8;
+        pchMessageStart[2] = 0xf3;
+        pchMessageStart[3] = 0xa1;
 
 	vAlertPubKey = ParseHex("04795fde7bfc6347248a901aca81dd6a9f3acdeb5272f1c831f5147b139a4e1bacaa253541d9ebdfba982fb5cc45df3e34a8e98cdce9329037f009af217bc64ed9");
         nDefaultPort = 42133;
@@ -208,7 +208,7 @@ public:
         nTargetTimespan = 1 * 90; // 90 Seconds
         nTargetSpacing = 1 * 90;  // 90 Seconds
 	nTargetSpacingSlowLaunch = 1 * 90; // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
-
+	nRampToBlock = 1;
         nLastPOWBlock = 1000;
         nMaturity = 15;
 	nMaxMoneyOut = 33284220 * COIN; // 2032 Maximum
