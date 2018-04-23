@@ -1624,13 +1624,7 @@ int64_t GetBlockValue(int nHeight)
     CAmount nSlowSubsidy = 50 * COIN;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-	if (nHeight == 0) {
-	       nSubsidy = 100000 * COIN;
-        } else if (nHeight < 200) {
-               nSubsidy = 1000 * COIN;
-        }
-
-        return nSubsidy;
+        return 500 * COIN;
     }
 
     // POW Year 0
@@ -1644,15 +1638,15 @@ int64_t GetBlockValue(int nHeight)
             nSlowSubsidy *= nHeight;
     } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
 	nSubsidy = 50 * COIN;
-    } else if (nHeight <= 172799 && nHeight >= 86400) {
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) {
         nSubsidy = 43.75 * COIN;
-    } else if (nHeight <= 259199 && nHeight >= 172800) {
+    } else if (nHeight <= 259199 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 37.5 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 259200) {
+    } else if (nHeight <= 345599 && nHeight >= 259200) {
         nSubsidy = 31.25 * COIN;
 
     // POS Year 1
-    } else if (nHeight <= 431999 && nHeight > Params().LAST_POW_BLOCK()) {
+    } else if (nHeight <= 431999 && nHeight >= 345600) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518399 && nHeight >= 432000) {
         nSubsidy = 21.875 * COIN;
@@ -1705,9 +1699,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-	if (nHeight < 200) {
-	       return 0;
-        }
+        ret = blockValue / 2;
+        return ret;
     }
 
     if (nHeight < Params().RAMP_TO_BLOCK()) {

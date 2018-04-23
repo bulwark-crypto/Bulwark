@@ -212,7 +212,8 @@ public:
         nLastPOWBlock = 1000;
         nMaturity = 15;
 	nMaxMoneyOut = 33284220 * COIN; // 2032 Maximum
-	
+	nRampToBlock = 100;
+
 	nEnforceBlockUpgradeMajority = 51;
 	nRejectBlockOutdatedMajority = 75;
 	nToCheckBlockUpgradeMajority = 100;
