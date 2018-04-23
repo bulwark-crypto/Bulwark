@@ -1620,13 +1620,17 @@ int64_t GetBlockValue(int nHeight)
      * If we had to do it all over again, this should be 40 rather than 50.
      */
 
-    CAmount nSubsidy = 0;
+    int64_t nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Testnet (New parameters - Feb-2018) -SerfyWerfy
-	if (nHeight < 500)
-	       return 100000 * COIN;
+	if (nHeight == 0) {
+	       nSubsidy = 100000 * COIN;
+        } else if (nHeight < 200) {
+               nSubsidy = 1000 * COIN;
+        }
+
+        return nSubsidy;
     }
 
     // POW Year 0
@@ -1693,11 +1697,7 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 0 * COIN;
     }
 
-    // Make sure we return the correct nSubsidy value -Serfywerfy
-    if (nHeight >= Params().RAMP_TO_BLOCK())
-	return nSubsidy;
-    else
-	return nSlowSubsidy;
+    return nSubsidy > 0 ? nSubsidy : nSlowSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
@@ -1705,9 +1705,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Testnet (New parameters - Feb-2018) -SerfyWerfy
-	if (nHeight < 500)
-	       ret = 0;
+	if (nHeight < 200) {
+	       return 0;
+        }
     }
 
     if (nHeight < Params().RAMP_TO_BLOCK()) {
