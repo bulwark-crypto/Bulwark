@@ -1620,13 +1620,11 @@ int64_t GetBlockValue(int nHeight)
      * If we had to do it all over again, this should be 40 rather than 50.
      */
 
-    CAmount nSubsidy = 0;
+    int64_t nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Testnet (New parameters - Feb-2018) -SerfyWerfy
-	if (nHeight < 500)
-	       return 100000 * COIN;
+        return 500 * COIN;
     }
 
     // POW Year 0
@@ -1640,15 +1638,15 @@ int64_t GetBlockValue(int nHeight)
             nSlowSubsidy *= nHeight;
     } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
 	nSubsidy = 50 * COIN;
-    } else if (nHeight <= 172799 && nHeight >= 86400) {
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) {
         nSubsidy = 43.75 * COIN;
-    } else if (nHeight <= 259199 && nHeight >= 172800) {
+    } else if (nHeight <= 259199 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 37.5 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 259200) {
+    } else if (nHeight <= 345599 && nHeight >= 259200) {
         nSubsidy = 31.25 * COIN;
 
     // POS Year 1
-    } else if (nHeight <= 431999 && nHeight > Params().LAST_POW_BLOCK()) {
+    } else if (nHeight <= 431999 && nHeight >= 345600) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518399 && nHeight >= 432000) {
         nSubsidy = 21.875 * COIN;
@@ -1693,11 +1691,7 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 0 * COIN;
     }
 
-    // Make sure we return the correct nSubsidy value -Serfywerfy
-    if (nHeight >= Params().RAMP_TO_BLOCK())
-	return nSubsidy;
-    else
-	return nSlowSubsidy;
+    return nSubsidy > 0 ? nSubsidy : nSlowSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
@@ -1705,9 +1699,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Testnet (New parameters - Feb-2018) -SerfyWerfy
-	if (nHeight < 500)
-	       ret = 0;
+        ret = blockValue / 2;
+        return ret;
     }
 
     if (nHeight < Params().RAMP_TO_BLOCK()) {
