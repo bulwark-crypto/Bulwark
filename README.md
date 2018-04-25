@@ -44,8 +44,8 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
 
 | Subsidy | Block           | Budget | PoS/Masternode | Note          |
 |---------|-----------------|--------|----------------|---------------|
-| 37.500  | 172801-259200   | 0%     | SeeSaw         | Year 1        |
-| 31.250  | 259201-345600   | 0%     | SeeSaw         | Year 1        |
+| 37.500  | 172801-259200   |  0%     | SeeSaw         | Year 1        |
+| 31.250  | 259201-345600   |  0%     | SeeSaw         | Year 1        |
 | 25.000  | 345601-432000   | 10%    | SeeSaw         | Year 2        |
 | 21.875  | 432001-518400   | 10%    | SeeSaw         | Year 2        |
 | 18.750  | 518401-604800   | 10%    | SeeSaw         | Year 2        |
