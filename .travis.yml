@@ -91,15 +91,15 @@ before_deploy:
 - cd ..
 - git config --local user.name "dustinengle"
 - git config --local user.email "dustin.engle@gmail.com"
-- git tag "bulwark-1.2.4.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-- tar -zvcf bulwark-1.2.4.0-$HOST.tar.gz -C $OUTDIR bin/
+- git tag "bulwark-testnet-1.2.4.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- tar -zvcf bulwark-testnet-1.2.4.0-$HOST.tar.gz -C $OUTDIR bin/
 - echo `pwd`
 deploy:
   provider: releases
   api_key:
     secure: q6ZucAMnA5baIOsTi2uUwF7hHWvjTeuOBv3eRwS8BmeaiHFan9fKwH+Di708fz3FggpHLNJOQmUMrBn8hVEmXTk7LU2ELfD4qJ5G2KcdDKoUlF7xjDUwC9bbZPZogxCIjCd8WuoZWJRQ9U9JU3Y9oxVttbkw+bccRPSydPKsWHckZDGNaOQsZvXu2QrVrznASjQY67UPfi5pEJeeC7BxRBEzCgjYM/YrNn+RdFw8YVi/YYRmfQct+dJnE/0AfD4gi7BB2+o5Xl63K//W3k/Qdq8Z7wRPyLP/sHaTLbzCWzV1FiuJrkQOIxT56Z2jvHPxW97iDs0Sjrq60+bwEwCLcm9Oy2jJWuunA7PQdelPKvS4aC8A3fWjVa5rHgE9wpRWIvqDE7ufvEHZlC1t19i6yTflTSZIX85nJ+QIQBLHESdtPXhD0gerrg+I5EtalObcdAWgk8kqASYvSldaBPWF6LQkwOk4A097svnnaefBVm20FCQUMbio+n6qgr5I8VeqmQNtIXtNspPqED3/+kl9KEGtR7rbK9/S2KMFIeaDnsZ1TsSEPLk0nsjnSR4a3f1z7odNl27do7lOOg2f4uOj92XvnBNubGwd8fceJpXVupntZuBEOAObvvj1S22PuQBKj8EoBDux1r6QO+AJOK/7X+v+Mwae9sCtbSPzPBsqsM0=
   file_glob: true
-  file: bulwark-1.2.4.0-*
+  file: bulwark-testnet-1.2.4.0-*
   skip_cleanup: true
   on:
     repo: dustinengle/Bulwark
