@@ -1704,7 +1704,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        ret = blockValue / 2;
+        // Simulate ramp to block for testnet.
+        // Allow for more coins while mining in wallet.
+        if (nHeight >= Params().RAMP_TO_BLOCK())
+            ret = blockValue / 2;
+        
         return ret;
     }
 
