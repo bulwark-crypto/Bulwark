@@ -205,9 +205,9 @@ public:
 	vAlertPubKey = ParseHex("04795fde7bfc6347248a901aca81dd6a9f3acdeb5272f1c831f5147b139a4e1bacaa253541d9ebdfba982fb5cc45df3e34a8e98cdce9329037f009af217bc64ed9");
         nDefaultPort = 42133;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 90; // 90 Seconds
-        nTargetSpacing = 1 * 90;  // 90 Seconds
-	nTargetSpacingSlowLaunch = 1 * 90; // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
+        nTargetTimespan = 1 * 30; // 30 Seconds
+        nTargetSpacing = 1 * 30;  // 30 Seconds
+	nTargetSpacingSlowLaunch = 1 * 30; // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
 
         nLastPOWBlock = 1000;
         nMaturity = 15;
