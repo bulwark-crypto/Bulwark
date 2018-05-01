@@ -1624,6 +1624,11 @@ int64_t GetBlockValue(int nHeight)
     CAmount nSlowSubsidy = 50 * COIN;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        // Add premine to account for short PoW duration
+        // on testnet and the need for coin maturity for PoS.
+        if (nHeight == 0)
+            return 100000 * COIN;
+        
         return 500 * COIN;
     }
 
