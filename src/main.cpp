@@ -1613,16 +1613,7 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
-
-
-    /* SerfyWerfy-
-     * Since we didn't do masternode payments until after slow start, this caused PoW mining to jump down from a reward of 50 to 40.
-     * If we had to do it all over again, this should be 40 rather than 50.
-     */
-
-    int64_t nSubsidy = 0;
-    CAmount nSlowSubsidy = 50 * COIN;
-
+    // For testnest we will have a static schedule of payment.
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         // Add premine to account for short PoW duration
         // on testnet and the need for coin maturity for PoS.
@@ -1631,6 +1622,13 @@ int64_t GetBlockValue(int nHeight)
         
         return 500 * COIN;
     }
+
+    /* SerfyWerfy-
+     * Since we didn't do masternode payments until after slow start, this caused PoW mining to jump down from a reward of 50 to 40.
+     * If we had to do it all over again, this should be 40 rather than 50.
+     */
+    int64_t nSubsidy = 0;
+    CAmount nSlowSubsidy = 50 * COIN;
 
     // POW Year 0
     if (nHeight == 0) {
@@ -1703,10 +1701,12 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 {
     int64_t ret = 0;
 
+    // Testnet will have a simulated PoS change in rewards.
+    // Simulate ramp to block and last PoW change to PoS.
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        // Simulate ramp to block for testnet.
-        // Allow for more coins while mining in wallet.
-        if (nHeight >= Params().RAMP_TO_BLOCK())
+        if (nHeight > Params().LAST_POW_BLOCK())
+            ret = blockValue - (blockValue * 0.25);
+        else if (nHeight >= Params().RAMP_TO_BLOCK())
             ret = blockValue / 2;
         
         return ret;
