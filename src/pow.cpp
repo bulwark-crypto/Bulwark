@@ -31,7 +31,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         return Params().ProofOfWorkLimit().GetCompact();
     }
 
-    if (pindexLast->nHeight > Params().LAST_POW_BLOCK()) {
+    if (pindexLast->nHeight >= Params().LAST_POW_BLOCK()) {
         uint256 bnTargetLimit = (~uint256(0) >> 24);
         int64_t nTargetSpacing = 90;
         int64_t nTargetTimespan = 60 * 30; //1800
@@ -108,14 +108,6 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 	
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
 {
-    // If running testnet then set to minimum
-    // difficulty for PoS.
-    if (Params().NetworkID() == CBaseChainParams::TESTNET 
-        && pindexLast->nHeight >= Params().LAST_POW_BLOCK()) {
-            uint256 targetLimit = (~uint256(0) >> 12);
-            return targetLimit.GetCompact();
-    }
-
 	return DarkGravityWave(pindexLast);
 }
 
