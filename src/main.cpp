@@ -1887,7 +1887,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight > Params().LAST_POW_BLOCK()) {
             // if a mn count is inserted into the function we are looking for a 
             // specific result for a masternode count.
-            if (nMasternodeCount < 1){
+            if (nMasternodeCount < 1) {
                 if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
                     nMasternodeCount = mnodeman.stable_size();
                 else
@@ -1919,7 +1919,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     } else if (nHeight > Params().LAST_POW_BLOCK()) {
         // if a mn count is inserted into the function we are looking for a 
         // specific result for a masternode count.
-        if (nMasternodeCount < 1){
+        if (nMasternodeCount < 1) {
             if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
                 nMasternodeCount = mnodeman.stable_size();
             else
