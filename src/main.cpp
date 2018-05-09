@@ -1875,6 +1875,12 @@ int64_t GetSeeSawReward(int64_t blockValue, int64_t nMoneySupply, int64_t mNodeC
         ret = blockValue * .01;
     }
 
+    // [oldschool] TODO: remove
+    std::cout << "blockValue: " << blockValue << std::endl;
+    std::cout << "nMoneySupply: " << nMoneySupply << std::endl;
+    std::cout << "mNodeCoins: " << mNodeCoins << std::endl;
+    std::cout << "ret: " << ret << std::endl;
+
     return ret;
 }
 
