@@ -1915,7 +1915,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
             // [oldschool] TODO: GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
-            ret = GetSplitReward(blockValue, nMoneySupply, mNodeCoins);
+            ret = GetSplitReward(blockValue);
         } else if (nHeight >= Params().RAMP_TO_BLOCK()) {
             ret = blockValue / 2;
         }
