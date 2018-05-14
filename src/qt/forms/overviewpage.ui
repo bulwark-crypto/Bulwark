@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>OverviewPage</class>
  <widget class="QWidget" name="OverviewPage">
@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>960</width>
-    <height>620</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -21,22 +21,22 @@
   </property>
   <layout class="QVBoxLayout" name="topLayout">
    <item>
-    <widget class="QLabel" name="labelAlerts">
-     <property name="visible">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop:0 #F0D0A0, stop:1 #F8D488); color:#000000;</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-     <property name="margin">
-      <number>3</number>
-     </property>
-    </widget>
-   </item>
-   <item>
+    <widget class="QLabel" name="labelAlerts"> 
+     <property name="visible"> 
+      <bool>false</bool> 
+     </property> 
+     <property name="styleSheet"> 
+      <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop:0 #F0D0A0, stop:1 #F8D488); color:#000000;</string> 
+     </property> 
+     <property name="wordWrap"> 
+      <bool>true</bool> 
+     </property> 
+     <property name="margin"> 
+      <number>3</number> 
+     </property> 
+    </widget> 
+   </item> 
+   <item> 
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -44,7 +44,7 @@
         <number>6</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame">
+        <widget class="QFrame" name="frame_Balances">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -55,11 +55,15 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
-             <widget class="QLabel" name="label_5">
+             <widget class="QLabel" name="BalanceTitle">
               <property name="font">
                <font>
+                <pointsize>15</pointsize>
                 <weight>75</weight>
+                <italic>false</italic>
                 <bold>true</bold>
+                <underline>false</underline>
+                <stylestrategy>PreferDefault</stylestrategy>
                </font>
               </property>
               <property name="text">
@@ -107,13 +111,18 @@
              <number>0</number>
             </property>
             <property name="horizontalSpacing">
-             <number>53</number>
+             <number>38</number>
             </property>
             <property name="verticalSpacing">
              <number>20</number>
             </property>
             <item row="3" column="0">
              <widget class="QLabel" name="labelImmatureText">
+              <property name="font">
+               <font>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Immature:</string>
               </property>
@@ -121,6 +130,9 @@
             </item>
             <item row="4" column="2">
              <widget class="Line" name="lineWatchBalance">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -149,6 +161,9 @@
             </item>
             <item row="3" column="2">
              <widget class="QLabel" name="labelWatchImmature">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -199,6 +214,9 @@
             </item>
             <item row="2" column="2">
              <widget class="QLabel" name="labelWatchPending">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -224,6 +242,11 @@
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="labelPendingText">
+              <property name="font">
+               <font>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Pending:</string>
               </property>
@@ -306,6 +329,11 @@
             </item>
             <item row="5" column="0">
              <widget class="QLabel" name="labelTotalText">
+              <property name="font">
+               <font>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Total:</string>
               </property>
@@ -313,6 +341,9 @@
             </item>
             <item row="0" column="2">
              <widget class="QLabel" name="labelWatchonly">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>Watch-only:</string>
               </property>
@@ -323,6 +354,9 @@
             </item>
             <item row="5" column="2">
              <widget class="QLabel" name="labelWatchTotal">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -358,6 +392,11 @@
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="labelBalanceText">
+              <property name="font">
+               <font>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Available:</string>
               </property>
@@ -365,6 +404,9 @@
             </item>
             <item row="1" column="2">
              <widget class="QLabel" name="labelWatchAvailable">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -462,9 +504,9 @@
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>40</y>
+            <y>50</y>
             <width>441</width>
-            <height>131</height>
+            <height>123</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -516,6 +558,9 @@
              </property>
              <property name="value">
               <number>0</number>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
              <property name="invertedAppearance">
               <bool>false</bool>
@@ -1135,7 +1180,7 @@
             <x>10</x>
             <y>10</y>
             <width>441</width>
-            <height>22</height>
+            <height>26</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -1143,9 +1188,10 @@
             <number>5</number>
            </property>
            <item>
-            <widget class="QLabel" name="label_2">
+            <widget class="QLabel" name="ObfuscationTitle">
              <property name="font">
               <font>
+               <pointsize>15</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
@@ -1157,6 +1203,14 @@
            </item>
            <item>
             <widget class="QLabel" name="labelObfuscationSyncStatus">
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
              <property name="toolTip">
               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</string>
              </property>
@@ -1178,7 +1232,7 @@
            <rect>
             <x>10</x>
             <y>180</y>
-            <width>101</width>
+            <width>441</width>
             <height>16</height>
            </rect>
           </property>
@@ -1218,7 +1272,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QFrame" name="frame_2">
+        <widget class="QFrame" name="frame_RecentTransactions">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -1229,7 +1283,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="RecentTitle">
               <property name="font">
                <font>
                 <weight>75</weight>
