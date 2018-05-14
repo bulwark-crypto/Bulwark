@@ -799,7 +799,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
         }
     }
 
-    if (nHeight <= 432000 && nHeight > Params().LAST_POW_BLOCK()) {
+    if (nHeight <= 432000 && nHeight >= Params().LAST_POW_BLOCK_OLD()) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518400 && nHeight > 432000) {
         nSubsidy = 21.875 * COIN;
