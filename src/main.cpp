@@ -1632,9 +1632,9 @@ int64_t GetBlockValue(int nHeight)
 
     // [oldschool] TODO: check for accuracy and coin supply changes.
     // Change PoS starting block height according to spork.
-    int lastPOWBlock = Params().LAST_POW_BLOCK();
+    int nLastPOWBlock = Params().LAST_POW_BLOCK();
     if (IsSporkActive(SPORK_19_POW_ROLLBACK))
-        lastPOWBlock = Params().LAST_POW_BLOCK_OLD();
+        nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
 
     // POW Year 0
     if (nHeight == 0) {
@@ -1647,9 +1647,9 @@ int64_t GetBlockValue(int nHeight)
         nSlowSubsidy *= nHeight;
     } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
 	    nSubsidy = 50 * COIN;
-    } else if (nHeight <= lastPOWBlock && nHeight >= 86400) { 
+    } else if (nHeight <= nLastPOWBlock && nHeight >= 86400) { 
         nSubsidy = 43.75 * COIN;
-    } else if (nHeight <= 259199 && nHeight > lastPOWBlock) { // PoS Start 187200
+    } else if (nHeight <= 259199 && nHeight > nLastPOWBlock) { // PoS Start 187200
         nSubsidy = 37.5 * COIN;
     } else if (nHeight <= 345599 && nHeight >= 259200) {
         nSubsidy = 31.25 * COIN;
@@ -1905,9 +1905,13 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 {
     int64_t ret = 0;
 
+    int nLastPOWBlock = Params().LAST_POW_BLOCK();
+    if (IsSporkActive(SPORK_19_POW_ROLLBACK))
+        nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
+
     // Testnet
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight > Params().LAST_POW_BLOCK()) {
+        if (nHeight > nLastPOWBlock) {
             // if a mn count is inserted into the function we are looking for a 
             // specific result for a masternode count.
             if (nMasternodeCount < 1) {
@@ -1938,9 +1942,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	    ret = blockValue / 4;
     } else if (nHeight <= 86399 && nHeight >= 57600) {
 	    ret = blockValue / 3;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) {
+    } else if (nHeight <= nLastPOWBlock && nHeight >= 86400) {
 	    ret = blockValue / 2;
-    } else if (nHeight > Params().LAST_POW_BLOCK()) {
+    } else if (nHeight > nLastPOWBlock) {
         // if a mn count is inserted into the function we are looking for a 
         // specific result for a masternode count.
         if (nMasternodeCount < 1) {
@@ -5666,7 +5670,7 @@ int ActiveProtocol()
     if (IsSporkActive(SPORK_19_POW_ROLLBACK))
         return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 
-    if (IsSportActive(SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4))
+    if (IsSporkActive(SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4))
         return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT18;
 	
     if (IsSporkActive(SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3))
