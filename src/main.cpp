@@ -1641,9 +1641,9 @@ int64_t GetBlockValue(int nHeight)
         nSlowSubsidy *= nHeight;
     } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
 	    nSubsidy = 50 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) {
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) { 
         nSubsidy = 43.75 * COIN;
-    } else if (nHeight <= 259199 && nHeight > Params().LAST_POW_BLOCK()) {
+    } else if (nHeight <= 259199 && nHeight > Params().LAST_POW_BLOCK()) { // PoS Start 187200
         nSubsidy = 37.5 * COIN;
     } else if (nHeight <= 345599 && nHeight >= 259200) {
         nSubsidy = 31.25 * COIN;

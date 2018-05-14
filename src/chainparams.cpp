@@ -112,7 +112,7 @@ public:
         nTargetTimespan = 1 * 90; // Bulwark: 1.5 minutes
         nTargetSpacingSlowLaunch = 5 * 90;  // Bulwark: 7.5 minutes (Slow launch - Block 300)
 	nTargetSpacing = 1 * 90; // Bulwark: 1.5min after block 300
-        nLastPOWBlock = 345600; // 1 Year
+        nLastPOWBlock = 187200; // was 345600 @ 1 Year
 	nRampToBlock = 960; // Slow start, ramp linearly to this block
         nMaturity = 66; // 99 Minutes
 	nMasternodeCountDrift = 4;
