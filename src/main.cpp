@@ -1630,6 +1630,12 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
 
+    // [oldschool] TODO: check for accuracy and coin supply changes.
+    // Change PoS starting block height according to spork.
+    int lastPOWBlock = Params().LAST_POW_BLOCK();
+    if (IsSporkActive(SPORK_19_POW_ROLLBACK))
+        lastPOWBlock = Params().LAST_POW_BLOCK_OLD();
+
     // POW Year 0
     if (nHeight == 0) {
         nSubsidy = 489720.00 * COIN;
@@ -1641,14 +1647,15 @@ int64_t GetBlockValue(int nHeight)
         nSlowSubsidy *= nHeight;
     } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
 	    nSubsidy = 50 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 86400) {
+    } else if (nHeight <= lastPOWBlock && nHeight >= 86400) { 
         nSubsidy = 43.75 * COIN;
-    } else if (nHeight <= 259199 && nHeight > Params().LAST_POW_BLOCK()) {
+    } else if (nHeight <= 259199 && nHeight > lastPOWBlock) { // PoS Start 187200
         nSubsidy = 37.5 * COIN;
     } else if (nHeight <= 345599 && nHeight >= 259200) {
         nSubsidy = 31.25 * COIN;
 
     // POS Year 1
+    // [oldschool] TODO: check reward schedule for change with PoS move.
     } else if (nHeight <= 431999 && nHeight >= 345600) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518399 && nHeight >= 432000) {
@@ -1884,6 +1891,16 @@ int64_t GetSeeSawReward(int64_t blockValue, int64_t nMoneySupply, int64_t mNodeC
     return ret;
 }
 
+int64_t GetSplitReward(int64_t blockValue) {
+    int64_t ret = blockValue * 0.6;
+
+    // [oldschool] TODO: remove
+    std::cout << "blockValue: " << blockValue << std::endl;
+    std::cout << "ret: " << ret << std::endl;
+
+    return ret;
+}
+
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
 {
     int64_t ret = 0;
@@ -1903,7 +1920,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             int64_t mNodeCoins = nMasternodeCount * 5000 * COIN;
             int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
-            ret = GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+            // [oldschool] TODO: GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+            ret = GetSplitReward(blockValue);
         } else if (nHeight >= Params().RAMP_TO_BLOCK()) {
             ret = blockValue / 2;
         }
@@ -1944,7 +1962,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             );
         }
 
-        ret = GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+        // [oldschool] TODO: GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+        ret = GetSplitReward(blockValue);
     }
 
     return ret;
@@ -5644,27 +5663,11 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 
 int ActiveProtocol()
 {
+    if (IsSporkActive(SPORK_19_POW_ROLLBACK))
+        return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 
-    // SPORK_14 was used for 70710. Leave it 'ON' so they don't see < 70710 nodes. They won't react to SPORK_15
-    // messages because it's not in their code
-/*
-    if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT)) {
-        if (chainActive.Tip()->nHeight >= Params().ModifierUpgradeBlock())
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
-    }
-
-    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
-*/
-
-    // SPORK_15 is used for 70910. Nodes < 70910 don't see it and still get their protocol version via SPORK_14 and their 
-    // own ModifierUpgradeBlock()
-	
-/*   if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-           return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;  
-*/
- 
-    // SPORK_17 is used for 70920. Nodes < 70920 don't see it and still get their protocol version via SPORK_15 and their 
-    // own ModifierUpgradeBlock()
+    if (IsSportActive(SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4))
+        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT18;
 	
     if (IsSporkActive(SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3))
         return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT17;
