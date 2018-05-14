@@ -1884,6 +1884,16 @@ int64_t GetSeeSawReward(int64_t blockValue, int64_t nMoneySupply, int64_t mNodeC
     return ret;
 }
 
+int64_t GetSplitReward(int64_t blockValue) {
+    int64_t ret = blockValue * 0.6;
+
+    // [oldschool] TODO: remove
+    std::cout << "blockValue: " << blockValue << std::endl;
+    std::cout << "ret: " << ret << std::endl;
+
+    return ret;
+}
+
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
 {
     int64_t ret = 0;
@@ -1944,7 +1954,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             );
         }
 
-        ret = GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+        // [oldschool] TODO: GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+        ret = GetSplitReward(blockValue);
     }
 
     return ret;
