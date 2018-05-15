@@ -1630,12 +1630,6 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
 
-    // [oldschool] TODO: check for accuracy and coin supply changes.
-    // Change PoS starting block height according to spork.
-    int nLastPOWBlock = Params().LAST_POW_BLOCK();
-    if (IsSporkActive(SPORK_19_POW_ROLLBACK))
-        nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
-
     // POW Year 0
     if (nHeight == 0) {
         nSubsidy = 489720.00 * COIN;
@@ -1647,9 +1641,9 @@ int64_t GetBlockValue(int nHeight)
         nSlowSubsidy *= nHeight;
     } else if (nHeight <= 86399 && nHeight >= Params().RAMP_TO_BLOCK()) {
 	    nSubsidy = 50 * COIN;
-    } else if (nHeight <= nLastPOWBlock && nHeight >= 86400) { 
+    } else if (nHeight <= Params().LAST_POW_BLOCK_OLD() && nHeight >= 86400) { // Keep reward schedule.
         nSubsidy = 43.75 * COIN;
-    } else if (nHeight <= 259199 && nHeight > nLastPOWBlock) { // PoS Start 187200
+    } else if (nHeight <= 259199 && nHeight > Params().LAST_POW_BLOCK_OLD()) {
         nSubsidy = 37.5 * COIN;
     } else if (nHeight <= 345599 && nHeight >= 259200) {
         nSubsidy = 31.25 * COIN;
