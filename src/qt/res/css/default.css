@@ -21,7 +21,8 @@ QMenuBar::item:selected {
 	background-color: #fafefd
 }
 QMenu {
-	background-color: #fafefd
+	background-color: #fafefd;
+	font-family: 'Source Sans Pro'
 }
 QMenu::item {
 	color: #333
@@ -721,7 +722,8 @@ QWidget .QFrame#frame_Balances .QLabel#BalanceTitle {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	min-width: 160px;
 	background-color: transparent;
-	font-weight: 700;
+	font-weight: bold;
+	font-family: 'Source Sans Pro';
 	font-size: 15px;
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWalletStatus {
