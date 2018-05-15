@@ -15,8 +15,7 @@ QMenuBar {
 	background-color: #fff
 }
 QMenuBar::item {
-	background-color: #fff;
-	color: #333
+	background-color: #fff
 }
 QMenuBar::item:selected {
 	background-color: #fafefd
@@ -67,7 +66,6 @@ QMessageBox {
 	background-color: #fff
 }
 QProgressBar {
-	color: #AAAAAA;
 	border: 1px solid grey;
 	border-radius: 5px;
 	background-color: transparent;
@@ -177,9 +175,10 @@ QPushButton:focus {} QPushButton:pressed {
 	border: 1px solid #000000;
 	background-color: #b3cce6
 }
-QPushButton#labelEncryptionIcon,
-QPushButton#labelConnectionsIcon,
-QPushButton#labelAutoMintIcon {
+QLabel#labelEncryptionIcon,
+QLabel#labelConnectionsIcon,
+QLabel#labelBlocksIcon,
+QPushButton#labelAutoMintIcon{
 	border: 0px;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -329,6 +328,10 @@ QHeaderView::section:last {
 .QTableView {
 	background: transparent;
 	border: 1px solid #333
+}
+QDialog#MultiSendDialog QScrollArea{
+	border: 1px solid #0;
+	background-color: #ffffff	
 }
 QTableView::item {
 	background-color: #fcfcfc;
@@ -541,23 +544,14 @@ QWidget#AddressBookPage QTableView {
 QWidget#AddressBookPage QHeaderView::section {
 	min-width: 260px
 }
-.QFrame#frameObfuscation QFrame {
+QFrame#frameObfuscation {
 	background-color: transparent;
 	border: 0px solid #000
 }
-QWidget#PrivacyDialog QFrame#labelMintStatus {
-	background-color: #eee;
-	border: 1px inset gray
-}
-QWidget#PrivacyDialog QLabel {
+QFrame#frameObfuscation QFormLayout#obfuscationStatusLayout QLabel {
 	border: 0px solid #000
 }
-QWidget#PrivacyDialog QLabel#oDTEMLabel {
-	font-size: 14px;
-	color: #ffffff;
-	background-color: #5787bb
-}
-QWidget#PrivacyDialog QPushButton {
+QFrame#frameObfuscation QPushButton {
 	font-size: 12px;
 	font-weight: 400;
 	padding-left: 5px;
@@ -567,16 +561,18 @@ QWidget#PrivacyDialog QPushButton {
 	height: 26px;
 	margin: 2px
 }
-QWidget#PrivacyDialog QProgressBar#obfuscationProgress {
-	border: 1px solid #818181;
-	border-radius: 1px;
-	color: #818181
+QFrame#frameObfuscation QProgressBar#obfuscationProgress {
+	border: 1px solid grey;
+	border-radius: 5px;
+	background-color: transparent;
+	padding-left: 0px;
+	padding-right: 0px
 }
-QWidget#PrivacyDialog QProgressBar#obfuscationProgress::chunk {
+QFrame#frameObfuscation QProgressBar#obfuscationProgress::chunk {
 	background-color: #5787bb;
 	width: 1px
 }
-QWidget#PrivacyDialog QProgressBar#progressBarLabel {
+QFrame#frameObfuscation QLabel#progressBarLabel {
 	qproperty-alignment: AlignCenter;
 }
 QDialog#AskPassphraseDialog QLabel#passLabel1,
@@ -725,7 +721,6 @@ QWidget .QFrame#frame_Balances .QLabel#BalanceTitle {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	min-width: 160px;
 	background-color: transparent;
-	color: #5787bb;
 	font-weight: 700;
 	font-size: 15px;
 }
@@ -745,18 +740,14 @@ QWidget .QFrame#frame_Balances .QLabel#labelWatchonly {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelBalanceText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	min-width: 160px;
-	color: #324e6b;
 	margin-right: 5px;
 	padding-right: 5px;
-	font-weight: 700;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelBalance {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	font-size: 12px;
 	font-weight: 700;
-	color: #5787bb;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchAvailable {
@@ -766,18 +757,14 @@ QWidget .QFrame#frame_Balances .QLabel#labelWatchAvailable {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelPendingText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	min-width: 160px;
-	color: #324e6b;
 	margin-right: 5px;
 	padding-right: 5px;
-	font-weight: 700;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelUnconfirmed {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	font-size: 12px;
 	font-weight: 700;
-	color: #5787bb;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchPending {
@@ -787,18 +774,14 @@ QWidget .QFrame#frame_Balances .QLabel#labelWatchPending {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelImmatureText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	min-width: 160px;
-	color: #324e6b;
 	margin-right: 5px;
 	padding-right: 5px;
-	font-weight: 700;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelImmature {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	font-size: 12px;
 	font-weight: 700;
-	color: #5787bb;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchImmature {
@@ -808,18 +791,14 @@ QWidget .QFrame#frame_Balances .QLabel#labelWatchImmature {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelTotalText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	min-width: 160px;
-	color: #324e6b;
 	margin-right: 5px;
 	padding-right: 5px;
-	font-weight: 700;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelTotal {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	font-size: 12px;
 	font-weight: 700;
-	color: #5787bb;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchTotal {
@@ -833,7 +812,7 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#BalanceTitlez {
 	background-color: transparent;
 	color: #5787bb;
 	font-weight: 700;
-	font-size: 14px;
+	font-size: 15px;
 	margin-right: 5px;
 	padding-right: 5px
 }
@@ -877,9 +856,8 @@ QWidget .QFrame#frame_RecentTransactions .QLabel#RecentTitle {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	min-width: 180px;
 	background-color: transparent;
-	color: #5787bb;
 	font-weight: 700;
-	font-size: 14px;
+	font-size: 15px;
 	margin-right: 5px;
 	padding-right: 5px
 }
@@ -965,6 +943,10 @@ QStackedWidget#SendCoinsEntry .QFrame#SendCoins > .QLabel {
 	min-height: 25px;
 	margin-right: 5px;
 	padding-right: 5px
+}
+QStackedWidget#SendCoinsEntry QToolButton {
+	background-color: transparent;
+	border: 0
 }
 QDialog#CoinControlDialog .QLabel#labelCoinControlQuantityText {
 	min-height: 30px;
@@ -1149,6 +1131,10 @@ QCalendarWidget QAbstractItemView:enabled {
 QCalendarWidget QAbstractItemView:disabled {
 	color: #818181
 }
-QWidget#PrivacyDialog .QLabel#ObfuscationTitle {
+QWidget#frameObfuscation QLabel#ObfuscationTitle {
 	font-size: 15px;
+	qproperty-alignment: 'AlignVCenter | AlignLeft';
+	min-width: 160px;
+	background-color: transparent;
+	font-weight: 700
 }
