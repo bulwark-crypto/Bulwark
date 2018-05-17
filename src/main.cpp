@@ -2380,11 +2380,17 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         return true;
     }
 
-    if (pindex->nHeight <= Params().LAST_POW_BLOCK() && block.IsProofOfStake())
+    // If the Pow rollback spork is active then 
+    // need to change PoW height.
+    int nLastPOWBlock = Params().LAST_POW_BLOCK();
+    if (IsSporkActive(SPORK_19_POW_ROLLBACK))
+        nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
+
+    if (pindex->nHeight <= nLastPOWBlock && block.IsProofOfStake())
         return state.DoS(100, error("ConnectBlock() : PoS period not active"),
             REJECT_INVALID, "PoS-early");
 
-    if (pindex->nHeight > Params().LAST_POW_BLOCK() && block.IsProofOfWork())
+    if (pindex->nHeight > nLastPOWBlock && block.IsProofOfWork())
         return state.DoS(100, error("ConnectBlock() : PoW period ended"),
             REJECT_INVALID, "PoW-ended");
 
