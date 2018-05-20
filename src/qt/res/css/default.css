@@ -35,16 +35,21 @@ QToolBar {
 	border: 0px solid #333;
 	padding: 1;
 	margin: 0;
-	width: 70px
+	width: 90px
 }
 QToolBar > QToolButton {
+	alignment: left;
 	background-color: #1565c0;
 	border: 0px solid #333;
-	selection-background-color: transparent;
-	padding: 0em 2em;
-	min-height: 3em;
-	padding: 0em 3.566668em;
-	font-size: 12px;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	min-height:3em;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size: 11px;
+	width: 120px;
+	height: 60px;
 	color: #fff
 }
 QToolBar > QToolButton:checked {
