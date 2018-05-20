@@ -671,68 +671,72 @@ QWidget .QFrame#frame_Balances .QLabel#labelBalanceText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	margin-right: 5px;
 	padding-right: 5px;
+	margin-bottom:-5px;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelBalance {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
-	font-weight: 700;
+	font-size: 25px;
+	font-weight: 400;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchAvailable {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
+	font-size: 25px;
 	margin-left: 16px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelPendingText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	margin-right: 5px;
 	padding-right: 5px;
+	margin-bottom:-5px;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelUnconfirmed {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
-	font-weight: 700;
+	font-size: 25px;
+	font-weight: 400;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchPending {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
+	font-size: 25px;
 	margin-left: 16px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelImmatureText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	margin-right: 5px;
 	padding-right: 5px;
+	margin-bottom:-5px;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelImmature {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
-	font-weight: 700;
+	font-size: 25px;
+	font-weight: 400;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchImmature {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
+	font-size: 25px;
 	margin-left: 16px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelTotalText {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	margin-right: 5px;
 	padding-right: 5px;
+	margin-bottom:-5px;
 	font-size: 15px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelTotal {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
-	font-weight: 700;
+	font-size: 25px;
+	font-weight: 400;
 	margin-left: 0px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchTotal {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
-	font-size: 12px;
+	font-size: 25px;
 	margin-left: 16px
 }
 QWidget .QFrame#frame_CombinedBalances .QLabel#BalanceTitlez {
@@ -750,6 +754,7 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz {
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
 	min-width: 160px;
 	color: #003c8f;
+	margin-bottom:-5px;
 	margin-right: 5px;
 	padding-right: 5px;
 	font-weight: 700;
@@ -767,6 +772,7 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#labelTotalTextz {
 	color: #003c8f;
 	margin-right: 5px;
 	padding-right: 5px;
+	margin-bottom:-5px;
 	font-weight: 700;
 	font-size: 12px
 }
@@ -797,12 +803,14 @@ QWidget .QFrame#frame_RecentTransactions .QLabel#labelTransactionsStatus {
 	margin-left: 3px
 }
 QWidget .QFrame#frame_RecentTransactions QListView {
+	background-color: transparent;
 	font-weight: 400;
 	font-size: 12px;
 	max-width: 369px;
 	margin-top: 12px;
 	margin-left: 0px;
 }
+
 QDialog#SendCoinsDialog {
 	background-color: #fff
 }
