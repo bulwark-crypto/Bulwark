@@ -159,12 +159,12 @@ QPlainTextEdit {
 	background-color: #f2f2f2
 }
 QPushButton {
-	background-color: #1565c0;
+	background-color: transparent;
 	border-width: 1px;
-	border-style: outset;
+	border-style: solid;
 	border-color: #1565c0;
-	border-radius: 2px;
-	color: #ffffff;
+	border-radius: 4px;
+	color: #1565c0;
 	font-size: 12px;
 	font-weight: 700;
 	padding-left: 25px;
@@ -175,7 +175,7 @@ QPushButton {
 	margin: 2px
 }
 QPushButton:hover {
-	background-color: #5e92f3
+	background-color: #e4e4e4
 }
 QPushButton:focus {} QPushButton:pressed {
 	background-color: #1565c0;
@@ -1000,6 +1000,12 @@ QWidget#ReceiveCoinsDialog .QFrame#frame2 > .QLabel {
 	padding-right: 5px
 }
 QWidget#ReceiveCoinsDialog .QFrame#frame QPushButton {
+	background-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #1565c0;
+	border-radius: 4px;
+	color: #1565c0;
 	padding-left: 10px;
 	padding-right: 10px
 }
