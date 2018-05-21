@@ -81,7 +81,7 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
 #else
     typeWidget->setFixedWidth(TYPE_COLUMN_WIDTH);
 #endif
-
+    typeWidget->setWindowFlags( Qt::NoDropShadowWindowHint );
     typeWidget->addItem(tr("All"), TransactionFilterProxy::ALL_TYPES);
     typeWidget->addItem(tr("Most Common"), TransactionFilterProxy::COMMON_TYPES);
     typeWidget->addItem(tr("Received with"), TransactionFilterProxy::TYPE(TransactionRecord::RecvWithAddress) | TransactionFilterProxy::TYPE(TransactionRecord::RecvFromOther));
