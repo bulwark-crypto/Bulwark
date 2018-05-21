@@ -111,8 +111,9 @@ QGroupBox {
 	color: #333
 }
 QToolTip {
-	background-color: #1565c0;
-	color: #333
+	background-color: #f2f2f2;
+	color: #333;
+	border: 1px solid #333;
 }
 QLabel {
 	font-size: 12px;
