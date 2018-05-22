@@ -24,10 +24,11 @@
 #include <QPainter>
 #include <QSettings>
 #include <QTimer>
+#include <QFontDatabase>
 
 #define DECORATION_SIZE 48
 #define ICON_OFFSET 16
-#define NUM_ITEMS 5
+#define NUM_ITEMS 10
 
 class TxViewDelegate : public QAbstractItemDelegate
 {
@@ -117,7 +118,6 @@ OverviewPage::OverviewPage(QWidget* parent) : QWidget(parent),
 {
     nDisplayUnit = 0; // just make sure it's not unitialized
     ui->setupUi(this);
-
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);
     ui->listTransactions->setIconSize(QSize(DECORATION_SIZE, DECORATION_SIZE));
@@ -211,12 +211,24 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     }
 }
 
+void OverviewPage::on_toggleStaking_clicked()
+{
+	if (walletModel->getEncryptionStatus() == WalletModel::Locked) {
+		WalletModel::UnlockContext ctx(walletModel->requestUnlock(false));
+	}
+	else {
+		QMessageBox::information(this, tr("Staking"),
+			tr("Staking is already enabled"),
+			QMessageBox::Ok, QMessageBox::Ok);
+	}
+}
+
 // show/hide watch-only labels
 void OverviewPage::updateWatchOnlyLabels(bool showWatchOnly)
 {
     ui->labelSpendable->setVisible(showWatchOnly);      // show spendable label (only when watch-only is active)
     ui->labelWatchonly->setVisible(showWatchOnly);      // show watch-only label
-    ui->lineWatchBalance->setVisible(showWatchOnly);    // show watch-only balance separator line
+    ui->lineWatchOnlyBalance->setVisible(showWatchOnly);    // show watch-only balance separator line
     ui->labelWatchAvailable->setVisible(showWatchOnly); // show watch-only available balance
     ui->labelWatchPending->setVisible(showWatchOnly);   // show watch-only pending balance
     ui->labelWatchTotal->setVisible(showWatchOnly);     // show watch-only total balance
