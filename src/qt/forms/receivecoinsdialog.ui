@@ -138,7 +138,7 @@
              </size>
             </property>
             <property name="text">
-             <string>&amp;Generate Address</string>
+             <string>&amp;Request payment</string>
             </property>
             <property name="icon">
              <iconset resource="../bulwark.qrc">

@@ -200,7 +200,7 @@ public:
     int nStakeSetUpdateTime;
 
     //MultiSend
-	std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend;
+    std::vector<std::pair<std::string, int> > vMultiSend;
     bool fMultiSendStake;
     bool fMultiSendMasternodeReward;
     bool fMultiSendNotify;
@@ -419,8 +419,6 @@ public:
     bool ConvertList(std::vector<CTxIn> vCoins, std::vector<int64_t>& vecAmounts);
     bool CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, unsigned int& nTxNewTime);
     bool MultiSend();
-	bool isMSAddressEnabled(std::string address);
-	int indexOfMSAddress(std::string address);
     void AutoCombineDust();
 
     static CFeeRate minTxFee;

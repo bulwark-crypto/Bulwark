@@ -167,26 +167,30 @@ bool CWalletDB::WriteStakeSplitThreshold(uint64_t nStakeSplitThreshold)
 }
 
 //presstab HyperStake
-bool CWalletDB::WriteMultiSend(std::vector<std::pair<std::string,std::vector<std::pair<std::string, int>>>> vMultiSend)
+bool CWalletDB::WriteMultiSend(std::vector<std::pair<std::string, int> > vMultiSend)
 {
     nWalletDBUpdated++;
     bool ret = true;
-	for (unsigned int i = 0; i < vMultiSend.size(); i++) {
-		if (!Write(std::make_pair(std::string("multisendv2"),i), vMultiSend[i], true))
-			ret = false;
-	}
-	return ret;
+    for (unsigned int i = 0; i < vMultiSend.size(); i++) {
+        std::pair<std::string, int> pMultiSend;
+        pMultiSend = vMultiSend[i];
+        if (!Write(std::make_pair(std::string("multisend"), i), pMultiSend, true))
+            ret = false;
+    }
+    return ret;
 }
 //presstab HyperStake
-bool CWalletDB::EraseMultiSend(std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend)
+bool CWalletDB::EraseMultiSend(std::vector<std::pair<std::string, int> > vMultiSend)
 {
-	nWalletDBUpdated++;
-	bool ret = true;
-	for (unsigned int i = 0; i < vMultiSend.size(); i++) {
-		if (!Erase(std::make_pair(std::string("multisendv2"), i)))
-			ret = false;
-	}
-	return ret;
+    nWalletDBUpdated++;
+    bool ret = true;
+    for (unsigned int i = 0; i < vMultiSend.size(); i++) {
+        std::pair<std::string, int> pMultiSend;
+        pMultiSend = vMultiSend[i];
+        if (!Erase(std::make_pair(std::string("multisend"), i)))
+            ret = false;
+    }
+    return ret;
 }
 //presstab HyperStake
 bool CWalletDB::WriteMSettings(bool fMultiSendStake, bool fMultiSendMasternode, int nLastMultiSendHeight)
@@ -618,13 +622,15 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
         } else if (strType == "stakeSplitThreshold") //presstab HyperStake
         {
             ssValue >> pwallet->nStakeSplitThreshold;
-        } else if (strType == "multisendv2") //presstab HyperStake
+        } else if (strType == "multisend") //presstab HyperStake
         {
             unsigned int i;
             ssKey >> i;
-			std::pair<std::string, std::vector<std::pair<std::string, int>>> pMultiSend;
+            std::pair<std::string, int> pMultiSend;
             ssValue >> pMultiSend;
-			pwallet->vMultiSend.push_back(pMultiSend);
+            if (CBitcoinAddress(pMultiSend.first).IsValid()) {
+                pwallet->vMultiSend.push_back(pMultiSend);
+            }
         } else if (strType == "msettingsv2") //presstab HyperStake
         {
             std::pair<std::pair<bool, bool>, int> pSettings;
