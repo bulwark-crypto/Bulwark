@@ -7,9 +7,6 @@ WalletFrame {
 QStatusBar {
 	background-color: #ffffff
 }
-Qlabel#progressBarLabel{ 
-  padding-right: 10px 
-}
 QFrame {
 	background-color: transparent;
 	border: 0px solid #fff
