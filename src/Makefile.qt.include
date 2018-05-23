@@ -40,6 +40,7 @@ QT_FORMS_UI = \
   qt/forms/intro.ui \
   qt/forms/masternodelist.ui \
   qt/forms/multisenddialog.ui \
+  qt/forms/multisendconfigdialog.ui \
   qt/forms/multisigdialog.ui \
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
@@ -74,6 +75,7 @@ QT_MOC_CPP = \
   qt/moc_macnotificationhandler.cpp \
   qt/moc_masternodelist.cpp \
   qt/moc_multisenddialog.cpp \
+  qt/moc_multisendconfigdialog.cpp \
   qt/moc_multisigdialog.cpp \
   qt/moc_notificator.cpp \
   qt/moc_openuridialog.cpp \
@@ -146,6 +148,7 @@ BITCOIN_QT_H = \
   qt/macnotificationhandler.h \
   qt/masternodelist.h \
   qt/multisenddialog.h \
+  qt/multisendconfigdialog.h \
   qt/multisigdialog.h \
   qt/networkstyle.h \
   qt/notificator.h \
@@ -291,6 +294,7 @@ BITCOIN_QT_CPP += \
   qt/editaddressdialog.cpp \
   qt/masternodelist.cpp \
   qt/multisenddialog.cpp \
+  qt/multisendconfigdialog.cpp \
   qt/multisigdialog.cpp \
   qt/openuridialog.cpp \
   qt/overviewpage.cpp \
@@ -406,7 +410,7 @@ $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bulwark_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_FONTS) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H) 
 	@test -f $(RCC)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bulwark $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
