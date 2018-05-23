@@ -250,11 +250,25 @@ void MultiSendConfigDialog::on_saveButton_clicked()
 	}
 	std::vector <std::pair<std::string, int>> vSending;
 	std::pair<std::string, int> pMultiSendAddress;
+	int total=0;
 	for (unsigned int i = 0; i < ui->addressList->count(); i++) {
 		QWidget* addressEntry = ui->addressList->itemAt(i)->widget();
 		QValidatedLineEdit* vle = addressEntry->findChild<QValidatedLineEdit*>("addressLine");
 		if (CBitcoinAddress(vle->text().toStdString()).IsValid()) {
 			QSpinBox* psb = addressEntry->findChild<QSpinBox*>("percentageSpinBox");
+			int total += psb->value();
+			if (total > 100) {
+				QMessageBox::warning(this, tr("MultiSend"),
+					tr("The total percentage set is higher than 100"),
+					QMessageBox::Ok, QMessageBox::Ok);
+				return;
+			}
+			else if (100<psb->value() || 1> psb->value()) {
+				QMessageBox::warning(this, tr("MultiSend"),
+					tr("Percentage must be in range from 1 to 100"),
+					QMessageBox::Ok, QMessageBox::Ok);
+				return;
+			}
 			pMultiSendAddress = std::make_pair(vle->text().toStdString(), psb->value());
 			if (!(std::find(vSending.begin(), vSending.end(), pMultiSendAddress) != vSending.end())) {
 				vSending.push_back(pMultiSendAddress);
