@@ -227,6 +227,11 @@ void MultiSendConfigDialog::deleteFrame() {
 
 void MultiSendConfigDialog::on_activateButton_clicked()
 {
+	if (CBitcoinAddress(address).ToString()!=address) {
+		QMessageBox::warning(this, tr("MultiSend"),
+			tr("I found the issue"),
+			QMessageBox::Ok, QMessageBox::Ok);
+	}
 	if (!pwalletMain->isMSAddressEnabled(address)) {	
 			pwalletMain->vDisabledAddresses.erase(std::remove(pwalletMain->vDisabledAddresses.begin(), pwalletMain->vDisabledAddresses.end(), address), pwalletMain->vDisabledAddresses.end());
    }
