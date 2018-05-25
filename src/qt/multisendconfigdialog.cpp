@@ -11,7 +11,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QSpinBox>
+#include <QDoubleSpinBox>
 #include <QClipboard>
 #include <QMessageBox>
 #include <algorithm>
@@ -75,8 +75,11 @@ void MultiSendConfigDialog::loadEntry(std::pair<std::string, int> entry)
 	addressLine->setText(QString::fromStdString(entry.first));
 	addressLayout->addWidget(addressLine);
 
-	QSpinBox* percentageSpinBox = new QSpinBox(addressFrame);
+	QDoubleSpinBox* percentageSpinBox = new QDoubleSpinBox(addressFrame);
 	percentageSpinBox->setObjectName(QStringLiteral("percentageSpinBox"));
+	percentageSpinBox->setDecimals(1);
+	percentageSpinBox->setRange(0.1,100);
+	percentageSpinBox->setSuffix("%");
 	percentageSpinBox->setValue(entry.second);
 	addressLayout->addWidget(percentageSpinBox);
 
@@ -137,8 +140,11 @@ void MultiSendConfigDialog::on_addEntryButton_clicked()
 		addressLine->setObjectName(QStringLiteral("addressLine"));
 		addressLayout->addWidget(addressLine);
 
-		QSpinBox* percentageSpinBox = new QSpinBox(addressFrame);
-		percentageSpinBox -> setObjectName(QStringLiteral("percentageSpinBox"));
+		QDoubleSpinBox* percentageSpinBox = new QDoubleSpinBox(addressFrame);
+		percentageSpinBox->setObjectName(QStringLiteral("percentageSpinBox"));
+		percentageSpinBox->setDecimals(1);
+		percentageSpinBox->setRange(0.1, 100);
+		percentageSpinBox->setSuffix("%");
 		addressLayout->addWidget(percentageSpinBox);
 
 		QPushButton* sendingAddressButton = new QPushButton(addressFrame);
@@ -250,17 +256,11 @@ void MultiSendConfigDialog::on_saveButton_clicked()
 		QWidget* addressEntry = ui->addressList->itemAt(i)->widget();
 		QValidatedLineEdit* vle = addressEntry->findChild<QValidatedLineEdit*>("addressLine");
 		if (CBitcoinAddress(vle->text().toStdString()).IsValid()) {
-			QSpinBox* psb = addressEntry->findChild<QSpinBox*>("percentageSpinBox");
+			QDoubleSpinBox* psb = addressEntry->findChild<QDoubleSpinBox*>("percentageSpinBox");
 			total += psb->value();
 			if (total > 100) {
 				QMessageBox::warning(this, tr("MultiSend"),
 					tr("The total percentage set is higher than 100"),
-					QMessageBox::Ok, QMessageBox::Ok);
-				return;
-			}
-			else if (100<psb->value() || 1> psb->value()) {
-				QMessageBox::warning(this, tr("MultiSend"),
-					tr("Percentage must be in range from 1 to 100"),
 					QMessageBox::Ok, QMessageBox::Ok);
 				return;
 			}
