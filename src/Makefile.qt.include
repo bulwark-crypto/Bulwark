@@ -103,7 +103,15 @@ QT_MOC_CPP = \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp
+  qt/moc_walletview.cpp \
+  qt/lib/moc_qtmaterialcheckable.cpp \
+  qt/lib/moc_qtmaterialcheckable_internal.cpp \
+  qt/lib/moc_qtmaterialoverlaywidget.cpp \
+  qt/lib/moc_qtmaterialripple.cpp \
+  qt/lib/moc_qtmaterialrippleoverlay.cpp \
+  qt/lib/moc_qtmaterialstatetransition.cpp \
+  qt/lib/moc_qtmaterialstyle.cpp \
+  qt/lib/moc_qtmaterialtheme.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -182,7 +190,19 @@ BITCOIN_QT_H = \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
-  qt/winshutdownmonitor.h
+  qt/winshutdownmonitor.h \
+  qt/lib/qtmaterialcheckable.h \
+  qt/lib/qtmaterialcheckable_internal.h \
+  qt/lib/qtmaterialcheckable_p.h \
+  qt/lib/qtmaterialoverlaywidget.h \
+  qt/lib/qtmaterialripple.h \
+  qt/lib/qtmaterialrippleoverlay.h \
+  qt/lib/qtmaterialstatetransition.h \
+  qt/lib/qtmaterialstatetransitionevent.h \
+  qt/lib/qtmaterialstyle.h \
+  qt/lib/qtmaterialstyle_p.h \
+  qt/lib/qtmaterialtheme.h \
+  qt/lib/qtmaterialtheme_p.h
 
 RES_ICONS = \
   qt/res/icons/add.png \
@@ -265,7 +285,15 @@ BITCOIN_QT_CPP = \
   qt/splashscreen.cpp \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp \
-  qt/winshutdownmonitor.cpp
+  qt/winshutdownmonitor.cpp \
+  qt/lib/qtmaterialcheckable.cpp \
+  qt/lib/qtmaterialcheckable_internal.cpp \
+  qt/lib/qtmaterialoverlaywidget.cpp \
+  qt/lib/qtmaterialripple.cpp \
+  qt/lib/qtmaterialrippleoverlay.cpp \
+  qt/lib/qtmaterialstatetransition.cpp \
+  qt/lib/qtmaterialstyle.cpp \
+  qt/lib/qtmaterialtheme.cpp
 
 if ENABLE_WALLET
 BITCOIN_QT_CPP += \
