@@ -3480,7 +3480,7 @@ bool CWallet::MultiSend()
 	std::vector<std::pair<std::string, int>> vMultiSendAddressEntry;
 	bool isConfigured = false;
 		for (unsigned int i = 0; i < vMultiSend.size(); i++) {
-			if (CBitcoinAddress(destMyAddress).ToString() == vMultiSend[i].first) {
+			if (CBitcoinAddress(destMyAddress).ToString() == vMultiSend[i].first && !vMultiSend[i].second.empty()) {
 				vMultiSendAddressEntry = vMultiSend[i].second;
 				isConfigured = true;
 			}

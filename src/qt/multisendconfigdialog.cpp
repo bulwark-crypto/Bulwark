@@ -215,11 +215,6 @@ void MultiSendConfigDialog::deleteFrame() {
 
 		QFrame* frame = qobject_cast<QFrame*>(buttonWidget->parentWidget());
 		if (!frame)return;
-		QValidatedLineEdit* vle = frame->findChild<QValidatedLineEdit*>("addressLine");
-		if (!vle)return;
-		QSpinBox* psb = frame->findChild<QSpinBox*>("percentageSpinBox");
-		vEntriesToDelete.push_back(std::make_pair(vle->text().toStdString(), psb->value()));
-
 
 		delete frame;
 	
@@ -227,11 +222,6 @@ void MultiSendConfigDialog::deleteFrame() {
 
 void MultiSendConfigDialog::on_activateButton_clicked()
 {
-	if (CBitcoinAddress(address).ToString()!=address) {
-		QMessageBox::warning(this, tr("MultiSend"),
-			tr("I found the issue"),
-			QMessageBox::Ok, QMessageBox::Ok);
-	}
 	if (!pwalletMain->isMSAddressEnabled(address)) {	
 			pwalletMain->vDisabledAddresses.erase(std::remove(pwalletMain->vDisabledAddresses.begin(), pwalletMain->vDisabledAddresses.end(), address), pwalletMain->vDisabledAddresses.end());
    }
@@ -261,7 +251,7 @@ void MultiSendConfigDialog::on_saveButton_clicked()
 		QValidatedLineEdit* vle = addressEntry->findChild<QValidatedLineEdit*>("addressLine");
 		if (CBitcoinAddress(vle->text().toStdString()).IsValid()) {
 			QSpinBox* psb = addressEntry->findChild<QSpinBox*>("percentageSpinBox");
-			int total += psb->value();
+			total += psb->value();
 			if (total > 100) {
 				QMessageBox::warning(this, tr("MultiSend"),
 					tr("The total percentage set is higher than 100"),
@@ -292,9 +282,6 @@ void MultiSendConfigDialog::on_saveButton_clicked()
 			return;
 		}		
  }
-	for (unsigned int i = 0; i < vEntriesToDelete.size(); i++) {
-		vSending.erase(std::remove(vSending.begin(), vSending.end(), vEntriesToDelete[i]), vSending.end());
-	}
 	pwalletMain->vMultiSend[indexOfEntry].second.clear();
 	CWalletDB walletdb(pwalletMain->strWalletFile);
 	walletdb.EraseMultiSend(pwalletMain->vMultiSend);
