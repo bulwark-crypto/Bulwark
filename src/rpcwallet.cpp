@@ -2082,10 +2082,12 @@ Array printMultiSend()
     ret.push_back("MultiSend Addresses to Send To:");
 
     Object vMS;
-    for (unsigned int i = 0; i < pwalletMain->vMultiSend[0].second.size(); i++) {
-        vMS.push_back(Pair("Address " + boost::lexical_cast<std::string>(i), pwalletMain->vMultiSend[1].second[i].first));
-        vMS.push_back(Pair("Percent", pwalletMain->vMultiSend[i].second[i].second));
-    }
+	for (unsigned int j = 0; j < pwalletMain->vMultiSend.size(); j++) {
+		for (unsigned int i = 0; i < pwalletMain->vMultiSend[j].second.size(); i++) {
+			vMS.push_back(Pair("Address " + boost::lexical_cast<std::string>(i), pwalletMain->vMultiSend[1].second[i].first));
+			vMS.push_back(Pair("Percent", pwalletMain->vMultiSend[i].second[i].second));
+		}
+	}
 
     ret.push_back(vMS);
     return ret;
