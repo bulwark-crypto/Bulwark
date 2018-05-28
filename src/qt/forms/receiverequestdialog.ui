@@ -70,7 +70,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="btnCopyURI">
+      <widget class="QtMaterialFlatButton" name="btnCopyURI">
        <property name="text">
         <string>Copy &amp;URI</string>
        </property>
@@ -80,7 +80,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btnCopyAddress">
+      <widget class="QtMaterialFlatButton" name="btnCopyAddress">
        <property name="text">
         <string>Copy &amp;Address</string>
        </property>
@@ -90,7 +90,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btnSaveAs">
+      <widget class="QtMaterialFlatButton" name="btnSaveAs">
        <property name="text">
         <string>&amp;Save Image...</string>
        </property>

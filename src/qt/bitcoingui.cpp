@@ -56,6 +56,7 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include "qtmaterialflatbutton.h"
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>

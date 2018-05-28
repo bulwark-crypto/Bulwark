@@ -4,6 +4,7 @@
 #include "addresstablemodel.h"
 #include "base58.h"
 #include "init.h"
+#include "qtmaterialflatbutton.h"
 #include "walletmodel.h"
 #include "multisendconfigdialog.h"
 #include <QFrame>
@@ -116,7 +117,7 @@ void MultiSendDialog::addAddress(std::string address, bool onLoad) {
 	addressLabel->setText(QString::fromStdString(address));
 	addressLayout->addWidget(addressLabel);
 
-	QPushButton* addressConfigureButton = new QPushButton(addressFrame);
+	QtMaterialFlatButton* addressConfigureButton = new QtMaterialFlatButton(addressFrame);
 	addressConfigureButton->setObjectName(QStringLiteral("addressConfigureButton"));
 	QIcon icon1;
 	icon1.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
@@ -125,7 +126,7 @@ void MultiSendDialog::addAddress(std::string address, bool onLoad) {
 	connect(addressConfigureButton, SIGNAL(clicked()), this, SLOT(configureMultiSend()));
 	addressLayout->addWidget(addressConfigureButton);
 
-	QPushButton* addressDeleteButton = new QPushButton(addressFrame);
+	QtMaterialFlatButton* addressDeleteButton = new QtMaterialFlatButton(addressFrame);
 	addressDeleteButton->setObjectName(QStringLiteral("addressDeleteButton"));
 	QIcon icon2;
 	icon2.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);

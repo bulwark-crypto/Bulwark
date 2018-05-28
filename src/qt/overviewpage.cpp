@@ -19,6 +19,7 @@
 #include "transactionfilterproxy.h"
 #include "transactiontablemodel.h"
 #include "walletmodel.h"
+#include "qtmaterialflatbutton.h"
 
 #include <QAbstractItemDelegate>
 #include <QPainter>

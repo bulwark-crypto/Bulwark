@@ -87,7 +87,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <widget class="QPushButton" name="activateButton">
+     <widget class="QtMaterialFlatButton" name="activateButton">
       <property name="text">
        <string>Activate</string>
       </property>
@@ -97,7 +97,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="disableButton">
+     <widget class="QtMaterialFlatButton" name="disableButton">
       <property name="text">
        <string>Disable</string>
       </property>
@@ -215,7 +215,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="addressBookButton">
+       <widget class="QtMaterialFlatButton" name="addressBookButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
           <horstretch>0</horstretch>
