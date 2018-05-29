@@ -1918,8 +1918,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             int64_t mNodeCoins = nMasternodeCount * 5000 * COIN;
             int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
-            // [oldschool] TODO: GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
-            ret = GetSplitReward(blockValue);
+            GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+            // [oldschool] TODO: ret = GetSplitReward(blockValue);
         } else if (nHeight >= Params().RAMP_TO_BLOCK()) {
             ret = blockValue / 2;
         }
@@ -1960,8 +1960,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             );
         }
 
-        // [oldschool] TODO: GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
-        ret = GetSplitReward(blockValue);
+        GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+        // [oldschool] TODO: ret = GetSplitReward(blockValue);
     }
 
     return ret;

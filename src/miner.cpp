@@ -120,7 +120,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
 
     if (fProofOfStake) {
-        std::cout << "fProofOfStake " << chainActive.Tip()->nHeight << std::endl;
+        //std::cout << "fProofOfStake " << chainActive.Tip()->nHeight << std::endl;
         boost::this_thread::interruption_point();
         pblock->nTime = GetAdjustedTime();
         CBlockIndex* pindexPrev = chainActive.Tip();
