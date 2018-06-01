@@ -1615,12 +1615,26 @@ int64_t GetBlockValue(int nHeight)
 {
     // For testnest we will have a static schedule of payment.
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        int newHeight = nHeight + 1;
+        CAmount reward = 10;
         // Add premine to account for short PoW duration
         // on testnet and the need for coin maturity for PoS.
-        if (nHeight == 0)
-            return 100000 * COIN;
+        if (newHeight == 1)
+            reward = 100000;
+        else if (newHeight >= 2 && newHeight <= 50)
+            reward = 500;
+        else if (newHeight >= 51 && newHeight <= 100)
+            reward = 250;
+        else if (newHeight >= 101 && newHeight <= 300)
+            reward = 125;
+        else if (newHeight >= 301 && newHeight <= 900)
+            reward = 100; 
+        else if (newHeight >= 901 && newHeight <= 1200)
+            reward = 50;
+        else if (newHeight >= 1201 && newHeight <= 2000)
+            reward = 25;
         
-        return 500 * COIN;
+        return reward * COIN;
     }
 
     /* SerfyWerfy-
