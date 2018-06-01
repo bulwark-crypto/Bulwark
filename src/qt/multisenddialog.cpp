@@ -3,7 +3,7 @@
 #include "addresstablemodel.h"
 #include "base58.h"
 #include "init.h"
-#include "ui_multisenddialog.h"
+#include "qtmaterialflatbutton.h"
 #include "walletmodel.h"
 #include <QLineEdit>
 #include <QMessageBox>
@@ -150,16 +150,32 @@ void MultiSendDialog::on_addButton_clicked()
             model->updateAddressBookLabels(address.Get(), "(no label)", "send");
     }
 
-    CWalletDB walletdb(pwalletMain->strWalletFile);
-    if(!walletdb.WriteMultiSend(pwalletMain->vMultiSend)) {
-        ui->message->setProperty("status", "error");
-        ui->message->style()->polish(ui->message);
-        ui->message->setText(tr("Saved the MultiSend to memory, but failed saving properties to the database.\n"));
-        ui->multiSendAddressEdit->setFocus();
-        return;
-    }
-    ui->message->setText(tr("MultiSend Vector\n") + QString(strMultiSendPrint.c_str()));
-    return;
+	QLabel* addressLabel = new QLabel(addressFrame);
+	addressLabel->setObjectName(QStringLiteral("addressLabel"));
+	addressLabel->setText(QString::fromStdString(address));
+	addressLayout->addWidget(addressLabel);
+
+	QtMaterialFlatButton* addressConfigureButton = new QtMaterialFlatButton(addressFrame);
+	addressConfigureButton->setObjectName(QStringLiteral("addressConfigureButton"));
+	QIcon icon1;
+	icon1.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
+	addressConfigureButton->setIcon(icon1);
+	addressConfigureButton->setAutoDefault(false);
+	connect(addressConfigureButton, SIGNAL(clicked()), this, SLOT(configureMultiSend()));
+	addressLayout->addWidget(addressConfigureButton);
+
+	QtMaterialFlatButton* addressDeleteButton = new QtMaterialFlatButton(addressFrame);
+	addressDeleteButton->setObjectName(QStringLiteral("addressDeleteButton"));
+	QIcon icon2;
+	icon2.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
+	addressDeleteButton->setIcon(icon2);
+	addressDeleteButton->setAutoDefault(false);
+	connect(addressDeleteButton, SIGNAL(clicked()), this, SLOT(deleteFrame()));
+	addressLayout->addWidget(addressDeleteButton);
+
+	
+	frameLayout->addLayout(addressLayout);
+	ui->addressList->addWidget(addressFrame);
 }
 
 void MultiSendDialog::on_deleteButton_clicked()
