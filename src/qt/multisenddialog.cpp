@@ -5,7 +5,6 @@
 #include "base58.h"
 #include "init.h"
 #include "qtmaterialflatbutton.h"
-#include "qtmaterialiconbutton.h"
 #include "walletmodel.h"
 #include "multisendconfigdialog.h"
 #include <QFrame>
