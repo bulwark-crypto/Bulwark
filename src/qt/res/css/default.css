@@ -346,8 +346,8 @@ QTableView::item {
 	font-size: 12px
 }
 QTableView::item:selected {
-	background-color: #0091ea;
-	color: #fff
+	background-color: #ddd;
+	color: ffff;
 }
 QTableWidget {
 	background-color: #fcfcfc;
@@ -640,7 +640,6 @@ QWidget .QFrame#frame_RecentTransactions {
 	background-color: #ffffff
 }
 QWidget .QFrame#frame_Balances .QLabel#BalanceTitle {
-	min-width: 160px;
 	background-color: transparent;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -661,11 +660,9 @@ QWidget .QFrame#frameObfuscation .QLabel#labelObfuscationSyncStatus {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelSpendable {
 	font-size: 12px;
-	margin-left: 18px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchonly {
 	font-size: 12px;
-	margin-left: 16px
 }
 QWidget .QFrame#frame_Balances .QLabel#labelBalanceText {
 	font-size: 15px
@@ -676,6 +673,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelBalance {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchAvailable {
 	font-size: 25px;
+	font-weight: 400;
 }
 QWidget .QFrame#frame_Balances .QLabel#labelPendingText {
 	font-size: 15px
@@ -686,6 +684,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelUnconfirmed {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchPending {
 	font-size: 25px;
+	font-weight: 400;
 }
 QWidget .QFrame#frame_Balances .QLabel#labelImmatureText {
 	font-size: 15px
@@ -696,6 +695,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelImmature {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchImmature {
 	font-size: 25px;
+	font-weight: 400;
 }
 QWidget .QFrame#frame_Balances .QLabel#labelTotalText {
 	font-size: 15px
@@ -706,6 +706,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelTotal {
 }
 QWidget .QFrame#frame_Balances .QLabel#labelWatchTotal {
 	font-size: 25px;
+	font-weight: 400;
 }
 QWidget .QFrame#frame_CombinedBalances .QLabel#BalanceTitlez {
 	min-width: 160px;
@@ -910,26 +911,32 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget {
 	border: 1px solid #333
 }
 QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::item {} QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::item:selected {
-	background-color: #0091ea;
-	color: #fff
+	background-color: #ddd;
+	color: ffff;
 }
 QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::item:checked {
 	background-color: #f7f7f7;
 	color: #fff
 }
 QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::branch:selected {
-	background-image: url(':/images/qtreeview_selected');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: #f7f7f7;
 	color: #333
 }
 QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::branch:checked {
-	background-image: url(':/images/qtreeview_selected');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: #f7f7f7;
 	color: #333
+}
+QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::branch:open:has-children:has-siblings {
+border-image: none;
+image: url(':/images/downArrow_small');
+}
+QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::branch:closed:has-children:has-siblings {
+border-image: none;
+image: url(':/images/rightArrow_small');
 }
 QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::seperator {} QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::indicator {} QWidget#ReceiveCoinsDialog {
 	background-color: #fff

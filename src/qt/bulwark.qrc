@@ -118,11 +118,7 @@
         <file alias="spinner-034">res/movies/spinner-034.png</file>
     </qresource>
     <qresource prefix="/fonts">
-        <file alias="roboto_black">res/fonts/Roboto-Black.ttf</file>
         <file alias="roboto_bold">res/fonts/Roboto-Bold.ttf</file>
         <file alias="roboto_medium">res/fonts/Roboto-Medium.ttf</file>
-        <file alias="roboto_regular">res/fonts/Roboto-Regular.ttf</file>
-        <file alias="roboto_light">res/fonts/Roboto-Light.ttf</file>
-        <file alias="roboto_thin">res/fonts/Roboto-Thin.ttf</file>
     </qresource>
 </RCC>

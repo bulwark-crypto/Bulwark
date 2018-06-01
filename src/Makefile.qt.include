@@ -215,12 +215,8 @@ BITCOIN_QT_H = \
   qt/qtmaterialtheme_p.h
 
 RES_FONTS = \
-  qt/res/fonts/Roboto-Black.ttf \
   qt/res/fonts/Roboto-Bold.ttf \
-  qt/res/fonts/Roboto-Medium.ttf \
-  qt/res/fonts/Roboto-Regular.ttf \
-  qt/res/fonts/Roboto-Light.ttf \
-  qt/res/fonts/Roboto-Thin.ttf
+  qt/res/fonts/Roboto-Medium.ttf 
 
 RES_ICONS = \
   qt/res/icons/history_m.png \

@@ -807,12 +807,12 @@ void MultisigDialog::on_addAddressButton_clicked()
     addressFrame->setObjectName(QStringLiteral("addressFrame"));
 
     QVBoxLayout* frameLayout = new QVBoxLayout(addressFrame);
-    frameLayout->setSpacing(1);
+    frameLayout->setSpacing(2);
     frameLayout->setObjectName(QStringLiteral("frameLayout"));
     frameLayout->setContentsMargins(6, 6, 6, 6);
 
     QHBoxLayout* addressLayout = new QHBoxLayout();
-    addressLayout->setSpacing(0);
+    addressLayout->setSpacing(4);
     addressLayout->setObjectName(QStringLiteral("addressLayout"));
 
     QLabel* addressLabel = new QLabel(addressFrame);

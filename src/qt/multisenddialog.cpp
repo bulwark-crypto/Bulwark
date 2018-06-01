@@ -5,6 +5,7 @@
 #include "base58.h"
 #include "init.h"
 #include "qtmaterialflatbutton.h"
+#include "qtmaterialiconbutton.h"
 #include "walletmodel.h"
 #include "multisendconfigdialog.h"
 #include <QFrame>
@@ -117,20 +118,22 @@ void MultiSendDialog::addAddress(std::string address, bool onLoad) {
 	addressLabel->setText(QString::fromStdString(address));
 	addressLayout->addWidget(addressLabel);
 
-	QtMaterialFlatButton* addressConfigureButton = new QtMaterialFlatButton(addressFrame);
-	addressConfigureButton->setObjectName(QStringLiteral("addressConfigureButton"));
 	QIcon icon1;
 	icon1.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
+	QtMaterialFlatButton* addressConfigureButton = new QtMaterialFlatButton(addressFrame);
+	addressConfigureButton->setObjectName(QStringLiteral("addressConfigureButton"));
 	addressConfigureButton->setIcon(icon1);
+	addressConfigureButton->setText(QStringLiteral("Configure"));
 	addressConfigureButton->setAutoDefault(false);
 	connect(addressConfigureButton, SIGNAL(clicked()), this, SLOT(configureMultiSend()));
 	addressLayout->addWidget(addressConfigureButton);
 
-	QtMaterialFlatButton* addressDeleteButton = new QtMaterialFlatButton(addressFrame);
-	addressDeleteButton->setObjectName(QStringLiteral("addressDeleteButton"));
 	QIcon icon2;
 	icon2.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
+	QtMaterialFlatButton* addressDeleteButton = new QtMaterialFlatButton(addressFrame);	
+	addressDeleteButton->setObjectName(QStringLiteral("addressDeleteButton"));
 	addressDeleteButton->setIcon(icon2);
+	addressDeleteButton->setText(QStringLiteral("Delete"));
 	addressDeleteButton->setAutoDefault(false);
 	connect(addressDeleteButton, SIGNAL(clicked()), this, SLOT(deleteFrame()));
 	addressLayout->addWidget(addressDeleteButton);

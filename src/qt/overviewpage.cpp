@@ -86,7 +86,9 @@ public:
         if (!confirmed) {
             amountText = QString("[") + amountText + QString("]");
         }
+		painter->setFont(QFont("Roboto", 10, QFont::Bold));
         painter->drawText(amountRect, Qt::AlignRight | Qt::AlignVCenter, amountText);
+		painter->setFont(QFont("Roboto", 10, QFont::Medium));
 
         painter->setPen(COLOR_BLACK);
         painter->drawText(amountRect, Qt::AlignLeft | Qt::AlignVCenter, GUIUtil::dateTimeStr(date));
@@ -236,11 +238,6 @@ void OverviewPage::updateWatchOnlyLabels(bool showWatchOnly)
 
     if (!showWatchOnly) {
         ui->labelWatchImmature->hide();
-    } else {
-        ui->labelBalance->setIndent(20);
-        ui->labelUnconfirmed->setIndent(20);
-        ui->labelImmature->setIndent(20);
-        ui->labelTotal->setIndent(20);
     }
 }
 

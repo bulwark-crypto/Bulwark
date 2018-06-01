@@ -27,7 +27,6 @@
 #include <QApplication>
 #include <QCheckBox>
 #include <QCursor>
-#include <QDialogButtonBox>
 #include <QFlags>
 #include <QIcon>
 #include <QSettings>
@@ -122,7 +121,7 @@ CoinControlDialog::CoinControlDialog(QWidget* parent, bool fMultisigEnabled) : Q
     connect(ui->treeWidget->header(), SIGNAL(sectionClicked(int)), this, SLOT(headerSectionClicked(int)));
 
     // ok button
-    connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(buttonBoxClicked(QAbstractButton*)));
+    connect(ui->selectButton, SIGNAL(clicked()), this, SLOT(selectButtonClicked()));
 
     // (un)select all
     connect(ui->pushButtonSelectAll, SIGNAL(clicked()), this, SLOT(buttonSelectAllClicked()));
@@ -191,10 +190,9 @@ QString CoinControlDialog::strPad(QString s, int nPadLength, QString sPadding)
 }
 
 // ok button
-void CoinControlDialog::buttonBoxClicked(QAbstractButton* button)
+void CoinControlDialog::selectButtonClicked()
 {
-    if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::AcceptRole)
-        done(QDialog::Accepted); // closes the dialog
+		this->close(); // closes the dialog
 }
 
 // (un)select all
