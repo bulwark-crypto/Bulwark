@@ -91,4 +91,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: padraiq/Bulwark
-    all_branches: true
+    all_branches: true 
