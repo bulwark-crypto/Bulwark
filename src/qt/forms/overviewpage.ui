@@ -518,7 +518,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="runAutoDenom">
+         <widget class="QtMaterialFlatButton" name="runAutoDenom" native="true">
           <property name="geometry">
            <rect>
             <x>251</x>
@@ -948,20 +948,20 @@
           <property name="autoFillBackground">
            <bool>true</bool>
           </property>
-          <property name="text">
+          <property name="text" stdset="0">
            <string/>
           </property>
-          <property name="flat">
+          <property name="flat" stdset="0">
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="toggleObfuscation">
+         <widget class="QtMaterialFlatButton" name="toggleObfuscation" native="true">
           <property name="geometry">
            <rect>
-            <x>120</x>
-            <y>250</y>
-            <width>221</width>
-            <height>56</height>
+            <x>10</x>
+            <y>265</y>
+            <width>215</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -970,8 +970,8 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="text">
-           <string>Start/Stop Mixing</string>
+          <property name="text" stdset="0">
+           <string>Start / Stop Obfuscation</string>
           </property>
          </widget>
          <widget class="Line" name="lineLastMessage">
@@ -1012,13 +1012,13 @@
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="obfuscationAuto">
+         <widget class="QtMaterialFlatButton" name="obfuscationAuto" native="true">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>310</y>
-            <width>221</width>
-            <height>28</height>
+            <y>315</y>
+            <width>215</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -1030,17 +1030,17 @@
           <property name="toolTip">
            <string>Try to manually submit a Obfuscation request.</string>
           </property>
-          <property name="text">
+          <property name="text" stdset="0">
            <string>Try Mix</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="obfuscationReset">
+         <widget class="QtMaterialFlatButton" name="obfuscationReset" native="true">
           <property name="geometry">
            <rect>
             <x>230</x>
-            <y>310</y>
-            <width>221</width>
-            <height>28</height>
+            <y>315</y>
+            <width>215</width>
+            <height>35</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -1055,8 +1055,46 @@
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
-          <property name="text">
+          <property name="text" stdset="0">
            <string>Reset</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="ObfuscationStatusTitle">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>180</y>
+            <width>441</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Status Messages</string>
+          </property>
+         </widget>
+         <widget class="QtMaterialFlatButton" name="toggleStaking" native="true">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>265</y>
+            <width>215</width>
+            <height>35</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text" stdset="0">
+           <string>Enable Staking</string>
           </property>
          </widget>
          <widget class="QWidget" name="layoutWidget">
@@ -1250,6 +1288,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtMaterialFlatButton</class>
+   <extends>QWidget</extends>
+   <header>qtmaterialflatbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

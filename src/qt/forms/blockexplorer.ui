@@ -21,7 +21,7 @@
        <enum>QLayout::SetMinimumSize</enum>
       </property>
       <item>
-       <widget class="QPushButton" name="back">
+       <widget class="QtMaterialFlatButton" name="back">
         <property name="text">
          <string/>
         </property>
@@ -35,7 +35,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="forward">
+       <widget class="QtMaterialFlatButton" name="forward">
         <property name="text">
          <string/>
         </property>
@@ -71,7 +71,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushSearch">
+       <widget class="QtMaterialFlatButton" name="pushSearch">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>

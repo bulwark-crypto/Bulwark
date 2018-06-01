@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>3</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab_info">
       <attribute name="title">
@@ -343,14 +343,14 @@
         </widget>
        </item>
        <item row="16" column="0">
-        <widget class="QPushButton" name="openDebugLogfileButton">
+        <widget class="QtMaterialFlatButton" name="openDebugLogfileButton" native="true">
          <property name="toolTip">
           <string>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</string>
          </property>
-         <property name="text">
-          <string>&amp;Open</string>
+         <property name="text" stdset="0">
+          <string>Open</string>
          </property>
-         <property name="autoDefault">
+         <property name="autoDefault" stdset="0">
           <bool>false</bool>
          </property>
         </widget>
@@ -400,7 +400,7 @@
           <widget class="QLineEdit" name="lineEdit"/>
          </item>
          <item>
-          <widget class="QPushButton" name="clearButton">
+          <widget class="QtMaterialFlatButton" name="clearButton" native="true">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -410,17 +410,17 @@
            <property name="toolTip">
             <string>Clear console</string>
            </property>
-           <property name="text">
+           <property name="text" stdset="0">
             <string/>
            </property>
-           <property name="icon">
+           <property name="icon" stdset="0">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
            </property>
-           <property name="shortcut">
+           <property name="shortcut" stdset="0">
             <string notr="true">Ctrl+L</string>
            </property>
-           <property name="autoDefault">
+           <property name="autoDefault" stdset="0">
             <bool>false</bool>
            </property>
           </widget>
@@ -481,11 +481,11 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="btnClearTrafficGraph">
-             <property name="text">
-              <string>&amp;Clear</string>
+            <widget class="QtMaterialFlatButton" name="btnClearTrafficGraph" native="true">
+             <property name="text" stdset="0">
+              <string>Clear</string>
              </property>
-             <property name="autoDefault">
+             <property name="autoDefault" stdset="0">
               <bool>false</bool>
              </property>
             </widget>
@@ -1138,14 +1138,14 @@
         </spacer>
        </item>
        <item row="4" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_salvagewallet">
+        <widget class="QtMaterialFlatButton" name="btn_salvagewallet" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>23</height>
           </size>
          </property>
-         <property name="text">
+         <property name="text" stdset="0">
           <string>Salvage wallet</string>
          </property>
         </widget>
@@ -1168,14 +1168,14 @@
         </widget>
        </item>
        <item row="5" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_rescan">
+        <widget class="QtMaterialFlatButton" name="btn_rescan" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>23</height>
           </size>
          </property>
-         <property name="text">
+         <property name="text" stdset="0">
           <string>Rescan blockchain files</string>
          </property>
         </widget>
@@ -1198,14 +1198,14 @@
         </widget>
        </item>
        <item row="6" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_zapwallettxes1">
+        <widget class="QtMaterialFlatButton" name="btn_zapwallettxes1" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>23</height>
           </size>
          </property>
-         <property name="text">
+         <property name="text" stdset="0">
           <string>Recover transactions 1</string>
          </property>
         </widget>
@@ -1228,14 +1228,14 @@
         </widget>
        </item>
        <item row="7" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_zapwallettxes2">
+        <widget class="QtMaterialFlatButton" name="btn_zapwallettxes2" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>23</height>
           </size>
          </property>
-         <property name="text">
+         <property name="text" stdset="0">
           <string>Recover transactions 2</string>
          </property>
         </widget>
@@ -1258,14 +1258,14 @@
         </widget>
        </item>
        <item row="8" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_upgradewallet">
+        <widget class="QtMaterialFlatButton" name="btn_upgradewallet" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>23</height>
           </size>
          </property>
-         <property name="text">
+         <property name="text" stdset="0">
           <string>Upgrade wallet format</string>
          </property>
         </widget>
@@ -1288,14 +1288,14 @@
         </widget>
        </item>
        <item row="9" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_reindex">
+        <widget class="QtMaterialFlatButton" name="btn_reindex" native="true">
          <property name="minimumSize">
           <size>
            <width>100</width>
            <height>23</height>
           </size>
          </property>
-         <property name="text">
+         <property name="text" stdset="0">
           <string>Rebuild index</string>
          </property>
         </widget>
@@ -1337,6 +1337,11 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QtMaterialFlatButton</class>
+   <extends>QWidget</extends>
+   <header>qtmaterialflatbutton.h</header>
+  </customwidget>
   <customwidget>
    <class>TrafficGraphWidget</class>
    <extends>QWidget</extends>
