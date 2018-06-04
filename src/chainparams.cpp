@@ -253,7 +253,7 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
         nPoolMaxTransactions = 2;
-        strSporkKey = "04cd98bc62b2fa05711675243b1d86c181ea4c83e337f30ddcd8fbc1c937f550b4f539d53ee57789ebc8f6548fe3da21800eeea120d9ef8979452b8629526532c4";
+        strSporkKey = "04af2f9be75132357063236a59f9bf71ccb9ef8373c33146714ff4f6b1a3a2b97933c633f805c7b598ba023088bf13474e735b694d4959432bb58053910341bf66";
         strObfuscationPoolDummyAddress = "TUQ57Fbh1crybrDhV6X9SDH95H4oSq4v6p";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
     }
