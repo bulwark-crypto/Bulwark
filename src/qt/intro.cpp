@@ -11,7 +11,6 @@
 #include "guiutil.h"
 
 #include "util.h"
-#include "qtmaterialflatbutton.h"
 
 #include <boost/filesystem.hpp>
 

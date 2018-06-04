@@ -33,9 +33,6 @@
 #include "rpcserver.h"
 #include "ui_interface.h"
 #include "util.h"
-#include "qtmaterialstyle.h"
-#include <QFontDatabase>
-#include "qtmaterialtheme.h"
 
 #ifdef ENABLE_WALLET
 #include "wallet.h"

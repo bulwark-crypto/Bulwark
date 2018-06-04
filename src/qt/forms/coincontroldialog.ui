@@ -353,7 +353,7 @@
          <number>14</number>
         </property>
         <item>
-         <widget class="QtMaterialFlatButton" name="pushButtonSelectAll">
+         <widget class="QPushButton" name="pushButtonSelectAll">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -369,7 +369,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QtMaterialFlatButton" name="pushButtonToggleLock">
+         <widget class="QPushButton" name="pushButtonToggleLock">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
             <horstretch>0</horstretch>

@@ -6,7 +6,6 @@
 #include "init.h"
 #include "optionsmodel.h"
 #include "walletmodel.h"
-#include "qtmaterialflatbutton.h"
 
 #include <QKeyEvent>
 #include <QMessageBox>

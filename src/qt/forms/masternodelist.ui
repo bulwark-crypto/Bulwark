@@ -160,30 +160,30 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QtMaterialFlatButton" name="startButton">
+            <widget class="QPushButton" name="startButton">
              <property name="text">
-              <string>Start alias</string>
+              <string>S&amp;tart alias</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QtMaterialFlatButton" name="startAllButton">
+            <widget class="QPushButton" name="startAllButton">
              <property name="text">
-              <string>Start all</string>
+              <string>Start &amp;all</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QtMaterialFlatButton" name="startMissingButton">
+            <widget class="QPushButton" name="startMissingButton">
              <property name="text">
-              <string>Start MISSING</string>
+              <string>Start &amp;MISSING</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QtMaterialFlatButton" name="UpdateButton">
+            <widget class="QPushButton" name="UpdateButton">
              <property name="text">
-              <string>Update status</string>
+              <string>&amp;Update status</string>
              </property>
             </widget>
            </item>
