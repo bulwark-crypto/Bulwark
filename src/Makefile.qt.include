@@ -40,6 +40,7 @@ QT_FORMS_UI = \
   qt/forms/intro.ui \
   qt/forms/masternodelist.ui \
   qt/forms/multisenddialog.ui \
+  qt/forms/multisendconfigdialog.ui \
   qt/forms/multisigdialog.ui \
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
@@ -74,6 +75,7 @@ QT_MOC_CPP = \
   qt/moc_macnotificationhandler.cpp \
   qt/moc_masternodelist.cpp \
   qt/moc_multisenddialog.cpp \
+  qt/moc_multisendconfigdialog.cpp \
   qt/moc_multisigdialog.cpp \
   qt/moc_notificator.cpp \
   qt/moc_openuridialog.cpp \
@@ -101,7 +103,15 @@ QT_MOC_CPP = \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp
+  qt/moc_walletview.cpp \
+  qt/lib/moc_qtmaterialcheckable.cpp \
+  qt/lib/moc_qtmaterialcheckable_internal.cpp \
+  qt/lib/moc_qtmaterialoverlaywidget.cpp \
+  qt/lib/moc_qtmaterialripple.cpp \
+  qt/lib/moc_qtmaterialrippleoverlay.cpp \
+  qt/lib/moc_qtmaterialstatetransition.cpp \
+  qt/lib/moc_qtmaterialstyle.cpp \
+  qt/lib/moc_qtmaterialtheme.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -146,6 +156,7 @@ BITCOIN_QT_H = \
   qt/macnotificationhandler.h \
   qt/masternodelist.h \
   qt/multisenddialog.h \
+  qt/multisendconfigdialog.h \
   qt/multisigdialog.h \
   qt/networkstyle.h \
   qt/notificator.h \
@@ -179,7 +190,19 @@ BITCOIN_QT_H = \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
-  qt/winshutdownmonitor.h
+  qt/winshutdownmonitor.h \
+  qt/lib/qtmaterialcheckable.h \
+  qt/lib/qtmaterialcheckable_internal.h \
+  qt/lib/qtmaterialcheckable_p.h \
+  qt/lib/qtmaterialoverlaywidget.h \
+  qt/lib/qtmaterialripple.h \
+  qt/lib/qtmaterialrippleoverlay.h \
+  qt/lib/qtmaterialstatetransition.h \
+  qt/lib/qtmaterialstatetransitionevent.h \
+  qt/lib/qtmaterialstyle.h \
+  qt/lib/qtmaterialstyle_p.h \
+  qt/lib/qtmaterialtheme.h \
+  qt/lib/qtmaterialtheme_p.h
 
 RES_ICONS = \
   qt/res/icons/add.png \
@@ -262,7 +285,15 @@ BITCOIN_QT_CPP = \
   qt/splashscreen.cpp \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp \
-  qt/winshutdownmonitor.cpp
+  qt/winshutdownmonitor.cpp \
+  qt/lib/qtmaterialcheckable.cpp \
+  qt/lib/qtmaterialcheckable_internal.cpp \
+  qt/lib/qtmaterialoverlaywidget.cpp \
+  qt/lib/qtmaterialripple.cpp \
+  qt/lib/qtmaterialrippleoverlay.cpp \
+  qt/lib/qtmaterialstatetransition.cpp \
+  qt/lib/qtmaterialstyle.cpp \
+  qt/lib/qtmaterialtheme.cpp
 
 if ENABLE_WALLET
 BITCOIN_QT_CPP += \
@@ -277,6 +308,7 @@ BITCOIN_QT_CPP += \
   qt/editaddressdialog.cpp \
   qt/masternodelist.cpp \
   qt/multisenddialog.cpp \
+  qt/multisendconfigdialog.cpp \
   qt/multisigdialog.cpp \
   qt/openuridialog.cpp \
   qt/overviewpage.cpp \
@@ -392,7 +424,7 @@ $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bulwark_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H) 
 	@test -f $(RCC)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bulwark $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
