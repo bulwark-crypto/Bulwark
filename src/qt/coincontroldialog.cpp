@@ -20,6 +20,7 @@
 #include "obfuscation.h"
 #include "wallet.h"
 #include "multisigdialog.h"
+#include "qtmaterialflatbutton.h"
 
 #include <boost/assign/list_of.hpp> // for 'map_list_of()'
 

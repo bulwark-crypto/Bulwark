@@ -14,6 +14,7 @@
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <set>
+#include "qtmaterialflatbutton.h"
 
 extern double GetDifficulty(const CBlockIndex* blockindex = NULL);
 
