@@ -77,10 +77,10 @@ after_script:
     - echo $TRAVIS_COMMIT_LOG
 before_deploy:
     - cd ..
-    - git config --local user.name "padraiq"
-    - git config --local user.email "padraiq@gmail.com"
-    - git tag "bulwark-1.2.4.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-    - tar -zvcf bulwark-1.2.4.0-$HOST.tar.gz -C $OUTDIR bin/
+    - git config --local user.name "dustinengle"
+    - git config --local user.email "dustin.engle@gmail.com"
+    - git tag "bulwark-1.3.0.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+    - tar -zvcf bulwark-1.3.0.0-$HOST.tar.gz -C $OUTDIR bin/
     - echo `pwd`
 deploy:
   provider: releases
