@@ -13,6 +13,7 @@
 #include "guiutil.h"
 #include "obfuscation.h"
 #include "optionsmodel.h"
+#include "qtmaterialflatbutton.h"
 
 #include "main.h" // for MAX_SCRIPTCHECK_THREADS
 #include "netbase.h"
