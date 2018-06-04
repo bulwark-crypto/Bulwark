@@ -112,7 +112,7 @@
           <widget class="QLineEdit" name="dataDirectory"/>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="ellipsisButton">
+          <widget class="QPushButton" name="ellipsisButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>

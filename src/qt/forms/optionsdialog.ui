@@ -638,14 +638,14 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_Buttons">
      <item>
-      <widget class="QtMaterialFlatButton" name="resetButton" native="true">
+      <widget class="QPushButton" name="resetButton">
        <property name="toolTip">
         <string>Reset all client options to default.</string>
        </property>
-       <property name="text" stdset="0">
-        <string>Reset Options</string>
+       <property name="text">
+        <string>&amp;Reset Options</string>
        </property>
-       <property name="autoDefault" stdset="0">
+       <property name="autoDefault">
         <bool>false</bool>
        </property>
       </widget>
@@ -702,24 +702,24 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</string>
       </spacer>
      </item>
      <item>
-      <widget class="QtMaterialFlatButton" name="okButton" native="true">
-       <property name="text" stdset="0">
-        <string>OK</string>
+      <widget class="QPushButton" name="okButton">
+       <property name="text">
+        <string>&amp;OK</string>
        </property>
-       <property name="autoDefault" stdset="0">
+       <property name="autoDefault">
         <bool>false</bool>
        </property>
-       <property name="default" stdset="0">
+       <property name="default">
         <bool>true</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QtMaterialFlatButton" name="cancelButton" native="true">
-       <property name="text" stdset="0">
-        <string>Cancel</string>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>&amp;Cancel</string>
        </property>
-       <property name="autoDefault" stdset="0">
+       <property name="autoDefault">
         <bool>false</bool>
        </property>
       </widget>
@@ -729,11 +729,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</string>
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>QtMaterialFlatButton</class>
-   <extends>QWidget</extends>
-   <header>qtmaterialflatbutton.h</header>
-  </customwidget>
   <customwidget>
    <class>QValidatedLineEdit</class>
    <extends>QLineEdit</extends>

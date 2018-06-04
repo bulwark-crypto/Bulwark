@@ -32,6 +32,7 @@ public:
     explicit AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel* model);
     ~AskPassphraseDialog();
 
+    void accept();
 
 private:
     Ui::AskPassphraseDialog* ui;
@@ -41,8 +42,6 @@ private:
 
 private slots:
     void textChanged();
-	void on_acceptButton_clicked();
-	void on_cancelButton_clicked();
 
 protected:
     bool event(QEvent* event);

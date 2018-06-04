@@ -23,7 +23,6 @@
 #include "guiutil.h"
 #include "qvalidatedlineedit.h"
 #include "bitcoinamountfield.h"
-#include "qtmaterialflatbutton.h"
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QHBoxLayout>
@@ -824,7 +823,7 @@ void MultisigDialog::on_addAddressButton_clicked()
     address->setObjectName(QStringLiteral("address"));
     addressLayout->addWidget(address);
 
-    QtMaterialFlatButton* addressBookButton = new QtMaterialFlatButton(addressFrame);
+    QPushButton* addressBookButton = new QPushButton(addressFrame);
     addressBookButton->setObjectName(QStringLiteral("addressBookButton"));
     QIcon icon3;
     icon3.addFile(QStringLiteral(":/icons/address-book"), QSize(), QIcon::Normal, QIcon::Off);
@@ -834,7 +833,7 @@ void MultisigDialog::on_addAddressButton_clicked()
 
     addressLayout->addWidget(addressBookButton);
 
-    QtMaterialFlatButton* addressPasteButton = new QtMaterialFlatButton(addressFrame);
+    QPushButton* addressPasteButton = new QPushButton(addressFrame);
     addressPasteButton->setObjectName(QStringLiteral("addressPasteButton"));
     QIcon icon4;
     icon4.addFile(QStringLiteral(":/icons/editpaste"), QSize(), QIcon::Normal, QIcon::Off);
@@ -844,7 +843,7 @@ void MultisigDialog::on_addAddressButton_clicked()
 
     addressLayout->addWidget(addressPasteButton);
 
-    QtMaterialFlatButton* addressDeleteButton = new QtMaterialFlatButton(addressFrame);
+    QPushButton* addressDeleteButton = new QPushButton(addressFrame);
     addressDeleteButton->setObjectName(QStringLiteral("addressDeleteButton"));
     QIcon icon5;
     icon5.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
@@ -914,7 +913,7 @@ void MultisigDialog::on_addInputButton_clicked()
     txInputVout->setSizePolicy(sizePolicy);
     txInputLayout->addWidget(txInputVout);
 
-    QtMaterialFlatButton* inputDeleteButton = new QtMaterialFlatButton(txInputFrame);
+    QPushButton* inputDeleteButton = new QPushButton(txInputFrame);
     inputDeleteButton->setObjectName(QStringLiteral("inputDeleteButton"));
     QIcon icon;
     icon.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
@@ -966,7 +965,7 @@ void MultisigDialog::on_addDestinationButton_clicked()
 
     destinationLayout->addWidget(destinationAmount);
 
-    QtMaterialFlatButton* destinationDeleteButton = new QtMaterialFlatButton(destinationFrame);
+    QPushButton* destinationDeleteButton = new QPushButton(destinationFrame);
     destinationDeleteButton->setObjectName(QStringLiteral("destinationDeleteButton"));
     QIcon icon;
     icon.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
@@ -1012,7 +1011,7 @@ void MultisigDialog::on_addPrivKeyButton_clicked()
     key->setEchoMode(QLineEdit::Password);
     keyLayout->addWidget(key);
 
-    QtMaterialFlatButton* keyDeleteButton = new QtMaterialFlatButton(keyFrame);
+    QPushButton* keyDeleteButton = new QPushButton(keyFrame);
     keyDeleteButton->setObjectName(QStringLiteral("keyDeleteButton"));
     QIcon icon;
     icon.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
