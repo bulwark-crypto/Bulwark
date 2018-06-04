@@ -19,6 +19,7 @@
 #include "transactionfilterproxy.h"
 #include "transactiontablemodel.h"
 #include "walletmodel.h"
+#include "qtmaterialflatbutton.h"
 
 #include <QAbstractItemDelegate>
 #include <QPainter>
@@ -27,7 +28,7 @@
 
 #define DECORATION_SIZE 48
 #define ICON_OFFSET 16
-#define NUM_ITEMS 5
+#define NUM_ITEMS 15
 
 class TxViewDelegate : public QAbstractItemDelegate
 {
@@ -85,7 +86,9 @@ public:
         if (!confirmed) {
             amountText = QString("[") + amountText + QString("]");
         }
+		painter->setFont(QFont("Roboto", 10, QFont::Bold));
         painter->drawText(amountRect, Qt::AlignRight | Qt::AlignVCenter, amountText);
+		painter->setFont(QFont("Roboto", 10, QFont::Medium));
 
         painter->setPen(COLOR_BLACK);
         painter->drawText(amountRect, Qt::AlignLeft | Qt::AlignVCenter, GUIUtil::dateTimeStr(date));
@@ -210,23 +213,30 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     }
 }
 
+void OverviewPage::on_toggleStaking_clicked()
+{
+	if (walletModel->getEncryptionStatus() == WalletModel::Locked) {
+		WalletModel::UnlockContext ctx(walletModel->requestUnlock(false));
+	}
+	else {
+		QMessageBox::information(this, tr("Staking"),
+			tr("Staking is already enabled"),
+			QMessageBox::Ok, QMessageBox::Ok);
+	}
+}
+
 // show/hide watch-only labels
 void OverviewPage::updateWatchOnlyLabels(bool showWatchOnly)
 {
     ui->labelSpendable->setVisible(showWatchOnly);      // show spendable label (only when watch-only is active)
     ui->labelWatchonly->setVisible(showWatchOnly);      // show watch-only label
-    ui->lineWatchBalance->setVisible(showWatchOnly);    // show watch-only balance separator line
+    ui->lineWatchOnlyBalance->setVisible(showWatchOnly);    // show watch-only balance separator line
     ui->labelWatchAvailable->setVisible(showWatchOnly); // show watch-only available balance
     ui->labelWatchPending->setVisible(showWatchOnly);   // show watch-only pending balance
     ui->labelWatchTotal->setVisible(showWatchOnly);     // show watch-only total balance
 
     if (!showWatchOnly) {
         ui->labelWatchImmature->hide();
-    } else {
-        ui->labelBalance->setIndent(20);
-        ui->labelUnconfirmed->setIndent(20);
-        ui->labelImmature->setIndent(20);
-        ui->labelTotal->setIndent(20);
     }
 }
 
