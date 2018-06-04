@@ -85,10 +85,10 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: LWji4iF26c29GoKnKWU8F4BmtOms6ujrF1IRPTUPy7ESeQ9Ge1mgGNezB15zD/s0NqVl/Q7NLHhtksy7WnrFyCy6qfv5Zz3Z4GdUlOWHWEa1D/N68/hRbJjuBZdgkPVf0tCep2snTm5TtjdvaHn/3aJbgvQh1sCD81Sy7L/2ATpTLf3OKaNMIEHfa5iRjTSyF03b63TLntWVMmqiF0hOm1JZRBF2AHRCQb+CQ0jexIHrYQu4FNgX5l0WdIfdnpjE2XvqIy+wuvMDwWsSTvfYpfZFlivSLyOA5DN6chbeHq85WLs6+iPhE8U/unCJ999XIbCbdYQKNnytDe+8S2FLeG+/YiQDZ2vmdtC5xlQvW0+Tmwz+0xWYD/Kwm7Hjw8xaIX36VKTFwMXq57Qyx9PK/Exa/4hro3bumpYNdu1ou9P50CtYKgJL+cDvt50nq+W0jrRgTxLYrk03Mx0RnXxZk6hfK1+NtUeJpZG4CrekBvsIvIj0GT63EtkM0QjEiLTk+HMlC3kiBz4yXelAxCKpGC+YuCTDg6CcVOxvRLjxIECsRCYBFZOcZQDXDPtxFubgm5U7Aa+aErCsY+pXdz9B6Bd6HIGZ641rZUx85JdA8tt7HpP0FaPuclLvOgWblXvg7LJpVblW9LsR2ZAgaf18DaMsJszXDpxvH74o2sDa+uE=
+    secure: q6ZucAMnA5baIOsTi2uUwF7hHWvjTeuOBv3eRwS8BmeaiHFan9fKwH+Di708fz3FggpHLNJOQmUMrBn8hVEmXTk7LU2ELfD4qJ5G2KcdDKoUlF7xjDUwC9bbZPZogxCIjCd8WuoZWJRQ9U9JU3Y9oxVttbkw+bccRPSydPKsWHckZDGNaOQsZvXu2QrVrznASjQY67UPfi5pEJeeC7BxRBEzCgjYM/YrNn+RdFw8YVi/YYRmfQct+dJnE/0AfD4gi7BB2+o5Xl63K//W3k/Qdq8Z7wRPyLP/sHaTLbzCWzV1FiuJrkQOIxT56Z2jvHPxW97iDs0Sjrq60+bwEwCLcm9Oy2jJWuunA7PQdelPKvS4aC8A3fWjVa5rHgE9wpRWIvqDE7ufvEHZlC1t19i6yTflTSZIX85nJ+QIQBLHESdtPXhD0gerrg+I5EtalObcdAWgk8kqASYvSldaBPWF6LQkwOk4A097svnnaefBVm20FCQUMbio+n6qgr5I8VeqmQNtIXtNspPqED3/+kl9KEGtR7rbK9/S2KMFIeaDnsZ1TsSEPLk0nsjnSR4a3f1z7odNl27do7lOOg2f4uOj92XvnBNubGwd8fceJpXVupntZuBEOAObvvj1S22PuQBKj8EoBDux1r6QO+AJOK/7X+v+Mwae9sCtbSPzPBsqsM0=
   file_glob: true
-  file: bulwark-1.2.4.0-*
+  file: bulwark-testnet-1.3.0.0-*
   skip_cleanup: true
   on:
-    repo: padraiq/Bulwark
-    all_branches: true 
+    repo: dustinengle/Bulwark
+    branch: testnet
