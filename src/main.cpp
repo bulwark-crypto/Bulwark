@@ -5681,6 +5681,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 
 int ActiveProtocol()
 {
+    // We want to return the old protocol version during the
+    // PoS to PoW rollback spork.
     if (IsSporkActive(SPORK_19_POW_ROLLBACK))
         return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 
@@ -5693,7 +5695,8 @@ int ActiveProtocol()
     if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
     	return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT15;
 
-    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+    // Return the current protocol version if no spork is active.
+    return PROTOCOL_VERSION;
 }
 
 // requires LOCK(cs_vRecvMsg)
