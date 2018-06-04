@@ -23,8 +23,8 @@ Bulwark offers both SwiftTX and Obfuscation to enable speedy transactions with a
 | Confirmation          | 6 Blocks (~9 Minutes)                   |
 | Circulation (1 Year)  | 14,505,720 BWK                          |
 | Circulation (5 Years) | 27,668,220 BWK                          |
-| PoW Period            | nHeight ≤ 345,600                       |
-| PoS Period            | nHeight ≥ 345,601                       |
+| PoW Period            | nHeight ≤ 182,700                       |
+| PoS Period            | nHeight ≥ 182,701                       |
 | Protocol Support      | IPV4, IPV6, TOR                         |
 | PoS                   | Blackcoin v3.0 PoS, PIVX SeeSaw Rewards |
 
