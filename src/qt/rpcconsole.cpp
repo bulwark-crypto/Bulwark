@@ -17,6 +17,7 @@
 #include "rpcclient.h"
 #include "rpcserver.h"
 #include "util.h"
+#include "qtmaterialflatbutton.h"
 
 #include "json/json_spirit_value.h"
 

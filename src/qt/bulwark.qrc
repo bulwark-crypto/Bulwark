@@ -1,5 +1,15 @@
-<!DOCTYPE RCC><RCC version="1.0">
+<RCC>
     <qresource prefix="/icons">
+        <file alias="history_m">res/icons/history_m.png</file>
+        <file alias="send_m">res/icons/send_m.png</file>
+        <file alias="receiving_addresses_m">res/icons/receive_m.png</file>
+        <file alias="masternodes_m">res/icons/masternodes_m.png</file>
+        <file alias="overview_m">res/icons/overview_m.png</file>
+        <file alias="lock_open">res/icons/lock_open.png</file>
+        <file alias="lock_closed">res/icons/lock_closed.png</file>
+        <file alias="open">res/icons/open.png</file>
+        <file alias="information">res/icons/information.png</file>
+        <file alias="explorer">res/icons/explorer.png</file>
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
         <file alias="quit">res/icons/quit.png</file>
@@ -106,5 +116,9 @@
         <file alias="spinner-032">res/movies/spinner-032.png</file>
         <file alias="spinner-033">res/movies/spinner-033.png</file>
         <file alias="spinner-034">res/movies/spinner-034.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file alias="roboto_bold">res/fonts/Roboto-Bold.ttf</file>
+        <file alias="roboto_medium">res/fonts/Roboto-Medium.ttf</file>
     </qresource>
 </RCC>
