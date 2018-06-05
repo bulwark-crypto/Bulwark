@@ -1,91 +1,103 @@
 sudo: required
 dist: trusty
 group: deprecated-2017Q3
-
 os:
-  - linux
+- linux
 language: generic
-
 cache:
   apt: true
   ccache: true
   directories:
-    - depends/built
-    - depends/sdk-sources
-    - $HOME/.ccache
-
+  - depends/built
+  - depends/sdk-sources
+  - "$HOME/.ccache"
 env:
   global:
-    - MAKEJOBS=-j5
-    - RUN_TESTS=false
-    - BOOST_TEST_RANDOM=1$TRAVIS_BUILD_ID
-    - CCACHE_SIZE=400M
-    - CCACHE_TEMPDIR=/tmp/.ccache-temp
-    - CCACHE_COMPRESS=1
-    - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
-    - SDK_URL=https://github.com/phracker/MacOSX-SDKs/releases/download/10.13/
-    - PYTHON_DEBUG=1
-    - WINEDEBUG=fixme-all
-
+  - MAKEJOBS=-j5
+  - RUN_TESTS=false
+  - BOOST_TEST_RANDOM=1$TRAVIS_BUILD_ID
+  - CCACHE_SIZE=400M
+  - CCACHE_TEMPDIR=/tmp/.ccache-temp
+  - CCACHE_COMPRESS=1
+  - BASE_OUTDIR=$TRAVIS_BUILD_DIR/out
+  - SDK_URL=https://github.com/phracker/MacOSX-SDKs/releases/download/10.13/
+  - PYTHON_DEBUG=1
+  - WINEDEBUG=fixme-all
   matrix:
-# ARM
-    - HOST=arm-linux-gnueabihf PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-arm-linux-gnueabihf" CHECK_DOC=1 GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
-# Linux x32
-    - HOST=i686-pc-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++" PYZMQ=true
-# Linux x64
-    - HOST=x86_64-unknown-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="bc python3-zmq" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat --enable-reduce-exports" CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG" PYZMQ=true
-# Win x32
-    - HOST=i686-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3 nsis g++-mingw-w64-i686 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
-# Win x64
-    - HOST=x86_64-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3 nsis g++-mingw-w64-x86-64 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
-
+  - HOST=arm-linux-gnueabihf PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-arm-linux-gnueabihf"
+    CHECK_DOC=1 GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
+  - HOST=i686-pc-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq"
+    RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat
+    --enable-reduce-exports LDFLAGS=-static-libstdc++" PYZMQ=true
+  - HOST=x86_64-unknown-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="bc python3-zmq"
+    RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat
+    --enable-reduce-exports" CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG" PYZMQ=true
+  - HOST=i686-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3
+    nsis g++-mingw-w64-i686 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
+    --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
+  - HOST=x86_64-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3
+    nsis g++-mingw-w64-x86-64 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
+    --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
 before_install:
-    - travis_retry sudo apt-get install python-dev
-    - travis_retry sudo add-apt-repository ppa:ubuntu-wine/ppa -y
-    - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
+- travis_retry sudo apt-get install python-dev
+- travis_retry sudo add-apt-repository ppa:ubuntu-wine/ppa -y
+- export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" |
+  sed "s|::|:|g")
 install:
-    - if [ "$PYZMQ" = "true" ]; then pip install pyzmq --user ; fi
-    - if [ -n "$PPA" ]; then travis_retry sudo add-apt-repository "$PPA" -y; fi
-    - if [ -n "$DPKG_ADD_ARCH" ]; then sudo dpkg --add-architecture "$DPKG_ADD_ARCH" ; fi
-    - if [ -n "$PACKAGES" ]; then travis_retry sudo apt-get update; fi
-    - if [ -n "$PACKAGES" ]; then travis_retry sudo apt-get install --no-install-recommends --no-upgrade -qq $PACKAGES; fi
+- if [ "$PYZMQ" = "true" ]; then pip install pyzmq --user ; fi
+- if [ -n "$PPA" ]; then travis_retry sudo add-apt-repository "$PPA" -y; fi
+- if [ -n "$DPKG_ADD_ARCH" ]; then sudo dpkg --add-architecture "$DPKG_ADD_ARCH" ;
+  fi
+- if [ -n "$PACKAGES" ]; then travis_retry sudo apt-get update; fi
+- if [ -n "$PACKAGES" ]; then travis_retry sudo apt-get install --no-install-recommends
+  --no-upgrade -qq $PACKAGES; fi
 before_script:
-    - unset CC; unset CXX
-    - unset DISPLAY
-    - mkdir -p depends/SDKs depends/sdk-sources
-    - if [ -n "$OSX_SDK" -a ! -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then curl --location --fail $SDK_URL/MacOSX${OSX_SDK}.sdk.tar.xz -o depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz; fi
-    - if [ -n "$OSX_SDK" -a -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then tar -C depends/SDKs -xf depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz; fi
-    - make $MAKEJOBS -C depends HOST=$HOST $DEP_OPTS
+- unset CC; unset CXX
+- unset DISPLAY
+- mkdir -p depends/SDKs depends/sdk-sources
+- if [ -n "$OSX_SDK" -a ! -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then
+  curl --location --fail $SDK_URL/MacOSX${OSX_SDK}.sdk.tar.xz -o depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz;
+  fi
+- if [ -n "$OSX_SDK" -a -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then
+  tar -C depends/SDKs -xf depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz; fi
+- make $MAKEJOBS -C depends HOST=$HOST $DEP_OPTS
 script:
-    - if [ -n "$USE_SHELL" ]; then export CONFIG_SHELL="$USE_SHELL"; fi
-    - OUTDIR=$BASE_OUTDIR/$TRAVIS_PULL_REQUEST/$TRAVIS_JOB_NUMBER-$HOST
-    - BITCOIN_CONFIG_ALL="--disable-dependency-tracking --prefix=$TRAVIS_BUILD_DIR/depends/$HOST --bindir=$OUTDIR/bin --libdir=$OUTDIR/lib"
-    - depends/$HOST/native/bin/ccache --max-size=$CCACHE_SIZE
-    - test -n "$USE_SHELL" && eval '"$USE_SHELL" -c "./autogen.sh"' || ./autogen.sh
-    - ./configure --cache-file=config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG || ( cat config.log && false)
-    - make distdir PACKAGE=bulwark VERSION=$HOST
-    - cd bulwark-$HOST
-    - ./configure --cache-file=../config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG || ( cat config.log && false)
-    - make $MAKEJOBS $GOAL || ( echo "Build failure. Verbose build follows." && make $GOAL V=1 ; false )
-    - export LD_LIBRARY_PATH=$TRAVIS_BUILD_DIR/depends/$HOST/lib
-    - if [ "$RUN_TESTS" = "true" -a "$WINE" != "true" ]; then make $MAKEJOBS check VERBOSE=1; fi
-    - if [ "$RUN_TESTS" = "true" -a "$WINE" = "true" ]; then wine  src/test/test_bulwark.exe; fi
-    - if [ "$RUN_TESTS" = "true" ]; then qa/pull-tester/rpc-tests.py --coverage; fi
+- if [ -n "$USE_SHELL" ]; then export CONFIG_SHELL="$USE_SHELL"; fi
+- OUTDIR=$BASE_OUTDIR/$TRAVIS_PULL_REQUEST/$TRAVIS_JOB_NUMBER-$HOST
+- BITCOIN_CONFIG_ALL="--disable-dependency-tracking --prefix=$TRAVIS_BUILD_DIR/depends/$HOST
+  --bindir=$OUTDIR/bin --libdir=$OUTDIR/lib"
+- depends/$HOST/native/bin/ccache --max-size=$CCACHE_SIZE
+- test -n "$USE_SHELL" && eval '"$USE_SHELL" -c "./autogen.sh"' || ./autogen.sh
+- "./configure --cache-file=config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG || (
+  cat config.log && false)"
+- make distdir PACKAGE=bulwark VERSION=$HOST
+- cd bulwark-$HOST
+- "./configure --cache-file=../config.cache $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG ||
+  ( cat config.log && false)"
+- make $MAKEJOBS $GOAL || ( echo "Build failure. Verbose build follows." && make $GOAL
+  V=1 ; false )
+- export LD_LIBRARY_PATH=$TRAVIS_BUILD_DIR/depends/$HOST/lib
+- if [ "$RUN_TESTS" = "true" -a "$WINE" != "true" ]; then make $MAKEJOBS check VERBOSE=1;
+  fi
+- if [ "$RUN_TESTS" = "true" -a "$WINE" = "true" ]; then wine  src/test/test_bulwark.exe;
+  fi
+- if [ "$RUN_TESTS" = "true" ]; then qa/pull-tester/rpc-tests.py --coverage; fi
 after_script:
-    - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then (echo "Upload goes here. Something like: scp -r $BASE_OUTDIR server" || echo "upload failed"); fi
-    - echo $TRAVIS_COMMIT_RANGE
-    - echo $TRAVIS_COMMIT_LOG
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then (echo "Upload goes here. Something like: scp
+    -r $BASE_OUTDIR server" || echo "upload failed"); fi
+- echo $TRAVIS_COMMIT_RANGE
+- echo $TRAVIS_COMMIT_LOG
 before_deploy:
-    - cd ..
-    - git config --local user.name "dustinengle"
-    - git config --local user.email "dustin.engle@gmail.com"
-    - git tag "bulwark-1.3.0.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-    - tar -zvcf bulwark-1.3.0.0-$HOST.tar.gz -C $OUTDIR bin/
-    - echo `pwd`
+- cd ..
+- git config --local user.name "dustinengle"
+- git config --local user.email "dustin.engle@gmail.com"
+- git tag "bulwark-1.3.0.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- tar -zvcf bulwark-1.3.0.0-$HOST.tar.gz -C $OUTDIR bin/
+- echo `pwd`
 deploy:
   provider: releases
   api_key:
-    secure: q6ZucAMnA5baIOsTi2uUwF7hHWvjTeuOBv3eRwS8BmeaiHFan9fKwH+Di708fz3FggpHLNJOQmUMrBn8hVEmXTk7LU2ELfD4qJ5G2KcdDKoUlF7xjDUwC9bbZPZogxCIjCd8WuoZWJRQ9U9JU3Y9oxVttbkw+bccRPSydPKsWHckZDGNaOQsZvXu2QrVrznASjQY67UPfi5pEJeeC7BxRBEzCgjYM/YrNn+RdFw8YVi/YYRmfQct+dJnE/0AfD4gi7BB2+o5Xl63K//W3k/Qdq8Z7wRPyLP/sHaTLbzCWzV1FiuJrkQOIxT56Z2jvHPxW97iDs0Sjrq60+bwEwCLcm9Oy2jJWuunA7PQdelPKvS4aC8A3fWjVa5rHgE9wpRWIvqDE7ufvEHZlC1t19i6yTflTSZIX85nJ+QIQBLHESdtPXhD0gerrg+I5EtalObcdAWgk8kqASYvSldaBPWF6LQkwOk4A097svnnaefBVm20FCQUMbio+n6qgr5I8VeqmQNtIXtNspPqED3/+kl9KEGtR7rbK9/S2KMFIeaDnsZ1TsSEPLk0nsjnSR4a3f1z7odNl27do7lOOg2f4uOj92XvnBNubGwd8fceJpXVupntZuBEOAObvvj1S22PuQBKj8EoBDux1r6QO+AJOK/7X+v+Mwae9sCtbSPzPBsqsM0=
+    secure: BGtfbNaUtdXkRd0IvL0RNTvbjrwQAKjt7g+aV3quCqpStvzyjab3F+hPJWFB/8mxyyJdDddOgPBfyPm0iJkGMsibFFu4D5scgFwV0p8MFJfAAtSyXNfQVGKDpk4aI7bh7VmRY47Rr/NGCT2d45H0awmQqt4Re0eZrrLQuBRq2yOpzUduITQoE+GOlO9zMnNGdRHrZGYLSqTMKSk6ZpZ+G0pZ0gAcawoN/yDD4NV90ThfQ+KDRuF7e2jirXu+ytWCTDm9WFUYkwV/WryZPt7fguj6eOXHIPYUdO8jy5JzU1lX7ZUB9UN6z+sIf7PUqrqPKHPvDIiBzCl0xfScdnch3lRS3WUvxXLFI+Y/o7B7o9a1LlggHMn+mLuwOJHQW3iebNSBIakCmCDRcWae0MurrQCoqjIo8BxQfAIQ2nH0nmEvzZ+trw6eAeCsm5LbqUOCAeDFIn4B3t4i9wfSKi/StrLE+ABBmawiRlKRaP4qzRLCxl/PQPQyU+IqccLc/h3utEeYPG0G3Um0sD/uNJm9tnHZQpcT3nEzv2gmP/lsHuR4vCjGkTh7OY4oP/d9U8pcajVdgstyOJ7fI+xcmG43LGpiBbKl7tsjwOzNuQ+EW1nYZxZeSKh//eqNC/lV/hB1N4eCYPa2l4097ztc39IfcKUSqqP7sEgtFnhaJXOQk64=
   file_glob: true
   file: bulwark-testnet-1.3.0.0-*
   skip_cleanup: true
