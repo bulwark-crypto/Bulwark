@@ -1974,7 +1974,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             );
         }
 
-        GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
+        ret = GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
         // [oldschool] TODO: ret = GetSplitReward(blockValue);
     }
 
