@@ -38,7 +38,9 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
     if (IsSporkActive(SPORK_19_POW_ROLLBACK))
         nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
 
-    if (pindexLast->nHeight >= nLastPOWBlock) {
+    // [oldschool] TODO: put back fix, changed to test spork.
+    // Last PoW block changed by one to simulate high diff.
+    if (pindexLast->nHeight >= (nLastPOWBlock + 5)) {
         uint256 bnTargetLimit = (~uint256(0) >> 24);
         int64_t nTargetSpacing = 90;
         int64_t nTargetTimespan = 60 * 30; //1800

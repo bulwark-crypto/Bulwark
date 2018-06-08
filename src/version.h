@@ -12,7 +12,7 @@
  * network protocol versioning
  */
 
-static const int PROTOCOL_VERSION = 70833; // [oldschool] TODO: change
+static const int PROTOCOL_VERSION = 70834; // [oldschool] TODO: change
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 209;
@@ -21,10 +21,10 @@ static const int INIT_PROTO_VERSION = 209;
 static const int GETHEADERS_VERSION = 70077;
 
 //! disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 70833; // [oldschool] TODO: change
-static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT15 = 70834; // [oldschool] TODO: change
-static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT17 = 70835; // [oldschool] TODO: change
-static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT18 = 70836; // [oldschool] TODO: change
+static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 70834; // [oldschool] TODO: change
+static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT15 = 70835; // [oldschool] TODO: change
+static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT17 = 70836; // [oldschool] TODO: change
+static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT18 = 70837; // [oldschool] TODO: change
 
 //! nTime field added to CAddress, starting with this version;
 //! if possible, avoid requesting addresses nodes older than this
