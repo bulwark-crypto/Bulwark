@@ -1663,7 +1663,6 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 31.25 * COIN;
 
     // POS Year 1
-    // [stu] TODO: verify correct award schedule
     } else if (nHeight <= 431999 && nHeight >= 345600) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518399 && nHeight >= 432000) {
