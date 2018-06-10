@@ -112,7 +112,7 @@ public:
         nTargetTimespan = 1 * 90; // Bulwark: 1.5 minutes
         nTargetSpacingSlowLaunch = 5 * 90;  // Bulwark: 7.5 minutes (Slow launch - Block 300)
 	    nTargetSpacing = 1 * 90; // Bulwark: 1.5min after block 300
-        nLastPOWBlock = 182700; 
+        nLastPOWBlock = 182700; // [stu] TODO: verify correct starting block.
         nLastPOWBlockOld = 345600; // 1 year
 	    nRampToBlock = 960; // Slow start, ramp linearly to this block
         nMaturity = 66; // 99 Minutes
@@ -143,9 +143,10 @@ public:
         assert(hashGenesisBlock == uint256("0x0000068e7ab8e264f6759d2d81b29e8b917c10b04db47a9a0bb3cba3fba5d574"));
 	    assert(genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f"));
 
-	    vSeeds.push_back(CDNSSeedData("mempool.pw", "bwkseed.mempool.pw"));
-        vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
-        vSeeds.push_back(CDNSSeedData("blocksuckernation.com", "bwkseed.blocksuckernation.com"));
+        // [stu] TODO: verify correct DNS seeders.
+	    //vSeeds.push_back(CDNSSeedData("mempool.pw", "bwkseed.mempool.pw"));
+        //vSeeds.push_back(CDNSSeedData("ssus.tech", "bulwark-dns-seed04.ssus.tech"));
+        //vSeeds.push_back(CDNSSeedData("blocksuckernation.com", "bwkseed.blocksuckernation.com"));
         vSeeds.push_back(CDNSSeedData("bwk1.masterhash.us", "bwk1.masterhash.us"));      // Single node address
         vSeeds.push_back(CDNSSeedData("bwk2.masterhash.us", "bwk2.masterhash.us")); 	 // Single node address
         vSeeds.push_back(CDNSSeedData("bwk3.masterhash.us", "bwk3.masterhash.us"));      // Single node address

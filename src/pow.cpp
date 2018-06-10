@@ -62,19 +62,9 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         if (bnNew <= 0 || bnNew > bnTargetLimit)
             bnNew = bnTargetLimit;
         
-        // Log it for testing.
-        // [oldschool] TODO: remove
-        std::cout << "Height: " << pindexLast->nHeight << std::endl;
-        std::cout << "nActualSpacing: " << nActualSpacing << std::endl;
-        std::cout << "nActualTimespan: " << nActualTimespan << std::endl;
-        std::cout << "nInterval: " << nInterval << std::endl;
-        std::cout << "bnTargetLimit: " << bnTargetLimit.GetHex() << std::endl;
-        std::cout << "bnNew: " << bnNew.GetHex() << std::endl << std::endl;
-        
         // For first 20 blocks return limit to avoid high 
         // difficulty from TH/s PoW.
         if (pindexLast->nHeight <= (nLastPOWBlock + 20)) {
-            std::cout << "Grace period for diff. target: " << bnTargetLimit.GetHex() << std::endl << std::endl;
             bnTargetLimit = (~uint256(0) >> 12);
             return bnTargetLimit.GetCompact();
         }

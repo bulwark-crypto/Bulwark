@@ -32,7 +32,8 @@ void CActiveMasternode::ManageStatus()
         pmn = mnodeman.Find(pubKeyMasternode);
         if (pmn != NULL) {
             pmn->Check();
-            // [oldschool] TODO: can be a prior masternode protocol version.
+            // [stu] TODO: verify change in protocol version handling is accurate.
+            // Was previously `pmn->protocolVersion == PROTOCOL_VERSION`.
             if (pmn->IsEnabled() && pmn->protocolVersion >= ActiveProtocol()) 
                 EnableHotColdMasterNode(pmn->vin, pmn->addr);
         }

@@ -1663,7 +1663,7 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 31.25 * COIN;
 
     // POS Year 1
-    // [oldschool] TODO: check reward schedule for change with PoS move.
+    // [stu] TODO: verify correct award schedule
     } else if (nHeight <= 431999 && nHeight >= 345600) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518399 && nHeight >= 432000) {
@@ -1890,21 +1890,11 @@ int64_t GetSeeSawReward(int64_t blockValue, int64_t nMoneySupply, int64_t mNodeC
         ret = blockValue * .01;
     }
 
-    // [oldschool] TODO: remove
-    std::cout << "blockValue: " << blockValue << std::endl;
-    std::cout << "nMoneySupply: " << nMoneySupply << std::endl;
-    std::cout << "mNodeCoins: " << mNodeCoins << std::endl;
-    std::cout << "ret: " << ret << std::endl;
-
     return ret;
 }
 
 int64_t GetSplitReward(int64_t blockValue) {
     int64_t ret = blockValue * 0.6;
-
-    // [oldschool] TODO: remove
-    std::cout << "blockValue: " << blockValue << std::endl;
-    std::cout << "ret: " << ret << std::endl;
 
     return ret;
 }
@@ -1933,7 +1923,6 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
             ret = GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
-            // [oldschool] TODO: ret = GetSplitReward(blockValue);
         } else if (nHeight >= Params().RAMP_TO_BLOCK()) {
             ret = blockValue / 2;
         }
@@ -1975,7 +1964,6 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         }
 
         ret = GetSeeSawReward(blockValue, nMoneySupply, mNodeCoins);
-        // [oldschool] TODO: ret = GetSplitReward(blockValue);
     }
 
     return ret;
