@@ -1643,7 +1643,7 @@ int64_t GetBlockValue(int nHeight)
      */
     int64_t nSubsidy = 0;
     CAmount nSlowSubsidy = 50 * COIN;
-
+  
     // POW Year 0
     if (nHeight == 0) {
         nSubsidy = 489720.00 * COIN;
