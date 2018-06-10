@@ -11,8 +11,7 @@ seeders = [
     'bwkseed2.bulwarkcrypto.site',
     'bwkseed3.bulwarkcrypto.site',
     'bwkseed4.bulwarkcrypto.site',
-    'bwkseed5.bulwarkcrypto.site',
-    'bwk.goseed.club'
+    'bwkseed5.bulwarkcrypto.site'
 ]
 
 for seeder in seeders:
