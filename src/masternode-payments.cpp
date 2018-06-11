@@ -228,7 +228,11 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
         return true;
     }
 
-    const CTransaction& txNew = (nBlockHeight > Params().LAST_POW_BLOCK() ? block.vtx[1] : block.vtx[0]);
+    int nLastPOWBlock = Params().LAST_POW_BLOCK();
+    if (IsSporkActive(SPORK_19_POW_ROLLBACK))
+        nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
+
+    const CTransaction& txNew = (nBlockHeight > nLastPOWBlock ? block.vtx[1] : block.vtx[0]);
 
     //check if it's a budget block
     if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
@@ -292,6 +296,7 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
         if (winningNode) {
             payee = GetScriptForDestination(winningNode->pubKeyCollateralAddress.GetID());
         } else {
+            LogPrintf("CreateNewBlock: Failed to detect masternode to pay\n");
             hasPayment = false;
         }
     }
@@ -325,7 +330,10 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
         CBitcoinAddress address2(address1);
 
         LogPrintf("Masternode payment of %s to %s\n", FormatMoney(masternodePayment).c_str(), address2.ToString().c_str());
-    }
+    } else {
+        if (!fProofOfStake)
+            txNew.vout[0].nValue = blockValue - masternodePayment;
+     }
 }
 
 int CMasternodePayments::GetMinMasternodePaymentsProto()
