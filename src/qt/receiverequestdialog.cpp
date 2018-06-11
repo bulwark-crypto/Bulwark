@@ -10,6 +10,7 @@
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "walletmodel.h"
+#include "qtmaterialflatbutton.h"
 
 #include <QClipboard>
 #include <QDrag>
@@ -180,6 +181,11 @@ void ReceiveRequestDialog::update()
 void ReceiveRequestDialog::on_btnCopyURI_clicked()
 {
     GUIUtil::setClipboard(GUIUtil::formatBitcoinURI(info));
+}
+
+void ReceiveRequestDialog::on_closeButton_clicked()
+{
+	this->close();
 }
 
 void ReceiveRequestDialog::on_btnCopyAddress_clicked()

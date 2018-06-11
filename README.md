@@ -23,8 +23,8 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
 | Confirmation          | 6 Blocks (~9 Minutes)                   |
 | Circulation (1 Year)  | 14,505,720 BWK                          |
 | Circulation (5 Years) | 27,668,220 BWK                          |
-| PoW Period            | nHeight ≤ 345,600                       |
-| PoS Period            | nHeight ≥ 345,601                       |
+| PoW Period            | nHeight ≤ 182,700                      |
+| PoS Period            | nHeight ≥ 182,701                       |
 | Protocol Support      | IPV4, IPV6, TOR                         |
 | PoS                   | Blackcoin v3.0 PoS, PIVX SeeSaw Rewards |
 
@@ -38,13 +38,14 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
 | 50.000   | 28801-57600   | 75%  | 25% | 3345695     |
 | 50.000   | 57601-86400   | 66%  | 33% | 4785695     |
 | 43.750   | 86401-172800  | 50%  | 50% | 8565695     |
-| 37.500   | 172801-259200 | 50%  | 50% | 11805695    |
-| 31.250   | 259201-345600 | 50%  | 50% | 14505695    |
+| 37.500   | 172801-182700 | 50%  | 50% | 8936907    |
 
 ## PoS Block Rewards
 
 | Subsidy | Block           | Budget | PoS/Masternode | Note          |
 |---------|-----------------|--------|----------------|---------------|
+| 37.500  | 182701-259200   | 0%     | SeeSaw         | Year 1        |
+| 31.250  | 259201-345600   | 0%     | SeeSaw         | Year 1        |
 | 25.000  | 345601-432000   | 10%    | SeeSaw         | Year 2        |
 | 21.875  | 432001-518400   | 10%    | SeeSaw         | Year 2        |
 | 18.750  | 518401-604800   | 10%    | SeeSaw         | Year 2        |

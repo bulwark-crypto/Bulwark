@@ -793,13 +793,16 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     CAmount nSubsidy = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight > 28800) {
+        // Changed testnet budget starting block.
+        if (nHeight > 2000) {
             nSubsidy = 500 * COIN;
-            return ((nSubsidy / 100) * 10) * 146;
+            // 30 sec blocks, 2880 per 24 hrs, 30 days a month
+            return ((nSubsidy / 100) * 10) * 2880 * 30;
         }
     }
 
-    if (nHeight <= 432000 && nHeight > Params().LAST_POW_BLOCK()) {
+    // keep same schedule even with PoS move
+    if (nHeight <= 432000 && nHeight >= Params().LAST_POW_BLOCK_OLD()) {
         nSubsidy = 25 * COIN;
     } else if (nHeight <= 518400 && nHeight > 432000) {
         nSubsidy = 21.875 * COIN;
