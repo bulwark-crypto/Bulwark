@@ -40,6 +40,7 @@ QT_FORMS_UI = \
   qt/forms/intro.ui \
   qt/forms/masternodelist.ui \
   qt/forms/multisenddialog.ui \
+  qt/forms/multisendconfigdialog.ui \
   qt/forms/multisigdialog.ui \
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
@@ -74,6 +75,7 @@ QT_MOC_CPP = \
   qt/moc_macnotificationhandler.cpp \
   qt/moc_masternodelist.cpp \
   qt/moc_multisenddialog.cpp \
+  qt/moc_multisendconfigdialog.cpp \
   qt/moc_multisigdialog.cpp \
   qt/moc_notificator.cpp \
   qt/moc_openuridialog.cpp \
@@ -82,6 +84,8 @@ QT_MOC_CPP = \
   qt/moc_overviewpage.cpp \
   qt/moc_peertablemodel.cpp \
   qt/moc_paymentserver.cpp \
+  qt/moc_qtmaterialflatbutton.cpp \
+  qt/moc_qtmaterialflatbutton_internal.cpp \
   qt/moc_qvalidatedlineedit.cpp \
   qt/moc_qvaluecombobox.cpp \
   qt/moc_receivecoinsdialog.cpp \
@@ -101,7 +105,17 @@ QT_MOC_CPP = \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp
+  qt/moc_walletview.cpp \
+  qt/moc_qtmaterialcheckable.cpp \
+  qt/moc_qtmaterialcheckable_internal.cpp \
+  qt/moc_qtmaterialoverlaywidget.cpp \
+  qt/moc_qtmaterialripple.cpp \
+  qt/moc_qtmaterialrippleoverlay.cpp \
+  qt/moc_qtmaterialstatetransition.cpp \
+  qt/moc_qtmaterialstyle.cpp \
+  qt/moc_qtmaterialtextfield.cpp \
+  qt/moc_qtmaterialtextfield_internal.cpp \
+  qt/moc_qtmaterialtheme.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -146,6 +160,7 @@ BITCOIN_QT_H = \
   qt/macnotificationhandler.h \
   qt/masternodelist.h \
   qt/multisenddialog.h \
+  qt/multisendconfigdialog.h \
   qt/multisigdialog.h \
   qt/networkstyle.h \
   qt/notificator.h \
@@ -157,6 +172,12 @@ BITCOIN_QT_H = \
   qt/paymentserver.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
+  qt/qtmaterialflatbutton.h \
+  qt/qtmaterialflatbutton_internal.h \
+  qt/qtmaterialtextfield.h \
+  qt/qtmaterialtextfield_internal.h \
+  qt/qtmaterialtextfield_p.h \
+  qt/qtmaterialflatbutton_p.h \
   qt/qvalidatedlineedit.h \
   qt/qvaluecombobox.h \
   qt/receivecoinsdialog.h \
@@ -179,9 +200,35 @@ BITCOIN_QT_H = \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
-  qt/winshutdownmonitor.h
+  qt/winshutdownmonitor.h \
+  qt/qtmaterialcheckable.h \
+  qt/qtmaterialcheckable_internal.h \
+  qt/qtmaterialcheckable_p.h \
+  qt/qtmaterialoverlaywidget.h \
+  qt/qtmaterialripple.h \
+  qt/qtmaterialrippleoverlay.h \
+  qt/qtmaterialstatetransition.h \
+  qt/qtmaterialstatetransitionevent.h \
+  qt/qtmaterialstyle.h \
+  qt/qtmaterialstyle_p.h \
+  qt/qtmaterialtheme.h \
+  qt/qtmaterialtheme_p.h
+
+RES_FONTS = \
+  qt/res/fonts/Roboto-Bold.ttf \
+  qt/res/fonts/Roboto-Medium.ttf 
 
 RES_ICONS = \
+  qt/res/icons/history_m.png \
+  qt/res/icons/send_m.png \
+  qt/res/icons/receive_m.png \
+  qt/res/icons/masternodes_m.png \
+  qt/res/icons/overview_m.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/open.png \
+  qt/res/icons/explorer.png \
+  qt/res/icons/information.png \
   qt/res/icons/add.png \
   qt/res/icons/address-book.png \
   qt/res/icons/bitcoin.ico \
@@ -256,13 +303,25 @@ BITCOIN_QT_CPP = \
   qt/optionsmodel.cpp \
   qt/peertablemodel.cpp \
   qt/platformstyle.cpp \
+  qt/qtmaterialflatbutton.cpp \
+  qt/qtmaterialflatbutton_internal.cpp \
   qt/qvalidatedlineedit.cpp \
   qt/qvaluecombobox.cpp \
   qt/rpcconsole.cpp \
   qt/splashscreen.cpp \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp \
-  qt/winshutdownmonitor.cpp
+  qt/winshutdownmonitor.cpp \
+  qt/qtmaterialcheckable.cpp \
+  qt/qtmaterialcheckable_internal.cpp \
+  qt/qtmaterialoverlaywidget.cpp \
+  qt/qtmaterialripple.cpp \
+  qt/qtmaterialrippleoverlay.cpp \
+  qt/qtmaterialstatetransition.cpp \
+  qt/qtmaterialstyle.cpp \
+  qt/qtmaterialtextfield.cpp \
+  qt/qtmaterialtextfield_internal.cpp \
+  qt/qtmaterialtheme.cpp
 
 if ENABLE_WALLET
 BITCOIN_QT_CPP += \
@@ -277,6 +336,7 @@ BITCOIN_QT_CPP += \
   qt/editaddressdialog.cpp \
   qt/masternodelist.cpp \
   qt/multisenddialog.cpp \
+  qt/multisendconfigdialog.cpp \
   qt/multisigdialog.cpp \
   qt/openuridialog.cpp \
   qt/overviewpage.cpp \
@@ -330,7 +390,7 @@ qt_libbitcoinqt_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
 qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
-  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES)
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(RES_FONTS)
 
 nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
@@ -392,7 +452,7 @@ $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bulwark_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H) 
 	@test -f $(RCC)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name bulwark $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@

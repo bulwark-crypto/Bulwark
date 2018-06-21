@@ -94,7 +94,7 @@ QString dateTimeStr(qint64 nTime)
 
 QFont bitcoinAddressFont()
 {
-    QFont font("Monospace");
+    QFont font("Roboto",10,QFont::Medium);
 #if QT_VERSION >= 0x040800
     font.setStyleHint(QFont::Monospace);
 #else
@@ -111,7 +111,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Bulwark address (e.g. %1)").arg("AWSbBnzmNkjDVaYHX7vkL1MqD96pRYWtZo"));
+    widget->setPlaceholderText(QObject::tr("Enter a Bulwark address (e.g. %1)").arg("bWMiJk57wsPJuGFFJCp8MzSsvzepf7CFAi"));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));

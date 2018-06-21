@@ -22,7 +22,7 @@
 #include "transactiontablemodel.h"
 #include "transactionview.h"
 #include "walletmodel.h"
-
+#include "qtmaterialflatbutton.h"
 #include "ui_interface.h"
 
 #include <QAction>
@@ -47,7 +47,7 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
     QHBoxLayout* hbox_buttons = new QHBoxLayout();
     transactionView = new TransactionView(this);
     vbox->addWidget(transactionView);
-    QPushButton* exportButton = new QPushButton(tr("&Export"), this);
+    QtMaterialFlatButton* exportButton = new QtMaterialFlatButton(tr("Export"), this);
     exportButton->setToolTip(tr("Export the data in the current tab to a file"));
 #ifndef Q_OS_MAC // Icons on push buttons are very uncommon on Mac
     exportButton->setIcon(QIcon(":/icons/export"));
