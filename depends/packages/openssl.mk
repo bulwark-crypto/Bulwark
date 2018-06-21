@@ -1,5 +1,5 @@
 package=openssl
-$(package)_version=1.0.2o
+$(package)_version=1.0.2g
 $(package)_download_path=https://www.openssl.org/source
 $(package)_file_name=$(package)-$($(package)_version).tar.gz
 $(package)_sha256_hash=ec3f5c9714ba0fd45cb4e087301eb1336c317e0d20b575a125050470e8089e4d
