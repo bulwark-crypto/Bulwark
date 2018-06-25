@@ -27,6 +27,7 @@
 
 #include <QAction>
 #include <QActionGroup>
+#include <QCheckBox>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -53,7 +54,6 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
     exportButton->setIcon(QIcon(":/icons/export"));
 #endif
     hbox_buttons->addStretch();
-
     // Sum of selected transactions
     QLabel* transactionSumLabel = new QLabel();                // Label
     transactionSumLabel->setObjectName("transactionSumLabel"); // Label ID as CSS-reference
