@@ -125,7 +125,6 @@ public:
 
     friend bool operator==(const CSubNet& a, const CSubNet& b);
     friend bool operator!=(const CSubNet& a, const CSubNet& b);
-    friend bool operator<(const CSubNet& a, const CSubNet& b);
 };
 
 /** A combination of a network address (CNetAddr) and a (TCP) port */
