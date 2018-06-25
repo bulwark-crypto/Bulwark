@@ -27,7 +27,7 @@ bool TransactionRecord::showTransaction(const CWalletTx& wtx)
     }
 	else {
 		QSettings settings;
-		return !(settings.value("fShowOrphans").toBool() && wtx.GetDepthInMainChain() < 0);
+		return (!settings.value("fShowOrphans").toBool() || wtx.GetDepthInMainChain() >= 0);
 	}
 }
 
