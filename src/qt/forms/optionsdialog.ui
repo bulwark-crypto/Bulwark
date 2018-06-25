@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -239,6 +239,13 @@
             </property>
             <property name="text">
              <string>&amp;Spend unconfirmed change</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="showOrphans">
+            <property name="text">
+             <string>Filter Orphans from Transaction History</string>
             </property>
            </widget>
           </item>
@@ -730,14 +737,15 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QtMaterialFlatButton</class>
-   <extends>QWidget</extends>
-   <header>qtmaterialflatbutton.h</header>
-  </customwidget>
-  <customwidget>
    <class>QValidatedLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qvalidatedlineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QtMaterialFlatButton</class>
+   <extends>QWidget</extends>
+   <header>qtmaterialflatbutton.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>QValueComboBox</class>
