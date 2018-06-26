@@ -6,6 +6,7 @@
 #ifndef BITCOIN_NET_H
 #define BITCOIN_NET_H
 
+#include "addrdb.h"
 #include "bloom.h"
 #include "compat.h"
 #include "hash.h"
@@ -270,8 +271,9 @@ public:
 protected:
     // Denial-of-service detection/prevention
     // Key is IP address, value is banned-until-time
-    static std::map<CSubNet, int64_t> setBanned;
+	static banmap_t setBanned;
     static CCriticalSection cs_setBanned;
+	static bool setBannedIsDirty;
 
     std::vector<std::string> vecRequestsFulfilled; //keep track of what client has asked for
 
@@ -638,7 +640,7 @@ public:
     static void Ban(const CSubNet& subNet, int64_t bantimeoffset = 0, bool sinceUnixEpoch = false);
     static bool Unban(const CNetAddr& ip);
     static bool Unban(const CSubNet& subNet);
-    static void GetBanned(std::map<CSubNet, int64_t>& banMap);
+    static void GetBanned(banmap_t &banMap);
     void copyStats(CNodeStats& stats);
 
     static bool IsWhitelistedRange(const CNetAddr& ip);
@@ -650,6 +652,7 @@ public:
 
     static uint64_t GetTotalBytesRecv();
     static uint64_t GetTotalBytesSent();
+	
 };
 
 class CExplicitNetCleanup

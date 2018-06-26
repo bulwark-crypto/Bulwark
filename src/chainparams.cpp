@@ -115,7 +115,6 @@ public:
 	    nTargetSpacing = 1 * 90; // Bulwark: 1.5min after block 300
         nLastPOWBlock = 182700; 
         nLastPOWBlockOld = 345600; // 1 year
-        nLastSeeSawBlock = 200000; // last block for seesaw rewards
 	    nRampToBlock = 960; // Slow start, ramp linearly to this block
         nMaturity = 66; // 99 Minutes
 	    nMasternodeCountDrift = 4;
@@ -212,7 +211,6 @@ public:
 
         nLastPOWBlock = 1000;
         nLastPOWBlockOld = 1100;
-        nLastSeeSawBlock = 1200;
         nMaturity = 15;
         nMaxMoneyOut = 33284220 * COIN; // 2032 Maximum
         nRampToBlock = 100;

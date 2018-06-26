@@ -75,6 +75,7 @@ endif
 # bulwark core #
 BITCOIN_CORE_H = \
   activemasternode.h \
+  addrdb.h \
   addrman.h \
   alert.h \
   allocators.h \
@@ -104,6 +105,7 @@ BITCOIN_CORE_H = \
   db.h \
   eccryptoverify.h \
   ecwrapper.h \
+  fs.h \
   hash.h \
   init.h \
   kernel.h \
@@ -184,11 +186,13 @@ libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 # server: shared between bulwarkd and bulwark-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
+  addrdb.cpp \
   addrman.cpp \
   alert.cpp \
   bloom.cpp \
   chain.cpp \
   checkpoints.cpp \
+  fs.cpp \
   init.cpp \
   leveldbwrapper.cpp \
   main.cpp \
