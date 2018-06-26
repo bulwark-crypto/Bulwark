@@ -534,7 +534,9 @@ bool CNode::IsBanned(CSubNet subnet)
 void CNode::Ban(const CNetAddr& addr,int64_t bantimeoffset, bool sinceUnixEpoch) {
 	CSubNet subNet(addr);
 	Ban(subNet, bantimeoffset, sinceUnixEpoch);
+	DumpBanlist();
 }
+
 
 void CNode::Ban(const CSubNet& subNet, int64_t bantimeoffset, bool sinceUnixEpoch) {
 	CBanEntry banEntry(GetTime());
@@ -561,9 +563,11 @@ bool CNode::Unban(const CNetAddr& addr)
 
 bool CNode::Unban(const CSubNet& subNet)
 {
-    LOCK(cs_setBanned);
-    if (setBanned.erase(subNet))
-        return true;
+	LOCK(cs_setBanned);
+	if (setBanned.erase(subNet)) {
+		DumpBanlist();
+		return true;
+}	
     return false;
 }
 
@@ -1196,6 +1200,40 @@ void DumpAddresses()
 
     LogPrint("net", "Flushed %d addresses to peers.dat  %dms\n",
         addrman.size(), GetTimeMillis() - nStart);
+}
+
+void CNode::DumpBanlist()
+{
+	int64_t nStart = GetTimeMillis();
+
+	//CNode::SweepBanned(); clean unused entries (if bantime has expired)
+
+	CBanDB bandb;
+	banmap_t banmap;
+	CNode::GetBanned(banmap);
+	bandb.Write(banmap);
+
+	LogPrint("net", "Flushed %d banned node ips/subnets to banlist.dat  %dms\n",
+		banmap.size(), GetTimeMillis() - nStart);
+}
+
+void CNode::SweepBanned()
+{
+	int64_t now = GetTime();
+
+	LOCK(cs_setBanned);
+	banmap_t::iterator it = setBanned.begin();
+	while (it != setBanned.end())
+	{
+		CBanEntry banEntry = (*it).second;
+		if (now > banEntry.nBanUntil)
+		{
+			setBanned.erase(it++);
+			setBannedIsDirty = true;
+		}
+		else
+			++it;
+	}
 }
 
 void static ProcessOneShot()
