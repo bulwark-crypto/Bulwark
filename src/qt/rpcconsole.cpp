@@ -361,7 +361,7 @@ void RPCConsole::setClientModel(ClientModel* model)
 		QAction* banAction1h = new QAction(tr("Ban Node for") + " " + tr("1 &hour"), this);
 		QAction* banAction24h = new QAction(tr("Ban Node for") + " " + tr("1 &day"), this);
 		QAction* banAction7d = new QAction(tr("Ban Node for") + " " + tr("1 &week"), this);
-		QAction* banAction365d = new QAction(tr("Ban Node for") + " " + tr("1 &year"), this);
+		QAction* banAction30d = new QAction(tr("Ban Node for") + " " + tr("1 &month"), this);
 
 		// create peer table context menu
 		peersTableContextMenu = new QMenu();
@@ -369,7 +369,7 @@ void RPCConsole::setClientModel(ClientModel* model)
 		peersTableContextMenu->addAction(banAction1h);
 		peersTableContextMenu->addAction(banAction24h);
 		peersTableContextMenu->addAction(banAction7d);
-		peersTableContextMenu->addAction(banAction365d);
+		peersTableContextMenu->addAction(banAction30d);
 
 		// Add a signal mapping to allow dynamic context menu arguments.
 		// We need to use int (instead of int64_t), because signal mapper only supports
@@ -378,11 +378,11 @@ void RPCConsole::setClientModel(ClientModel* model)
 		signalMapper->setMapping(banAction1h, 60 * 60);
 		signalMapper->setMapping(banAction24h, 60 * 60 * 24);
 		signalMapper->setMapping(banAction7d, 60 * 60 * 24 * 7);
-		signalMapper->setMapping(banAction365d, 60 * 60 * 24 * 365);
+		signalMapper->setMapping(banAction30d, 60 * 60 * 24 * 30);
 		connect(banAction1h, SIGNAL(triggered()), signalMapper, SLOT(map()));
 		connect(banAction24h, SIGNAL(triggered()), signalMapper, SLOT(map()));
 		connect(banAction7d, SIGNAL(triggered()), signalMapper, SLOT(map()));
-		connect(banAction365d, SIGNAL(triggered()), signalMapper, SLOT(map()));
+		connect(banAction30d, SIGNAL(triggered()), signalMapper, SLOT(map()));
 		connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(banSelectedNode(int)));
 
         // connect the peerWidget selection model to our peerSelected() handler
