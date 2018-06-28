@@ -1131,18 +1131,46 @@ bool BitcoinGUI::eventFilter(QObject* object, QEvent* event)
 
 void BitcoinGUI::setStakingStatus()
 {
-    if (pwalletMain)
-        fMultiSend = pwalletMain->isMultiSendEnabled();
-
-    if (nLastCoinStakeSearchInterval) {
-        labelStakingIcon->show();
-        labelStakingIcon->setPixmap(QIcon(":/icons/staking_active").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
-        labelStakingIcon->setToolTip(tr("Staking is active\n MultiSend: %1").arg(fMultiSend ? tr("Active") : tr("Not Active")));
-    } else {
-        labelStakingIcon->show();
-        labelStakingIcon->setPixmap(QIcon(":/icons/staking_inactive").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
-        labelStakingIcon->setToolTip(tr("Staking is not active\n MultiSend: %1").arg(fMultiSend ? tr("Active") : tr("Not Active")));
-    }
+	if (pwalletMain) {
+		fMultiSend = pwalletMain->isMultiSendEnabled();
+		labelStakingIcon->show();
+		QString tooltip = "";
+		tooltip.append("walletunlocked: ");
+		if (!pwalletMain->IsLocked())
+			tooltip.append("true\n");
+		else
+			tooltip.append("false\n");
+		tooltip.append("mintablecoins: ");
+		if (!pwalletMain->MintableCoins())
+			tooltip.append("true\n");
+		else
+			tooltip.append("false\n");
+		tooltip.append("enoughCoins: ");
+		if (nReserveBalance <= pwalletMain->GetBalance())
+			tooltip.append("true\n");
+		else
+			tooltip.append("false\n");
+		tooltip.append("mnsync: ");
+		if (masternodeSync.IsSynced())
+			tooltip.append("true\n");
+		else
+			tooltip.append("false\n");
+		tooltip.append("staking status: ");
+		if (nLastCoinStakeSearchInterval) {
+			tooltip.append("true\n");
+			labelStakingIcon->setPixmap(QIcon(":/icons/staking_active").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
+		}
+		else {
+			tooltip.append("false\n");
+			labelStakingIcon->setPixmap(QIcon(":/icons/staking_inactive").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
+		}
+		tooltip.append("multisend: ");
+		if (fMultiSend)
+			tooltip.append("true\n");
+		else
+			tooltip.append("false\n");
+		labelStakingIcon->setToolTip(tooltip);
+	}
 }
 
 #ifdef ENABLE_WALLET
@@ -1181,7 +1209,7 @@ void BitcoinGUI::setEncryptionStatus(int status)
     case WalletModel::UnlockedForAnonymizationOnly:
         labelEncryptionIcon->show();
         labelEncryptionIcon->setPixmap(QIcon(":/icons/lock_open").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
-        labelEncryptionIcon->setToolTip(tr("Wallet is <b>encrypted</b> and currently <b>unlocked</b> for anonimization and staking only"));
+        labelEncryptionIcon->setToolTip(tr("Wallet is <b>encrypted</b> and currently <b>unlocked</b> for anonymization and staking only"));
         encryptWalletAction->setChecked(true);
         changePassphraseAction->setEnabled(true);
         unlockWalletAction->setVisible(true);
