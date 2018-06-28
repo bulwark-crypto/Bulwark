@@ -1,12 +1,12 @@
 ![Bulwark Logo](https://bulwarkcrypto.com/wp-content/uploads/2018/03/Badge-Full-Color.svg)
- 	 
+
 Bulwark Cryptocurrency
 &middot;
 [![GitHub license](https://img.shields.io/github/license/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/blob/master/COPYING) [![Build Status](https://travis-ci.org/bulwark-crypto/Bulwark.svg?branch=master)](https://travis-ci.org/bulwark-crypto/Bulwark) [![GitHub version](https://badge.fury.io/gh/bulwark-crypto%2FBulwark.svg)](https://badge.fury.io/gh/bulwark-crypto%2FBulwark) [![Discord](https://img.shields.io/discord/374271866308919296.svg)](https://discord.me/bulwarkcrypto)
 =====
 
 Bulwark (BWK) is a privacy oriented digital currency with Masternodes implemented.
-Bulwark offers both PrivateSend and InstantSend to enable speedy transactions with a Seesaw Staking / Masternode reward balancing mechanism to promote strong network security after the Proof of Work phase
+Bulwark offers both SwiftTX and Obfuscation to enable speedy transactions with a Seesaw Staking / Masternode reward balancing mechanism to promote strong network security after the Proof of Work phase
 
 ## Specifications
 
@@ -32,17 +32,17 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
 
 | Subsidy  | Block         | PoW  | MN  | Circulation |
 |----------|---------------|------|-----|-------------|
-| 489720   | 1             | 100% | NA  | 489720      |
-| ~25(avg) | 2-960         | 100% | NA  | 513695      |
-| 50.000   | 961-28800     | 80%  | 20% | 1905695     |
-| 50.000   | 28801-57600   | 75%  | 25% | 3345695     |
-| 50.000   | 57601-86400   | 66%  | 33% | 4785695     |
-| 43.750   | 86401-172800  | 50%  | 50% | 8565695     |
-| 37.500   | 172801-182700 | 50%  | 50% | 8936907    |
+| 489720   | 1             | 100% | NA  | 489200      |
+| ~25(avg) | 2-960         | 100% | NA  | 513225      |
+| 50.000   | 961-28800     | 80%  | 20% | 1905225     |
+| 50.000   | 28801-57600   | 75%  | 25% | 3345225     |
+| 50.000   | 57601-86400   | 66%  | 33% | 4785225     |
+| 43.750   | 86401-172800  | 50%  | 50% | 8565225     |
+| 37.500   | 172801-182700 | 50%  | 50% | 8936475     |
 
 ## PoS Block Rewards
 
-| Subsidy | Block           | Budget | PoS/Masternode | Note          |
+| Subsidy | Block           | Budget | Circulation    | Note          |
 |---------|-----------------|--------|----------------|---------------|
 | 37.500  | 182701-200000   | 0%     | SeeSaw         | Year 1        |
 | 37.500  | 200001-259200   | 0%     | 35/65          | Year 1        |
