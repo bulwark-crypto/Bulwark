@@ -40,6 +40,14 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 
     if (pindexLast->nHeight >= nLastPOWBlock) {
         uint256 bnTargetLimit = (~uint256(0) >> 24);
+        
+        // For first 20 blocks return limit to avoid high 
+        // difficulty from TH/s PoW.
+        if (pindexLast->nHeight <= (nLastPOWBlock + 20)) {
+            bnTargetLimit = (~uint256(0) >> 12);
+            return bnTargetLimit.GetCompact();
+        }
+        
         int64_t nTargetSpacing = 90;
         int64_t nTargetTimespan = 60 * 30; //1800
 
@@ -61,13 +69,6 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 
         if (bnNew <= 0 || bnNew > bnTargetLimit)
             bnNew = bnTargetLimit;
-        
-        // For first 20 blocks return limit to avoid high 
-        // difficulty from TH/s PoW.
-        if (pindexLast->nHeight <= (nLastPOWBlock + 20)) {
-            bnTargetLimit = (~uint256(0) >> 12);
-            return bnTargetLimit.GetCompact();
-        }
 
         return bnNew.GetCompact();
     }

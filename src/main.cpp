@@ -1893,14 +1893,17 @@ int64_t GetSeeSawReward(int64_t blockValue, int64_t nMoneySupply, int64_t mNodeC
 }
 
 int64_t GetSplitReward(int64_t blockValue) {
-    int64_t ret = blockValue * 0.6;
-
+    int64_t ret = blockValue / 100 * 65;
     return ret;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
 {
     int64_t ret = 0;
+
+    // switch from seesaw at height.
+    if (nHeight > Params().LAST_SEESAW_BLOCK())
+        return GetSplitReward(blockValue);
 
     int nLastPOWBlock = Params().LAST_POW_BLOCK();
     if (IsSporkActive(SPORK_19_POW_ROLLBACK))
@@ -1940,7 +1943,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	    ret = blockValue / 3;
     } else if (nHeight <= nLastPOWBlock && nHeight >= 86400) {
 	    ret = blockValue / 2;
-    } else if (nHeight > nLastPOWBlock) {
+    } else if (nHeight > nLastPOWBlock) {        
         // if a mn count is inserted into the function we are looking for a 
         // specific result for a masternode count.
         if (nMasternodeCount < 1) {
@@ -5668,6 +5671,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 
 int ActiveProtocol()
 {
+    if (IsSporkActive(SPORK_20_NEW_PROTOCOL_DYNAMIC))
+        return GetSporkValue(SPORK_20_NEW_PROTOCOL_DYNAMIC);
+	
     if (IsSporkActive(SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4))
         return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT18;
 	

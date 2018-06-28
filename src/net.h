@@ -6,6 +6,7 @@
 #ifndef BITCOIN_NET_H
 #define BITCOIN_NET_H
 
+#include "addrdb.h"
 #include "bloom.h"
 #include "compat.h"
 #include "hash.h"
@@ -67,6 +68,7 @@ void AddOneShot(std::string strDest);
 bool RecvLine(SOCKET hSocket, std::string& strLine);
 void AddressCurrentlyConnected(const CService& addr);
 CNode* FindNode(const CNetAddr& ip);
+CNode* FindNode(const CSubNet& subNet);
 CNode* FindNode(const std::string& addrName);
 CNode* FindNode(const CService& ip);
 CNode* ConnectNode(CAddress addrConnect, const char* pszDest = NULL, bool obfuScationMaster = false);
@@ -269,8 +271,9 @@ public:
 protected:
     // Denial-of-service detection/prevention
     // Key is IP address, value is banned-until-time
-    static std::map<CNetAddr, int64_t> setBanned;
+	static banmap_t setBanned;
     static CCriticalSection cs_setBanned;
+	static bool setBannedIsDirty;
 
     std::vector<std::string> vecRequestsFulfilled; //keep track of what client has asked for
 
@@ -632,8 +635,16 @@ public:
     // new code.
     static void ClearBanned(); // needed for unit testing
     static bool IsBanned(CNetAddr ip);
-    static bool Ban(const CNetAddr& ip);
+    static bool IsBanned(CSubNet subNet);
+    static void Ban(const CNetAddr& ip, int64_t bantimeoffset = 0, bool sinceUnixEpoch = false);
+    static void Ban(const CSubNet& subNet, int64_t bantimeoffset = 0, bool sinceUnixEpoch = false);
+	static void DumpBanlist();
+    static bool Unban(const CNetAddr& ip);
+    static bool Unban(const CSubNet& subNet);
+    static void GetBanned(banmap_t &banMap);
     void copyStats(CNodeStats& stats);
+	//!clean unused entries (if bantime has expired)
+	static void SweepBanned();
 
     static bool IsWhitelistedRange(const CNetAddr& ip);
     static void AddWhitelistedRange(const CSubNet& subnet);
@@ -644,6 +655,7 @@ public:
 
     static uint64_t GetTotalBytesRecv();
     static uint64_t GetTotalBytesSent();
+	
 };
 
 class CExplicitNetCleanup
