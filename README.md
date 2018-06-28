@@ -23,10 +23,10 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
 | Confirmation          | 6 Blocks (~9 Minutes)                   |
 | Circulation (1 Year)  | 14,505,720 BWK                          |
 | Circulation (5 Years) | 27,668,220 BWK                          |
-| PoW Period            | nHeight ≤ 182,700                      |
+| PoW Period            | nHeight ≤ 182,700                       |
 | PoS Period            | nHeight ≥ 182,701                       |
 | Protocol Support      | IPV4, IPV6, TOR                         |
-| PoS                   | Blackcoin v3.0 PoS, PIVX SeeSaw Rewards |
+| PoS                   | SeeSaw & Split Rewards                  |
 
 ## PoW Block Reward
 
@@ -44,22 +44,23 @@ Bulwark offers both PrivateSend and InstantSend to enable speedy transactions wi
 
 | Subsidy | Block           | Budget | PoS/Masternode | Note          |
 |---------|-----------------|--------|----------------|---------------|
-| 37.500  | 182701-259200   | 0%     | SeeSaw         | Year 1        |
-| 31.250  | 259201-345600   | 0%     | SeeSaw         | Year 1        |
-| 25.000  | 345601-432000   | 10%    | SeeSaw         | Year 2        |
-| 21.875  | 432001-518400   | 10%    | SeeSaw         | Year 2        |
-| 18.750  | 518401-604800   | 10%    | SeeSaw         | Year 2        |
-| 15.625  | 604801-691200   | 10%    | SeeSaw         | Year 2        |
-| 12.50   | 691201-777600   | 10%    | SeeSaw         | Year 3        |
-| 10.938  | 777601-864000   | 10%    | SeeSaw         | Year 3        |
-| 9.3750  | 864001-950400   | 10%    | SeeSaw         | Year 3        |
-| 7.8120  | 950401-1036800  | 10%    | SeeSaw         | Year 3        |
-| 6.2500  | 1036801-1123200 | 10%    | SeeSaw         | Year 4        |
-| 5.4690  | 1123201-1209600 | 10%    | SeeSaw         | Year 4        |
-| 4.6880  | 1209601-1296000 | 10%    | SeeSaw         | Year 4        |
-| 3.9060  | 1296000-1382400 | 10%    | SeeSaw         | Year 4        |
-| 3.1250  | 1382401-1468800 | 10%    | SeeSaw         | Year 5        |
-| 2.7340  | 1468801-1555200 | 10%    | SeeSaw         | Year 5        |
-| 2.3440  | 1555201-1641600 | 10%    | SeeSaw         | Year 5        |
-| 1.9530  | 1641601-1728000 | 10%    | SeeSaw         | Year 5        |
-| 1.6250  | 1728000+        | 10%    | SeeSaw         | In Perpetuity |
+| 37.500  | 182701-200000   | 0%     | SeeSaw         | Year 1        |
+| 37.500  | 200001-259200   | 0%     | 35/65          | Year 1        |
+| 31.250  | 259201-345600   | 0%     | 35/65          | Year 1        |
+| 25.000  | 345601-432000   | 10%    | 30/60          | Year 2        |
+| 21.875  | 432001-518400   | 10%    | 30/60          | Year 2        |
+| 18.750  | 518401-604800   | 10%    | 30/60          | Year 2        |
+| 15.625  | 604801-691200   | 10%    | 30/60          | Year 2        |
+| 12.50   | 691201-777600   | 10%    | 30/60          | Year 3        |
+| 10.938  | 777601-864000   | 10%    | 30/60          | Year 3        |
+| 9.3750  | 864001-950400   | 10%    | 30/60          | Year 3        |
+| 7.8120  | 950401-1036800  | 10%    | 30/60          | Year 3        |
+| 6.2500  | 1036801-1123200 | 10%    | 30/60          | Year 4        |
+| 5.4690  | 1123201-1209600 | 10%    | 30/60          | Year 4        |
+| 4.6880  | 1209601-1296000 | 10%    | 30/60          | Year 4        |
+| 3.9060  | 1296000-1382400 | 10%    | 30/60          | Year 4        |
+| 3.1250  | 1382401-1468800 | 10%    | 30/60          | Year 5        |
+| 2.7340  | 1468801-1555200 | 10%    | 30/60          | Year 5        |
+| 2.3440  | 1555201-1641600 | 10%    | 30/60          | Year 5        |
+| 1.9530  | 1641601-1728000 | 10%    | 30/60          | Year 5        |
+| 1.6250  | 1728000+        | 10%    | 30/60          | In Perpetuity |
