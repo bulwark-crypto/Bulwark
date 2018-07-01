@@ -216,12 +216,19 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
 void OverviewPage::on_toggleStaking_clicked()
 {
-	if (walletModel->getEncryptionStatus() == WalletModel::Locked) {
-		WalletModel::UnlockContext ctx(walletModel->requestUnlock(false));
+	if (masternodeSync.IsSynced()) {
+		if (walletModel->getEncryptionStatus() == WalletModel::Locked) {
+			WalletModel::UnlockContext ctx(walletModel->requestUnlock(false));
+		}
+		else {
+			QMessageBox::information(this, tr("Staking Status"),
+				tr("Staking is already enabled."),
+				QMessageBox::Ok, QMessageBox::Ok);
+		}
 	}
 	else {
-		QMessageBox::information(this, tr("Staking"),
-			tr("Staking is already enabled"),
+		QMessageBox::information(this, tr("Staking Status"),
+			tr("Please wait for your wallet to synchronize before you enable staking."),
 			QMessageBox::Ok, QMessageBox::Ok);
 	}
 }
