@@ -75,6 +75,7 @@ public:
     int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
     int LAST_POW_BLOCK_OLD() const { return nLastPOWBlockOld; }
+    int LAST_SEESAW_BLOCK() const { return nLastSeeSawBlock; }
     /** Slow Start, Ramp up linearly to block **/
     int RAMP_TO_BLOCK() const { return nRampToBlock; }
     int COINBASE_MATURITY() const { return nMaturity; }
@@ -114,6 +115,7 @@ protected:
     int64_t nTargetSpacingSlowLaunch;
     int nLastPOWBlock;
     int nLastPOWBlockOld;
+    int nLastSeeSawBlock;
     int nRampToBlock;
     int nMasternodeCountDrift;
     int nMaturity;

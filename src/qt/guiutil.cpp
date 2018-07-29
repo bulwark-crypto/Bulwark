@@ -111,7 +111,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Bulwark address (e.g. %1)").arg("AWSbBnzmNkjDVaYHX7vkL1MqD96pRYWtZo"));
+    widget->setPlaceholderText(QObject::tr("Enter a Bulwark address (e.g. %1)").arg("bWMiJk57wsPJuGFFJCp8MzSsvzepf7CFAi"));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
@@ -253,6 +253,19 @@ void copyEntryData(QAbstractItemView* view, int column, int role)
         // Copy first item
         setClipboard(selection.at(0).data(role).toString());
     }
+}
+
+QString getEntryData(QAbstractItemView *view, int column, int role)
+{
+	if (!view || !view->selectionModel())
+		return QString();
+	QModelIndexList selection = view->selectionModel()->selectedRows(column);
+
+	if (!selection.isEmpty()) {
+		// Return first item
+		return (selection.at(0).data(role).toString());
+	}
+	return QString();
 }
 
 QString getSaveFileName(QWidget* parent, const QString& caption, const QString& dir, const QString& filter, QString* selectedSuffixOut)

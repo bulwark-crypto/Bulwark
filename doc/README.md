@@ -26,9 +26,9 @@ Drag Bulwark-Qt to your applications folder, and then run Bulwark-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Bulwark Wiki](https://github.com/bulwark-crypto/Bulwark/wiki)
+* See the documentation at the [Bulwark KB](https://kb.bulwarkcrypto.com)
 for help and more information.
-* Ask for help on [BitcoinTalk](FIXME Add official BCT URL on ANN) or on the [Bulwark Discord](https://discord.gg/a7vhegP).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=2499481.0) or on the [Bulwark Discord](https://discord.gg/a7vhegP).
 
 Building
 ---------------------
@@ -54,7 +54,7 @@ The Bulwark repo's [root README](https://github.com/bulwark-crypto/Bulwark/blob/
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](FIXME with URL after ANN) or the [Bulwark Subreddit](http://reddit.com/r/bulwarkcoin).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=2499481.0) or the [Bulwark Subreddit](http://reddit.com/r/bulwarkcoin).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

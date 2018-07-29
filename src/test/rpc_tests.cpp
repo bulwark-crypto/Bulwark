@@ -172,4 +172,5 @@ BOOST_AUTO_TEST_CASE(rpc_boostasiotocnetaddr)
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("::ffff:127.0.0.1")).ToString(), "127.0.0.1");
 }
 
+
 BOOST_AUTO_TEST_SUITE_END()
