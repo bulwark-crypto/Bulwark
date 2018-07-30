@@ -199,7 +199,7 @@ deploy:
     secure: Y2LVAsvudAQNBES3Pu+IcvgNaizkwG7phczFKR645UamWGlMbezMfEoXxj3PsYsBJMPc+zap0P8S2xbtzXakKffqx3EIhaKk8q2G3qpxLFP59VN2mba6ETtVJQVS/s3LKEwaTrbC0/A1TworHpyfxrRN2wTxHv8oej/yKr7HrICJeIPCNsB7ElP79x//hS62tJIVoVMUFOqkShqnl1wJOE36/xR44hiZQEbsaiQqIlVYhvY4BZMpybRhKmDrSlAduTE8GyNyg+6KJL1V+euRcm3oNC9EiFqjzDeb7CH+7m6Jc7z0CCOPpF4REPdd/asdp7fHOIzv6oTWFSiwPZijo6R9ajiAO75OZP2qKZZKBjkV2cWM9jbcGsJhwJPHURHWwd7LA3E71eTGz8QhrFyP92pZ7HFG5P827TcGi07B9yVbpop870B5Dnb+oD2eqSoZsq/xKq3uu2PE7DI+1gE19jCLXw47EiA78fllcsK00IkSS4y8Gcm7FE1NUzHgB+/U60ZjOfOX6f3DkHeWh5HtaK81YijDHPgtBwiR1zyJHlqM2FKmPN7eVVjxq4fbE442URrqn7Sak+u1KmbR6X16coDqObvguHPUDKI/R9r9qfBN6w+x2Xt/0aHm4UlenibDqwi4oJPHLYEZIwd5jR7g+jJifSrnGLmSHYqJlAy1Xbo=
   file_glob: true
   file: deploy/*
-  name: "travis-${TRAVIS_BUILD_NUMBER}" 
-  tag_name: "travis-${TRAVIS_BRANCH}"
+  name: "travis-${TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}" 
+  tag_name: "travis-${TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}"
   on:
     all_branches: true
