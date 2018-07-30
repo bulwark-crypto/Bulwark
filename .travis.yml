@@ -44,7 +44,6 @@ env:
   - CCACHE_COMPRESS=1
   - CCACHE_SIZE=500M
   - CCACHE_TEMPDIR=/tmp/.ccache-temp
-  - MACOSPACKAGES="autoconf automake berkeley-db@4 boost@1.57 git libevent libtool miniupnpc openssl pkg-config protobuf qt zeromq librsvg"
   - MAKEJOBS="-s -j 2"
 matrix:
   include:
@@ -137,7 +136,7 @@ before_install:
 install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then 
     brew uninstall mercurial python; 
-    brew install $MACOSPACKAGES; 
+    brew bundle; 
     brew link --overwrite --force boost@1.57; 
   fi
 - if [ "$PYZMQ" = "true" ]; then 
