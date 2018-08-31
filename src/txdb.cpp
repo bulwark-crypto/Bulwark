@@ -263,10 +263,10 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
 
                 LogPrintf("%s: %s\n", pindexNew->hashMerkleRoot.ToString().c_str(), pindexNew->GetBlockHash().ToString().c_str());
 
-//                if (pindexNew->nHeight <= Params().LAST_POW_BLOCK()) {
-//                    if (!CheckProofOfWork(pindexNew->GetBlockHash(), pindexNew->nBits))
-//                        return error("LoadBlockIndex() : CheckProofOfWork failed: %s", pindexNew->ToString());
-//                }
+                if (pindexNew->nHeight <= Params().LAST_POW_BLOCK()) {
+                    if (!CheckProofOfWork(pindexNew->GetBlockHash(), pindexNew->nBits))
+                        return error("LoadBlockIndex() : CheckProofOfWork failed: %s", pindexNew->ToString());
+                }
                 // ppcoin: build setStakeSeen
                 if (pindexNew->IsProofOfStake())
                     setStakeSeen.insert(make_pair(pindexNew->prevoutStake, pindexNew->nStakeTime));
