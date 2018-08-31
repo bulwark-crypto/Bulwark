@@ -2896,8 +2896,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Add &amp;Recipient</translation>
     </message>
     <message>
-        <source>SwiftTX</source>
-        <translation>SwiftTX</translation>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2960,8 +2960,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>any available funds (not recommended)</translation>
     </message>
     <message>
-        <source>and SwiftTX</source>
-        <translation>and SwiftTX</translation>
+        <source>and SwiftX</source>
+        <translation>and SwiftX</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3322,16 +3322,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>conflicted</translation>
     </message>
     <message>
-        <source>%1/offline (verified via swifttx)</source>
-        <translation>%1/offline (verified via swifttx)</translation>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1/offline (verified via SwiftX)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via swifttx)</source>
-        <translation>%1/confirmed (verified via swifttx)</translation>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1/confirmed (verified via SwiftX)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via swifttx)</source>
-        <translation>%1 confirmations (verified via swifttx)</translation>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1 confirmations (verified via SwiftX)</translation>
     </message>
     <message>
         <source>%1/offline</source>
@@ -3346,24 +3346,24 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>%1 confirmations</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</translation>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</translation>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</translation>
     </message>
     <message>
-        <source>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</translation>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftTX verification failed)</source>
-        <translation>%1/offline (SwiftTX verification failed)</translation>
+        <source>%1/offline (SwiftX verification failed)</source>
+        <translation>%1/offline (SwiftX verification failed)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftTX verification failed)</source>
-        <translation>%1/confirmed (SwiftTX verification failed)</translation>
+        <source>%1/confirmed (SwiftX verification failed)</source>
+        <translation>%1/confirmed (SwiftX verification failed)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3840,8 +3840,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Send Coins</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
-        <translation>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</translation>
     </message>
 </context>
 <context>
@@ -3930,8 +3930,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3942,8 +3942,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enable spork administration functionality with the appropriate private key.</translation>
     </message>
     <message>
-        <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</translation>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</translation>
     </message>
     <message>
         <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
@@ -4074,8 +4074,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Support filtering of blocks and transaction with bloom filters (default: %u)</translation>
     </message>
     <message>
-        <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
@@ -4558,8 +4558,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enable publish hash block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</source>
-        <translation>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4570,8 +4570,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enable publish raw block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</source>
-        <translation>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4942,8 +4942,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Submitted to masternode, waiting in queue %s</translation>
     </message>
     <message>
-        <source>SwiftTX options:</source>
-        <translation>SwiftTX options:</translation>
+        <source>SwiftX options:</source>
+        <translation>SwiftX options:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>

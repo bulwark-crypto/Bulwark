@@ -5,16 +5,17 @@ os:
 - linux
 language: generic
 cache:
-  apt: true
-  ccache: true
-  directories:
-  - depends/built
-  - depends/sdk-sources
+  apt: true	
+  ccache: true	
+  directories:	
+  - depends/built	
+  - depends/sdk-sources	
   - "$HOME/.ccache"
 env:
   global:
   - MAKEJOBS=-j5
   - RUN_TESTS=false
+  - CHECK_LOGPRINT=0
   - BOOST_TEST_RANDOM=1$TRAVIS_BUILD_ID
   - CCACHE_SIZE=400M
   - CCACHE_TEMPDIR=/tmp/.ccache-temp
@@ -24,19 +25,19 @@ env:
   - PYTHON_DEBUG=1
   - WINEDEBUG=fixme-all
   matrix:
-  - HOST=arm-linux-gnueabihf PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-arm-linux-gnueabihf"
-    CHECK_DOC=1 GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
-  - HOST=i686-pc-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq"
+  - HOST=arm-linux-gnueabihf PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-arm-linux-gnueabihf libdb4.8-dev libdb4.8++-dev"
+    CHECK_DOC=1 CHECK_LOGPRINT=1 GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
+  - HOST=i686-pc-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq libdb4.8-dev libdb4.8++-dev"
     RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat
     --enable-reduce-exports LDFLAGS=-static-libstdc++" PYZMQ=true
-  - HOST=x86_64-unknown-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="bc python3-zmq"
+  - HOST=x86_64-unknown-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="bc python3-zmq libdb4.8-dev libdb4.8++-dev"
     RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat
     --enable-reduce-exports" CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG" PYZMQ=true
   - HOST=i686-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3
-    nsis g++-mingw-w64-i686 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
+    nsis g++-mingw-w64-i686 wine1.7 bc libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
     --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
   - HOST=x86_64-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3
-    nsis g++-mingw-w64-x86-64 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
+    nsis g++-mingw-w64-x86-64 wine1.7 bc libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
     --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
 before_install:
 - travis_retry sudo apt-get install python-dev
@@ -54,6 +55,7 @@ install:
 before_script:
 - unset CC; unset CXX
 - unset DISPLAY
+- if [ "$CHECK_LOGPRINT" = 1 ]; then contrib/devtools/logprint-scanner.py; fi
 - mkdir -p depends/SDKs depends/sdk-sources
 - if [ -n "$OSX_SDK" -a ! -f depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz ]; then
   curl --location --fail $SDK_URL/MacOSX${OSX_SDK}.sdk.tar.xz -o depends/sdk-sources/MacOSX${OSX_SDK}.sdk.tar.xz;
@@ -83,6 +85,25 @@ script:
   fi
 - if [ "$RUN_TESTS" = "true" ]; then qa/pull-tester/rpc-tests.py --coverage; fi
 after_script:
-    - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then (echo "Upload goes here. Something like: scp -r $BASE_OUTDIR server" || echo "upload failed"); fi
-    - echo $TRAVIS_COMMIT_RANGE
-    - echo $TRAVIS_COMMIT_LOG
+- echo "Showing directory tree" && ls -laR
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then (echo "Upload goes here. Something like: scp
+    -r $BASE_OUTDIR server" || echo "upload failed"); fi
+- echo $TRAVIS_COMMIT_RANGE
+- echo $TRAVIS_COMMIT_LOG
+before_deploy:
+- cd ..
+- git config --local user.name "Penple03"
+- git config --local user.email "Penple03@users.noreply.github.com"
+- git tag "bulwark-1.3.1.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- tar -zvcf bulwark-1.3.1.0-$HOST.tar.gz -C $OUTDIR bin/
+- echo `pwd`
+deploy:
+  provider: releases
+  file_glob: true
+  api_key:
+    secure: Wmx8uxuGhSlBdhTOl90orbYD8xt/MVnlYmVmsoWo9NJUsJUIksypE9bdcjb141aaAL0YPQah8P7DeMB5jW+cmSGkkvNzzkKO+zHLmAcFBiNGmnOEX54mou7a/37y2Ldfxqt+OyUa0CmGomK8EPwhJjLaF0NUeLMw6UPCa6kV44ArW8oxkiIugYB0K4H32cBWI6QBjRvLYbpCfgi39TsCtp+Jn2zoaDslhDudlyDvsNjehAgPXNT9ZNcYNNKb7NDyqB1vqtWj4HCTctZXrVQffbK6btsituIC1eiBji2jt7CWAJ5vS+W2R60rsFA2cZfZ5fDAM6suFQcjxvzu+fN7/BcxFJAOIA0PaLPgnWhLIifNjG9XmaxMP2UoWnoZCxHWvbsHaYr0K8f0uHHIsSoq4R1q0geZ/DyE8lFMVdptwa+lwKA7iK6HEqh/+nVg1DCRPbtLB8oaH02XFw6sg3EsKDU5m9m+Xhs+MSMsegpNQHWkAcXih/TURoIuzspmqB5HS7D82wAaasltkv8335xTOjRcVgzCbLL+3jG8+4+rCTFOxQ/QDGvaGyPbq6CwA5EO5o6zbrWUZTu4nDRiBxpP1j5VGiHEClsrjjigkh6rKsM9iAlUKzexXrZtAczILPUXnNUgCzbMwhy/MKKrxHEDtEpyUQHUC+H53rsbWbkkdcM=
+  file: bulwark-1.3.1.0-*
+  skip_cleanup: true
+  on:
+    repo: Penple03/Bulwark
+    branch: toast

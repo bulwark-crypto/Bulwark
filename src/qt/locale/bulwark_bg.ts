@@ -283,7 +283,7 @@
     <name>BitcoinGUI</name>
     <message>
         <source>Unlock wallet</source>
-        <translation>Отключи портфейла</translation>
+        <translation>Отключване на портфейла</translation>
     </message>
     </context>
 <context>
@@ -346,6 +346,25 @@
     </context>
 <context>
     <name>PeerTableModel</name>
+    </context>
+<context>
+    <name>PrivacyDialog</name>
+    <message>
+        <source>Choose previously used address</source>
+        <translation>Изберете предишноизползван адрес</translation>
+    </message>
+    <message>
+        <source>Alt+A</source>
+        <translation>Алт+А</translation>
+    </message>
+    <message>
+        <source>Paste address from clipboard</source>
+        <translation>Постави адреса от буфера</translation>
+    </message>
+    <message>
+        <source>Alt+P</source>
+        <translation>Алт+П</translation>
+    </message>
     </context>
 <context>
     <name>QObject</name>
@@ -498,6 +517,9 @@
         <source>Export the data in the current tab to a file</source>
         <translation>Експортиране информацията от сегашния таб във файл</translation>
     </message>
+    </context>
+<context>
+    <name>ZBwkControlDialog</name>
     </context>
 <context>
     <name>bulwark-core</name>
