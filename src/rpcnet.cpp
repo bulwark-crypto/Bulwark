@@ -407,7 +407,7 @@ UniValue getnetworkinfo(const UniValue& params, bool fHelp)
     return obj;
 }
 
-Value setban(const Array& params, bool fHelp)
+UniValue setban(const UniValue& params, bool fHelp)
 {
     string strCommand; 
     if (params.size() >= 2)
@@ -468,10 +468,10 @@ Value setban(const Array& params, bool fHelp)
             throw JSONRPCError(RPC_MISC_ERROR, "Error: Unban failed");
     }
 
-    return Value::null;
+    return NullUniValue;
 }
 
-Value listbanned(const Array& params, bool fHelp)
+UniValue listbanned(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
         throw runtime_error(
@@ -485,10 +485,10 @@ Value listbanned(const Array& params, bool fHelp)
     banmap_t banMap;
     CNode::GetBanned(banMap);
 
-    Array bannedAddresses;
+    UniValue bannedAddresses(UniValue::VARR);
     for (banmap_t::iterator it = banMap.begin(); it != banMap.end(); it++)
     {
-        Object rec;
+        UniValue rec(UniValue::VOBJ);
         rec.push_back(Pair("address", (*it).first.ToString()));
         rec.push_back(Pair("banned_untill", (*it).second.nBanUntil));
         bannedAddresses.push_back(rec);
@@ -497,7 +497,7 @@ Value listbanned(const Array& params, bool fHelp)
     return bannedAddresses;
 }
 
-Value clearbanned(const Array& params, bool fHelp)
+UniValue clearbanned(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
         throw runtime_error(
@@ -510,5 +510,5 @@ Value clearbanned(const Array& params, bool fHelp)
 
     CNode::ClearBanned();
 
-    return Value::null;
+    return NullUniValue;
 }
