@@ -52,82 +52,6 @@
         <property name="bottomMargin">
          <number>0</number>
         </property>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_Header" stretch="1,0,1">
-          <property name="spacing">
-           <number>6</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="labelOverviewHeaderLeft">
-            <property name="minimumSize">
-             <size>
-              <width>464</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>SEND</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_Header">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelOverviewHeaderRight">
-            <property name="minimumSize">
-             <size>
-              <width>464</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
        </layout>
       </widget>
      </item>
@@ -271,14 +195,14 @@
                  <number>10</number>
                 </property>
                 <item>
-                 <widget class="QtMaterialFlatButton" name="pushButtonCoinControl">
+                 <widget class="QtMaterialFlatButton" name="pushButtonCoinControl" native="true">
                   <property name="styleSheet">
                    <string notr="true"/>
                   </property>
-                  <property name="text">
+                  <property name="text" stdset="0">
                    <string>Open Coin Control...</string>
                   </property>
-                  <property name="autoDefault">
+                  <property name="autoDefault" stdset="0">
                    <bool>false</bool>
                   </property>
                  </widget>
@@ -898,7 +822,7 @@
              <x>0</x>
              <y>0</y>
              <width>944</width>
-             <height>68</height>
+             <height>136</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -1049,18 +973,18 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QtMaterialFlatButton" name="buttonChooseFee">
-                     <property name="text">
+                    <widget class="QtMaterialFlatButton" name="buttonChooseFee" native="true">
+                     <property name="text" stdset="0">
                       <string>Choose...</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QtMaterialFlatButton" name="buttonMinimizeFee">
+                    <widget class="QtMaterialFlatButton" name="buttonMinimizeFee" native="true">
                      <property name="toolTip">
                       <string>collapse fee-settings</string>
                      </property>
-                     <property name="text">
+                     <property name="text" stdset="0">
                       <string>Minimize</string>
                      </property>
                     </widget>
@@ -1597,7 +1521,7 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QtMaterialFlatButton" name="sendButton">
+            <widget class="QtMaterialFlatButton" name="sendButton" native="true">
              <property name="minimumSize">
               <size>
                <width>150</width>
@@ -1607,23 +1531,23 @@
              <property name="toolTip">
               <string>Confirm the send action</string>
              </property>
-             <property name="text">
+             <property name="text" stdset="0">
               <string>S&amp;end</string>
              </property>
-             <property name="icon">
+             <property name="icon" stdset="0">
               <iconset resource="../bulwark.qrc">
                <normaloff>:/icons/send</normaloff>:/icons/send</iconset>
              </property>
-             <property name="autoDefault">
+             <property name="autoDefault" stdset="0">
               <bool>false</bool>
              </property>
-             <property name="default">
+             <property name="default" stdset="0">
               <bool>true</bool>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QtMaterialFlatButton" name="clearButton">
+            <widget class="QtMaterialFlatButton" name="clearButton" native="true">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -1633,31 +1557,31 @@
              <property name="toolTip">
               <string>Clear all fields of the form.</string>
              </property>
-             <property name="text">
+             <property name="text" stdset="0">
               <string>Clear &amp;All</string>
              </property>
-             <property name="icon">
+             <property name="icon" stdset="0">
               <iconset resource="../bulwark.qrc">
                <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
              </property>
-             <property name="autoDefault">
+             <property name="autoDefault" stdset="0">
               <bool>false</bool>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QtMaterialFlatButton" name="addButton">
+            <widget class="QtMaterialFlatButton" name="addButton" native="true">
              <property name="toolTip">
               <string>Send to multiple recipients at once</string>
              </property>
-             <property name="text">
+             <property name="text" stdset="0">
               <string>Add &amp;Recipient</string>
              </property>
-             <property name="icon">
+             <property name="icon" stdset="0">
               <iconset resource="../bulwark.qrc">
                <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
              </property>
-             <property name="autoDefault">
+             <property name="autoDefault" stdset="0">
               <bool>false</bool>
              </property>
             </widget>
@@ -1749,6 +1673,7 @@
    <class>QtMaterialFlatButton</class>
    <extends>QWidget</extends>
    <header>qtmaterialflatbutton.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>QValidatedLineEdit</class>
@@ -1767,7 +1692,7 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupCustomFee"/>
   <buttongroup name="groupFee"/>
+  <buttongroup name="groupCustomFee"/>
  </buttongroups>
 </ui>

@@ -27,98 +27,10 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,0">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_Master" stretch="0,1">
+    <layout class="QVBoxLayout" name="verticalLayout_Master" stretch="0">
      <property name="spacing">
       <number>0</number>
      </property>
-     <item>
-      <widget class="QFrame" name="frame_Header">
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_Header" stretch="1,0,1">
-          <item>
-           <widget class="QLabel" name="labelOverviewHeaderLeft">
-            <property name="minimumSize">
-             <size>
-              <width>464</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>PRIVACY</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelOverviewHeaderRight">
-            <property name="minimumSize">
-             <size>
-              <width>464</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
-     </item>
      <item>
       <widget class="QFrame" name="frame_BG">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -244,7 +156,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
                         <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonMintzBWK">
+                         <widget class="QtMaterialFlatButton" name="pushButtonMintzBWK" native="true">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -254,7 +166,7 @@
                           <property name="toolTip">
                            <string>Enter an amount of BWK to convert to zBWK</string>
                           </property>
-                          <property name="text">
+                          <property name="text" stdset="0">
                            <string>Mint Zerocoin</string>
                           </property>
                          </widget>
@@ -328,7 +240,7 @@
                          </spacer>
                         </item>
                         <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonSpentReset">
+                         <widget class="QtMaterialFlatButton" name="pushButtonSpentReset" native="true">
                           <property name="maximumSize">
                            <size>
                             <width>80</width>
@@ -338,7 +250,7 @@
                           <property name="toolTip">
                            <string>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</string>
                           </property>
-                          <property name="text">
+                          <property name="text" stdset="0">
                            <string>Reset</string>
                           </property>
                          </widget>
@@ -348,7 +260,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_5">
                         <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonCoinControl">
+                         <widget class="QtMaterialFlatButton" name="pushButtonCoinControl" native="true">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -364,10 +276,10 @@
                           <property name="styleSheet">
                            <string notr="true"/>
                           </property>
-                          <property name="text">
+                          <property name="text" stdset="0">
                            <string>Coin Control...</string>
                           </property>
-                          <property name="autoDefault">
+                          <property name="autoDefault" stdset="0">
                            <bool>false</bool>
                           </property>
                          </widget>
@@ -506,7 +418,7 @@
                          </spacer>
                         </item>
                         <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonMintReset">
+                         <widget class="QtMaterialFlatButton" name="pushButtonMintReset" native="true">
                           <property name="maximumSize">
                            <size>
                             <width>80</width>
@@ -516,7 +428,7 @@
                           <property name="toolTip">
                            <string>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</string>
                           </property>
-                          <property name="text">
+                          <property name="text" stdset="0">
                            <string>ReScan</string>
                           </property>
                          </widget>
@@ -606,8 +518,8 @@
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonZBWKControl">
-                          <property name="text">
+                         <widget class="QtMaterialFlatButton" name="pushButtonZBWKControl" native="true">
+                          <property name="text" stdset="0">
                            <string>zBWK Control</string>
                           </property>
                          </widget>
@@ -674,7 +586,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonSpendzBWK">
+                         <widget class="QtMaterialFlatButton" name="pushButtonSpendzBWK" native="true">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -684,7 +596,7 @@
                           <property name="toolTip">
                            <string>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</string>
                           </property>
-                          <property name="text">
+                          <property name="text" stdset="0">
                            <string>Spend Zerocoin</string>
                           </property>
                          </widget>
@@ -2669,15 +2581,15 @@ To change the percentage (no restart required):
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QValidatedLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qvalidatedlineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>QtMaterialFlatButton</class>
    <extends>QWidget</extends>
    <header>qtmaterialflatbutton.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QValidatedLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qvalidatedlineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources>

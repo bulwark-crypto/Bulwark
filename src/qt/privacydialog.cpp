@@ -304,7 +304,7 @@ void PrivacyDialog::on_pushButtonSpendzBWK_clicked()
     sendzBWK();
 }
 
-void PrivacyDialog::on_pushButtonZBwkControl_clicked()
+void PrivacyDialog::on_pushButtonZBWKControl_clicked()
 {
     ZBwkControlDialog* zBwkControl = new ZBwkControlDialog(this);
     zBwkControl->setModel(walletModel);
