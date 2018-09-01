@@ -1351,25 +1351,28 @@ bool AppInit2(boost::thread_group& threadGroup)
                     break;
                 }
 
-                // Populate list of invalid/fraudulent outpoints that are banned from the chain
-                PopulateInvalidOutPointMap();
-
                 // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
                 if (GetBoolArg("-reindexmoneysupply", false)) {
-                    if (chainActive.Height() > Params().Zerocoin_StartHeight()) {
-                        RecalculateZBWKMinted();
-                        RecalculateZBWKSpent();
+                    int nZerocoinStartHeight = GetZerocoinStartHeight();
+                    if (nZerocoinStartHeight != 0) {
+                        if (chainActive.Height() > nZerocoinStartHeight) {
+                            RecalculateZBWKMinted();
+                            RecalculateZBWKSpent();
+                        }
                     }
                     RecalculateBWKSupply(1);
                 }
 
                 // Force recalculation of accumulators.
                 if (GetBoolArg("-reindexaccumulators", false)) {
-                    CBlockIndex* pindex = chainActive[Params().Zerocoin_StartHeight()];
-                    while (pindex->nHeight < chainActive.Height()) {
-                        if (!count(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint))
-                            listAccCheckpointsNoDB.emplace_back(pindex->nAccumulatorCheckpoint);
-                        pindex = chainActive.Next(pindex);
+                    int nZerocoinStartHeight = GetZerocoinStartHeight();
+                    if (nZerocoinStartHeight != 0) {
+                        CBlockIndex* pindex = chainActive[nZerocoinStartHeight];
+                        while (pindex->nHeight < chainActive.Height()) {
+                            if (!count(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint))
+                                listAccCheckpointsNoDB.emplace_back(pindex->nAccumulatorCheckpoint);
+                            pindex = chainActive.Next(pindex);
+                        }
                     }
                 }
 

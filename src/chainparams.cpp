@@ -137,23 +137,6 @@ public:
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
-        nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // PIVX: 1 day
-        nTargetSpacing = 1 * 60;  // PIVX: 1 minute
-        nMaturity = 100;
-        nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 21000000 * COIN;
-
-        /** Height or Time Based Activations **/
-        nLastPOWBlock = 259200;
-        nModifierUpdateBlock = 615800;
-        nZerocoinStartHeight = 863787;
-        nZerocoinStartTime = 1508214600; // October 17, 2017 4:30:00 AM
-        nBlockEnforceSerialRange = 895400; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 902850; //Start enforcing the invalid UTXO's
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -216,7 +199,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
 	    nPoolMaxTransactions = 3;
-        strSporkKey = "04c7236740d66ff2c074a9196c42e071ae70c94951862e1873fb3c1269d1200d0dbc64ef428b778d850b54fd80545824bf4a4e826116f7b35e70c941df66e91f25";
+        strSporkKey = "0453748e298a34e32d760a3d64b7b517c952c10024a4160a3a746d9bce572f85e13ac6d4f518ac110ba807ce19fb657bc2696ca02013290e3fbe517adf09c95787";
         strObfuscationPoolDummyAddress = "bDiJwVuKv9dcKBN4KCfX6UmXbkpqLfzGyf";
         nStartMasternodePayments = 1511092620; 
 
@@ -278,18 +261,9 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // PIVX: 1 day
         nTargetSpacing = 1 * 60;  // PIVX: 1 minute
-        nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
-        nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 201576;
-        nZerocoinStartTime = 1501776000;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1533510450;
@@ -325,7 +299,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "04af2f9be75132357063236a59f9bf71ccb9ef8373c33146714ff4f6b1a3a2b97933c633f805c7b598ba023088bf13474e735b694d4959432bb58053910341bf66";
+        strSporkKey = "047e64a7f1a5d38c5cc5b100eb557effbb6f924f68a061152728995fb6cb6cf25667645669828d01fdd818059a61a30715a65ab281772a6dfb10ad2688c40386c4";
         strObfuscationPoolDummyAddress = "TUQ57Fbh1crybrDhV6X9SDH95H4oSq4v6p";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
