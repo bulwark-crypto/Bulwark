@@ -277,6 +277,7 @@ RES_ICONS = \
   qt/res/icons/receive.png \
   qt/res/icons/receive_dark.png \
   qt/res/icons/privacy.png \
+  qt/res/icons/privacy_m.png \
   qt/res/icons/remove.png \
   qt/res/icons/send.png \
   qt/res/icons/send_dark.png \

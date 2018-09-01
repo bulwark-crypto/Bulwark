@@ -339,7 +339,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #endif
     tabGroup->addAction(historyAction);
 
-    privacyAction = new QAction(QIcon(":/icons/privacy"), tr("&Privacy"), this);
+    privacyAction = new QAction(QIcon(":/icons/privacy_m"), tr("&Privacy"), this);
     privacyAction->setStatusTip(tr("Privacy Actions for zBWK"));
     privacyAction->setToolTip(privacyAction->statusTip());
     privacyAction->setCheckable(true);
