@@ -10,7 +10,7 @@
         <translation>Criar novo endereço</translation>
     </message>
     <message>
-        <source>&amp;New</source>
+        <source>New</source>
         <translation>Novo</translation>
     </message>
     <message>
@@ -18,28 +18,28 @@
         <translation>Copiar o endereço selecionado para a área de transferência</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Copiar</translation>
+        <source>Copy</source>
+        <translation>Copiar</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Deletar da lista o endereço selecionado</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Excluir</translation>
+        <source>Delete</source>
+        <translation>Excluir</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exporta os dados da aba ativa para um arquivo</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Exportar</translation>
+        <source>Export</source>
+        <translation>Exportar</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>&amp;Fechar</translation>
+        <source>Close</source>
+        <translation>Fechar</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Escolha o endereço para receber moedas</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>Escol&amp;her</translation>
+        <source>Choose</source>
+        <translation>Escolher</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>Esses são seus endereços Bulwark para receber pagamentos. É recomendado usar um novo endereço para cada transação.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation>C&amp;opiar endereço</translation>
+        <source>Copy Address</source>
+        <translation>Copiar endereço</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
-        <translation>Cop&amp;iar Descrição</translation>
+        <source>Copy Label</source>
+        <translation>Copiar Descrição</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;Editar</translation>
+        <source>Edit</source>
+        <translation>Editar</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -235,8 +235,8 @@
         <translation>BIP 38</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>Encriptar com &amp;BIP 38</translation>
+        <source>BIP 38 Encrypt</source>
+        <translation>Encriptar com BIP 38</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -283,7 +283,7 @@
         <translation>Assinar a Mensagem para provar que você e dono desse endereço Bulwark.</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
+        <source>Encrypt Key</source>
         <translation>Criptografar Chave</translation>
     </message>
     <message>
@@ -291,11 +291,11 @@
         <translation>Reiniciar todas os campos das mensagens assinadas</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
+        <source>Clear All</source>
         <translation>Limpar todos</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Decrypt</source>
+        <source>BIP 38 Decrypt</source>
         <translation>Criptografia BIP 38</translation>
     </message>
     <message>
@@ -334,19 +334,19 @@
         <translation>Nó</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Enviar</translation>
+        <source>Send</source>
+        <translation>Enviar</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Receber</translation>
+        <source>Receive</source>
+        <translation>Receber</translation>
     </message>
     <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transações</translation>
+        <source>Transactions</source>
+        <translation>Transações</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet...</source>
+        <source>Backup Wallet...</source>
         <translation>Carteira de backup</translation>
     </message>
     <message>
@@ -591,7 +591,7 @@
         <translation>Limpar todos os campos do formulário</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
+        <source>Clear All</source>
         <translation>Limpar todos</translation>
     </message>
     <message>
@@ -712,7 +712,7 @@
         <translation>Reiniciar todas os campos das mensagens assinadas</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
+        <source>Clear All</source>
         <translation>Limpar todos</translation>
     </message>
     <message>
@@ -890,8 +890,8 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Exportar</translation>
+        <source>Export</source>
+        <translation>Exportar</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

@@ -15,8 +15,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;New</source>
-        <translation>&amp;New</translation>
+        <source>New</source>
+        <translation>New</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -25,8 +25,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Copy</source>
-        <translation>&amp;Copy</translation>
+        <source>Copy</source>
+        <translation>Copy</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -35,8 +35,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Delete</source>
-        <translation>&amp;Delete</translation>
+        <source>Delete</source>
+        <translation>Delete</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -45,13 +45,13 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Export</source>
-        <translation>&amp;Export</translation>
+        <source>Export</source>
+        <translation>Export</translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>C&amp;lose</source>
-        <translation>C&amp;lose</translation>
+        <source>Close</source>
+        <translation>Close</translation>
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+44"/>
@@ -65,8 +65,8 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>C&amp;hoose</source>
-        <translation>C&amp;hoose</translation>
+        <source>Choose</source>
+        <translation>Choose</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -90,18 +90,18 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;Copy Address</translation>
+        <source>Copy Address</source>
+        <translation>Copy Address</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy &amp;Label</source>
-        <translation>Copy &amp;Label</translation>
+        <source>Copy Label</source>
+        <translation>Copy Label</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Edit</source>
-        <translation>&amp;Edit</translation>
+        <source>Edit</source>
+        <translation>Edit</translation>
     </message>
     <message>
         <location line="+187"/>
@@ -302,7 +302,7 @@
     </message>
     <message>
         <location line="+13"/>
-        <source>&amp;BIP 38 Encrypt</source>
+        <source>BIP 38 Encrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -365,7 +365,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Encrypt &amp;Key</source>
+        <source>Encrypt Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -376,12 +376,12 @@
     <message>
         <location line="+3"/>
         <location line="+139"/>
-        <source>Clear &amp;All</source>
-        <translation type="unfinished">Clear &amp;All</translation>
+        <source>Clear All</source>
+        <translation type="unfinished">Clear All</translation>
     </message>
     <message>
         <location line="-80"/>
-        <source>&amp;BIP 38 Decrypt</source>
+        <source>BIP 38 Decrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -401,7 +401,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Decrypt &amp;Key</source>
+        <source>Decrypt Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -516,8 +516,8 @@
     </message>
     <message>
         <location line="+161"/>
-        <source>&amp;Overview</source>
-        <translation>&amp;Overview</translation>
+        <source>Overview</source>
+        <translation>Overview</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -526,18 +526,18 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Send</source>
-        <translation>&amp;Send</translation>
+        <source>Send</source>
+        <translation>Send</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>&amp;Receive</source>
-        <translation>&amp;Receive</translation>
+        <source>Receive</source>
+        <translation>Receive</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transactions</translation>
+        <source>Transactions</source>
+        <translation>Transactions</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -551,8 +551,8 @@
     </message>
     <message>
         <location line="+42"/>
-        <source>E&amp;xit</source>
-        <translation>E&amp;xit</translation>
+        <source>Exit</source>
+        <translation>Exit</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -562,8 +562,8 @@
     <message>
         <location line="+7"/>
         <location line="+2"/>
-        <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
+        <source>About Qt</source>
+        <translation>About Qt</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -572,13 +572,13 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Options...</source>
-        <translation>&amp;Options...</translation>
+        <source>Options...</source>
+        <translation>Options...</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Show / Hide</translation>
+        <source>Show / Hide</source>
+        <translation>Show / Hide</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -587,8 +587,8 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Encrypt Wallet...</translation>
+        <source>Encrypt Wallet...</source>
+        <translation>Encrypt Wallet...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -597,8 +597,8 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Backup Wallet...</translation>
+        <source>Backup Wallet...</source>
+        <translation>Backup Wallet...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -607,8 +607,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Change Passphrase...</translation>
+        <source>Change Passphrase...</source>
+        <translation>Change Passphrase...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -617,8 +617,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Unlock Wallet...</translation>
+        <source>Unlock Wallet...</source>
+        <translation>Unlock Wallet...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -627,23 +627,23 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Lock Wallet</translation>
+        <source>Lock Wallet</source>
+        <translation>Lock Wallet</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Sign &amp;message...</source>
-        <translation>Sign &amp;message...</translation>
+        <source>Sign message...</source>
+        <translation>Sign message...</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Verify message...</translation>
+        <source>Verify message...</source>
+        <translation>Verify message...</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
+        <source>Information</source>
+        <translation>Information</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -652,8 +652,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debug console</translation>
+        <source>Debug console</source>
+        <translation>Debug console</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -662,8 +662,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Network Monitor</translation>
+        <source>Network Monitor</source>
+        <translation>Network Monitor</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -672,8 +672,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Peers list</translation>
+        <source>Peers list</source>
+        <translation>Peers list</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -682,8 +682,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet &amp;Repair</source>
-        <translation>Wallet &amp;Repair</translation>
+        <source>Wallet Repair</source>
+        <translation>Wallet Repair</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -697,8 +697,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Show Automatic &amp;Backups</translation>
+        <source>Show Automatic Backups</source>
+        <translation>Show Automatic Backups</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -707,8 +707,8 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Sending addresses...</translation>
+        <source>Sending addresses...</source>
+        <translation>Sending addresses...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -717,8 +717,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Receiving addresses...</translation>
+        <source>Receiving addresses...</source>
+        <translation>Receiving addresses...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -727,7 +727,7 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Multisignature creation...</source>
+        <source>Multisignature creation...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -737,7 +737,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Multisignature spending...</source>
+        <source>Multisignature spending...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -747,7 +747,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Multisignature signing...</source>
+        <source>Multisignature signing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -757,13 +757,13 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Open &amp;URI...</source>
-        <translation>Open &amp;URI...</translation>
+        <source>Open URI...</source>
+        <translation>Open URI...</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Command-line options</translation>
+        <source>Command-line options</source>
+        <translation>Command-line options</translation>
     </message>
     <message numerus="yes">
         <location line="+463"/>
@@ -785,23 +785,23 @@
     </message>
     <message>
         <location line="-480"/>
-        <source>&amp;File</source>
-        <translation>&amp;File</translation>
+        <source>File</source>
+        <translation>File</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>&amp;Settings</source>
-        <translation>&amp;Settings</translation>
+        <source>Settings</source>
+        <translation>Settings</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>&amp;Tools</source>
-        <translation>&amp;Tools</translation>
+        <source>Tools</source>
+        <translation>Tools</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <source>Help</source>
+        <translation>Help</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -826,12 +826,12 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>&amp;Privacy</source>
+        <source>Privacy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+15"/>
-        <source>&amp;Masternodes</source>
+        <source>Masternodes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -841,7 +841,7 @@
     </message>
     <message>
         <location line="+31"/>
-        <source>&amp;About Bulwark Core</source>
+        <source>About Bulwark Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -866,7 +866,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;BIP38 tool</source>
+        <source>BIP38 tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -876,7 +876,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;MultiSend</source>
+        <source>MultiSend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -886,12 +886,12 @@
     </message>
     <message>
         <location line="+13"/>
-        <source>Open Wallet &amp;Configuration File</source>
+        <source>Open Wallet Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Open &amp;Masternode Configuration File</source>
+        <source>Open Masternode Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -906,7 +906,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>&amp;Blockchain explorer</source>
+        <source>Blockchain explorer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1456,8 +1456,8 @@ Address: %4
     </message>
     <message>
         <location line="+11"/>
-        <source>&amp;Label</source>
-        <translation>&amp;Label</translation>
+        <source>Label</source>
+        <translation>Label</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1466,8 +1466,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>&amp;Address</source>
-        <translation>&amp;Address</translation>
+        <source>Address</source>
+        <translation>Address</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1724,22 +1724,22 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>S&amp;tart alias</source>
+        <source>Start alias</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Start &amp;all</source>
+        <source>Start all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Start &amp;MISSING</source>
+        <source>Start MISSING</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>&amp;Update status</source>
+        <source>Update status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1968,7 +1968,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+22"/>
-        <source>Create MultiSignature &amp;Address</source>
+        <source>Create MultiSignature Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1993,7 +1993,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Add Address / Key</source>
+        <source>Add Address / Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2008,7 +2008,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>C&amp;reate</source>
+        <source>Create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2027,12 +2027,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+23"/>
-        <source>&amp;Import Redeem</source>
+        <source>Import Redeem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>&amp;Create MultiSignature Tx</source>
+        <source>Create MultiSignature Tx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2083,7 +2083,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Add &amp;Destination</source>
+        <source>Add Destination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2093,7 +2093,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Cr&amp;eate</source>
+        <source>Create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2107,7 +2107,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+32"/>
-        <source>&amp;Sign MultiSignature Tx</source>
+        <source>Sign MultiSignature Tx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2122,7 +2122,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <source>S&amp;ign</source>
+        <source>Sign</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2132,7 +2132,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+6"/>
-        <source>Co&amp;mmit</source>
+        <source>Commit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2142,7 +2142,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <source>Add Private &amp;Key</source>
+        <source>Add Private Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2303,13 +2303,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+13"/>
-        <source>&amp;Main</source>
-        <translation>&amp;Main</translation>
+        <source>Main</source>
+        <translation>Main</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>Size of &amp;database cache</source>
-        <translation>Size of &amp;database cache</translation>
+        <source>Size of database cache</source>
+        <translation>Size of database cache</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -2318,8 +2318,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+27"/>
-        <source>Number of script &amp;verification threads</source>
-        <translation>Number of script &amp;verification threads</translation>
+        <source>Number of script verification threads</source>
+        <translation>Number of script verification threads</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -2328,8 +2328,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+102"/>
-        <source>W&amp;allet</source>
-        <translation>W&amp;allet</translation>
+        <source>Wallet</source>
+        <translation>Wallet</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -2353,8 +2353,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>Connect through SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
         <location line="-82"/>
@@ -2368,7 +2368,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Bulwark on system login</source>
+        <source>Start Bulwark on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2378,8 +2378,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable coin &amp;control features</source>
-        <translation>Enable coin &amp;control features</translation>
+        <source>Enable coin control features</source>
+        <translation>Enable coin control features</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2393,13 +2393,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Spend unconfirmed change</translation>
+        <source>Spend unconfirmed change</source>
+        <translation>Spend unconfirmed change</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>&amp;Network</source>
-        <translation>&amp;Network</translation>
+        <source>Network</source>
+        <translation>Network</translation>
     </message>
     <message>
         <location line="+192"/>
@@ -2414,8 +2414,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="-204"/>
-        <source>Map port using &amp;UPnP</source>
-        <translation>Map port using &amp;UPnP</translation>
+        <source>Map port using UPnP</source>
+        <translation>Map port using UPnP</translation>
     </message>
     <message>
         <location line="-133"/>
@@ -2445,8 +2445,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+12"/>
-        <source>Proxy &amp;IP:</source>
-        <translation>Proxy &amp;IP:</translation>
+        <source>Proxy IP:</source>
+        <translation>Proxy IP:</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -2455,8 +2455,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>&amp;Port:</source>
-        <translation>&amp;Port:</translation>
+        <source>Port:</source>
+        <translation>Port:</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -2465,8 +2465,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+36"/>
-        <source>&amp;Window</source>
-        <translation>&amp;Window</translation>
+        <source>Window</source>
+        <translation>Window</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2475,8 +2475,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimize to the tray instead of the taskbar</translation>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>Minimize to the tray instead of the taskbar</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2485,18 +2485,18 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimize on close</translation>
+        <source>Minimize on close</source>
+        <translation>Minimize on close</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>&amp;Display</source>
-        <translation>&amp;Display</translation>
+        <source>Display</source>
+        <translation>Display</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>User Interface &amp;language:</source>
-        <translation>User Interface &amp;language:</translation>
+        <source>User Interface language:</source>
+        <translation>User Interface language:</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -2505,8 +2505,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+21"/>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unit to show amounts in:</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>Unit to show amounts in:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -2541,18 +2541,18 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Reset Options</source>
-        <translation>&amp;Reset Options</translation>
+        <source>Reset Options</source>
+        <translation>Reset Options</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancel</translation>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="+87"/>
@@ -3142,8 +3142,8 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
     </message>
     <message>
         <location line="+37"/>
-        <source>Pay &amp;To:</source>
-        <translation type="unfinished">Pay &amp;To:</translation>
+        <source>Pay To:</source>
+        <translation type="unfinished">Pay To:</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -3172,8 +3172,8 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
     </message>
     <message>
         <location line="+19"/>
-        <source>&amp;Label:</source>
-        <translation type="unfinished">&amp;Label:</translation>
+        <source>Label:</source>
+        <translation type="unfinished">Label:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -3182,8 +3182,8 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
     </message>
     <message>
         <location line="+17"/>
-        <source>A&amp;mount:</source>
-        <translation type="unfinished">A&amp;mount:</translation>
+        <source>Amount:</source>
+        <translation type="unfinished">Amount:</translation>
     </message>
     <message>
         <location line="+55"/>
@@ -3683,13 +3683,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>QRImageWidget</name>
     <message>
         <location filename="../receiverequestdialog.cpp" line="+35"/>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Save Image...</translation>
+        <source>Save Image...</source>
+        <translation>Save Image...</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Copy Image</translation>
+        <source>Copy Image</source>
+        <translation>Copy Image</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -3711,8 +3711,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
+        <source>Information</source>
+        <translation>Information</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -3765,8 +3765,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+134"/>
-        <source>&amp;Open</source>
-        <translation>&amp;Open</translation>
+        <source>Open</source>
+        <translation>Open</translation>
     </message>
     <message>
         <location line="-193"/>
@@ -3830,8 +3830,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+122"/>
-        <source>&amp;Console</source>
-        <translation>&amp;Console</translation>
+        <source>Console</source>
+        <translation>Console</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -3840,13 +3840,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+23"/>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;Network Traffic</translation>
+        <source>Network Traffic</source>
+        <translation>Network Traffic</translation>
     </message>
     <message>
         <location line="+52"/>
-        <source>&amp;Clear</source>
-        <translation>&amp;Clear</translation>
+        <source>Clear</source>
+        <translation>Clear</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -3865,8 +3865,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+41"/>
-        <source>&amp;Peers</source>
-        <translation>&amp;Peers</translation>
+        <source>Peers</source>
+        <translation>Peers</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -3942,8 +3942,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+40"/>
-        <source>&amp;Wallet Repair</source>
-        <translation>&amp;Wallet Repair</translation>
+        <source>Wallet Repair</source>
+        <translation>Wallet Repair</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4147,13 +4147,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>R&amp;euse an existing receiving address (not recommended)</translation>
+        <source>Reuse an existing receiving address (not recommended)</source>
+        <translation>Reuse an existing receiving address (not recommended)</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>&amp;Message:</source>
-        <translation>&amp;Message:</translation>
+        <source>Message:</source>
+        <translation>Message:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -4178,8 +4178,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <source>Label:</source>
+        <translation>Label:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -4189,13 +4189,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-19"/>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Amount:</translation>
+        <source>Amount:</source>
+        <translation>Amount:</translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Request payment</translation>
+        <source>Request payment</source>
+        <translation>Request payment</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4257,18 +4257,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+46"/>
-        <source>Copy &amp;URI</source>
-        <translation>Copy &amp;URI</translation>
+        <source>Copy URI</source>
+        <translation>Copy URI</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Copy &amp;Address</source>
-        <translation>Copy &amp;Address</translation>
+        <source>Copy Address</source>
+        <translation>Copy Address</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Save Image...</translation>
+        <source>Save Image...</source>
+        <translation>Save Image...</translation>
     </message>
     <message>
         <location filename="../receiverequestdialog.cpp" line="+63"/>
@@ -4567,8 +4567,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>S&amp;end</source>
-        <translation>S&amp;end</translation>
+        <source>Send</source>
+        <translation>Send</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -4577,8 +4577,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
+        <source>Clear All</source>
+        <translation>Clear All</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -4587,8 +4587,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Add &amp;Recipient</source>
-        <translation>Add &amp;Recipient</translation>
+        <source>Add Recipient</source>
+        <translation>Add Recipient</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -4797,8 +4797,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>Pay &amp;To:</source>
-        <translation>Pay &amp;To:</translation>
+        <source>Pay To:</source>
+        <translation>Pay To:</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -4834,8 +4834,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-1044"/>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <source>Label:</source>
+        <translation>Label:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -4846,8 +4846,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+7"/>
         <location line="+521"/>
         <location line="+536"/>
-        <source>A&amp;mount:</source>
-        <translation>A&amp;mount:</translation>
+        <source>Amount:</source>
+        <translation>Amount:</translation>
     </message>
     <message>
         <location line="-1041"/>
@@ -4909,8 +4909,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+13"/>
-        <source>&amp;Sign Message</source>
-        <translation>&amp;Sign Message</translation>
+        <source>Sign Message</source>
+        <translation>Sign Message</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -4976,8 +4976,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-140"/>
-        <source>Sign &amp;Message</source>
-        <translation>Sign &amp;Message</translation>
+        <source>Sign Message</source>
+        <translation>Sign Message</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -4987,13 +4987,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+3"/>
         <location line="+143"/>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
+        <source>Clear All</source>
+        <translation>Clear All</translation>
     </message>
     <message>
         <location line="-84"/>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;Verify Message</translation>
+        <source>Verify Message</source>
+        <translation>Verify Message</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -5002,8 +5002,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+61"/>
-        <source>Verify &amp;Message</source>
-        <translation>Verify &amp;Message</translation>
+        <source>Verify Message</source>
+        <translation>Verify Message</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -5882,8 +5882,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>WalletView</name>
     <message>
         <location filename="../walletview.cpp" line="+51"/>
-        <source>&amp;Export</source>
-        <translation>&amp;Export</translation>
+        <source>Export</source>
+        <translation>Export</translation>
     </message>
     <message>
         <location line="+1"/>

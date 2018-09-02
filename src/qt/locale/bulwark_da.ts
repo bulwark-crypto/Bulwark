@@ -10,36 +10,36 @@
         <translation>opret ny adresse</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;Ny</translation>
+        <source>New</source>
+        <translation>Ny</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopier til udklipsholder</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Kopier</translation>
+        <source>Copy</source>
+        <translation>Kopier</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Slet den valgte adresse fra listen</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Slet</translation>
+        <source>Delete</source>
+        <translation>Slet</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Eksporter aktuelle tekst til en fil</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>E&amp;ksporter</translation>
+        <source>Export</source>
+        <translation>Eksporter</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>L&amp;uk</translation>
+        <source>Close</source>
+        <translation>Luk</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Vælg egen modtageradresse </translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>V&amp;ælg</translation>
+        <source>Choose</source>
+        <translation>Vælg</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,15 +70,15 @@
         <translation>Dette er dine modtager adresser. Det anbefales at anvende en ny adresse til hver transaktion</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
+        <source>Copy Address</source>
         <translation>Kopier adresse</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
+        <source>Copy Label</source>
         <translation>Kopier tekst</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
+        <source>Edit</source>
         <translation>Ret</translation>
     </message>
     <message>
@@ -235,7 +235,7 @@
         <translation>BIP 38 værktøj</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
+        <source>BIP 38 Encrypt</source>
         <translation>BIP 38 kryptografering</translation>
     </message>
     <message>
@@ -283,7 +283,7 @@
         <translation>Underskriv beskeden for at bevise, at De ejer denne Bulwark adresse.</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
+        <source>Encrypt Key</source>
         <translation>Krypter og underskriv</translation>
     </message>
     <message>
@@ -291,11 +291,11 @@
         <translation>Nulstil alle underskriftsfelter</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
+        <source>Clear All</source>
         <translation>Nulstil alt</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Decrypt</source>
+        <source>BIP 38 Decrypt</source>
         <translation>BIP 38 dekryptér.</translation>
     </message>
     <message>
@@ -311,7 +311,7 @@
         <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige Bulwark adresse.</translation>
     </message>
     <message>
-        <source>Decrypt &amp;Key</source>
+        <source>Decrypt Key</source>
         <translation>Dekrypteringsnøgle</translation>
     </message>
     <message>
@@ -402,7 +402,7 @@
         <translation>Node</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
+        <source>Overview</source>
         <translation>Overblik</translation>
     </message>
     <message>
@@ -410,128 +410,128 @@
         <translation>Vis et generelt overblik over tegnebogen</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Send</translation>
+        <source>Send</source>
+        <translation>Send</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Modtag</translation>
+        <source>Receive</source>
+        <translation>Modtag</translation>
     </message>
     <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transaktioner</translation>
+        <source>Transactions</source>
+        <translation>Transaktioner</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Vis transaktionshistorik</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <translation>E&amp;xit</translation>
+        <source>Exit</source>
+        <translation>Exit</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Afslut applikationen</translation>
     </message>
     <message>
-        <source>About &amp;Qt</source>
-        <translation>Om&amp;Qt</translation>
+        <source>About Qt</source>
+        <translation>OmQt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Information om Qt</translation>
     </message>
     <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Indstillinger</translation>
+        <source>Options...</source>
+        <translation>Indstillinger</translation>
     </message>
     <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Vis / skjul</translation>
+        <source>Show / Hide</source>
+        <translation>Vis / skjul</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Vis eller skjul hovedvinduet.</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Kryptografer tegnebog</translation>
+        <source>Encrypt Wallet...</source>
+        <translation>Kryptografer tegnebog</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Krypter den private nøgle som hører til tegnebogen.</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Sikkerhedskopier tegnebog</translation>
+        <source>Backup Wallet...</source>
+        <translation>Sikkerhedskopier tegnebog</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Sikkerhedskopier og gem et andet sted</translation>
     </message>
     <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Skift kodeord</translation>
+        <source>Change Passphrase...</source>
+        <translation>Skift kodeord</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Skift kodeordet til kryptografering af tegnebog</translation>
     </message>
     <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Lås tegnebogen op</translation>
+        <source>Unlock Wallet...</source>
+        <translation>Lås tegnebogen op</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Lås tegnebogen op</translation>
     </message>
     <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Lås tegnebogen</translation>
+        <source>Lock Wallet</source>
+        <translation>Lås tegnebogen</translation>
     </message>
     <message>
-        <source>Sign &amp;message...</source>
-        <translation>Underskriv &amp; besked</translation>
+        <source>Sign message...</source>
+        <translation>Underskriv  besked</translation>
     </message>
     <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;verificer besked</translation>
+        <source>Verify message...</source>
+        <translation>verificer besked</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;information</translation>
+        <source>Information</source>
+        <translation>information</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Vis diagnosticeringsinformation</translation>
     </message>
     <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debugpanel</translation>
+        <source>Debug console</source>
+        <translation>Debugpanel</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Åben debugpanel</translation>
     </message>
     <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Netværksmonitering</translation>
+        <source>Network Monitor</source>
+        <translation>Netværksmonitering</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Vis netværksmonitor</translation>
     </message>
     <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Peersliste</translation>
+        <source>Peers list</source>
+        <translation>Peersliste</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Vis information om PEERS</translation>
     </message>
     <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Tegnebog &amp;Reparer</translation>
+        <source>Wallet Repair</source>
+        <translation>Tegnebog Reparer</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,56 +542,56 @@
         <translation>Åbn konfigurationsfil</translation>
     </message>
     <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Vis &amp;sikkerhedskopier, der er taget automatisk</translation>
+        <source>Show Automatic Backups</source>
+        <translation>Vis sikkerhedskopier, der er taget automatisk</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Vis sikkerhedskopier, der er taget automatisk</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Afsenderadresser</translation>
+        <source>Sending addresses...</source>
+        <translation>Afsenderadresser</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Vis listen over brugte afsenderadresse med tilhørende tekst.</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Modtageradresse</translation>
+        <source>Receiving addresses...</source>
+        <translation>Modtageradresse</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Vis listen over brugte modtageradresser og tekst</translation>
     </message>
     <message>
-        <source>Open &amp;URI...</source>
-        <translation>Åbn &amp;URL</translation>
+        <source>Open URI...</source>
+        <translation>Åbn URL</translation>
     </message>
     <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Kommandolinieparametre</translation>
+        <source>Command-line options</source>
+        <translation>Kommandolinieparametre</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Synkroniserer yderligere data %p%</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation>&amp;Fil</translation>
+        <source>File</source>
+        <translation>Fil</translation>
     </message>
     <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;indstillinger</translation>
+        <source>Settings</source>
+        <translation>indstillinger</translation>
     </message>
     <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;værktøj</translation>
+        <source>Tools</source>
+        <translation>værktøj</translation>
     </message>
     <message>
-        <source>&amp;Help</source>
-        <translation>&amp;hjælp</translation>
+        <source>Help</source>
+        <translation>hjælp</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -610,16 +610,16 @@
         <translation>Anmod om betaling (genrerer QR kode og Bulwark URL)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternoder</translation>
+        <source>Masternodes</source>
+        <translation>Masternoder</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Vis masternoder</translation>
     </message>
     <message>
-        <source>&amp;About Bulwark Core</source>
-        <translation>&amp;Om Bulwark kerne</translation>
+        <source>About Bulwark Core</source>
+        <translation>Om Bulwark kerne</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
@@ -638,28 +638,28 @@
         <translation>Verificer besked for at sikre, at den er underskrevet med den opgivne Bulwark adresse</translation>
     </message>
     <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP 38 værktøj</translation>
+        <source>BIP38 tool</source>
+        <translation>BIP 38 værktøj</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Krypter og dekrypter private nøgler ved hjælp af et kodeord</translation>
     </message>
     <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;Massesending</translation>
+        <source>MultiSend</source>
+        <translation>Massesending</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Massesending, indstillinger</translation>
     </message>
     <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Åbn tegnebog &amp;konfigurationsfil</translation>
+        <source>Open Wallet Configuration File</source>
+        <translation>Åbn tegnebog konfigurationsfil</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Åbn &amp;Masternode konfigurationsfil</translation>
+        <source>Open Masternode Configuration File</source>
+        <translation>Åbn Masternode konfigurationsfil</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
@@ -670,8 +670,8 @@
         <translation>Åbn en Bulwark URl eller betalingsanmodning</translation>
     </message>
     <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;blockchain explorer</translation>
+        <source>Blockchain explorer</source>
+        <translation>blockchain explorer</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -1070,16 +1070,16 @@ Adresse: %4
         <translation>Ret adresse</translation>
     </message>
     <message>
-        <source>&amp;Label</source>
-        <translation>&amp;tekstmarkør</translation>
+        <source>Label</source>
+        <translation>tekstmarkør</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Denne tekstmarkør e forbundet med denne adresse i listen.</translation>
     </message>
     <message>
-        <source>&amp;Address</source>
-        <translation>&amp;adresse</translation>
+        <source>Address</source>
+        <translation>adresse</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1286,20 +1286,20 @@ Adresse: %4
         <translation>Offentlig nøgle</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>S&amp;tart alias</translation>
+        <source>Start alias</source>
+        <translation>Start alias</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>Start &amp;all</translation>
+        <source>Start all</source>
+        <translation>Start all</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Start &amp;MANGLER</translation>
+        <source>Start MISSING</source>
+        <translation>Start MANGLER</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;opdateringsstatus</translation>
+        <source>Update status</source>
+        <translation>opdateringsstatus</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1582,28 +1582,28 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Muligheder</translation>
     </message>
     <message>
-        <source>&amp;Main</source>
-        <translation>&amp;hoved</translation>
+        <source>Main</source>
+        <translation>hoved</translation>
     </message>
     <message>
-        <source>Size of &amp;database cache</source>
-        <translation>Størrelse på &amp;databasecache</translation>
+        <source>Size of database cache</source>
+        <translation>Størrelse på databasecache</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script &amp;verification threads</source>
-        <translation>antal af script &amp;verifikationstråde</translation>
+        <source>Number of script verification threads</source>
+        <translation>antal af script verifikationstråde</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0=auto, &gt;0 efterlad så mange tråde fri)</translation>
     </message>
     <message>
-        <source>W&amp;allet</source>
-        <translation>T&amp;egnebog</translation>
+        <source>Wallet</source>
+        <translation>Tegnebog</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1622,8 +1622,8 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Tillad indkomne forbindelser</translation>
     </message>
     <message>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;forbind gennem SOCJS5 proxy (standardproxy):</translation>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>forbind gennem SOCJS5 proxy (standardproxy):</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1634,16 +1634,16 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Start Bulwark automatisk, når der logges på systemet</translation>
     </message>
     <message>
-        <source>&amp;Start Bulwark on system login</source>
-        <translation>&amp;start Bulwark når der logges på systemet</translation>
+        <source>Start Bulwark on system login</source>
+        <translation>start Bulwark når der logges på systemet</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Vis eller skjul møntkontrolfeatures</translation>
     </message>
     <message>
-        <source>Enable coin &amp;control features</source>
-        <translation>Aktiver mønt &amp;kontrolfeatures</translation>
+        <source>Enable coin control features</source>
+        <translation>Aktiver mønt kontrolfeatures</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1654,12 +1654,12 @@ Kontroller adressen og prøv igen.</translation>
         <translation>Vis fane med masternoder</translation>
     </message>
     <message>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;brug ikke bekræftede "penge tilbage"</translation>
+        <source>Spend unconfirmed change</source>
+        <translation>brug ikke bekræftede "penge tilbage"</translation>
     </message>
     <message>
-        <source>&amp;Network</source>
-        <translation>&amp;netværk</translation>
+        <source>Network</source>
+        <translation>netværk</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
@@ -1672,7 +1672,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
 https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
     </message>
     <message>
-        <source>Map port using &amp;UPnP</source>
+        <source>Map port using UPnP</source>
         <translation>MAP port ved hjælp af UPnP</translation>
     </message>
     <message>
@@ -1680,56 +1680,56 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Tilslut Bulwark netværket gennem en SOCKS5 PROXY</translation>
     </message>
     <message>
-        <source>Proxy &amp;IP:</source>
-        <translation>Proxy &amp;IP</translation>
+        <source>Proxy IP:</source>
+        <translation>Proxy IP</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP adresse til proxyserveren (For eksempel IPV4: 127.0.0.1/IPv6: ::1)</translation>
     </message>
     <message>
-        <source>&amp;Port:</source>
-        <translation>&amp;port</translation>
+        <source>Port:</source>
+        <translation>port</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Proxyport (f.eks 9050)</translation>
     </message>
     <message>
-        <source>&amp;Window</source>
-        <translation>&amp;vindue</translation>
+        <source>Window</source>
+        <translation>vindue</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Vis kun ikonet efter minimering af vinduet</translation>
     </message>
     <message>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimer til bakken i stedet for til proceslinien</translation>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>Minimer til bakken i stedet for til proceslinien</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimer i stedet for at afslutte applikationen når vinduet lukkes. Når dette er valgt er det kun muligt at lukke ned via filmenuen og afslut</translation>
     </message>
     <message>
-        <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimer og luk</translation>
+        <source>Minimize on close</source>
+        <translation>Minimer og luk</translation>
     </message>
     <message>
-        <source>&amp;Display</source>
-        <translation>&amp;Vis</translation>
+        <source>Display</source>
+        <translation>Vis</translation>
     </message>
     <message>
-        <source>User Interface &amp;language:</source>
-        <translation>Brugerinterface &amp;sprog:</translation>
+        <source>User Interface language:</source>
+        <translation>Brugerinterface sprog:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Brugers tema:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Enhed som beløb vises i</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>Enhed som beløb vises i</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1756,16 +1756,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Nulstil alle klientoptioner til standard</translation>
     </message>
     <message>
-        <source>&amp;Reset Options</source>
-        <translation>&amp;nulstil optioner</translation>
+        <source>Reset Options</source>
+        <translation>nulstil optioner</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation>&amp;Ok</translation>
+        <source>OK</source>
+        <translation>Ok</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Annuller</translation>
+        <source>Cancel</source>
+        <translation>Annuller</translation>
     </message>
     <message>
         <source>default</source>
@@ -2000,8 +2000,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Beløb</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>Betal &amp;Til</translation>
+        <source>Pay To:</source>
+        <translation>Betal Til</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2020,16 +2020,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Mærkning</translation>
+        <source>Label:</source>
+        <translation>Mærkning</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Indtast et mærke til denne adresse for at tilføje den til listen over brugte adresser</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>A&amp;mount</translation>
+        <source>Amount:</source>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -2142,12 +2142,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Gem billede</translation>
+        <source>Save Image...</source>
+        <translation>Gem billede</translation>
     </message>
     <message>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Kopier billede</translation>
+        <source>Copy Image</source>
+        <translation>Kopier billede</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2165,8 +2165,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Værktøjskasse</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;information</translation>
+        <source>Information</source>
+        <translation>information</translation>
     </message>
     <message>
         <source>General</source>
@@ -2189,8 +2189,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Antal forbindelser</translation>
     </message>
     <message>
-        <source>&amp;Open</source>
-        <translation>&amp;Åben</translation>
+        <source>Open</source>
+        <translation>Åben</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2241,20 +2241,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Antal masternoder</translation>
     </message>
     <message>
-        <source>&amp;Console</source>
-        <translation>&amp;konsol</translation>
+        <source>Console</source>
+        <translation>konsol</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Clear konsollet</translation>
     </message>
     <message>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;Netværkstrafik</translation>
+        <source>Network Traffic</source>
+        <translation>Netværkstrafik</translation>
     </message>
     <message>
-        <source>&amp;Clear</source>
-        <translation>&amp;clear</translation>
+        <source>Clear</source>
+        <translation>clear</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2269,8 +2269,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Sendt</translation>
     </message>
     <message>
-        <source>&amp;Peers</source>
-        <translation>&amp;Peers</translation>
+        <source>Peers</source>
+        <translation>Peers</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2329,8 +2329,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>PingtidPingtid</translation>
     </message>
     <message>
-        <source>&amp;Wallet Repair</source>
-        <translation>&amp;Tegnebog Reparer</translation>
+        <source>Wallet Repair</source>
+        <translation>Tegnebog Reparer</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2460,12 +2460,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Genbrug en af de tidligere benyttede modtageradresser. &lt;br&gt; Genbrug af adresser kan kompromittere anonymiteten og sikkerheden. &lt;br&gt; Anbefales ikke, med mindre der blot er tale om genudsendelse af en tidligere genereret adresse.</translation>
     </message>
     <message>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>G&amp;enbrug en eksisterendemodageradresse (ikke anbefalet)</translation>
+        <source>Reuse an existing receiving address (not recommended)</source>
+        <translation>Genbrug en eksisterendemodageradresse (ikke anbefalet)</translation>
     </message>
     <message>
-        <source>&amp;Message:</source>
-        <translation>&amp;Besked</translation>
+        <source>Message:</source>
+        <translation>Besked</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2484,20 +2484,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Anvend denne formular for at anmode om betalinger. Alle felter er &lt;b&gt;valgfri&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Mærkning</translation>
+        <source>Label:</source>
+        <translation>Mærkning</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Beløbsfeltet er valgfrit. Efterlad det tomt, eller med værdien 0 for at anmode om et beløb, som afsenderen bestemmer.</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Beløb</translation>
+        <source>Amount:</source>
+        <translation>Beløb</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Anmod om betaling</translation>
+        <source>Request payment</source>
+        <translation>Anmod om betaling</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2505,7 +2505,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Clear</source>
-        <translation>&amp;clear</translation>
+        <translation>clear</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2547,16 +2547,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>QR kode</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>Kopier &amp;URl</translation>
+        <source>Copy URI</source>
+        <translation>Kopier URl</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>Kopier &amp;Adresse</translation>
+        <source>Copy Address</source>
+        <translation>Kopier Adresse</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Gem billede</translation>
+        <source>Save Image...</source>
+        <translation>Gem billede</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -2781,15 +2781,15 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Bekræft  og send</translation>
     </message>
     <message>
-        <source>S&amp;end</source>
-        <translation>S&amp;end</translation>
+        <source>Send</source>
+        <translation>Send</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Tøm alle felter i formularen</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
+        <source>Clear All</source>
         <translation>Nulstil alt</translation>
     </message>
     <message>
@@ -2797,8 +2797,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Send til flere modtagere på én gang</translation>
     </message>
     <message>
-        <source>Add &amp;Recipient</source>
-        <translation>Tilføj &amp;Modtager</translation>
+        <source>Add Recipient</source>
+        <translation>Tilføj Modtager</translation>
     </message>
     <message>
         <source>SwiftX</source>
@@ -2952,8 +2952,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Dette er en almindelig betaling</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>Betal &amp;Til</translation>
+        <source>Pay To:</source>
+        <translation>Betal Til</translation>
     </message>
     <message>
         <source>The Bulwark address to send the payment to</source>
@@ -2980,16 +2980,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Fjern denne postering</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Mærkning</translation>
+        <source>Label:</source>
+        <translation>Mærkning</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Indtast et mærke til denne adresse for at tilføje den til listen over brugte adresser</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>A&amp;mount</translation>
+        <source>Amount:</source>
+        <translation>Amount</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -3038,8 +3038,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Underskrifter - Underskriv / verificer en besked</translation>
     </message>
     <message>
-        <source>&amp;Sign Message</source>
-        <translation>&amp;Underskriv besked</translation>
+        <source>Sign Message</source>
+        <translation>Underskriv besked</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -3090,28 +3090,28 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>verificer beskeden for at sikre, at den blev underskrevet med den rigtige Bulwark adresse.</translation>
     </message>
     <message>
-        <source>Sign &amp;Message</source>
-        <translation>Underskriv &amp;Besked</translation>
+        <source>Sign Message</source>
+        <translation>Underskriv Besked</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Nulstil alle underskriftsfelter</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
+        <source>Clear All</source>
         <translation>Nulstil alt</translation>
     </message>
     <message>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;verificer besked</translation>
+        <source>Verify Message</source>
+        <translation>verificer besked</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Skriv den adresse der skal bruges til at underskrive med. (Vær sikker på at få det hele med, herunder alle linjerne, mellemrum, tabuleringer o.l. præcist) og signer nedenfor for at verificere beskeden. Vær forsigtig med ikke at læse mere ind i underskriften end den underskrevne besked for at undgå snyd fra et "man-in-the-middle" angreb.</translation>
     </message>
     <message>
-        <source>Verify &amp;Message</source>
-        <translation>Verificer &amp;Beske</translation>
+        <source>Verify Message</source>
+        <translation>Verificer Beske</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3728,8 +3728,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>E&amp;ksporter</translation>
+        <source>Export</source>
+        <translation>Eksporter</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

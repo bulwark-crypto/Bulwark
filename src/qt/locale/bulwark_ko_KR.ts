@@ -10,36 +10,36 @@
         <translation>새로운 주소 만들기</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;생성</translation>
+        <source>New</source>
+        <translation>생성</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>현재 선택된 주소를 복사합니다.</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;복사</translation>
+        <source>Copy</source>
+        <translation>복사</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>현재 선택된 주소를 목록에서 삭제합니다.</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;삭제</translation>
+        <source>Delete</source>
+        <translation>삭제</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>현재 선택된 탭의 데이터를 파일로 내보내기</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;내보내기</translation>
+        <source>Export</source>
+        <translation>내보내기</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>닫&amp;기</translation>
+        <source>Close</source>
+        <translation>닫기</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>전송 받을 주소를 선택해주세요.</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>선&amp;택</translation>
+        <source>Choose</source>
+        <translation>선택</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>이 주소들은 전송 받을 Bulwark 주소입니다. 각 트랜잭션별로 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;주소 복사</translation>
+        <source>Copy Address</source>
+        <translation>주소 복사</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
-        <translation>라벨 &amp;복사</translation>
+        <source>Copy Label</source>
+        <translation>라벨 복사</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;수정</translation>
+        <source>Edit</source>
+        <translation>수정</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -235,8 +235,8 @@
         <translation>BIP 38 도구</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 암호화</translation>
+        <source>BIP 38 Encrypt</source>
+        <translation>BIP 38 암호화</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -283,20 +283,20 @@
         <translation>이 Bulwark 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>암호화 &amp; 키</translation>
+        <source>Encrypt Key</source>
+        <translation>암호화  키</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>모든 서명 메세지 입력 지우기</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>전체 &amp;지우기</translation>
+        <source>Clear All</source>
+        <translation>전체 지우기</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 암호화 해제</translation>
+        <source>BIP 38 Decrypt</source>
+        <translation>BIP 38 암호화 해제</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
@@ -311,8 +311,8 @@
         <translation>메세지가 지정된 Bulwark 주소로 서명되었는지 확인해주세요</translation>
     </message>
     <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>암호해제 &amp;키</translation>
+        <source>Decrypt Key</source>
+        <translation>암호해제 키</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -402,136 +402,136 @@
         <translation>노드</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;개요</translation>
+        <source>Overview</source>
+        <translation>개요</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>지갑의 일반적인 개요 표시</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
-        <translation>&amp;전송</translation>
+        <source>Send</source>
+        <translation>전송</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;받기</translation>
+        <source>Receive</source>
+        <translation>받기</translation>
     </message>
     <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;트랜잭션</translation>
+        <source>Transactions</source>
+        <translation>트랜잭션</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>트랜잭션 내역 보기</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <translation>종&amp;료</translation>
+        <source>Exit</source>
+        <translation>종료</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>어플리케이션 종료</translation>
     </message>
     <message>
-        <source>About &amp;Qt</source>
-        <translation>&amp;Qt 정보</translation>
+        <source>About Qt</source>
+        <translation>Qt 정보</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Qt에 대한 정보 표시</translation>
     </message>
     <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;옵션...</translation>
+        <source>Options...</source>
+        <translation>옵션...</translation>
     </message>
     <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;보이기 / 숨기기</translation>
+        <source>Show / Hide</source>
+        <translation>보이기 / 숨기기</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>기본 창 보이기 또는 숨기기</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;지갑 암호화...</translation>
+        <source>Encrypt Wallet...</source>
+        <translation>지갑 암호화...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>지갑 개인 키 암호화</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;지갑 백업</translation>
+        <source>Backup Wallet...</source>
+        <translation>지갑 백업</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>다른 위치에 지갑 백업</translation>
     </message>
     <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;암호 변경...</translation>
+        <source>Change Passphrase...</source>
+        <translation>암호 변경...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>지갑 암호화에 사용되는 암호 변경</translation>
     </message>
     <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;지갑 잠금해제...</translation>
+        <source>Unlock Wallet...</source>
+        <translation>지갑 잠금해제...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>지갑 잠금해제</translation>
     </message>
     <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;지갑 잠금</translation>
+        <source>Lock Wallet</source>
+        <translation>지갑 잠금</translation>
     </message>
     <message>
-        <source>Sign &amp;message...</source>
-        <translation>메세지 &amp;서명...</translation>
+        <source>Sign message...</source>
+        <translation>메세지 서명...</translation>
     </message>
     <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;메시지 확인...</translation>
+        <source>Verify message...</source>
+        <translation>메시지 확인...</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;정보</translation>
+        <source>Information</source>
+        <translation>정보</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>진단 정보 표시</translation>
     </message>
     <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;디버그 콘솔</translation>
+        <source>Debug console</source>
+        <translation>디버그 콘솔</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>디버깅 콘솔 열기</translation>
     </message>
     <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;네트워크 모니터</translation>
+        <source>Network Monitor</source>
+        <translation>네트워크 모니터</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>네트워크 모니터 표시</translation>
     </message>
     <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;피어 목록</translation>
+        <source>Peers list</source>
+        <translation>피어 목록</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>피어 정보 표시</translation>
     </message>
     <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>지갑 &amp;복구</translation>
+        <source>Wallet Repair</source>
+        <translation>지갑 복구</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,56 +542,56 @@
         <translation>구성 파일 열기</translation>
     </message>
     <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>자동 &amp;백업 표시</translation>
+        <source>Show Automatic Backups</source>
+        <translation>자동 백업 표시</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>자동 생성된 지갑 백업 표시</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;주소 보내는중...</translation>
+        <source>Sending addresses...</source>
+        <translation>주소 보내는중...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>전송 된 주소 및 라벨 목록 표시</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;받는 주소...</translation>
+        <source>Receiving addresses...</source>
+        <translation>받는 주소...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>입금 된 주소 및 라벨 목록 표시</translation>
     </message>
     <message>
-        <source>Open &amp;URI...</source>
-        <translation>&amp;URI 열기...</translation>
+        <source>Open URI...</source>
+        <translation>URI 열기...</translation>
     </message>
     <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;명령행 옵션</translation>
+        <source>Command-line options</source>
+        <translation>명령행 옵션</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>추가 데이터 동기화: %p%</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation>&amp;파일</translation>
+        <source>File</source>
+        <translation>파일</translation>
     </message>
     <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;설정</translation>
+        <source>Settings</source>
+        <translation>설정</translation>
     </message>
     <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;도구</translation>
+        <source>Tools</source>
+        <translation>도구</translation>
     </message>
     <message>
-        <source>&amp;Help</source>
-        <translation>&amp;도움말</translation>
+        <source>Help</source>
+        <translation>도움말</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -610,16 +610,16 @@
         <translation>결제 요청 (QR 코드 및 bulwark: URI 생성)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;마스터노드</translation>
+        <source>Masternodes</source>
+        <translation>마스터노드</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>마스터노드 검색</translation>
     </message>
     <message>
-        <source>&amp;About Bulwark Core</source>
-        <translation>Bulwark Core &amp;정보</translation>
+        <source>About Bulwark Core</source>
+        <translation>Bulwark Core 정보</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
@@ -638,28 +638,28 @@
         <translation>메시지가 지정된 Bulwark 주소로 서명되었는지 확인합니다.</translation>
     </message>
     <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 도구</translation>
+        <source>BIP38 tool</source>
+        <translation>BIP38 도구</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>암호를 사용하여 개인 키 암호화 및 암호해제</translation>
     </message>
     <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;다중전송</translation>
+        <source>MultiSend</source>
+        <translation>다중전송</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>다중전송 설정</translation>
     </message>
     <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>지갑 &amp;구성 파일 열기</translation>
+        <source>Open Wallet Configuration File</source>
+        <translation>지갑 구성 파일 열기</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>&amp;마스터노드 구성 파일 열기</translation>
+        <source>Open Masternode Configuration File</source>
+        <translation>마스터노드 구성 파일 열기</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
@@ -670,8 +670,8 @@
         <translation>Bulwark: URI 또는 ​​결제 요청 열기</translation>
     </message>
     <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;블록체인 탐색기</translation>
+        <source>Blockchain explorer</source>
+        <translation>블록체인 탐색기</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -1070,16 +1070,16 @@ Address: %4
         <translation>주소 수정</translation>
     </message>
     <message>
-        <source>&amp;Label</source>
-        <translation>&amp;라벨</translation>
+        <source>Label</source>
+        <translation>라벨</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>이 주소 목록과 관련된 라벨</translation>
     </message>
     <message>
-        <source>&amp;Address</source>
-        <translation>&amp;주소</translation>
+        <source>Address</source>
+        <translation>주소</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1286,20 +1286,20 @@ Address: %4
         <translation>공개키</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>별명 시&amp;작</translation>
+        <source>Start alias</source>
+        <translation>별명 시작</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>&amp;전체 시작</translation>
+        <source>Start all</source>
+        <translation>전체 시작</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>시작 &amp;종료</translation>
+        <source>Start MISSING</source>
+        <translation>시작 종료</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;업데이트 상태</translation>
+        <source>Update status</source>
+        <translation>업데이트 상태</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1582,28 +1582,28 @@ Please check the address and try again.</source>
         <translation>옵션</translation>
     </message>
     <message>
-        <source>&amp;Main</source>
-        <translation>&amp;메인</translation>
+        <source>Main</source>
+        <translation>메인</translation>
     </message>
     <message>
-        <source>Size of &amp;database cache</source>
-        <translation>&amp;데이터베이스 캐시 크기</translation>
+        <source>Size of database cache</source>
+        <translation>데이터베이스 캐시 크기</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script &amp;verification threads</source>
-        <translation>스크립트 &amp;검증 스레드 개수</translation>
+        <source>Number of script verification threads</source>
+        <translation>스크립트 검증 스레드 개수</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = 자동, &lt;0 = 많은 코어들을 여유롭게 두기)</translation>
     </message>
     <message>
-        <source>W&amp;allet</source>
-        <translation>지&amp;갑</translation>
+        <source>Wallet</source>
+        <translation>지갑</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1622,8 +1622,8 @@ Please check the address and try again.</source>
         <translation>들어오는 연결 허용</translation>
     </message>
     <message>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;SOCKS5 프록시를 통해 연결 (기본 프록시):</translation>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>SOCKS5 프록시를 통해 연결 (기본 프록시):</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1634,16 +1634,16 @@ Please check the address and try again.</source>
         <translation>시스템 로그인 후 Bulwark을 자동으로 시작합니다.</translation>
     </message>
     <message>
-        <source>&amp;Start Bulwark on system login</source>
-        <translation>&amp;시스템 로그인시 Bulwark 시작</translation>
+        <source>Start Bulwark on system login</source>
+        <translation>시스템 로그인시 Bulwark 시작</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>동전 제어 기능을 표시할지 여부를 나타냅니다.</translation>
     </message>
     <message>
-        <source>Enable coin &amp;control features</source>
-        <translation>코인 &amp;제어 기능 사용</translation>
+        <source>Enable coin control features</source>
+        <translation>코인 제어 기능 사용</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1654,12 +1654,12 @@ Please check the address and try again.</source>
         <translation>마스터노드 탭 표시</translation>
     </message>
     <message>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;확인되지 않은 변경사항 전송</translation>
+        <source>Spend unconfirmed change</source>
+        <translation>확인되지 않은 변경사항 전송</translation>
     </message>
     <message>
-        <source>&amp;Network</source>
-        <translation>&amp;네트워크</translation>
+        <source>Network</source>
+        <translation>네트워크</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
@@ -1672,64 +1672,64 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
 https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
     </message>
     <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
+        <source>Map port using UPnP</source>
+        <translation>UPnp를 사용하여 포트 매핑</translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
         <translation>SOCKS5 프록시를 통해 Bulwark 네트워크에 연결해주세요.</translation>
     </message>
     <message>
-        <source>Proxy &amp;IP:</source>
-        <translation>프록시 &amp;IP:</translation>
+        <source>Proxy IP:</source>
+        <translation>프록시 IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>프록시 IP 주소 (예: IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>&amp;Port:</source>
-        <translation>&amp;포트:</translation>
+        <source>Port:</source>
+        <translation>포트:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>프록시 포트 (예: 9050)</translation>
     </message>
     <message>
-        <source>&amp;Window</source>
-        <translation>&amp;윈도우</translation>
+        <source>Window</source>
+        <translation>윈도우</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>창 최소화 후 트레이 아이콘으로만 표시.</translation>
     </message>
     <message>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;최소화시 작업표시줄이 아닌 트레이로 최소화</translation>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>최소화시 작업표시줄이 아닌 트레이로 최소화</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>창 닫기시 프로그램 종료하지 않고 최소화하기. 이 옵션을 사용하면 메뉴에서 종료를 선택해야 프로그램이 종료됩니다.</translation>
     </message>
     <message>
-        <source>M&amp;inimize on close</source>
-        <translation>닫&amp;기시 최소화</translation>
+        <source>Minimize on close</source>
+        <translation>닫기시 최소화</translation>
     </message>
     <message>
-        <source>&amp;Display</source>
-        <translation>&amp;디스플레이</translation>
+        <source>Display</source>
+        <translation>디스플레이</translation>
     </message>
     <message>
-        <source>User Interface &amp;language:</source>
-        <translation>사용자 인터페이스 &amp;언어:</translation>
+        <source>User Interface language:</source>
+        <translation>사용자 인터페이스 언어:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>사용자 인터페이스 테마:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;금액을 표시 할 단위:</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>금액을 표시 할 단위:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1756,16 +1756,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>모든 클라이언트 옵션을 기본값으로 재설정.</translation>
     </message>
     <message>
-        <source>&amp;Reset Options</source>
-        <translation>&amp;옵션 재설정</translation>
+        <source>Reset Options</source>
+        <translation>옵션 재설정</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation>&amp;예</translation>
+        <source>OK</source>
+        <translation>예</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;취소</translation>
+        <source>Cancel</source>
+        <translation>취소</translation>
     </message>
     <message>
         <source>default</source>
@@ -2000,8 +2000,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>금액:</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>지불 &amp;대상:</translation>
+        <source>Pay To:</source>
+        <translation>지불 대상:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2020,16 +2020,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;라벨:</translation>
+        <source>Label:</source>
+        <translation>라벨:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>이 주소의 라벨을 입력하여 사용된 주소 목록에 추가하십시오</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>금&amp;액:</translation>
+        <source>Amount:</source>
+        <translation>금액:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -2146,12 +2146,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>이미지 &amp;저장...</translation>
+        <source>Save Image...</source>
+        <translation>이미지 저장...</translation>
     </message>
     <message>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;이미지 복사</translation>
+        <source>Copy Image</source>
+        <translation>이미지 복사</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2169,8 +2169,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>도구 창</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;정보</translation>
+        <source>Information</source>
+        <translation>정보</translation>
     </message>
     <message>
         <source>General</source>
@@ -2193,8 +2193,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>연결된 수</translation>
     </message>
     <message>
-        <source>&amp;Open</source>
-        <translation>&amp;열기</translation>
+        <source>Open</source>
+        <translation>열기</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2245,20 +2245,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>마스터노드 개수</translation>
     </message>
     <message>
-        <source>&amp;Console</source>
-        <translation>&amp;콘솔</translation>
+        <source>Console</source>
+        <translation>콘솔</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>콘솔 초기화</translation>
     </message>
     <message>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;네트워크 트래픽</translation>
+        <source>Network Traffic</source>
+        <translation>네트워크 트래픽</translation>
     </message>
     <message>
-        <source>&amp;Clear</source>
-        <translation>&amp;초기화</translation>
+        <source>Clear</source>
+        <translation>초기화</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2273,8 +2273,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>보냄</translation>
     </message>
     <message>
-        <source>&amp;Peers</source>
-        <translation>&amp;피어</translation>
+        <source>Peers</source>
+        <translation>피어</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2333,8 +2333,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>응답 시간</translation>
     </message>
     <message>
-        <source>&amp;Wallet Repair</source>
-        <translation>&amp;지갑 복구</translation>
+        <source>Wallet Repair</source>
+        <translation>지갑 복구</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2465,12 +2465,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>이전에 사용한 수신 주소 중 하나를 다시 사용하십시오.&lt;br&gt;주소 재사용은 보안 및 개인정보보호 문제가 있습니다.&lt;br&gt;이전에 만든 결제 요청을 다시 생성하지 않는 한 이것을 사용하지 마십시오.</translation>
     </message>
     <message>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>기&amp;존 수신 주소 재사용 (권장하지 않음)</translation>
+        <source>Reuse an existing receiving address (not recommended)</source>
+        <translation>기존 수신 주소 재사용 (권장하지 않음)</translation>
     </message>
     <message>
-        <source>&amp;Message:</source>
-        <translation>&amp;메세지:</translation>
+        <source>Message:</source>
+        <translation>메세지:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2489,20 +2489,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>결제 요청을 진행하려면 해당 양식을 입력하세요. 모든 입력란은 &lt;b&gt;선택 사항&lt;/b&gt;입니다.</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;라벨:</translation>
+        <source>Label:</source>
+        <translation>라벨:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>요청할 선택적 금액. 이 금액을 비워두거나 특정 금액을 요청하지 않으려면 0으로 두세요.</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;금액:</translation>
+        <source>Amount:</source>
+        <translation>금액:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;결제 요청</translation>
+        <source>Request payment</source>
+        <translation>결제 요청</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2552,16 +2552,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>QR 코드</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>&amp;URI 복사</translation>
+        <source>Copy URI</source>
+        <translation>URI 복사</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>&amp;주소 복사</translation>
+        <source>Copy Address</source>
+        <translation>주소 복사</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>이미지 &amp;저장...</translation>
+        <source>Save Image...</source>
+        <translation>이미지 저장...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -2786,24 +2786,24 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>전송 작업 확인</translation>
     </message>
     <message>
-        <source>S&amp;end</source>
-        <translation>전&amp;송</translation>
+        <source>Send</source>
+        <translation>전송</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>모든 입력 양식 지우기.</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>전체 &amp;지우기</translation>
+        <source>Clear All</source>
+        <translation>전체 지우기</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>한번에 여러 곳 전송</translation>
     </message>
     <message>
-        <source>Add &amp;Recipient</source>
-        <translation>&amp;받는 사람 추가</translation>
+        <source>Add Recipient</source>
+        <translation>받는 사람 추가</translation>
     </message>
     <message>
         <source>SwiftX</source>
@@ -2965,8 +2965,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>이것은 일반 결제입니다.</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>지불 &amp;대상:</translation>
+        <source>Pay To:</source>
+        <translation>지불 대상:</translation>
     </message>
     <message>
         <source>The Bulwark address to send the payment to</source>
@@ -2993,16 +2993,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>이 항목 삭제</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;라벨:</translation>
+        <source>Label:</source>
+        <translation>라벨:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>이 주소의 라벨을 입력하여 사용된 주소 목록에 추가하십시오</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>금&amp;액:</translation>
+        <source>Amount:</source>
+        <translation>금액:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -3051,8 +3051,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>서명 - 서명 / 메세지 검증</translation>
     </message>
     <message>
-        <source>&amp;Sign Message</source>
-        <translation>&amp;메세지 서명</translation>
+        <source>Sign Message</source>
+        <translation>메세지 서명</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -3103,28 +3103,28 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>메세지가 지정된 Bulwark 주소로 서명되었는지 확인해주세요</translation>
     </message>
     <message>
-        <source>Sign &amp;Message</source>
-        <translation>서명 &amp;메세지</translation>
+        <source>Sign Message</source>
+        <translation>서명 메세지</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>모든 서명 메세지 입력 지우기</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>전체 &amp;지우기</translation>
+        <source>Clear All</source>
+        <translation>전체 지우기</translation>
     </message>
     <message>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;메세지 확인</translation>
+        <source>Verify Message</source>
+        <translation>메세지 확인</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>메세지를 확인하기 위해 서명 주소, 메세지 (줄 바꿈, 공백, 탭 등을 정확하게 복사해주세요) 및 서명을 입력하십시오. 중간자 공격에 주의해서 서명을 입력해주세요.</translation>
     </message>
     <message>
-        <source>Verify &amp;Message</source>
-        <translation>&amp;메세지 확인</translation>
+        <source>Verify Message</source>
+        <translation>메세지 확인</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3758,8 +3758,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;내보내기</translation>
+        <source>Export</source>
+        <translation>내보내기</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

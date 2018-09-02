@@ -10,36 +10,36 @@
         <translation>Create a new address</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;New</translation>
+        <source>New</source>
+        <translation>New</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copy the currently selected address to the system clipboard</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Copy</translation>
+        <source>Copy</source>
+        <translation>Copy</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Delete the currently selected address from the list</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Delete</translation>
+        <source>Delete</source>
+        <translation>Delete</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Export the data in the current tab to a file</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Export</translation>
+        <source>Export</source>
+        <translation>Export</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>C&amp;lose</translation>
+        <source>Close</source>
+        <translation>Close</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Choose the address to receive coins with</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>C&amp;hoose</translation>
+        <source>Choose</source>
+        <translation>Choose</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;Copy Address</translation>
+        <source>Copy Address</source>
+        <translation>Copy Address</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
-        <translation>Copy &amp;Label</translation>
+        <source>Copy Label</source>
+        <translation>Copy Label</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;Edit</translation>
+        <source>Edit</source>
+        <translation>Edit</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -235,8 +235,8 @@
         <translation>BIP 38 Tool</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Encrypt</translation>
+        <source>BIP 38 Encrypt</source>
+        <translation>BIP 38 Encrypt</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -283,20 +283,20 @@
         <translation>Sign the message to prove you own this Bulwark address</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Encrypt &amp;Key</translation>
+        <source>Encrypt Key</source>
+        <translation>Encrypt Key</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reset all sign message fields</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
+        <source>Clear All</source>
+        <translation>Clear All</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 Decrypt</translation>
+        <source>BIP 38 Decrypt</source>
+        <translation>BIP 38 Decrypt</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
@@ -311,8 +311,8 @@
         <translation>Verify the message to ensure it was signed with the specified Bulwark address</translation>
     </message>
     <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Decrypt &amp;Key</translation>
+        <source>Decrypt Key</source>
+        <translation>Decrypt Key</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -402,136 +402,136 @@
         <translation>Node</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Overview</translation>
+        <source>Overview</source>
+        <translation>Overview</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Show general overview of wallet</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Send</translation>
+        <source>Send</source>
+        <translation>Send</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Receive</translation>
+        <source>Receive</source>
+        <translation>Receive</translation>
     </message>
     <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transactions</translation>
+        <source>Transactions</source>
+        <translation>Transactions</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Browse transaction history</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <translation>E&amp;xit</translation>
+        <source>Exit</source>
+        <translation>Exit</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Quit application</translation>
     </message>
     <message>
-        <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
+        <source>About Qt</source>
+        <translation>About Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Show information about Qt</translation>
     </message>
     <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Options...</translation>
+        <source>Options...</source>
+        <translation>Options...</translation>
     </message>
     <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Show / Hide</translation>
+        <source>Show / Hide</source>
+        <translation>Show / Hide</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Show or hide the main Window</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Encrypt Wallet...</translation>
+        <source>Encrypt Wallet...</source>
+        <translation>Encrypt Wallet...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Encrypt the private keys that belong to your wallet</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Backup Wallet...</translation>
+        <source>Backup Wallet...</source>
+        <translation>Backup Wallet...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Backup wallet to another location</translation>
     </message>
     <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Change Passphrase...</translation>
+        <source>Change Passphrase...</source>
+        <translation>Change Passphrase...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Change the passphrase used for wallet encryption</translation>
     </message>
     <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Unlock Wallet...</translation>
+        <source>Unlock Wallet...</source>
+        <translation>Unlock Wallet...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Unlock wallet</translation>
     </message>
     <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Lock Wallet</translation>
+        <source>Lock Wallet</source>
+        <translation>Lock Wallet</translation>
     </message>
     <message>
-        <source>Sign &amp;message...</source>
-        <translation>Sign &amp;message...</translation>
+        <source>Sign message...</source>
+        <translation>Sign message...</translation>
     </message>
     <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Verify message...</translation>
+        <source>Verify message...</source>
+        <translation>Verify message...</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
+        <source>Information</source>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Show diagnostic information</translation>
     </message>
     <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debug console</translation>
+        <source>Debug console</source>
+        <translation>Debug console</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Open debugging console</translation>
     </message>
     <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Network Monitor</translation>
+        <source>Network Monitor</source>
+        <translation>Network Monitor</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Show network monitor</translation>
     </message>
     <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Peers list</translation>
+        <source>Peers list</source>
+        <translation>Peers list</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Show peers info</translation>
     </message>
     <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Wallet &amp;Repair</translation>
+        <source>Wallet Repair</source>
+        <translation>Wallet Repair</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,36 +542,36 @@
         <translation>Open configuration file</translation>
     </message>
     <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Show Automatic &amp;Backups</translation>
+        <source>Show Automatic Backups</source>
+        <translation>Show Automatic Backups</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Show automatically created wallet backups</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Sending addresses...</translation>
+        <source>Sending addresses...</source>
+        <translation>Sending addresses...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Show the list of used sending addresses and labels</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Receiving addresses...</translation>
+        <source>Receiving addresses...</source>
+        <translation>Receiving addresses...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Show the list of used receiving addresses and labels</translation>
     </message>
     <message>
-        <source>Open &amp;URI...</source>
-        <translation>Open &amp;URI...</translation>
+        <source>Open URI...</source>
+        <translation>Open URI...</translation>
     </message>
     <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Command-line options</translation>
+        <source>Command-line options</source>
+        <translation>Command-line options</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
@@ -582,20 +582,20 @@
         <translation>Synchronizing additional data: %p%</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation>&amp;File</translation>
+        <source>File</source>
+        <translation>File</translation>
     </message>
     <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Settings</translation>
+        <source>Settings</source>
+        <translation>Settings</translation>
     </message>
     <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Tools</translation>
+        <source>Tools</source>
+        <translation>Tools</translation>
     </message>
     <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <source>Help</source>
+        <translation>Help</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -614,16 +614,16 @@
         <translation>Request payments (generates QR codes and bulwark: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Browse masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Bulwark Core</source>
-        <translation>&amp;About Bulwark Core</translation>
+        <source>About Bulwark Core</source>
+        <translation>About Bulwark Core</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
@@ -642,28 +642,28 @@
         <translation>Verify messages to ensure they were signed with specified Bulwark addresses</translation>
     </message>
     <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 tool</translation>
+        <source>BIP38 tool</source>
+        <translation>BIP38 tool</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Encrypt and decrypt private keys using a passphrase</translation>
     </message>
     <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;MultiSend</translation>
+        <source>MultiSend</source>
+        <translation>MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>MultiSend Settings</translation>
     </message>
     <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Open Wallet &amp;Configuration File</translation>
+        <source>Open Wallet Configuration File</source>
+        <translation>Open Wallet Configuration File</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Open &amp;Masternode Configuration File</translation>
+        <source>Open Masternode Configuration File</source>
+        <translation>Open Masternode Configuration File</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
@@ -674,8 +674,8 @@
         <translation>Open a Bulwark: URI or payment request</translation>
     </message>
     <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Blockchain explorer</translation>
+        <source>Blockchain explorer</source>
+        <translation>Blockchain explorer</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -1106,16 +1106,16 @@ Address: %4
         <translation>Edit Address</translation>
     </message>
     <message>
-        <source>&amp;Label</source>
-        <translation>&amp;Label</translation>
+        <source>Label</source>
+        <translation>Label</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>The label associated with this address list entry</translation>
     </message>
     <message>
-        <source>&amp;Address</source>
-        <translation>&amp;Address</translation>
+        <source>Address</source>
+        <translation>Address</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1322,20 +1322,20 @@ Address: %4
         <translation>Pubkey</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>S&amp;tart alias</translation>
+        <source>Start alias</source>
+        <translation>Start alias</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>Start &amp;all</translation>
+        <source>Start all</source>
+        <translation>Start all</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Start &amp;MISSING</translation>
+        <source>Start MISSING</source>
+        <translation>Start MISSING</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Update status</translation>
+        <source>Update status</source>
+        <translation>Update status</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1618,28 +1618,28 @@ Please check the address and try again.</translation>
         <translation>Options</translation>
     </message>
     <message>
-        <source>&amp;Main</source>
-        <translation>&amp;Main</translation>
+        <source>Main</source>
+        <translation>Main</translation>
     </message>
     <message>
-        <source>Size of &amp;database cache</source>
-        <translation>Size of &amp;database cache</translation>
+        <source>Size of database cache</source>
+        <translation>Size of database cache</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script &amp;verification threads</source>
-        <translation>Number of script &amp;verification threads</translation>
+        <source>Number of script verification threads</source>
+        <translation>Number of script verification threads</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <source>W&amp;allet</source>
-        <translation>W&amp;allet</translation>
+        <source>Wallet</source>
+        <translation>Wallet</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1658,8 +1658,8 @@ Please check the address and try again.</translation>
         <translation>Allow incoming connections</translation>
     </message>
     <message>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>Connect through SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1670,8 +1670,8 @@ Please check the address and try again.</translation>
         <translation>Automatically start Bulwark after logging in to the system.</translation>
     </message>
     <message>
-        <source>&amp;Start Bulwark on system login</source>
-        <translation>&amp;Start Bulwark on system login</translation>
+        <source>Start Bulwark on system login</source>
+        <translation>Start Bulwark on system login</translation>
     </message>
     <message>
         <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
@@ -1694,8 +1694,8 @@ Please check the address and try again.</translation>
         <translation>Whether to show coin control features or not.</translation>
     </message>
     <message>
-        <source>Enable coin &amp;control features</source>
-        <translation>Enable coin &amp;control features</translation>
+        <source>Enable coin control features</source>
+        <translation>Enable coin control features</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1706,12 +1706,12 @@ Please check the address and try again.</translation>
         <translation>Show Masternodes Tab</translation>
     </message>
     <message>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Spend unconfirmed change</translation>
+        <source>Spend unconfirmed change</source>
+        <translation>Spend unconfirmed change</translation>
     </message>
     <message>
-        <source>&amp;Network</source>
-        <translation>&amp;Network</translation>
+        <source>Network</source>
+        <translation>Network</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
@@ -1724,64 +1724,64 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
 https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
     </message>
     <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation>Map port using &amp;UPnP</translation>
+        <source>Map port using UPnP</source>
+        <translation>Map port using UPnP</translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
         <translation>Connect to the Bulwark network through a SOCKS5 proxy.</translation>
     </message>
     <message>
-        <source>Proxy &amp;IP:</source>
-        <translation>Proxy &amp;IP:</translation>
+        <source>Proxy IP:</source>
+        <translation>Proxy IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>&amp;Port:</source>
-        <translation>&amp;Port:</translation>
+        <source>Port:</source>
+        <translation>Port:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port of the proxy (e.g. 9050)</translation>
     </message>
     <message>
-        <source>&amp;Window</source>
-        <translation>&amp;Window</translation>
+        <source>Window</source>
+        <translation>Window</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Show only a tray icon after minimizing the window.</translation>
     </message>
     <message>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimize to the tray instead of the taskbar</translation>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>Minimize to the tray instead of the taskbar</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</translation>
     </message>
     <message>
-        <source>M&amp;inimize on close</source>
-        <translation>M&amp;inimize on close</translation>
+        <source>Minimize on close</source>
+        <translation>Minimize on close</translation>
     </message>
     <message>
-        <source>&amp;Display</source>
-        <translation>&amp;Display</translation>
+        <source>Display</source>
+        <translation>Display</translation>
     </message>
     <message>
-        <source>User Interface &amp;language:</source>
-        <translation>User Interface &amp;language:</translation>
+        <source>User Interface language:</source>
+        <translation>User Interface language:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>User Interface Theme:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unit to show amounts in:</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>Unit to show amounts in:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1808,16 +1808,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Reset all client options to default.</translation>
     </message>
     <message>
-        <source>&amp;Reset Options</source>
-        <translation>&amp;Reset Options</translation>
+        <source>Reset Options</source>
+        <translation>Reset Options</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Cancel</translation>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <source>default</source>
@@ -2225,12 +2225,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Save Image...</translation>
+        <source>Save Image...</source>
+        <translation>Save Image...</translation>
     </message>
     <message>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Copy Image</translation>
+        <source>Copy Image</source>
+        <translation>Copy Image</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2248,8 +2248,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Tools window</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
+        <source>Information</source>
+        <translation>Information</translation>
     </message>
     <message>
         <source>General</source>
@@ -2272,8 +2272,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Number of connections</translation>
     </message>
     <message>
-        <source>&amp;Open</source>
-        <translation>&amp;Open</translation>
+        <source>Open</source>
+        <translation>Open</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2324,20 +2324,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Number of Masternodes</translation>
     </message>
     <message>
-        <source>&amp;Console</source>
-        <translation>&amp;Console</translation>
+        <source>Console</source>
+        <translation>Console</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Clear console</translation>
     </message>
     <message>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;Network Traffic</translation>
+        <source>Network Traffic</source>
+        <translation>Network Traffic</translation>
     </message>
     <message>
-        <source>&amp;Clear</source>
-        <translation>&amp;Clear</translation>
+        <source>Clear</source>
+        <translation>Clear</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2352,8 +2352,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Sent</translation>
     </message>
     <message>
-        <source>&amp;Peers</source>
-        <translation>&amp;Peers</translation>
+        <source>Peers</source>
+        <translation>Peers</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2412,8 +2412,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Ping Time</translation>
     </message>
     <message>
-        <source>&amp;Wallet Repair</source>
-        <translation>&amp;Wallet Repair</translation>
+        <source>Wallet Repair</source>
+        <translation>Wallet Repair</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2543,12 +2543,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</translation>
     </message>
     <message>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>R&amp;euse an existing receiving address (not recommended)</translation>
+        <source>Reuse an existing receiving address (not recommended)</source>
+        <translation>Reuse an existing receiving address (not recommended)</translation>
     </message>
     <message>
-        <source>&amp;Message:</source>
-        <translation>&amp;Message:</translation>
+        <source>Message:</source>
+        <translation>Message:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2567,20 +2567,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <source>Label:</source>
+        <translation>Label:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>An optional amount to request. Leave this empty or zero to not request a specific amount.</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Amount:</translation>
+        <source>Amount:</source>
+        <translation>Amount:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Request payment</translation>
+        <source>Request payment</source>
+        <translation>Request payment</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2630,16 +2630,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>QR Code</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>Copy &amp;URI</translation>
+        <source>Copy URI</source>
+        <translation>Copy URI</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>Copy &amp;Address</translation>
+        <source>Copy Address</source>
+        <translation>Copy Address</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Save Image...</translation>
+        <source>Save Image...</source>
+        <translation>Save Image...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -2876,24 +2876,24 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Confirm the send action</translation>
     </message>
     <message>
-        <source>S&amp;end</source>
-        <translation>S&amp;end</translation>
+        <source>Send</source>
+        <translation>Send</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Clear all fields of the form.</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
+        <source>Clear All</source>
+        <translation>Clear All</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Send to multiple recipients at once</translation>
     </message>
     <message>
-        <source>Add &amp;Recipient</source>
-        <translation>Add &amp;Recipient</translation>
+        <source>Add Recipient</source>
+        <translation>Add Recipient</translation>
     </message>
     <message>
         <source>SwiftX</source>
@@ -3055,8 +3055,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>This is a normal payment.</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>Pay &amp;To:</translation>
+        <source>Pay To:</source>
+        <translation>Pay To:</translation>
     </message>
     <message>
         <source>The Bulwark address to send the payment to</source>
@@ -3083,16 +3083,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Remove this entry</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <source>Label:</source>
+        <translation>Label:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Enter a label for this address to add it to the list of used addresses</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>A&amp;mount:</translation>
+        <source>Amount:</source>
+        <translation>Amount:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -3141,8 +3141,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Signatures - Sign / Verify a Message</translation>
     </message>
     <message>
-        <source>&amp;Sign Message</source>
-        <translation>&amp;Sign Message</translation>
+        <source>Sign Message</source>
+        <translation>Sign Message</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -3193,28 +3193,28 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Verify the message to ensure it was signed with the specified Bulwark address</translation>
     </message>
     <message>
-        <source>Sign &amp;Message</source>
-        <translation>Sign &amp;Message</translation>
+        <source>Sign Message</source>
+        <translation>Sign Message</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reset all sign message fields</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
+        <source>Clear All</source>
+        <translation>Clear All</translation>
     </message>
     <message>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;Verify Message</translation>
+        <source>Verify Message</source>
+        <translation>Verify Message</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</translation>
     </message>
     <message>
-        <source>Verify &amp;Message</source>
-        <translation>Verify &amp;Message</translation>
+        <source>Verify Message</source>
+        <translation>Verify Message</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3847,8 +3847,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Export</translation>
+        <source>Export</source>
+        <translation>Export</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

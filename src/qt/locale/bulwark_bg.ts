@@ -10,36 +10,36 @@
         <translation>Създайте нов адрес</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;Нов</translation>
+        <source>New</source>
+        <translation>Нов</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Копиране на избраните адреси в системния буфер</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Копирай</translation>
+        <source>Copy</source>
+        <translation>Копирай</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Изтриване на избраните адреси от списъка</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Изтрии</translation>
+        <source>Delete</source>
+        <translation>Изтрии</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Експортиране информацията от сегашния таб във файл</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Експортиране</translation>
+        <source>Export</source>
+        <translation>Експортиране</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>&amp;Затвори</translation>
+        <source>Close</source>
+        <translation>Затвори</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Изберете адрес, в който да получавате монети</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>Из&amp;бери</translation>
+        <source>Choose</source>
+        <translation>Избери</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>Това са вашите Bulwark адреси за получаване на плащания. Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;Копиране на адреса</translation>
+        <source>Copy Address</source>
+        <translation>Копиране на адреса</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
-        <translation>Копиране на &amp;Етикета</translation>
+        <source>Copy Label</source>
+        <translation>Копиране на Етикета</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;Редактиране</translation>
+        <source>Edit</source>
+        <translation>Редактиране</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -227,8 +227,8 @@
         <translation>BIP 38 инструменти</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 криптиране</translation>
+        <source>BIP 38 Encrypt</source>
+        <translation>BIP 38 криптиране</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -275,7 +275,7 @@
         <translation>Подпишете съобщението, за да докажете, че притежавате този Bulwark адрес</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
+        <source>Encrypt Key</source>
         <translation>Криптиращ ключ</translation>
     </message>
     </context>
@@ -510,8 +510,8 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Експортиране</translation>
+        <source>Export</source>
+        <translation>Експортиране</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

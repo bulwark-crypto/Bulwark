@@ -21,7 +21,7 @@
      </property>
      <widget class="QWidget" name="tab_info">
       <attribute name="title">
-       <string>&amp;Information</string>
+       <string>Information</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
        <property name="horizontalSpacing">
@@ -368,7 +368,7 @@
      </widget>
      <widget class="QWidget" name="tab_console">
       <attribute name="title">
-       <string>&amp;Console</string>
+       <string>Console</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="spacing">
@@ -433,7 +433,7 @@
      </widget>
      <widget class="QWidget" name="tab_nettraffic">
       <attribute name="title">
-       <string>&amp;Network Traffic</string>
+       <string>Network Traffic</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
@@ -686,7 +686,7 @@
      </widget>
      <widget class="QWidget" name="tab_peers">
       <attribute name="title">
-       <string>&amp;Peers</string>
+       <string>Peers</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0" rowspan="2">
@@ -1142,7 +1142,7 @@
      </widget>
      <widget class="QWidget" name="tab_repair">
       <attribute name="title">
-       <string>&amp;Wallet Repair</string>
+       <string>Wallet Repair</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4" columnstretch="0,0,0,0">
        <property name="horizontalSpacing">

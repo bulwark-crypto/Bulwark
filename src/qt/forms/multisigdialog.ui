@@ -39,7 +39,7 @@ QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
        </sizepolicy>
       </property>
       <attribute name="title">
-       <string>Create MultiSignature &amp;Address</string>
+       <string>Create MultiSignature Address</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -97,7 +97,7 @@ QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
             <string>Add another address that could sign to verify a transaction from the multisig address.</string>
            </property>
            <property name="text">
-            <string>&amp;Add Address / Key</string>
+            <string>Add Address / Key</string>
            </property>
            <property name="icon">
             <iconset resource="../bulwark.qrc">
@@ -194,7 +194,7 @@ QFrame &gt; QLabel{background-color:#f2f0f0;}</string>
             <number>-3</number>
            </property>
            <property name="text">
-            <string>C&amp;reate</string>
+            <string>Create</string>
            </property>
            <property name="icon">
             <iconset resource="../bulwark.qrc">
@@ -268,7 +268,7 @@ Please be patient after clicking import.</string>
             </sizepolicy>
            </property>
            <property name="text">
-            <string>&amp;Import Redeem</string>
+            <string>Import Redeem</string>
            </property>
            <property name="icon">
             <iconset resource="../bulwark.qrc">
@@ -292,7 +292,7 @@ Please be patient after clicking import.</string>
      </widget>
      <widget class="QWidget" name="createTransactionTab">
       <attribute name="title">
-       <string>&amp;Create MultiSignature Tx</string>
+       <string>Create MultiSignature Tx</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -446,7 +446,7 @@ Please be patient after clicking import.</string>
                 <string>Add destinations to send BWK to</string>
                </property>
                <property name="text">
-                <string>Add &amp;Destination</string>
+                <string>Add Destination</string>
                </property>
                <property name="icon">
                 <iconset resource="../bulwark.qrc">
@@ -530,7 +530,7 @@ Please be patient after clicking import.</string>
                 <string>Create a transaction object using the given inputs to the given outputs</string>
                </property>
                <property name="text">
-                <string>Cr&amp;eate</string>
+                <string>Create</string>
                </property>
                <property name="icon">
                 <iconset resource="../bulwark.qrc">
@@ -610,7 +610,7 @@ txScrollArea:{
 }</string>
       </property>
       <attribute name="title">
-       <string>&amp;Sign MultiSignature Tx</string>
+       <string>Sign MultiSignature Tx</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -655,7 +655,7 @@ txScrollArea:{
                 <string>Sign the transaction from this wallet or from provided private keys</string>
                </property>
                <property name="text">
-                <string>S&amp;ign</string>
+                <string>Sign</string>
                </property>
                <property name="icon">
                 <iconset resource="../bulwark.qrc">
@@ -687,7 +687,7 @@ txScrollArea:{
                 <bool>false</bool>
                </property>
                <property name="text">
-                <string>Co&amp;mmit</string>
+                <string>Commit</string>
                </property>
                <property name="icon">
                 <iconset resource="../bulwark.qrc">
@@ -712,7 +712,7 @@ txScrollArea:{
                   <string>Add private keys to sign the transaction with</string>
                  </property>
                  <property name="text">
-                  <string>Add Private &amp;Key</string>
+                  <string>Add Private Key</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../bulwark.qrc">

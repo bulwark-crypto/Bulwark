@@ -10,36 +10,36 @@
         <translation>Eine neue Adresse erstellen</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;Neu</translation>
+        <source>New</source>
+        <translation>Neu</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Ausgewählte Adresse in die Zwischenablage kopieren</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Kopieren</translation>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Ausgewählte Adresse aus der Liste entfernen</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Löschen</translation>
+        <source>Delete</source>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Daten der aktuellen Ansicht in eine Datei exportieren</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Exportieren</translation>
+        <source>Export</source>
+        <translation>Exportieren</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>&amp;Schließen</translation>
+        <source>Close</source>
+        <translation>Schließen</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Wählen Sie die Adresse aus, über die Sie Bulwark empfangen wollen</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>&amp;Auswählen</translation>
+        <source>Choose</source>
+        <translation>Auswählen</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>Dies sind ihre Bulwark-Adressen zum Empfangen von Zahlungen. Es wird empfohlen für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;Adresse kopieren</translation>
+        <source>Copy Address</source>
+        <translation>Adresse kopieren</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
-        <translation>&amp;Bezeichnung kopieren</translation>
+        <source>Copy Label</source>
+        <translation>Bezeichnung kopieren</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;Editieren</translation>
+        <source>Edit</source>
+        <translation>Editieren</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -235,8 +235,8 @@
         <translation>BIP 38 Tool</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Verschlüsselung</translation>
+        <source>BIP 38 Encrypt</source>
+        <translation>BIP 38 Verschlüsselung</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -283,20 +283,20 @@
         <translation>Signiere die Nachricht um zu Beweisen, dass du diese Bulwark Adresse besitzt</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Verschlüsselt &amp;Schlüssel</translation>
+        <source>Encrypt Key</source>
+        <translation>Verschlüsselt Schlüssel</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Setze alle signierten Nachrichten Felder zurück</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>&amp;Alles zurücksetzen</translation>
+        <source>Clear All</source>
+        <translation>Alles zurücksetzen</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 Entschlüsseln</translation>
+        <source>BIP 38 Decrypt</source>
+        <translation>BIP 38 Entschlüsseln</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
@@ -311,8 +311,8 @@
         <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen Bulwark-Adresse signiert wurde.</translation>
     </message>
     <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Entschlüsseln &amp;Schlüssel</translation>
+        <source>Decrypt Key</source>
+        <translation>Entschlüsseln Schlüssel</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -402,136 +402,136 @@
         <translation>Knoten</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Übersicht</translation>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Allgemeine Wallet-Übersicht anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Überweisen</translation>
+        <source>Send</source>
+        <translation>Überweisen</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Empfangen</translation>
+        <source>Receive</source>
+        <translation>Empfangen</translation>
     </message>
     <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transaktionen</translation>
+        <source>Transactions</source>
+        <translation>Transaktionen</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Transaktionsverlauf durchsehen</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <translation>&amp;Beenden</translation>
+        <source>Exit</source>
+        <translation>Beenden</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Anwendung beenden</translation>
     </message>
     <message>
-        <source>About &amp;Qt</source>
-        <translation>Über &amp;Qt</translation>
+        <source>About Qt</source>
+        <translation>Über Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Informationen über Qt anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Konfiguration...</translation>
+        <source>Options...</source>
+        <translation>Konfiguration...</translation>
     </message>
     <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Anzeigen / Verstecken</translation>
+        <source>Show / Hide</source>
+        <translation>Anzeigen / Verstecken</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Das Hauptfenster anzeigen oder verstecken</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>Wallet &amp;verschlüsseln...</translation>
+        <source>Encrypt Wallet...</source>
+        <translation>Wallet verschlüsseln...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Verschlüsselt die zu ihrer Wallet gehörenden privaten Schlüssel</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>Wallet &amp;sichern...</translation>
+        <source>Backup Wallet...</source>
+        <translation>Wallet sichern...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Eine Wallet-Sicherungskopie erstellen und abspeichern</translation>
     </message>
     <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>Passphrase &amp;ändern...</translation>
+        <source>Change Passphrase...</source>
+        <translation>Passphrase ändern...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Ändert die Passphrase, die für die Wallet-Verschlüsselung benutzt wird</translation>
     </message>
     <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>Wallet &amp;entsperren</translation>
+        <source>Unlock Wallet...</source>
+        <translation>Wallet entsperren</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Wallet entsperren</translation>
     </message>
     <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>Wallet &amp;sperren</translation>
+        <source>Lock Wallet</source>
+        <translation>Wallet sperren</translation>
     </message>
     <message>
-        <source>Sign &amp;message...</source>
-        <translation>Nachricht s&amp;ignieren...</translation>
+        <source>Sign message...</source>
+        <translation>Nachricht signieren...</translation>
     </message>
     <message>
-        <source>&amp;Verify message...</source>
+        <source>Verify message...</source>
         <translation>Nachricht prüfen...</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
+        <source>Information</source>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Diagnoseinformation anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debugkonsole</translation>
+        <source>Debug console</source>
+        <translation>Debugkonsole</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Debugkonsole öffnen</translation>
     </message>
     <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Netzwerkmonitor</translation>
+        <source>Network Monitor</source>
+        <translation>Netzwerkmonitor</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Netzwerkmonitor anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Gegenstellen-Liste</translation>
+        <source>Peers list</source>
+        <translation>Gegenstellen-Liste</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Informationen zu Gegenstellen anzeigen</translation>
     </message>
     <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Wallet-&amp;Reparatur</translation>
+        <source>Wallet Repair</source>
+        <translation>Wallet-Reparatur</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,36 +542,36 @@
         <translation>Konfigurationsdatei öffnen</translation>
     </message>
     <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Automatische &amp;Sicherheitskopien anzeigen</translation>
+        <source>Show Automatic Backups</source>
+        <translation>Automatische Sicherheitskopien anzeigen</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Automatisch erzeugte Wallet-Sicherheitskopien anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Zahlungsadressen...</translation>
+        <source>Sending addresses...</source>
+        <translation>Zahlungsadressen...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Liste verwendeter Zahlungsadressen und Bezeichnungen anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Empfangsadressen...</translation>
+        <source>Receiving addresses...</source>
+        <translation>Empfangsadressen...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Liste verwendeter Empfangsadressen und Bezeichnungen anzeigen</translation>
     </message>
     <message>
-        <source>Open &amp;URI...</source>
-        <translation>&amp;URI öffnen...</translation>
+        <source>Open URI...</source>
+        <translation>URI öffnen...</translation>
     </message>
     <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Kommandozeilenoptionen</translation>
+        <source>Command-line options</source>
+        <translation>Kommandozeilenoptionen</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
@@ -582,20 +582,20 @@
         <translation>Synchronisiere zusätzliche Daten:  %p%</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation>&amp;Datei</translation>
+        <source>File</source>
+        <translation>Datei</translation>
     </message>
     <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Einstellungen</translation>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
     </message>
     <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Werkzeuge</translation>
+        <source>Tools</source>
+        <translation>Werkzeuge</translation>
     </message>
     <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Hilfe</translation>
+        <source>Help</source>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -614,23 +614,23 @@
         <translation>Zahlung anfordern (QR-Code Generierung und bulwark: URIs)</translation>
     </message>
     <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privatsphäre</translation>
+        <source>Privacy</source>
+        <translation>Privatsphäre</translation>
     </message>
     <message>
         <source>Privacy Action for zBWK and Obfuscation</source>
         <translation>Privatsphäre Aktion für zBWK und Verschleierung</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Masternodes durchsuchen</translation>
     </message>
     <message>
-        <source>&amp;About Bulwark Core</source>
+        <source>About Bulwark Core</source>
         <translation>Über.Bulwark Core</translation>
     </message>
     <message>
@@ -650,24 +650,24 @@
         <translation>Überprüft eine Nachricht um zu prüfen ob diese mit einer bestimmten Bulwark-Adresse signiert wurde</translation>
     </message>
     <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 Hilfsprogramm</translation>
+        <source>BIP38 tool</source>
+        <translation>BIP38 Hilfsprogramm</translation>
     </message>
     <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;MultiSend</translation>
+        <source>MultiSend</source>
+        <translation>MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>MultiSend Einstellungen</translation>
     </message>
     <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Öffne Wallet &amp;Einstellungsdatei </translation>
+        <source>Open Wallet Configuration File</source>
+        <translation>Öffne Wallet Einstellungsdatei </translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Öffne &amp;Masternode Einstellungsdatei </translation>
+        <source>Open Masternode Configuration File</source>
+        <translation>Öffne Masternode Einstellungsdatei </translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
@@ -678,8 +678,8 @@
         <translation>Öffne eine Bulwark: URI or Zahlungsanfrage</translation>
     </message>
     <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Blockchain Betrachter</translation>
+        <source>Blockchain explorer</source>
+        <translation>Blockchain Betrachter</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -1109,16 +1109,16 @@ Adresse: %4</translation>
         <translation>Adresse bearbeiten</translation>
     </message>
     <message>
-        <source>&amp;Label</source>
-        <translation>&amp;Bezeichnung</translation>
+        <source>Label</source>
+        <translation>Bezeichnung</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Bezeichnung, die dem Adresslisteneintrag zugeordnet ist</translation>
     </message>
     <message>
-        <source>&amp;Address</source>
-        <translation>&amp;Adresse</translation>
+        <source>Address</source>
+        <translation>Adresse</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1325,20 +1325,20 @@ Adresse: %4</translation>
         <translation>Öffentlicher Schlüssel</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>S&amp;tarten</translation>
+        <source>Start alias</source>
+        <translation>Starten</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>&amp;Alle starten</translation>
+        <source>Start all</source>
+        <translation>Alle starten</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Starte nur &amp;MISSING</translation>
+        <source>Start MISSING</source>
+        <translation>Starte nur MISSING</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>Stat&amp;us aktualisieren</translation>
+        <source>Update status</source>
+        <translation>Status aktualisieren</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1617,28 +1617,28 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Optionen</translation>
     </message>
     <message>
-        <source>&amp;Main</source>
-        <translation>&amp;Main</translation>
+        <source>Main</source>
+        <translation>Main</translation>
     </message>
     <message>
-        <source>Size of &amp;database cache</source>
-        <translation>Größe &amp;Datenbank Cache</translation>
+        <source>Size of database cache</source>
+        <translation>Größe Datenbank Cache</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script &amp;verification threads</source>
-        <translation>Anzahl der Skript &amp;Verifikation Threads</translation>
+        <source>Number of script verification threads</source>
+        <translation>Anzahl der Skript Verifikation Threads</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <source>W&amp;allet</source>
-        <translation>W&amp;allet</translation>
+        <source>Wallet</source>
+        <translation>Wallet</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1657,8 +1657,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Eingehende Verbindungen erlauben</translation>
     </message>
     <message>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;Verbindung durch SOCKS5 proxy (default proxy):</translation>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>Verbindung durch SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1669,16 +1669,16 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Bulwark automatisch nach dem Login starten.</translation>
     </message>
     <message>
-        <source>&amp;Start Bulwark on system login</source>
-        <translation>Bulwark automatisch beim System Login &amp;starten.</translation>
+        <source>Start Bulwark on system login</source>
+        <translation>Bulwark automatisch beim System Login starten.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Coin &amp;control Funktionen anzeigen oder nicht</translation>
+        <translation>Coin control Funktionen anzeigen oder nicht</translation>
     </message>
     <message>
-        <source>Enable coin &amp;control features</source>
-        <translation>Coin &amp;control Funktionen aktivieren</translation>
+        <source>Enable coin control features</source>
+        <translation>Coin control Funktionen aktivieren</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1689,12 +1689,12 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Masternodes Tab anzeigen</translation>
     </message>
     <message>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Sende unbestätigtes Wechselgeld</translation>
+        <source>Spend unconfirmed change</source>
+        <translation>Sende unbestätigtes Wechselgeld</translation>
     </message>
     <message>
-        <source>&amp;Network</source>
-        <translation>&amp;Netzwerk</translation>
+        <source>Network</source>
+        <translation>Netzwerk</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
@@ -1707,8 +1707,8 @@ https://www.transifex.com/pivx-project/pivx-project-translations</source>
 https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation>Port mit &amp;UPnP mappen</translation>
+        <source>Map port using UPnP</source>
+        <translation>Port mit UPnP mappen</translation>
     </message>
     <message>
         <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
@@ -1731,56 +1731,56 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Durch einen SOCKS5 Proxy mit dem Bulwark Netzwerk verbinden.</translation>
     </message>
     <message>
-        <source>Proxy &amp;IP:</source>
-        <translation>Proxy &amp;IP:</translation>
+        <source>Proxy IP:</source>
+        <translation>Proxy IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP Adresse des PROXY (z.B. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>&amp;Port:</source>
-        <translation>&amp;Port:</translation>
+        <source>Port:</source>
+        <translation>Port:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port des Proxies (z.B. 9050)</translation>
     </message>
     <message>
-        <source>&amp;Window</source>
-        <translation>&amp;Fenster</translation>
+        <source>Window</source>
+        <translation>Fenster</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Zeige nur ein Symbolkachel nach der Fensterminimierung.</translation>
     </message>
     <message>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Minimierung zur Kachel anstelle auf der Taskbar</translation>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>Minimierung zur Kachel anstelle auf der Taskbar</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimierung anstelle vom Schließen der Anwendung, wenn das Fenster geschlossen wird. Wenn diese Option aktiviert ist, wird die Anwendung nur geschlossen, wenn im Menü Beenden gewählt wird.</translation>
     </message>
     <message>
-        <source>M&amp;inimize on close</source>
-        <translation>Beim Schließen m&amp;inimieren</translation>
+        <source>Minimize on close</source>
+        <translation>Beim Schließen minimieren</translation>
     </message>
     <message>
-        <source>&amp;Display</source>
-        <translation>&amp;Display</translation>
+        <source>Display</source>
+        <translation>Display</translation>
     </message>
     <message>
-        <source>User Interface &amp;language:</source>
-        <translation>Benutzeroberfläche &amp;Sprache</translation>
+        <source>User Interface language:</source>
+        <translation>Benutzeroberfläche Sprache</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Benutzeroberfläche Motiv:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Einheit des Betrags anzeigen in:</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>Einheit des Betrags anzeigen in:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1807,16 +1807,16 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Alle Client Optionen auf den Standard zurücksetzen</translation>
     </message>
     <message>
-        <source>&amp;Reset Options</source>
-        <translation>Optionen Zu&amp;rücksetzen</translation>
+        <source>Reset Options</source>
+        <translation>Optionen Zurücksetzen</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Abbrechen</translation>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>I don't care</source>
@@ -2171,8 +2171,8 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Sicherheitsstufe 1 - 100 (Voreinstellung: 42)</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>E&amp;mpfänger:</translation>
+        <source>Pay To:</source>
+        <translation>Empfänger:</translation>
     </message>
     <message>
         <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
@@ -2195,16 +2195,16 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Bezeichnung:</translation>
+        <source>Label:</source>
+        <translation>Bezeichnung:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Adressbezeichnung eingeben, um diese in der Liste der bereits verwendeten Adressen zu speichern</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>Betra&amp;g:</translation>
+        <source>Amount:</source>
+        <translation>Betrag:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2579,12 +2579,12 @@ Bitte haben Sie Geduld...</translation>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>Grafik &amp;speichern...</translation>
+        <source>Save Image...</source>
+        <translation>Grafik speichern...</translation>
     </message>
     <message>
-        <source>&amp;Copy Image</source>
-        <translation>Grafik &amp;kopieren</translation>
+        <source>Copy Image</source>
+        <translation>Grafik kopieren</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2602,8 +2602,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Werkzeugfenster</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
+        <source>Information</source>
+        <translation>Information</translation>
     </message>
     <message>
         <source>General</source>
@@ -2626,8 +2626,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Anzahl der Verbindungen</translation>
     </message>
     <message>
-        <source>&amp;Open</source>
-        <translation>&amp;Offen</translation>
+        <source>Open</source>
+        <translation>Offen</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2678,20 +2678,20 @@ Bitte haben Sie Geduld...</translation>
         <translation>Anzahl der Masternodes</translation>
     </message>
     <message>
-        <source>&amp;Console</source>
-        <translation>&amp;Konsole</translation>
+        <source>Console</source>
+        <translation>Konsole</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation> Leere Konsole</translation>
     </message>
     <message>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;Netzwerk Traffic</translation>
+        <source>Network Traffic</source>
+        <translation>Netzwerk Traffic</translation>
     </message>
     <message>
-        <source>&amp;Clear</source>
-        <translation>&amp;Clear</translation>
+        <source>Clear</source>
+        <translation>Clear</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2706,8 +2706,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Gesendet</translation>
     </message>
     <message>
-        <source>&amp;Peers</source>
-        <translation>&amp;Peers</translation>
+        <source>Peers</source>
+        <translation>Peers</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2766,8 +2766,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Latenz (Ping)</translation>
     </message>
     <message>
-        <source>&amp;Wallet Repair</source>
-        <translation>&amp;Wallet Reparieren </translation>
+        <source>Wallet Repair</source>
+        <translation>Wallet Reparieren </translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2897,11 +2897,11 @@ Bitte haben Sie Geduld...</translation>
         <translation>Wiederverwendung eines der zuvor verwendeten Empfangsadressen.&lt;br&gt;Wiederverwendung-Adressen haben Sicherheits- und Datenschutzprobleme.&lt;br&gt;Verwenden Sie diese nicht, es sei denn, dass Sie zuvor eine Zahlungsanforderung generieren.</translation>
     </message>
     <message>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>&amp;Wiederverwendung einer vorhandenen Empfangsadresse (nicht empfohlen)</translation>
+        <source>Reuse an existing receiving address (not recommended)</source>
+        <translation>Wiederverwendung einer vorhandenen Empfangsadresse (nicht empfohlen)</translation>
     </message>
     <message>
-        <source>&amp;Message:</source>
+        <source>Message:</source>
         <translation>Nachricht:</translation>
     </message>
     <message>
@@ -2921,20 +2921,20 @@ Bitte haben Sie Geduld...</translation>
         <translation>Verwenden Sie dieses Formular, um Zahlungen anzufordern. Alle Felder sind &lt;b&gt;optional&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Bezeichnung:</translation>
+        <source>Label:</source>
+        <translation>Bezeichnung:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Einen optionalen Betrag anfordern. Lassen Sie diesen leer oder Null, um nicht einen bestimmten Betrag anzufordern.</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Betrag:</translation>
+        <source>Amount:</source>
+        <translation>Betrag:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
-        <translation>Zahlung anfo&amp;rdern</translation>
+        <source>Request payment</source>
+        <translation>Zahlung anfordern</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2984,16 +2984,16 @@ Bitte haben Sie Geduld...</translation>
         <translation>QR Code</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>Kopiere &amp;URI</translation>
+        <source>Copy URI</source>
+        <translation>Kopiere URI</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>Kopiere &amp;Adresse</translation>
+        <source>Copy Address</source>
+        <translation>Kopiere Adresse</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>Grafik &amp;speichern...</translation>
+        <source>Save Image...</source>
+        <translation>Grafik speichern...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3226,24 +3226,24 @@ Bitte haben Sie Geduld...</translation>
         <translation>Bestätige die Sendeaktion</translation>
     </message>
     <message>
-        <source>S&amp;end</source>
-        <translation>Üb&amp;erweisen</translation>
+        <source>Send</source>
+        <translation>Überweisen</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Alle Formularfelder zurücksetzen.</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>&amp;Alles zurücksetzen</translation>
+        <source>Clear All</source>
+        <translation>Alles zurücksetzen</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>An mehrere Empfänger auf einmal überweisen</translation>
     </message>
     <message>
-        <source>Add &amp;Recipient</source>
-        <translation>Empfänge&amp;r hinzufügen</translation>
+        <source>Add Recipient</source>
+        <translation>Empfänger hinzufügen</translation>
     </message>
     <message>
         <source>Anonymized BWK</source>
@@ -3409,8 +3409,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Dies ist eine normale Überweisung.</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>E&amp;mpfänger:</translation>
+        <source>Pay To:</source>
+        <translation>Empfänger:</translation>
     </message>
     <message>
         <source>The Bulwark address to send the payment to</source>
@@ -3437,16 +3437,16 @@ Bitte haben Sie Geduld...</translation>
         <translation>Diesen Eintrag entfernen</translation>
     </message>
     <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Bezeichnung:</translation>
+        <source>Label:</source>
+        <translation>Bezeichnung:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Adressbezeichnung eingeben, um diese in der Liste der bereits verwendeten Adressen zu speichern</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>Betra&amp;g:</translation>
+        <source>Amount:</source>
+        <translation>Betrag:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -3495,8 +3495,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Signaturen - Signieren / Überprüfen einer Nachricht</translation>
     </message>
     <message>
-        <source>&amp;Sign Message</source>
-        <translation>Nachricht &amp;signieren</translation>
+        <source>Sign Message</source>
+        <translation>Nachricht signieren</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -3555,28 +3555,28 @@ Bitte haben Sie Geduld...</translation>
         <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen Bulwark-Adresse signiert wurde.</translation>
     </message>
     <message>
-        <source>Sign &amp;Message</source>
-        <translation>Signiere &amp;Nachricht </translation>
+        <source>Sign Message</source>
+        <translation>Signiere Nachricht </translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Setze alle signierten Nachrichten Felder zurück</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>&amp;Alles zurücksetzen</translation>
+        <source>Clear All</source>
+        <translation>Alles zurücksetzen</translation>
     </message>
     <message>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;Verifiziere Nachricht</translation>
+        <source>Verify Message</source>
+        <translation>Verifiziere Nachricht</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Geben Sie die signierte Adresse, die Nachricht (stellen Sie sicher, dass Zeilenumbrüche, Leerzeichen, Tabs usw. genau kopieren) und Signatur unten ein, um die Nachricht zu überprüfen. Seien Sie vorsichtig, nicht mehr in die Signatur zu lesen, als was in der signierten Nachricht selbst ist, um zu vermeiden, von einem Mann-in-der-Mitte Angriff getroffen zu werden.</translation>
     </message>
     <message>
-        <source>Verify &amp;Message</source>
-        <translation>Verifiziere &amp;Nachricht</translation>
+        <source>Verify Message</source>
+        <translation>Verifiziere Nachricht</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -4253,8 +4253,8 @@ Bitte haben Sie Geduld...</translation>
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Exportieren</translation>
+        <source>Export</source>
+        <translation>Exportieren</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

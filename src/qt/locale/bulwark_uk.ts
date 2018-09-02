@@ -10,7 +10,7 @@
         <translation>Створити нову адресу</translation>
     </message>
     <message>
-        <source>&amp;New</source>
+        <source>New</source>
         <translation>Новий</translation>
     </message>
     <message>
@@ -18,7 +18,7 @@
         <translation>Скопіювати вибрану адресу в буфер обміну</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
+        <source>Copy</source>
         <translation>Копіювати</translation>
     </message>
     <message>
@@ -26,7 +26,7 @@
         <translation>Видалити вибрану адресу зі списку</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
+        <source>Delete</source>
         <translation>Видалити</translation>
     </message>
     <message>
@@ -34,11 +34,11 @@
         <translation>Експортуйтувати дані поточної вкладки у файл</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
+        <source>Export</source>
         <translation>Експорт</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
+        <source>Close</source>
         <translation>Закрити</translation>
     </message>
     <message>
@@ -50,7 +50,7 @@
         <translation>Виберіть адресу отримання монет</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
+        <source>Choose</source>
         <translation>Вибір</translation>
     </message>
     <message>
@@ -70,15 +70,15 @@
         <translation>Це ваші Bulwark адреси для отримання платежів. Для кожної транзакції рекомендується використовувати нову адресу одержувача.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
+        <source>Copy Address</source>
         <translation>Копіювати адресу</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
+        <source>Copy Label</source>
         <translation>Копіювати мітку</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
+        <source>Edit</source>
         <translation>Редагувати</translation>
     </message>
     <message>
@@ -358,7 +358,7 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
+        <source>Export</source>
         <translation>Експорт</translation>
     </message>
     <message>

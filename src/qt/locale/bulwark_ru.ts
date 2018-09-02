@@ -10,36 +10,36 @@
         <translation>Создать новый адрес</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;Новый</translation>
+        <source>New</source>
+        <translation>Новый</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Скопировать текущий выбранный адрес в буфер обмена системы</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Копировать</translation>
+        <source>Copy</source>
+        <translation>Копировать</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Удалить текущий выбранный адрес из списка</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Удалить</translation>
+        <source>Delete</source>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Экспортировать данные с текущей вкладки в файл</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Экспорт</translation>
+        <source>Export</source>
+        <translation>Экспорт</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
-        <translation>З&amp;акрыть</translation>
+        <source>Close</source>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Выберите адрес для получения монет</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
-        <translation>В&amp;ыберите</translation>
+        <source>Choose</source>
+        <translation>Выберите</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>Это ваши Bulwark-адреса для получения платежей. Для каждой транзакции рекомендуется использовать новый адрес получения.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;Копировать Адрес</translation>
+        <source>Copy Address</source>
+        <translation>Копировать Адрес</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
-        <translation>Копировать &amp;Метку</translation>
+        <source>Copy Label</source>
+        <translation>Копировать Метку</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;Редактировать</translation>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -231,8 +231,8 @@
         <translation>BIP 38 Утилита</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Шифрование</translation>
+        <source>BIP 38 Encrypt</source>
+        <translation>BIP 38 Шифрование</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -279,20 +279,20 @@
         <translation>Подпишите сообщение, чтобы подтвердить свой адрес Bulwark</translation>
     </message>
     <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Зашифровать &amp;Ключ</translation>
+        <source>Encrypt Key</source>
+        <translation>Зашифровать Ключ</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Сбросить все поля сообщений</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Очистить &amp;Все</translation>
+        <source>Clear All</source>
+        <translation>Очистить Все</translation>
     </message>
     <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 Дешифрование</translation>
+        <source>BIP 38 Decrypt</source>
+        <translation>BIP 38 Дешифрование</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
@@ -307,8 +307,8 @@
         <translation>Проверте сообщение, чтобы убедиться, что оно было подписано указанным Bulwark адресом </translation>
     </message>
     <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Дешифровать &amp;Ключ</translation>
+        <source>Decrypt Key</source>
+        <translation>Дешифровать Ключ</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -398,136 +398,136 @@
         <translation>Узел</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Обзор</translation>
+        <source>Overview</source>
+        <translation>Обзор</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Общий обзор кошелька</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Отправить</translation>
+        <source>Send</source>
+        <translation>Отправить</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Получить</translation>
+        <source>Receive</source>
+        <translation>Получить</translation>
     </message>
     <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Транзакции</translation>
+        <source>Transactions</source>
+        <translation>Транзакции</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Просмотр истории транзакций</translation>
     </message>
     <message>
-        <source>E&amp;xit</source>
-        <translation>В&amp;ыход</translation>
+        <source>Exit</source>
+        <translation>Выход</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Завершить работу</translation>
     </message>
     <message>
-        <source>About &amp;Qt</source>
-        <translation>О &amp;Qt</translation>
+        <source>About Qt</source>
+        <translation>О Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Показать информацию о Qt</translation>
     </message>
     <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Опции...</translation>
+        <source>Options...</source>
+        <translation>Опции...</translation>
     </message>
     <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Показать / Скрыть</translation>
+        <source>Show / Hide</source>
+        <translation>Показать / Скрыть</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Показать или скрыть основное Окно</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Зашифровать кошелек...</translation>
+        <source>Encrypt Wallet...</source>
+        <translation>Зашифровать кошелек...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Зашифровать личные ключи, принадлежащие вашему кошельку</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Резервная копия кошелька...</translation>
+        <source>Backup Wallet...</source>
+        <translation>Резервная копия кошелька...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Сделать резервную копию кошелька в другом месте</translation>
     </message>
     <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Изменить кодовую фразу</translation>
+        <source>Change Passphrase...</source>
+        <translation>Изменить кодовую фразу</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Изменение кодовой фразы, используемой для шифрования кошелька</translation>
     </message>
     <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Разблокировать кошелек...</translation>
+        <source>Unlock Wallet...</source>
+        <translation>Разблокировать кошелек...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Снятие блокировки кошелька</translation>
     </message>
     <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Блокировка кошелька</translation>
+        <source>Lock Wallet</source>
+        <translation>Блокировка кошелька</translation>
     </message>
     <message>
-        <source>Sign &amp;message...</source>
-        <translation>Подписать &amp;сообщение...</translation>
+        <source>Sign message...</source>
+        <translation>Подписать сообщение...</translation>
     </message>
     <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Проверить сообщение...</translation>
+        <source>Verify message...</source>
+        <translation>Проверить сообщение...</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Информация</translation>
+        <source>Information</source>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Показать диагностическую информацию</translation>
     </message>
     <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Консоль отладки</translation>
+        <source>Debug console</source>
+        <translation>Консоль отладки</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Открыть консоль отладки</translation>
     </message>
     <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Сетевой монитор</translation>
+        <source>Network Monitor</source>
+        <translation>Сетевой монитор</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Показать сетевой монитор</translation>
     </message>
     <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Список пиров</translation>
+        <source>Peers list</source>
+        <translation>Список пиров</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Показать информацию о пирах</translation>
     </message>
     <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Ремонт &amp;кошелька</translation>
+        <source>Wallet Repair</source>
+        <translation>Ремонт кошелька</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -538,56 +538,56 @@
         <translation>Открыть файл настроек</translation>
     </message>
     <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Показать автоматические &amp;резервные копии</translation>
+        <source>Show Automatic Backups</source>
+        <translation>Показать автоматические резервные копии</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Показать автоматически созданные резервные копии кошелька</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Адреса отправки...</translation>
+        <source>Sending addresses...</source>
+        <translation>Адреса отправки...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Показать список использованых адресов отправки </translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Адреса получения...</translation>
+        <source>Receiving addresses...</source>
+        <translation>Адреса получения...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Показать список использованых адресов приёма</translation>
     </message>
     <message>
-        <source>Open &amp;URI...</source>
-        <translation>Открыть &amp;URI</translation>
+        <source>Open URI...</source>
+        <translation>Открыть URI</translation>
     </message>
     <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Параметры командной строки</translation>
+        <source>Command-line options</source>
+        <translation>Параметры командной строки</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Синхронизация дополнительных данных: %p%</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation>&amp;Файл</translation>
+        <source>File</source>
+        <translation>Файл</translation>
     </message>
     <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Настройки</translation>
+        <source>Settings</source>
+        <translation>Настройки</translation>
     </message>
     <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Инструменты</translation>
+        <source>Tools</source>
+        <translation>Инструменты</translation>
     </message>
     <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Помощь</translation>
+        <source>Help</source>
+        <translation>Помощь</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -606,16 +606,16 @@
         <translation>Запросить платежи (генерирует QR-код и Bulwark: URI)</translation>
     </message>
     <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Мастерноды</translation>
+        <source>Masternodes</source>
+        <translation>Мастерноды</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Обзор мастернод</translation>
     </message>
     <message>
-        <source>&amp;About Bulwark Core</source>
-        <translation>&amp;О Bulwark Core</translation>
+        <source>About Bulwark Core</source>
+        <translation>О Bulwark Core</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
@@ -634,28 +634,28 @@
         <translation>Проверте сообщения, чтобы убедиться, что они были подписаны указанным Bulwark адресом </translation>
     </message>
     <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 Утилита</translation>
+        <source>BIP38 tool</source>
+        <translation>BIP38 Утилита</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Шифрование и дешифрование личных ключей с использованием кодовой фразы</translation>
     </message>
     <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;MultiSend</translation>
+        <source>MultiSend</source>
+        <translation>MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Настройки MultiSend</translation>
     </message>
     <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Открыть файл &amp;настроек кошелька</translation>
+        <source>Open Wallet Configuration File</source>
+        <translation>Открыть файл настроек кошелька</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Открыть файл &amp;настроек мастернод</translation>
+        <source>Open Masternode Configuration File</source>
+        <translation>Открыть файл настроек мастернод</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
@@ -666,8 +666,8 @@
         <translation>Открыть Bulwark: URI или запрос платежа</translation>
     </message>
     <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Обзор блокчейна</translation>
+        <source>Blockchain explorer</source>
+        <translation>Обзор блокчейна</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -1070,16 +1070,16 @@ MultiSend: %1</translation>
         <translation>Изменить адрес</translation>
     </message>
     <message>
-        <source>&amp;Label</source>
-        <translation>&amp;Метка</translation>
+        <source>Label</source>
+        <translation>Метка</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Метка, связанная с этой записью в списке адресов</translation>
     </message>
     <message>
-        <source>&amp;Address</source>
-        <translation>&amp;Адрес</translation>
+        <source>Address</source>
+        <translation>Адрес</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1286,20 +1286,20 @@ MultiSend: %1</translation>
         <translation>Публичный ключ</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>З&amp;апуск алиаса</translation>
+        <source>Start alias</source>
+        <translation>Запуск алиаса</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>Запустить &amp;все</translation>
+        <source>Start all</source>
+        <translation>Запустить все</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Запуск &amp;НЕАКТИВНЫХ</translation>
+        <source>Start MISSING</source>
+        <translation>Запуск НЕАКТИВНЫХ</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Обновить состояние</translation>
+        <source>Update status</source>
+        <translation>Обновить состояние</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1582,28 +1582,28 @@ Please check the address and try again.</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <source>&amp;Main</source>
-        <translation>&amp;Основной</translation>
+        <source>Main</source>
+        <translation>Основной</translation>
     </message>
     <message>
-        <source>Size of &amp;database cache</source>
-        <translation>Размер кэша &amp;базы данных</translation>
+        <source>Size of database cache</source>
+        <translation>Размер кэша базы данных</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script &amp;verification threads</source>
-        <translation>Количество сценариев &amp;проверочных потоков</translation>
+        <source>Number of script verification threads</source>
+        <translation>Количество сценариев проверочных потоков</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = авто, &lt;0 = оставить свободных ядер)</translation>
     </message>
     <message>
-        <source>W&amp;allet</source>
-        <translation>К&amp;ошелек</translation>
+        <source>Wallet</source>
+        <translation>Кошелек</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1622,8 +1622,8 @@ Please check the address and try again.</source>
         <translation>Разрешить входящие подключения</translation>
     </message>
     <message>
-        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;Подключиться через SOCKS5 (прокси-сервер по умолчанию):</translation>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>Подключиться через SOCKS5 (прокси-сервер по умолчанию):</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1634,16 +1634,16 @@ Please check the address and try again.</source>
         <translation>Автоматически запускать Bulwark после входа в систему.</translation>
     </message>
     <message>
-        <source>&amp;Start Bulwark on system login</source>
-        <translation>&amp;Запускать Bulwark при входе в систему</translation>
+        <source>Start Bulwark on system login</source>
+        <translation>Запускать Bulwark при входе в систему</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Показывает или скрывает особенности управления монетами.</translation>
     </message>
     <message>
-        <source>Enable coin &amp;control features</source>
-        <translation>Включить функции &amp;управления монет</translation>
+        <source>Enable coin control features</source>
+        <translation>Включить функции управления монет</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1654,12 +1654,12 @@ Please check the address and try again.</source>
         <translation>Показать вкладку Мастернод</translation>
     </message>
     <message>
-        <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Проведение неподтвержденных изменений</translation>
+        <source>Spend unconfirmed change</source>
+        <translation>Проведение неподтвержденных изменений</translation>
     </message>
     <message>
-        <source>&amp;Network</source>
-        <translation>&amp;Сеть</translation>
+        <source>Network</source>
+        <translation>Сеть</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
@@ -1672,63 +1672,63 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
 https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
     </message>
     <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation>Карта порта, использующего &amp;UPnP</translation>
+        <source>Map port using UPnP</source>
+        <translation>Карта порта, использующего UPnP</translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
         <translation>Подключиться к сети Bulwark через SOCKS5 прокси.</translation>
     </message>
     <message>
-        <source>Proxy &amp;IP:</source>
-        <translation>&amp;IP адрес:</translation>
+        <source>Proxy IP:</source>
+        <translation>IP адрес:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP-адрес прокси сервера (например: IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>&amp;Port:</source>
-        <translation>&amp;Порт</translation>
+        <source>Port:</source>
+        <translation>Порт</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Порт прокси сервера (например: 9050)</translation>
     </message>
     <message>
-        <source>&amp;Window</source>
-        <translation>&amp;Окно</translation>
+        <source>Window</source>
+        <translation>Окно</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>После сворачивания окна показывать только значок в трее.</translation>
     </message>
     <message>
-        <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Свернуть в трей, а не на панель задач</translation>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>Свернуть в трей, а не на панель задач</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Сворачивать окно при закрывании вместо выхода из приложения. При включении этой опции покинуть приложение можно только после нажатия Выйти в меню программы.</translation>
     </message>
     <message>
-        <source>M&amp;inimize on close</source>
-        <translation>C&amp;ворачивать при закрытии</translation>
+        <source>Minimize on close</source>
+        <translation>Cворачивать при закрытии</translation>
     </message>
     <message>
-        <source>&amp;Display</source>
-        <translation>&amp;Экран</translation>
+        <source>Display</source>
+        <translation>Экран</translation>
     </message>
     <message>
-        <source>User Interface &amp;language:</source>
-        <translation>&amp;Язык Интерфейса</translation>
+        <source>User Interface language:</source>
+        <translation>Язык Интерфейса</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Тема Интерфейса</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
+        <source>Unit to show amounts in:</source>
         <translation>В каких единицах показывать сумму:</translation>
     </message>
     <message>
@@ -1756,16 +1756,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Вернуть стандартные настройки клиента</translation>
     </message>
     <message>
-        <source>&amp;Reset Options</source>
-        <translation>&amp;Сбросить Настройки</translation>
+        <source>Reset Options</source>
+        <translation>Сбросить Настройки</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Отмена</translation>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
     </message>
     <message>
         <source>default</source>
@@ -2102,12 +2102,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Сохранить изображение</translation>
+        <source>Save Image...</source>
+        <translation>Сохранить изображение</translation>
     </message>
     <message>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Копировать изображение</translation>
+        <source>Copy Image</source>
+        <translation>Копировать изображение</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2125,8 +2125,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Окно с инструментами</translation>
     </message>
     <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Информация</translation>
+        <source>Information</source>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>General</source>
@@ -2149,8 +2149,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Количество соениднений</translation>
     </message>
     <message>
-        <source>&amp;Open</source>
-        <translation>&amp;Открыть</translation>
+        <source>Open</source>
+        <translation>Открыть</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2201,20 +2201,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Количество мастернод</translation>
     </message>
     <message>
-        <source>&amp;Console</source>
-        <translation>&amp;Коммандая строка</translation>
+        <source>Console</source>
+        <translation>Коммандая строка</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Очистить коммандную строку</translation>
     </message>
     <message>
-        <source>&amp;Network Traffic</source>
-        <translation>&amp;Сетевая передача данных</translation>
+        <source>Network Traffic</source>
+        <translation>Сетевая передача данных</translation>
     </message>
     <message>
-        <source>&amp;Clear</source>
-        <translation>&amp;Очистить</translation>
+        <source>Clear</source>
+        <translation>Очистить</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2229,8 +2229,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Отправлено</translation>
     </message>
     <message>
-        <source>&amp;Peers</source>
-        <translation>&amp;Пиры</translation>
+        <source>Peers</source>
+        <translation>Пиры</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2289,8 +2289,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Время отклика</translation>
     </message>
     <message>
-        <source>&amp;Wallet Repair</source>
-        <translation>&amp;Ремонт кошелька</translation>
+        <source>Wallet Repair</source>
+        <translation>Ремонт кошелька</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2401,16 +2401,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>&amp;Message:</source>
-        <translation>&amp;Сообщение:</translation>
+        <source>Message:</source>
+        <translation>Сообщение:</translation>
     </message>
     <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Количество:</translation>
+        <source>Amount:</source>
+        <translation>Количество:</translation>
     </message>
     <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Запрос платежа</translation>
+        <source>Request payment</source>
+        <translation>Запрос платежа</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2460,16 +2460,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>QR код</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>Скопировать &amp;URI</translation>
+        <source>Copy URI</source>
+        <translation>Скопировать URI</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>Скопировать &amp;Адрес</translation>
+        <source>Copy Address</source>
+        <translation>Скопировать Адрес</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Сохранить изображение</translation>
+        <source>Save Image...</source>
+        <translation>Сохранить изображение</translation>
     </message>
     <message>
         <source>Payment information</source>
@@ -2610,8 +2610,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Очистить все поля этой формы.</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Очистить &amp;Все</translation>
+        <source>Clear All</source>
+        <translation>Очистить Все</translation>
     </message>
     <message>
         <source>SwiftX</source>
@@ -2759,8 +2759,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Сбросить все поля сообщений</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Очистить &amp;Все</translation>
+        <source>Clear All</source>
+        <translation>Очистить Все</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3053,8 +3053,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Экспорт</translation>
+        <source>Export</source>
+        <translation>Экспорт</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>

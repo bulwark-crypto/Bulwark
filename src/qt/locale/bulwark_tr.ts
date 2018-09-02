@@ -10,35 +10,35 @@
         <translation>Yeni bir adres oluştur</translation>
     </message>
     <message>
-        <source>&amp;New</source>
-        <translation>&amp;Yeni</translation>
+        <source>New</source>
+        <translation>Yeni</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Seçili olan adresi sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>&amp;Copy</source>
-        <translation>&amp;Kopyala</translation>
+        <source>Copy</source>
+        <translation>Kopyala</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Seçili olan adresi listeden sil</translation>
     </message>
     <message>
-        <source>&amp;Delete</source>
-        <translation>&amp;Sil</translation>
+        <source>Delete</source>
+        <translation>Sil</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Güncel sekmedeki verileri bir dosyaya aktar</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
+        <source>Export</source>
         <translation>Çıkart</translation>
     </message>
     <message>
-        <source>C&amp;lose</source>
+        <source>Close</source>
         <translation>Kapat</translation>
     </message>
     <message>
@@ -50,7 +50,7 @@
         <translation>Coinleri Alacak adresi seçin</translation>
     </message>
     <message>
-        <source>C&amp;hoose</source>
+        <source>Choose</source>
         <translation>Seçin</translation>
     </message>
     <message>
@@ -70,15 +70,15 @@
         <translation>Bunlar ödemeleri almak için olan Bulwark adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
     </message>
     <message>
-        <source>&amp;Copy Address</source>
+        <source>Copy Address</source>
         <translation>Adresi kopyala</translation>
     </message>
     <message>
-        <source>Copy &amp;Label</source>
+        <source>Copy Label</source>
         <translation>Etiketi Kopyala</translation>
     </message>
     <message>
-        <source>&amp;Edit</source>
+        <source>Edit</source>
         <translation>Düzelt</translation>
     </message>
     <message>
@@ -386,7 +386,7 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>&amp;Export</source>
+        <source>Export</source>
         <translation>Çıkart</translation>
     </message>
     <message>
