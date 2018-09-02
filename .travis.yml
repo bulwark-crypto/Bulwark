@@ -5,11 +5,11 @@ os:
 - linux
 language: generic
 cache:
-  apt: true	
-  ccache: true	
-  directories:	
-  - depends/built	
-  - depends/sdk-sources	
+  apt: true
+  ccache: true
+  directories:
+  - depends/built
+  - depends/sdk-sources
   - "$HOME/.ccache"
 env:
   global:
@@ -25,20 +25,25 @@ env:
   - PYTHON_DEBUG=1
   - WINEDEBUG=fixme-all
   matrix:
-  - HOST=arm-linux-gnueabihf PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-arm-linux-gnueabihf libdb4.8-dev libdb4.8++-dev"
-    CHECK_DOC=1 CHECK_LOGPRINT=1 GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
-  - HOST=i686-pc-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq libdb4.8-dev libdb4.8++-dev"
-    RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat
-    --enable-reduce-exports LDFLAGS=-static-libstdc++" PYZMQ=true
-  - HOST=x86_64-unknown-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="bc python3-zmq libdb4.8-dev libdb4.8++-dev"
-    RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat
-    --enable-reduce-exports" CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG" PYZMQ=true
+  - HOST=arm-linux-gnueabihf PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-arm-linux-gnueabihf
+    libdb4.8-dev libdb4.8++-dev" CHECK_DOC=1 CHECK_LOGPRINT=1 GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat
+    --enable-reduce-exports"
+  - HOST=i686-pc-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq
+    libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq
+    --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++"
+    PYZMQ=true
+  - HOST=x86_64-unknown-linux-gnu PPA="ppa:bitcoin/bitcoin" PACKAGES="bc python3-zmq
+    libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq
+    --enable-glibc-back-compat --enable-reduce-exports" CPPFLAGS="-DDEBUG_LOCKORDER
+    -DENABLE_DASH_DEBUG" PYZMQ=true
   - HOST=i686-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3
-    nsis g++-mingw-w64-i686 wine1.7 bc libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
-    --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
+    nsis g++-mingw-w64-i686 wine1.7 bc libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false
+    GOAL="install" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" MAKEJOBS="-j4"
+    WINE=true
   - HOST=x86_64-w64-mingw32 DPKG_ADD_ARCH="i386" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3
-    nsis g++-mingw-w64-x86-64 wine1.7 bc libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui
-    --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
+    nsis g++-mingw-w64-x86-64 wine1.7 bc libdb4.8-dev libdb4.8++-dev" RUN_TESTS=false
+    GOAL="install" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" MAKEJOBS="-j4"
+    WINE=true
 before_install:
 - travis_retry sudo apt-get install python-dev
 - travis_retry sudo add-apt-repository ppa:ubuntu-wine/ppa -y
@@ -92,18 +97,18 @@ after_script:
 - echo $TRAVIS_COMMIT_LOG
 before_deploy:
 - cd ..
-- git config --local user.name "Penple03"
-- git config --local user.email "Penple03@users.noreply.github.com"
-- git tag "bulwark-1.3.1.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-- tar -zvcf bulwark-1.3.1.0-$HOST.tar.gz -C $OUTDIR bin/
+- git config --local user.name "dustinengle"
+- git config --local user.email "dustin.engle@gmail.com"
+- git tag "bulwark-2.0.0.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- tar -zvcf bulwark-2.0.0.0-$HOST.tar.gz -C $OUTDIR bin/
 - echo `pwd`
 deploy:
   provider: releases
   file_glob: true
   api_key:
-    secure: Wmx8uxuGhSlBdhTOl90orbYD8xt/MVnlYmVmsoWo9NJUsJUIksypE9bdcjb141aaAL0YPQah8P7DeMB5jW+cmSGkkvNzzkKO+zHLmAcFBiNGmnOEX54mou7a/37y2Ldfxqt+OyUa0CmGomK8EPwhJjLaF0NUeLMw6UPCa6kV44ArW8oxkiIugYB0K4H32cBWI6QBjRvLYbpCfgi39TsCtp+Jn2zoaDslhDudlyDvsNjehAgPXNT9ZNcYNNKb7NDyqB1vqtWj4HCTctZXrVQffbK6btsituIC1eiBji2jt7CWAJ5vS+W2R60rsFA2cZfZ5fDAM6suFQcjxvzu+fN7/BcxFJAOIA0PaLPgnWhLIifNjG9XmaxMP2UoWnoZCxHWvbsHaYr0K8f0uHHIsSoq4R1q0geZ/DyE8lFMVdptwa+lwKA7iK6HEqh/+nVg1DCRPbtLB8oaH02XFw6sg3EsKDU5m9m+Xhs+MSMsegpNQHWkAcXih/TURoIuzspmqB5HS7D82wAaasltkv8335xTOjRcVgzCbLL+3jG8+4+rCTFOxQ/QDGvaGyPbq6CwA5EO5o6zbrWUZTu4nDRiBxpP1j5VGiHEClsrjjigkh6rKsM9iAlUKzexXrZtAczILPUXnNUgCzbMwhy/MKKrxHEDtEpyUQHUC+H53rsbWbkkdcM=
-  file: bulwark-1.3.1.0-*
+    secure: l8FuaP0l7WQsJ1eEpoudY9/2jTWV4rq8ZCmnGB5666QA+jSG99GEgxJVeyihNtk6jNiOxjbkBRrXQwW9+KGDUXLbW4U6NzeO0f/j4+z9nM29++0XJVw8CIK2dEnB0zn3qgeFG6ANt7hPpZEqdWdTkkysc5YFw4bpw+nx0baRfsY1gayJ6JV0KmTATFCCjud2b1axcQEc4RBYnVATDye91JEwxD8AET45DNmq+TyRJXdKyZxa8iwhTAP4YAziJrePjjc0+fyScA6tCIkxqduDSCUDeVLptywMA4K1M4zF2ePWg/XQgQJQ0+7w1xNiKmpgXXP8IINBZ0EkasK9mLRjD3JiUFQJBOiVoVbieTiXEmTjuFRsy2Yb/RPeX/QolO20WeOsbzKJJW6AgLgN6YJ+LOmhZqcw+dhMiAdVyfO33G0UtN0BTRQxrBtjHqT8ygkKI7PUfh6z8TX0CEbRTp7XEC7zJJgAJyT+VYhhhxrxdEDx932d2w9SvSXfJbOPcWHGdehO5HwAzj8DN5zFqCksEYkoHdSHOyuiXXN6daqDK8PLG8ohuW4a/ALC6zDrfkLP0RoVkrwDUu2ArORTzFhHHrKDAGTpyl8bOI6RWEp5fbQjdn+4NGtqKD9vfqZGu4Sc4w7NiBa71hOsJSQD10JMxqR97CvSUdsXFVr6SdxfXMI=
+  file: bulwark-2.0.0.0-*
   skip_cleanup: true
   on:
-    repo: Penple03/Bulwark
-    branch: toast
+    repo: dustinengle/Bulwark
+    branch: master
