@@ -712,7 +712,7 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
                            </size>
                           </property>
                           <property name="text">
-                           <string>Pay &amp;To:</string>
+                           <string>Pay To:</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -792,7 +792,7 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
                            </size>
                           </property>
                           <property name="text">
-                           <string>&amp;Label:</string>
+                           <string>Label:</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -822,7 +822,7 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
                            </size>
                           </property>
                           <property name="text">
-                           <string>A&amp;mount:</string>
+                           <string>Amount:</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1425,59 +1425,6 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                        </layout>
                       </item>
                       <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_20">
-                        <item>
-                         <widget class="QLabel" name="labelzDenom8Text">
-                          <property name="toolTip">
-                           <string>Denominations with value 5000:</string>
-                          </property>
-                          <property name="text">
-                           <string>Denom. with value 5000:</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <spacer name="horizontalSpacer_15">
-                          <property name="orientation">
-                           <enum>Qt::Horizontal</enum>
-                          </property>
-                          <property name="sizeHint" stdset="0">
-                           <size>
-                            <width>40</width>
-                            <height>20</height>
-                           </size>
-                          </property>
-                         </spacer>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="labelzDenom8Amount">
-                          <property name="minimumSize">
-                           <size>
-                            <width>40</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="toolTip">
-                           <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
-                          </property>
-                          <property name="text">
-                           <string>0 x</string>
-                          </property>
-                          <property name="textFormat">
-                           <enum>Qt::RichText</enum>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </item>
-                      <item>
                        <widget class="Line" name="line_2_right">
                         <property name="minimumSize">
                          <size>
@@ -1804,37 +1751,6 @@ To change the percentage (no restart required):
                         </item>
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1000">
-                          <property name="text">
-                           <string>0 zBWK</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </item>
-                      <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_33">
-                        <item>
-                         <widget class="QLabel" name="labelZsupplyText5000">
-                          <property name="text">
-                           <string>Denom. 5000:</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <spacer name="horizontalSpacer_29">
-                          <property name="orientation">
-                           <enum>Qt::Horizontal</enum>
-                          </property>
-                          <property name="sizeHint" stdset="0">
-                           <size>
-                            <width>40</width>
-                            <height>20</height>
-                           </size>
-                          </property>
-                         </spacer>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="labelZsupplyAmount5000">
                           <property name="text">
                            <string>0 zBWK</string>
                           </property>

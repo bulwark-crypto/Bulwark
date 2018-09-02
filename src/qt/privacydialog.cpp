@@ -64,7 +64,6 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->labelzDenom5Text->setText(tr("Denom. with value <b>100</b>:"));
     ui->labelzDenom6Text->setText(tr("Denom. with value <b>500</b>:"));
     ui->labelzDenom7Text->setText(tr("Denom. with value <b>1000</b>:"));
-    ui->labelzDenom8Text->setText(tr("Denom. with value <b>5000</b>:"));
 
     // AutoMint status
     ui->label_AutoMintStatus->setText(tr("AutoMint Status:"));
@@ -77,7 +76,6 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->labelZsupplyText100->setText(tr("Denom. <b>100</b>:"));
     ui->labelZsupplyText500->setText(tr("Denom. <b>500</b>:"));
     ui->labelZsupplyText1000->setText(tr("Denom. <b>1000</b>:"));
-    ui->labelZsupplyText5000->setText(tr("Denom. <b>5000</b>:"));
     
     // Bulwark settings
     QSettings settings;
@@ -663,9 +661,6 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
             case libzerocoin::CoinDenomination::ZQ_ONE_THOUSAND:
                 ui->labelzDenom7Amount->setText(strDenomStats);
                 break;
-            case libzerocoin::CoinDenomination::ZQ_FIVE_THOUSAND:
-                ui->labelzDenom8Amount->setText(strDenomStats);
-                break;
             default:
                 // Error Case: don't update display
                 break;
@@ -721,9 +716,6 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
                 break;
             case libzerocoin::CoinDenomination::ZQ_ONE_THOUSAND:
                 ui->labelZsupplyAmount1000->setText(strSupply);
-                break;
-            case libzerocoin::CoinDenomination::ZQ_FIVE_THOUSAND:
-                ui->labelZsupplyAmount5000->setText(strSupply);
                 break;
             default:
                 // Error Case: don't update display

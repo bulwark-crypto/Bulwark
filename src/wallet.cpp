@@ -3591,10 +3591,8 @@ void CWallet::AutoZeromint()
             nToMintAmount = 0;                // Not enough coins => do nothing and wait for more coins
     }
 
-    if (nToMintAmount >= ZQ_6666){
-        nMintAmount = ZQ_6666;
-    } else if (nToMintAmount >= libzerocoin::CoinDenomination::ZQ_FIVE_THOUSAND){
-        nMintAmount = libzerocoin::CoinDenomination::ZQ_FIVE_THOUSAND;
+    if (nToMintAmount >= ZQ_1666){
+        nMintAmount = ZQ_1666;
     } else if (nToMintAmount >= libzerocoin::CoinDenomination::ZQ_ONE_THOUSAND){
         nMintAmount = libzerocoin::CoinDenomination::ZQ_ONE_THOUSAND;
     } else if (nToMintAmount >= libzerocoin::CoinDenomination::ZQ_FIVE_HUNDRED){
