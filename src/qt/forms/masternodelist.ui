@@ -197,28 +197,28 @@
                   <item>
                    <widget class="QtMaterialFlatButton" name="startButton" native="true">
                     <property name="text" stdset="0">
-                     <string>Start alias</string>
+                     <string>S&amp;tart alias</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QtMaterialFlatButton" name="startAllButton" native="true">
                     <property name="text" stdset="0">
-                     <string>Start all</string>
+                     <string>Start &amp;all</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QtMaterialFlatButton" name="startMissingButton" native="true">
                     <property name="text" stdset="0">
-                     <string>Start MISSING</string>
+                     <string>Start &amp;MISSING</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QtMaterialFlatButton" name="UpdateButton" native="true">
                     <property name="text" stdset="0">
-                     <string>Update status</string>
+                     <string>&amp;Update status</string>
                     </property>
                    </widget>
                   </item>
