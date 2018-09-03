@@ -147,3 +147,5 @@ script:
     --cache-file=config.cache $GLOBAL_CONFIG $BULWARK_CONFIG; make; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./autogen.sh; ./configure --enable-reduce-exports;
     make deploy; fi
+before_deploy:
+  - true
