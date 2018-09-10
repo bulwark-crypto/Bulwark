@@ -3351,6 +3351,10 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         // zerocoin accumulator: if a new accumulator checkpoint was generated, check that it is the correct value
         if (!fVerifyingBlocks && pindex->nHeight >= nZerocoinStart && pindex->nHeight % 10 == 0) {
             uint256 nCheckpointCalculated = 0;
+            
+            if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated)) {
+                return state.DoS(100, error("ConnectBlock() : failed to calculate accumulator checkpoint"));
+            }
 
             if (nCheckpointCalculated != block.nAccumulatorCheckpoint) {
                 LogPrintf("%s: block=%d calculated: %s\n block: %s\n", __func__, pindex->nHeight, nCheckpointCalculated.GetHex(), block.nAccumulatorCheckpoint.GetHex());

@@ -249,7 +249,7 @@ public:
         nTargetSpacing = 1 * 15;  // 30 Seconds
 	    nTargetSpacingSlowLaunch = 1 * 15; // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
 
-        nLastPOWBlock = 150;
+        nLastPOWBlock = 200;
         nLastPOWBlockOld = 1100;
 		nLastSeeSawBlock = 1200;
         nMaturity = 15;
