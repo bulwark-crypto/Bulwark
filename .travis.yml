@@ -3,149 +3,164 @@ dist: trusty
 sudo: false
 branches:
   only:
-    - master
+  - master
 cache:
   ccache: true
   directories:
-    - depends/built
-    - depends/sdk-sources
-    - "$HOME/.ccache"
+  - depends/built
+  - depends/sdk-sources
+  - "$HOME/.ccache"
 addons:
   apt:
     sources:
-      - ppa:bitcoin/bitcoin
+    - ppa:bitcoin/bitcoin
     packages:
-      - autoconf
-      - autotools-dev
-      - binutils
-      - bsdmainutils
-      - build-essential
-      - cmake
-      - curl
-      - libboost-all-dev
-      - libbz2-dev
-      - libcap-dev
-      - libdb4.8-dev
-      - libdb4.8++-dev
-      - libevent-dev
-      - libssl-dev
-      - libtool
-      - linux-libc-dev
-      - miniupnpc
-      - pkg-config
-      - python-dev
-      - python-setuptools
-      - python3
-      - python3-zmq
-      - zlib1g-dev
+    - autoconf
+    - autotools-dev
+    - binutils
+    - bsdmainutils
+    - build-essential
+    - cmake
+    - curl
+    - libboost-all-dev
+    - libbz2-dev
+    - libcap-dev
+    - libdb4.8-dev
+    - libdb4.8++-dev
+    - libevent-dev
+    - libssl-dev
+    - libtool
+    - linux-libc-dev
+    - miniupnpc
+    - pkg-config
+    - python-dev
+    - python-setuptools
+    - python3
+    - python3-zmq
+    - zlib1g-dev
 env:
   global:
-    - BULWARK_VERSION=2.0.0.0
-    - CCACHE_COMPRESS=1
-    - CCACHE_SIZE=500M
-    - CCACHE_TEMPDIR=/tmp/.ccache-temp
-    - MAKEJOBS="-s -j 2"
+  - BULWARK_VERSION=2.0.0.0
+  - CCACHE_COMPRESS=1
+  - CCACHE_SIZE=500M
+  - CCACHE_TEMPDIR=/tmp/.ccache-temp
+  - MAKEJOBS="-s -j 2"
 matrix:
   include:
-    - name: Linux ARM 32 Bit
-      addons:
-        apt:
-          packages:
-            - g++-arm-linux-gnueabihf
-            - binutils-arm-linux-gnueabihf
-      env:
-        - BULWARK_CONFIG="--enable-glibc-back-compat --with-gui=no"
-        - HOST=arm-linux-gnueabihf
-        - LABEL=ARM
-      os: linux
-    - name: Linux i686 32 Bit
-      addons:
-        apt:
-          packages:
-            - bc
-            - g++-multilib
-            - libprotobuf-dev
-            - libqrencode-dev
-            - python3-zmq
-            - qtdeclarative5-dev
-      env:
-        - BULWARK_CONFIG="--enable-zmq --enable-glibc-back-compat LDFLAGS=-static-libstdc++
-          --with-gui=qt5"
-        - HOST=i686-pc-linux-gnu
-        - LABEL=linux32
-        - PYZMQ=true
-      os: linux
-    - name: Linux x86 64 Bit
-      addons:
-        apt:
-          packages:
-            - bc
-            - libprotobuf-dev
-            - libqrencode-dev
-            - python3-zmq
-            - qtdeclarative5-dev
-      env:
-        - BULWARK_CONFIG="--enable-zmq --enable-glibc-back-compat --with-gui=qt5"
-        - CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG"
-        - HOST=x86_64-pc-linux-gnu
-        - LABEL=linux64
-        - PYZMQ=true
-      os: linux
-    - name: Windows i686 32 Bit
-      addons:
-        apt:
-          packages:
-            - g++-mingw-w64-i686 bc
-            - libprotobuf-dev
-            - libqrencode-dev
-            - linux-libc-dev:i386
-            - nsis
-            - python3
-            - qtdeclarative5-dev
-      env:
-        - BULWARK_CONFIG="--with-gui=qt5"
-        - HOST=i686-w64-mingw32
-        - LABEL=win32
-      os: linux
-    - name: Windows x86 64 Bit
-      addons:
-        apt:
-          packages:
-            - bc
-            - g++-mingw-w64-x86-64
-            - libprotobuf-dev
-            - libqrencode-dev
-            - linux-libc-dev:i386
-            - nsis
-            - python3
-            - qtdeclarative5-dev
-      env:
-        - BULWARK_CONFIG="--with-gui=qt5"
-        - HOST=x86_64-w64-mingw32
-        - LABEL=win64
-      os: linux
-    - name: macOS x86 64 Bit
-      env:
-        - HOST=x86_64-apple-darwin
-        - LABEL=macOS
-      os: osx
-      osx_image: xcode9.2
+  - name: Linux ARM 32 Bit
+    addons:
+      apt:
+        packages:
+        - g++-arm-linux-gnueabihf
+        - binutils-arm-linux-gnueabihf
+    env:
+    - BULWARK_CONFIG="--enable-glibc-back-compat --with-gui=no"
+    - HOST=arm-linux-gnueabihf
+    - LABEL=ARM
+    os: linux
+  - name: Linux i686 32 Bit
+    addons:
+      apt:
+        packages:
+        - bc
+        - g++-multilib
+        - libprotobuf-dev
+        - libqrencode-dev
+        - python3-zmq
+        - qtdeclarative5-dev
+    env:
+    - BULWARK_CONFIG="--enable-zmq --enable-glibc-back-compat LDFLAGS=-static-libstdc++
+      --with-gui=qt5"
+    - HOST=i686-pc-linux-gnu
+    - LABEL=linux32
+    - PYZMQ=true
+    os: linux
+  - name: Linux x86 64 Bit
+    addons:
+      apt:
+        packages:
+        - bc
+        - libprotobuf-dev
+        - libqrencode-dev
+        - python3-zmq
+        - qtdeclarative5-dev
+    env:
+    - BULWARK_CONFIG="--enable-zmq --enable-glibc-back-compat --with-gui=qt5"
+    - CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG"
+    - HOST=x86_64-pc-linux-gnu
+    - LABEL=linux64
+    - PYZMQ=true
+    os: linux
+  - name: Windows i686 32 Bit
+    addons:
+      apt:
+        packages:
+        - g++-mingw-w64-i686 bc
+        - libprotobuf-dev
+        - libqrencode-dev
+        - linux-libc-dev:i386
+        - nsis
+        - python3
+        - qtdeclarative5-dev
+    env:
+    - BULWARK_CONFIG="--with-gui=qt5"
+    - HOST=i686-w64-mingw32
+    - LABEL=win32
+    os: linux
+  - name: Windows x86 64 Bit
+    addons:
+      apt:
+        packages:
+        - bc
+        - g++-mingw-w64-x86-64
+        - libprotobuf-dev
+        - libqrencode-dev
+        - linux-libc-dev:i386
+        - nsis
+        - python3
+        - qtdeclarative5-dev
+    env:
+    - BULWARK_CONFIG="--with-gui=qt5"
+    - HOST=x86_64-w64-mingw32
+    - LABEL=win64
+    os: linux
+  - name: macOS x86 64 Bit
+    env:
+    - HOST=x86_64-apple-darwin
+    - LABEL=macOS
+    os: osx
+    osx_image: xcode9.2
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew uninstall mercurial python; brew
-    bundle; brew link --overwrite --force boost@1.57; fi
-  - if [ "$PYZMQ" = "true" ]; then pip install pyzmq --user ; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew uninstall mercurial python; brew
+  bundle; brew link --overwrite --force boost@1.57; fi
+- if [ "$PYZMQ" = "true" ]; then pip install pyzmq --user ; fi
 before_script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then unset CC CXX DISPLAY; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export LDFLAGS=-L/usr/local/opt/openssl/lib;
-    export CPPFLAGS=-I/usr/local/opt/openssl/include; fi
-  - GLOBAL_CONFIG="--enable-reduce-exports --enable-tests --prefix=$TRAVIS_BUILD_DIR/depends/$HOST"
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then unset CC CXX DISPLAY; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export LDFLAGS=-L/usr/local/opt/openssl/lib;
+  export CPPFLAGS=-I/usr/local/opt/openssl/include; fi
+- GLOBAL_CONFIG="--enable-reduce-exports --enable-tests --prefix=$TRAVIS_BUILD_DIR/depends/$HOST"
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make $MAKEJOBS -C depends HOST="$HOST";
-    depends/$HOST/native/bin/ccache --max-size=$CCACHE_SIZE; sh ./autogen.sh; ./configure
-    --cache-file=config.cache $GLOBAL_CONFIG $BULWARK_CONFIG; make; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./autogen.sh; ./configure --enable-reduce-exports;
-    make deploy; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make $MAKEJOBS -C depends HOST="$HOST";
+  depends/$HOST/native/bin/ccache --max-size=$CCACHE_SIZE; sh ./autogen.sh; ./configure
+  --cache-file=config.cache $GLOBAL_CONFIG $BULWARK_CONFIG; make; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./autogen.sh; ./configure --enable-reduce-exports;
+  make deploy; fi
 before_deploy:
-  - true
+- cd ..
+- git config --local user.name "dustinengle"
+- git config --local user.email "dustin.engle@gmail.com"
+- git tag "bulwark-2.0.0.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- tar -zvcf bulwark-2.0.0.0-$HOST.tar.gz -C $OUTDIR bin/
+- echo `pwd`
+deploy:
+  provider: releases
+  api_key:
+    secure: fp1oec+AK/iubp2E6aBTJYeUyY+d2ZAamlMQ67yMMARbnoSbNixcblovhObVYFL5zr5O04zSx2liQR5pDpvbHbwgM4S1vu7YeCEUOJskXy5gSV2velfuHJP7bNQ0MHzMl1ABH08uxj5AYTCCkZOjJvXiA2FXPrkJuAsUIKPcQOnm7Jryq8G4tOBjT4JBHjLzKvt18yshRgy3gvlexVLXCr4VmNYoUij1JgNNV5CEpjL+tBvVly1pO9iXx25fUS1LJOn9XsXFSjdSRWNj5nq00DCQTrbyET0rrpgOcL+4YR5MKTCTRIvqiX2GMqw6HbbwYNHm86Az5mQgX31d6bX0Tp5gDBg794V5Hq953NDWx3KuzqJPzYoMueBYJoDa5rfo57BW93jcvO9CMJzO5E/VsmCG9zfEerB52fwnRWPFJvZjFcsThU3ZGEiqcDxgCy14qd16fVx+ulokvx5FJWMw2crHOK6mMZEeZM0BCZXGB48ARx/RqV6wPGbIbqamWyCmokLLK97osrmschA35Pum56oj0dm4VxBmYTXNusyZ4lWdN5KVTz5mIjfuX8lSxIA2mSlRRuodbEpY6MwAyGlS23WHSkRtUD8hZkmyElqiUmS7RV7h9DpPB3XEiehdtCgMctjkRyd1GNsSK+z0T+4iNZJoKCCcVlJU8Wt3rp5deQw=
+  file_glob: true
+  file: bulwark-2.0.0.0-*
+  skip_cleanup: true
+  on:
+    repo: dustinengle/Bulwark
+    branch: master 
