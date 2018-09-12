@@ -85,7 +85,8 @@ matrix:
         - python3-zmq
         - qtdeclarative5-dev
     env:
-    - BULWARK_CONFIG="--enable-zmq --enable-glibc-back-compat --with-gui=qt5"
+    - BULWARK_CONFIG="--enable-zmq --enable-glibc-back-compat LDFLAGS=-static-libstdc++
+      --with-gui=qt5"
     - CPPFLAGS="-DDEBUG_LOCKORDER -DENABLE_DASH_DEBUG"
     - HOST=x86_64-pc-linux-gnu
     - LABEL=linux64
