@@ -149,19 +149,4 @@ script:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh ./autogen.sh; ./configure --enable-reduce-exports;
   make deploy; fi
 before_deploy:
-- cd ..
-- git config --local user.name "dustinengle"
-- git config --local user.email "dustin.engle@gmail.com"
-- git tag "bulwark-2.0.0.0-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-- tar -zvcf bulwark-2.0.0.0-$HOST.tar.gz -C $OUTDIR bin/
-- echo `pwd`
-deploy:
-  provider: releases
-  api_key:
-    secure: fp1oec+AK/iubp2E6aBTJYeUyY+d2ZAamlMQ67yMMARbnoSbNixcblovhObVYFL5zr5O04zSx2liQR5pDpvbHbwgM4S1vu7YeCEUOJskXy5gSV2velfuHJP7bNQ0MHzMl1ABH08uxj5AYTCCkZOjJvXiA2FXPrkJuAsUIKPcQOnm7Jryq8G4tOBjT4JBHjLzKvt18yshRgy3gvlexVLXCr4VmNYoUij1JgNNV5CEpjL+tBvVly1pO9iXx25fUS1LJOn9XsXFSjdSRWNj5nq00DCQTrbyET0rrpgOcL+4YR5MKTCTRIvqiX2GMqw6HbbwYNHm86Az5mQgX31d6bX0Tp5gDBg794V5Hq953NDWx3KuzqJPzYoMueBYJoDa5rfo57BW93jcvO9CMJzO5E/VsmCG9zfEerB52fwnRWPFJvZjFcsThU3ZGEiqcDxgCy14qd16fVx+ulokvx5FJWMw2crHOK6mMZEeZM0BCZXGB48ARx/RqV6wPGbIbqamWyCmokLLK97osrmschA35Pum56oj0dm4VxBmYTXNusyZ4lWdN5KVTz5mIjfuX8lSxIA2mSlRRuodbEpY6MwAyGlS23WHSkRtUD8hZkmyElqiUmS7RV7h9DpPB3XEiehdtCgMctjkRyd1GNsSK+z0T+4iNZJoKCCcVlJU8Wt3rp5deQw=
-  file_glob: true
-  file: bulwark-2.0.0.0-*
-  skip_cleanup: true
-  on:
-    repo: dustinengle/Bulwark
-    branch: master 
+- true
