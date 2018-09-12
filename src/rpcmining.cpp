@@ -335,7 +335,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
 {
     int lastPoWBlock = IsSporkActive(SPORK_19_POW_ROLLBACK) ? Params().LAST_POW_BLOCK_OLD() : Params().LAST_POW_BLOCK();
     if (chainActive.Tip()->nHeight >= lastPoWBlock)
-        throw JSONRPCError(RPC_GBT_POS_ERROR, "No mining during Proof-of-Stake")
+        throw JSONRPCError(RPC_GBT_POS_ERROR, "No mining during Proof-of-Stake");
         
     if (fHelp || params.size() > 1)
         throw runtime_error(
