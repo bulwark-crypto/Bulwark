@@ -485,6 +485,11 @@ if test x$use_hardening != xno; then
   CPPFLAGS="$CPPFLAGS $HARDENED_CPPFLAGS"
   LDFLAGS="$LDFLAGS $HARDENED_LDFLAGS"
   OBJCXXFLAGS="$CXXFLAGS"
+else
+  CXXFLAGS="$CXXFLAGS -no-pie"
+  CPPFLAGS="$CPPFLAGS -no-pie"
+  LDFLAGS="$LDFLAGS -no-pie"
+  OBJCXXFLAGS="$CXXFLAGS"
 fi
 
 dnl this flag screws up non-darwin gcc even when the check fails. special-case it.
