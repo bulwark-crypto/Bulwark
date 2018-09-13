@@ -136,9 +136,9 @@ AC_ARG_WITH([qrencode],
 
 AC_ARG_ENABLE([hardening],
   [AS_HELP_STRING([--enable-hardening],
-  [attempt to harden the resulting executables (default is no)])],
+  [attempt to harden the resulting executables (default is yes)])],
   [use_hardening=$enableval],
-  [use_hardening=no])
+  [use_hardening=yes])
 
 AC_ARG_ENABLE([reduce-exports],
   [AS_HELP_STRING([--enable-reduce-exports],
