@@ -1024,7 +1024,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_1" stretch="0,0,0,0,0">
+              <layout class="QVBoxLayout" name="verticalLayout_1">
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_2">
                  <item>
@@ -1104,7 +1104,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
                 <widget class="QListView" name="listTransactions">
                  <property name="minimumSize">
                   <size>
-                   <width>0</width>
+                   <width>400</width>
                    <height>0</height>
                   </size>
                  </property>

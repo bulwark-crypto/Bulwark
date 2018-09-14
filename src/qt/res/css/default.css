@@ -636,6 +636,7 @@ QWidget .QFrame#frame_CombinedBalances {
 	background-color: #ffffff
 }
 QWidget .QFrame#frame_RecentTransactions {
+	font-size: 10pt;
 	min-width: 400px;
 	background-color: #ffffff
 }
