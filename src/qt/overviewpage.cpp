@@ -241,9 +241,9 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelzBWKPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
-    QString automintHelp = tr("Current percentage of zBWK.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
+    QString automintHelp = tr("Current percentage of zBWK.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 0%).\n");
     bool fEnableZeromint = GetBoolArg("-enablezeromint", false);
-    int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
+    int nZeromintPercentage = GetArg("-zeromintpercentage", 00);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
         automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in bulwark.conf.");
