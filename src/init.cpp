@@ -481,7 +481,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageGroup(_("Zerocoin options:"));
     strUsage += HelpMessageOpt("-enablezeromint=<n>", strprintf(_("Enable automatic Zerocoin minting (0-1, default: %u)"), 0));
     strUsage += HelpMessageOpt("-zeromintpercentage=<n>", strprintf(_("Percentage of automatically minted Zerocoin  (10-100, default: %u)"), 10));
-    strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"), 0));
+    strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000), 0 for no preference. default: %u)"), 0));
     strUsage += HelpMessageOpt("-backupzbwk=<n>", strprintf(_("Enable automatic wallet backups triggered after each zBWK minting (0-1, default: %u)"), 1));
 
 //    strUsage += "  -anonymizebulwarkamount=<n>     " + strprintf(_("Keep N BWK anonymized (default: %u)"), 0) + "\n";
@@ -1310,7 +1310,7 @@ bool AppInit2(boost::thread_group& threadGroup)
                 delete zerocoinDB;
                 delete pSporkDB;
 
-                //PIVX specific: zerocoin and spork DB's
+                //Bulwark specific: zerocoin and spork DB's
                 zerocoinDB = new CZerocoinDB(0, false, fReindex);
                 pSporkDB = new CSporkDB(0, false, false);
 
@@ -1376,7 +1376,7 @@ bool AppInit2(boost::thread_group& threadGroup)
                     }
                 }
 
-                // PIVX: recalculate Accumulator Checkpoints that failed to database properly
+                // Bulwark: recalculate Accumulator Checkpoints that failed to database properly
                 if (!listAccCheckpointsNoDB.empty()) {
                     uiInterface.InitMessage(_("Calculating missing accumulators..."));
                     LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -1705,7 +1705,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     nPreferredDenom  = GetArg("-preferredDenom", 0);
     if (nPreferredDenom != 0 && nPreferredDenom != 1 && nPreferredDenom != 5 && nPreferredDenom != 10 && nPreferredDenom != 50 &&
-        nPreferredDenom != 100 && nPreferredDenom != 500 && nPreferredDenom != 1000 && nPreferredDenom != 5000){
+        nPreferredDenom != 100 && nPreferredDenom != 500 && nPreferredDenom != 1000){
         LogPrintf("-preferredDenom: invalid denomination parameter %d. Default value used\n", nPreferredDenom);
         nPreferredDenom = 0;
     }

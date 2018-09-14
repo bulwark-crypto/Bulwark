@@ -134,7 +134,7 @@ QT_TRANSLATE_NOOP("bulwark-core", ""
 "Output debugging information (default: %u, supplying <category> is optional)"),
 QT_TRANSLATE_NOOP("bulwark-core", ""
 "Preferred Denomination for automatically minted Zerocoin  "
-"(1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"),
+"(1/5/10/50/100/500/1000), 0 for no preference. default: %u)"),
 QT_TRANSLATE_NOOP("bulwark-core", ""
 "Query for peer addresses via DNS lookup, if low on addresses (default: 1 "
 "unless -connect)"),

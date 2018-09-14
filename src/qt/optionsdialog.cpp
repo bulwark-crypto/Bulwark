@@ -93,7 +93,6 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->preferredDenom->addItem(QString("100"), QVariant("100"));
     ui->preferredDenom->addItem(QString("500"), QVariant("500"));
     ui->preferredDenom->addItem(QString("1000"), QVariant("1000"));
-    ui->preferredDenom->addItem(QString("5000"), QVariant("5000"));
 
     /* Theme selector external themes */
     boost::filesystem::path pathAddr = GetDataDir() / "themes";

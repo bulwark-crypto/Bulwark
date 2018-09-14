@@ -74,7 +74,6 @@ UniValue getinfo(const UniValue& params, bool fHelp)
             "     \"100\" : n,          (numeric) supply of 100 zBWK denomination\n"
             "     \"500\" : n,          (numeric) supply of 500 zBWK denomination\n"
             "     \"1000\" : n,         (numeric) supply of 1000 zBWK denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zBWK denomination\n"
             "     \"total\" : n,        (numeric) The total supply of all zBWK denominations\n"
             "  }\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
