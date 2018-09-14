@@ -104,7 +104,7 @@ inline std::string ReverseEndianString(std::string in)
     return out;
 }
 
-/** 
+/**
  * Format a paragraph of text to a fixed width, adding spaces for
  * indentation to any added line.
  */

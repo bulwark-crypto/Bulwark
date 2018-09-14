@@ -18,10 +18,10 @@ QMenuBar::item {
 	background-color: #fff
 }
 QMenuBar::item:selected {
-	background-color: #fafefd
+	background-color: #ffffff
 }
 QMenu {
-	background-color: #fafefd
+	background-color: #ffffff
 }
 QMenu::item {
 	color: #333
@@ -409,7 +409,7 @@ QDialog .QTabWidget::pane {
 	border: 1px solid #d7d7d7
 }
 QDialog .QTabWidget QTabBar::tab {
-	background-color: #fafefd;
+	background-color: #ffffff;
 	color: #333;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -464,7 +464,7 @@ QDialog#OpenURIDialog QtMaterialFlatButton#selectFileButton:pressed {
 	border: 1px solid #9e9e9e
 }
 QWidget#AddressBookPage {
-	background-color: #fafefd
+	background-color: #ffffff
 }
 QWidget#AddressBookPage QTableView {
 	font-size: 12px
@@ -617,15 +617,15 @@ QWidget .QFrame#frame_Header {
 }
 QWidget .QFrame#frame_BG {
 	min-width: 400px;
-	background-color: #fafefd
+	background-color: #ffffff
 }
 QWidget .QFrame#frame_Space {
 	min-width: 400px;
-	background-color: #fafefd
+	background-color: #ffffff
 }
 QWidget .QFrame#frame_Content {
 	min-width: 400px;
-	background-color: #fafefd
+	background-color: #ffffff
 }
 QWidget .QFrame#frame_Balances {
 	min-width: 400px;
@@ -712,31 +712,24 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#BalanceTitlez {
 	min-width: 160px;
 	background-color: transparent;
 	text-transform: uppercase;
-	color: #0091ea;
 	font-weight: 700;
 	font-size: 12px;
 }
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz {
 	min-width: 160px;
-	color: #003c8f;
 	font-weight: 700;
 	font-size: 12px
 }
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez {
-	font-size: 26px;
-	font-weight: 400;
-	color: #003c8f
+	font-size: 12px;
 }
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelTotalTextz {
 	min-width: 160px;
-	color: #003c8f;
 	font-weight: 700;
 	font-size: 12px
 }
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelTotalz {
-	font-size: 26px;
-	font-weight: 400;
-	color: #003c8f
+	font-size: 12px;
 }
 QWidget .QFrame#frame_RecentTransactions {
 	min-width: 410px;
