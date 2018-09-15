@@ -2091,7 +2091,7 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for Minting:</source>
+        <source>Mintable:</source>
         <translation>Verfügbar für Prägung:</translation>
     </message>
     <message>
