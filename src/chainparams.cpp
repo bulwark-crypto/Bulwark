@@ -296,7 +296,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "047e64a7f1a5d38c5cc5b100eb557effbb6f924f68a061152728995fb6cb6cf25667645669828d01fdd818059a61a30715a65ab281772a6dfb10ad2688c40386c4";
+        strSporkKey = "048abad405bde958ad46d7eac0a359c80b001c3628cc1437a56420434ae6c2b4f1a18addd35a2e2b3c3bbe35d8b2bb6d387b4df3fac5156f92f8ded76f0cfc7a71";
         strObfuscationPoolDummyAddress = "TUQ57Fbh1crybrDhV6X9SDH95H4oSq4v6p";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
