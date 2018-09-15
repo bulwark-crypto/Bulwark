@@ -674,7 +674,8 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
 
     ui->labelzAvailableAmount->setText(QString::number(zerocoinBalance/COIN) + QString(" zBWK "));
     ui->labelzAvailableAmount_2->setText(QString::number(matureZerocoinBalance/COIN) + QString(" zBWK "));
-    ui->labelzBWKAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance - nLockedBalance, false, BitcoinUnits::separatorAlways));
+    CAmount availableAmount = (balance - immatureBalance - nLockedBalance) <= 0 ? 0 : balance - immatureBalance - nLockedBalance;
+    ui->labelzBWKAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, availableAmount, false, BitcoinUnits::separatorAlways));
 
     // Display AutoMint status
     QString strAutomintStatus = tr("AutoMint Status:");

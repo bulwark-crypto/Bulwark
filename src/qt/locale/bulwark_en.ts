@@ -3024,7 +3024,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+3"/>
-        <source>Available for Minting:</source>
+        <source>Mintable:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

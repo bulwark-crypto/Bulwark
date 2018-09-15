@@ -909,7 +909,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
                      <widget class="QLabel" name="labelzBWKPercent">
                       <property name="toolTip">
                        <string>Current percentage of zBWK.
-If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</string>
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 0%)</string>
                       </property>
                       <property name="text">
                        <string>0 %</string>
@@ -1024,7 +1024,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_1" stretch="0,0,0,0,0">
+              <layout class="QVBoxLayout" name="verticalLayout_1">
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_2">
                  <item>
@@ -1104,7 +1104,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
                 <widget class="QListView" name="listTransactions">
                  <property name="minimumSize">
                   <size>
-                   <width>0</width>
+                   <width>400</width>
                    <height>0</height>
                   </size>
                  </property>

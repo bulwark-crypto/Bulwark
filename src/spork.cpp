@@ -99,7 +99,7 @@ void ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
         //does a task if needed
         ExecuteSpork(spork.nSporkID, spork.nValue);
 
-        // PIVX: add to spork database.
+        // Bulwark: add to spork database.
         pSporkDB->WriteSpork(spork.nSporkID, spork);
     }
     if (strCommand == "getsporks") {

@@ -200,7 +200,7 @@
                            <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                           </property>
                           <property name="text">
-                           <string>Available for Minting:</string>
+                           <string>Mintable:</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

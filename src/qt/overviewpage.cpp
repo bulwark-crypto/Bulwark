@@ -48,7 +48,7 @@ public:
 
         QIcon icon = qvariant_cast<QIcon>(index.data(Qt::DecorationRole));
         QRect mainRect = option.rect;
-        mainRect.moveLeft(ICON_OFFSET);
+        //mainRect.moveLeft(ICON_OFFSET);
         QRect decorationRect(mainRect.topLeft(), QSize(DECORATION_SIZE, DECORATION_SIZE));
         int xspace = DECORATION_SIZE + 8;
         int ypad = 6;
@@ -76,14 +76,19 @@ public:
             foreground = brush.color();
         }
 
-        painter->setPen(foreground);
         QRect boundingRect;
+        painter->setPen(foreground);
         painter->drawText(addressRect, Qt::AlignLeft | Qt::AlignVCenter, address, &boundingRect);
 
         if (index.data(TransactionTableModel::WatchonlyRole).toBool()) {
             QIcon iconWatchonly = qvariant_cast<QIcon>(index.data(TransactionTableModel::WatchonlyDecorationRole));
             QRect watchonlyRect(boundingRect.right() + 5, mainRect.top() + ypad + halfheight, 16, halfheight);
             iconWatchonly.paint(painter, watchonlyRect);
+        }
+
+        QString amountText = BitcoinUnits::formatWithUnit(unit, amount, true, BitcoinUnits::separatorAlways);
+        if (!confirmed) {
+            amountText = QString("[") + amountText + QString("]");
         }
 
         if(fConflicted) { // No need to check anything else for conflicted transactions
@@ -95,15 +100,12 @@ public:
         } else {
             foreground = COLOR_BLACK;
         }
+
         painter->setPen(foreground);
-        QString amountText = BitcoinUnits::formatWithUnit(unit, amount, true, BitcoinUnits::separatorAlways);
-        if (!confirmed) {
-            amountText = QString("[") + amountText + QString("]");
-        }
 		painter->setFont(QFont("Roboto", 10, QFont::Bold));
         painter->drawText(amountRect, Qt::AlignRight | Qt::AlignVCenter, amountText);
-		painter->setFont(QFont("Roboto", 10, QFont::Medium));
 
+		painter->setFont(QFont("Roboto", 10, QFont::Medium));
         painter->setPen(COLOR_BLACK);
         painter->drawText(amountRect, Qt::AlignLeft | Qt::AlignVCenter, GUIUtil::dateTimeStr(date));
 
@@ -204,11 +206,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentWatchImmatureBalance = watchImmatureBalance;
 
 
-    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, ((balance - immatureBalance) <= 0 ? 0 : balance - immatureBalance), false, BitcoinUnits::separatorAlways));
     ui->labelzBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
-    ui->labelTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance + unconfirmedBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance + unconfirmedBalance + immatureBalance, false, BitcoinUnits::separatorAlways));
 
     // Watchonly labels
     ui->labelWatchAvailable->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchOnlyBalance, false, BitcoinUnits::separatorAlways));
@@ -241,9 +243,9 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelzBWKPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
-    QString automintHelp = tr("Current percentage of zBWK.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
+    QString automintHelp = tr("Current percentage of zBWK.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 0%).\n");
     bool fEnableZeromint = GetBoolArg("-enablezeromint", false);
-    int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
+    int nZeromintPercentage = GetArg("-zeromintpercentage", 00);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
         automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in bulwark.conf.");
@@ -274,12 +276,19 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
 void OverviewPage::on_toggleStaking_clicked()
 {
-	if (walletModel->getEncryptionStatus() == WalletModel::Locked) {
-		WalletModel::UnlockContext ctx(walletModel->requestUnlock(false));
+	if (masternodeSync.IsSynced()) {
+		if (walletModel->getEncryptionStatus() == WalletModel::Locked) {
+			WalletModel::UnlockContext ctx(walletModel->requestUnlock(false));
+		}
+		else {
+			QMessageBox::information(this, tr("Staking Status"),
+				tr("Staking is already enabled."),
+				QMessageBox::Ok, QMessageBox::Ok);
+		}
 	}
 	else {
-		QMessageBox::information(this, tr("Staking"),
-			tr("Staking is already enabled"),
+		QMessageBox::information(this, tr("Staking Status"),
+			tr("Please wait for your wallet to synchronize before you enable staking."),
 			QMessageBox::Ok, QMessageBox::Ok);
 	}
 }

@@ -3056,7 +3056,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
 {
     int nZerocoinStart = GetZerocoinStartHeight();
     if (nZerocoinStart == 0) return false;
-    // PIVX: recalculate Accumulator Checkpoints that failed to database properly
+    // Bulwark: recalculate Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty() && chainActive.Height() >= nZerocoinStart) {
         //uiInterface.InitMessage(_("Calculating missing accumulators..."));
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -5830,7 +5830,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // PIVX: We use certain sporks during IBD, so check to see if they are
+        // Bulwark: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         if (!pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
             !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&
