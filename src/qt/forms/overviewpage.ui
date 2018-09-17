@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>978</width>
+    <width>1078</width>
     <height>841</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>960</width>
+    <width>1060</width>
     <height>682</height>
    </size>
   </property>
@@ -27,7 +27,7 @@
     <widget class="QFrame" name="frame_BG">
      <property name="minimumSize">
       <size>
-       <width>850</width>
+       <width>960</width>
        <height>610</height>
       </size>
      </property>
@@ -1102,6 +1102,12 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
                </item>
                <item>
                 <widget class="QListView" name="listTransactions">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>100</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="minimumSize">
                   <size>
                    <width>500</width>
