@@ -32,7 +32,6 @@ bool CMasternodeSync::IsSynced()
 
 bool CMasternodeSync::IsBlockchainSynced()
 {
-    return true; // TODO: remove
     static bool fBlockchainSynced = false;
     static int64_t lastProcess = GetTime();
 
