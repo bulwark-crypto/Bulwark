@@ -1104,7 +1104,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
                 <widget class="QListView" name="listTransactions">
                  <property name="minimumSize">
                   <size>
-                   <width>400</width>
+                   <width>500</width>
                    <height>0</height>
                   </size>
                  </property>
