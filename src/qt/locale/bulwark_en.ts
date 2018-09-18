@@ -2419,7 +2419,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     </message>
     <message>
         <location line="-133"/>
-        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
