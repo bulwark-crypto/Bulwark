@@ -532,7 +532,7 @@
                     <item row="4" column="0">
                      <widget class="QLabel" name="labelzBalanceMatureText">
                       <property name="toolTip">
-                       <string>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
+                       <string>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
 These zBWK are spendable.</string>
                       </property>
                       <property name="text">
@@ -610,7 +610,7 @@ These zBWK are spendable.</string>
                        </font>
                       </property>
                       <property name="toolTip">
-                       <string>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
+                       <string>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
 These zBWK are spendable.</string>
                       </property>
                       <property name="text">
@@ -625,7 +625,7 @@ These zBWK are spendable.</string>
                      <widget class="QLabel" name="labelzBalanceUnconfirmedText">
                       <property name="toolTip">
                        <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                       </property>
                       <property name="text">
                        <string>Unconfirmed:</string>
@@ -642,7 +642,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
                       </property>
                       <property name="toolTip">
                        <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                       </property>
                       <property name="text">
                        <string>0.000 000 00 BWK</string>
@@ -669,7 +669,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
                      <widget class="QLabel" name="labelzBalanceImmatureText">
                       <property name="toolTip">
                        <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                       </property>
                       <property name="text">
                        <string>Immature:</string>
@@ -686,7 +686,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
                       </property>
                       <property name="toolTip">
                        <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                       </property>
                       <property name="text">
                        <string>0.000 000 00 BWK</string>

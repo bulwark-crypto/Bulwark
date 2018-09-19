@@ -2765,7 +2765,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     <message>
         <location line="+14"/>
         <location line="+104"/>
-        <source>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
 These zBWK are spendable.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2786,7 +2786,7 @@ These zBWK are spendable.</source>
         <location line="+27"/>
         <location line="+17"/>
         <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</source>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3116,7 +3116,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
         <location line="+16"/>
         <source>Available (mature and spendable) zBWK for spending
 
-zBWK are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+zBWK are mature when they have more than 20 confirmations AND more than 1 mint of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3241,7 +3241,7 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
         <location line="+53"/>
         <location line="+53"/>
         <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</source>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
