@@ -135,7 +135,7 @@
          <item>
           <widget class="QLabel" name="percentage_label">
            <property name="toolTip">
-            <string>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</string>
+            <string>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol</string>
            </property>
            <property name="text">
             <string>Percentage of autominted zBWK</string>
@@ -145,7 +145,7 @@
          <item>
           <widget class="QSpinBox" name="zeromintPercentage">
            <property name="minimum">
-            <number>10</number>
+            <number>0</number>
            </property>
            <property name="maximum">
             <number>100</number>

@@ -4212,11 +4212,11 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
     // Version 4 header must be used when SPORK_21_ENABLE_ZEROCOIN is activated. And never before.
     if (block.GetBlockTime() > GetSporkValue(SPORK_21_ENABLE_ZEROCOIN)) {
         if (block.nVersion < Params().Zerocoin_HeaderVersion())
-            return state.DoS(50, error("CheckBlockHeader() : block version must be above 4 after SPORK_20"),
+            return state.DoS(50, error("CheckBlockHeader() : block version must be above 4 after SPORK_21"),
             REJECT_INVALID, "block-version");
     } else {
         if (block.nVersion >= Params().Zerocoin_HeaderVersion())
-            return state.DoS(50, error("CheckBlockHeader() : block version must be below 4 before SPORK_20"),
+            return state.DoS(50, error("CheckBlockHeader() : block version must be below 4 before SPORK_21"),
             REJECT_INVALID, "block-version");
     }
 

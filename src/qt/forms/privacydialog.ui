@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>991</width>
+    <width>1078</width>
     <height>737</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>960</width>
+    <width>1060</width>
     <height>0</height>
    </size>
   </property>
@@ -625,7 +625,7 @@
                           <property name="toolTip">
                            <string>Available (mature and spendable) zBWK for spending
 
-zBWK are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zBWK are mature when they have more than 20 confirmations AND more than 1 mint of the same denomination after them were minted</string>
                           </property>
                           <property name="text">
                            <string>0 zBWK</string>
@@ -1091,7 +1091,7 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1144,7 +1144,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1197,7 +1197,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1250,7 +1250,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1303,7 +1303,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1356,7 +1356,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>
@@ -1409,7 +1409,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                           </property>
                           <property name="toolTip">
                            <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 2 mints of the same denomination after it was minted</string>
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</string>
                           </property>
                           <property name="text">
                            <string>0 x</string>

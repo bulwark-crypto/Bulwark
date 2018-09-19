@@ -1711,8 +1711,8 @@ https://www.transifex.com/pivx-project/pivx-project-translations</translation>
         <translation>Port mit UPnP mappen</translation>
     </message>
     <message>
-        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Anteil des einkommenden BWK, welcher automatisch zu zBWK via Zerocoin Protokoll konvertiert wird (min: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol</source>
+        <translation>Anteil des einkommenden BWK, welcher automatisch zu zBWK via Zerocoin Protokoll konvertiert wird</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>

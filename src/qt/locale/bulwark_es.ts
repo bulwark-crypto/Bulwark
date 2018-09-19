@@ -1700,8 +1700,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Mapear un puerto utilizando UPnP</translation>
     </message>
     <message>
-        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Porcentaje de BWKs entrantes que serán automáticamente convertidos a zBWK a través del Protocolo Zerocoin (mín: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol</source>
+        <translation>Porcentaje de BWKs entrantes que serán automáticamente convertidos a zBWK a través del Protocolo Zerocoin</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>

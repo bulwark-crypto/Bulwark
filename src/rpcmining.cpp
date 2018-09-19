@@ -334,9 +334,7 @@ static UniValue BIP22ValidationResult(const CValidationState& state)
 UniValue getblocktemplate(const UniValue& params, bool fHelp)
 {
     int lastPoWBlock = IsSporkActive(SPORK_19_POW_ROLLBACK) ? Params().LAST_POW_BLOCK_OLD() : Params().LAST_POW_BLOCK();
-    if (chainActive.Tip()->nHeight >= lastPoWBlock)
-        throw JSONRPCError(RPC_GBT_POS_ERROR, "No mining during Proof-of-Stake");
-        
+
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getblocktemplate ( \"jsonrequestobject\" )\n"
@@ -402,6 +400,9 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
 
             "\nExamples:\n" +
             HelpExampleCli("getblocktemplate", "") + HelpExampleRpc("getblocktemplate", ""));
+
+    if (chainActive.Tip()->nHeight >= lastPoWBlock)
+        throw JSONRPCError(RPC_GBT_POS_ERROR, "No mining during Proof-of-Stake");
 
     std::string strMode = "template";
     UniValue lpval = NullUniValue;
