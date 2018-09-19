@@ -163,9 +163,7 @@ void PrivacyDialog::on_pushButtonMintzBWK_clicked()
     }
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_22_ZEROCOIN_MAINTENANCE_MODE)) {
-        QMessageBox::information(this, tr("Mint Zerocoin"),
-                                 tr("zBWK is currently undergoing maintenance."), QMessageBox::Ok,
-                                 QMessageBox::Ok);
+        QMessageBox::information(this, tr("Mint Zerocoin"), tr("zBWK is currently undergoing maintenance."), QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
 
@@ -671,7 +669,7 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
     if (walletModel) {
         nLockedBalance = walletModel->getLockedBalance();
     }
-
+    
     CAmount bwkBalance = balance - (immatureBalance + nLockedBalance);
     if (bwkBalance < 0) bwkBalance = 0;
 
