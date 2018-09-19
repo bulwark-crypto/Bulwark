@@ -2717,7 +2717,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
     <message>
         <location line="+7"/>
         <source>Current percentage of zBWK.
-If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</source>
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2808,7 +2808,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+93"/>
         <source>Current percentage of zBWK.
-If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage.
 </source>
         <translation type="unfinished"></translation>
     </message>
