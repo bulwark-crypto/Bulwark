@@ -573,7 +573,7 @@ QDialog#RPCConsole QLineEdit#lineEdit {
 QDialog#RPCConsole QtMaterialFlatButton#clearButton {
 	background-color: transparent;
 	padding-left: 10px;
-	padding-right: 10px
+	padding-right: 10px;
 }
 QDialog#RPCConsole .QGroupBox #line {
 	background-color: #0091ea

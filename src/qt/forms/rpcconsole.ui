@@ -405,9 +405,9 @@
           <widget class="QtMaterialFlatButton" name="clearButton" native="true">
            <property name="maximumSize">
             <size>
-             <width>24</width>
+             <width>68</width>
              <height>24</height>
-            </size>
+            </size> 
            </property>
            <property name="toolTip">
             <string>Clear console</string>
