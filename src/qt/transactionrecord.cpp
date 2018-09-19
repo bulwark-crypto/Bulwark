@@ -24,6 +24,7 @@ bool TransactionRecord::showTransaction(const CWalletTx& wtx)
         if (!wtx.IsInMainChain()) {
             return false;
         }
+        return true;
     }
 	else {
 		QSettings settings;
