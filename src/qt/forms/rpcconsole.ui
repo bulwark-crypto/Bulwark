@@ -413,11 +413,7 @@
             <string>Clear console</string>
            </property>
            <property name="text" stdset="0">
-            <string/>
-           </property>
-           <property name="icon" stdset="0">
-            <iconset resource="../bulwark.qrc">
-             <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+            <string>Clear</string>
            </property>
            <property name="shortcut" stdset="0">
             <string notr="true">Ctrl+L</string>
