@@ -31,8 +31,8 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->setupUi(this);
 
     // "Spending 999999 zBWK ought to be enough for anybody." - Bill Gates, 2017
-    ui->zBWKpayAmount->setValidator( new QDoubleValidator(0.0, 21000000.0, 20, this) );
-    ui->labelMintAmountValue->setValidator( new QIntValidator(0, 999999, this) );
+    ui->zBWKpayAmount->setValidator(new QDoubleValidator(0.0, 21000000.0, 20, this));
+    ui->labelMintAmountValue->setValidator(new QIntValidator(0, 999999, this));
 
     // Default texts for (mini-) coincontrol
     ui->labelCoinControlQuantity->setText (tr("Coins automatically selected"));
@@ -672,15 +672,17 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
         nLockedBalance = walletModel->getLockedBalance();
     }
 
+    CAmount bwkBalance = balance - (immatureBalance + nLockedBalance);
+    if (bwkBalance < 0) bwkBalance = 0;
+
     ui->labelzAvailableAmount->setText(QString::number(zerocoinBalance/COIN) + QString(" zBWK "));
     ui->labelzAvailableAmount_2->setText(QString::number(matureZerocoinBalance/COIN) + QString(" zBWK "));
-    CAmount availableAmount = (balance - immatureBalance - nLockedBalance) <= 0 ? 0 : balance - immatureBalance - nLockedBalance;
-    ui->labelzBWKAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, availableAmount, false, BitcoinUnits::separatorAlways));
+    ui->labelzBWKAmountValue->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, bwkBalance, false, BitcoinUnits::separatorAlways));
 
     // Display AutoMint status
     QString strAutomintStatus = tr("AutoMint Status:");
 
-    if (pwalletMain->isZeromintEnabled ()) {
+    if (pwalletMain->isZeromintEnabled()) {
        strAutomintStatus += tr(" <b>enabled</b>.");
     }
     else {
