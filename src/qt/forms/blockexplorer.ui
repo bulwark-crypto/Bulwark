@@ -31,10 +31,6 @@
         <property name="text">
          <string>Back</string>
         </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/icons/back</normaloff>:/icons/back</iconset>
-        </property>
         <property name="flat">
          <bool>false</bool>
         </property>
@@ -44,10 +40,6 @@
        <widget class="QtMaterialFlatButton" name="forward">
         <property name="text">
          <string>Forward</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>:/icons/forward</normaloff>:/icons/forward</iconset>
         </property>
        </widget>
       </item>
