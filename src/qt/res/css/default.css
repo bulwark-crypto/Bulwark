@@ -426,7 +426,7 @@ QDialog .QTabWidget QTabBar::tab:last {
 QDialog .QTabWidget QTabBar::tab:selected,
 QDialog .QTabWidget QTabBar::tab:hover {
 	background-color: #ffffff;
-	color: #333
+	color: #0091ea;
 }
 QDialog .QTabWidget .QWidget {
 	background-color: #fff;
