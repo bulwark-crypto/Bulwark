@@ -53,7 +53,7 @@ bool CMasternodeSync::IsBlockchainSynced()
     if (pindex == NULL) return false;
 
 
-    if (pindex->nTime + 60 * 60 < GetTime())
+    if ((pindex->nTime + 60 * 60) < GetTime() && Params().NetworkID() != CBaseChainParams::TESTNET)
         return false;
 
     fBlockchainSynced = true;
