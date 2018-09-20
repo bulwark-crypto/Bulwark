@@ -491,7 +491,9 @@ void PrivacyDialog::sendzBWK()
     strReturn += strStats;
 
     // Clear amount to avoid double spending when accidentally clicking twice
-    ui->zBWKpayAmount->setText ("0");
+    ui->zBWKpayAmount->setText("0");
+    ui->labelzBWKSelected_int->setText("0");
+    ui->labelQuantitySelected_int->setText("0");
 
     ui->TEMintStatus->setPlainText(strReturn);
     ui->TEMintStatus->repaint();
@@ -593,7 +595,7 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
             mapUnconfirmed.at(mint.GetDenomination())++;
         }
         else {
-            // After a denomination is confirmed it might still be immature because < 3 of the same denomination were minted after it
+            // After a denomination is confirmed it might still be immature because < 1 of the same denomination were minted after it
             CBlockIndex *pindex = chainActive[mint.GetHeight() + 1];
             int nHeight2CheckpointsDeep = nBestHeight - (nBestHeight % 10) - 20;
             int nMintsAdded = 0;

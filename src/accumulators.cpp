@@ -1,4 +1,5 @@
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -248,7 +249,7 @@ bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator
         return false;
     }
 
-    int nHeightMintAdded= mapBlockIndex[hashBlock]->nHeight;
+    int nHeightMintAdded = mapBlockIndex[hashBlock]->nHeight;
     uint256 nCheckpointBeforeMint = 0;
     CBlockIndex* pindex = chainActive[nHeightMintAdded];
     int nChanges = 0;
