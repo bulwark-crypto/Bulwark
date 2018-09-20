@@ -204,13 +204,13 @@ public:
         nStartMasternodePayments = 1511092620; 
 
         /** Zerocoin */
-        zerocoinModulus = "a37398af6de52a569aeefe4f5ffc489398fcc13b3a29a355a627e317a44b3865d0dec57fdc6e4f243b4464447ac56f66ff"
-            "1058220d837672aa8bb531ab3f2c3e1ae3f55d6e10563564c53bfbde748f6a2ad8e3396394326fedbed2e6593043b48e048762b69b306f96"
-            "029831711e401418f5b81ec69e7c0a9f7ac0366475efbcec0579d239c863f855a91a21e81bfbbcde108695e9c91064a8b372c67c90bc22f3"
-            "af9a5f35bd6ac07ad086751d30fe463cb923e86699586721b72c3556640155ea416ad69f2a1fbae2a83dfdb48e920a0d0d70fa326aedd375"
-            "8313ed98125f44daf5a279bccea061044a585a0e8acca02169c655e3afdb0b4464781db3bf0dc53293169315ed69ec2bb2e59715011ca55c"
-            "e01d08757f82c397a912557405d9211ec2df06b7f9650baa7c1ba1c747f96b3d3b9f4e145202338fbe397cfdb076d295e1c208d2cddded3e"
-            "9b156af23d944473a329b0d5fc1da8c877770adb85916405b3880bbd373aa8bfb295f615fe0cf605dce5303a504044f68b7c91c00299f1";
+        zerocoinModulus = "b2275261dcaa303374af30576c5f676c8c2f1596aae7814f932f08839d442a5b2f7eaac75ffe9481321cbaae1c48703eff"
+            "384222885cf9e07e3996fa36d25f0866a7f3834c2457b253b0bbbd0ec23036fcc6c84886cce4d6bcc917ce7fb40d3ffcc12984db02e55e4e"
+            "ccd205f7a239fe48ab27ea1124efa0a545ae434876b0b934ebcc54b03375c78bdbb1cde74c8e42048839e191f3986436f757c11d36b60942"
+            "f6b88f40acbcd4b36d82890e05b6e508192873dee5be51352e7215fbca7dfe30daac0efd8435426313557b1d193be3fa3be8c3c81f5501e0"
+            "52478afcfc1bd1f06ff429ecae3b682faa26bda5bb530fe1eca4d630fadc3b5d15e3d1feeeb161812894d3f17f497bb321c224f5419e30d2"
+            "b79511979fa41d24bc78c0aa18e12dc668b164841ce56bc8de5b7386cff2bb314b11094a4ad5661a7fd7b517181f8a999e61ddadc6936262"
+            "80b2692bc5b62bd328eb0b4c7d48b98942b0e6037add6568897f41adb825482057ae6224531047eef0cfd8f5510eb64e0610d83a1c7181";
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
         nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
@@ -301,14 +301,6 @@ public:
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
-        /** Zerocoin */
-        zerocoinModulus = "b2275261dcaa303374af30576c5f676c8c2f1596aae7814f932f08839d442a5b2f7eaac75ffe9481321cbaae1c48703eff"
-            "384222885cf9e07e3996fa36d25f0866a7f3834c2457b253b0bbbd0ec23036fcc6c84886cce4d6bcc917ce7fb40d3ffcc12984db02e55e4e"
-            "ccd205f7a239fe48ab27ea1124efa0a545ae434876b0b934ebcc54b03375c78bdbb1cde74c8e42048839e191f3986436f757c11d36b60942"
-            "f6b88f40acbcd4b36d82890e05b6e508192873dee5be51352e7215fbca7dfe30daac0efd8435426313557b1d193be3fa3be8c3c81f5501e0"
-            "52478afcfc1bd1f06ff429ecae3b682faa26bda5bb530fe1eca4d630fadc3b5d15e3d1feeeb161812894d3f17f497bb321c224f5419e30d2"
-            "b79511979fa41d24bc78c0aa18e12dc668b164841ce56bc8de5b7386cff2bb314b11094a4ad5661a7fd7b517181f8a999e61ddadc6936262"
-            "80b2692bc5b62bd328eb0b4c7d48b98942b0e6037add6568897f41adb825482057ae6224531047eef0cfd8f5510eb64e0610d83a1c7181";
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
