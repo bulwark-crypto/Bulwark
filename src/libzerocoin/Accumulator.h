@@ -10,6 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 #ifndef ACCUMULATOR_H_
 #define ACCUMULATOR_H_
 
@@ -144,7 +145,7 @@ public:
 	bool VerifyWitness(const Accumulator& a, const PublicCoin &publicCoin) const;
 
 	/**
-	 * Adds rhs to the set whose's accumulation ware proving coin is a member of
+	 * Adds rhs to the set whose's accumulation were proving coin is a member of
 	 * @param rhs the PublicCoin to add
 	 * @return
 	 */

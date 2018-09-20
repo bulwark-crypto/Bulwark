@@ -10,6 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 #include "AccumulatorProofOfKnowledge.h"
 #include "hash.h"
 
@@ -101,7 +102,8 @@ AccumulatorProofOfKnowledge::AccumulatorProofOfKnowledge(const AccumulatorAndPro
 	this->s_psi = r_psi + c*r*((e-1).inverse(params->accumulatorPoKCommitmentGroup.groupOrder));
 }
 
-/** Verifies that a commitment c is accumulated in accumulator a
+/** 
+ * Verifies that a commitment c is accumulated in accumulator a
  */
 bool AccumulatorProofOfKnowledge:: Verify(const Accumulator& a, const CBigNum& valueOfCommitmentToCoin) const {
 	CBigNum sg = params->accumulatorPoKCommitmentGroup.g;

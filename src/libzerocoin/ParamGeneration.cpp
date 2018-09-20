@@ -9,6 +9,7 @@
 /// \copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 /// \license    This project is released under the MIT license.
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 #include "ParamGeneration.h"
 #include <string>
 #include <cmath>
@@ -49,7 +50,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t security
 		throw std::runtime_error("Modulus must be at least 1023 bits");
 	}
 
-	// Verify that "securityLevel" is  at least 80 bits (minimum).
+	// Verify that "securityLevel" is at least 80 bits (minimum).
 	if (securityLevel < 80) {
 		throw std::runtime_error("Security level must be at least 80 bits.");
 	}
@@ -68,8 +69,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t security
 	// Calculate candidate parameters ("p", "q") for the coin commitment group
 	// using a deterministic process based on "N", the "aux" string, and
 	// the dedicated string "COMMITMENTGROUP".
-	params.coinCommitmentGroup = deriveIntegerGroupParams(calculateSeed(N, aux, securityLevel, STRING_COMMIT_GROUP),
-	                             pLen, qLen);
+	params.coinCommitmentGroup = deriveIntegerGroupParams(calculateSeed(N, aux, securityLevel, STRING_COMMIT_GROUP), pLen, qLen);
 
 	// Next, we derive parameters for a second Accumulated Value commitment group.
 	// This is a Schnorr group with the specific property that the order of the group
@@ -79,18 +79,15 @@ CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t security
 
 	// Calculate the parameters for the internal commitment
 	// using the same process.
-	params.accumulatorParams.accumulatorPoKCommitmentGroup = deriveIntegerGroupParams(calculateSeed(N, aux, securityLevel, STRING_AIC_GROUP),
-	        qLen + 300, qLen + 1);
+	params.accumulatorParams.accumulatorPoKCommitmentGroup = deriveIntegerGroupParams(calculateSeed(N, aux, securityLevel, STRING_AIC_GROUP), qLen + 300, qLen + 1);
 
 	// Calculate the parameters for the accumulator QRN commitment generators. This isn't really
 	// a whole group, just a pair of random generators in QR_N.
 	uint32_t resultCtr;
 	params.accumulatorParams.accumulatorQRNCommitmentGroup.g = generateIntegerFromSeed(NLen - 1,
-	        calculateSeed(N, aux, securityLevel, STRING_QRNCOMMIT_GROUPG),
-											 &resultCtr).pow_mod(CBigNum(2),N);
+	        calculateSeed(N, aux, securityLevel, STRING_QRNCOMMIT_GROUPG), &resultCtr).pow_mod(CBigNum(2),N);
 	params.accumulatorParams.accumulatorQRNCommitmentGroup.h = generateIntegerFromSeed(NLen - 1,
-	        calculateSeed(N, aux, securityLevel, STRING_QRNCOMMIT_GROUPH),
-											 &resultCtr).pow_mod(CBigNum(2), N);
+	        calculateSeed(N, aux, securityLevel, STRING_QRNCOMMIT_GROUPH), &resultCtr).pow_mod(CBigNum(2), N);
 
 	// Calculate the accumulator base, which we calculate as "u = C**2 mod N"
 	// where C is an arbitrary value. In the unlikely case that "u = 1" we increment

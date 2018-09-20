@@ -10,6 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 
 #include <sstream>
 #include <iostream>
@@ -115,7 +116,7 @@ void AccumulatorWitness::AddElement(const PublicCoin& c) {
 
 //warning check pubcoin value & denom outside of this function!
 void AccumulatorWitness::addRawValue(const CBigNum& bnValue) {
-        witness.increment(bnValue);
+    witness.increment(bnValue);
 }
 
 const CBigNum& AccumulatorWitness::getValue() const {

@@ -10,6 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 
 #ifndef COMMITMENT_H_
 #define COMMITMENT_H_
@@ -54,8 +55,8 @@ private:
 	}
 };
 
-/**Proof that two commitments open to the same value.
- *
+/**
+ * Proof that two commitments open to the same value.
  */
 class CommitmentProofOfKnowledge {
 public:
@@ -78,11 +79,14 @@ public:
 
 	const CBigNum calculateChallenge(const CBigNum& a, const CBigNum& b, const CBigNum &commitOne, const CBigNum &commitTwo) const;
 
-	/**Verifies the proof
+	/**
+	 * Verifies the proof
 	 *
 	 * @return true if the proof is valid.
 	 */
-	/**Verifies the proof of equality of the two commitments
+	// ? [oldschool]
+	/**
+	 * Verifies the proof of equality of the two commitments
 	 *
 	 * @param A value of commitment one
 	 * @param B value of commitment two

@@ -10,6 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 
 #ifndef COINSPEND_H_
 #define COINSPEND_H_
@@ -25,7 +26,8 @@
 
 namespace libzerocoin
 {
-/** The complete proof needed to spend a zerocoin.
+/** 
+ * The complete proof needed to spend a zerocoin.
  * Composes together a proof that a coin is accumulated
  * and that it has a given serial number.
  */
@@ -39,7 +41,8 @@ public:
     {
         strm >> *this;
     }
-    /**Generates a proof spending a zerocoin.
+    /**
+     * Generates a proof spending a zerocoin.
 	 *
 	 * To use this, provide an unspent PrivateCoin, the latest Accumulator
 	 * (e.g from the most recent Bitcoin block) containing the public part
@@ -64,25 +67,29 @@ public:
 	 */
     CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint32_t checksum, const AccumulatorWitness& witness, const uint256& ptxHash);
 
-    /** Returns the serial number of the coin spend by this proof.
+    /** 
+     * Returns the serial number of the coin spend by this proof.
 	 *
 	 * @return the coin's serial number
 	 */
     const CBigNum& getCoinSerialNumber() const { return this->coinSerialNumber; }
 
-    /**Gets the denomination of the coin spent in this proof.
+    /**
+     * Gets the denomination of the coin spent in this proof.
 	 *
 	 * @return the denomination
 	 */
     CoinDenomination getDenomination() const { return this->denomination; }
 
-    /**Gets the checksum of the accumulator used in this proof.
+    /**
+     * Gets the checksum of the accumulator used in this proof.
 	 *
 	 * @return the checksum
 	 */
     uint32_t getAccumulatorChecksum() const { return this->accChecksum; }
 
-    /**Gets the txout hash used in this proof.
+    /**
+     * Gets the txout hash used in this proof.
 	 *
 	 * @return the txout hash
 	 */

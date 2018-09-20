@@ -10,6 +10,7 @@
 * @license    This project is released under the MIT license.
 **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 
 #ifndef SERIALNUMBERPROOF_H_
 #define SERIALNUMBERPROOF_H_
@@ -28,14 +29,16 @@
 using namespace std;
 namespace libzerocoin {
 
-/**A Signature of knowledge on the hash of metadata attesting that the signer knows the values
+/**
+ * A Signature of knowledge on the hash of metadata attesting that the signer knows the values
  *  necessary to open a commitment which contains a coin(which it self is of course a commitment)
  * with a given serial number.
  */
 class SerialNumberSignatureOfKnowledge {
 public:
 	SerialNumberSignatureOfKnowledge(const ZerocoinParams* p);
-	/** Creates a Signature of knowledge object that a commitment to a coin contains a coin with serial number x
+	/** 
+	 * Creates a Signature of knowledge object that a commitment to a coin contains a coin with serial number x
 	 *
 	 * @param p params
 	 * @param coin the coin we are going to prove the serial number of.
@@ -44,7 +47,8 @@ public:
 	 */
 	SerialNumberSignatureOfKnowledge(const ZerocoinParams* p, const PrivateCoin& coin, const Commitment& commitmentToCoin, uint256 msghash);
 
-	/** Verifies the Signature of knowledge.
+	/** 
+	 * Verifies the Signature of knowledge.
 	 *
 	 * @param msghash hash of meta data to create a signature of knowledge on.
 	 * @return

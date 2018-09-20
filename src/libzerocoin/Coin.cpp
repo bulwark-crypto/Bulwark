@@ -11,6 +11,7 @@
  **/
 
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 #include <stdexcept>
 #include <iostream>
 #include "Coin.h"
@@ -36,10 +37,12 @@ PublicCoin::PublicCoin(const ZerocoinParams* p, const CBigNum& coin, const CoinD
 	}
 
 	denomination = d;
+	/* Do we need this? [oldschool]
 	for(const CoinDenomination denom : zerocoinDenomList) {
 		if(denom == d)
 			denomination = d;
 	}
+	*/
     if(denomination == 0){
 		std::cout << "denom does not exist\n";
 		throw std::runtime_error("Denomination does not exist");

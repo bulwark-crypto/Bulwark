@@ -10,6 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2018 The Bulwark Core Developers
 
 #ifndef ACCUMULATEPROOF_H_
 #define ACCUMULATEPROOF_H_
@@ -19,8 +20,8 @@
 
 namespace libzerocoin {
 
-/**A prove that a value insde the commitment commitmentToCoin is in an accumulator a.
- *
+/**
+ * A prove that a value insde the commitment commitmentToCoin is in an accumulator a.
  */
 class AccumulatorProofOfKnowledge {
 public:
