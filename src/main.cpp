@@ -1195,7 +1195,6 @@ bool BlockToPubcoinList(const CBlock& block, list<PublicCoin>& listPubcoins)
         if(!tx.IsZerocoinMint())
             continue;
 
-        uint256 txHash = tx.GetHash();
         for (unsigned int i = 0; i < tx.vout.size(); i++) {
             const CTxOut txOut = tx.vout[i];
             if(!txOut.scriptPubKey.IsZerocoinMint())
@@ -1220,7 +1219,6 @@ bool BlockToZerocoinMintList(const CBlock& block, std::list<CZerocoinMint>& vMin
         if(!tx.IsZerocoinMint())
             continue;
 
-        uint256 txHash = tx.GetHash();
         for (unsigned int i = 0; i < tx.vout.size(); i++) {
             const CTxOut txOut = tx.vout[i];
             if(!txOut.scriptPubKey.IsZerocoinMint())
