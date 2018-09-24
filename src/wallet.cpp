@@ -1759,9 +1759,25 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
     AvailableCoins(vCoins, true, NULL, false, STAKABLE_COINS);
     CAmount nAmountSelected = 0;
 
+    // On protocol change update the staking requirements.
+    CAmount nStakeAmount = 0;
+    int nStakeDepth = Params().COINBASE_MATURITY();
+    if (ActiveProtocol() >= Params().Stake_MinProtocol()) {
+        nStakeAmount = Params().Stake_MinAmount();
+        nStakeDepth = Params().Stake_MinConfirmations();
+    }
+
     BOOST_FOREACH (const COutput& out, vCoins) {
         //make sure not to outrun target amount
         if (nAmountSelected + out.tx->vout[out.i].nValue > nTargetAmount)
+            continue;
+        
+        //require a minimum amount to stake
+        if (out.tx->vout[out.i].nValue < nStakeAmount)
+            continue;
+
+        //check that it is matured
+        if (out.nDepth < (out.tx->IsCoinStake() ? nStakeDepth : 10))
             continue;
 
         //if zerocoinspend, then use the block time
@@ -1776,14 +1792,11 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
         if (GetAdjustedTime() - nTxTime < nStakeMinAge)
             continue;
 
-        //check that it is matured
-        if (out.nDepth < (out.tx->IsCoinStake() ? Params().COINBASE_MATURITY() : 10))
-            continue;
-
         //add to our stake set
         setCoins.insert(make_pair(out.tx, out.i));
         nAmountSelected += out.tx->vout[out.i].nValue;
     }
+
     return true;
 }
 

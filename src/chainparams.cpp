@@ -218,6 +218,11 @@ public:
         nDefaultSecurityLevel = 100; //full security level for accumulators
         nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+
+        /** Staking Requirements */
+        nStakeMinStartProtocol = 70840; // Starting protocol version (ActiveProtocol())
+        nStakeMinConfirmations = 475; // Required number of confirmations
+        nStakeMinAmount = 100 * COIN; // Minimum required staking amount
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -250,8 +255,8 @@ public:
 	    nTargetSpacingSlowLaunch = 1 * 15; // Kludgy but don't want to check for testnet each time in GetNextWorkRequired
 
         nLastPOWBlock = 200;
-        nLastPOWBlockOld = 1100;
-		nLastSeeSawBlock = 1200;
+        nLastPOWBlockOld = 500;
+		nLastSeeSawBlock = 200;
         nMaturity = 15;
         nMaxMoneyOut = 33284220 * COIN; // 2032 Maximum
         nRampToBlock = 100;
@@ -301,6 +306,11 @@ public:
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
+
+        /** Staking Requirements */
+        nStakeMinStartProtocol = 70840; // Starting protocol version (ActiveProtocol())
+        nStakeMinConfirmations = 30; // Required number of confirmations
+        nStakeMinAmount = 1000 * COIN; // Minimum required staking amount
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {

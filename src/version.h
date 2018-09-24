@@ -11,7 +11,6 @@
 /**
  * network protocol versioning
  */
-// [oldschool] FIX: updated protocol version.
 static const int PROTOCOL_VERSION = 70840;
 
 //! initial proto version, to be increased after version/verack negotiation

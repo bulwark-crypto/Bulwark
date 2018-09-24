@@ -115,6 +115,11 @@ public:
     int ModifierUpgradeBlock() const { return nModifierUpdateBlock; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
 
+    /** Staking Requirements */
+    int Stake_MinProtocol() const { return nStakeMinStartProtocol; }
+    int Stake_MinConfirmations() const { return nStakeMinConfirmations; }
+    CAmount Stake_MinAmount() const { return nStakeMinAmount; }
+
 protected:
     CChainParams() {}
 
@@ -166,6 +171,11 @@ protected:
     int nDefaultSecurityLevel;
     int nZerocoinHeaderVersion;
     int64_t nBudget_Fee_Confirmations;
+
+    /** Staking Requirements */
+    int nStakeMinStartProtocol;
+    int nStakeMinConfirmations;
+    CAmount nStakeMinAmount;
 };
 
 /**
