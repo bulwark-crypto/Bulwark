@@ -270,8 +270,8 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1536460262;
         genesis.nNonce = 1578878;
-        genesis.nBits = bnProofOfWorkLimit.GetCompact();
-
+        genesis.nBits = 504365055;
+        
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000008d726e385c69b0ccc259ab5742eadd2978e13edbafd24940a300b98a47a"));
         assert(genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f"));
