@@ -593,22 +593,22 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
         if (!mint.GetHeight() || chainActive.Height() - mint.GetHeight() <= Params().Zerocoin_MintRequiredConfirmations()) {
             // All unconfirmed denominations
             mapUnconfirmed.at(mint.GetDenomination())++;
+            continue;
         }
-        else {
-            // After a denomination is confirmed it might still be immature because < 1 of the same denomination were minted after it
-            CBlockIndex *pindex = chainActive[mint.GetHeight() + 1];
-            int nHeight2CheckpointsDeep = nBestHeight - (nBestHeight % 10) - 20;
-            int nMintsAdded = 0;
-            while (pindex->nHeight < nHeight2CheckpointsDeep) { //at least 2 checkpoints from the top block
-                nMintsAdded += count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), mint.GetDenomination());
-                if (nMintsAdded >= Params().Zerocoin_RequiredAccumulation())
-                    break;
-                pindex = chainActive[pindex->nHeight + 1];
-            }
-            if (nMintsAdded < Params().Zerocoin_RequiredAccumulation()){
-                // Immature denominations
-                mapImmature.at(mint.GetDenomination())++;
-            }
+        
+        // After a denomination is confirmed it might still be immature because < 1 of the same denomination were minted after it
+        CBlockIndex *pindex = chainActive[mint.GetHeight() + 1];
+        int nHeight2CheckpointsDeep = nBestHeight - (nBestHeight % 10) - 20;
+        int nMintsAdded = 0;
+        while (pindex->nHeight < nHeight2CheckpointsDeep) { //at least 2 checkpoints from the top block
+            nMintsAdded += count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), mint.GetDenomination());
+            if (nMintsAdded >= Params().Zerocoin_RequiredAccumulation())
+                break;
+            pindex = chainActive[pindex->nHeight + 1];
+        }
+        if (nMintsAdded < Params().Zerocoin_RequiredAccumulation()){
+            // Immature denominations
+            mapImmature.at(mint.GetDenomination())++;
         }
     }
 
