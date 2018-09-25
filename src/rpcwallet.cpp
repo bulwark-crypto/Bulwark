@@ -1993,7 +1993,7 @@ UniValue setstakesplitthreshold(const UniValue& params, bool fHelp)
             "\nThis will set the output size of your stakes to never be below this number\n"
 
             "\nArguments:\n"
-            "1. value   (numeric, required) Threshold value between 1 and 999999\n"
+            "1. value   (numeric, required) Threshold value between 100 and 999999\n"
             "\nResult:\n"
             "{\n"
             "  \"threshold\": n,    (numeric) Threshold value set\n"
@@ -2005,8 +2005,8 @@ UniValue setstakesplitthreshold(const UniValue& params, bool fHelp)
     uint64_t nStakeSplitThreshold = params[0].get_int();
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Unlock wallet to use this feature");
-    if (nStakeSplitThreshold > 999999)
-        throw runtime_error("Value out of range, max allowed is 999999");
+    if (nStakeSplitThreshold < 100 || nStakeSplitThreshold > 999999)
+        throw runtime_error("Value out of range, min allowed is 100 and max allowed is 999999");
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     LOCK(pwalletMain->cs_wallet);
