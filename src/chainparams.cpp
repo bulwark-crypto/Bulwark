@@ -268,12 +268,12 @@ public:
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1537896084;
-        genesis.nNonce = 338212;
+        genesis.nTime = 1537896085;
+        genesis.nNonce = 243925;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();
         
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000d65c91307ee789f49c4ca925123bb567a7f0682754f9005caa317979519"));
+        assert(hashGenesisBlock == uint256("0x0000037f7d3882f2f2f70f685c04b72640ae9467e3c1180e422ddcfd6e79dc21"));
         assert(genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f"));
 
         vFixedSeeds.clear();
@@ -310,7 +310,7 @@ public:
         /** Staking Requirements */
         nStakeMinStartProtocol = 70840; // Starting protocol version (ActiveProtocol())
         nStakeMinConfirmations = 30; // Required number of confirmations
-        nStakeMinAmount = 100 * COIN; // Minimum required staking amount
+        nStakeMinAmount = 500 * COIN; // Minimum required staking amount
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
