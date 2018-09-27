@@ -322,6 +322,16 @@ void PrivacyDialog::sendzBWK()
 {
     QSettings settings;
 
+    // Double is allowed now
+    double dAmount = ui->zBWKpayAmount->text().toDouble();
+    CAmount nAmount = roundint64(dAmount* COIN);
+
+    // If we don't have a balance then post an error.
+    if (nAmount <= 0) {
+        QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid balance amount."), QMessageBox::Ok, QMessageBox::Ok);
+        return;
+    }
+
     // Handle 'Pay To' address options
     CBitcoinAddress address(ui->payTo->text().toStdString());
     if(ui->payTo->text().isEmpty()){
@@ -334,10 +344,6 @@ void PrivacyDialog::sendzBWK()
             return;
         }
     }
-
-    // Double is allowed now
-    double dAmount = ui->zBWKpayAmount->text().toDouble();
-    CAmount nAmount = roundint64(dAmount* COIN);
 
     // Check amount validity
     if (!MoneyRange(nAmount) || nAmount <= 0.0) {

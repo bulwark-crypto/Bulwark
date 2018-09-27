@@ -431,9 +431,15 @@ void SendCoinsDialog::clear()
     while (ui->entries->count()) {
         ui->entries->takeAt(0)->widget()->deleteLater();
     }
-    addEntry();
+    addEntry(); 
 
     updateTabsAndLabels();
+
+    // Clear utxo and change address.
+    ui->checkBoxCoinControlChange->setCheckState(Qt::Unchecked);
+    ui->lineEditCoinControlChange->setText("");
+    ui->splitBlockCheckBox->setCheckState(Qt::Unchecked);
+    ui->splitBlockLineEdit->setText("");
 }
 
 void SendCoinsDialog::reject()
