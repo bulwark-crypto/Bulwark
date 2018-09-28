@@ -239,22 +239,6 @@
                           </property>
                          </spacer>
                         </item>
-                        <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonSpentReset" native="true">
-                          <property name="maximumSize">
-                           <size>
-                            <width>80</width>
-                            <height>16777215</height>
-                           </size>
-                          </property>
-                          <property name="toolTip">
-                           <string>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</string>
-                          </property>
-                          <property name="text" stdset="0">
-                           <string>Reset</string>
-                          </property>
-                         </widget>
-                        </item>
                        </layout>
                       </item>
                       <item>
@@ -416,22 +400,6 @@
                            </size>
                           </property>
                          </spacer>
-                        </item>
-                        <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonMintReset" native="true">
-                          <property name="maximumSize">
-                           <size>
-                            <width>80</width>
-                            <height>16777215</height>
-                           </size>
-                          </property>
-                          <property name="toolTip">
-                           <string>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</string>
-                          </property>
-                          <property name="text" stdset="0">
-                           <string>ReScan</string>
-                          </property>
-                         </widget>
                         </item>
                        </layout>
                       </item>
