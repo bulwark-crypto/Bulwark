@@ -221,7 +221,7 @@ public:
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
 
         /** Staking Requirements */
-        nStakeMinStartProtocol = 70840; // Starting protocol version (ActiveProtocol())
+        nStakeMinStartProtocol = 70850; // Starting protocol version (ActiveProtocol())
         nStakeMinConfirmations = 475; // Required number of confirmations
         nStakeMinAmount = 100 * COIN; // Minimum required staking amount
     }
@@ -309,7 +309,7 @@ public:
                                        // here because we only have a 8 block finalization window on testnet
 
         /** Staking Requirements */
-        nStakeMinStartProtocol = 70840; // Starting protocol version (ActiveProtocol())
+        nStakeMinStartProtocol = 70850; // Starting protocol version (ActiveProtocol())
         nStakeMinConfirmations = 30; // Required number of confirmations
         nStakeMinAmount = 500 * COIN; // Minimum required staking amount
     }
