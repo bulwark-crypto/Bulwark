@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2015-2017 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -641,7 +642,10 @@ public:
 	static void DumpBanlist();
     static bool Unban(const CNetAddr& ip);
     static bool Unban(const CSubNet& subNet);
-    static void GetBanned(banmap_t &banMap);
+    static bool BannedIsDirty();
+    static void GetBanned(banmap_t &banmap);
+    static void SetBanned(const banmap_t &banmap);
+    static void SetBannedIsDirty(bool dirty=true);
     void copyStats(CNodeStats& stats);
 	//!clean unused entries (if bantime has expired)
 	static void SweepBanned();

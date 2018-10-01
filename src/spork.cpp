@@ -1,5 +1,8 @@
-
-
+// Copyright (c) 2014-2016 The Dash developers
+// Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2017-2018 The Bulwark developers
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "spork.h"
 #include "base58.h"
@@ -9,6 +12,7 @@
 #include "net.h"
 #include "protocol.h"
 #include "sync.h"
+#include "sporkdb.h"
 #include "util.h"
 #include <boost/lexical_cast.hpp>
 
@@ -23,6 +27,36 @@ CSporkManager sporkManager;
 std::map<uint256, CSporkMessage> mapSporks;
 std::map<int, CSporkMessage> mapSporksActive;
 
+// Bulwark: on startup load spork values from previous session if they exist in the sporkDB
+void LoadSporksFromDB()
+{
+    for (int i = SPORK_START; i <= SPORK_END; ++i) {
+        // Since not all spork IDs are in use, we have to exclude undefined IDs
+        std::string strSpork = sporkManager.GetSporkNameByID(i);
+        if (strSpork == "Unknown") continue;
+
+        // attempt to read spork from sporkDB
+        CSporkMessage spork;
+        if (!pSporkDB->ReadSpork(i, spork)) {
+            LogPrintf("%s : no previous value for %s found in database\n", __func__, strSpork);
+            continue;
+        }
+
+        // add spork to memory
+        mapSporks[spork.GetHash()] = spork;
+        mapSporksActive[spork.nSporkID] = spork;
+        std::time_t result = spork.nValue;
+        // If SPORK Value is greater than 1,000,000 assume it's actually a Date and then convert to a more readable format
+        if (spork.nValue > 1000000) {
+            LogPrintf("%s : loaded spork %s with value %d : %s", __func__,
+                      sporkManager.GetSporkNameByID(spork.nSporkID), spork.nValue,
+                      std::ctime(&result));
+        } else {
+            LogPrintf("%s : loaded spork %s with value %d\n", __func__,
+                      sporkManager.GetSporkNameByID(spork.nSporkID), spork.nValue);
+        }
+    }
+}
 
 void ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
@@ -35,6 +69,10 @@ void ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
         vRecv >> spork;
 
         if (chainActive.Tip() == NULL) return;
+
+        // Ignore spork messages about unknown/deleted sporks
+        std::string strSpork = sporkManager.GetSporkNameByID(spork.nSporkID);
+        if (strSpork == "Unknown") return;
 
         uint256 hash = spork.GetHash();
         if (mapSporksActive.count(spork.nSporkID)) {
@@ -60,6 +98,9 @@ void ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 
         //does a task if needed
         ExecuteSpork(spork.nSporkID, spork.nValue);
+
+        // Bulwark: add to spork database.
+        pSporkDB->WriteSpork(spork.nSporkID, spork);
     }
     if (strCommand == "getsporks") {
         std::map<int, CSporkMessage>::iterator it = mapSporksActive.begin();
@@ -70,40 +111,6 @@ void ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
         }
     }
 }
-
-// grab the spork, otherwise say it's off
-bool IsSporkActive(int nSporkID)
-{
-    int64_t r = -1;
-
-    if (mapSporksActive.count(nSporkID)) {
-        r = mapSporksActive[nSporkID].nValue;
-    } else {
-        if (nSporkID == SPORK_2_SWIFTTX) r = SPORK_2_SWIFTTX_DEFAULT;
-        if (nSporkID == SPORK_3_SWIFTTX_BLOCK_FILTERING) r = SPORK_3_SWIFTTX_BLOCK_FILTERING_DEFAULT;
-        if (nSporkID == SPORK_5_MAX_VALUE) r = SPORK_5_MAX_VALUE_DEFAULT;
-        if (nSporkID == SPORK_7_MASTERNODE_SCANNING) r = SPORK_7_MASTERNODE_SCANNING_DEFAULT;
-        if (nSporkID == SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT) r = SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT;
-        if (nSporkID == SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT) r = SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT_DEFAULT;
-        if (nSporkID == SPORK_10_MASTERNODE_PAY_UPDATED_NODES) r = SPORK_10_MASTERNODE_PAY_UPDATED_NODES_DEFAULT;
-        if (nSporkID == SPORK_11_RESET_BUDGET) r = SPORK_11_RESET_BUDGET_DEFAULT;
-        if (nSporkID == SPORK_12_RECONSIDER_BLOCKS) r = SPORK_12_RECONSIDER_BLOCKS_DEFAULT;
-        if (nSporkID == SPORK_13_ENABLE_SUPERBLOCKS) r = SPORK_13_ENABLE_SUPERBLOCKS_DEFAULT;
-        if (nSporkID == SPORK_14_NEW_PROTOCOL_ENFORCEMENT) r = SPORK_14_NEW_PROTOCOL_ENFORCEMENT_DEFAULT;
-        if (nSporkID == SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) r = SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2_DEFAULT;
-        if (nSporkID == SPORK_16_MN_WINNER_MINIMUM_AGE) r = SPORK_16_MN_WINNER_MINIMUM_AGE_DEFAULT;
-        if (nSporkID == SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3) r = SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3_DEFAULT;
-        if (nSporkID == SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4) r = SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4_DEFAULT;
-        if (nSporkID == SPORK_19_POW_ROLLBACK) r = SPORK_19_POW_ROLLBACK_DEFAULT;
-        if (nSporkID == SPORK_20_NEW_PROTOCOL_DYNAMIC) r = SPORK_20_NEW_PROTOCOL_DYNAMIC_DEFAULT;
-
-        if (r == -1) LogPrintf("GetSpork::Unknown Spork %d\n", nSporkID);
-    }
-    if (r == -1) r = 4070908800; //return 2099-1-1 by default
-
-    return r < GetTime();
-}
-
 // grab the value of the spork on the network, or the default
 int64_t GetSporkValue(int nSporkID)
 {
@@ -129,11 +136,21 @@ int64_t GetSporkValue(int nSporkID)
         if (nSporkID == SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4) r = SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4_DEFAULT;
         if (nSporkID == SPORK_19_POW_ROLLBACK) r = SPORK_19_POW_ROLLBACK_DEFAULT;
         if (nSporkID == SPORK_20_NEW_PROTOCOL_DYNAMIC) r = SPORK_20_NEW_PROTOCOL_DYNAMIC_DEFAULT;
+        if (nSporkID == SPORK_21_ENABLE_ZEROCOIN) r = SPORK_21_ENABLE_ZEROCOIN_DEFAULT;
+        if (nSporkID == SPORK_22_ZEROCOIN_MAINTENANCE_MODE) r = SPORK_22_ZEROCOIN_MAINTENANCE_MODE_DEFAULT;
 
         if (r == -1) LogPrintf("GetSpork::Unknown Spork %d\n", nSporkID);
     }
 
     return r;
+}
+
+// grab the spork value, and see if it's off
+bool IsSporkActive(int nSporkID)
+{
+    int64_t r = GetSporkValue(nSporkID);
+    if (r == -1) return false;
+    return r < GetTime();
 }
 
 void ExecuteSpork(int nSporkID, int nValue)
@@ -181,19 +198,17 @@ void ReprocessBlocks(int nBlocks)
     }
 }
 
-
 bool CSporkManager::CheckSignature(CSporkMessage& spork)
 {
     //note: need to investigate why this is failing
     std::string strMessage = boost::lexical_cast<std::string>(spork.nSporkID) + boost::lexical_cast<std::string>(spork.nValue) + boost::lexical_cast<std::string>(spork.nTimeSigned);
-    CPubKey pubkey(ParseHex(Params().SporkKey()));
-
+    CPubKey pubkeynew(ParseHex(Params().SporkKey()));
     std::string errorMessage = "";
-    if (!obfuScationSigner.VerifyMessage(pubkey, spork.vchSig, strMessage, errorMessage)) {
-        return false;
+    if (obfuScationSigner.VerifyMessage(pubkeynew, spork.vchSig, strMessage, errorMessage)) {
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 bool CSporkManager::Sign(CSporkMessage& spork)
@@ -281,9 +296,11 @@ int CSporkManager::GetSporkIDByName(std::string strName)
     if (strName == "SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4") return SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4;
     if (strName == "SPORK_19_POW_ROLLBACK") return SPORK_19_POW_ROLLBACK;
     if (strName == "SPORK_20_NEW_PROTOCOL_DYNAMIC") return SPORK_20_NEW_PROTOCOL_DYNAMIC;
+    if (strName == "SPORK_21_ENABLE_ZEROCOIN") return SPORK_21_ENABLE_ZEROCOIN;
+    if (strName == "SPORK_22_ZEROCOIN_MAINTENANCE_MODE") return SPORK_22_ZEROCOIN_MAINTENANCE_MODE;
 
     return -1;
-} 
+}
 
 std::string CSporkManager::GetSporkNameByID(int id)
 {
@@ -301,9 +318,11 @@ std::string CSporkManager::GetSporkNameByID(int id)
     if (id == SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) return "SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2";
     if (id == SPORK_16_MN_WINNER_MINIMUM_AGE) return "SPORK_16_MN_WINNER_MINIMUM_AGE";
     if (id == SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3) return "SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3";
-	if (id == SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4) return "SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4";
+    if (id == SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4) return "SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4";
     if (id == SPORK_19_POW_ROLLBACK) return "SPORK_19_POW_ROLLBACK";
     if (id == SPORK_20_NEW_PROTOCOL_DYNAMIC) return "SPORK_20_NEW_PROTOCOL_DYNAMIC";
+    if (id == SPORK_21_ENABLE_ZEROCOIN) return "SPORK_21_ENABLE_ZEROCOIN";
+    if (id == SPORK_22_ZEROCOIN_MAINTENANCE_MODE) return "SPORK_22_ZEROCOIN_MAINTENANCE_MODE";
 
     return "Unknown";
 }
