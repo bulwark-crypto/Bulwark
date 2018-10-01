@@ -10,36 +10,36 @@
         <translation>Crea un nuovo indirizzo</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Nuovo</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Nuovo</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copia l'indirizzo selezionato negli appunti</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copia</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copia</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Elimina l'indirizzo selezionato dalla lista</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Elimina</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Esporta i dati della scheda corrente in un file</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Esporta</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Esporta</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Chiudi</translation>
+        <source>C&amp;lose</source>
+        <translation>C&amp;hiudi</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Seleziona l'indirizzo a cui ricevere valuta</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Seleziona</translation>
+        <source>C&amp;hoose</source>
+        <translation>&amp;Seleziona</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>Questi sono gli indirizzi Bulwark per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copia indirizzo</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Copia indirizzo</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Copia etichetta</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copia &amp;etichetta</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Modifica</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Modifica</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -235,8 +235,8 @@
         <translation>BIP 38 Strumento</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Criptato</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Criptato</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -283,20 +283,20 @@
         <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo Bulwark</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Cripta Key</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Cripta &amp;Key</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reimposta tutti i campi del messaggio segno</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Cancella All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Cancella &amp;All</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Decripta</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Decripta</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
@@ -311,8 +311,8 @@
         <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Bulwark specificato </translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Decripta Key</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Decripta &amp;Key</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -402,136 +402,136 @@
         <translation>Nodo</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Riepilogo</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Riepilogo</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Mostra un riepilogo generale del portafoglio</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Invia</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Invia</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Ricevi</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Ricevi</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transazioni</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transazioni</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Espora la cronologia delle transazioni</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Esci</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Esci</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Chiude l'applicazione</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Informazioni su Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Informazioni su &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Visualizza informazioni su Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Opzioni...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Opzioni...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Mostra / Nascondi</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Mostra / Nascondi</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Mostra o nasconde la finestra principale</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Cifra portafoglio...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Cifra portafoglio...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Crittografa le chiavi private nel tuo portafoglio</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Backup portafoglio...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Backup portafoglio...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Fa una copia di sicurezza del tuo portafoglio in un'altra posizione</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Modifica parola d'ordine...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Modifica parola d'ordine...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Modifica la parola d'ordine utilizzata per la crittografia del portafoglio</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Sblocca portafoglio</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Sblocca portafoglio</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Sblocca portafoglio</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Blocca portafoglio</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Blocca portafoglio</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Firma messaggio...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>&amp;Firma messaggio...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verifica messaggio...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verifica messaggio...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informazioni</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informazioni</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Visualizza informazioni di diagnostica</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Console di debug</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Console di debug</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Apri la console di debug</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Monitor rete</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Monitor rete</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Mostra monitor di rete</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Lista peers</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Lista peers</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Mostra le informazioni sui peer</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Ripara portafoglio</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;Ripara portafoglio</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,31 +542,31 @@
         <translation>Apri il file di configurazione</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Mostra Backup automatici</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Mostra &amp;Backup automatici</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Mostra i backup dei portafogli creati automaticamente</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Indirizzi Sorgente</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Indirizzi Sorgente</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Mostra l'elenco degli indirizzi e delle etichette di invio utilizzati</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Indirizzi di Destinazione</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Indirizzi di Destinazione</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Mostra l'elenco degli indirizzi e delle etichette di ricezione utilizzati</translation>
     </message>
     <message>
-        <source>Open URI...</source>
+        <source>Open &amp;URI...</source>
         <translation>Apri URL</translation>
     </message>
     <message>
@@ -574,16 +574,16 @@
         <translation>Sincronizzazione dati addizionali: %p%</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Impostazioni</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Impostazioni</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Strumenti</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Strumenti</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Aiuto</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -602,16 +602,16 @@
         <translation>Richiedi pagamenti (genera codici QR e bulwark: URIs)</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Esplora i masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Informazioni Bulwark Core</translation>
+        <source>&amp;About Bulwark Core</source>
+        <translation>&amp;Informazioni Bulwark Core</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
@@ -839,8 +839,13 @@ MultiSend: %1</translation>
         <translation>Prego selezionare "Modalità lista" per utilizzare questa funzione</translation>
     </message>
     <message>
+        <source>n/a</source>
+        <translation>n/a</translation>
+    </message>
+    <message>
         <source>yes</source>
-        <translation>si</translation>
+        <translation>si
+</translation>
     </message>
     <message>
         <source>no</source>
@@ -862,12 +867,12 @@ MultiSend: %1</translation>
         <translation>Modifica indirizzo</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Etichetta</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Etichetta</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Indirizzo</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Indirizzo</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -960,59 +965,16 @@ MultiSend: %1</translation>
     </context>
 <context>
     <name>OverviewPage</name>
+    <message>
+        <source>n/a</source>
+        <translation>n/a</translation>
+    </message>
     </context>
 <context>
     <name>PaymentServer</name>
     </context>
 <context>
     <name>PeerTableModel</name>
-    </context>
-<context>
-    <name>PrivacyDialog</name>
-    <message>
-        <source>Quantity:</source>
-        <translation>Quantità:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Totale:</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Scegli l'indirizzo utilizzato in precedenza</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Incolla l'indirizzo dagli appunti</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Priorità:</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Tassa:</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation>no</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Differenza:</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Copia ammontare</translation>
-    </message>
     </context>
 <context>
     <name>QObject</name>
@@ -1027,8 +989,8 @@ MultiSend: %1</translation>
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Information</source>
-        <translation>Informazioni</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informazioni</translation>
     </message>
     </context>
 <context>
@@ -1103,8 +1065,8 @@ MultiSend: %1</translation>
         <translation>Differenza:</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Cancella All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Cancella &amp;All</translation>
     </message>
     <message>
         <source>Copy amount</source>
@@ -1184,8 +1146,8 @@ MultiSend: %1</translation>
         <translation>Reimposta tutti i campi del messaggio segno</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Cancella All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Cancella &amp;All</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -1302,16 +1264,13 @@ MultiSend: %1</translation>
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Esporta</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Esporta</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Esporta i dati della scheda corrente in un file</translation>
     </message>
-    </context>
-<context>
-    <name>ZBwkControlDialog</name>
     </context>
 <context>
     <name>bulwark-core</name>

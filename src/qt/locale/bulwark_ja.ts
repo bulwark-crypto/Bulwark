@@ -10,7 +10,7 @@
         <translation>新しいアドレスを作成</translation>
     </message>
     <message>
-        <source>New</source>
+        <source>&amp;New</source>
         <translation>＆新規</translation>
     </message>
     <message>
@@ -18,7 +18,7 @@
         <translation>クリップボードへ現在選択しているアドレスをコピー</translation>
     </message>
     <message>
-        <source>Copy</source>
+        <source>&amp;Copy</source>
         <translation>＆コピー</translation>
     </message>
     <message>
@@ -26,15 +26,15 @@
         <translation>リストから選択されたアドレスを削除</translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>&amp;Delete</source>
         <translation>＆削除</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>＆エクスポート</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>＆閉じる</translation>
     </message>
     <message>
@@ -46,7 +46,7 @@
         <translation>受信用アドレスを選んでコインを受け取る</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>＆選択</translation>
     </message>
     <message>
@@ -58,11 +58,11 @@
         <translation>受信用アドレス</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>&amp;Copy Address</source>
         <translation>＆アドレスをコビー</translation>
     </message>
     <message>
-        <source>Edit</source>
+        <source>&amp;Edit</source>
         <translation>＆編集</translation>
     </message>
     <message>
@@ -180,9 +180,6 @@
     <name>PeerTableModel</name>
     </context>
 <context>
-    <name>PrivacyDialog</name>
-    </context>
-<context>
     <name>QObject</name>
     </context>
 <context>
@@ -258,12 +255,9 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>＆エクスポート</translation>
     </message>
-    </context>
-<context>
-    <name>ZBwkControlDialog</name>
     </context>
 <context>
     <name>bulwark-core</name>

@@ -10,7 +10,7 @@
         <translation>Створити нову адресу</translation>
     </message>
     <message>
-        <source>New</source>
+        <source>&amp;New</source>
         <translation>Новий</translation>
     </message>
     <message>
@@ -18,7 +18,7 @@
         <translation>Скопіювати вибрану адресу в буфер обміну</translation>
     </message>
     <message>
-        <source>Copy</source>
+        <source>&amp;Copy</source>
         <translation>Копіювати</translation>
     </message>
     <message>
@@ -26,7 +26,7 @@
         <translation>Видалити вибрану адресу зі списку</translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>&amp;Delete</source>
         <translation>Видалити</translation>
     </message>
     <message>
@@ -34,23 +34,23 @@
         <translation>Експортуйтувати дані поточної вкладки у файл</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Експорт</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Закрити</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Виберіть адресу надсилання монет</translation>
+        <translation>Виберіть адресу для надсилання монет</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
         <translation>Виберіть адресу отримання монет</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Вибір</translation>
     </message>
     <message>
@@ -63,22 +63,22 @@
     </message>
     <message>
         <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Це ваші Bulwark-адреси для надсилання платежів. Завжди перевіряйте суму та адресу одержувача перед відправленням монет.</translation>
+        <translation>Це ваша Bulwark-адреса для надсилання платежів. Завжди перевіряйте суму та адресу одержувача перед відправленням монет.</translation>
     </message>
     <message>
         <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Це ваші Bulwark адреси для отримання платежів. Для кожної транзакції рекомендується використовувати нову адресу одержувача.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>&amp;Copy Address</source>
         <translation>Копіювати адресу</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>Копіювати мітку</translation>
     </message>
     <message>
-        <source>Edit</source>
+        <source>&amp;Edit</source>
         <translation>Редагувати</translation>
     </message>
     <message>
@@ -256,9 +256,6 @@
     <name>PeerTableModel</name>
     </context>
 <context>
-    <name>PrivacyDialog</name>
-    </context>
-<context>
     <name>QObject</name>
     </context>
 <context>
@@ -358,16 +355,13 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Експорт</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Експортуйтувати дані поточної вкладки у файл</translation>
     </message>
-    </context>
-<context>
-    <name>ZBwkControlDialog</name>
     </context>
 <context>
     <name>bulwark-core</name>

@@ -21,7 +21,6 @@
         <file alias="ru">locale/bulwark_ru.qm</file>
         <file alias="sk">locale/bulwark_sk.qm</file>
         <file alias="sv">locale/bulwark_sv.qm</file>
-        <file alias="tr">locale/bulwark_tr.qm</file>
         <file alias="uk">locale/bulwark_uk.qm</file>
         <file alias="zh_CN">locale/bulwark_zh_CN.qm</file>
         <file alias="zh_TW">locale/bulwark_zh_TW.qm</file>

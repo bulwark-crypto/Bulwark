@@ -3,30 +3,30 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation>Click derecho para editar dirección o etiqueta</translation>
+        <translation>Click derecho para editar la dirección o etiqueta</translation>
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Crear nueva dirección</translation>
+        <translation>Crear una nueva dirección</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Nuevo</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Nuevo</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copiar la dirección seleccionada al portapapeles</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copiar</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Borrar la dirección seleccionada de la lista</translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>&amp;Delete</source>
         <translation>Borrar</translation>
     </message>
     <message>
@@ -34,11 +34,11 @@
         <translation>Exportar los datos de la pestaña actual a un archivo</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exportar</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Cerrar</translation>
     </message>
     <message>
@@ -50,35 +50,35 @@
         <translation>Escoja la dirección con las cual recibirá las monedas</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Escoger</translation>
+        <source>C&amp;hoose</source>
+        <translation>&amp;Escoger</translation>
     </message>
     <message>
         <source>Sending addresses</source>
-        <translation>Direcciones de envío</translation>
+        <translation>Enviando direcciones</translation>
     </message>
     <message>
         <source>Receiving addresses</source>
-        <translation>Direcciones de recepción</translation>
+        <translation>Recibiendo direcciones</translation>
     </message>
     <message>
         <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones Bulwark para realizar pagos. Verifique siempre la cantidad y la dirección de recepción antes de enviar monedas.</translation>
+        <translation>Estas son sus direcciones Bulwark para realizar pagos. Siempre verifique la cantidad y la dirección de recepción antes de enviar monedas.</translation>
     </message>
     <message>
         <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Estas son sus direcciones Bulwark para recibir pagos. Es recomendable usar una nueva dirección de recepción para cada transacción.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>&amp;Copy Address</source>
         <translation>Copiar dirección</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Copiar etiqueta</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copiar y Etiquetar</translation>
     </message>
     <message>
-        <source>Edit</source>
+        <source>&amp;Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
@@ -95,7 +95,7 @@
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
-        <translation>Ha habido un error intentando guardar la lista de direcciones %1. Por favor inténtelo de nuevo.</translation>
+        <translation>Hubo un error intentando guardar la lista de direcciones %1. Por favor intente nuevamente</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>For anonymization and staking only</source>
-        <translation>Desbloquear solo para anonimización y staking</translation>
+        <translation>Para anonimización y staking solamente</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -145,23 +145,23 @@
     </message>
     <message>
         <source>Encrypt wallet</source>
-        <translation>Cifrar monedero</translation>
+        <translation>Encriptar la Wallet</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Esta operación requiere su contraseña para desbloquear el monedero</translation>
+        <translation>Esta operación requiere su contraseña para desbloquear la Wallet</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Desbloquear monedero</translation>
+        <translation>Desbloquear wallet</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Esta operación requiere su contraseña para descifrar el monedero</translation>
+        <translation>Esta operación requiere su contraseña para desbloquear la Wallet</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
-        <translation>Descifrar monedero</translation>
+        <translation>Desencriptar Wallet</translation>
     </message>
     <message>
         <source>Change passphrase</source>
@@ -169,55 +169,55 @@
     </message>
     <message>
         <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Ingrese la antigua y la nueva contraseña para el monedero</translation>
+        <translation>Ingrese la antigua y nueva contraseña para la Wallet</translation>
     </message>
     <message>
         <source>Confirm wallet encryption</source>
-        <translation>Confirme el cifrado del monedero</translation>
+        <translation>Confirmar la encriptación de la Wallet</translation>
     </message>
     <message>
         <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus BWKs no sean robados mediante malware de su ordenador.</translation>
+        <translation>Bulwark se cerrará ahora para finalizar el proceso de encriptación. Recuerde que encriptar su Wallet no previene completamente que tus BWKs sean robados mediante malware infectando su ordenador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
-        <translation>¿Está seguro de que desea cifrar su monedero?</translation>
+        <translation>¿Esta seguro de que desea encriptar tu Wallet?</translation>
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
-        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS BWK&lt;/b&gt;!</translation>
+        <translation>Atención: Si encripta su Wallet y pierde su contraseña, perderá &lt;b&gt; TODOS SUS BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
-        <translation>Monedero cifrado</translation>
+        <translation>Wallet encriptada</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>IMPORTANTE: Cualquier copia de seguridad anterior que haya realizado de su monedero debe ser reemplazada por la nueva copia de seguridad cifrada. Por razones de seguridad, las copias de seguridad anteriores del monedero sin cifrar pasarán a ser obsoletas tan pronto empiece a utilizar el nuevo monedero cifrado.</translation>
+        <translation>IMPORTANTE: Cualquier backup anterior que haya realizado de su Wallet debe ser reemplazado por el nuevo archivo de Wallet encriptado. Por razones de seguridad, las copias anteriores de seguridad de la Wallet sin encriptar pasaran a ser obsoletas tan pronto empiece a utilizar la nueva Wallet encriptada.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
-        <translation>El cifrado del monedero ha fallado</translation>
+        <translation>La encriptación de la Wallet ha fallado</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation>El cifrado del monedero ha fallado debido a un error interno. Su monedero no ha sido cifrado.</translation>
+        <translation>La encriptación de la wallet ha fallado debido a un error interno. Tu wallet no ha sido encriptada.</translation>
     </message>
     <message>
         <source>The supplied passphrases do not match.</source>
-        <translation>Las contraseñas introducidas no coinciden.</translation>
+        <translation>Las contraseñas suministradas no coinciden.</translation>
     </message>
     <message>
         <source>Wallet unlock failed</source>
-        <translation>Desbloqueo del monedero fallido</translation>
+        <translation>Fallo en el desbloqueo de la wallet</translation>
     </message>
     <message>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>La contraseña introducida para el descifrado del monedero es incorrecta.</translation>
+        <translation>La contraseña introducida para la desencriptación de la wallet es incorrecta.</translation>
     </message>
     <message>
         <source>Wallet decryption failed</source>
-        <translation>Descifrado del monedero fallido</translation>
+        <translation>Fallo en la desencriptación de la wallet</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
@@ -225,7 +225,7 @@
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
-        <translation>Aviso: La tecla Mayúsculas está encendida!</translation>
+        <translation>Atención: La tecla Mayúsculas está encendida!</translation>
     </message>
 </context>
 <context>
@@ -235,12 +235,12 @@
         <translation>Herramienta BIP 38</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>Cifrado BIP 38</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;Encriptación BIP 38</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Introduzca la dirección Bulwark que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
+        <translation>Introduzca la dirección Bulwark que querría encriptar usando BIP 38. Introduzca una contraseña en la caja central. Clickee en encriptar para computar la clave privada encriptada.</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -248,11 +248,11 @@
     </message>
     <message>
         <source>The Bulwark address to sign the message with</source>
-        <translation>La dirección Bulwark con la que desee firmar el mensaje</translation>
+        <translation>La dirección Bulwark con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Escoja una dirección usada previamente</translation>
+        <translation>Escoge una dirección usada previamente</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -260,7 +260,7 @@
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Pegar dirección desde el portapapeles</translation>
+        <translation>Pegar dirección desde el clipboard</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -272,63 +272,63 @@
     </message>
     <message>
         <source>Encrypted Key:</source>
-        <translation>Clave cifrada:</translation>
+        <translation>Clave Encriptada:</translation>
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Copiar la firma actual al portapapeles del sistema</translation>
+        <translation>Copiar la firma actual al clipboard del sistema</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección Bulwark</translation>
+        <translation>Firmar el mensaje para demostrar que eres el propietario de esta dirección Bulwark</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Cifrar Clave</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Encriptar &amp; Clave</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>Limpiar todos los campos de firma de mensaje</translation>
+        <translation>Resetear todos los campos de firma de mensaje</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Limpiar Todo</translation>
+        <source>Clear &amp;All</source>
+        <translation>Limpiar &amp;Todo</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>Descifrado BIP 38</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;Desencriptación BIP 38</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Introduzca la clave cifrada privada BIP 38. Introduzca la contraseña en el campo central. Haga clic en descifrar clave para generar la clave privada. Después de que la clave sea descifrada, pulsando en 'Importar dirección' añadirá esta clave privada al monedero.</translation>
+        <translation>Introducir la clave encriptada privada BIP 38. Introducir la contraseña en la caja central. Pulsar en Desencriptar Clave para computar la clave privada. Después de que la clave sea desencriptada, pulsando en 'Importar Dirección' añadirá esta clave privada a la wallet.</translation>
     </message>
     <message>
         <source>The Bulwark address the message was signed with</source>
-        <translation>La dirección Bulwark con la que se firmó el mensaje</translation>
+        <translation>La dirección Bulwark con la que el mensaje fue firmado</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección Bulwark especificada</translation>
+        <translation>Verificar el mensaje para asegurarse que fue firmado con la dirección Bulwark especificada</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Descifrar Clave</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Desencriptar &amp; Clave</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>Limpiar todos los campos de verificación de mensaje</translation>
+        <translation>Resetear todos los campos de verificación de mensaje</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
-        <translation>Clave descifrada:</translation>
+        <translation>Clave desencriptada</translation>
     </message>
     <message>
         <source>Import Address</source>
-        <translation>Importar dirección</translation>
+        <translation>Importar Dirección</translation>
     </message>
     <message>
         <source>Click "Decrypt Key" to compute key</source>
-        <translation>Haga clic en "Descifrar clave" para generar la clave</translation>
+        <translation>Clickar "Desencriptar Clave" para computar la clave</translation>
     </message>
     <message>
         <source>The entered passphrase is invalid. </source>
@@ -344,15 +344,15 @@
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>Por favor compruebe la dirección e inténtelo de nuevo.</translation>
+        <translation>Por favor comprobar la dirección y probar de nuevo.</translation>
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>La dirección introducida no se refiere a ninguna clave.</translation>
+        <translation>La dirección introducido no se refiere a ninguna clave.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>El desbloqueo del monedero fue cancelado.</translation>
+        <translation>El desbloqueo de la wallet fue cancelado.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
@@ -360,23 +360,23 @@
     </message>
     <message>
         <source>Failed to decrypt.</source>
-        <translation>Falló el descifrado</translation>
+        <translation>Fallo en la desencriptación</translation>
     </message>
     <message>
         <source>Please check the key and passphrase and try again.</source>
-        <translation>Por favor compruebe la clave y la contraseña e inténtelo de nuevo.</translation>
+        <translation>Por favor comprobar la clave y la contraseña y probar de nuevo.</translation>
     </message>
     <message>
         <source>Data Not Valid.</source>
-        <translation>Datos no válidos.</translation>
+        <translation>Datos No Válidos.</translation>
     </message>
     <message>
         <source>Please try again.</source>
-        <translation>Por favor inténtelo de nuevo.</translation>
+        <translation>Por favor intentar de nuevo.</translation>
     </message>
     <message>
         <source>Please wait while key is imported</source>
-        <translation>Por favor espere mientras la clave es importada</translation>
+        <translation>Por favor esperar mientras se importa la clave</translation>
     </message>
     <message>
         <source>Key Already Held By Wallet</source>
@@ -402,136 +402,136 @@
         <translation>Nodo</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Visión general</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Visión general</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Mostrar visión general de la wallet</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Enviar</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Enviar</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Recibir</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Recibir</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transacciones</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transacciones</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Navegar por el historial de transacciones</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Salir</translation>
+        <source>E&amp;xit</source>
+        <translation>S&amp;alir</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Cerrar aplicación</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Sobre Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Mostrar información sobre Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Opciones...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Opciones...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Mostrar / Esconder</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Mostrar / Esconder</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Mostrar o esconder la ventana principal</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Encriptar wallet...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Encriptar wallet...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Encriptar las claves privadas que pertenecen a tu wallet</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Copia de seguridad de la wallet...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Copia de seguridad de la wallet...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Copia de seguridad de la wallet a otra ubicación</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Cambiar contraseña...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Cambiar contraseña...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Cambiar contraseña usada para la encriptación de la wallet</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Desbloquear wallet...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Desbloquear wallet...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Desbloquear monedero</translation>
+        <translation>Desbloquear wallet</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Bloquear Wallet</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Bloquear Wallet</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Firmar mensaje..</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Firmar &amp;mensaje..</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verificar mensaje...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Información</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Información</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Mostrar información de diagnóstico</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Consola de depuración</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Consola de depuración</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Abrir consola de depuración</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Monitor de red</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Monitor de red</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Mostrar monitor de red</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Lista de Peers</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Lista de Peers</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Mostrar información de peers</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Reparación de la wallet</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;Reparación de la wallet</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,60 +542,60 @@
         <translation>Abrir archivo configuración</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Mostrar copias de seguridad automatizadas</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Mostrar &amp;copias de seguridad automatizadas</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Mostrar las copias de seguridad creadas automáticamente</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Direcciones de envío...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Direcciones de envío...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Mostrar la lista y etiquetas de direcciones de envío usadas</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Dirección receptora</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Dirección receptora</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Mostrar la lista de las direcciones y etiquetas usadas</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Abrir URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Abrir &amp;URI...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Opciones de linea de comandos</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Opciones de linea de comandos</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Procesado %n bloque del historial de transacciones.</numerusform><numerusform>Procesados %n bloques del historial de transacciones.</numerusform></translation>
+        <translation><numerusform>Procesados %n bloque del histórico de transacciones.</numerusform><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sincronizando datos adicionales: %p%</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Archivo</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Archivo</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Ajustes</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Ajustes</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Herramientas</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Herramientas</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Ayuda</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Ayuda</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
@@ -614,24 +614,16 @@
         <translation>Solicitud de pago (genera un código QR y URIs)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Privacidad</translation>
-    </message>
-    <message>
-        <source>Privacy Action for zBWK and Obfuscation</source>
-        <translation>Privacidad con zBWK y Ofuscación</translation>
-    </message>
-    <message>
-        <source>Masternodes</source>
-        <translation>Nodos Maestros</translation>
+        <source>&amp;Masternodes</source>
+        <translation>Nodos &amp;Maestros</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Explorar nodos maestros</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Sobre el núcleo de Bulwark</translation>
+        <source>&amp;About Bulwark Core</source>
+        <translation>&amp;Sobre el núcleo de Bulwark</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
@@ -650,28 +642,28 @@
         <translation>Verificar mensajes para asegurar que están firmados con la dirección Bulwark especificada</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>Herramienta BIP38</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;Herramienta BIP38</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Encriptar y desencriptar las llaves privadas usando una contraseña</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiEnvío</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiEnvío</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Configuración de MultiEnvío</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Abrir Fichero de Configuración del Monedero</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Abrir Fichero de &amp;Configuración del Monedero</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Abrir Fichero de Configuración de Nodos Maestros</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Abrir Fichero de Configuración de Nodos &amp;Maestros</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
@@ -682,8 +674,8 @@
         <translation>Abrir un Bulwark: URI o solicitud de pago</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Explorador de Bloques</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>Explorador de &amp;Bloques</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -721,9 +713,25 @@
         <source>Up to date</source>
         <translation>Actualizado</translation>
     </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n hora</numerusform><numerusform>%n horas</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n día</numerusform><numerusform>%n días</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n semana</numerusform><numerusform>%n semanas</numerusform></translation>
+    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 y %2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n año</numerusform><numerusform>%n años</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -815,14 +823,6 @@ MultiEnvío: %1</translation>
     <message>
         <source>Blockchain Explorer</source>
         <translation>Explorador de Cadena de Bloques</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Atrás</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Adelante</translation>
     </message>
     <message>
         <source>Address / Block / Transaction</source>
@@ -923,6 +923,10 @@ MultiEnvío: %1</translation>
         <translation>Recibido con dirección</translation>
     </message>
     <message>
+        <source>DS Rounds</source>
+        <translation>Rondas DS:</translation>
+    </message>
+    <message>
         <source>Date</source>
         <translation>Fecha</translation>
     </message>
@@ -995,6 +999,10 @@ MultiEnvío: %1</translation>
         <translation>Por favor cambie a "Modo de Lista" para utilizar esta función.</translation>
     </message>
     <message>
+        <source>Non-anonymized input selected. &lt;b&gt;Obfuscation will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use Obfuscation, please deselect all non-nonymized inputs first and then check Obfuscation checkbox again.</source>
+        <translation>Has seleccionado una entrada que no ha sido anonimizada. &lt;b&gt;La Ofuscación será deshabilitada.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Si todavía quiere utilizar la Ofuscación, por favor primero deseleccione todas las entrada no anonimizadas y entonces marque la casilla de Ofuscación de nuevo.</translation>
+    </message>
+    <message>
         <source>highest</source>
         <translation>la más alta</translation>
     </message>
@@ -1013,6 +1021,10 @@ MultiEnvío: %1</translation>
     <message>
         <source>Can vary +/- %1 duff(s) per input.</source>
         <translation>Puede variar +/- %1 duff(s) por entrada.</translation>
+    </message>
+    <message>
+        <source>n/a</source>
+        <translation>n/a</translation>
     </message>
     <message>
         <source>medium</source>
@@ -1094,16 +1106,16 @@ MultiEnvío: %1</translation>
         <translation>Editar Dirección</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Etiqueta</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Etiqueta</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>La etiqueta asociada con esta entrada de la libreta de direcciones</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Dirección</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Dirección</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1310,20 +1322,20 @@ MultiEnvío: %1</translation>
         <translation>Llave pública</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Iniciar apodo</translation>
+        <source>S&amp;tart alias</source>
+        <translation>&amp;Iniciar apodo</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Iniciar todo</translation>
+        <source>Start &amp;all</source>
+        <translation>Iniciar &amp;todo</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Iniciar FALTAN</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Iniciar &amp;FALTAN</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Estado de Actualización</translation>
+        <source>&amp;Update status</source>
+        <translation>Estado de &amp;Actualización</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1606,28 +1618,28 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Opciones</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Principal</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Principal</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Tamaño del caché de base de datos</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Tamaño del caché de &amp;base de datos</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
-        <translation>Número de procesos de verificación de scripts</translation>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Número de procesos de &amp;verificación de scripts</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = auto, &lt;0 = dejar libres tal número de cores)</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Monedero</translation>
+        <source>W&amp;allet</source>
+        <translation>&amp;Monedero</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1646,8 +1658,8 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Permitir conexiones entrantes</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Conectar a través de un proxy SOCKS5 (proxy por defecto):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Conectar a través de un proxy SOCKS5 (proxy por defecto):</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1658,16 +1670,32 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Arrancar Bulwark automáticamente después de identificarse en Windows.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Arrancar Bulwark al inicio del sistema</translation>
+        <source>&amp;Start Bulwark on system login</source>
+        <translation>&amp;Arrancar Bulwark al inicio del sistema</translation>
+    </message>
+    <message>
+        <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
+        <translation>Esta configuración determina la cantidad máxima de nodos maestros individuales a través de los cuales una entrada se anonimizará.&lt;br/&gt;Más rondas de anonimización ofrecen un mayor grado de privacidad, pero también cuesta más en comisiones.</translation>
+    </message>
+    <message>
+        <source>Obfuscation rounds to use</source>
+        <translation>Rondas de Ofuscación a utilizar</translation>
+    </message>
+    <message>
+        <source>This amount acts as a threshold to turn off Obfuscation once it's reached.</source>
+        <translation>Esta cantidad actúa como un techo para desactivar la Ofuscación una vez alcanzado.</translation>
+    </message>
+    <message>
+        <source>Amount of Bulwark to keep anonymized</source>
+        <translation>Cantidad de Bulwark a mantener anonimizados</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Mostrar las características de control de monedas individuales, o no</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>Activar funciones de control de monedas</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Activar funciones de control de &amp;monedas</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1678,12 +1706,12 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
         <translation>Mostrar la pestaña de Nodos Maestros</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Gastar cambio no confirmado</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Gastar cambio no confirmado</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Red</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Red</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
@@ -1696,76 +1724,64 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
 https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Mapear un puerto utilizando UPnP</translation>
-    </message>
-    <message>
-        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol</source>
-        <translation>Porcentaje de BWKs entrantes que serán automáticamente convertidos a zBWK a través del Protocolo Zerocoin</translation>
-    </message>
-    <message>
-        <source>Percentage of autominted zBWK</source>
-        <translation>Porcentaje de zBWK autogenerados</translation>
-    </message>
-    <message>
-        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
-        <translation>Retrasar la conversión automática a Zerocoin hasta que hayan suficientes BWK disponibles para esta denominación</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Mapear un puerto utilizando &amp;UPnP</translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
         <translation>Conectar a la red Bulwark mediante un proxy SOCKS5.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>IP del proxy:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>&amp;IP del proxy:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>Dirección IP del proxy (p.e. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Puerto:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Puerto:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Puerto del proxy (p.e. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Ventana</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Ventana</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Mostrar sólo un icono en la bandeja al minimizar la ventana.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>Minimizar a la bandeja en lugar de a la barra de tareas</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;Minimizar a la bandeja en lugar de a la barra de tareas</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimizar en lugar de cerrar la aplicación cuando se cierra la ventana. Cuando active esta opción, tendrá que cerrar la aplicación seleccionando Salir desde el menú.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>Minimizar al cerrar</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>M&amp;inimizar al cerrar</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Mostrar</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Mostrar</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
-        <translation>Idioma de la interface de usuario:</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>&amp;Idioma de la interface de usuario:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Tema de la Interface de Usuario:</translation>
     </message>
     <message>
-        <source>Unit to show amounts in:</source>
-        <translation>Unidad para mostrar cantidades:</translation>
+        <source>&amp;Unit to show amounts in:</source>
+        <translation>&amp;Unidad para mostrar cantidades:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1792,20 +1808,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Resetear todas las opciones de cliente a su valor por defecto.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Opciones de Reset</translation>
+        <source>&amp;Reset Options</source>
+        <translation>Opciones de &amp;Reset</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Cancelar</translation>
-    </message>
-    <message>
-        <source>I don't care</source>
-        <translation>No me preocupa</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancelar</translation>
     </message>
     <message>
         <source>default</source>
@@ -1843,10 +1855,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>BWK Balances</source>
-        <translation>Balances BWK</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Disponible:</translation>
     </message>
@@ -1869,6 +1877,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Staked or masternode rewards that has not yet matured</source>
         <translation>Recompensa de participación o de nodo maestro que aún no ha madurado</translation>
+    </message>
+    <message>
+        <source>Balances</source>
+        <translation>Balances</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
@@ -1907,12 +1919,155 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Disponible:</translation>
     </message>
     <message>
+        <source>Status:</source>
+        <translation>Estado:</translation>
+    </message>
+    <message>
+        <source>Obfuscation Balance:</source>
+        <translation>Balance de Ofuscación:</translation>
+    </message>
+    <message>
+        <source>0 BWK / 0 Rounds</source>
+        <translation>0 BWK / 0 Rondas</translation>
+    </message>
+    <message>
+        <source>Enabled/Disabled</source>
+        <translation>Activado/Desactivado</translation>
+    </message>
+    <message>
+        <source>Try to manually submit a Obfuscation request.</source>
+        <translation>Intentar enviar manualmente una solicitud de Ofuscación.</translation>
+    </message>
+    <message>
+        <source>Reset the current status of Obfuscation (can interrupt Obfuscation if it's in the process of Mixing, which can cost you money!)</source>
+        <translation>Reiniciar el estado actual de Ofuscación (puede interrumpir la Ofuscación si está en el proceso de Mezcla, que puede costarle dinero!)</translation>
+    </message>
+    <message>
+        <source>Obfuscation</source>
+        <translation>Ofuscación</translation>
+    </message>
+    <message>
+        <source>Completion:</source>
+        <translation>Completado:</translation>
+    </message>
+    <message>
+        <source>Amount and Rounds:</source>
+        <translation>Cantidad y Rondas:</translation>
+    </message>
+    <message>
+        <source>Submitted Denom:</source>
+        <translation>Denominación Enviada:</translation>
+    </message>
+    <message>
+        <source>n/a</source>
+        <translation>n/a</translation>
+    </message>
+    <message>
         <source>Recent transactions</source>
         <translation>Transacciones recientes</translation>
     </message>
     <message>
+        <source>Start/Stop Mixing</source>
+        <translation>Empezar/Parar Mezcla</translation>
+    </message>
+    <message>
+        <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
+        <translation>Las denominaciones que enviaste al Nodo Maestro.&lt;br&gt;Para mezclar, otros usuarios deben enviar exactamente las mismas denominaciones.</translation>
+    </message>
+    <message>
+        <source>(Last Message)</source>
+        <translation>(Último Mensaje)</translation>
+    </message>
+    <message>
+        <source>Try Mix</source>
+        <translation>Intentar Mezclar</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Reiniciar</translation>
+    </message>
+    <message>
         <source>out of sync</source>
         <translation>desincronizado</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Desactivado</translation>
+    </message>
+    <message>
+        <source>No inputs detected</source>
+        <translation>No se detectan entradas</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n Rounds</source>
+        <translation><numerusform>%n Ronda</numerusform><numerusform>%n Rondas</numerusform></translation>
+    </message>
+    <message>
+        <source>Not enough compatible inputs to anonymize &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;will anonymize &lt;span style='color:red;'&gt;%2&lt;/span&gt; instead</source>
+        <translation>No hay suficientes entradas compatibles para anonimizar &lt;span style='color:red;'&gt;%1&lt;/span&gt;,&lt;br&gt;anonimizará &lt;span style='color:red;'&gt;%2&lt;/span&gt; en su lugar
+</translation>
+    </message>
+    <message>
+        <source>Overall progress</source>
+        <translation>Progreso total</translation>
+    </message>
+    <message>
+        <source>Denominated</source>
+        <translation>Nominadas</translation>
+    </message>
+    <message>
+        <source>Anonymized</source>
+        <translation>Anonimizadas</translation>
+    </message>
+    <message numerus="yes">
+        <source>Denominated inputs have %5 of %n rounds on average</source>
+        <translation><numerusform>La entrada denominada tiene %5 de %n rondas de promedio</numerusform><numerusform>Las entradas seleccionadas tienen %5 de %n rondas de promedio</numerusform></translation>
+    </message>
+    <message>
+        <source>Last Obfuscation message:
+</source>
+        <translation>Último mensaje de Ofuscación:
+</translation>
+    </message>
+    <message>
+        <source>Obfuscation was successfully reset.</source>
+        <translation>La Ofuscación fue reiniciada satisfactoriamente.</translation>
+    </message>
+    <message>
+        <source>If you don't want to see internal Obfuscation fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <translation>Si no quiere ver aquí las operaciones internas de Ofuscación seleccione "Las Más Comunes" como el Tipo en la pestaña de "Transacciones".</translation>
+    </message>
+    <message>
+        <source>Obfuscation requires at least %1 to use.</source>
+        <translation>La Ofuscación requiere como mínimo %1 para usarse.</translation>
+    </message>
+    <message>
+        <source>Wallet is locked and user declined to unlock. Disabling Obfuscation.</source>
+        <translation>El Monedero está bloqueado y el usuario declinó su desbloqueo. Desactivando Ofuscación.</translation>
+    </message>
+    <message>
+        <source>Found enough compatible inputs to anonymize %1</source>
+        <translation>Se encontraron suficientes entradas compatibles para anonimizar %1</translation>
+    </message>
+    <message>
+        <source>Start Obfuscation</source>
+        <translation>Comenzar Ofuscación</translation>
+    </message>
+    <message>
+        <source>Stop Obfuscation</source>
+        <translation>Parar Ofuscación</translation>
+    </message>
+    <message>
+        <source>Mixed</source>
+        <translation>Mezcladas</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Activado</translation>
+    </message>
+    <message>
+        <source>N/A</source>
+        <translation>N/A</translation>
     </message>
 </context>
 <context>
@@ -2022,121 +2177,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
 </context>
 <context>
-    <name>PrivacyDialog</name>
-    <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Bulwark después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Reiniciar</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Cantidad:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Cantidad:</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>Pagar A:</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Escoja una dirección usada previamente</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt + A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Pegar dirección desde el portapapeles</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt + P</translation>
-    </message>
-    <message>
-        <source>Label:</source>
-        <translation>Etiqueta:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Introduzca una etiqueta para esta dirección para añadirla a la lista de direcciones utilizadas</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Cantidad:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioridad:</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Comisión:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation>Calderilla:</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation>no</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Octetos:</translation>
-    </message>
-    <message>
-        <source>Insufficient funds!</source>
-        <translation>¡Fondos insuficientes!</translation>
-    </message>
-    <message>
-        <source>medium</source>
-        <translation>media</translation>
-    </message>
-    <message>
-        <source>Coin Control Features</source>
-        <translation>Funciones de Control de Monedas</translation>
-    </message>
-    <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Si esto está activado, pero la dirección de cambio está vacía o es inválida, el cambio será mandado a una nueva dirección generada.</translation>
-    </message>
-    <message>
-        <source>Custom change address</source>
-        <translation>Dirección de cambio personalizada</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Cambio:</translation>
-    </message>
-    <message>
-        <source>out of sync</source>
-        <translation>desincronizado</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Copiar cantidad</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Copiar cantidad</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Confirmar enviar monedas</translation>
-    </message>
-    </context>
-<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
@@ -2186,12 +2226,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Guardar Imagen...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Guardar Imagen...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Copiar Imagen</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Copiar Imagen</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2209,8 +2249,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Ventana de herramientas</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Información</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Información</translation>
     </message>
     <message>
         <source>General</source>
@@ -2233,8 +2273,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Número de conexiones</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Abrir</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Abrir</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2285,20 +2325,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Número de Nodos Maestros</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Consola</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Consola</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Limpiar consola</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Tráfico de Red</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Tráfico de Red</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Limpiar</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Limpiar</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2313,8 +2353,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enviados</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Nodos conectados</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Nodos conectados</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2373,8 +2413,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Intervalo de Ping</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Reparar Monedero</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>Reparar &amp;Monedero</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2504,12 +2544,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Reutilizar una de las direcciones de recepción anteriores.&lt;br&gt;Reutilizar direcciones de recepción tiene implicaciones de seguridad y privacidad.&lt;br&gt;No la utilizar al menos que esté re-generando una solicitud de pago anterior.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
-        <translation>Reutilizar una dirección de recepción existente (no recomendado)</translation>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>R&amp;eutilizar una dirección de recepción existente (no recomendado)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Mensaje:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Mensaje:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2528,20 +2568,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Use este formulario para solicitar pagos. Todos los campos &lt;b&gt;opcionales&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiqueta:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiqueta:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Una cantidad opcional a solicitar. Deje esto vacío o en cero para no pedir una cantidad específica.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <source>&amp;Amount:</source>
+        <translation>&amp;Cantidad:</translation>
     </message>
     <message>
-        <source>Request payment</source>
-        <translation>Solicitud de pago</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Solicitud de pago</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2591,16 +2631,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Código QR</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Copiar Identificador</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Copiar &amp;Identificador</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copiar Dirección</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Copiar &amp;Dirección</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Guardar Imagen...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Guardar Imagen...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -2679,6 +2719,14 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Coin Control Features</source>
         <translation>Funciones de Control de Monedas</translation>
+    </message>
+    <message>
+        <source>Inputs...</source>
+        <translation>Entradas...</translation>
+    </message>
+    <message>
+        <source>automatically selected</source>
+        <translation>seleccionadas automáticamente</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
@@ -2765,6 +2813,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Minimizar</translation>
     </message>
     <message>
+        <source>Obfuscation</source>
+        <translation>Ofuscación</translation>
+    </message>
+    <message>
         <source>per kilobyte</source>
         <translation>por kilobyte</translation>
     </message>
@@ -2825,28 +2877,28 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Confirmar la acción de enviar</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Enviar</translation>
+        <source>S&amp;end</source>
+        <translation>&amp;Enviar</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Limpiar todos los campos del formulario.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Limpiar Todo</translation>
+        <source>Clear &amp;All</source>
+        <translation>Limpiar &amp;Todo</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Enviar a varios destinatarios al mismo tiempo</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>Añadir Destinatario</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Añadir Destinata&amp;rio</translation>
     </message>
     <message>
-        <source>SwiftX</source>
-        <translation>SwiftX</translation>
+        <source>SwiftTX</source>
+        <translation>SwiftTX</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2909,8 +2961,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>cualquier fondo disponible (no recomendado)</translation>
     </message>
     <message>
-        <source>and SwiftX</source>
-        <translation>y SwiftX</translation>
+        <source>and SwiftTX</source>
+        <translation>y SwiftTX</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2936,9 +2988,17 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Una comisión %1 veces más alta que %2 por kB se considera exageradamente alta.</translation>
     </message>
+    <message numerus="yes">
+        <source>Estimated to begin confirmation within %n block(s).</source>
+        <translation><numerusform>Estimamos que empezará la confirmación en %n bloque.</numerusform><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform></translation>
+    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>La dirección de destino no es válida, por favor compruébelo de nuevo.</translation>
+    </message>
+    <message>
+        <source>(obfuscation requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(la ofuscación requiere redondear hacia arriba esta cantidad al %1 más cercano).</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -2996,8 +3056,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Esto es un pago normal.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>Pagar A:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Pagar &amp;A:</translation>
     </message>
     <message>
         <source>The Bulwark address to send the payment to</source>
@@ -3005,7 +3065,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Escoja una dirección usada previamente</translation>
+        <translation>Escoge una dirección usada previamente</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -3013,7 +3073,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Pegar dirección desde el portapapeles</translation>
+        <translation>Pegar dirección desde el clipboard</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -3024,16 +3084,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Quitar esta entrada</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiqueta:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiqueta:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Introduzca una etiqueta para esta dirección para añadirla a la lista de direcciones utilizadas</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <source>A&amp;mount:</source>
+        <translation>Ca&amp;ntidad:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -3082,8 +3142,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Firmas - Firmar / Verificar un Mensaje</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Firmar Mensaje</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -3091,11 +3151,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>The Bulwark address to sign the message with</source>
-        <translation>La dirección Bulwark con la que desee firmar el mensaje</translation>
+        <translation>La dirección Bulwark con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Escoja una dirección usada previamente</translation>
+        <translation>Escoge una dirección usada previamente</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -3103,7 +3163,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Pegar dirección desde el portapapeles</translation>
+        <translation>Pegar dirección desde el clipboard</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -3119,47 +3179,47 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Copiar la firma actual al portapapeles del sistema</translation>
+        <translation>Copiar la firma actual al clipboard del sistema</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección Bulwark</translation>
+        <translation>Firmar el mensaje para demostrar que eres el propietario de esta dirección Bulwark</translation>
     </message>
     <message>
         <source>The Bulwark address the message was signed with</source>
-        <translation>La dirección Bulwark con la que se firmó el mensaje</translation>
+        <translation>La dirección Bulwark con la que el mensaje fue firmado</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección Bulwark especificada</translation>
+        <translation>Verificar el mensaje para asegurarse que fue firmado con la dirección Bulwark especificada</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Firmar Mensaje</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Firmar &amp;Mensaje</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>Limpiar todos los campos de firma de mensaje</translation>
+        <translation>Resetear todos los campos de firma de mensaje</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Limpiar Todo</translation>
+        <source>Clear &amp;All</source>
+        <translation>Limpiar &amp;Todo</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verificar Mensaje</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Verificar Mensaje</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Introduzca la dirección de firma, mensaje (asegúrese de que copia los puntos y aparte, espacios, tabuladores, etc. exactamente) y la firma debajo para verificar el mensaje. Vaya con cuidado de no leer más en la firma de loque está en el mensaje firmado propiamente dicho, para evitar ser engañado por un ataque "hombre en el medio".</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verificar Mensaje</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Verificar &amp;Mensaje</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>Limpiar todos los campos de verificación de mensaje</translation>
+        <translation>Resetear todos los campos de verificación de mensaje</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
@@ -3171,15 +3231,15 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>Por favor compruebe la dirección e inténtelo de nuevo.</translation>
+        <translation>Por favor comprobar la dirección y probar de nuevo.</translation>
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>La dirección introducida no se refiere a ninguna clave.</translation>
+        <translation>La dirección introducido no se refiere a ninguna clave.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>El desbloqueo del monedero fue cancelado.</translation>
+        <translation>El desbloqueo de la wallet fue cancelado.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
@@ -3250,6 +3310,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 </context>
 <context>
     <name>TransactionDesc</name>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Abierto para %n bloque más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -3259,16 +3323,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>conflictivo (bloque huérfano?)</translation>
     </message>
     <message>
-        <source>%1/offline (verified via SwiftX)</source>
-        <translation>%1/offline (verificado via SwiftX)</translation>
+        <source>%1/offline (verified via swifttx)</source>
+        <translation>%1/offline (verificado via swifttx)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via SwiftX)</source>
-        <translation>%1/confirmado (verificado via SwiftX)</translation>
+        <source>%1/confirmed (verified via swifttx)</source>
+        <translation>%1/confirmado (verificado via swifttx)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via SwiftX)</source>
-        <translation>%1 confirmaciones (verificado via SwiftX)</translation>
+        <source>%1 confirmations (verified via swifttx)</source>
+        <translation>%1 confirmaciones (verificado via swifttx)</translation>
     </message>
     <message>
         <source>%1/offline</source>
@@ -3283,24 +3347,24 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>%1 confirmaciones</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (verificación SwiftX en marcha - %2 de %3 firmas)</translation>
+        <source>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1/offline (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmado (verificación SwiftX en marcha - %2 de %3 firmas)</translation>
+        <source>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1/confirmado (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
-        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmaciones (verificación SwiftX en marcha - %2 de %3 firmas)</translation>
+        <source>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 confirmaciones (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftX verification failed)</source>
-        <translation>%1/offline (falló la verificación SwiftX)</translation>
+        <source>%1/offline (SwiftTX verification failed)</source>
+        <translation>%1/offline (falló la verificación SwiftTX)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftX verification failed)</source>
-        <translation>%1/confirmado (falló la verificación SwiftX)</translation>
+        <source>%1/confirmed (SwiftTX verification failed)</source>
+        <translation>%1/confirmado (falló la verificación SwiftTX)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3309,6 +3373,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, no ha sido correctamente transmitida todavía</translation>
+    </message>
+    <message numerus="yes">
+        <source>, broadcast through %n node(s)</source>
+        <translation><numerusform>, retransmitido a través de %n nodo</numerusform><numerusform>, retransmitido a través de %n nodos</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -3349,6 +3417,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
+    </message>
+    <message numerus="yes">
+        <source>matures in %n more block(s)</source>
+        <translation><numerusform>madura en %n bloque más</numerusform><numerusform>madura en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -3447,6 +3519,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Address</source>
         <translation>Dirección</translation>
+    </message>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Abierto para %n bloque más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -3765,15 +3841,15 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enviar Monedas</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
-        <translation>SwiftX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 BWK.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 BWK.</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Exportar</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -3808,13 +3884,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Los datos del monedero se guardaron correctamente a %1.</translation>
     </message>
 </context>
-<context>
-    <name>ZBwkControlDialog</name>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    </context>
 <context>
     <name>bulwark-core</name>
     <message>
@@ -3862,8 +3931,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Borrar todas las transacciones del monedero y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar toda la funcionalidad especifica Bulwark (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, predeterminado: %u)</translation>
+        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar toda la funcionalidad especifica Bulwark (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3874,8 +3943,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Activar la función de administración de sporks con la llave privada apropiada.</translation>
     </message>
     <message>
-        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Activar SwiftX, mostrar confirmaciones para transacciones bloqueadas (bool, predeterminado: %s)</translation>
+        <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Activar swifttx, mostrar confirmaciones para transacciones bloqueadas (bool, predeterminado: %s)</translation>
+    </message>
+    <message>
+        <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Activar el uso de ofuscación automatica para fondos guardados en este monedero (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
@@ -3966,6 +4039,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Saluda de información de depuración (predeterminado: %u, proveyendo &lt;category&gt; es opcional)</translation>
     </message>
     <message>
+        <source>Provide liquidity to Obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
+        <translation>Proporcionar liquidez a la Ofuscación mezclando infrecuentemente las monedas continuamente (0-100, predeterminado: %u, 1=muy frecuente, altas comisiones, 100=muy infrecuente, bajas comisiones)</translation>
+    </message>
+    <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation>Consultar por direcciones de pares vía búsqueda en DNS, si cantidad de direcciones esta bajo (predeterminado: 1 a menos que se utilice -connect)</translation>
     </message>
@@ -3998,8 +4075,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Soportar filtrado de bloques y transacciones con filtros bloom (por defecto: %u)</translation>
     </message>
     <message>
-        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftX requiere entradas con hasta 6 confirmaciones, es posible que debas esperar unos minutos e intentar nuevamente.</translation>
+        <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX requiere entradas con hasta 6 confirmaciones, es posible que debas esperar unos minutos e intentar nuevamente.</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
@@ -4482,8 +4559,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Activar inclusión del hash del bloque en &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Activar inclusión del hash de la transacción (fijada mediante SwiftX) en &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation>Activar inclusión del hash de la transacción (fijada mediante SwiftTX) en &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4494,8 +4571,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Activar inclusión del bloque en bruto en &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Activar inclusión de la transacción en bruto (fijada mediante SwiftX) en &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation>Activar inclusión de la transacción en bruto (fijada mediante SwiftTX) en &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4504,6 +4581,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Enable staking functionality (0-1, default: %u)</source>
         <translation>Activar funcionalidad de recompensa por participación (0-1, por defecto: %u)</translation>
+    </message>
+    <message>
+        <source>Keep N BWK anonymized (default: %u)</source>
+        <translation>Mantener N BWK anonimizados (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -4648,6 +4729,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Obfuscation is idle.</source>
         <translation>La Ofuscación está sin uso.</translation>
+    </message>
+    <message>
+        <source>Obfuscation options:</source>
+        <translation>Opciones de Ofuscacion:</translation>
     </message>
     <message>
         <source>Obfuscation request complete:</source>
@@ -4858,8 +4943,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enviado a masternode, quedando en espera %s</translation>
     </message>
     <message>
-        <source>SwiftX options:</source>
-        <translation>Opciones SwiftX:</translation>
+        <source>SwiftTX options:</source>
+        <translation>Opciones SwiftTX:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -4960,6 +5045,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Upgrade wallet to latest format</source>
         <translation>Actualizar el monedero al formato ultimo</translation>
+    </message>
+    <message>
+        <source>Use N separate masternodes to anonymize funds  (2-8, default: %u)</source>
+        <translation>Utilizar N nodos maestros distintos para anonimizar fondos (2-8, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>

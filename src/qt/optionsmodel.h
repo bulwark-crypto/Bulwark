@@ -44,8 +44,7 @@ public:
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
 		ShowOrphans,         // bool
-        ZeromintPercentage,  // int
-        ZeromintPrefDenom,   // int
+        ObfuscationRounds,   // int
         AnonymizeBulwarkAmount, //int
         ShowMasternodesTab,  // bool
         Listen,              // bool
@@ -92,8 +91,7 @@ private:
 
 signals:
     void displayUnitChanged(int unit);
-    void zeromintPercentageChanged(int);
-    void preferredDenomChanged(int);
+    void obfuscationRoundsChanged(int);
     void anonymizeBulwarkAmountChanged(int);
     void coinControlFeaturesChanged(bool);
 };

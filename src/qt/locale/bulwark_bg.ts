@@ -10,36 +10,36 @@
         <translation>Създайте нов адрес</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Нов</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Нов</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Копиране на избраните адреси в системния буфер</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Копирай</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Копирай</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Изтриване на избраните адреси от списъка</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Изтрии</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Изтрии</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Експортиране информацията от сегашния таб във файл</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Експортиране</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Експортиране</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Затвори</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;Затвори</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Изберете адрес, в който да получавате монети</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Избери</translation>
+        <source>C&amp;hoose</source>
+        <translation>Из&amp;бери</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -70,16 +70,16 @@
         <translation>Това са вашите Bulwark адреси за получаване на плащания. Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Копиране на адреса</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Копиране на адреса</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Копиране на Етикета</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Копиране на &amp;Етикета</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Редактиране</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Редактиране</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -227,8 +227,8 @@
         <translation>BIP 38 инструменти</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 криптиране</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 криптиране</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -275,7 +275,7 @@
         <translation>Подпишете съобщението, за да докажете, че притежавате този Bulwark адрес</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
+        <source>Encrypt &amp;Key</source>
         <translation>Криптиращ ключ</translation>
     </message>
     </context>
@@ -283,7 +283,7 @@
     <name>BitcoinGUI</name>
     <message>
         <source>Unlock wallet</source>
-        <translation>Отключване на портфейла</translation>
+        <translation>Отключи портфейла</translation>
     </message>
     </context>
 <context>
@@ -346,25 +346,6 @@
     </context>
 <context>
     <name>PeerTableModel</name>
-    </context>
-<context>
-    <name>PrivacyDialog</name>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Изберете предишноизползван адрес</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Алт+А</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Постави адреса от буфера</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Алт+П</translation>
-    </message>
     </context>
 <context>
     <name>QObject</name>
@@ -510,16 +491,13 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Експортиране</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Експортиране</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Експортиране информацията от сегашния таб във файл</translation>
     </message>
-    </context>
-<context>
-    <name>ZBwkControlDialog</name>
     </context>
 <context>
     <name>bulwark-core</name>

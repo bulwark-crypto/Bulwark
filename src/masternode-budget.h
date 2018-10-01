@@ -4,7 +4,6 @@
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #ifndef MASTERNODE_BUDGET_H
 #define MASTERNODE_BUDGET_H
 
@@ -492,7 +491,7 @@ public:
 
     bool IsEstablished()
     {
-        // Proposals must be at least a day old to make it into a budget
+        //Proposals must be at least a day old to make it into a budget
         if (Params().NetworkID() == CBaseChainParams::MAIN) return (nTime < GetTime() - (60 * 60 * 24));
 
         //for testing purposes - 4 hours

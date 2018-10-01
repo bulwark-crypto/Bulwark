@@ -9,7 +9,6 @@
 #include "ui_askpassphrasedialog.h"
 
 #include "guiconstants.h"
-#include "guiutil.h"
 #include "walletmodel.h"
 
 #include "allocators.h"
@@ -26,7 +25,6 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
                                                                                            fCapsLock(false)
 {
     ui->setupUi(this);
-    this->setStyleSheet(GUIUtil::loadStyleSheet());
 
     ui->passEdit1->setMinimumSize(ui->passEdit1->sizeHint());
     ui->passEdit2->setMinimumSize(ui->passEdit2->sizeHint());

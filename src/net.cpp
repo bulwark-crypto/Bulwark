@@ -571,29 +571,10 @@ bool CNode::Unban(const CSubNet& subNet)
     return false;
 }
 
-bool CNode::BannedIsDirty()
+void CNode::GetBanned(banmap_t &banMap)
 {
     LOCK(cs_setBanned);
-    return setBannedIsDirty;
-}
-
-void CNode::GetBanned(banmap_t &banmap)
-{
-    LOCK(cs_setBanned);
-    banmap = setBanned; // thread safe copy
-}
-
-void CNode::SetBanned(const banmap_t &banmap)
-{
-    LOCK(cs_setBanned);
-    setBanned = banmap;
-    setBannedIsDirty = true;
-}
-
-void CNode::SetBannedIsDirty(bool dirty) 
-{
-    LOCK(cs_setBanned);
-    setBannedIsDirty = dirty;
+    banMap = setBanned; // thread safe copy
 }
 
 std::vector<CSubNet> CNode::vWhitelistedRange;
@@ -838,13 +819,8 @@ void ThreadSocketHandler()
                 }
             }
         }
-        size_t vNodesSize;
-        {
-            LOCK(cs_vNodes);
-            vNodesSize = vNodes.size();
-        }
-        if(vNodesSize != nPrevNodeCount) {
-            nPrevNodeCount = vNodesSize;
+        if (vNodes.size() != nPrevNodeCount) {
+            nPrevNodeCount = vNodes.size();
             uiInterface.NotifyNumConnectionsChanged(nPrevNodeCount);
         }
 
@@ -1687,29 +1663,11 @@ void StartNode(boost::thread_group& threadGroup)
     int64_t nStart = GetTimeMillis();
     {
         CAddrDB adb;
-        if (!adb.Read(addrman)) {
+        if (!adb.Read(addrman))
             LogPrintf("Invalid or missing peers.dat; recreating\n");
-            DumpAddresses();
-        }
     }
-    LogPrintf("Loaded %i addresses from peers.dat  %dms\n", addrman.size(), GetTimeMillis() - nStart);
-
-    uiInterface.InitMessage(_("Loading banlist..."));
-    // Load addresses from banlist.dat
-    nStart = GetTimeMillis();
-    CBanDB bandb;
-    banmap_t banmap;
-    if (bandb.Read(banmap)) {
-        CNode::SetBanned(banmap);
-        CNode::SetBannedIsDirty(false); 
-        CNode::SweepBanned();
-
-        LogPrint("net", "Loaded %i address from banlist.dat %dms\n", banmap.size(), GetTimeMillis() - nStart);
-    } else {
-        LogPrintf("Invalid or missing banlist.dat; recreating\n");
-        CNode::SetBannedIsDirty(true);
-        CNode::DumpBanlist();
-    }
+    LogPrintf("Loaded %i addresses from peers.dat  %dms\n",
+        addrman.size(), GetTimeMillis() - nStart);
     fAddressesInitialized = true;
 
     if (semOutbound == NULL) {

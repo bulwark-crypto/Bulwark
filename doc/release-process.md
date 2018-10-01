@@ -113,10 +113,6 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
     ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bulwark/contrib/gitian-descriptors/gitian-osx.yml
     mv build/out/bulwark-*-osx-unsigned.tar.gz inputs/bulwark-osx-unsigned.tar.gz
     mv build/out/bulwark-*.tar.gz build/out/bulwark-*.dmg ../
-
-    ./bin/gbuild --memory 3000 --commit bulwark=v${VERSION} ../bulwark/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bulwark/contrib/gitian-descriptors/gitian-aarch64.yml
-    mv build/out/bulwark-*.tar.gz build/out/src/bulwark-*.tar.gz ../
     popd
 
 Build output expected:
@@ -140,7 +136,6 @@ Verify the signatures
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bulwark/contrib/gitian-descriptors/gitian-linux.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bulwark/contrib/gitian-descriptors/gitian-win.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bulwark/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../bulwark/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -151,7 +146,6 @@ Commit your signature to gitian.sigs:
     git add ${VERSION}-linux/${SIGNER}
     git add ${VERSION}-win-unsigned/${SIGNER}
     git add ${VERSION}-osx-unsigned/${SIGNER}
-    git add ${VERSION}-aarch64/${SIGNER}
     git commit -a
     git push  # Assuming you can push to the gitian.sigs tree
     popd
