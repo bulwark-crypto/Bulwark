@@ -1,4 +1,4 @@
-![Bulwark Logo](https://bulwarkcrypto.com/wp-content/uploads/2018/03/Badge-Full-Color.svg)
+![Bulwark Logo](https://bulwarkcrypto.com/wp-content/uploads/2018/10/Symbol-Color2.svg)
 
 Bulwark Cryptocurrency
 &middot;
