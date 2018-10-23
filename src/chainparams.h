@@ -117,6 +117,7 @@ public:
 
     /** Staking Requirements */
     int Stake_MinProtocol() const { return nStakeMinStartProtocol; }
+    int Stake_MinProtocolConsensus() const { return nStateMinStartProtocolConsensus; }
     int Stake_MinConfirmations() const { return nStakeMinConfirmations; }
     CAmount Stake_MinAmount() const { return nStakeMinAmount; }
 
@@ -174,6 +175,7 @@ protected:
 
     /** Staking Requirements */
     int nStakeMinStartProtocol;
+    int nStakeMinStartProtocolConsensus;
     int nStakeMinConfirmations;
     CAmount nStakeMinAmount;
 };

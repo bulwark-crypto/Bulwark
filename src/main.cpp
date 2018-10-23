@@ -79,7 +79,8 @@ bool fVerifyingBlocks = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 60 * 60;
+unsigned int nStakeMinAge = 60 * 60; // 1 hour
+unsigned int nStakeMinAgeConsensus = 12 * 60 * 60; // 12 hours
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in uBWK) are considered zero fee (for relaying and mining)
@@ -941,6 +942,12 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
     uint256 bnCentSecond = 0; // coin age in the unit of cent-seconds
     nCoinAge = 0;
 
+    // On protocol change update the staking requirements.
+    unsigned int nMinStakeAge = nStakeMinAge;
+    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus()) {
+        nMinStakeAge = nStakeMinAgeConsensus
+    }
+
     CBlockIndex* pindex = NULL;
     BOOST_FOREACH (const CTxIn& txin, tx.vin) {
         // First try finding the previous transaction in database
@@ -962,7 +969,7 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
         // Read block header
         CBlockHeader prevblock = pindex->GetBlockHeader();
 
-        if (prevblock.nTime + nStakeMinAge > nTxTime)
+        if (prevblock.nTime + nMinStakeAge > nTxTime)
             continue; // only count coins meeting min age requirement
 
         if (nTxTime < prevblock.nTime) {

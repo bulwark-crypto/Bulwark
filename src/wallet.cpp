@@ -1766,6 +1766,11 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
         nStakeAmount = Params().Stake_MinAmount();
         nStakeDepth = Params().Stake_MinConfirmations();
     }
+    // Consensus implementation of protocol change.
+    unsigned int nMinStakeAge = nStakeMinAge;
+    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus()) {
+        nMinStakeAge = nStakeMinAgeConsensus
+    }
 
     BOOST_FOREACH (const COutput& out, vCoins) {
         //make sure not to outrun target amount
@@ -1789,7 +1794,7 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
         }
 
         //check for min age
-        if (GetAdjustedTime() - nTxTime < nStakeMinAge)
+        if (GetAdjustedTime() - nTxTime < nMinStakeAge)
             continue;
 
         //add to our stake set
@@ -1811,6 +1816,12 @@ bool CWallet::MintableCoins()
     vector<COutput> vCoins;
     AvailableCoins(vCoins, true);
 
+    // On protocol change update the staking requirements.
+    unsigned int nMinStakeAge = nStakeMinAge;
+    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus()) {
+        nMinStakeAge = nStakeMinAgeConsensus
+    }
+
     for (const COutput& out : vCoins) {
         int64_t nTxTime = out.tx->GetTxTime();
         if (out.tx->IsZerocoinSpend()) {
@@ -1819,7 +1830,7 @@ bool CWallet::MintableCoins()
             nTxTime = mapBlockIndex.at(out.tx->hashBlock)->GetBlockTime();
         }
 
-        if (GetAdjustedTime() - nTxTime > nStakeMinAge)
+        if (GetAdjustedTime() - nTxTime > nMinStakeAge)
             return true;
     }
 
