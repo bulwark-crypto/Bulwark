@@ -492,11 +492,11 @@ public:
 
     bool IsEstablished()
     {
-        // Proposals must be at least a day old to make it into a budget
-        if (Params().NetworkID() == CBaseChainParams::MAIN) return (nTime < GetTime() - (60 * 60 * 24));
+        // Proposals must be at least a day old to make it into a budget (90 seconds blocks)
+        if (Params().NetworkID() == CBaseChainParams::MAIN) return (nTime < GetTime() - (90 * 960));
 
-        //for testing purposes - 4 hours
-        return (nTime < GetTime() - (60 * 5));
+        //for testing purposes - 1 hour (30 second blocks)
+        return (nTime < GetTime() - (60 * 30 * 2));
     }
 
     std::string GetName() { return strProposalName; }
