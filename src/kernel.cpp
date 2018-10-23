@@ -39,7 +39,7 @@ int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd)
     // Consensus implementation of protocol change.
     unsigned int nMinStakeAge = nStakeMinAge;
     if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus()) {
-        nMinStakeAge = nStakeMinAgeConsensus
+        nMinStakeAge = nStakeMinAgeConsensus;
     }
     return nIntervalEnd - nIntervalBeginning - nMinStakeAge;
 }
@@ -307,7 +307,7 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTra
     // Consensus implementation of protocol change.
     unsigned int nMinStakeAge = nStakeMinAge;
     if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus()) {
-        nMinStakeAge = nStakeMinAgeConsensus
+        nMinStakeAge = nStakeMinAgeConsensus;
     }
     if (nTimeBlockFrom + nMinStakeAge > nTimeTx) // Min age requirement
         return error("CheckStakeKernelHash() : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d", nTimeBlockFrom, nMinStakeAge, nTimeTx);

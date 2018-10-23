@@ -945,7 +945,7 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
     // On protocol change update the staking requirements.
     unsigned int nMinStakeAge = nStakeMinAge;
     if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus()) {
-        nMinStakeAge = nStakeMinAgeConsensus
+        nMinStakeAge = nStakeMinAgeConsensus;
     }
 
     CBlockIndex* pindex = NULL;
