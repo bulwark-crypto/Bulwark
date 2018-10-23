@@ -49,7 +49,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
             return bnTargetLimit.GetCompact();
         }
         
-        int64_t nTargetSpacing = Params().TargetSpacing();
+        int64_t nTargetSpacing = 90;
         int64_t nTargetTimespan = 60 * 30; //1800
 
         int64_t nActualSpacing = 0;
