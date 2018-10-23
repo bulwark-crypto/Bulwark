@@ -67,7 +67,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         int64_t nInterval = nTargetTimespan / nTargetSpacing;
         bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
         bnNew /= ((nInterval + 1) * nTargetSpacing);
-        std::cout << bnNew << " " << nInterval << " " << nTargetSpacing << " " << nTargetTimespan << " " << nActualSpacing << std::endl;
+        std::cout << bnNew.ToString() << " " << nInterval << " " << nTargetSpacing << " " << nTargetTimespan << " " << nActualSpacing << std::endl;
         if (bnNew <= 0 || bnNew > bnTargetLimit)
             bnNew = bnTargetLimit;
 
