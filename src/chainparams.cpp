@@ -270,7 +270,7 @@ public:
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1539278111;
+        genesis.nTime = 1540332626;
         genesis.nNonce = 1892576;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();
         
