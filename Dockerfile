@@ -79,7 +79,6 @@ RUN dpkg --add-architecture i386 \
   && make -C /Bulwark/depends HOST=arm-linux-gnueabihf \
   && make -C /Bulwark/depends HOST=i686-pc-linux-gnu \
   && make -C /Bulwark/depends HOST=i686-w64-mingw32 \
-  && make -C /Bulwark/depends HOST=x86_64-apple-darwin14 OSX_SDK_VERSION=10.11 OSX_MIN_VERSION=10.11 \
   && make -C /Bulwark/depends HOST=x86_64-unknown-linux-gnu \
   && make -C /Bulwark/depends HOST=x86_64-w64-mingw32
 
@@ -118,7 +117,6 @@ WORKDIR /
 RUN arm-linux-gnueabihf-strip ./bulwark-cli ./bulwark-qt ./bulwarkd  \
   && tar czf arm32.tar.gz ./bulwark* \
   && rm ./bulwark-cli ./bulwark-qt ./bulwarkd 
-ENTRYPOINT ["dash"]
 
 FROM base AS linux32
 ENV CXXFLAGS="-Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-narrowing"
@@ -144,7 +142,6 @@ WORKDIR /
 RUN strip ./bulwark-cli ./bulwark-qt ./bulwarkd  \
   && tar czf linux32.tar.gz ./bulwark* \
   && rm ./bulwark-cli ./bulwark-qt ./bulwarkd 
-ENTRYPOINT ["dash"]
 
 FROM base AS linux64
 ENV CXXFLAGS="-Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-narrowing"
@@ -171,29 +168,6 @@ WORKDIR /
 RUN strip ./bulwark-cli ./bulwark-qt ./bulwarkd  \
   && tar czf linux64.tar.gz ./bulwark* \
   && rm ./bulwark-cli ./bulwark-qt ./bulwarkd 
-ENTRYPOINT ["dash"]
-
-FROM base as mac64
-ENV CXXFLAGS="-Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-narrowing"
-ENV HOST="x86_64-apple-darwin14"
-COPY --from=dependencies /Bulwark/depends/x86_64-unknown-linux-gnu $(pwd)/depends/x86_64-apple-darwin14
-RUN ./autogen.sh \
-  && ./configure \
-  --enable-zmq \
-  --with-pic \
-  --enable-reduce-exports \
-  --disable-shared \
-  --enable-hardening \
-  --disable-tests \
-  --with-miniupnpc \
-  --enable-upnp-default \
-  --prefix="$(pwd)/depends/x86_64-apple-darwin14" \
-  --build=x86_64-unknown-linux-gnu \
-  --host=x86_64-apple-darwin14 \
-  && make deploy \
-  && cp ./Bulwark-Core.dmg /mac64.dmg \
-  && make clean
-ENTRYPOINT ["dash"]
 
 FROM base AS windows32
 ENV CXXFLAGS="-Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-narrowing"
@@ -226,7 +200,6 @@ WORKDIR /
 RUN strip ./bulwark-cli.exe ./bulwark-qt.exe ./bulwarkd.exe  \
   && tar czf windows32.tar.gz ./bulwark* \
   && rm ./bulwark-cli.exe ./bulwark-qt.exe ./bulwarkd.exe
-ENTRYPOINT ["dash"]
 
 FROM base AS windows64
 ENV CXXFLAGS="-Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-narrowing"
@@ -259,7 +232,6 @@ WORKDIR /
 RUN strip ./bulwark-cli.exe ./bulwark-qt.exe ./bulwarkd.exe  \
   && tar czf windows64.tar.gz ./bulwark* \
   && rm ./bulwark-cli.exe ./bulwark-qt.exe ./bulwarkd.exe
-ENTRYPOINT ["dash"]
 
 FROM alpine:3.8
 LABEL maintainer="kewagi"
@@ -269,7 +241,6 @@ RUN mkdir /release
 COPY --from=arm32 /arm32.* /release
 COPY --from=linux32 /linux32.* /release
 COPY --from=linux64 /linux64.* /release
-COPY --from=mac64 /mac64.* /release
 COPY --from=windows32 /windows32.* /release
 COPY --from=windows64 /windows64.* /release
 ENTRYPOINT ["ash"]
