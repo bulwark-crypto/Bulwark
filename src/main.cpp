@@ -4295,7 +4295,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         // If consensus level checks are in place then make sure
         // the min. value is provided in tx.
         if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus() && block.vtx[1].vout[1].nValue < Params().Stake_MinAmount())
-            return state.DoS(100, error("CheckBlock() : under min. stake value"))
+            return state.DoS(100, error("CheckBlock() : under min. stake value"));
     }
 
     // ----------- swiftTX transaction scanning -----------
