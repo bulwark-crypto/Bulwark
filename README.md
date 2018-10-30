@@ -2,12 +2,18 @@
 
 Bulwark Cryptocurrency
 &middot;
-[![GitHub license](https://img.shields.io/github/license/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/blob/master/COPYING) [![Build Status](https://travis-ci.org/bulwark-crypto/Bulwark.svg?branch=master)](https://travis-ci.org/bulwark-crypto/Bulwark) [![GitHub version](https://badge.fury.io/gh/bulwark-crypto%2FBulwark.svg)](https://badge.fury.io/gh/bulwark-crypto%2FBulwark) [![Discord](https://img.shields.io/discord/374271866308919296.svg)](https://discord.me/bulwarkcrypto)
+[![GitHub license](https://img.shields.io/github/license/bulwark-crypto/Bulwark.svg)](https://github.com/bulwark-crypto/Bulwark/blob/master/COPYING) [![GitHub version](https://badge.fury.io/gh/bulwark-crypto%2FBulwark.svg)](https://badge.fury.io/gh/bulwark-crypto%2FBulwark) [![Discord](https://img.shields.io/discord/374271866308919296.svg)](https://discord.me/bulwarkcrypto)
 =====
 
 Bulwark (BWK) is a privacy oriented digital currency with Masternodes implemented.
 Bulwark offers both SwiftTX and Obfuscation to enable speedy transactions with a Seesaw Staking / Masternode reward balancing mechanism to promote strong network security after the Proof of Work phase
 
+## Table of Contents
+- [Specifications](#specifications)
+- [PoS Staking Requirements](#pos-staking-requirements)
+- [PoS Block Rewards](#pos-block-rewards)
+
+<a name="specifications"></a>
 ## Specifications
 
 | Specification         | Descriptor                              |
@@ -28,18 +34,16 @@ Bulwark offers both SwiftTX and Obfuscation to enable speedy transactions with a
 | Protocol Support      | IPV4, IPV6, TOR, I2P                    |
 | PoS                   | SeeSaw & Split Rewards                  |
 
-## PoW Block Reward
+<a name="pos-staking-requirements"></a>
+## PoS Staking Requirements
 
-| Subsidy  | Block         | PoW  | MN  | Circulation |
-|----------|---------------|------|-----|-------------|
-| 489720   | 1             | 100% | NA  | 489200      |
-| ~25(avg) | 2-960         | 100% | NA  | 513225      |
-| 50.000   | 961-28800     | 80%  | 20% | 1905225     |
-| 50.000   | 28801-57600   | 75%  | 25% | 3345225     |
-| 50.000   | 57601-86400   | 66%  | 33% | 4785225     |
-| 43.750   | 86401-172800  | 50%  | 50% | 8565225     |
-| 37.500   | 172801-182700 | 50%  | 50% | 8936475     |
+| Requirement   | Details              |
+|---------------|----------------------|
+| Confirmations | 475 Blocks           |
+| Amount        | 100 BWK (Per Input)  |
+| Wallet        | Unlocked for Staking |
 
+<a name="pos-block-rewards"></a>
 ## PoS Block Rewards
 
 | Subsidy | Block           | Budget | Circulation    | Note          |
