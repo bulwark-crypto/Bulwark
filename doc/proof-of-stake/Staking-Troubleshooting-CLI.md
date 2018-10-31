@@ -52,7 +52,7 @@ This will unlock your wallet for staking only for a long time period. Unlocking 
 
 ## mintablecoins
 
-This is asking if your transaction is old enough to be staked. It takes 60 minutes or 67 confirmations for a transaction to be able to be staked. Just wait and this should correct to true.
+This is asking if your transaction is old enough to be staked. It takes 475 confirmations, roughly 12 hours, for a transaction to be able to be staked. Just wait and this should correct to true.
 
 ## enoughcoins
 
