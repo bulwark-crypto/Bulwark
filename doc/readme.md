@@ -56,62 +56,62 @@ Building
 ---------------------
 The following are developer notes on how to build bwk on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-- [Unix Build Notes](/building/Linux-Build-Guide.md)
-- [MacOS Build Notes](/building/MacOS-Build-Guide.md)
-- [Windows Build Notes](/building/Windows-Build-Guide.md)
-- [NetBSD Build Notes](/building/NetBSD-build-guide.md)
-- [OpenBSD Build Notes](/building/OpenBSD-build-guide.md)
+- [Unix Build Notes](building/Linux-Build-Guide.md)
+- [MacOS Build Notes](building/MacOS-Build-Guide.md)
+- [Windows Build Notes](building/Windows-Build-Guide.md)
+- [NetBSD Build Notes](building/NetBSD-build-guide.md)
+- [OpenBSD Build Notes](building/OpenBSD-build-guide.md)
 
 Development
 ---------------------
 The Bulwark repo's [root README](https://github.com/bulwark-crypto/Bulwark/blob/master/README.md) contains relevant information our parameters.
 
-- [Developer Notes](/miscellaneous/Developer-Notes.md)
-- [Multiwallet Qt Development](/bulwark-core/multiwallet-qt.md)
-- [Release Notes](/release-notes/)
-- [Unit Tests](/miscellaneous/unit-tests.md)
-- [Unauthenticated REST Interface](/bulwark-core/REST-interface.md)
-- [Dnsseed Policy](/miscellaneous/dnsseed-policy.md)
+- [Developer Notes](miscellaneous/Developer-Notes.md)
+- [Multiwallet Qt Development](bulwark-core/multiwallet-qt.md)
+- [Release Notes](release-notes/)
+- [Unit Tests](miscellaneous/unit-tests.md)
+- [Unauthenticated REST Interface](bulwark-core/REST-interface.md)
+- [Dnsseed Policy](miscellaneous/dnsseed-policy.md)
 
 ### Wallet Information
 
-- [Core Files](/bulwark-core/Bulwark-Core-Files.md)
-- [Default Data Locations](/bulwark-core/Default-Data-Locations.md)
-- [Running Bulwark](/bulwark-core/Running-Bulwark.md)
-- [Init Commands](/bulwark-core/bulwarkd-init.md)
-- [API Calls](/bulwark-core/Bulwark-API-Calls.md)
-- [Bootstrap](/bulwark-core/Bootstrap.md)
-- [Traffic Reduction](/bulwark-core/Reduce-Traffic-in-Bulwark-Core.md)
-- [Accounts](/bulwark-core/Accounts-Explained.md)
-- [Multisend](/bulwark-core/Multisend-Setup-Guide.md)
-- [Data Locations](/bulwark-core/Default-Data-Locations.md)
-- [TOR Support](TOR-Support-In-Bulwark.md)
+- [Core Files](bulwark-core/Bulwark-Core-Files.md)
+- [Default Data Locations](bulwark-core/Default-Data-Locations.md)
+- [Running Bulwark](bulwark-core/Running-Bulwark.md)
+- [Init Commands](bulwark-core/bulwarkd-init.md)
+- [API Calls](bulwark-core/Bulwark-API-Calls.md)
+- [Bootstrap](bulwark-core/Bootstrap.md)
+- [Traffic Reduction](bulwark-core/Reduce-Traffic-in-Bulwark-Core.md)
+- [Accounts](bulwark-core/Accounts-Explained.md)
+- [Multisend](bulwark-core/Multisend-Setup-Guide.md)
+- [Data Locations](bulwark-core/Default-Data-Locations.md)
+- [TOR Support](bulwark-core/TOR-Support-In-Bulwark.md)
 
 ### Masternode Information
 
-- [Masternode Commands](/masternode/Masternode-Commands.md)
-- [Installation](/masternode/Masternode-Installation.md)
-- [RPC Changes](/masternode/Masternode-RPC-Changes.md)
-- [Refresh Guide](/masternode/Refresh-Guide.md)
+- [Masternode Commands](masternode/Masternode-Commands.md)
+- [Installation](masternode/Masternode-Installation.md)
+- [RPC Changes](masternode/Masternode-RPC-Changes.md)
+- [Refresh Guide](masternode/Refresh-Guide.md)
 
 ### Proof-of-Stake Information
 
-- [Staking Guide](/proof-of-stake/Staking-Guide.md)
-- [Staking Troubleshooting CLI](/proof-of-stake/Staking-Troubleshooting-CLI.md)
-- [Staking Troubleshooting GUI](/proof-of-stake/Staking-Troubleshooting-GUI.md)
+- [Staking Guide](proof-of-stake/Staking-Guide.md)
+- [Staking Troubleshooting CLI](proof-of-stake/Staking-Troubleshooting-CLI.md)
+- [Staking Troubleshooting GUI](proof-of-stake/Staking-Troubleshooting-GUI.md)
 
 ### Governance Information
 
-- [Governance](/miscellaneous/Governance.md)
+- [Governance](miscellaneous/Governance.md)
 
 ### Transactions
 
-- [ZeroMQ](/transactions/Broadcasting-with-ZeroMQ.md)
-- [SwiftTX](/transactions/SwiftTX-Technical-Information.md)
+- [ZeroMQ](transactions/Broadcasting-with-ZeroMQ.md)
+- [SwiftTX](transactions/SwiftTX-Technical-Information.md)
 
 ### Miscellaneous
 
-- [Assets Attribution](/miscellaneous/assets-attribution.md)
+- [Assets Attribution](miscellaneous/assets-attribution.md)
 
 License
 ---------------------
