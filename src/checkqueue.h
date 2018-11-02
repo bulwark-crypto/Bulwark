@@ -119,9 +119,9 @@ private:
                 fOk = fAllOk;
             }
             // execute work
-            BOOST_FOREACH (T& check, vChecks)
-            if (fOk)
-                fOk = check();
+            BOOST_FOREACH(T& check, vChecks) {
+                if (fOk) fOk = check();
+            }
             vChecks.clear();
         } while (true);
     }
@@ -146,7 +146,7 @@ public:
     void Add(std::vector<T>& vChecks)
     {
         boost::unique_lock<boost::mutex> lock(mutex);
-        BOOST_FOREACH (T& check, vChecks) {
+        BOOST_FOREACH(T& check, vChecks) {
             queue.push_back(T());
             check.swap(queue.back());
         }

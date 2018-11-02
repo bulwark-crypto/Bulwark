@@ -127,7 +127,7 @@ public:
 
     void ClearUnspendable()
     {
-        BOOST_FOREACH (CTxOut& txout, vout) {
+        BOOST_FOREACH(CTxOut& txout, vout) {
             if (txout.scriptPubKey.IsUnspendable())
                 txout.SetNull();
         }
@@ -278,9 +278,9 @@ public:
     //! note that only !IsPruned() CCoins can be serialized
     bool IsPruned() const
     {
-        BOOST_FOREACH (const CTxOut& out, vout)
-        if (!out.IsNull())
-            return false;
+        BOOST_FOREACH(const CTxOut& out, vout) {
+            if (!out.IsNull()) return false;
+        }
         return true;
     }
 };

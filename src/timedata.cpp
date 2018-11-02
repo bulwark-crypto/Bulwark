@@ -85,9 +85,10 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
             if (!fDone) {
                 // If nobody has a time different than ours but within 5 minutes of ours, give a warning
                 bool fMatch = false;
-                BOOST_FOREACH (int64_t nOffset, vSorted)
-                if (nOffset != 0 && abs64(nOffset) < 5 * 60)
-                    fMatch = true;
+                BOOST_FOREACH(int64_t nOffset, vSorted) {
+                    if (nOffset != 0 && abs64(nOffset) < 5 * 60)
+                        fMatch = true;
+                }
 
                 if (!fMatch) {
                     fDone = true;
@@ -99,8 +100,9 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
             }
         }
         if (fDebug) {
-            BOOST_FOREACH (int64_t n, vSorted)
-            LogPrintf("%+d  ", n);
+            BOOST_FOREACH(int64_t n, vSorted) {
+                LogPrintf("%+d  ", n);
+            }
             LogPrintf("|  ");
         }
         LogPrintf("nTimeOffset = %+d  (%+d minutes)\n", nTimeOffset, nTimeOffset / 60);

@@ -222,8 +222,9 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
 
         LogPrint("masternode", "dseep - relaying from active mn, %s \n", vin.ToString().c_str());
         LOCK(cs_vNodes);
-        BOOST_FOREACH (CNode* pnode, vNodes)
-        pnode->PushMessage("dseep", vin, vchMasterNodeSignature, masterNodeSignatureTime, false);
+        BOOST_FOREACH(CNode* pnode, vNodes) {
+            pnode->PushMessage("dseep", vin, vchMasterNodeSignature, masterNodeSignatureTime, false);
+        }
 
         /*
          * END OF "REMOVE"
@@ -349,8 +350,9 @@ bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateral
     }
 
     LOCK(cs_vNodes);
-    BOOST_FOREACH (CNode* pnode, vNodes)
-    pnode->PushMessage("dsee", vin, service, vchMasterNodeSignature, masterNodeSignatureTime, pubKeyCollateralAddress, pubKeyMasternode, -1, -1, masterNodeSignatureTime, PROTOCOL_VERSION, donationAddress, donationPercantage);
+    BOOST_FOREACH(CNode* pnode, vNodes) {
+        pnode->PushMessage("dsee", vin, service, vchMasterNodeSignature, masterNodeSignatureTime, pubKeyCollateralAddress, pubKeyMasternode, -1, -1, masterNodeSignatureTime, PROTOCOL_VERSION, donationAddress, donationPercantage);
+    }
 
     /*
      * END OF "REMOVE"
@@ -386,7 +388,7 @@ bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secr
         }
 
         bool found = false;
-        BOOST_FOREACH (COutput& out, possibleCoins) {
+        BOOST_FOREACH(COutput& out, possibleCoins) {
             if (out.tx->GetHash() == txHash && out.i == outputIndex) {
                 selectedOutput = &out;
                 found = true;
@@ -449,7 +451,7 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
     // Temporary unlock MN coins from masternode.conf
     if (GetBoolArg("-mnconflock", true)) {
         uint256 mnTxHash;
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
             mnTxHash.SetHex(mne.getTxHash());
 
             int nIndex;
@@ -467,12 +469,13 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 
     // Lock MN coins from masternode.conf back if they where temporary unlocked
     if (!confLockedCoins.empty()) {
-        BOOST_FOREACH (COutPoint outpoint, confLockedCoins)
-        pwalletMain->LockCoin(outpoint);
+        BOOST_FOREACH(COutPoint outpoint, confLockedCoins) {
+            pwalletMain->LockCoin(outpoint);
+        }
     }
 
     // Filter
-    BOOST_FOREACH (const COutput& out, vCoins) {
+    BOOST_FOREACH(const COutput& out, vCoins) {
         if (out.tx->vout[out.i].nValue == 5000 * COIN) { //exactly
             filteredCoins.push_back(out);
         }

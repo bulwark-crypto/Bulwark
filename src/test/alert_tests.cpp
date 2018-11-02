@@ -118,8 +118,7 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
 {
     SetMockTime(11);
 
-    BOOST_FOREACH(const CAlert& alert, alerts)
-    {
+    BOOST_FOREACH(const CAlert& alert, alerts) {
         BOOST_CHECK(alert.CheckSignature());
     }
 
@@ -163,8 +162,9 @@ BOOST_AUTO_TEST_CASE(AlertNotify)
 
     mapArgs["-alertnotify"] = std::string("echo %s >> ") + temp.string();
 
-    BOOST_FOREACH(CAlert alert, alerts)
-    alert.ProcessAlert(false);
+    BOOST_FOREACH(CAlert alert, alerts) {
+        alert.ProcessAlert(false);
+    }
 
     std::vector<std::string> r = read_lines(temp);
     BOOST_CHECK_EQUAL(r.size(), 4u);
