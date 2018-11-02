@@ -10,13 +10,16 @@
 #include "leveldb/slice.h"
 #include "leveldb/status.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class WritableFile;
 
-namespace log {
+namespace log
+{
 
-class Writer {
+class Writer
+{
 public:
     // Create a writer that will append data to "*dest".
     // "*dest" must be initially empty.

@@ -73,7 +73,8 @@ uint256 CBlock::BuildMerkleTree(bool* fMutated) const
         for (int i = 0; i < nSize; i += 2)
         {
             int i2 = std::min(i+1, nSize-1);
-            if (i2 == i + 1 && i2 + 1 == nSize && vMerkleTree[j+i] == vMerkleTree[j+i2]) {
+            if (i2 == i + 1 && i2 + 1 == nSize && vMerkleTree[j+i] == vMerkleTree[j+i2])
+            {
                 // Two identical hashes at the end of the list at a particular level.
                 mutated = true;
             }
@@ -82,7 +83,8 @@ uint256 CBlock::BuildMerkleTree(bool* fMutated) const
         }
         j += nSize;
     }
-    if (fMutated) {
+    if (fMutated)
+    {
         *fMutated = mutated;
     }
     return (vMerkleTree.empty() ? uint256() : vMerkleTree.back());

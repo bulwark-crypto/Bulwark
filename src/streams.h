@@ -108,34 +108,44 @@ public:
     //
     // Vector subset
     //
-    const_iterator begin() const {
+    const_iterator begin() const
+    {
         return vch.begin() + nReadPos;
     }
-    iterator begin() {
+    iterator begin()
+    {
         return vch.begin() + nReadPos;
     }
-    const_iterator end() const {
+    const_iterator end() const
+    {
         return vch.end();
     }
-    iterator end() {
+    iterator end()
+    {
         return vch.end();
     }
-    size_type size() const {
+    size_type size() const
+    {
         return vch.size() - nReadPos;
     }
-    bool empty() const {
+    bool empty() const
+    {
         return vch.size() == nReadPos;
     }
-    void resize(size_type n, value_type c = 0) {
+    void resize(size_type n, value_type c = 0)
+    {
         vch.resize(n + nReadPos, c);
     }
-    void reserve(size_type n) {
+    void reserve(size_type n)
+    {
         vch.reserve(n + nReadPos);
     }
-    const_reference operator[](size_type pos) const {
+    const_reference operator[](size_type pos) const
+    {
         return vch[pos + nReadPos];
     }
-    reference operator[](size_type pos) {
+    reference operator[](size_type pos)
+    {
         return vch[pos + nReadPos];
     }
     void clear()
@@ -143,21 +153,25 @@ public:
         vch.clear();
         nReadPos = 0;
     }
-    iterator insert(iterator it, const char& x = char()) {
+    iterator insert(iterator it, const char& x = char())
+    {
         return vch.insert(it, x);
     }
-    void insert(iterator it, size_type n, const char& x) {
+    void insert(iterator it, size_type n, const char& x)
+    {
         vch.insert(it, n, x);
     }
 
     void insert(iterator it, std::vector<char>::const_iterator first, std::vector<char>::const_iterator last)
     {
         assert(last - first >= 0);
-        if (it == vch.begin() + nReadPos && (unsigned int)(last - first) <= nReadPos) {
+        if (it == vch.begin() + nReadPos && (unsigned int)(last - first) <= nReadPos)
+        {
             // special case for inserting at the front when there's room
             nReadPos -= (last - first);
             memcpy(&vch[nReadPos], &first[0], last - first);
-        } else
+        }
+        else
             vch.insert(it, first, last);
     }
 
@@ -165,41 +179,51 @@ public:
     void insert(iterator it, const char* first, const char* last)
     {
         assert(last - first >= 0);
-        if (it == vch.begin() + nReadPos && (unsigned int)(last - first) <= nReadPos) {
+        if (it == vch.begin() + nReadPos && (unsigned int)(last - first) <= nReadPos)
+        {
             // special case for inserting at the front when there's room
             nReadPos -= (last - first);
             memcpy(&vch[nReadPos], &first[0], last - first);
-        } else
+        }
+        else
             vch.insert(it, first, last);
     }
 #endif
 
     iterator erase(iterator it)
     {
-        if (it == vch.begin() + nReadPos) {
+        if (it == vch.begin() + nReadPos)
+        {
             // special case for erasing from the front
-            if (++nReadPos >= vch.size()) {
+            if (++nReadPos >= vch.size())
+            {
                 // whenever we reach the end, we take the opportunity to clear the buffer
                 nReadPos = 0;
                 return vch.erase(vch.begin(), vch.end());
             }
             return vch.begin() + nReadPos;
-        } else
+        }
+        else
             return vch.erase(it);
     }
 
     iterator erase(iterator first, iterator last)
     {
-        if (first == vch.begin() + nReadPos) {
+        if (first == vch.begin() + nReadPos)
+        {
             // special case for erasing from the front
-            if (last == vch.end()) {
+            if (last == vch.end())
+            {
                 nReadPos = 0;
                 return vch.erase(vch.begin(), vch.end());
-            } else {
+            }
+            else
+            {
                 nReadPos = (last - vch.begin());
                 return last;
             }
-        } else
+        }
+        else
             return vch.erase(first, last);
     }
 
@@ -222,32 +246,41 @@ public:
     //
     // Stream subset
     //
-    bool eof() const {
+    bool eof() const
+    {
         return size() == 0;
     }
-    CDataStream* rdbuf() {
+    CDataStream* rdbuf()
+    {
         return this;
     }
-    int in_avail() {
+    int in_avail()
+    {
         return size();
     }
 
-    void SetType(int n) {
+    void SetType(int n)
+    {
         nType = n;
     }
-    int GetType() {
+    int GetType()
+    {
         return nType;
     }
-    void SetVersion(int n) {
+    void SetVersion(int n)
+    {
         nVersion = n;
     }
-    int GetVersion() {
+    int GetVersion()
+    {
         return nVersion;
     }
-    void ReadVersion() {
+    void ReadVersion()
+    {
         *this >> nVersion;
     }
-    void WriteVersion() {
+    void WriteVersion()
+    {
         *this << nVersion;
     }
 
@@ -255,8 +288,10 @@ public:
     {
         // Read from the beginning of the buffer
         unsigned int nReadPosNext = nReadPos + nSize;
-        if (nReadPosNext >= vch.size()) {
-            if (nReadPosNext > vch.size()) {
+        if (nReadPosNext >= vch.size())
+        {
+            if (nReadPosNext > vch.size())
+            {
                 throw std::ios_base::failure("CDataStream::read() : end of data");
             }
             memcpy(pch, &vch[nReadPos], nSize);
@@ -274,7 +309,8 @@ public:
         // Ignore from the beginning of the buffer
         assert(nSize >= 0);
         unsigned int nReadPosNext = nReadPos + nSize;
-        if (nReadPosNext >= vch.size()) {
+        if (nReadPosNext >= vch.size())
+        {
             if (nReadPosNext > vch.size())
                 throw std::ios_base::failure("CDataStream::ignore() : end of data");
             nReadPos = 0;
@@ -364,7 +400,8 @@ public:
 
     void fclose()
     {
-        if (file) {
+        if (file)
+        {
             ::fclose(file);
             file = NULL;
         }
@@ -385,35 +422,43 @@ public:
      * @note Ownership of the FILE* will remain with this class. Use this only if the scope of the
      * CAutoFile outlives use of the passed pointer.
      */
-    FILE* Get() const {
+    FILE* Get() const
+    {
         return file;
     }
 
     /** Return true if the wrapped FILE* is NULL, false otherwise.
      */
-    bool IsNull() const {
+    bool IsNull() const
+    {
         return (file == NULL);
     }
 
     //
     // Stream subset
     //
-    void SetType(int n) {
+    void SetType(int n)
+    {
         nType = n;
     }
-    int GetType() {
+    int GetType()
+    {
         return nType;
     }
-    void SetVersion(int n) {
+    void SetVersion(int n)
+    {
         nVersion = n;
     }
-    int GetVersion() {
+    int GetVersion()
+    {
         return nVersion;
     }
-    void ReadVersion() {
+    void ReadVersion()
+    {
         *this >> nVersion;
     }
-    void WriteVersion() {
+    void WriteVersion()
+    {
         *this << nVersion;
     }
 
@@ -498,9 +543,12 @@ protected:
         if (readNow == 0)
             return false;
         size_t read = fread((void*)&vchBuf[pos], 1, readNow, src);
-        if (read == 0) {
+        if (read == 0)
+        {
             throw std::ios_base::failure(feof(src) ? "CBufferedFile::Fill : end of file" : "CBufferedFile::Fill : fread failed");
-        } else {
+        }
+        else
+        {
             nSrcPos += read;
             return true;
         }
@@ -521,7 +569,8 @@ public:
 
     void fclose()
     {
-        if (src) {
+        if (src)
+        {
             ::fclose(src);
             src = NULL;
         }
@@ -540,7 +589,8 @@ public:
             throw std::ios_base::failure("Read attempted past buffer limit");
         if (nSize + nRewind > vchBuf.size())
             throw std::ios_base::failure("Read larger than buffer size");
-        while (nSize > 0) {
+        while (nSize > 0)
+        {
             if (nReadPos == nSrcPos)
                 Fill();
             unsigned int pos = nReadPos % vchBuf.size();
@@ -567,13 +617,18 @@ public:
     bool SetPos(uint64_t nPos)
     {
         nReadPos = nPos;
-        if (nReadPos + nRewind < nSrcPos) {
+        if (nReadPos + nRewind < nSrcPos)
+        {
             nReadPos = nSrcPos - nRewind;
             return false;
-        } else if (nReadPos > nSrcPos) {
+        }
+        else if (nReadPos > nSrcPos)
+        {
             nReadPos = nSrcPos;
             return false;
-        } else {
+        }
+        else
+        {
             return true;
         }
     }
@@ -612,7 +667,8 @@ public:
     // search for a given byte in the stream, and remain positioned on it
     void FindByte(char ch)
     {
-        while (true) {
+        while (true)
+        {
             if (nReadPos == nSrcPos)
                 Fill();
             if (vchBuf[nReadPos % vchBuf.size()] == ch)

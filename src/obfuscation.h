@@ -114,15 +114,18 @@ public:
     /// Add entries to use for Obfuscation
     bool Add(const std::vector<CTxIn> vinIn, CAmount amountIn, const CTransaction collateralIn, const std::vector<CTxOut> voutIn)
     {
-        if (isSet) {
+        if (isSet)
+        {
             return false;
         }
 
-        BOOST_FOREACH(const CTxIn& in, vinIn) {
+        BOOST_FOREACH(const CTxIn& in, vinIn)
+        {
             sev.push_back(in);
         }
 
-        BOOST_FOREACH(const CTxOut& out, voutIn) {
+        BOOST_FOREACH(const CTxOut& out, voutIn)
+        {
             vout.push_back(out);
         }
 
@@ -136,9 +139,12 @@ public:
 
     bool AddSig(const CTxIn& vin)
     {
-        BOOST_FOREACH(CTxDSIn& s, sev) {
-            if (s.prevout == vin.prevout && s.nSequence == vin.nSequence) {
-                if (s.fHasSig) {
+        BOOST_FOREACH(CTxDSIn& s, sev)
+        {
+            if (s.prevout == vin.prevout && s.nSequence == vin.nSequence)
+            {
+                if (s.fHasSig)
+                {
                     return false;
                 }
                 s.scriptSig = vin.scriptSig;
@@ -195,7 +201,8 @@ public:
     bool GetAddress(CService& addr)
     {
         CMasternode* pmn = mnodeman.Find(vin);
-        if (pmn != NULL) {
+        if (pmn != NULL)
+        {
             addr = pmn->addr;
             return true;
         }
@@ -206,7 +213,8 @@ public:
     bool GetProtocolVersion(int& protocolVersion)
     {
         CMasternode* pmn = mnodeman.Find(vin);
-        if (pmn != NULL) {
+        if (pmn != NULL)
+        {
             protocolVersion = pmn->protocolVersion;
             return true;
         }
@@ -301,7 +309,8 @@ private:
     std::string strAutoDenomResult;
 
 public:
-    enum messages {
+    enum messages
+    {
         ERR_ALREADY_HAVE,
         ERR_DENOM,
         ERR_ENTRIES_FULL,
@@ -413,15 +422,18 @@ public:
     // Set the 'state' value, with some logging and capturing when the state changed
     void UpdateState(unsigned int newState)
     {
-        if (fMasterNode && (newState == POOL_STATUS_ERROR || newState == POOL_STATUS_SUCCESS)) {
+        if (fMasterNode && (newState == POOL_STATUS_ERROR || newState == POOL_STATUS_SUCCESS))
+        {
             // LogPrint("obfuscation", "CObfuscationPool::UpdateState() - Can't set state to ERROR or SUCCESS as a Masternode. \n");
             return;
         }
 
         // LogPrintf("CObfuscationPool::UpdateState() == %d | %d \n", state, newState);
-        if (state != newState) {
+        if (state != newState)
+        {
             lastTimeChanged = GetTimeMillis();
-            if (fMasterNode) {
+            if (fMasterNode)
+            {
                 RelayStatus(obfuScationPool.sessionID, obfuScationPool.GetState(), obfuScationPool.GetEntriesCount(), MASTERNODE_RESET);
             }
         }

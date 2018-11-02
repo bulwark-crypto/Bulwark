@@ -17,22 +17,27 @@
 #include "Accumulator.h"
 #include "ZerocoinDefines.h"
 
-namespace libzerocoin {
+namespace libzerocoin
+{
 
 //Accumulator class
-Accumulator::Accumulator(const AccumulatorAndProofParams* p, const CoinDenomination d): params(p) {
-    if (!(params->initialized)) {
+Accumulator::Accumulator(const AccumulatorAndProofParams* p, const CoinDenomination d): params(p)
+{
+    if (!(params->initialized))
+    {
         throw std::runtime_error("Invalid parameters for accumulator");
     }
     denomination = d;
     this->value = this->params->accumulatorBase;
 }
 
-Accumulator::Accumulator(const ZerocoinParams* p, const CoinDenomination d, const Bignum bnValue) {
+Accumulator::Accumulator(const ZerocoinParams* p, const CoinDenomination d, const Bignum bnValue)
+{
     this->params = &(p->accumulatorParams);
     denomination = d;
 
-    if (!(params->initialized)) {
+    if (!(params->initialized))
+    {
         throw std::runtime_error("Invalid parameters for accumulator");
     }
 
@@ -42,19 +47,23 @@ Accumulator::Accumulator(const ZerocoinParams* p, const CoinDenomination d, cons
         this->value = this->params->accumulatorBase;
 }
 
-void Accumulator::increment(const CBigNum& bnValue) {
+void Accumulator::increment(const CBigNum& bnValue)
+{
     // Compute new accumulator = "old accumulator"^{element} mod N
     this->value = this->value.pow_mod(bnValue, this->params->accumulatorModulus);
 }
 
-void Accumulator::accumulate(const PublicCoin& coin) {
+void Accumulator::accumulate(const PublicCoin& coin)
+{
     // Make sure we're initialized
-    if(!(this->value)) {
+    if(!(this->value))
+    {
         std::cout << "Accumulator is not initialized" << "\n";
         throw std::runtime_error("Accumulator is not initialized");
     }
 
-    if(this->denomination != coin.getDenomination()) {
+    if(this->denomination != coin.getDenomination())
+    {
         std::cout << "Wrong denomination for coin. Expected coins of denomination: ";
         std::cout << this->denomination;
         std::cout << ". Instead, got a coin of denomination: ";
@@ -63,79 +72,97 @@ void Accumulator::accumulate(const PublicCoin& coin) {
         throw std::runtime_error("Wrong denomination for coin");
     }
 
-    if(coin.validate()) {
+    if(coin.validate())
+    {
         increment(coin.getValue());
-    } else {
+    }
+    else
+    {
         std::cout << "Coin not valid\n";
         throw std::runtime_error("Coin is not valid");
     }
 }
 
-CoinDenomination Accumulator::getDenomination() const {
+CoinDenomination Accumulator::getDenomination() const
+{
     return this->denomination;
 }
 
-const CBigNum& Accumulator::getValue() const {
+const CBigNum& Accumulator::getValue() const
+{
     return this->value;
 }
 
 //Manually set accumulator value
-void Accumulator::setValue(CBigNum bnValue) {
+void Accumulator::setValue(CBigNum bnValue)
+{
     this->value = bnValue;
 }
 
-Accumulator& Accumulator::operator += (const PublicCoin& c) {
+Accumulator& Accumulator::operator += (const PublicCoin& c)
+{
     this->accumulate(c);
     return *this;
 }
 
-Accumulator& Accumulator::operator = (Accumulator rhs) {
+Accumulator& Accumulator::operator = (Accumulator rhs)
+{
     if (this != &rhs) std::swap(*this, rhs);
     return *this;
 }
 
-bool Accumulator::operator == (const Accumulator rhs) const {
+bool Accumulator::operator == (const Accumulator rhs) const
+{
     return this->value == rhs.value;
 }
 
 //AccumulatorWitness class
 AccumulatorWitness::AccumulatorWitness(const ZerocoinParams* p,
-                                       const Accumulator& checkpoint, const PublicCoin coin): witness(checkpoint), element(coin) {
+                                       const Accumulator& checkpoint, const PublicCoin coin): witness(checkpoint), element(coin)
+{
 }
 
-void AccumulatorWitness::resetValue(const Accumulator& checkpoint, const PublicCoin coin) {
+void AccumulatorWitness::resetValue(const Accumulator& checkpoint, const PublicCoin coin)
+{
     this->witness.setValue(checkpoint.getValue());
     this->element = coin;
 }
 
-void AccumulatorWitness::AddElement(const PublicCoin& c) {
-    if(element != c) {
+void AccumulatorWitness::AddElement(const PublicCoin& c)
+{
+    if(element != c)
+    {
         witness += c;
     }
 }
 
 //warning check pubcoin value & denom outside of this function!
-void AccumulatorWitness::addRawValue(const CBigNum& bnValue) {
+void AccumulatorWitness::addRawValue(const CBigNum& bnValue)
+{
     witness.increment(bnValue);
 }
 
-const CBigNum& AccumulatorWitness::getValue() const {
+const CBigNum& AccumulatorWitness::getValue() const
+{
     return this->witness.getValue();
 }
 
-bool AccumulatorWitness::VerifyWitness(const Accumulator& a, const PublicCoin &publicCoin) const {
+bool AccumulatorWitness::VerifyWitness(const Accumulator& a, const PublicCoin &publicCoin) const
+{
     Accumulator temp(witness);
     temp += element;
     return (temp == a && this->element == publicCoin);
 }
 
 AccumulatorWitness& AccumulatorWitness::operator +=(
-    const PublicCoin& rhs) {
+    const PublicCoin& rhs)
+{
     this->AddElement(rhs);
     return *this;
 }
 
-AccumulatorWitness& AccumulatorWitness::operator =(AccumulatorWitness rhs) {
+AccumulatorWitness& AccumulatorWitness::operator =(AccumulatorWitness rhs)
+{
     // Not pretty, but seems to work (SPOCK)
     if (&witness != &rhs.witness) this->witness = rhs.witness;
     if (&element != &rhs.element) std::swap(element, rhs.element);

@@ -12,19 +12,22 @@
 #include <string>
 #include <vector>
 
-struct TestDerivation {
+struct TestDerivation
+{
     std::string pub;
     std::string prv;
     unsigned int nChild;
 };
 
-struct TestVector {
+struct TestVector
+{
     std::string strHexMaster;
     std::vector<TestDerivation> vDerive;
 
     TestVector(std::string strHexMasterIn) : strHexMaster(strHexMasterIn) {}
 
-    TestVector& operator()(std::string pub, std::string prv, unsigned int nChild) {
+    TestVector& operator()(std::string pub, std::string prv, unsigned int nChild)
+    {
         vDerive.push_back(TestDerivation());
         TestDerivation &der = vDerive.back();
         der.pub = pub;
@@ -76,13 +79,15 @@ TestVector test2 =
      "xprvA2nrNbFZABcdryreWet9Ea4LvTJcGsqrMzxHx98MMrotbir7yrKCEXw7nadnHM8Dq38EGfSh6dqA9QWTyefMLEcBYJUuekgW4BYPJcr9E7j",
      0);
 
-void RunTest(const TestVector &test) {
+void RunTest(const TestVector &test)
+{
     std::vector<unsigned char> seed = ParseHex(test.strHexMaster);
     CExtKey key;
     CExtPubKey pubkey;
     key.SetMaster(&seed[0], seed.size());
     pubkey = key.Neuter();
-    BOOST_FOREACH(const TestDerivation &derive, test.vDerive) {
+    BOOST_FOREACH(const TestDerivation &derive, test.vDerive)
+    {
         unsigned char data[74];
         key.Encode(data);
         pubkey.Encode(data);
@@ -98,7 +103,8 @@ void RunTest(const TestVector &test) {
         CExtKey keyNew;
         BOOST_CHECK(key.Derive(keyNew, derive.nChild));
         CExtPubKey pubkeyNew = keyNew.Neuter();
-        if (!(derive.nChild & 0x80000000)) {
+        if (!(derive.nChild & 0x80000000))
+        {
             // Compare with public derivation
             CExtPubKey pubkeyNew2;
             BOOST_CHECK(pubkey.Derive(pubkeyNew2, derive.nChild));
@@ -111,11 +117,13 @@ void RunTest(const TestVector &test) {
 
 BOOST_AUTO_TEST_SUITE(bip32_tests)
 
-BOOST_AUTO_TEST_CASE(bip32_test1) {
+BOOST_AUTO_TEST_CASE(bip32_test1)
+{
     RunTest(test1);
 }
 
-BOOST_AUTO_TEST_CASE(bip32_test2) {
+BOOST_AUTO_TEST_CASE(bip32_test2)
+{
     RunTest(test2);
 }
 

@@ -15,7 +15,8 @@ using namespace std;
 //Construct accumulators for all denominations
 AccumulatorMap::AccumulatorMap()
 {
-    for (auto& denom : zerocoinDenomList) {
+    for (auto& denom : zerocoinDenomList)
+    {
         unique_ptr<Accumulator> uptr(new Accumulator(Params().Zerocoin_Params(), denom));
         mapAccumulators.insert(make_pair(denom, std::move(uptr)));
     }
@@ -25,7 +26,8 @@ AccumulatorMap::AccumulatorMap()
 void AccumulatorMap::Reset()
 {
     mapAccumulators.clear();
-    for (auto& denom : zerocoinDenomList) {
+    for (auto& denom : zerocoinDenomList)
+    {
         unique_ptr<Accumulator> uptr(new Accumulator(Params().Zerocoin_Params(), denom));
         mapAccumulators.insert(make_pair(denom, std::move(uptr)));
     }
@@ -34,11 +36,13 @@ void AccumulatorMap::Reset()
 //Load a checkpoint containing 32bit checksums of accumulator values.
 bool AccumulatorMap::Load(uint256 nCheckpoint)
 {
-    for (auto& denom : zerocoinDenomList) {
+    for (auto& denom : zerocoinDenomList)
+    {
         uint32_t nChecksum = ParseChecksum(nCheckpoint, denom);
 
         CBigNum bnValue;
-        if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnValue)) {
+        if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnValue))
+        {
             LogPrintf("%s : cannot find checksum %d", __func__, nChecksum);
             return false;
         }
@@ -77,7 +81,8 @@ uint256 AccumulatorMap::GetCheckpoint()
 
     //Prevent possible overflows from future changes to the list and forgetting to update this code
     assert(zerocoinDenomList.size() == 7);
-    for (auto& denom : zerocoinDenomList) {
+    for (auto& denom : zerocoinDenomList)
+    {
         CBigNum bnValue = mapAccumulators.at(denom)->getValue();
         uint32_t nCheckSum = GetChecksum(bnValue);
         nCheckpoint = nCheckpoint << 32 | nCheckSum;

@@ -24,11 +24,13 @@
 #include <string>
 #include "leveldb/status.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class Slice;
 
-class WriteBatch {
+class WriteBatch
+{
 public:
     WriteBatch();
     ~WriteBatch();
@@ -43,7 +45,8 @@ public:
     void Clear();
 
     // Support for iterating over the contents of a batch.
-    class Handler {
+    class Handler
+    {
     public:
         virtual ~Handler();
         virtual void Put(const Slice& key, const Slice& value) = 0;

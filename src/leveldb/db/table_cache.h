@@ -14,11 +14,13 @@
 #include "leveldb/table.h"
 #include "port/port.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class Env;
 
-class TableCache {
+class TableCache
+{
 public:
     TableCache(const std::string& dbname, const Options* options, int entries);
     ~TableCache();

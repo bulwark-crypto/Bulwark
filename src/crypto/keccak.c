@@ -133,7 +133,8 @@ extern "C" {
 
 #if SPH_KECCAK_64
 
-static const sph_u64 RC[] = {
+static const sph_u64 RC[] =
+{
     SPH_C64(0x0000000000000001), SPH_C64(0x0000000000008082),
     SPH_C64(0x800000000000808A), SPH_C64(0x8000000080008000),
     SPH_C64(0x000000000000808B), SPH_C64(0x0000000080000001),
@@ -366,9 +367,11 @@ static const sph_u64 RC[] = {
 
 #else
 
-static const struct {
+static const struct
+{
     sph_u32 high, low;
-} RC[] = {
+} RC[] =
+{
 #if SPH_KECCAK_INTERLEAVE
     { SPH_C32(0x00000000), SPH_C32(0x00000001) },
     { SPH_C32(0x00000089), SPH_C32(0x00000000) },
@@ -1575,14 +1578,16 @@ keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
     buf = kc->buf;
     ptr = kc->ptr;
 
-    if (len < (lim - ptr)) {
+    if (len < (lim - ptr))
+    {
         memcpy(buf + ptr, data, len);
         kc->ptr = ptr + len;
         return;
     }
 
     READ_STATE(kc);
-    while (len > 0) {
+    while (len > 0)
+    {
         size_t clen;
 
         clen = (lim - ptr);
@@ -1592,7 +1597,8 @@ keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
         ptr += clen;
         data = (const unsigned char *)data + clen;
         len -= clen;
-        if (ptr == lim) {
+        if (ptr == lim)
+        {
             INPUT_BUF(lim);
             KECCAK_F_1600;
             ptr = 0;

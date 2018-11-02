@@ -24,7 +24,8 @@ CoinSpend::CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulat
     denomination = coin.getPublicCoin().getDenomination();
     // Sanity check: let's verify that the Witness is valid with respect to
     // the coin and Accumulator provided.
-    if (!(witness.VerifyWitness(a, coin.getPublicCoin()))) {
+    if (!(witness.VerifyWitness(a, coin.getPublicCoin())))
+    {
         std::cout << "CoinSpend: Accumulator witness does not verify\n";
         throw std::runtime_error("Accumulator witness does not verify");
     }

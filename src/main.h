@@ -120,8 +120,10 @@ static const unsigned char REJECT_DUST = 0x41;
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
 
-struct BlockHasher {
-    size_t operator()(const uint256& hash) const {
+struct BlockHasher
+{
+    size_t operator()(const uint256& hash) const
+    {
         return hash.GetLow64();
     }
 };
@@ -268,14 +270,16 @@ int GetInputAgeIX(uint256 nTXHash, CTxIn& vin);
 bool GetCoinAge(const CTransaction& tx, unsigned int nTxTime, uint64_t& nCoinAge);
 int GetIXConfirmations(uint256 nTXHash);
 
-struct CNodeStateStats {
+struct CNodeStateStats
+{
     int nMisbehavior;
     int nSyncHeight;
     int nCommonHeight;
     std::vector<int> vHeightInFlight;
 };
 
-struct CDiskTxPos : public CDiskBlockPos {
+struct CDiskTxPos : public CDiskBlockPos
+{
     unsigned int nTxOffset; // after header
 
     ADD_SERIALIZE_METHODS;
@@ -443,7 +447,8 @@ public:
         std::swap(error, check.error);
     }
 
-    ScriptError GetScriptError() const {
+    ScriptError GetScriptError() const
+    {
         return error;
     }
 };
@@ -548,7 +553,8 @@ public:
 class CValidationState
 {
 private:
-    enum mode_state {
+    enum mode_state
+    {
         MODE_VALID,   //! everything ok
         MODE_INVALID, //! network rule violation (DoS value may be set)
         MODE_ERROR,   //! run-time error
@@ -603,7 +609,8 @@ public:
     }
     bool IsInvalid(int& nDoSOut) const
     {
-        if (IsInvalid()) {
+        if (IsInvalid())
+        {
             nDoSOut = nDoS;
             return true;
         }
@@ -613,10 +620,12 @@ public:
     {
         return corruptionPossible;
     }
-    unsigned char GetRejectCode() const {
+    unsigned char GetRejectCode() const
+    {
         return chRejectCode;
     }
-    std::string GetRejectReason() const {
+    std::string GetRejectReason() const
+    {
         return strRejectReason;
     }
 };
@@ -654,7 +663,8 @@ extern CZerocoinDB* zerocoinDB;
 /** Global variable that points to the spork database (protected by cs_main) */
 extern CSporkDB* pSporkDB;
 
-struct CBlockTemplate {
+struct CBlockTemplate
+{
     CBlock block;
     std::vector<CAmount> vTxFees;
     std::vector<int64_t> vTxSigOps;

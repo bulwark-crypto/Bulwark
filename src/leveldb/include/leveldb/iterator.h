@@ -18,9 +18,11 @@
 #include "leveldb/slice.h"
 #include "leveldb/status.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
-class Iterator {
+class Iterator
+{
 public:
     Iterator();
     virtual ~Iterator();
@@ -76,7 +78,8 @@ public:
     void RegisterCleanup(CleanupFunction function, void* arg1, void* arg2);
 
 private:
-    struct Cleanup {
+    struct Cleanup
+    {
         CleanupFunction function;
         void* arg1;
         void* arg2;

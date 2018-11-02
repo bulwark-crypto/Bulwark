@@ -96,10 +96,13 @@ gLogTestResult(string testName, bool (*testPtr)())
 
     bool testResult = testPtr();
 
-    if (testResult == true) {
+    if (testResult == true)
+    {
         cout << "\t" << colorGreen << "[PASS]"  << colorNormal << endl;
         ggSuccessfulTests++;
-    } else {
+    }
+    else
+    {
         cout << colorRed << "\t[FAIL]" << colorNormal << endl;
     }
 
@@ -112,7 +115,8 @@ gGetTestModulus()
     static CBigNum testModulus(0);
 
     // TODO: should use a hard-coded RSA modulus for testing
-    if (!testModulus) {
+    if (!testModulus)
+    {
         CBigNum p, q;
         p = CBigNum::generatePrime(1024, false);
         q = CBigNum::generatePrime(1024, false);
@@ -132,10 +136,12 @@ Testb_GenRSAModulus()
 {
     CBigNum result = gGetTestModulus();
 
-    if (!result) {
+    if (!result)
+    {
         return false;
     }
-    else {
+    else
+    {
         return true;
     }
 }
@@ -148,28 +154,36 @@ Testb_CalcParamSizes()
 
     uint32_t pLen, qLen;
 
-    try {
+    try
+    {
         calculateGroupParamLengths(4000, 80, &pLen, &qLen);
-        if (pLen < 1024 || qLen < 256) {
+        if (pLen < 1024 || qLen < 256)
+        {
             result = false;
         }
         calculateGroupParamLengths(4000, 96, &pLen, &qLen);
-        if (pLen < 2048 || qLen < 256) {
+        if (pLen < 2048 || qLen < 256)
+        {
             result = false;
         }
         calculateGroupParamLengths(4000, 112, &pLen, &qLen);
-        if (pLen < 3072 || qLen < 320) {
+        if (pLen < 3072 || qLen < 320)
+        {
             result = false;
         }
         calculateGroupParamLengths(4000, 120, &pLen, &qLen);
-        if (pLen < 3072 || qLen < 320) {
+        if (pLen < 3072 || qLen < 320)
+        {
             result = false;
         }
         calculateGroupParamLengths(4000, 128, &pLen, &qLen);
-        if (pLen < 3072 || qLen < 320) {
+        if (pLen < 3072 || qLen < 320)
+        {
             result = false;
         }
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         result = false;
     }
 #endif
@@ -183,17 +197,22 @@ Testb_GenerateGroupParams()
     uint32_t pLen = 1024, qLen = 256, count;
     IntegerGroupParams group;
 
-    for (count = 0; count < 1; count++) {
+    for (count = 0; count < 1; count++)
+    {
 
-        try {
+        try
+        {
             group = deriveIntegerGroupParams(calculateSeed(gGetTestModulus(), "test", ZEROCOIN_DEFAULT_SECURITYLEVEL, "TEST GROUP"), pLen, qLen);
-        } catch (std::runtime_error e) {
+        }
+        catch (std::runtime_error e)
+        {
             cout << "Caught exception " << e.what() << endl;
             return false;
         }
 
         // Now perform some simple tests on the resulting parameters
-        if ((uint32_t)group.groupOrder.bitSize() < qLen || (uint32_t)group.modulus.bitSize() < pLen) {
+        if ((uint32_t)group.groupOrder.bitSize() < qLen || (uint32_t)group.modulus.bitSize() < pLen)
+        {
             return false;
         }
 
@@ -214,14 +233,17 @@ Testb_ParamGen()
 {
     bool result = true;
 
-    try {
+    try
+    {
         timer.start();
         // Instantiating testParams runs the parameter generation code
         ZerocoinParams testParams(gGetTestModulus(),ZEROCOIN_DEFAULT_SECURITYLEVEL);
         timer.stop();
 
         cout << "\tPARAMGEN ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << endl;
-    } catch (runtime_error e) {
+    }
+    catch (runtime_error e)
+    {
         cout << e.what() << endl;
         result = false;
     }
@@ -234,10 +256,12 @@ Testb_Accumulator()
 {
     // This test assumes a list of coins were generated during
     // the Testb_MintCoin() test.
-    if (ggCoins[0] == NULL) {
+    if (ggCoins[0] == NULL)
+    {
         return false;
     }
-    try {
+    try
+    {
         // Accumulate the coin list from first to last into one accumulator
         Accumulator accOne(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
         Accumulator accTwo(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
@@ -245,34 +269,41 @@ Testb_Accumulator()
         Accumulator accFour(&gg_Params->accumulatorParams,libzerocoin::CoinDenomination::ZQ_ONE);
         AccumulatorWitness wThree(gg_Params, accThree, ggCoins[0]->getPublicCoin());
 
-        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++)
+        {
             accOne += ggCoins[i]->getPublicCoin();
             accTwo += ggCoins[TESTS_COINS_TO_ACCUMULATE - (i+1)]->getPublicCoin();
             accThree += ggCoins[i]->getPublicCoin();
             wThree += ggCoins[i]->getPublicCoin();
-            if(i != 0) {
+            if(i != 0)
+            {
                 accFour += ggCoins[i]->getPublicCoin();
             }
         }
 
         // Compare the accumulated results
-        if (accOne.getValue() != accTwo.getValue() || accOne.getValue() != accThree.getValue()) {
+        if (accOne.getValue() != accTwo.getValue() || accOne.getValue() != accThree.getValue())
+        {
             cout << "Accumulators don't match" << endl;
             return false;
         }
 
-        if(accFour.getValue() != wThree.getValue()) {
+        if(accFour.getValue() != wThree.getValue())
+        {
             cout << "Witness math not working," << endl;
             return false;
         }
 
         // Verify that the witness is correct
-        if (!wThree.VerifyWitness(accThree, ggCoins[0]->getPublicCoin()) ) {
+        if (!wThree.VerifyWitness(accThree, ggCoins[0]->getPublicCoin()) )
+        {
             cout << "Witness not valid" << endl;
             return false;
         }
 
-    } catch (runtime_error e) {
+    }
+    catch (runtime_error e)
+    {
         cout << e.what() << endl;
         return false;
     }
@@ -283,14 +314,18 @@ Testb_Accumulator()
 bool
 Testb_MintCoin()
 {
-    try {
+    try
+    {
         // Generate a list of coins
         timer.start();
-        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++)
+        {
             ggCoins[i] = new PrivateCoin(gg_Params,CoinDenomination::ZQ_ONE);
         }
         timer.stop();
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         return false;
     }
 
@@ -302,13 +337,15 @@ Testb_MintCoin()
 bool
 Testb_MintAndSpend()
 {
-    try {
+    try
+    {
         // This test assumes a list of coins were generated in Testb_MintCoin()
         if (ggCoins[0] == NULL)
         {
             // No coins: mint some.
             Testb_MintCoin();
-            if (ggCoins[0] == NULL) {
+            if (ggCoins[0] == NULL)
+            {
                 return false;
             }
         }
@@ -320,7 +357,8 @@ Testb_MintAndSpend()
         AccumulatorWitness wAcc(gg_Params, acc, ggCoins[0]->getPublicCoin());
 
         timer.start();
-        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++)
+        {
             acc += ggCoins[i]->getPublicCoin();
         }
         timer.stop();
@@ -328,7 +366,8 @@ Testb_MintAndSpend()
         cout << "\tACCUMULATOR ELAPSED TIME:\n\t\tTotal: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s\n\t\tPer Element: " << timer.duration()/TESTS_COINS_TO_ACCUMULATE << " ms\t" << (timer.duration()/TESTS_COINS_TO_ACCUMULATE)*0.001 << " s" << endl;
 
         timer.start();
-        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++)
+        {
             wAcc +=ggCoins[i]->getPublicCoin();
         }
         timer.stop();
@@ -361,7 +400,9 @@ Testb_MintAndSpend()
         cout << "\tSPEND VERIFY ELAPSED TIME: " << timer.duration() << " ms\t" << timer.duration()*0.001 << " s" << endl;
 
         return ret;
-    } catch (runtime_error &e) {
+    }
+    catch (runtime_error &e)
+    {
         cout << e.what() << endl;
         return false;
     }
@@ -376,7 +417,8 @@ Testb_RunAllTests()
     gg_Params = new ZerocoinParams(gGetTestModulus());
 
     ggNumTests = ggSuccessfulTests = 0;
-    for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+    for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++)
+    {
         ggCoins[i] = NULL;
     }
 
@@ -390,12 +432,14 @@ Testb_RunAllTests()
     gLogTestResult("a minted coin can be spent", Testb_MintAndSpend);
 
     // Summarize test results
-    if (ggSuccessfulTests < ggNumTests) {
+    if (ggSuccessfulTests < ggNumTests)
+    {
         cout << endl << "ERROR: SOME TESTS FAILED" << endl;
     }
 
     // Clear any generated coins
-    for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+    for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++)
+    {
         delete ggCoins[i];
     }
 

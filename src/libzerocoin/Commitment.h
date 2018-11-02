@@ -25,13 +25,15 @@
 // A 512-bit security parameter for the statistical ZK PoK.
 #define COMMITMENT_EQUALITY_SECMARGIN       512
 
-namespace libzerocoin {
+namespace libzerocoin
+{
 
 /**
  * A commitment, complete with contents and opening randomness.
  * These should remain secret. Publish only the commitment value.
  */
-class Commitment {
+class Commitment
+{
 public:
     /**Generates a Pedersen commitment to the given value.
      *
@@ -48,7 +50,8 @@ private:
     CBigNum randomness;
     const CBigNum contents;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(commitmentValue);
         READWRITE(randomness);
         READWRITE(contents);
@@ -58,7 +61,8 @@ private:
 /**
  * Proof that two commitments open to the same value.
  */
-class CommitmentProofOfKnowledge {
+class CommitmentProofOfKnowledge
+{
 public:
     CommitmentProofOfKnowledge(const IntegerGroupParams* ap, const IntegerGroupParams* bp);
     /** Generates a proof that two commitments, a and b, open to the same value.
@@ -94,7 +98,8 @@ public:
      */
     bool Verify(const CBigNum& A, const CBigNum& B) const;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(S1);
         READWRITE(S2);
         READWRITE(S3);

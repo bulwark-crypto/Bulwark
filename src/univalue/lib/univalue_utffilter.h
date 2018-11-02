@@ -20,23 +20,32 @@ public:
     // Write single 8-bit char (may be part of UTF-8 sequence)
     void push_back(unsigned char ch)
     {
-        if (state == 0) {
+        if (state == 0)
+        {
             if (ch < 0x80) // 7-bit ASCII, fast direct pass-through
                 str.push_back(ch);
             else if (ch < 0xc0) // Mid-sequence character, invalid in this state
                 is_valid = false;
-            else if (ch < 0xe0) { // Start of 2-byte sequence
+            else if (ch < 0xe0)   // Start of 2-byte sequence
+            {
                 codepoint = (ch & 0x1f) << 6;
                 state = 6;
-            } else if (ch < 0xf0) { // Start of 3-byte sequence
+            }
+            else if (ch < 0xf0)     // Start of 3-byte sequence
+            {
                 codepoint = (ch & 0x0f) << 12;
                 state = 12;
-            } else if (ch < 0xf8) { // Start of 4-byte sequence
+            }
+            else if (ch < 0xf8)     // Start of 4-byte sequence
+            {
                 codepoint = (ch & 0x07) << 18;
                 state = 18;
-            } else // Reserved, invalid
+            }
+            else   // Reserved, invalid
                 is_valid = false;
-        } else {
+        }
+        else
+        {
             if ((ch & 0xc0) != 0x80) // Not a continuation, invalid
                 is_valid = false;
             state -= 6;
@@ -50,19 +59,26 @@ public:
     {
         if (state) // Only accept full codepoints in open state
             is_valid = false;
-        if (codepoint_ >= 0xD800 && codepoint_ < 0xDC00) { // First half of surrogate pair
+        if (codepoint_ >= 0xD800 && codepoint_ < 0xDC00)   // First half of surrogate pair
+        {
             if (surpair) // Two subsequent surrogate pair openers - fail
                 is_valid = false;
             else
                 surpair = codepoint_;
-        } else if (codepoint_ >= 0xDC00 && codepoint_ < 0xE000) { // Second half of surrogate pair
-            if (surpair) { // Open surrogate pair, expect second half
+        }
+        else if (codepoint_ >= 0xDC00 && codepoint_ < 0xE000)     // Second half of surrogate pair
+        {
+            if (surpair)   // Open surrogate pair, expect second half
+            {
                 // Compute code point from UTF-16 surrogate pair
                 append_codepoint(0x10000 | ((surpair - 0xD800)<<10) | (codepoint_ - 0xDC00));
                 surpair = 0;
-            } else // Second half doesn't follow a first half - fail
+            }
+            else   // Second half doesn't follow a first half - fail
                 is_valid = false;
-        } else {
+        }
+        else
+        {
             if (surpair) // First half of surrogate pair not followed by second - fail
                 is_valid = false;
             else
@@ -100,14 +116,19 @@ private:
     {
         if (codepoint_ <= 0x7f)
             str.push_back((char)codepoint_);
-        else if (codepoint_ <= 0x7FF) {
+        else if (codepoint_ <= 0x7FF)
+        {
             str.push_back((char)(0xC0 | (codepoint_ >> 6)));
             str.push_back((char)(0x80 | (codepoint_ & 0x3F)));
-        } else if (codepoint_ <= 0xFFFF) {
+        }
+        else if (codepoint_ <= 0xFFFF)
+        {
             str.push_back((char)(0xE0 | (codepoint_ >> 12)));
             str.push_back((char)(0x80 | ((codepoint_ >> 6) & 0x3F)));
             str.push_back((char)(0x80 | (codepoint_ & 0x3F)));
-        } else if (codepoint_ <= 0x1FFFFF) {
+        }
+        else if (codepoint_ <= 0x1FFFFF)
+        {
             str.push_back((char)(0xF0 | (codepoint_ >> 18)));
             str.push_back((char)(0x80 | ((codepoint_ >> 12) & 0x3F)));
             str.push_back((char)(0x80 | ((codepoint_ >> 6) & 0x3F)));

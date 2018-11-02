@@ -64,7 +64,8 @@ int ClientModel::getNumConnections(unsigned int flags) const
         return vNodes.size();
 
     int nNum = 0;
-    BOOST_FOREACH(CNode* pnode, vNodes) {
+    BOOST_FOREACH(CNode* pnode, vNodes)
+    {
         if (flags & (pnode->fInbound ? CONNECTIONS_IN : CONNECTIONS_OUT))
             nNum++;
     }
@@ -136,7 +137,8 @@ void ClientModel::updateTimer()
     // check for changed number of blocks we have, number of blocks peers claim to have, reindexing state and importing state
     if (cachedNumBlocks != newNumBlocks ||
             cachedReindexing != fReindex || cachedImporting != fImporting ||
-            masternodeSync.RequestedMasternodeAttempt != prevAttempt || masternodeSync.RequestedMasternodeAssets != prevAssets) {
+            masternodeSync.RequestedMasternodeAttempt != prevAttempt || masternodeSync.RequestedMasternodeAssets != prevAssets)
+    {
         cachedNumBlocks = newNumBlocks;
         cachedReindexing = fReindex;
         cachedImporting = fImporting;
@@ -159,7 +161,8 @@ void ClientModel::updateMnTimer()
         return;
     QString newMasternodeCountString = getMasternodeCountString();
 
-    if (cachedMasternodeCountString != newMasternodeCountString) {
+    if (cachedMasternodeCountString != newMasternodeCountString)
+    {
         cachedMasternodeCountString = newMasternodeCountString;
 
         emit strMasternodesChanged(cachedMasternodeCountString);
@@ -174,11 +177,13 @@ void ClientModel::updateNumConnections(int numConnections)
 void ClientModel::updateAlert(const QString& hash, int status)
 {
     // Show error message notification for new alert
-    if (status == CT_NEW) {
+    if (status == CT_NEW)
+    {
         uint256 hash_256;
         hash_256.SetHex(hash.toStdString());
         CAlert alert = CAlert::getAlertByHash(hash_256);
-        if (!alert.IsNull()) {
+        if (!alert.IsNull())
+        {
             emit message(tr("Network Alert"), QString::fromStdString(alert.strStatusBar), CClientUIInterface::ICON_ERROR);
         }
     }

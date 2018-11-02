@@ -185,7 +185,8 @@ void WalletFrame::gotoMultiSendDialog()
 void WalletFrame::gotoMultisigDialog(int index)
 {
     WalletView* walletView = currentWalletView();
-    if(walletView) {
+    if(walletView)
+    {
         walletView->gotoMultisigDialog(index);
     }
 }

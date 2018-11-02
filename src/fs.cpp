@@ -1,6 +1,7 @@
 #include <fs.h>
 
-namespace fsbridge {
+namespace fsbridge
+{
 
 FILE *fopen(const fs::path& p, const char *mode)
 {

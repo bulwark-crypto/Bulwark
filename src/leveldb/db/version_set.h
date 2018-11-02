@@ -23,9 +23,11 @@
 #include "port/port.h"
 #include "port/thread_annotations.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
-namespace log {
+namespace log
+{
 class Writer;
 }
 
@@ -58,7 +60,8 @@ extern bool SomeFileOverlapsRange(
     const Slice* smallest_user_key,
     const Slice* largest_user_key);
 
-class Version {
+class Version
+{
 public:
     // Append to *iters a sequence of iterators that will
     // yield the contents of this Version when merged together.
@@ -68,7 +71,8 @@ public:
     // Lookup the value for key.  If found, store it in *val and
     // return OK.  Else return a non-OK status.  Fills *stats.
     // REQUIRES: lock is not held
-    struct GetStats {
+    struct GetStats
+    {
         FileMetaData* seek_file;
         int seek_file_level;
     };
@@ -110,7 +114,8 @@ public:
     int PickLevelForMemTableOutput(const Slice& smallest_user_key,
                                    const Slice& largest_user_key);
 
-    int NumFiles(int level) const {
+    int NumFiles(int level) const
+    {
         return files_[level].size();
     }
 
@@ -156,7 +161,8 @@ private:
           file_to_compact_(NULL),
           file_to_compact_level_(-1),
           compaction_score_(-1),
-          compaction_level_(-1) {
+          compaction_level_(-1)
+    {
     }
 
     ~Version();
@@ -166,7 +172,8 @@ private:
     void operator=(const Version&);
 };
 
-class VersionSet {
+class VersionSet
+{
 public:
     VersionSet(const std::string& dbname,
                const Options* options,
@@ -186,25 +193,30 @@ public:
     Status Recover();
 
     // Return the current version.
-    Version* current() const {
+    Version* current() const
+    {
         return current_;
     }
 
     // Return the current manifest file number
-    uint64_t ManifestFileNumber() const {
+    uint64_t ManifestFileNumber() const
+    {
         return manifest_file_number_;
     }
 
     // Allocate and return a new file number
-    uint64_t NewFileNumber() {
+    uint64_t NewFileNumber()
+    {
         return next_file_number_++;
     }
 
     // Arrange to reuse "file_number" unless a newer file number has
     // already been allocated.
     // REQUIRES: "file_number" was returned by a call to NewFileNumber().
-    void ReuseFileNumber(uint64_t file_number) {
-        if (next_file_number_ == file_number + 1) {
+    void ReuseFileNumber(uint64_t file_number)
+    {
+        if (next_file_number_ == file_number + 1)
+        {
             next_file_number_ = file_number;
         }
     }
@@ -216,12 +228,14 @@ public:
     int64_t NumLevelBytes(int level) const;
 
     // Return the last sequence number.
-    uint64_t LastSequence() const {
+    uint64_t LastSequence() const
+    {
         return last_sequence_;
     }
 
     // Set the last sequence number to s.
-    void SetLastSequence(uint64_t s) {
+    void SetLastSequence(uint64_t s)
+    {
         assert(s >= last_sequence_);
         last_sequence_ = s;
     }
@@ -230,13 +244,15 @@ public:
     void MarkFileNumberUsed(uint64_t number);
 
     // Return the current log file number.
-    uint64_t LogNumber() const {
+    uint64_t LogNumber() const
+    {
         return log_number_;
     }
 
     // Return the log file number for the log file that is currently
     // being compacted, or zero if there is no such log file.
-    uint64_t PrevLogNumber() const {
+    uint64_t PrevLogNumber() const
+    {
         return prev_log_number_;
     }
 
@@ -264,7 +280,8 @@ public:
     Iterator* MakeInputIterator(Compaction* c);
 
     // Returns true iff some level needs a compaction.
-    bool NeedsCompaction() const {
+    bool NeedsCompaction() const
+    {
         Version* v = current_;
         return (v->compaction_score_ >= 1) || (v->file_to_compact_ != NULL);
     }
@@ -279,7 +296,8 @@ public:
 
     // Return a human-readable short (single-line) summary of the number
     // of files per level.  Uses *scratch as backing store.
-    struct LevelSummaryStorage {
+    struct LevelSummaryStorage
+    {
         char buffer[100];
     };
     const char* LevelSummary(LevelSummaryStorage* scratch) const;
@@ -335,34 +353,40 @@ private:
 };
 
 // A Compaction encapsulates information about a compaction.
-class Compaction {
+class Compaction
+{
 public:
     ~Compaction();
 
     // Return the level that is being compacted.  Inputs from "level"
     // and "level+1" will be merged to produce a set of "level+1" files.
-    int level() const {
+    int level() const
+    {
         return level_;
     }
 
     // Return the object that holds the edits to the descriptor done
     // by this compaction.
-    VersionEdit* edit() {
+    VersionEdit* edit()
+    {
         return &edit_;
     }
 
     // "which" must be either 0 or 1
-    int num_input_files(int which) const {
+    int num_input_files(int which) const
+    {
         return inputs_[which].size();
     }
 
     // Return the ith input file at "level()+which" ("which" must be 0 or 1).
-    FileMetaData* input(int which, int i) const {
+    FileMetaData* input(int which, int i) const
+    {
         return inputs_[which][i];
     }
 
     // Maximum size of files to build during this compaction.
-    uint64_t MaxOutputFileSize() const {
+    uint64_t MaxOutputFileSize() const
+    {
         return max_output_file_size_;
     }
 

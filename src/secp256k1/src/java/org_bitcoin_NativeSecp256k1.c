@@ -14,10 +14,12 @@ JNIEXPORT jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1verify
 static void __javasecp256k1_attach(void) __attribute__((constructor));
 static void __javasecp256k1_detach(void) __attribute__((destructor));
 
-static void __javasecp256k1_attach(void) {
+static void __javasecp256k1_attach(void)
+{
     secp256k1_start(SECP256K1_START_VERIFY);
 }
 
-static void __javasecp256k1_detach(void) {
+static void __javasecp256k1_detach(void)
+{
     secp256k1_stop();
 }

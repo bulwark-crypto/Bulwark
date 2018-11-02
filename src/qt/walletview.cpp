@@ -83,7 +83,8 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
     addWidget(explorerWindow);
 
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowMasternodesTab").toBool())
+    {
         masternodeListPage = new MasternodeList();
         addWidget(masternodeListPage);
     }
@@ -113,7 +114,8 @@ WalletView::~WalletView()
 
 void WalletView::setBitcoinGUI(BitcoinGUI* gui)
 {
-    if (gui) {
+    if (gui)
+    {
         // Clicking on a transaction on the overview page simply sends you to transaction history page
         connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage()));
 
@@ -135,7 +137,8 @@ void WalletView::setClientModel(ClientModel* clientModel)
     overviewPage->setClientModel(clientModel);
     sendCoinsPage->setClientModel(clientModel);
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowMasternodesTab").toBool())
+    {
         masternodeListPage->setClientModel(clientModel);
     }
 }
@@ -148,14 +151,16 @@ void WalletView::setWalletModel(WalletModel* walletModel)
     transactionView->setModel(walletModel);
     overviewPage->setWalletModel(walletModel);
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowMasternodesTab").toBool())
+    {
         masternodeListPage->setWalletModel(walletModel);
     }
     privacyPage->setModel(walletModel);
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
 
-    if (walletModel) {
+    if (walletModel)
+    {
         // Receive and pass through messages from wallet model
         connect(walletModel, SIGNAL(message(QString, QString, unsigned int)), this, SIGNAL(message(QString, QString, unsigned int)));
 
@@ -214,7 +219,8 @@ void WalletView::gotoBlockExplorerPage()
 void WalletView::gotoMasternodePage()
 {
     QSettings settings;
-    if (settings.value("fShowMasternodesTab").toBool()) {
+    if (settings.value("fShowMasternodesTab").toBool())
+    {
         setCurrentWidget(masternodeListPage);
     }
 }
@@ -320,10 +326,13 @@ void WalletView::backupWallet()
     if (filename.isEmpty())
         return;
 
-    if (!walletModel->backupWallet(filename)) {
+    if (!walletModel->backupWallet(filename))
+    {
         emit message(tr("Backup Failed"), tr("There was an error trying to save the wallet data to %1.").arg(filename),
                      CClientUIInterface::MSG_ERROR);
-    } else {
+    }
+    else
+    {
         emit message(tr("Backup Successful"), tr("The wallet data was successfully saved to %1.").arg(filename),
                      CClientUIInterface::MSG_INFORMATION);
     }
@@ -341,7 +350,8 @@ void WalletView::unlockWallet()
         return;
     // Unlock wallet when requested by wallet model
 
-    if (walletModel->getEncryptionStatus() == WalletModel::Locked || walletModel->getEncryptionStatus() == WalletModel::UnlockedForAnonymizationOnly) {
+    if (walletModel->getEncryptionStatus() == WalletModel::Locked || walletModel->getEncryptionStatus() == WalletModel::UnlockedForAnonymizationOnly)
+    {
         AskPassphraseDialog dlg(AskPassphraseDialog::UnlockAnonymize, this, walletModel);
         dlg.exec();
     }
@@ -363,12 +373,14 @@ void WalletView::toggleLockWallet()
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
 
     // Unlock the wallet when requested
-    if (encStatus == walletModel->Locked) {
+    if (encStatus == walletModel->Locked)
+    {
         AskPassphraseDialog dlg(AskPassphraseDialog::UnlockAnonymize, this, walletModel);
         dlg.exec();
     }
 
-    else if (encStatus == walletModel->Unlocked || encStatus == walletModel->UnlockedForAnonymizationOnly) {
+    else if (encStatus == walletModel->Unlocked || encStatus == walletModel->UnlockedForAnonymizationOnly)
+    {
         walletModel->setWalletLocked(true);
     }
 }
@@ -395,19 +407,24 @@ void WalletView::usedReceivingAddresses()
 
 void WalletView::showProgress(const QString& title, int nProgress)
 {
-    if (nProgress == 0) {
+    if (nProgress == 0)
+    {
         progressDialog = new QProgressDialog(title, "", 0, 100);
         progressDialog->setWindowModality(Qt::ApplicationModal);
         progressDialog->setMinimumDuration(0);
         progressDialog->setCancelButton(0);
         progressDialog->setAutoClose(false);
         progressDialog->setValue(0);
-    } else if (nProgress == 100) {
-        if (progressDialog) {
+    }
+    else if (nProgress == 100)
+    {
+        if (progressDialog)
+        {
             progressDialog->close();
             progressDialog->deleteLater();
         }
-    } else if (progressDialog)
+    }
+    else if (progressDialog)
         progressDialog->setValue(nProgress);
 }
 

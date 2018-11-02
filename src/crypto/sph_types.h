@@ -1373,12 +1373,15 @@ sph_enc32be(void *dst, sph_u32 val)
 #endif
     *(sph_u32 *)dst = val;
 #else
-    if (((SPH_UPTR)dst & 3) == 0) {
+    if (((SPH_UPTR)dst & 3) == 0)
+    {
 #if SPH_LITTLE_ENDIAN
         val = sph_bswap32(val);
 #endif
         *(sph_u32 *)dst = val;
-    } else {
+    }
+    else
+    {
         ((unsigned char *)dst)[0] = (val >> 24);
         ((unsigned char *)dst)[1] = (val >> 16);
         ((unsigned char *)dst)[2] = (val >> 8);
@@ -1432,13 +1435,16 @@ sph_dec32be(const void *src)
     return *(const sph_u32 *)src;
 #endif
 #else
-    if (((SPH_UPTR)src & 3) == 0) {
+    if (((SPH_UPTR)src & 3) == 0)
+    {
 #if SPH_LITTLE_ENDIAN
         return sph_bswap32(*(const sph_u32 *)src);
 #else
         return *(const sph_u32 *)src;
 #endif
-    } else {
+    }
+    else
+    {
         return ((sph_u32)(((const unsigned char *)src)[0]) << 24)
                | ((sph_u32)(((const unsigned char *)src)[1]) << 16)
                | ((sph_u32)(((const unsigned char *)src)[2]) << 8)
@@ -1491,12 +1497,15 @@ sph_enc32le(void *dst, sph_u32 val)
 #endif
     *(sph_u32 *)dst = val;
 #else
-    if (((SPH_UPTR)dst & 3) == 0) {
+    if (((SPH_UPTR)dst & 3) == 0)
+    {
 #if SPH_BIG_ENDIAN
         val = sph_bswap32(val);
 #endif
         *(sph_u32 *)dst = val;
-    } else {
+    }
+    else
+    {
         ((unsigned char *)dst)[0] = val;
         ((unsigned char *)dst)[1] = (val >> 8);
         ((unsigned char *)dst)[2] = (val >> 16);
@@ -1550,7 +1559,8 @@ sph_dec32le(const void *src)
     return *(const sph_u32 *)src;
 #endif
 #else
-    if (((SPH_UPTR)src & 3) == 0) {
+    if (((SPH_UPTR)src & 3) == 0)
+    {
 #if SPH_BIG_ENDIAN
 #if SPH_SPARCV9_GCC && !SPH_NO_ASM
         sph_u32 tmp;
@@ -1589,7 +1599,9 @@ sph_dec32le(const void *src)
 #else
         return *(const sph_u32 *)src;
 #endif
-        } else {
+        }
+        else
+        {
         return (sph_u32)(((const unsigned char *)src)[0])
         | ((sph_u32)(((const unsigned char *)src)[1]) << 8)
         | ((sph_u32)(((const unsigned char *)src)[2]) << 16)
@@ -1660,12 +1672,15 @@ sph_enc64be(void *dst, sph_u64 val)
 #endif
     *(sph_u64 *)dst = val;
 #else
-    if (((SPH_UPTR)dst & 7) == 0) {
+    if (((SPH_UPTR)dst & 7) == 0)
+    {
 #if SPH_LITTLE_ENDIAN
         val = sph_bswap64(val);
 #endif
         *(sph_u64 *)dst = val;
-    } else {
+    }
+    else
+    {
         ((unsigned char *)dst)[0] = (val >> 56);
         ((unsigned char *)dst)[1] = (val >> 48);
         ((unsigned char *)dst)[2] = (val >> 40);
@@ -1731,13 +1746,16 @@ sph_dec64be(const void *src)
     return *(const sph_u64 *)src;
 #endif
 #else
-    if (((SPH_UPTR)src & 7) == 0) {
+    if (((SPH_UPTR)src & 7) == 0)
+    {
 #if SPH_LITTLE_ENDIAN
         return sph_bswap64(*(const sph_u64 *)src);
 #else
         return *(const sph_u64 *)src;
 #endif
-    } else {
+    }
+    else
+    {
         return ((sph_u64)(((const unsigned char *)src)[0]) << 56)
                | ((sph_u64)(((const unsigned char *)src)[1]) << 48)
                | ((sph_u64)(((const unsigned char *)src)[2]) << 40)
@@ -1802,12 +1820,15 @@ sph_enc64le(void *dst, sph_u64 val)
 #endif
     *(sph_u64 *)dst = val;
 #else
-    if (((SPH_UPTR)dst & 7) == 0) {
+    if (((SPH_UPTR)dst & 7) == 0)
+    {
 #if SPH_BIG_ENDIAN
         val = sph_bswap64(val);
 #endif
         *(sph_u64 *)dst = val;
-    } else {
+    }
+    else
+    {
         ((unsigned char *)dst)[0] = val;
         ((unsigned char *)dst)[1] = (val >> 8);
         ((unsigned char *)dst)[2] = (val >> 16);
@@ -1873,7 +1894,8 @@ sph_dec64le(const void *src)
     return *(const sph_u64 *)src;
 #endif
 #else
-    if (((SPH_UPTR)src & 7) == 0) {
+    if (((SPH_UPTR)src & 7) == 0)
+    {
 #if SPH_BIG_ENDIAN
 #if SPH_SPARCV9_GCC_64 && !SPH_NO_ASM
         sph_u64 tmp;
@@ -1901,7 +1923,9 @@ sph_dec64le(const void *src)
 #else
         return *(const sph_u64 *)src;
 #endif
-        } else {
+        }
+        else
+        {
         return (sph_u64)(((const unsigned char *)src)[0])
         | ((sph_u64)(((const unsigned char *)src)[1]) << 8)
         | ((sph_u64)(((const unsigned char *)src)[2]) << 16)

@@ -53,13 +53,16 @@ bool CSVModelWriter::write()
     QTextStream out(&file);
 
     int numRows = 0;
-    if (model) {
+    if (model)
+    {
         numRows = model->rowCount();
     }
 
     // Header row
-    for (int i = 0; i < columns.size(); ++i) {
-        if (i != 0) {
+    for (int i = 0; i < columns.size(); ++i)
+    {
+        if (i != 0)
+        {
             writeSep(out);
         }
         writeValue(out, columns[i].title);
@@ -67,9 +70,12 @@ bool CSVModelWriter::write()
     writeNewline(out);
 
     // Data rows
-    for (int j = 0; j < numRows; ++j) {
-        for (int i = 0; i < columns.size(); ++i) {
-            if (i != 0) {
+    for (int j = 0; j < numRows; ++j)
+    {
+        for (int i = 0; i < columns.size(); ++i)
+        {
+            if (i != 0)
+            {
                 writeSep(out);
             }
             QVariant data = model->index(j, columns[i].column).data(columns[i].role);

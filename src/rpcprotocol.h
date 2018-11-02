@@ -19,7 +19,8 @@
 #include <univalue.h>
 
 //! HTTP status codes
-enum HTTPStatusCode {
+enum HTTPStatusCode
+{
     HTTP_OK = 200,
     HTTP_BAD_REQUEST = 400,
     HTTP_UNAUTHORIZED = 401,
@@ -30,7 +31,8 @@ enum HTTPStatusCode {
 };
 
 //! Bulwark RPC error codes
-enum RPCErrorCode {
+enum RPCErrorCode
+{
     //! Standard JSON-RPC 2.0 errors
     RPC_INVALID_REQUEST = -32600,
     RPC_METHOD_NOT_FOUND = -32601,
@@ -114,7 +116,8 @@ public:
         tcp::resolver resolver(stream.get_io_service());
         tcp::resolver::iterator endpoint_iterator;
 #if BOOST_VERSION >= 104300
-        try {
+        try
+        {
 #endif
             // The default query (flags address_configured) tries IPv6 if
             // non-localhost IPv6 configured, and IPv4 if non-localhost IPv4
@@ -122,7 +125,9 @@ public:
             tcp::resolver::query query(server.c_str(), port.c_str());
             endpoint_iterator = resolver.resolve(query);
 #if BOOST_VERSION >= 104300
-        } catch (boost::system::system_error& e) {
+        }
+        catch (boost::system::system_error& e)
+        {
             // If we at first don't succeed, try blanket lookup (IPv4+IPv6 independent of configured interfaces)
             tcp::resolver::query query(server.c_str(), port.c_str(), resolver_query_base::flags());
             endpoint_iterator = resolver.resolve(query);
@@ -130,7 +135,8 @@ public:
 #endif
         boost::system::error_code error = boost::asio::error::host_not_found;
         tcp::resolver::iterator end;
-        while (error && endpoint_iterator != end) {
+        while (error && endpoint_iterator != end)
+        {
             stream.lowest_layer().close();
             stream.lowest_layer().connect(*endpoint_iterator++, error);
         }

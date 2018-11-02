@@ -20,9 +20,11 @@
 #include <string.h>
 #include <string>
 
-namespace leveldb {
+namespace leveldb
+{
 
-class Slice {
+class Slice
+{
 public:
     // Create an empty slice.
     Slice() : data_(""), size_(0) { }
@@ -37,42 +39,49 @@ public:
     Slice(const char* s) : data_(s), size_(strlen(s)) { }
 
     // Return a pointer to the beginning of the referenced data
-    const char* data() const {
+    const char* data() const
+    {
         return data_;
     }
 
     // Return the length (in bytes) of the referenced data
-    size_t size() const {
+    size_t size() const
+    {
         return size_;
     }
 
     // Return true iff the length of the referenced data is zero
-    bool empty() const {
+    bool empty() const
+    {
         return size_ == 0;
     }
 
     // Return the ith byte in the referenced data.
     // REQUIRES: n < size()
-    char operator[](size_t n) const {
+    char operator[](size_t n) const
+    {
         assert(n < size());
         return data_[n];
     }
 
     // Change this slice to refer to an empty array
-    void clear() {
+    void clear()
+    {
         data_ = "";
         size_ = 0;
     }
 
     // Drop the first "n" bytes from this slice.
-    void remove_prefix(size_t n) {
+    void remove_prefix(size_t n)
+    {
         assert(n <= size());
         data_ += n;
         size_ -= n;
     }
 
     // Return a string that contains the copy of the referenced data.
-    std::string ToString() const {
+    std::string ToString() const
+    {
         return std::string(data_, size_);
     }
 
@@ -83,7 +92,8 @@ public:
     int compare(const Slice& b) const;
 
     // Return true iff "x" is a prefix of "*this"
-    bool starts_with(const Slice& x) const {
+    bool starts_with(const Slice& x) const
+    {
         return ((size_ >= x.size_) &&
                 (memcmp(data_, x.data_, x.size_) == 0));
     }
@@ -95,19 +105,23 @@ private:
     // Intentionally copyable
 };
 
-inline bool operator==(const Slice& x, const Slice& y) {
+inline bool operator==(const Slice& x, const Slice& y)
+{
     return ((x.size() == y.size()) &&
             (memcmp(x.data(), y.data(), x.size()) == 0));
 }
 
-inline bool operator!=(const Slice& x, const Slice& y) {
+inline bool operator!=(const Slice& x, const Slice& y)
+{
     return !(x == y);
 }
 
-inline int Slice::compare(const Slice& b) const {
+inline int Slice::compare(const Slice& b) const
+{
     const size_t min_len = (size_ < b.size_) ? size_ : b.size_;
     int r = memcmp(data_, b.data_, min_len);
-    if (r == 0) {
+    if (r == 0)
+    {
         if (size_ < b.size_) r = -1;
         else if (size_ > b.size_) r = +1;
     }

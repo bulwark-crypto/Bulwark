@@ -76,7 +76,8 @@ std::string HexStr(const T itbegin, const T itend, bool fSpaces = false)
                                     '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
                                    };
     rv.reserve((itend - itbegin) * 3);
-    for (T it = itbegin; it < itend; ++it) {
+    for (T it = itbegin; it < itend; ++it)
+    {
         unsigned char val = (unsigned char)(*it);
         if (fSpaces && it != itbegin)
             rv.push_back(' ');
@@ -98,7 +99,8 @@ inline std::string ReverseEndianString(std::string in)
 {
     std::string out = "";
     unsigned int s = in.size();
-    for (unsigned int i = 0; i < s; i += 2) {
+    for (unsigned int i = 0; i < s; i += 2)
+    {
         out += in.substr(s - i - 2, 2);
     }
 

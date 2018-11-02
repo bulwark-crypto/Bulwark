@@ -57,7 +57,8 @@ ZerocoinTutorial()
     // Zerocoin uses exceptions (based on the runtime_error class)
     // to indicate all sorts of problems. Always remember to catch them!
 
-    try {
+    try
+    {
 
         /********************************************************************/
         // What is it:      Parameter loading
@@ -122,7 +123,8 @@ ZerocoinTutorial()
         libzerocoin::PublicCoin pubCoinNew(params, serializedCoin);
 
         // Now make sure the coin is valid.
-        if (!pubCoinNew.validate()) {
+        if (!pubCoinNew.validate())
+        {
             // If this returns false, don't accept the coin for any purpose!
             // Any ZEROCOIN_MINT with an invalid coin should NOT be
             // accepted as a valid transaction in the block chain.
@@ -149,7 +151,8 @@ ZerocoinTutorial()
         libzerocoin::Accumulator accumulator(params,libzerocoin::CoinDenomination::ZQ_ONE);
 
         // Add several coins to it (we'll generate them here on the fly).
-        for (uint32_t i = 0; i < COINS_TO_ACCUMULATE; i++) {
+        for (uint32_t i = 0; i < COINS_TO_ACCUMULATE; i++)
+        {
             libzerocoin::PrivateCoin testCoin(params, libzerocoin::CoinDenomination::ZQ_ONE);
             accumulator += testCoin.getPublicCoin();
         }
@@ -213,7 +216,8 @@ ZerocoinTutorial()
 
         // This is a sanity check. The CoinSpend object should always verify,
         // but why not check before we put it onto the wire?
-        if (!spend.Verify(accumulator)) {
+        if (!spend.Verify(accumulator))
+        {
             cout << "ERROR: Our new CoinSpend transaction did not verify!" << endl;
             return false;
         }
@@ -248,7 +252,8 @@ ZerocoinTutorial()
         //
         // Verify that the spend is valid with respect to the Accumulator
         // and the Metadata
-        if (!newSpend.Verify(accumulator)) {
+        if (!newSpend.Verify(accumulator))
+        {
             cout << "ERROR: The CoinSpend transaction did not verify!" << endl;
             return false;
         }
@@ -265,7 +270,9 @@ ZerocoinTutorial()
         // We're done
         return true;
 
-    } catch (runtime_error &e) {
+    }
+    catch (runtime_error &e)
+    {
         cout << e.what() << endl;
         return false;
     }

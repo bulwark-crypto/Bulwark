@@ -15,25 +15,30 @@
 #include "Commitment.h"
 #include "hash.h"
 
-namespace libzerocoin {
+namespace libzerocoin
+{
 
 //Commitment class
 Commitment::Commitment::Commitment(const IntegerGroupParams* p,
-                                   const CBigNum& value): params(p), contents(value) {
+                                   const CBigNum& value): params(p), contents(value)
+{
     this->randomness = CBigNum::randBignum(params->groupOrder);
     this->commitmentValue = (params->g.pow_mod(this->contents, params->modulus).mul_mod(
                                  params->h.pow_mod(this->randomness, params->modulus), params->modulus));
 }
 
-const CBigNum& Commitment::getCommitmentValue() const {
+const CBigNum& Commitment::getCommitmentValue() const
+{
     return this->commitmentValue;
 }
 
-const CBigNum& Commitment::getRandomness() const {
+const CBigNum& Commitment::getRandomness() const
+{
     return this->randomness;
 }
 
-const CBigNum& Commitment::getContents() const {
+const CBigNum& Commitment::getContents() const
+{
     return this->contents;
 }
 
@@ -49,7 +54,8 @@ CommitmentProofOfKnowledge::CommitmentProofOfKnowledge(const IntegerGroupParams*
 
     // First: make sure that the two commitments have the
     // same contents.
-    if (a.getContents() != b.getContents()) {
+    if (a.getContents() != b.getContents())
+    {
         throw std::runtime_error("Both commitments must contain the same value");
     }
 
@@ -113,7 +119,8 @@ bool CommitmentProofOfKnowledge::Verify(const CBigNum& A, const CBigNum& B) cons
             this->S2 < CBigNum(0) ||
             this->S3 < CBigNum(0) ||
             this->challenge < CBigNum(0) ||
-            this->challenge > (CBigNum(2).pow(COMMITMENT_EQUALITY_CHALLENGE_SIZE) - CBigNum(1))) {
+            this->challenge > (CBigNum(2).pow(COMMITMENT_EQUALITY_CHALLENGE_SIZE) - CBigNum(1)))
+    {
         // Invalid inputs. Reject.
         return false;
     }
@@ -132,7 +139,8 @@ bool CommitmentProofOfKnowledge::Verify(const CBigNum& A, const CBigNum& B) cons
     CBigNum computedChallenge = calculateChallenge(A, B, T1, T2);
 
     // Return success if the computed challenge matches the incoming challenge
-    if(computedChallenge == this->challenge) {
+    if(computedChallenge == this->challenge)
+    {
         return true;
     }
 
@@ -140,7 +148,8 @@ bool CommitmentProofOfKnowledge::Verify(const CBigNum& A, const CBigNum& B) cons
     return false;
 }
 
-const CBigNum CommitmentProofOfKnowledge::calculateChallenge(const CBigNum& a, const CBigNum& b, const CBigNum &commitOne, const CBigNum &commitTwo) const {
+const CBigNum CommitmentProofOfKnowledge::calculateChallenge(const CBigNum& a, const CBigNum& b, const CBigNum &commitOne, const CBigNum &commitTwo) const
+{
     CHashWriter hasher(0,0);
 
     // Hash together the following elements:

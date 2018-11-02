@@ -9,19 +9,22 @@ namespace
 {
 int CompareBigEndian(const unsigned char* c1, size_t c1len, const unsigned char* c2, size_t c2len)
 {
-    while (c1len > c2len) {
+    while (c1len > c2len)
+    {
         if (*c1)
             return 1;
         c1++;
         c1len--;
     }
-    while (c2len > c1len) {
+    while (c2len > c1len)
+    {
         if (*c2)
             return -1;
         c2++;
         c2len--;
     }
-    while (c1len > 0) {
+    while (c1len > 0)
+    {
         if (*c1 > *c2)
             return 1;
         if (*c2 > *c1)
@@ -34,7 +37,8 @@ int CompareBigEndian(const unsigned char* c1, size_t c1len, const unsigned char*
 }
 
 /** Order of secp256k1's generator minus 1. */
-const unsigned char vchMaxModOrder[32] = {
+const unsigned char vchMaxModOrder[32] =
+{
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE,
     0xBA, 0xAE, 0xDC, 0xE6, 0xAF, 0x48, 0xA0, 0x3B,
@@ -42,7 +46,8 @@ const unsigned char vchMaxModOrder[32] = {
 };
 
 /** Half of the order of secp256k1's generator minus 1. */
-const unsigned char vchMaxModHalfOrder[32] = {
+const unsigned char vchMaxModHalfOrder[32] =
+{
     0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
     0x5D, 0x57, 0x6E, 0x73, 0x57, 0xA4, 0x50, 0x1D,

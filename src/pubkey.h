@@ -89,16 +89,20 @@ public:
     }
 
     //! Simple read-only vector-like interface to the pubkey data.
-    unsigned int size() const {
+    unsigned int size() const
+    {
         return GetLen(vch[0]);
     }
-    const unsigned char* begin() const {
+    const unsigned char* begin() const
+    {
         return vch;
     }
-    const unsigned char* end() const {
+    const unsigned char* end() const
+    {
         return vch + size();
     }
-    const unsigned char& operator[](unsigned int pos) const {
+    const unsigned char& operator[](unsigned int pos) const
+    {
         return vch[pos];
     }
 
@@ -134,9 +138,12 @@ public:
     void Unserialize(Stream& s, int nType, int nVersion)
     {
         unsigned int len = ::ReadCompactSize(s);
-        if (len <= 65) {
+        if (len <= 65)
+        {
             s.read((char*)vch, len);
-        } else {
+        }
+        else
+        {
             // invalid pubkey, skip available data
             char dummy;
             while (len--)
@@ -203,7 +210,8 @@ public:
     }
 };
 
-struct CExtPubKey {
+struct CExtPubKey
+{
     unsigned char nDepth;
     unsigned char vchFingerprint[4];
     unsigned int nChild;

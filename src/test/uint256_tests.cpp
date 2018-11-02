@@ -202,13 +202,15 @@ void shiftArrayLeft(unsigned char* to, const unsigned char* from, unsigned int a
             if (T >= bitsToShift/8+1)
                 to[T] |= from[F-1] >> (8-bitsToShift%8);
         }
-        else {
+        else
+        {
             to[T] = 0;
         }
     }
 }
 
-BOOST_AUTO_TEST_CASE( shifts ) { // "<<"  ">>"  "<<="  ">>="
+BOOST_AUTO_TEST_CASE( shifts )   // "<<"  ">>"  "<<="  ">>="
+{
     unsigned char TmpArray[32];
     uint256 TmpL;
     for (unsigned int i = 0; i < 256; ++i)
@@ -249,10 +251,12 @@ BOOST_AUTO_TEST_CASE( shifts ) { // "<<"  ">>"  "<<="  ">>="
     }
     uint256 c1L = uint256(0x0123456789abcdefULL);
     uint256 c2L = c1L << 128;
-    for (unsigned int i = 0; i < 128; ++i) {
+    for (unsigned int i = 0; i < 128; ++i)
+    {
         BOOST_CHECK((c1L << i) == (c2L >> (128-i)));
     }
-    for (unsigned int i = 128; i < 256; ++i) {
+    for (unsigned int i = 128; i < 256; ++i)
+    {
         BOOST_CHECK((c1L << i) == (c2L << (i-128)));
     }
 
@@ -295,10 +299,12 @@ BOOST_AUTO_TEST_CASE( shifts ) { // "<<"  ">>"  "<<="  ">>="
     }
     uint160 c1S = uint160(0x0123456789abcdefULL);
     uint160 c2S = c1S << 80;
-    for (unsigned int i = 0; i < 80; ++i) {
+    for (unsigned int i = 0; i < 80; ++i)
+    {
         BOOST_CHECK((c1S << i) == (c2S >> (80-i)));
     }
-    for (unsigned int i = 80; i < 160; ++i) {
+    for (unsigned int i = 80; i < 160; ++i)
+    {
         BOOST_CHECK((c1S << i) == (c2S << (i-80)));
     }
 }
@@ -324,7 +330,8 @@ BOOST_AUTO_TEST_CASE( unaryOperators ) // !    ~    -
     BOOST_CHECK(~ZeroS == MaxS);
 
     unsigned char TmpArray[32];
-    for (unsigned int i = 0; i < 32; ++i) {
+    for (unsigned int i = 0; i < 32; ++i)
+    {
         TmpArray[i] = ~R1Array[i];
     }
     BOOST_CHECK(uint256(std::vector<unsigned char>(TmpArray,TmpArray+32)) == (~R1L));
@@ -417,7 +424,8 @@ BOOST_AUTO_TEST_CASE( bitwiseOperators )
 BOOST_AUTO_TEST_CASE( comparison ) // <= >= < >
 {
     uint256 TmpL;
-    for (unsigned int i = 0; i < 256; ++i) {
+    for (unsigned int i = 0; i < 256; ++i)
+    {
         TmpL= OneL<< i;
         BOOST_CHECK( TmpL >= ZeroL && TmpL > ZeroL && ZeroL < TmpL && ZeroL <= TmpL);
         BOOST_CHECK( TmpL >= 0 && TmpL > 0 && 0 < TmpL && 0 <= TmpL);
@@ -432,7 +440,8 @@ BOOST_AUTO_TEST_CASE( comparison ) // <= >= < >
         BOOST_CHECK(! (R1L > TmpL));
     }
     uint160 TmpS;
-    for (unsigned int i = 0; i < 160; ++i) {
+    for (unsigned int i = 0; i < 160; ++i)
+    {
         TmpS= OneS<< i;
         BOOST_CHECK( TmpS >= ZeroS && TmpS > ZeroS && ZeroS < TmpS && ZeroS <= TmpS);
         BOOST_CHECK( TmpS >= 0 && TmpS > 0 && 0 < TmpS && 0 <= TmpS);
@@ -458,7 +467,8 @@ BOOST_AUTO_TEST_CASE( plusMinus )
     BOOST_CHECK(TmpL == R1L + R2L);
     BOOST_CHECK(OneL+MaxL == ZeroL);
     BOOST_CHECK(MaxL+OneL == ZeroL);
-    for (unsigned int i = 1; i < 256; ++i) {
+    for (unsigned int i = 1; i < 256; ++i)
+    {
         BOOST_CHECK( (MaxL >> i) + OneL == (HalfL >> (i-1)) );
         BOOST_CHECK( OneL + (MaxL >> i) == (HalfL >> (i-1)) );
         TmpL = (MaxL>>i);
@@ -483,7 +493,8 @@ BOOST_AUTO_TEST_CASE( plusMinus )
     BOOST_CHECK(R1L -(-R2L) == R1L+R2L);
     BOOST_CHECK(R1L -(-OneL) == R1L+OneL);
     BOOST_CHECK(R1L - OneL == R1L+(-OneL));
-    for (unsigned int i = 1; i < 256; ++i) {
+    for (unsigned int i = 1; i < 256; ++i)
+    {
         BOOST_CHECK((MaxL>>i) - (-OneL)  == (HalfL >> (i-1)));
         BOOST_CHECK((HalfL >> (i-1)) - OneL == (MaxL>>i));
         TmpL = (HalfL >> (i-1));
@@ -504,7 +515,8 @@ BOOST_AUTO_TEST_CASE( plusMinus )
     BOOST_CHECK(TmpS == R1S + R2S);
     BOOST_CHECK(OneS+MaxS == ZeroS);
     BOOST_CHECK(MaxS+OneS == ZeroS);
-    for (unsigned int i = 1; i < 160; ++i) {
+    for (unsigned int i = 1; i < 160; ++i)
+    {
         BOOST_CHECK( (MaxS >> i) + OneS == (HalfS >> (i-1)) );
         BOOST_CHECK( OneS + (MaxS >> i) == (HalfS >> (i-1)) );
         TmpS = (MaxS>>i);
@@ -529,7 +541,8 @@ BOOST_AUTO_TEST_CASE( plusMinus )
     BOOST_CHECK(R1S -(-R2S) == R1S+R2S);
     BOOST_CHECK(R1S -(-OneS) == R1S+OneS);
     BOOST_CHECK(R1S - OneS == R1S+(-OneS));
-    for (unsigned int i = 1; i < 160; ++i) {
+    for (unsigned int i = 1; i < 160; ++i)
+    {
         BOOST_CHECK((MaxS>>i) - (-OneS)  == (HalfS >> (i-1)));
         BOOST_CHECK((HalfS >> (i-1)) - OneS == (MaxS>>i));
         TmpS = (HalfS >> (i-1));

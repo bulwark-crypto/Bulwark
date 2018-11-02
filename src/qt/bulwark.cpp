@@ -223,7 +223,8 @@ public:
     void requestShutdown();
 
     /// Get process return value
-    int getReturnValue() {
+    int getReturnValue()
+    {
         return returnValue;
     }
 
@@ -274,28 +275,36 @@ void BitcoinCore::initialize()
 {
     execute_restart = true;
 
-    try {
+    try
+    {
         qDebug() << __func__ << ": Running AppInit2 in thread";
         int rv = AppInit2(threadGroup);
-        if (rv) {
+        if (rv)
+        {
             /* Start a dummy RPC thread if no RPC thread is active yet
              * to handle timeouts.
              */
             StartDummyRPCThread();
         }
         emit initializeResult(rv);
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         handleRunawayException(&e);
-    } catch (...) {
+    }
+    catch (...)
+    {
         handleRunawayException(NULL);
     }
 }
 
 void BitcoinCore::restart(QStringList args)
 {
-    if (execute_restart) { // Only restart 1x, no matter how often a user clicks on a restart-button
+    if (execute_restart)   // Only restart 1x, no matter how often a user clicks on a restart-button
+    {
         execute_restart = false;
-        try {
+        try
+        {
             qDebug() << __func__ << ": Running Restart in thread";
             threadGroup.interrupt_all();
             threadGroup.join_all();
@@ -306,9 +315,13 @@ void BitcoinCore::restart(QStringList args)
             QProcess::startDetached(QApplication::applicationFilePath(), args);
             qDebug() << __func__ << ": Restart initiated...";
             QApplication::quit();
-        } catch (std::exception& e) {
+        }
+        catch (std::exception& e)
+        {
             handleRunawayException(&e);
-        } catch (...) {
+        }
+        catch (...)
+        {
             handleRunawayException(NULL);
         }
     }
@@ -316,16 +329,21 @@ void BitcoinCore::restart(QStringList args)
 
 void BitcoinCore::shutdown()
 {
-    try {
+    try
+    {
         qDebug() << __func__ << ": Running Shutdown in thread";
         threadGroup.interrupt_all();
         threadGroup.join_all();
         Shutdown();
         qDebug() << __func__ << ": Shutdown finished";
         emit shutdownResult(1);
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         handleRunawayException(&e);
-    } catch (...) {
+    }
+    catch (...)
+    {
         handleRunawayException(NULL);
     }
 }
@@ -347,7 +365,8 @@ BitcoinApplication::BitcoinApplication(int& argc, char** argv) : QApplication(ar
 
 BitcoinApplication::~BitcoinApplication()
 {
-    if (coreThread) {
+    if (coreThread)
+    {
         qDebug() << __func__ << ": Stopping thread";
         emit stopThread();
         coreThread->wait();
@@ -362,7 +381,8 @@ BitcoinApplication::~BitcoinApplication()
 #endif
     // Delete Qt-settings if user clicked on "Reset Options"
     QSettings settings;
-    if (optionsModel->resetSettings) {
+    if (optionsModel->resetSettings)
+    {
         settings.clear();
         settings.sync();
     }
@@ -458,7 +478,8 @@ void BitcoinApplication::initializeResult(int retval)
     qDebug() << __func__ << ": Initialization result: " << retval;
     // Set exit result: 0 if successful, 1 if failure
     returnValue = retval ? 0 : 1;
-    if (retval) {
+    if (retval)
+    {
 #ifdef ENABLE_WALLET
         PaymentServer::LoadRootCAs();
         paymentServer->setOptionsModel(optionsModel);
@@ -468,7 +489,8 @@ void BitcoinApplication::initializeResult(int retval)
         window->setClientModel(clientModel);
 
 #ifdef ENABLE_WALLET
-        if (pwalletMain) {
+        if (pwalletMain)
+        {
             walletModel = new WalletModel(pwalletMain, optionsModel);
 
             window->addWallet(BitcoinGUI::DEFAULT_WALLET, walletModel);
@@ -480,9 +502,12 @@ void BitcoinApplication::initializeResult(int retval)
 #endif
 
         // If -min option passed, start window minimized.
-        if (GetBoolArg("-min", false)) {
+        if (GetBoolArg("-min", false))
+        {
             window->showMinimized();
-        } else {
+        }
+        else
+        {
             window->show();
         }
         emit splashFinished(window);
@@ -498,7 +523,9 @@ void BitcoinApplication::initializeResult(int retval)
                 window, SLOT(message(QString, QString, unsigned int)));
         QTimer::singleShot(100, paymentServer, SLOT(uiReady()));
 #endif
-    } else {
+    }
+    else
+    {
         quit(); // Exit main loop
     }
 }
@@ -581,7 +608,8 @@ int main(int argc, char* argv[])
     QString s = QSysInfo::kernelVersion();
     std::string ver_info = s.toStdString();
     // ver_info will be like 17.2.0 for High Sierra. Check if true and exit if build via cross-compile
-    if (ver_info[0] == '1' && ver_info[1] == '7') {
+    if (ver_info[0] == '1' && ver_info[1] == '7')
+    {
         QMessageBox::critical(0, "Unsupported", BitcoinGUI::tr("High Sierra not supported with this build") + QString("\n\n"));
         ::exit(1);
     }
@@ -590,7 +618,8 @@ int main(int argc, char* argv[])
 
     // Show help message immediately after parsing command-line options (for "-lang") and setting locale,
     // but before showing splash screen.
-    if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
+    if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version"))
+    {
         HelpMessageDialog help(NULL, mapArgs.count("-version"));
         help.showOrPrint();
         return 1;
@@ -602,14 +631,18 @@ int main(int argc, char* argv[])
 
     /// 6. Determine availability of data directory and parse bulwark.conf
     /// - Do not call GetDataDir(true) before this step finishes
-    if (!boost::filesystem::is_directory(GetDataDir(false))) {
+    if (!boost::filesystem::is_directory(GetDataDir(false)))
+    {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
                               QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
-    try {
+    try
+    {
         ReadConfigFile(mapArgs, mapMultiArgs);
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
                               QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return 0;
@@ -622,7 +655,8 @@ int main(int argc, char* argv[])
     // - Needs to be done before createOptionsModel
 
     // Check for -testnet or -regtest parameter (Params() calls are only valid after this clause)
-    if (!SelectParamsFromCommandLine()) {
+    if (!SelectParamsFromCommandLine())
+    {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"), QObject::tr("Error: Invalid combination of -regtest and -testnet."));
         return 1;
     }
@@ -641,7 +675,8 @@ int main(int argc, char* argv[])
 #ifdef ENABLE_WALLET
     /// 7a. parse masternode.conf
     string strErr;
-    if (!masternodeConfig.read(strErr)) {
+    if (!masternodeConfig.read(strErr))
+    {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
                               QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return 0;
@@ -684,7 +719,8 @@ int main(int argc, char* argv[])
     if (GetBoolArg("-splash", true) && !GetBoolArg("-min", false))
         app.createSplashScreen(networkStyle.data());
 
-    try {
+    try
+    {
         app.createWindow(networkStyle.data());
         app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
@@ -693,10 +729,14 @@ int main(int argc, char* argv[])
         app.exec();
         app.requestShutdown();
         app.exec();
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         PrintExceptionContinue(&e, "Runaway exception");
         app.handleRunawayException(QString::fromStdString(strMiscWarning));
-    } catch (...) {
+    }
+    catch (...)
+    {
         PrintExceptionContinue(NULL, "Runaway exception");
         app.handleRunawayException(QString::fromStdString(strMiscWarning));
     }

@@ -52,13 +52,15 @@ public:
         const size_t base_addr = reinterpret_cast<size_t>(p);
         const size_t start_page = base_addr & page_mask;
         const size_t end_page = (base_addr + size - 1) & page_mask;
-        for (size_t page = start_page; page <= end_page; page += page_size) {
+        for (size_t page = start_page; page <= end_page; page += page_size)
+        {
             Histogram::iterator it = histogram.find(page);
             if (it == histogram.end()) // Newly locked page
             {
                 locker.Lock(reinterpret_cast<void*>(page), page_size);
                 histogram.insert(std::make_pair(page, 1));
-            } else // Page was already locked; increase counter
+            }
+            else   // Page was already locked; increase counter
             {
                 it->second += 1;
             }
@@ -74,7 +76,8 @@ public:
         const size_t base_addr = reinterpret_cast<size_t>(p);
         const size_t start_page = base_addr & page_mask;
         const size_t end_page = (base_addr + size - 1) & page_mask;
-        for (size_t page = start_page; page <= end_page; page += page_size) {
+        for (size_t page = start_page; page <= end_page; page += page_size)
+        {
             Histogram::iterator it = histogram.find(page);
             assert(it != histogram.end()); // Cannot unlock an area that was not locked
             // Decrease counter for page, when it is zero, the page will be unlocked
@@ -182,7 +185,8 @@ void UnlockObject(const T& t)
 // out of memory and clears its contents before deletion.
 //
 template <typename T>
-struct secure_allocator : public std::allocator<T> {
+struct secure_allocator : public std::allocator<T>
+{
     // MSVC8 default copy constructor is broken
     typedef std::allocator<T> base;
     typedef typename base::size_type size_type;
@@ -200,7 +204,8 @@ struct secure_allocator : public std::allocator<T> {
     }
     ~secure_allocator() throw() {}
     template <typename _Other>
-    struct rebind {
+    struct rebind
+    {
         typedef secure_allocator<_Other> other;
     };
 
@@ -215,7 +220,8 @@ struct secure_allocator : public std::allocator<T> {
 
     void deallocate(T* p, std::size_t n)
     {
-        if (p != NULL) {
+        if (p != NULL)
+        {
             OPENSSL_cleanse(p, sizeof(T) * n);
             LockedPageManager::Instance().UnlockRange(p, sizeof(T) * n);
         }
@@ -228,7 +234,8 @@ struct secure_allocator : public std::allocator<T> {
 // Allocator that clears its contents before deletion.
 //
 template <typename T>
-struct zero_after_free_allocator : public std::allocator<T> {
+struct zero_after_free_allocator : public std::allocator<T>
+{
     // MSVC8 default copy constructor is broken
     typedef std::allocator<T> base;
     typedef typename base::size_type size_type;
@@ -246,7 +253,8 @@ struct zero_after_free_allocator : public std::allocator<T> {
     }
     ~zero_after_free_allocator() throw() {}
     template <typename _Other>
-    struct rebind {
+    struct rebind
+    {
         typedef zero_after_free_allocator<_Other> other;
     };
 

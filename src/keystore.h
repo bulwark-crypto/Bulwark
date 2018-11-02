@@ -84,7 +84,8 @@ public:
         {
             LOCK(cs_KeyStore);
             KeyMap::const_iterator mi = mapKeys.begin();
-            while (mi != mapKeys.end()) {
+            while (mi != mapKeys.end())
+            {
                 setAddress.insert((*mi).first);
                 mi++;
             }
@@ -95,7 +96,8 @@ public:
         {
             LOCK(cs_KeyStore);
             KeyMap::const_iterator mi = mapKeys.find(address);
-            if (mi != mapKeys.end()) {
+            if (mi != mapKeys.end())
+            {
                 keyOut = mi->second;
                 return true;
             }

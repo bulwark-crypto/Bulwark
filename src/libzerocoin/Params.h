@@ -16,9 +16,11 @@
 #include "bignum.h"
 #include "ZerocoinDefines.h"
 
-namespace libzerocoin {
+namespace libzerocoin
+{
 
-class IntegerGroupParams {
+class IntegerGroupParams
+{
 public:
     /** @brief Integer group class, default constructor
     *
@@ -56,7 +58,8 @@ public:
     CBigNum groupOrder;
 
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(initialized);
         READWRITE(g);
         READWRITE(h);
@@ -65,7 +68,8 @@ public:
     }
 };
 
-class AccumulatorAndProofParams {
+class AccumulatorAndProofParams
+{
 public:
     /** @brief Construct a set of Zerocoin parameters from a modulus "N".
     * @param N                A trusted RSA modulus
@@ -139,7 +143,8 @@ public:
      */
     uint32_t k_dprime;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(initialized);
         READWRITE(accumulatorModulus);
         READWRITE(accumulatorBase);
@@ -152,7 +157,8 @@ public:
     }
 };
 
-class ZerocoinParams {
+class ZerocoinParams
+{
 public:
     /** @brief Construct a set of Zerocoin parameters from a modulus "N".
     * @param N                A trusted RSA modulus
@@ -204,7 +210,8 @@ public:
     uint32_t zkp_hash_len;
 
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(initialized);
         READWRITE(accumulatorParams);
         READWRITE(coinCommitmentGroup);

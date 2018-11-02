@@ -201,23 +201,27 @@ public:
 
     explicit CScriptNum(const std::vector<unsigned char>& vch, bool fRequireMinimal)
     {
-        if (vch.size() > nMaxNumSize) {
+        if (vch.size() > nMaxNumSize)
+        {
             throw scriptnum_error("script number overflow");
         }
-        if (fRequireMinimal && vch.size() > 0) {
+        if (fRequireMinimal && vch.size() > 0)
+        {
             // Check that the number is encoded with the minimum possible
             // number of bytes.
             //
             // If the most-significant-byte - excluding the sign bit - is zero
             // then we're not minimal. Note how this test also rejects the
             // negative-zero encoding, 0x80.
-            if ((vch.back() & 0x7f) == 0) {
+            if ((vch.back() & 0x7f) == 0)
+            {
                 // One exception: if there's more than one byte and the most
                 // significant bit of the second-most-significant-byte is set
                 // it would conflict with the sign bit. An example of this case
                 // is +-255, which encode to 0xff00 and 0xff80 respectively.
                 // (big-endian).
-                if (vch.size() <= 1 || (vch[vch.size() - 2] & 0x80) == 0) {
+                if (vch.size() <= 1 || (vch[vch.size() - 2] & 0x80) == 0)
+                {
                     throw scriptnum_error("non-minimally encoded script number");
                 }
             }
@@ -225,61 +229,79 @@ public:
         m_value = set_vch(vch);
     }
 
-    inline bool operator==(const int64_t& rhs) const    {
+    inline bool operator==(const int64_t& rhs) const
+    {
         return m_value == rhs;
     }
-    inline bool operator!=(const int64_t& rhs) const    {
+    inline bool operator!=(const int64_t& rhs) const
+    {
         return m_value != rhs;
     }
-    inline bool operator<=(const int64_t& rhs) const    {
+    inline bool operator<=(const int64_t& rhs) const
+    {
         return m_value <= rhs;
     }
-    inline bool operator< (const int64_t& rhs) const    {
+    inline bool operator< (const int64_t& rhs) const
+    {
         return m_value <  rhs;
     }
-    inline bool operator>=(const int64_t& rhs) const    {
+    inline bool operator>=(const int64_t& rhs) const
+    {
         return m_value >= rhs;
     }
-    inline bool operator> (const int64_t& rhs) const    {
+    inline bool operator> (const int64_t& rhs) const
+    {
         return m_value >  rhs;
     }
 
-    inline bool operator==(const CScriptNum& rhs) const {
+    inline bool operator==(const CScriptNum& rhs) const
+    {
         return operator==(rhs.m_value);
     }
-    inline bool operator!=(const CScriptNum& rhs) const {
+    inline bool operator!=(const CScriptNum& rhs) const
+    {
         return operator!=(rhs.m_value);
     }
-    inline bool operator<=(const CScriptNum& rhs) const {
+    inline bool operator<=(const CScriptNum& rhs) const
+    {
         return operator<=(rhs.m_value);
     }
-    inline bool operator< (const CScriptNum& rhs) const {
+    inline bool operator< (const CScriptNum& rhs) const
+    {
         return operator< (rhs.m_value);
     }
-    inline bool operator>=(const CScriptNum& rhs) const {
+    inline bool operator>=(const CScriptNum& rhs) const
+    {
         return operator>=(rhs.m_value);
     }
-    inline bool operator> (const CScriptNum& rhs) const {
+    inline bool operator> (const CScriptNum& rhs) const
+    {
         return operator> (rhs.m_value);
     }
 
-    inline CScriptNum operator+(   const int64_t& rhs)    const {
+    inline CScriptNum operator+(   const int64_t& rhs)    const
+    {
         return CScriptNum(m_value + rhs);
     }
-    inline CScriptNum operator-(   const int64_t& rhs)    const {
+    inline CScriptNum operator-(   const int64_t& rhs)    const
+    {
         return CScriptNum(m_value - rhs);
     }
-    inline CScriptNum operator+(   const CScriptNum& rhs) const {
+    inline CScriptNum operator+(   const CScriptNum& rhs) const
+    {
         return operator+(rhs.m_value);
     }
-    inline CScriptNum operator-(   const CScriptNum& rhs) const {
+    inline CScriptNum operator-(   const CScriptNum& rhs) const
+    {
         return operator-(rhs.m_value);
     }
 
-    inline CScriptNum& operator+=( const CScriptNum& rhs)       {
+    inline CScriptNum& operator+=( const CScriptNum& rhs)
+    {
         return operator+=(rhs.m_value);
     }
-    inline CScriptNum& operator-=( const CScriptNum& rhs)       {
+    inline CScriptNum& operator-=( const CScriptNum& rhs)
+    {
         return operator-=(rhs.m_value);
     }
 
@@ -420,22 +442,27 @@ public:
         return ret;
     }
 
-    CScript(int64_t b)        {
+    CScript(int64_t b)
+    {
         operator<<(b);
     }
 
-    explicit CScript(opcodetype b)     {
+    explicit CScript(opcodetype b)
+    {
         operator<<(b);
     }
-    explicit CScript(const CScriptNum& b) {
+    explicit CScript(const CScriptNum& b)
+    {
         operator<<(b);
     }
-    explicit CScript(const std::vector<unsigned char>& b) {
+    explicit CScript(const std::vector<unsigned char>& b)
+    {
         operator<<(b);
     }
 
 
-    CScript& operator<<(int64_t b) {
+    CScript& operator<<(int64_t b)
+    {
         return push_int64(b);
     }
 

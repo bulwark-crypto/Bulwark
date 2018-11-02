@@ -792,12 +792,14 @@ skein_small_core(sph_skein_small_context *sc, const void *data, size_t len)
     buf = sc->buf;
     ptr = sc->ptr;
     clen = (sizeof sc->buf) - ptr;
-    if (len <= clen) {
+    if (len <= clen)
+    {
         memcpy(buf + ptr, data, len);
         sc->ptr = ptr + len;
         return;
     }
-    if (clen != 0) {
+    if (clen != 0)
+    {
         memcpy(buf + ptr, data, clen);
         data = (const unsigned char *)data + clen;
         len -= clen;
@@ -807,7 +809,8 @@ skein_small_core(sph_skein_small_context *sc, const void *data, size_t len)
 
     READ_STATE_SMALL(sc);
     first = (bcount == 0) << 7;
-    for (;;) {
+    for (;;)
+    {
         bcount ++;
         UBI_SMALL(96 + first, 0);
         if (len <= sizeof sc->buf)
@@ -829,7 +832,8 @@ skein_small_core(sph_skein_small_context *sc, const void *data, size_t len)
      */
     READ_STATE_SMALL(sc);
     first = (bcount == 0) << 7;
-    for (;;) {
+    for (;;)
+    {
         bcount ++;
         UBI_SMALL(96 + first, 0);
         if (len <= sizeof sc->buf)
@@ -837,7 +841,8 @@ skein_small_core(sph_skein_small_context *sc, const void *data, size_t len)
         buf = (unsigned char *)data;
         bcount ++;
         UBI_SMALL(96, 0);
-        if (len <= 2 * sizeof sc->buf) {
+        if (len <= 2 * sizeof sc->buf)
+        {
             data = buf + sizeof sc->buf;
             len -= sizeof sc->buf;
             break;
@@ -875,7 +880,8 @@ skein_big_core(sph_skein_big_context *sc, const void *data, size_t len)
 
     buf = sc->buf;
     ptr = sc->ptr;
-    if (len <= (sizeof sc->buf) - ptr) {
+    if (len <= (sizeof sc->buf) - ptr)
+    {
         memcpy(buf + ptr, data, len);
         ptr += len;
         sc->ptr = ptr;
@@ -884,10 +890,12 @@ skein_big_core(sph_skein_big_context *sc, const void *data, size_t len)
 
     READ_STATE_BIG(sc);
     first = (bcount == 0) << 7;
-    do {
+    do
+    {
         size_t clen;
 
-        if (ptr == sizeof sc->buf) {
+        if (ptr == sizeof sc->buf)
+        {
             bcount ++;
             UBI_BIG(96 + first, 0);
             first = 0;
@@ -900,7 +908,8 @@ skein_big_core(sph_skein_big_context *sc, const void *data, size_t len)
         ptr += clen;
         data = (const unsigned char *)data + clen;
         len -= clen;
-    } while (len > 0);
+    }
+    while (len > 0);
     WRITE_STATE_BIG(sc);
     sc->ptr = ptr;
 }
@@ -917,7 +926,8 @@ skein_small_close(sph_skein_small_context *sc, unsigned ub, unsigned n,
     int i;
     DECL_STATE_SMALL
 
-    if (n != 0) {
+    if (n != 0)
+    {
         unsigned z;
         unsigned char x;
 
@@ -931,9 +941,11 @@ skein_small_close(sph_skein_small_context *sc, unsigned ub, unsigned n,
     READ_STATE_SMALL(sc);
     memset(buf + ptr, 0, (sizeof sc->buf) - ptr);
     et = 352 + ((bcount == 0) << 7) + (n != 0);
-    for (i = 0; i < 2; i ++) {
+    for (i = 0; i < 2; i ++)
+    {
         UBI_SMALL(et, ptr);
-        if (i == 0) {
+        if (i == 0)
+        {
             memset(buf, 0, sizeof sc->buf);
             bcount = 0;
             et = 510;
@@ -965,7 +977,8 @@ skein_big_close(sph_skein_big_context *sc, unsigned ub, unsigned n,
     /*
      * Add bit padding if necessary.
      */
-    if (n != 0) {
+    if (n != 0)
+    {
         unsigned z;
         unsigned char x;
 
@@ -992,9 +1005,11 @@ skein_big_close(sph_skein_big_context *sc, unsigned ub, unsigned n,
     READ_STATE_BIG(sc);
     memset(buf + ptr, 0, (sizeof sc->buf) - ptr);
     et = 352 + ((bcount == 0) << 7) + (n != 0);
-    for (i = 0; i < 2; i ++) {
+    for (i = 0; i < 2; i ++)
+    {
         UBI_BIG(et, ptr);
-        if (i == 0) {
+        if (i == 0)
+        {
             memset(buf, 0, sizeof sc->buf);
             bcount = 0;
             et = 510;
@@ -1030,39 +1045,45 @@ skein_big_close(sph_skein_big_context *sc, unsigned ub, unsigned n,
 
 #if 0
 /* obsolete */
-static const sph_u64 IV224[] = {
+static const sph_u64 IV224[] =
+{
     SPH_C64(0xC6098A8C9AE5EA0B), SPH_C64(0x876D568608C5191C),
     SPH_C64(0x99CB88D7D7F53884), SPH_C64(0x384BDDB1AEDDB5DE)
 };
 
-static const sph_u64 IV256[] = {
+static const sph_u64 IV256[] =
+{
     SPH_C64(0xFC9DA860D048B449), SPH_C64(0x2FCA66479FA7D833),
     SPH_C64(0xB33BC3896656840F), SPH_C64(0x6A54E920FDE8DA69)
 };
 #endif
 
-static const sph_u64 IV224[] = {
+static const sph_u64 IV224[] =
+{
     SPH_C64(0xCCD0616248677224), SPH_C64(0xCBA65CF3A92339EF),
     SPH_C64(0x8CCD69D652FF4B64), SPH_C64(0x398AED7B3AB890B4),
     SPH_C64(0x0F59D1B1457D2BD0), SPH_C64(0x6776FE6575D4EB3D),
     SPH_C64(0x99FBC70E997413E9), SPH_C64(0x9E2CFCCFE1C41EF7)
 };
 
-static const sph_u64 IV256[] = {
+static const sph_u64 IV256[] =
+{
     SPH_C64(0xCCD044A12FDB3E13), SPH_C64(0xE83590301A79A9EB),
     SPH_C64(0x55AEA0614F816E6F), SPH_C64(0x2A2767A4AE9B94DB),
     SPH_C64(0xEC06025E74DD7683), SPH_C64(0xE7A436CDC4746251),
     SPH_C64(0xC36FBAF9393AD185), SPH_C64(0x3EEDBA1833EDFC13)
 };
 
-static const sph_u64 IV384[] = {
+static const sph_u64 IV384[] =
+{
     SPH_C64(0xA3F6C6BF3A75EF5F), SPH_C64(0xB0FEF9CCFD84FAA4),
     SPH_C64(0x9D77DD663D770CFE), SPH_C64(0xD798CBF3B468FDDA),
     SPH_C64(0x1BC4A6668A0E4465), SPH_C64(0x7ED7D434E5807407),
     SPH_C64(0x548FC1ACD4EC44D6), SPH_C64(0x266E17546AA18FF8)
 };
 
-static const sph_u64 IV512[] = {
+static const sph_u64 IV512[] =
+{
     SPH_C64(0x4903ADFF749C51CE), SPH_C64(0x0D95DE399746DF03),
     SPH_C64(0x8FD1934127C79BCE), SPH_C64(0x9A255629FF352CB1),
     SPH_C64(0x5DB62599DF6CA7B0), SPH_C64(0xEABE394CA9D5C3F4),

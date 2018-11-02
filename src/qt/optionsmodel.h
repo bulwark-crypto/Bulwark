@@ -26,7 +26,8 @@ class OptionsModel : public QAbstractListModel
 public:
     explicit OptionsModel(QObject* parent = 0);
 
-    enum OptionID {
+    enum OptionID
+    {
         StartAtStartup,      // bool
         MinimizeToTray,      // bool
         MapPortUPnP,         // bool
@@ -62,23 +63,29 @@ public:
     void setDisplayUnit(const QVariant& value);
 
     /* Explicit getters */
-    bool getMinimizeToTray() {
+    bool getMinimizeToTray()
+    {
         return fMinimizeToTray;
     }
-    bool getMinimizeOnClose() {
+    bool getMinimizeOnClose()
+    {
         return fMinimizeOnClose;
     }
-    int getDisplayUnit() {
+    int getDisplayUnit()
+    {
         return nDisplayUnit;
     }
-    QString getThirdPartyTxUrls() {
+    QString getThirdPartyTxUrls()
+    {
         return strThirdPartyTxUrls;
     }
     bool getProxySettings(QNetworkProxy& proxy) const;
-    bool getCoinControlFeatures() {
+    bool getCoinControlFeatures()
+    {
         return fCoinControlFeatures;
     }
-    const QString& getOverriddenByCommandLine() {
+    const QString& getOverriddenByCommandLine()
+    {
         return strOverriddenByCommandLine;
     }
 

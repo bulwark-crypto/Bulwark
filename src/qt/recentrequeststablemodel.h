@@ -64,7 +64,8 @@ public:
     explicit RecentRequestsTableModel(CWallet* wallet, WalletModel* parent);
     ~RecentRequestsTableModel();
 
-    enum ColumnIndex {
+    enum ColumnIndex
+    {
         Date = 0,
         Label = 1,
         Message = 2,
@@ -84,7 +85,8 @@ public:
     Qt::ItemFlags flags(const QModelIndex& index) const;
     /*@}*/
 
-    const RecentRequestEntry& entry(int row) const {
+    const RecentRequestEntry& entry(int row) const
+    {
         return list[row];
     }
     void addNewRequest(const SendCoinsRecipient& recipient);

@@ -73,11 +73,13 @@ extern "C" {
  * can be cloned by copying the context (e.g. with a simple
  * <code>memcpy()</code>).
  */
-typedef struct {
+typedef struct
+{
 #ifndef DOXYGEN_IGNORE
     unsigned char buf[64];    /* first field, for alignment */
     size_t ptr;
-    union {
+    union
+    {
 #if SPH_64
         sph_u64 wide[16];
 #endif

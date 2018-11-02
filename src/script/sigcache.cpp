@@ -13,7 +13,8 @@
 #include <boost/thread.hpp>
 #include <boost/tuple/tuple_comparison.hpp>
 
-namespace {
+namespace
+{
 
 /**
  * Valid signature cache, to avoid doing expensive ECDSA signature checking

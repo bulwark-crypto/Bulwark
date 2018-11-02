@@ -61,7 +61,8 @@ void SendCoinsEntry::on_addressBookButton_clicked()
         return;
     AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::SendingTab, this);
     dlg.setModel(model->getAddressTableModel());
-    if (dlg.exec()) {
+    if (dlg.exec())
+    {
         ui->payTo->setText(dlg.getReturnValue());
         ui->payAmount->setFocus();
     }
@@ -121,23 +122,27 @@ bool SendCoinsEntry::validate()
     if (recipient.paymentRequest.IsInitialized())
         return retval;
 
-    if (!model->validateAddress(ui->payTo->text())) {
+    if (!model->validateAddress(ui->payTo->text()))
+    {
         ui->payTo->setValid(false);
         retval = false;
     }
 
-    if (!ui->payAmount->validate()) {
+    if (!ui->payAmount->validate())
+    {
         retval = false;
     }
 
     // Sending a zero amount is invalid
-    if (ui->payAmount->value(0) <= 0) {
+    if (ui->payAmount->value(0) <= 0)
+    {
         ui->payAmount->setValid(false);
         retval = false;
     }
 
     // Reject dust outputs:
-    if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value())) {
+    if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value()))
+    {
         ui->payAmount->setValid(false);
         retval = false;
     }
@@ -184,7 +189,8 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient& value)
             ui->payAmount_is->setValue(recipient.amount);
             ui->payAmount_is->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_InsecurePaymentRequest);
-        } else // secure
+        }
+        else   // secure
         {
             ui->payTo_s->setText(recipient.authenticatedMerchant);
             ui->memoTextLabel_s->setText(recipient.message);
@@ -192,7 +198,8 @@ void SendCoinsEntry::setValue(const SendCoinsRecipient& value)
             ui->payAmount_s->setReadOnly(true);
             setCurrentWidget(ui->SendCoins_SecurePaymentRequest);
         }
-    } else // normal payment
+    }
+    else   // normal payment
     {
         // message
         ui->messageTextLabel->setText(recipient.message);
@@ -225,7 +232,8 @@ void SendCoinsEntry::setFocus()
 
 void SendCoinsEntry::updateDisplayUnit()
 {
-    if (model && model->getOptionsModel()) {
+    if (model && model->getOptionsModel())
+    {
         // Update payAmount with the current unit
         ui->payAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
         ui->payAmount_is->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
@@ -240,7 +248,8 @@ bool SendCoinsEntry::updateLabel(const QString& address)
 
     // Fill in label from address book, if address has an associated label
     QString associatedLabel = model->getAddressTableModel()->labelForAddress(address);
-    if (!associatedLabel.isEmpty()) {
+    if (!associatedLabel.isEmpty())
+    {
         ui->addAsLabel->setText(associatedLabel);
         return true;
     }

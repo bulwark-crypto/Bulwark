@@ -18,11 +18,13 @@
 
 #include <string>
 
-namespace leveldb {
+namespace leveldb
+{
 
 class Slice;
 
-class FilterPolicy {
+class FilterPolicy
+{
 public:
     virtual ~FilterPolicy();
 

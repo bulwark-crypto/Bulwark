@@ -180,13 +180,15 @@ public:
     bool GetPubKey(const CKeyID& address, CPubKey& vchPubKeyOut) const;
     void GetKeys(std::set<CKeyID>& setAddress) const
     {
-        if (!IsCrypted()) {
+        if (!IsCrypted())
+        {
             CBasicKeyStore::GetKeys(setAddress);
             return;
         }
         setAddress.clear();
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.begin();
-        while (mi != mapCryptedKeys.end()) {
+        while (mi != mapCryptedKeys.end())
+        {
             setAddress.insert((*mi).first);
             mi++;
         }

@@ -35,7 +35,8 @@ public:
 
     void setClientModel(ClientModel* model);
 
-    enum MessageClass {
+    enum MessageClass
+    {
         MC_ERROR,
         MC_DEBUG,
         CMD_REQUEST,
@@ -133,7 +134,8 @@ private:
     /** show detailed information on ui about selected node */
     void updateNodeDetail(const CNodeCombinedStats* stats);
 
-    enum ColumnWidths {
+    enum ColumnWidths
+    {
         ADDRESS_COLUMN_WIDTH = 170,
         SUBVERSION_COLUMN_WIDTH = 140,
         PING_COLUMN_WIDTH = 80,

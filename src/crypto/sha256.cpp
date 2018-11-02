@@ -14,22 +14,28 @@ namespace
 /// Internal SHA-256 implementation.
 namespace sha256
 {
-uint32_t inline Ch(uint32_t x, uint32_t y, uint32_t z) {
+uint32_t inline Ch(uint32_t x, uint32_t y, uint32_t z)
+{
     return z ^ (x & (y ^ z));
 }
-uint32_t inline Maj(uint32_t x, uint32_t y, uint32_t z) {
+uint32_t inline Maj(uint32_t x, uint32_t y, uint32_t z)
+{
     return (x & y) | (z & (x | y));
 }
-uint32_t inline Sigma0(uint32_t x) {
+uint32_t inline Sigma0(uint32_t x)
+{
     return (x >> 2 | x << 30) ^ (x >> 13 | x << 19) ^ (x >> 22 | x << 10);
 }
-uint32_t inline Sigma1(uint32_t x) {
+uint32_t inline Sigma1(uint32_t x)
+{
     return (x >> 6 | x << 26) ^ (x >> 11 | x << 21) ^ (x >> 25 | x << 7);
 }
-uint32_t inline sigma0(uint32_t x) {
+uint32_t inline sigma0(uint32_t x)
+{
     return (x >> 7 | x << 25) ^ (x >> 18 | x << 14) ^ (x >> 3);
 }
-uint32_t inline sigma1(uint32_t x) {
+uint32_t inline sigma1(uint32_t x)
+{
     return (x >> 17 | x << 15) ^ (x >> 19 | x << 13) ^ (x >> 10);
 }
 
@@ -154,7 +160,8 @@ CSHA256& CSHA256::Write(const unsigned char* data, size_t len)
 {
     const unsigned char* end = data + len;
     size_t bufsize = bytes % 64;
-    if (bufsize && bufsize + len >= 64) {
+    if (bufsize && bufsize + len >= 64)
+    {
         // Fill the buffer, and process it.
         memcpy(buf + bufsize, data, 64 - bufsize);
         bytes += 64 - bufsize;
@@ -162,13 +169,15 @@ CSHA256& CSHA256::Write(const unsigned char* data, size_t len)
         sha256::Transform(s, buf);
         bufsize = 0;
     }
-    while (end >= data + 64) {
+    while (end >= data + 64)
+    {
         // Process full chunks directly from the source.
         sha256::Transform(s, data);
         bytes += 64;
         data += 64;
     }
-    if (end > data) {
+    if (end > data)
+    {
         // Fill the buffer with what remains.
         memcpy(buf + bufsize, data, end - data);
         bytes += end - data;

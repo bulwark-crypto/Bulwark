@@ -84,7 +84,8 @@ void SocketSendData(CNode* pnode);
 typedef int NodeId;
 
 // Signals for message handling
-struct CNodeSignals {
+struct CNodeSignals
+{
     boost::signals2::signal<int()> GetHeight;
     boost::signals2::signal<bool(CNode*)> ProcessMessages;
     boost::signals2::signal<bool(CNode*, bool)> SendMessages;
@@ -96,7 +97,8 @@ struct CNodeSignals {
 CNodeSignals& GetNodeSignals();
 
 
-enum {
+enum
+{
     LOCAL_NONE,   // unknown
     LOCAL_IF,     // address a local interface listens on
     LOCAL_BIND,   // address explicit bound to
@@ -142,7 +144,8 @@ extern CCriticalSection cs_vAddedNodes;
 extern NodeId nLastNodeId;
 extern CCriticalSection cs_nLastNodeId;
 
-struct LocalServiceInfo {
+struct LocalServiceInfo
+{
     int nScore;
     int nPort;
 };
@@ -342,7 +345,8 @@ public:
     unsigned int GetTotalRecvSize()
     {
         unsigned int total = 0;
-        BOOST_FOREACH(const CNetMessage& msg, vRecvMsg) {
+        BOOST_FOREACH(const CNetMessage& msg, vRecvMsg)
+        {
             total += msg.vRecv.size() + 24;
         }
         return total;
@@ -355,7 +359,8 @@ public:
     void SetRecvVersion(int nVersionIn)
     {
         nRecvVersion = nVersionIn;
-        BOOST_FOREACH(CNetMessage& msg, vRecvMsg) {
+        BOOST_FOREACH(CNetMessage& msg, vRecvMsg)
+        {
             msg.SetVersion(nVersionIn);
         }
     }
@@ -382,10 +387,14 @@ public:
         // Known checking here is only to save space from duplicates.
         // SendMessages will filter it again for knowns that were added
         // after addresses were pushed.
-        if (addr.IsValid() && !setAddrKnown.count(addr)) {
-            if (vAddrToSend.size() >= MAX_ADDR_TO_SEND) {
+        if (addr.IsValid() && !setAddrKnown.count(addr))
+        {
+            if (vAddrToSend.size() >= MAX_ADDR_TO_SEND)
+            {
                 vAddrToSend[insecure_rand() % vAddrToSend.size()] = addr;
-            } else {
+            }
+            else
+            {
                 vAddrToSend.push_back(addr);
             }
         }
@@ -425,10 +434,13 @@ public:
 
     void PushMessage(const char* pszCommand)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -437,11 +449,14 @@ public:
     template <typename T1>
     void PushMessage(const char* pszCommand, const T1& a1)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -450,11 +465,14 @@ public:
     template <typename T1, typename T2>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -463,11 +481,14 @@ public:
     template <typename T1, typename T2, typename T3>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -476,11 +497,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -489,11 +513,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -502,11 +529,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -515,11 +545,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6, const T7& a7)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6 << a7;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -528,11 +561,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6, const T7& a7, const T8& a8)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6 << a7 << a8;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -541,11 +577,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6, const T7& a7, const T8& a8, const T9& a9)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6 << a7 << a8 << a9;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -554,11 +593,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6, const T7& a7, const T8& a8, const T9& a9, const T10& a10)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6 << a7 << a8 << a9 << a10;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -567,11 +609,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10, typename T11>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6, const T7& a7, const T8& a8, const T9& a9, const T10& a10, const T11& a11)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6 << a7 << a8 << a9 << a10 << a11;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -580,11 +625,14 @@ public:
     template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9, typename T10, typename T11, typename T12>
     void PushMessage(const char* pszCommand, const T1& a1, const T2& a2, const T3& a3, const T4& a4, const T5& a5, const T6& a6, const T7& a7, const T8& a8, const T9& a9, const T10& a10, const T11& a11, const T12& a12)
     {
-        try {
+        try
+        {
             BeginMessage(pszCommand);
             ssSend << a1 << a2 << a3 << a4 << a5 << a6 << a7 << a8 << a9 << a10 << a11 << a12;
             EndMessage();
-        } catch (...) {
+        }
+        catch (...)
+        {
             AbortMessage();
             throw;
         }
@@ -592,7 +640,8 @@ public:
 
     bool HasFulfilledRequest(std::string strRequest)
     {
-        BOOST_FOREACH(std::string& type, vecRequestsFulfilled) {
+        BOOST_FOREACH(std::string& type, vecRequestsFulfilled)
+        {
             if (type == strRequest) return true;
         }
         return false;
@@ -601,8 +650,10 @@ public:
     void ClearFulfilledRequest(std::string strRequest)
     {
         std::vector<std::string>::iterator it = vecRequestsFulfilled.begin();
-        while (it != vecRequestsFulfilled.end()) {
-            if ((*it) == strRequest) {
+        while (it != vecRequestsFulfilled.end())
+        {
+            if ((*it) == strRequest)
+            {
                 vecRequestsFulfilled.erase(it);
                 return;
             }

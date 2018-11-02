@@ -9,8 +9,10 @@
 #include "leveldb/slice.h"
 #include "util/random.h"
 
-namespace leveldb {
-namespace test {
+namespace leveldb
+{
+namespace test
+{
 
 // Store in *dst a random string of length "len" and return a Slice that
 // references the generated data.
@@ -27,7 +29,8 @@ extern Slice CompressibleString(Random* rnd, double compressed_fraction,
                                 size_t len, std::string* dst);
 
 // A wrapper that allows injection of errors.
-class ErrorEnv : public EnvWrapper {
+class ErrorEnv : public EnvWrapper
+{
 public:
     bool writable_file_error_;
     int num_writable_file_errors_;
@@ -37,8 +40,10 @@ public:
         num_writable_file_errors_(0) { }
 
     virtual Status NewWritableFile(const std::string& fname,
-                                   WritableFile** result) {
-        if (writable_file_error_) {
+                                   WritableFile** result)
+    {
+        if (writable_file_error_)
+        {
             ++num_writable_file_errors_;
             *result = NULL;
             return Status::IOError(fname, "fake error");

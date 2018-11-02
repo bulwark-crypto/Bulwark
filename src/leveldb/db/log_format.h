@@ -8,10 +8,13 @@
 #ifndef STORAGE_LEVELDB_DB_LOG_FORMAT_H_
 #define STORAGE_LEVELDB_DB_LOG_FORMAT_H_
 
-namespace leveldb {
-namespace log {
+namespace leveldb
+{
+namespace log
+{
 
-enum RecordType {
+enum RecordType
+{
     // Zero is reserved for preallocated files
     kZeroType = 0,
 

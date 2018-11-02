@@ -35,7 +35,8 @@ static leveldb::Options GetOptions(size_t nCacheSize)
     options.filter_policy = leveldb::NewBloomFilterPolicy(10);
     options.compression = leveldb::kNoCompression;
     options.max_open_files = 64;
-    if (leveldb::kMajorVersion > 1 || (leveldb::kMajorVersion == 1 && leveldb::kMinorVersion >= 16)) {
+    if (leveldb::kMajorVersion > 1 || (leveldb::kMajorVersion == 1 && leveldb::kMinorVersion >= 16))
+    {
         // LevelDB versions before 1.16 consider short writes to be corruption. Only trigger error
         // on corruption in later versions.
         options.paranoid_checks = true;
@@ -52,11 +53,15 @@ CLevelDBWrapper::CLevelDBWrapper(const boost::filesystem::path& path, size_t nCa
     syncoptions.sync = true;
     options = GetOptions(nCacheSize);
     options.create_if_missing = true;
-    if (fMemory) {
+    if (fMemory)
+    {
         penv = leveldb::NewMemEnv(leveldb::Env::Default());
         options.env = penv;
-    } else {
-        if (fWipe) {
+    }
+    else
+    {
+        if (fWipe)
+        {
             LogPrintf("Wiping LevelDB in %s\n", path.string());
             leveldb::DestroyDB(path.string(), options);
         }

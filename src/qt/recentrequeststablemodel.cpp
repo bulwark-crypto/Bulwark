@@ -20,7 +20,8 @@ RecentRequestsTableModel::RecentRequestsTableModel(CWallet* wallet, WalletModel*
     // Load entries from wallet
     std::vector<std::string> vReceiveRequests;
     parent->loadReceiveRequests(vReceiveRequests);
-    BOOST_FOREACH(const std::string& request, vReceiveRequests) {
+    BOOST_FOREACH(const std::string& request, vReceiveRequests)
+    {
         addNewRequest(request);
     }
 
@@ -56,20 +57,28 @@ QVariant RecentRequestsTableModel::data(const QModelIndex& index, int role) cons
 
     const RecentRequestEntry* rec = &list[index.row()];
 
-    if (role == Qt::DisplayRole || role == Qt::EditRole) {
-        switch (index.column()) {
+    if (role == Qt::DisplayRole || role == Qt::EditRole)
+    {
+        switch (index.column())
+        {
         case Date:
             return GUIUtil::dateTimeStr(rec->date);
         case Label:
-            if (rec->recipient.label.isEmpty() && role == Qt::DisplayRole) {
+            if (rec->recipient.label.isEmpty() && role == Qt::DisplayRole)
+            {
                 return tr("(no label)");
-            } else {
+            }
+            else
+            {
                 return rec->recipient.label;
             }
         case Message:
-            if (rec->recipient.message.isEmpty() && role == Qt::DisplayRole) {
+            if (rec->recipient.message.isEmpty() && role == Qt::DisplayRole)
+            {
                 return tr("(no message)");
-            } else {
+            }
+            else
+            {
                 return rec->recipient.message;
             }
         case Amount:
@@ -80,7 +89,9 @@ QVariant RecentRequestsTableModel::data(const QModelIndex& index, int role) cons
             else
                 return BitcoinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
         }
-    } else if (role == Qt::TextAlignmentRole) {
+    }
+    else if (role == Qt::TextAlignmentRole)
+    {
         if (index.column() == Amount)
             return (int)(Qt::AlignRight | Qt::AlignVCenter);
     }
@@ -94,8 +105,10 @@ bool RecentRequestsTableModel::setData(const QModelIndex& index, const QVariant&
 
 QVariant RecentRequestsTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (orientation == Qt::Horizontal) {
-        if (role == Qt::DisplayRole && section < columns.size()) {
+    if (orientation == Qt::Horizontal)
+    {
+        if (role == Qt::DisplayRole && section < columns.size())
+        {
             return columns[section];
         }
     }
@@ -113,7 +126,8 @@ void RecentRequestsTableModel::updateAmountColumnTitle()
 QString RecentRequestsTableModel::getAmountTitle()
 {
     QString amountTitle = tr("Amount");
-    if (this->walletModel->getOptionsModel() != NULL) {
+    if (this->walletModel->getOptionsModel() != NULL)
+    {
         amountTitle += " (" + BitcoinUnits::name(this->walletModel->getOptionsModel()->getDisplayUnit()) + ")";
     }
     return amountTitle;
@@ -130,9 +144,11 @@ bool RecentRequestsTableModel::removeRows(int row, int count, const QModelIndex&
 {
     Q_UNUSED(parent);
 
-    if (count > 0 && row >= 0 && (row + count) <= list.size()) {
+    if (count > 0 && row >= 0 && (row + count) <= list.size())
+    {
         const RecentRequestEntry* rec;
-        for (int i = 0; i < count; ++i) {
+        for (int i = 0; i < count; ++i)
+        {
             rec = &list[row + i];
             if (!walletModel->saveReceiveRequest(rec->recipient.address.toStdString(), rec->id, ""))
                 return false;
@@ -142,7 +158,9 @@ bool RecentRequestsTableModel::removeRows(int row, int count, const QModelIndex&
         list.erase(list.begin() + row, list.begin() + row + count);
         endRemoveRows();
         return true;
-    } else {
+    }
+    else
+    {
         return false;
     }
 }
@@ -213,7 +231,8 @@ bool RecentRequestEntryLessThan::operator()(RecentRequestEntry& left, RecentRequ
     if (order == Qt::DescendingOrder)
         std::swap(pLeft, pRight);
 
-    switch (column) {
+    switch (column)
+    {
     case RecentRequestsTableModel::Date:
         return pLeft->date.toTime_t() < pRight->date.toTime_t();
     case RecentRequestsTableModel::Label:

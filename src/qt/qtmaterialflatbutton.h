@@ -84,7 +84,8 @@ public:
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
 protected:
-    enum {
+    enum
+    {
         IconPadding = 12
     };
 

@@ -79,7 +79,8 @@ inline const T* end_ptr(const std::vector<T, TAl>& v)
 // i.e. anything that supports .read(char*, size_t) and .write(char*, size_t)
 //
 
-enum {
+enum
+{
     // primary actions
     SER_NETWORK = (1 << 0),
     SER_DISK = (1 << 1),
@@ -123,40 +124,52 @@ inline unsigned int GetSerializeSize(char a, int, int = 0)
 {
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(signed char a, int, int = 0) {
+inline unsigned int GetSerializeSize(signed char a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(unsigned char a, int, int = 0) {
+inline unsigned int GetSerializeSize(unsigned char a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(signed short a, int, int = 0) {
+inline unsigned int GetSerializeSize(signed short a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(unsigned short a, int, int = 0) {
+inline unsigned int GetSerializeSize(unsigned short a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(signed int a, int, int = 0) {
+inline unsigned int GetSerializeSize(signed int a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(unsigned int a, int, int = 0) {
+inline unsigned int GetSerializeSize(unsigned int a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(signed long a, int, int = 0) {
+inline unsigned int GetSerializeSize(signed long a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(unsigned long a, int, int = 0) {
+inline unsigned int GetSerializeSize(unsigned long a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(signed long long a, int, int = 0) {
+inline unsigned int GetSerializeSize(signed long long a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(unsigned long long a, int, int = 0) {
+inline unsigned int GetSerializeSize(unsigned long long a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(float a, int, int = 0) {
+inline unsigned int GetSerializeSize(float a, int, int = 0)
+{
     return sizeof(a);
 }
-inline unsigned int GetSerializeSize(double a, int, int = 0) {
+inline unsigned int GetSerializeSize(double a, int, int = 0)
+{
     return sizeof(a);
 }
 
@@ -292,7 +305,8 @@ inline void Unserialize(Stream& s, double& a, int, int = 0)
     READDATA(s, a);
 }
 
-inline unsigned int GetSerializeSize(bool a, int, int = 0) {
+inline unsigned int GetSerializeSize(bool a, int, int = 0)
+{
     return sizeof(char);
 }
 template <typename Stream>
@@ -311,7 +325,8 @@ inline void Unserialize(Stream& s, bool& a, int, int = 0)
     a = f;
 }
 // Serializatin for libzerocoin::CoinDenomination
-inline unsigned int GetSerializeSize(libzerocoin::CoinDenomination a, int, int = 0) {
+inline unsigned int GetSerializeSize(libzerocoin::CoinDenomination a, int, int = 0)
+{
     return sizeof(libzerocoin::CoinDenomination);
 }
 template <typename Stream>
@@ -353,20 +368,27 @@ inline unsigned int GetSizeOfCompactSize(uint64_t nSize)
 template <typename Stream>
 void WriteCompactSize(Stream& os, uint64_t nSize)
 {
-    if (nSize < 253) {
+    if (nSize < 253)
+    {
         unsigned char chSize = nSize;
         WRITEDATA(os, chSize);
-    } else if (nSize <= std::numeric_limits<unsigned short>::max()) {
+    }
+    else if (nSize <= std::numeric_limits<unsigned short>::max())
+    {
         unsigned char chSize = 253;
         unsigned short xSize = nSize;
         WRITEDATA(os, chSize);
         WRITEDATA(os, xSize);
-    } else if (nSize <= std::numeric_limits<unsigned int>::max()) {
+    }
+    else if (nSize <= std::numeric_limits<unsigned int>::max())
+    {
         unsigned char chSize = 254;
         unsigned int xSize = nSize;
         WRITEDATA(os, chSize);
         WRITEDATA(os, xSize);
-    } else {
+    }
+    else
+    {
         unsigned char chSize = 255;
         uint64_t xSize = nSize;
         WRITEDATA(os, chSize);
@@ -381,21 +403,28 @@ uint64_t ReadCompactSize(Stream& is)
     unsigned char chSize;
     READDATA(is, chSize);
     uint64_t nSizeRet = 0;
-    if (chSize < 253) {
+    if (chSize < 253)
+    {
         nSizeRet = chSize;
-    } else if (chSize == 253) {
+    }
+    else if (chSize == 253)
+    {
         unsigned short xSize;
         READDATA(is, xSize);
         nSizeRet = xSize;
         if (nSizeRet < 253)
             throw std::ios_base::failure("non-canonical ReadCompactSize()");
-    } else if (chSize == 254) {
+    }
+    else if (chSize == 254)
+    {
         unsigned int xSize;
         READDATA(is, xSize);
         nSizeRet = xSize;
         if (nSizeRet < 0x10000u)
             throw std::ios_base::failure("non-canonical ReadCompactSize()");
-    } else {
+    }
+    else
+    {
         uint64_t xSize;
         READDATA(is, xSize);
         nSizeRet = xSize;
@@ -435,7 +464,8 @@ template <typename I>
 inline unsigned int GetSizeOfVarInt(I n)
 {
     int nRet = 0;
-    while (true) {
+    while (true)
+    {
         nRet++;
         if (n <= 0x7F)
             break;
@@ -449,23 +479,27 @@ void WriteVarInt(Stream& os, I n)
 {
     unsigned char tmp[(sizeof(n) * 8 + 6) / 7];
     int len = 0;
-    while (true) {
+    while (true)
+    {
         tmp[len] = (n & 0x7F) | (len ? 0x80 : 0x00);
         if (n <= 0x7F)
             break;
         n = (n >> 7) - 1;
         len++;
     }
-    do {
+    do
+    {
         WRITEDATA(os, tmp[len]);
-    } while (len--);
+    }
+    while (len--);
 }
 
 template <typename Stream, typename I>
 I ReadVarInt(Stream& is)
 {
     I n = 0;
-    while (true) {
+    while (true)
+    {
         unsigned char chData;
         READDATA(is, chData);
         n = (n << 7) | (chData & 0x7F);
@@ -497,16 +531,20 @@ public:
         pbegin = (char*)begin_ptr(v);
         pend = (char*)end_ptr(v);
     }
-    char* begin() {
+    char* begin()
+    {
         return pbegin;
     }
-    const char* begin() const {
+    const char* begin() const
+    {
         return pbegin;
     }
-    char* end() {
+    char* end()
+    {
         return pend;
     }
-    const char* end() const {
+    const char* end() const
+    {
         return pend;
     }
 
@@ -568,7 +606,8 @@ public:
     void Unserialize(Stream& s, int, int = 0)
     {
         size_t size = ReadCompactSize(s);
-        if (size > Limit) {
+        if (size > Limit)
+        {
             throw std::ios_base::failure("String length limit exceeded");
         }
         string.resize(size);
@@ -780,7 +819,8 @@ void Unserialize_impl(Stream& is, std::vector<T, A>& v, int nType, int nVersion,
     v.clear();
     unsigned int nSize = ReadCompactSize(is);
     unsigned int i = 0;
-    while (i < nSize) {
+    while (i < nSize)
+    {
         unsigned int blk = std::min(nSize - i, (unsigned int)(1 + 4999999 / sizeof(T)));
         v.resize(i + blk);
         is.read((char*)&v[i], blk * sizeof(T));
@@ -795,7 +835,8 @@ void Unserialize_impl(Stream& is, std::vector<T, A>& v, int nType, int nVersion,
     unsigned int nSize = ReadCompactSize(is);
     unsigned int i = 0;
     unsigned int nMid = 0;
-    while (nMid < nSize) {
+    while (nMid < nSize)
+    {
         nMid += 5000000 / sizeof(T);
         if (nMid > nSize)
             nMid = nSize;
@@ -883,7 +924,8 @@ void Unserialize(Stream& is, std::map<K, T, Pred, A>& m, int nType, int nVersion
     m.clear();
     unsigned int nSize = ReadCompactSize(is);
     typename std::map<K, T, Pred, A>::iterator mi = m.begin();
-    for (unsigned int i = 0; i < nSize; i++) {
+    for (unsigned int i = 0; i < nSize; i++)
+    {
         std::pair<K, T> item;
         Unserialize(is, item, nType, nVersion);
         mi = m.insert(mi, item);
@@ -917,7 +959,8 @@ void Unserialize(Stream& is, std::set<K, Pred, A>& m, int nType, int nVersion)
     m.clear();
     unsigned int nSize = ReadCompactSize(is);
     typename std::set<K, Pred, A>::iterator it = m.begin();
-    for (unsigned int i = 0; i < nSize; i++) {
+    for (unsigned int i = 0; i < nSize; i++)
+    {
         K key;
         Unserialize(is, key, nType, nVersion);
         it = m.insert(it, key);
@@ -928,13 +971,17 @@ void Unserialize(Stream& is, std::set<K, Pred, A>& m, int nType, int nVersion)
 /**
  * Support for ADD_SERIALIZE_METHODS and READWRITE macro
  */
-struct CSerActionSerialize {
-    bool ForRead() const {
+struct CSerActionSerialize
+{
+    bool ForRead() const
+    {
         return false;
     }
 };
-struct CSerActionUnserialize {
-    bool ForRead() const {
+struct CSerActionUnserialize
+{
+    bool ForRead() const
+    {
         return true;
     }
 };

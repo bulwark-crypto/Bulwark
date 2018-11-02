@@ -43,14 +43,16 @@ static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
 
 unsigned int ParseScriptFlags(string strFlags)
 {
-    if (strFlags.empty()) {
+    if (strFlags.empty())
+    {
         return 0;
     }
     unsigned int flags = 0;
     vector<string> words;
     split(words, strFlags, is_any_of(","));
 
-    BOOST_FOREACH(string word, words) {
+    BOOST_FOREACH(string word, words)
+    {
         if (!mapFlagNames.count(word))
             BOOST_ERROR("Bad test: unknown verification flag '" << word << "'");
         flags |= mapFlagNames[word];
@@ -61,13 +63,16 @@ unsigned int ParseScriptFlags(string strFlags)
 
 string FormatScriptFlags(unsigned int flags)
 {
-    if (flags == 0) {
+    if (flags == 0)
+    {
         return "";
     }
     string ret;
     std::map<string, unsigned int>::const_iterator it = mapFlagNames.begin();
-    while (it != mapFlagNames.end()) {
-        if (flags & it->second) {
+    while (it != mapFlagNames.end())
+    {
+        if (flags & it->second)
+        {
             ret += it->first + ",";
         }
         it++;
@@ -89,7 +94,8 @@ BOOST_AUTO_TEST_CASE(tx_valid)
     UniValue tests = read_json(std::string(json_tests::tx_valid, json_tests::tx_valid + sizeof(json_tests::tx_valid)));
 
     ScriptError err;
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         string strTest = test.write();
         if (test[0].isArray())
@@ -103,7 +109,8 @@ BOOST_AUTO_TEST_CASE(tx_valid)
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
             UniValue inputs = test[0].get_array();
             bool fValid = true;
-            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++)
+            {
                 const UniValue& input = inputs[inpIdx];
                 if (!input.isArray())
                 {
@@ -164,7 +171,8 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
     UniValue tests = read_json(std::string(json_tests::tx_invalid, json_tests::tx_invalid + sizeof(json_tests::tx_invalid)));
 
     ScriptError err;
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         string strTest = test.write();
         if (test[0].isArray())
@@ -178,7 +186,8 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
             UniValue inputs = test[0].get_array();
             bool fValid = true;
-            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++)
+            {
                 const UniValue& input = inputs[inpIdx];
                 if (!input.isArray())
                 {

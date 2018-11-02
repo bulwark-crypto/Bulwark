@@ -13,9 +13,11 @@
 #include "Params.h"
 #include "ParamGeneration.h"
 
-namespace libzerocoin {
+namespace libzerocoin
+{
 
-ZerocoinParams::ZerocoinParams(CBigNum N, uint32_t securityLevel) {
+ZerocoinParams::ZerocoinParams(CBigNum N, uint32_t securityLevel)
+{
     this->zkp_hash_len = securityLevel;
     this->zkp_iterations = securityLevel;
 
@@ -29,15 +31,18 @@ ZerocoinParams::ZerocoinParams(CBigNum N, uint32_t securityLevel) {
     this->initialized = true;
 }
 
-AccumulatorAndProofParams::AccumulatorAndProofParams() {
+AccumulatorAndProofParams::AccumulatorAndProofParams()
+{
     this->initialized = false;
 }
 
-IntegerGroupParams::IntegerGroupParams() {
+IntegerGroupParams::IntegerGroupParams()
+{
     this->initialized = false;
 }
 
-CBigNum IntegerGroupParams::randomElement() const {
+CBigNum IntegerGroupParams::randomElement() const
+{
     // The generator of the group raised
     // to a random number less than the order of the group
     // provides us with a uniformly distributed random number.

@@ -7,7 +7,8 @@
 
 #include <stddef.h>
 
-namespace leveldb {
+namespace leveldb
+{
 
 class Cache;
 class Comparator;
@@ -20,7 +21,8 @@ class Snapshot;
 // sequence of key,value pairs.  Each block may be compressed before
 // being stored in a file.  The following enum describes which
 // compression method (if any) is used to compress a block.
-enum CompressionType {
+enum CompressionType
+{
     // NOTE: do not change the values of existing entries, as these are
     // part of the persistent format on disk.
     kNoCompression     = 0x0,
@@ -28,7 +30,8 @@ enum CompressionType {
 };
 
 // Options to control the behavior of a database (passed to DB::Open)
-struct Options {
+struct Options
+{
     // -------------------
     // Parameters that affect behavior
 
@@ -140,7 +143,8 @@ struct Options {
 };
 
 // Options that control read operations
-struct ReadOptions {
+struct ReadOptions
+{
     // If true, all data read from underlying storage will be
     // verified against corresponding checksums.
     // Default: false
@@ -161,12 +165,14 @@ struct ReadOptions {
     ReadOptions()
         : verify_checksums(false),
           fill_cache(true),
-          snapshot(NULL) {
+          snapshot(NULL)
+    {
     }
 };
 
 // Options that control write operations
-struct WriteOptions {
+struct WriteOptions
+{
     // If true, the write will be flushed from the operating system
     // buffer cache (by calling WritableFile::Sync()) before the write
     // is considered complete.  If this flag is true, writes will be
@@ -186,7 +192,8 @@ struct WriteOptions {
     bool sync;
 
     WriteOptions()
-        : sync(false) {
+        : sync(false)
+    {
     }
 };
 

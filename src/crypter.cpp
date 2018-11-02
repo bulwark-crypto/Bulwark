@@ -24,7 +24,8 @@ bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::v
         i = EVP_BytesToKey(EVP_aes_256_cbc(), EVP_sha512(), &chSalt[0],
                            (unsigned char*)&strKeyData[0], strKeyData.size(), nRounds, chKey, chIV);
 
-    if (i != (int)WALLET_CRYPTO_KEY_SIZE) {
+    if (i != (int)WALLET_CRYPTO_KEY_SIZE)
+    {
         OPENSSL_cleanse(chKey, sizeof(chKey));
         OPENSSL_cleanse(chIV, sizeof(chIV));
         return false;
@@ -118,7 +119,8 @@ bool EncryptAES256(const SecureString& sKey, const SecureString& sPlaintext, con
     int nFLen = 0;
 
     // Verify key sizes
-    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE) {
+    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE)
+    {
         LogPrintf("crypter EncryptAES256 - Invalid key or block size: Key: %d sIV:%d\n", sKey.size(), sIV.size());
         return false;
     }
@@ -159,7 +161,8 @@ bool DecryptAES256(const SecureString& sKey, const std::string& sCiphertext, con
     int nPLen = nLen, nFLen = 0;
 
     // Verify key sizes
-    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE) {
+    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE)
+    {
         LogPrintf("crypter DecryptAES256 - Invalid key or block size\n");
         return false;
     }
@@ -216,21 +219,25 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
         bool keyPass = false;
         bool keyFail = false;
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.begin();
-        for (; mi != mapCryptedKeys.end(); ++mi) {
+        for (; mi != mapCryptedKeys.end(); ++mi)
+        {
             const CPubKey& vchPubKey = (*mi).second.first;
             const std::vector<unsigned char>& vchCryptedSecret = (*mi).second.second;
             CKeyingMaterial vchSecret;
-            if (!DecryptSecret(vMasterKeyIn, vchCryptedSecret, vchPubKey.GetHash(), vchSecret)) {
+            if (!DecryptSecret(vMasterKeyIn, vchCryptedSecret, vchPubKey.GetHash(), vchSecret))
+            {
                 keyFail = true;
                 break;
             }
-            if (vchSecret.size() != 32) {
+            if (vchSecret.size() != 32)
+            {
                 keyFail = true;
                 break;
             }
             CKey key;
             key.Set(vchSecret.begin(), vchSecret.end(), vchPubKey.IsCompressed());
-            if (key.GetPubKey() != vchPubKey) {
+            if (key.GetPubKey() != vchPubKey)
+            {
                 keyFail = true;
                 break;
             }
@@ -238,7 +245,8 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
             if (fDecryptionThoroughlyChecked)
                 break;
         }
-        if (keyPass && keyFail) {
+        if (keyPass && keyFail)
+        {
             LogPrintf("The wallet is probably corrupted: Some keys decrypt but not all.");
             assert(false);
         }
@@ -293,7 +301,8 @@ bool CCryptoKeyStore::GetKey(const CKeyID& address, CKey& keyOut) const
             return CBasicKeyStore::GetKey(address, keyOut);
 
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.find(address);
-        if (mi != mapCryptedKeys.end()) {
+        if (mi != mapCryptedKeys.end())
+        {
             const CPubKey& vchPubKey = (*mi).second.first;
             const std::vector<unsigned char>& vchCryptedSecret = (*mi).second.second;
             CKeyingMaterial vchSecret;
@@ -316,7 +325,8 @@ bool CCryptoKeyStore::GetPubKey(const CKeyID& address, CPubKey& vchPubKeyOut) co
             return CKeyStore::GetPubKey(address, vchPubKeyOut);
 
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.find(address);
-        if (mi != mapCryptedKeys.end()) {
+        if (mi != mapCryptedKeys.end())
+        {
             vchPubKeyOut = (*mi).second.first;
             return true;
         }
@@ -332,7 +342,8 @@ bool CCryptoKeyStore::EncryptKeys(CKeyingMaterial& vMasterKeyIn)
             return false;
 
         fUseCrypto = true;
-        BOOST_FOREACH(KeyMap::value_type& mKey, mapKeys) {
+        BOOST_FOREACH(KeyMap::value_type& mKey, mapKeys)
+        {
             const CKey& key = mKey.second;
             CPubKey vchPubKey = key.GetPubKey();
             CKeyingMaterial vchSecret(key.begin(), key.end());

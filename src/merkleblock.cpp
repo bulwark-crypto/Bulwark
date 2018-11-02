@@ -22,12 +22,15 @@ CMerkleBlock::CMerkleBlock(const CBlock& block, CBloomFilter& filter)
     vMatch.reserve(block.vtx.size());
     vHashes.reserve(block.vtx.size());
 
-    for (unsigned int i = 0; i < block.vtx.size(); i++) {
+    for (unsigned int i = 0; i < block.vtx.size(); i++)
+    {
         const uint256& hash = block.vtx[i].GetHash();
-        if (filter.IsRelevantAndUpdate(block.vtx[i])) {
+        if (filter.IsRelevantAndUpdate(block.vtx[i]))
+        {
             vMatch.push_back(true);
             vMatchedTxn.push_back(make_pair(i, hash));
-        } else
+        }
+        else
             vMatch.push_back(false);
         vHashes.push_back(hash);
     }
@@ -37,10 +40,13 @@ CMerkleBlock::CMerkleBlock(const CBlock& block, CBloomFilter& filter)
 
 uint256 CPartialMerkleTree::CalcHash(int height, unsigned int pos, const std::vector<uint256>& vTxid)
 {
-    if (height == 0) {
+    if (height == 0)
+    {
         // hash at height 0 is the txids themself
         return vTxid[pos];
-    } else {
+    }
+    else
+    {
         // calculate left hash
         uint256 left = CalcHash(height - 1, pos * 2, vTxid), right;
         // calculate right hash if not beyond the end of the array - copy left hash otherwise1
@@ -61,10 +67,13 @@ void CPartialMerkleTree::TraverseAndBuild(int height, unsigned int pos, const st
         fParentOfMatch |= vMatch[p];
     // store as flag bit
     vBits.push_back(fParentOfMatch);
-    if (height == 0 || !fParentOfMatch) {
+    if (height == 0 || !fParentOfMatch)
+    {
         // if at height 0, or nothing interesting below, store hash and stop
         vHash.push_back(CalcHash(height, pos, vTxid));
-    } else {
+    }
+    else
+    {
         // otherwise, don't store any hash, but descend into the subtrees
         TraverseAndBuild(height - 1, pos * 2, vTxid, vMatch);
         if (pos * 2 + 1 < CalcTreeWidth(height - 1))
@@ -74,15 +83,18 @@ void CPartialMerkleTree::TraverseAndBuild(int height, unsigned int pos, const st
 
 uint256 CPartialMerkleTree::TraverseAndExtract(int height, unsigned int pos, unsigned int& nBitsUsed, unsigned int& nHashUsed, std::vector<uint256>& vMatch)
 {
-    if (nBitsUsed >= vBits.size()) {
+    if (nBitsUsed >= vBits.size())
+    {
         // overflowed the bits array - failure
         fBad = true;
         return 0;
     }
     bool fParentOfMatch = vBits[nBitsUsed++];
-    if (height == 0 || !fParentOfMatch) {
+    if (height == 0 || !fParentOfMatch)
+    {
         // if at height 0, or nothing interesting below, use stored hash and do not descend
-        if (nHashUsed >= vHash.size()) {
+        if (nHashUsed >= vHash.size())
+        {
             // overflowed the hash array - failure
             fBad = true;
             return 0;
@@ -91,7 +103,9 @@ uint256 CPartialMerkleTree::TraverseAndExtract(int height, unsigned int pos, uns
         if (height == 0 && fParentOfMatch) // in case of height 0, we have a matched txid
             vMatch.push_back(hash);
         return hash;
-    } else {
+    }
+    else
+    {
         // otherwise, descend into the subtrees to extract matched txids and hashes
         uint256 left = TraverseAndExtract(height - 1, pos * 2, nBitsUsed, nHashUsed, vMatch), right;
         if (pos * 2 + 1 < CalcTreeWidth(height - 1))

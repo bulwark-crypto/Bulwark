@@ -24,7 +24,8 @@ EditAddressDialog::EditAddressDialog(Mode mode, QWidget* parent) : QDialog(paren
 
     GUIUtil::setupAddressWidget(ui->addressEdit, this);
 
-    switch (mode) {
+    switch (mode)
+    {
     case NewReceivingAddress:
         setWindowTitle(tr("New receiving address"));
         ui->addressEdit->setEnabled(false);
@@ -71,7 +72,8 @@ bool EditAddressDialog::saveCurrentRow()
     if (!model)
         return false;
 
-    switch (mode) {
+    switch (mode)
+    {
     case NewReceivingAddress:
     case NewSendingAddress:
         address = model->addRow(
@@ -81,7 +83,8 @@ bool EditAddressDialog::saveCurrentRow()
         break;
     case EditReceivingAddress:
     case EditSendingAddress:
-        if (mapper->submit()) {
+        if (mapper->submit())
+        {
             address = ui->addressEdit->text();
         }
         break;
@@ -94,8 +97,10 @@ void EditAddressDialog::accept()
     if (!model)
         return;
 
-    if (!saveCurrentRow()) {
-        switch (model->getEditStatus()) {
+    if (!saveCurrentRow())
+    {
+        switch (model->getEditStatus())
+        {
         case AddressTableModel::OK:
             // Failed with unknown reason. Just reject.
             break;

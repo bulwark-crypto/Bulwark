@@ -115,7 +115,8 @@ QVariant BanTableModel::data(const QModelIndex &index, int role) const
 
     CCombinedBan *rec = static_cast<CCombinedBan*>(index.internalPointer());
 
-    if (role == Qt::DisplayRole) {
+    if (role == Qt::DisplayRole)
+    {
         switch (index.column())
         {
         case Address:

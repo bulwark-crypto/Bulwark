@@ -15,7 +15,8 @@
 #include "port/port.h"
 #include "port/thread_annotations.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class MemTable;
 class TableCache;
@@ -23,7 +24,8 @@ class Version;
 class VersionEdit;
 class VersionSet;
 
-class DBImpl : public DB {
+class DBImpl : public DB
+{
 public:
     DBImpl(const Options& options, const std::string& dbname);
     virtual ~DBImpl();
@@ -159,7 +161,8 @@ private:
     bool bg_compaction_scheduled_;
 
     // Information for a manual compaction
-    struct ManualCompaction {
+    struct ManualCompaction
+    {
         int level;
         bool done;
         const InternalKey* begin;   // NULL means beginning of key range
@@ -175,14 +178,16 @@ private:
 
     // Per level compaction stats.  stats_[level] stores the stats for
     // compactions that produced data for the specified "level".
-    struct CompactionStats {
+    struct CompactionStats
+    {
         int64_t micros;
         int64_t bytes_read;
         int64_t bytes_written;
 
         CompactionStats() : micros(0), bytes_read(0), bytes_written(0) { }
 
-        void Add(const CompactionStats& c) {
+        void Add(const CompactionStats& c)
+        {
             this->micros += c.micros;
             this->bytes_read += c.bytes_read;
             this->bytes_written += c.bytes_written;
@@ -194,7 +199,8 @@ private:
     DBImpl(const DBImpl&);
     void operator=(const DBImpl&);
 
-    const Comparator* user_comparator() const {
+    const Comparator* user_comparator() const
+    {
         return internal_comparator_.user_comparator();
     }
 };

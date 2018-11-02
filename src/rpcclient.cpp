@@ -156,7 +156,8 @@ CRPCConvertTable::CRPCConvertTable()
     const unsigned int n_elem =
         (sizeof(vRPCConvertParams) / sizeof(vRPCConvertParams[0]));
 
-    for (unsigned int i = 0; i < n_elem; i++) {
+    for (unsigned int i = 0; i < n_elem; i++)
+    {
         members.insert(std::make_pair(vRPCConvertParams[i].methodName,
                                       vRPCConvertParams[i].paramIdx));
     }
@@ -181,13 +182,17 @@ UniValue RPCConvertValues(const std::string &strMethod, const std::vector<std::s
 {
     UniValue params(UniValue::VARR);
 
-    for (unsigned int idx = 0; idx < strParams.size(); idx++) {
+    for (unsigned int idx = 0; idx < strParams.size(); idx++)
+    {
         const std::string& strVal = strParams[idx];
 
-        if (!rpcCvtTable.convert(strMethod, idx)) {
+        if (!rpcCvtTable.convert(strMethod, idx))
+        {
             // insert string value directly
             params.push_back(strVal);
-        } else {
+        }
+        else
+        {
             // parse string as JSON, insert bool/number/object/etc. value
             params.push_back(ParseNonRFCJSONValue(strVal));
         }

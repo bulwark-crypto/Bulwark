@@ -8,13 +8,15 @@
 
 #include <QApplication>
 
-static const struct {
+static const struct
+{
     const char* networkId;
     const char* appName;
     const char* appIcon;
     const char* titleAddText;
     const char* splashImage;
-} network_styles[] = {
+} network_styles[] =
+{
     {"main", QAPP_APP_NAME_DEFAULT, ":/icons/bitcoin", "", ":/images/splash"},
     {"test", QAPP_APP_NAME_TESTNET, ":/icons/bitcoin_testnet", QT_TRANSLATE_NOOP("SplashScreen", "[testnet]"), ":/images/splash_testnet"},
     {"regtest", QAPP_APP_NAME_TESTNET, ":/icons/bitcoin_testnet", "[regtest]", ":/images/splash_testnet"}
@@ -31,8 +33,10 @@ NetworkStyle::NetworkStyle(const QString& appName, const QString& appIcon, const
 
 const NetworkStyle* NetworkStyle::instantiate(const QString& networkId)
 {
-    for (unsigned x = 0; x < network_styles_count; ++x) {
-        if (networkId == network_styles[x].networkId) {
+    for (unsigned x = 0; x < network_styles_count; ++x)
+    {
+        if (networkId == network_styles[x].networkId)
+        {
             return new NetworkStyle(
                        network_styles[x].appName,
                        network_styles[x].appIcon,

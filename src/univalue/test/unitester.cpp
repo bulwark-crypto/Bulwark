@@ -42,13 +42,17 @@ static void runtest(string filename, const string& jdata)
     UniValue val;
     bool testResult = val.read(jdata);
 
-    if (wantPass) {
+    if (wantPass)
+    {
         d_assert(testResult == true);
-    } else {
+    }
+    else
+    {
         d_assert(testResult == false);
     }
 
-    if (wantRoundTrip) {
+    if (wantRoundTrip)
+    {
         std::string odata = val.write(0, 0);
         assert(odata == rtrim(jdata));
     }
@@ -64,7 +68,8 @@ static void runtest_file(const char *filename_)
     string jdata;
 
     char buf[4096];
-    while (!feof(f)) {
+    while (!feof(f))
+    {
         int bread = fread(buf, 1, sizeof(buf), f);
         assert(!ferror(f));
 
@@ -78,7 +83,8 @@ static void runtest_file(const char *filename_)
     runtest(basename, jdata);
 }
 
-static const char *filenames[] = {
+static const char *filenames[] =
+{
     "fail10.json",
     "fail11.json",
     "fail12.json",
@@ -159,7 +165,8 @@ void unescape_unicode_test()
 
 int main (int argc, char *argv[])
 {
-    for (unsigned int fidx = 0; fidx < ARRAY_SIZE(filenames); fidx++) {
+    for (unsigned int fidx = 0; fidx < ARRAY_SIZE(filenames); fidx++)
+    {
         runtest_file(filenames[fidx]);
     }
 

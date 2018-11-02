@@ -68,7 +68,8 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
 #endif
 
     /* remove Wallet tab in case of -disablewallet */
-    if (!enableWallet) {
+    if (!enableWallet)
+    {
         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWallet));
     }
 
@@ -76,7 +77,8 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
 
     /* Number of displayed decimal digits selector */
     QString digits;
-    for (int index = 2; index <= 8; index++) {
+    for (int index = 2; index <= 8; index++)
+    {
         digits.setNum(index);
         ui->digits->addItem(digits, digits);
     }
@@ -100,7 +102,8 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     dir.setFilter(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     QFileInfoList list = dir.entryInfoList();
 
-    for (int i = 0; i < list.size(); ++i) {
+    for (int i = 0; i < list.size(); ++i)
+    {
         QFileInfo fileInfo = list.at(i);
         ui->theme->addItem(fileInfo.fileName(), QVariant(fileInfo.fileName()));
     }
@@ -108,11 +111,13 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     /* Language selector */
     QDir translations(":translations");
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
-    foreach (const QString& langStr, translations.entryList()) {
+    foreach (const QString& langStr, translations.entryList())
+    {
         QLocale locale(langStr);
 
         /** check if the locale name consists of 2 parts (language_country) */
-        if (langStr.contains("_")) {
+        if (langStr.contains("_"))
+        {
 #if QT_VERSION >= 0x040800
             /** display language strings as "native language - native country (locale name)", e.g. "Deutsch - Deutschland (de)" */
             ui->lang->addItem(locale.nativeLanguageName() + QString(" - ") + locale.nativeCountryName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
@@ -120,7 +125,9 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
             /** display language strings as "language - country (locale name)", e.g. "German - Germany (de)" */
             ui->lang->addItem(QLocale::languageToString(locale.language()) + QString(" - ") + QLocale::countryToString(locale.country()) + QString(" (") + langStr + QString(")"), QVariant(langStr));
 #endif
-        } else {
+        }
+        else
+        {
 #if QT_VERSION >= 0x040800
             /** display language strings as "native language (locale name)", e.g. "Deutsch (de)" */
             ui->lang->addItem(locale.nativeLanguageName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
@@ -155,7 +162,8 @@ void OptionsDialog::setModel(OptionsModel* model)
 {
     this->model = model;
 
-    if (model) {
+    if (model)
+    {
         /* check if client restart is needed and show persistent message */
         if (model->isRestartRequired())
             showRestartWarning(true);
@@ -250,7 +258,8 @@ void OptionsDialog::setOkButtonState(bool fState)
 
 void OptionsDialog::on_resetButton_clicked()
 {
-    if (model) {
+    if (model)
+    {
         // confirmation dialog
         QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
                                                 tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
@@ -282,9 +291,12 @@ void OptionsDialog::showRestartWarning(bool fPersistent)
 {
     ui->statusLabel->setStyleSheet("QLabel { color: red; }");
 
-    if (fPersistent) {
+    if (fPersistent)
+    {
         ui->statusLabel->setText(tr("Client restart required to activate changes."));
-    } else {
+    }
+    else
+    {
         ui->statusLabel->setText(tr("This change would require a client restart."));
         // clear non-persistent status label after 10 seconds
         // Todo: should perhaps be a class attribute, if we extend the use of statusLabel
@@ -305,12 +317,15 @@ void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPo
     CService addrProxy;
 
     /* Check for a valid IPv4 / IPv6 address */
-    if (!(fProxyIpValid = LookupNumeric(strAddrProxy.c_str(), addrProxy))) {
+    if (!(fProxyIpValid = LookupNumeric(strAddrProxy.c_str(), addrProxy)))
+    {
         disableOkButton();
         pUiProxyIp->setValid(false);
         ui->statusLabel->setStyleSheet("QLabel { color: red; }");
         ui->statusLabel->setText(tr("The supplied proxy address is invalid."));
-    } else {
+    }
+    else
+    {
         enableOkButton();
         ui->statusLabel->clear();
     }
@@ -318,8 +333,10 @@ void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPo
 
 bool OptionsDialog::eventFilter(QObject* object, QEvent* event)
 {
-    if (event->type() == QEvent::FocusOut) {
-        if (object == ui->proxyIp) {
+    if (event->type() == QEvent::FocusOut)
+    {
+        if (object == ui->proxyIp)
+        {
             emit proxyIpChecks(ui->proxyIp, ui->proxyPort->text().toInt());
         }
     }

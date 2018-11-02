@@ -20,7 +20,8 @@
 using namespace std;
 using namespace boost::assign;
 
-struct SeedSpec6 {
+struct SeedSpec6
+{
     uint8_t addr[16];
     uint16_t port;
 };
@@ -39,7 +40,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
     // Seed nodes are given a random 'last seen time' of between one and two
     // weeks ago.
     const int64_t nOneWeek = 7 * 24 * 60 * 60;
-    for (unsigned int i = 0; i < count; i++) {
+    for (unsigned int i = 0; i < count; i++)
+    {
         struct in6_addr ip;
         memcpy(&ip, data[i].addr, sizeof(ip));
         CAddress addr(CService(ip, data[i].port));
@@ -69,7 +71,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (173559, uint256("0000000000002b887e1d437a7a41dc628f96f45c1cc63f13e9fb518ca1ae3883"))
     (273433, uint256("65e0e26d76bb5e3fc27fe0fefd9071f5d3a705b2d26ee76b20b9481217425dc2"));
 
-static const Checkpoints::CCheckpointData data = {
+static const Checkpoints::CCheckpointData data =
+{
     &mapCheckpoints,
     1538006698,// * UNIX timestamp of last checkpoint block
     537501,    // * total number of transactions between genesis and last checkpoint
@@ -79,7 +82,8 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x000001a2f1a9a313468d66b81dd2cb199f6f8f5d426198a7c4daa9c3f9498285"));
-static const Checkpoints::CCheckpointData dataTestnet = {
+static const Checkpoints::CCheckpointData dataTestnet =
+{
     &mapCheckpointsTestnet,
     1514516171,
     0,
@@ -88,7 +92,8 @@ static const Checkpoints::CCheckpointData dataTestnet = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
-static const Checkpoints::CCheckpointData dataRegtest = {
+static const Checkpoints::CCheckpointData dataRegtest =
+{
     &mapCheckpointsRegtest,
     1454124731,
     0,
@@ -394,22 +399,28 @@ public:
     }
 
     //! Published setters to allow changing values in unit test cases
-    virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) {
+    virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks)
+    {
         fDefaultConsistencyChecks = afDefaultConsistencyChecks;
     }
-    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) {
+    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks)
+    {
         fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks;
     }
-    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) {
+    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck)
+    {
         fSkipProofOfWorkCheck = afSkipProofOfWorkCheck;
     }
-    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) {
+    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority)
+    {
         nEnforceBlockUpgradeMajority = anEnforceBlockUpgradeMajority;
     }
-    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) {
+    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority)
+    {
         nRejectBlockOutdatedMajority = anRejectBlockOutdatedMajority;
     }
-    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) {
+    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority)
+    {
         nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority;
     }
 };
@@ -433,7 +444,8 @@ const CChainParams& Params()
 
 CChainParams& Params(CBaseChainParams::Network network)
 {
-    switch (network) {
+    switch (network)
+    {
     case CBaseChainParams::MAIN:
         return mainParams;
     case CBaseChainParams::TESTNET:

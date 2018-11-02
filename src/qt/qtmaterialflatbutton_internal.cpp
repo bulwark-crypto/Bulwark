@@ -149,9 +149,12 @@ void QtMaterialFlatButtonStateMachine::setupProperties()
 {
     QColor overlayColor;
 
-    if (Qt::TransparentMode == m_button->backgroundMode()) {
+    if (Qt::TransparentMode == m_button->backgroundMode())
+    {
         overlayColor = m_button->backgroundColor();
-    } else {
+    }
+    else
+    {
         overlayColor = m_button->foregroundColor();
     }
 
@@ -176,11 +179,15 @@ void QtMaterialFlatButtonStateMachine::setupProperties()
 void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
 {
     const bool checked = m_button->isChecked();
-    if (m_wasChecked != checked) {
+    if (m_wasChecked != checked)
+    {
         m_wasChecked = checked;
-        if (checked) {
+        if (checked)
+        {
             postEvent(new QtMaterialStateTransitionEvent(FlatButtonCheckedTransition));
-        } else {
+        }
+        else
+        {
             postEvent(new QtMaterialStateTransitionEvent(FlatButtonUncheckedTransition));
         }
     }
@@ -189,9 +196,11 @@ void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
 bool QtMaterialFlatButtonStateMachine::eventFilter(QObject *watched,
         QEvent  *event)
 {
-    if (QEvent::FocusIn == event->type()) {
+    if (QEvent::FocusIn == event->type())
+    {
         QFocusEvent *focusEvent = static_cast<QFocusEvent *>(event);
-        if (focusEvent && Qt::MouseFocusReason == focusEvent->reason()) {
+        if (focusEvent && Qt::MouseFocusReason == focusEvent->reason())
+        {
             postEvent(new QtMaterialStateTransitionEvent(FlatButtonPressedTransition));
             return true;
         }

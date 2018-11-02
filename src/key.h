@@ -81,37 +81,46 @@ public:
     template <typename T>
     void Set(const T pbegin, const T pend, bool fCompressedIn)
     {
-        if (pend - pbegin != 32) {
+        if (pend - pbegin != 32)
+        {
             fValid = false;
             return;
         }
-        if (Check(&pbegin[0])) {
+        if (Check(&pbegin[0]))
+        {
             memcpy(vch, (unsigned char*)&pbegin[0], 32);
             fValid = true;
             fCompressed = fCompressedIn;
-        } else {
+        }
+        else
+        {
             fValid = false;
         }
     }
 
     //! Simple read-only vector-like interface.
-    unsigned int size() const {
+    unsigned int size() const
+    {
         return (fValid ? 32 : 0);
     }
-    const unsigned char* begin() const {
+    const unsigned char* begin() const
+    {
         return vch;
     }
-    const unsigned char* end() const {
+    const unsigned char* end() const
+    {
         return vch + size();
     }
 
     //! Check whether this private key is valid.
-    bool IsValid() const {
+    bool IsValid() const
+    {
         return fValid;
     }
 
     //! Check whether the public key corresponding to this private key is (to be) compressed.
-    bool IsCompressed() const {
+    bool IsCompressed() const
+    {
         return fCompressed;
     }
 
@@ -167,7 +176,8 @@ public:
     static bool CheckSignatureElement(const unsigned char* vch, int len, bool half);
 };
 
-struct CExtKey {
+struct CExtKey
+{
     unsigned char nDepth;
     unsigned char vchFingerprint[4];
     unsigned int nChild;

@@ -23,10 +23,12 @@ public:
     uint256 hash;
     uint32_t n;
 
-    COutPoint() {
+    COutPoint()
+    {
         SetNull();
     }
-    COutPoint(uint256 hashIn, uint32_t nIn) {
+    COutPoint(uint256 hashIn, uint32_t nIn)
+    {
         hash = hashIn;
         n = nIn;
     }
@@ -34,15 +36,18 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(FLATDATA(*this));
     }
 
-    void SetNull() {
+    void SetNull()
+    {
         hash.SetNull();
         n = (uint32_t) -1;
     }
-    bool IsNull() const {
+    bool IsNull() const
+    {
         return (hash.IsNull() && n == (uint32_t) -1);
     }
     bool IsMasternodeReward(const CTransaction* tx) const;
@@ -92,7 +97,8 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(prevout);
         READWRITE(scriptSig);
         READWRITE(nSequence);
@@ -138,7 +144,8 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(nValue);
         READWRITE(scriptPubKey);
     }
@@ -238,7 +245,8 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(*const_cast<int32_t*>(&this->nVersion));
         nVersion = this->nVersion;
         READWRITE(*const_cast<std::vector<CTxIn>*>(&vin));
@@ -248,11 +256,13 @@ public:
             UpdateHash();
     }
 
-    bool IsNull() const {
+    bool IsNull() const
+    {
         return vin.empty() && vout.empty();
     }
 
-    const uint256& GetHash() const {
+    const uint256& GetHash() const
+    {
         return hash;
     }
 
@@ -274,7 +284,8 @@ public:
 
     bool IsZerocoinMint() const
     {
-        for(const CTxOut& txout : vout) {
+        for(const CTxOut& txout : vout)
+        {
             if (txout.scriptPubKey.IsZerocoinMint())
                 return true;
         }
@@ -333,7 +344,8 @@ struct CMutableTransaction
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(this->nVersion);
         nVersion = this->nVersion;
         READWRITE(vin);

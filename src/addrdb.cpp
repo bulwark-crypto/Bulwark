@@ -43,10 +43,12 @@ bool CBanDB::Write(const banmap_t& banSet)
         return error("%s: Failed to open file %s", __func__, pathTmp.string());
 
     // Write and commit header, data
-    try {
+    try
+    {
         fileout << ssBanlist;
     }
-    catch (const std::exception& e) {
+    catch (const std::exception& e)
+    {
         return error("%s: Serialize or I/O error - %s", __func__, e.what());
     }
     FileCommit(fileout.Get());
@@ -78,11 +80,13 @@ bool CBanDB::Read(banmap_t& banSet)
     uint256 hashIn;
 
     // read data and checksum from file
-    try {
+    try
+    {
         filein.read((char *)&vchData[0], dataSize);
         filein >> hashIn;
     }
-    catch (const std::exception& e) {
+    catch (const std::exception& e)
+    {
         return error("%s: Deserialize or I/O error - %s", __func__, e.what());
     }
     filein.fclose();
@@ -95,7 +99,8 @@ bool CBanDB::Read(banmap_t& banSet)
         return error("%s: Checksum mismatch, data corrupted", __func__);
 
     unsigned char pchMsgTmp[4];
-    try {
+    try
+    {
         // de-serialize file header (network specific magic number) and ..
         ssBanlist >> FLATDATA(pchMsgTmp);
 
@@ -106,7 +111,8 @@ bool CBanDB::Read(banmap_t& banSet)
         // de-serialize ban data
         ssBanlist >> banSet;
     }
-    catch (const std::exception& e) {
+    catch (const std::exception& e)
+    {
         return error("%s: Deserialize or I/O error - %s", __func__, e.what());
     }
 

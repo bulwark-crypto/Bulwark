@@ -10,9 +10,11 @@
 #include <stddef.h>
 #include <stdint.h>
 
-namespace leveldb {
+namespace leveldb
+{
 
-class Arena {
+class Arena
+{
 public:
     Arena();
     ~Arena();
@@ -26,7 +28,8 @@ public:
     // Returns an estimate of the total memory usage of data allocated
     // by the arena (including space allocated but not yet used for user
     // allocations).
-    size_t MemoryUsage() const {
+    size_t MemoryUsage() const
+    {
         return blocks_memory_ + blocks_.capacity() * sizeof(char*);
     }
 
@@ -49,12 +52,14 @@ private:
     void operator=(const Arena&);
 };
 
-inline char* Arena::Allocate(size_t bytes) {
+inline char* Arena::Allocate(size_t bytes)
+{
     // The semantics of what to return are a bit messy if we allow
     // 0-byte allocations, so we disallow them here (we don't need
     // them for our internal use).
     assert(bytes > 0);
-    if (bytes <= alloc_bytes_remaining_) {
+    if (bytes <= alloc_bytes_remaining_)
+    {
         char* result = alloc_ptr_;
         alloc_ptr_ += bytes;
         alloc_bytes_remaining_ -= bytes;

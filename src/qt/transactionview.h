@@ -38,7 +38,8 @@ public:
     void setModel(WalletModel* model);
 
     // Date ranges for filter
-    enum DateEnum {
+    enum DateEnum
+    {
         All,
         Today,
         ThisWeek,
@@ -48,7 +49,8 @@ public:
         Range
     };
 
-    enum ColumnWidths {
+    enum ColumnWidths
+    {
         STATUS_COLUMN_WIDTH = 23,
         WATCHONLY_COLUMN_WIDTH = 23,
         DATE_COLUMN_WIDTH = 120,

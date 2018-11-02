@@ -18,7 +18,8 @@ unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char
 {
     // The following is MurmurHash3 (x86_32), see http://code.google.com/p/smhasher/source/browse/trunk/MurmurHash3.cpp
     uint32_t h1 = nHashSeed;
-    if (vDataToHash.size() > 0) {
+    if (vDataToHash.size() > 0)
+    {
         const uint32_t c1 = 0xcc9e2d51;
         const uint32_t c2 = 0x1b873593;
 
@@ -28,7 +29,8 @@ unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char
         // body
         const uint32_t* blocks = (const uint32_t*)(&vDataToHash[0] + nblocks * 4);
 
-        for (int i = -nblocks; i; i++) {
+        for (int i = -nblocks; i; i++)
+        {
             uint32_t k1 = blocks[i];
 
             k1 *= c1;
@@ -46,7 +48,8 @@ unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char
 
         uint32_t k1 = 0;
 
-        switch (vDataToHash.size() & 3) {
+        switch (vDataToHash.size() & 3)
+        {
         case 3:
             k1 ^= tail[2] << 16;
         case 2:

@@ -7,9 +7,11 @@
 
 #include <string>
 
-namespace leveldb {
+namespace leveldb
+{
 
-class Histogram {
+class Histogram
+{
 public:
     Histogram() { }
     ~Histogram() { }

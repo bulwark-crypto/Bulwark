@@ -58,7 +58,8 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
 {
     this->model = model;
 
-    if (model && model->getOptionsModel()) {
+    if (model && model->getOptionsModel())
+    {
         model->getRecentRequestsTableModel()->sort(RecentRequestsTableModel::Date, Qt::DescendingOrder);
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
         updateDisplayUnit();
@@ -108,7 +109,8 @@ void ReceiveCoinsDialog::accept()
 
 void ReceiveCoinsDialog::updateDisplayUnit()
 {
-    if (model && model->getOptionsModel()) {
+    if (model && model->getOptionsModel())
+    {
         ui->reqAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     }
 }
@@ -120,20 +122,26 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
 
     QString address;
     QString label = ui->reqLabel->text();
-    if (ui->reuseAddress->isChecked()) {
+    if (ui->reuseAddress->isChecked())
+    {
         /* Choose existing receiving address */
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
         dlg.setModel(model->getAddressTableModel());
-        if (dlg.exec()) {
+        if (dlg.exec())
+        {
             address = dlg.getReturnValue();
             if (label.isEmpty()) /* If no label provided, use the previously used label */
             {
                 label = model->getAddressTableModel()->labelForAddress(address);
             }
-        } else {
+        }
+        else
+        {
             return;
         }
-    } else {
+    }
+    else
+    {
         /* Generate new receiving address */
         address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "");
     }
@@ -174,7 +182,8 @@ void ReceiveCoinsDialog::on_showRequestButton_clicked()
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
 
-    foreach (QModelIndex index, selection) {
+    foreach (QModelIndex index, selection)
+    {
         on_recentRequestsView_doubleClicked(index);
     }
 }
@@ -201,9 +210,11 @@ void ReceiveCoinsDialog::resizeEvent(QResizeEvent* event)
 
 void ReceiveCoinsDialog::keyPressEvent(QKeyEvent* event)
 {
-    if (event->key() == Qt::Key_Return) {
+    if (event->key() == Qt::Key_Return)
+    {
         // press return -> submit form
-        if (ui->reqLabel->hasFocus() || ui->reqAmount->hasFocus() || ui->reqMessage->hasFocus()) {
+        if (ui->reqLabel->hasFocus() || ui->reqAmount->hasFocus() || ui->reqMessage->hasFocus())
+        {
             event->ignore();
             on_receiveButton_clicked();
             return;

@@ -11,16 +11,20 @@
 #include "leveldb/slice.h"
 #include "leveldb/status.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class SequentialFile;
 
-namespace log {
+namespace log
+{
 
-class Reader {
+class Reader
+{
 public:
     // Interface for reporting errors.
-    class Reporter {
+    class Reporter
+    {
     public:
         virtual ~Reporter();
 
@@ -74,7 +78,8 @@ private:
     uint64_t const initial_offset_;
 
     // Extend record types with the following special values
-    enum {
+    enum
+    {
         kEof = kMaxRecordType + 1,
         // Returned whenever we find an invalid physical record.
         // Currently there are three situations in which this happens:

@@ -14,7 +14,8 @@
 class ClientModel;
 class BanTablePriv;
 
-struct CCombinedBan {
+struct CCombinedBan
+{
     CSubNet subnet;
     CBanEntry banEntry;
 };
@@ -44,7 +45,8 @@ public:
     void startAutoRefresh();
     void stopAutoRefresh();
 
-    enum ColumnIndex {
+    enum ColumnIndex
+    {
         Address = 0,
         Bantime = 1
     };

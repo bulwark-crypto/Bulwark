@@ -23,7 +23,8 @@ bool NodeLessThan::operator()(const CNodeCombinedStats& left, const CNodeCombine
     if (order == Qt::DescendingOrder)
         std::swap(pLeft, pRight);
 
-    switch (column) {
+    switch (column)
+    {
     case PeerTableModel::Address:
         return pLeft->addrName.compare(pRight->addrName) < 0;
     case PeerTableModel::Subversion:
@@ -53,7 +54,8 @@ public:
     {
         {
             TRY_LOCK(cs_vNodes, lockNodes);
-            if (!lockNodes) {
+            if (!lockNodes)
+            {
                 // skip the refresh if we can't immediately get the lock
                 return;
             }
@@ -61,7 +63,8 @@ public:
 #if QT_VERSION >= 0x040700
             cachedNodeStats.reserve(vNodes.size());
 #endif
-            BOOST_FOREACH(CNode* pnode, vNodes) {
+            BOOST_FOREACH(CNode* pnode, vNodes)
+            {
                 CNodeCombinedStats stats;
                 stats.nodeStateStats.nMisbehavior = 0;
                 stats.nodeStateStats.nSyncHeight = -1;
@@ -74,8 +77,10 @@ public:
         // Try to retrieve the CNodeStateStats for each node.
         {
             TRY_LOCK(cs_main, lockMain);
-            if (lockMain) {
-                BOOST_FOREACH(CNodeCombinedStats& stats, cachedNodeStats) {
+            if (lockMain)
+            {
+                BOOST_FOREACH(CNodeCombinedStats& stats, cachedNodeStats)
+                {
                     stats.fNodeStateStatsAvailable = GetNodeStateStats(stats.nodeStats.nodeid, stats.nodeStateStats);
                 }
             }
@@ -88,7 +93,8 @@ public:
         // build index map
         mapNodeRows.clear();
         int row = 0;
-        BOOST_FOREACH(CNodeCombinedStats& stats, cachedNodeStats) {
+        BOOST_FOREACH(CNodeCombinedStats& stats, cachedNodeStats)
+        {
             mapNodeRows.insert(std::pair<NodeId, int>(stats.nodeStats.nodeid, row++));
         }
     }
@@ -100,9 +106,12 @@ public:
 
     CNodeCombinedStats* index(int idx)
     {
-        if (idx >= 0 && idx < cachedNodeStats.size()) {
+        if (idx >= 0 && idx < cachedNodeStats.size())
+        {
             return &cachedNodeStats[idx];
-        } else {
+        }
+        else
+        {
             return 0;
         }
     }
@@ -156,8 +165,10 @@ QVariant PeerTableModel::data(const QModelIndex& index, int role) const
 
     CNodeCombinedStats* rec = static_cast<CNodeCombinedStats*>(index.internalPointer());
 
-    if (role == Qt::DisplayRole) {
-        switch (index.column()) {
+    if (role == Qt::DisplayRole)
+    {
+        switch (index.column())
+        {
         case Address:
             return QString::fromStdString(rec->nodeStats.addrName);
         case Subversion:
@@ -165,7 +176,9 @@ QVariant PeerTableModel::data(const QModelIndex& index, int role) const
         case Ping:
             return GUIUtil::formatPingTime(rec->nodeStats.dPingTime);
         }
-    } else if (role == Qt::TextAlignmentRole) {
+    }
+    else if (role == Qt::TextAlignmentRole)
+    {
         if (index.column() == Ping)
             return (int)(Qt::AlignRight | Qt::AlignVCenter);
     }
@@ -175,8 +188,10 @@ QVariant PeerTableModel::data(const QModelIndex& index, int role) const
 
 QVariant PeerTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (orientation == Qt::Horizontal) {
-        if (role == Qt::DisplayRole && section < columns.size()) {
+    if (orientation == Qt::Horizontal)
+    {
+        if (role == Qt::DisplayRole && section < columns.size())
+        {
             return columns[section];
         }
     }
@@ -197,9 +212,12 @@ QModelIndex PeerTableModel::index(int row, int column, const QModelIndex& parent
     Q_UNUSED(parent);
     CNodeCombinedStats* data = priv->index(row);
 
-    if (data) {
+    if (data)
+    {
         return createIndex(row, column, data);
-    } else {
+    }
+    else
+    {
         return QModelIndex();
     }
 }

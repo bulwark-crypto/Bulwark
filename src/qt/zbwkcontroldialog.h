@@ -13,7 +13,8 @@
 class CZerocoinMint;
 class WalletModel;
 
-namespace Ui {
+namespace Ui
+{
 class ZBwkControlDialog;
 }
 
@@ -39,7 +40,8 @@ private:
     void updateList();
     void updateLabels();
 
-    enum {
+    enum
+    {
         COLUMN_CHECKBOX,
         COLUMN_DENOMINATION,
         COLUMN_PUBCOIN,

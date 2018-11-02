@@ -36,11 +36,13 @@ UniValue CallRPC(string args)
     UniValue params = RPCConvertValues(strMethod, vArgs);
 
     rpcfn_type method = tableRPC[strMethod]->actor;
-    try {
+    try
+    {
         UniValue result = (*method)(params, false);
         return result;
     }
-    catch (const UniValue& objError) {
+    catch (const UniValue& objError)
+    {
         throw runtime_error(find_value(objError, "message").get_str());
     }
 }

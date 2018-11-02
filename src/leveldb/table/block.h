@@ -9,19 +9,22 @@
 #include <stdint.h>
 #include "leveldb/iterator.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 struct BlockContents;
 class Comparator;
 
-class Block {
+class Block
+{
 public:
     // Initialize the block with the specified contents.
     explicit Block(const BlockContents& contents);
 
     ~Block();
 
-    size_t size() const {
+    size_t size() const
+    {
         return size_;
     }
     Iterator* NewIterator(const Comparator* comparator);

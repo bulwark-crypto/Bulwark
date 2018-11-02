@@ -10,11 +10,13 @@
 #include <vector>
 #include "db/dbformat.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class VersionSet;
 
-struct FileMetaData {
+struct FileMetaData
+{
     int refs;
     int allowed_seeks;          // Seeks allowed until compaction
     uint64_t number;
@@ -25,36 +27,44 @@ struct FileMetaData {
     FileMetaData() : refs(0), allowed_seeks(1 << 30), file_size(0) { }
 };
 
-class VersionEdit {
+class VersionEdit
+{
 public:
-    VersionEdit() {
+    VersionEdit()
+    {
         Clear();
     }
     ~VersionEdit() { }
 
     void Clear();
 
-    void SetComparatorName(const Slice& name) {
+    void SetComparatorName(const Slice& name)
+    {
         has_comparator_ = true;
         comparator_ = name.ToString();
     }
-    void SetLogNumber(uint64_t num) {
+    void SetLogNumber(uint64_t num)
+    {
         has_log_number_ = true;
         log_number_ = num;
     }
-    void SetPrevLogNumber(uint64_t num) {
+    void SetPrevLogNumber(uint64_t num)
+    {
         has_prev_log_number_ = true;
         prev_log_number_ = num;
     }
-    void SetNextFile(uint64_t num) {
+    void SetNextFile(uint64_t num)
+    {
         has_next_file_number_ = true;
         next_file_number_ = num;
     }
-    void SetLastSequence(SequenceNumber seq) {
+    void SetLastSequence(SequenceNumber seq)
+    {
         has_last_sequence_ = true;
         last_sequence_ = seq;
     }
-    void SetCompactPointer(int level, const InternalKey& key) {
+    void SetCompactPointer(int level, const InternalKey& key)
+    {
         compact_pointers_.push_back(std::make_pair(level, key));
     }
 
@@ -64,7 +74,8 @@ public:
     void AddFile(int level, uint64_t file,
                  uint64_t file_size,
                  const InternalKey& smallest,
-                 const InternalKey& largest) {
+                 const InternalKey& largest)
+    {
         FileMetaData f;
         f.number = file;
         f.file_size = file_size;
@@ -74,7 +85,8 @@ public:
     }
 
     // Delete the specified "file" from the specified "level".
-    void DeleteFile(int level, uint64_t file) {
+    void DeleteFile(int level, uint64_t file)
+    {
         deleted_files_.insert(std::make_pair(level, file));
     }
 

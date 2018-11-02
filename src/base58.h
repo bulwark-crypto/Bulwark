@@ -93,19 +93,24 @@ public:
     std::string ToString() const;
     int CompareTo(const CBase58Data& b58) const;
 
-    bool operator==(const CBase58Data& b58) const {
+    bool operator==(const CBase58Data& b58) const
+    {
         return CompareTo(b58) == 0;
     }
-    bool operator<=(const CBase58Data& b58) const {
+    bool operator<=(const CBase58Data& b58) const
+    {
         return CompareTo(b58) <= 0;
     }
-    bool operator>=(const CBase58Data& b58) const {
+    bool operator>=(const CBase58Data& b58) const
+    {
         return CompareTo(b58) >= 0;
     }
-    bool operator<(const CBase58Data& b58) const {
+    bool operator<(const CBase58Data& b58) const
+    {
         return CompareTo(b58) < 0;
     }
-    bool operator>(const CBase58Data& b58) const {
+    bool operator>(const CBase58Data& b58) const
+    {
         return CompareTo(b58) > 0;
     }
 };
@@ -126,13 +131,16 @@ public:
     bool IsValid(const CChainParams& params) const;
 
     CBitcoinAddress() {}
-    CBitcoinAddress(const CTxDestination& dest) {
+    CBitcoinAddress(const CTxDestination& dest)
+    {
         Set(dest);
     }
-    CBitcoinAddress(const std::string& strAddress) {
+    CBitcoinAddress(const std::string& strAddress)
+    {
         SetString(strAddress);
     }
-    CBitcoinAddress(const char* pszAddress) {
+    CBitcoinAddress(const char* pszAddress)
+    {
         SetString(pszAddress);
     }
 
@@ -153,7 +161,8 @@ public:
     bool SetString(const char* pszSecret);
     bool SetString(const std::string& strSecret);
 
-    CBitcoinSecret(const CKey& vchSecret) {
+    CBitcoinSecret(const CKey& vchSecret)
+    {
         SetKey(vchSecret);
     }
     CBitcoinSecret() {}

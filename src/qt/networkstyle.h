@@ -16,16 +16,20 @@ public:
     /** Get style associated with provided BIP70 network id, or 0 if not known */
     static const NetworkStyle* instantiate(const QString& networkId);
 
-    const QString& getAppName() const {
+    const QString& getAppName() const
+    {
         return appName;
     }
-    const QIcon& getAppIcon() const {
+    const QIcon& getAppIcon() const
+    {
         return appIcon;
     }
-    const QString& getTitleAddText() const {
+    const QString& getTitleAddText() const
+    {
         return titleAddText;
     }
-    const QPixmap& getSplashImage() const {
+    const QPixmap& getSplashImage() const
+    {
         return splashImage;
     }
 

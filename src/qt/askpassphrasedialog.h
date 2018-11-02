@@ -21,7 +21,8 @@ class AskPassphraseDialog : public QDialog
     Q_OBJECT
 
 public:
-    enum Mode {
+    enum Mode
+    {
         Encrypt,         /**< Ask passphrase twice and encrypt */
         UnlockAnonymize, /**< Ask passphrase and unlock only for anonymization */
         Unlock,          /**< Ask passphrase and unlock */

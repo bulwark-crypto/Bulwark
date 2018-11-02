@@ -29,7 +29,8 @@ string SanitizeString(const string& str)
      */
     static string safeChars("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890 .,;_-/:?@()");
     string strResult;
-    for (std::string::size_type i = 0; i < str.size(); i++) {
+    for (std::string::size_type i = 0; i < str.size(); i++)
+    {
         if (safeChars.find(str[i]) != std::string::npos)
             strResult.push_back(str[i]);
     }
@@ -63,7 +64,8 @@ signed char HexDigit(char c)
 
 bool IsHex(const string& str)
 {
-    for (std::string::const_iterator it(str.begin()); it != str.end(); ++it) {
+    for (std::string::const_iterator it(str.begin()); it != str.end(); ++it)
+    {
         if (HexDigit(*it) < 0)
             return false;
     }
@@ -74,7 +76,8 @@ vector<unsigned char> ParseHex(const char* psz)
 {
     // convert hex dump to vector
     vector<unsigned char> vch;
-    while (true) {
+    while (true)
+    {
         while (isspace(*psz))
             psz++;
         signed char c = HexDigit(*psz++);
@@ -105,9 +108,11 @@ string EncodeBase64(const unsigned char* pch, size_t len)
     int mode = 0, left = 0;
     const unsigned char* pchEnd = pch + len;
 
-    while (pch < pchEnd) {
+    while (pch < pchEnd)
+    {
         int enc = *(pch++);
-        switch (mode) {
+        switch (mode)
+        {
         case 0: // we have no bits
             strRet += pbase64[enc >> 2];
             left = (enc & 3) << 4;
@@ -128,7 +133,8 @@ string EncodeBase64(const unsigned char* pch, size_t len)
         }
     }
 
-    if (mode) {
+    if (mode)
+    {
         strRet += pbase64[left];
         strRet += '=';
         if (mode == 1)
@@ -171,11 +177,13 @@ vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
     int mode = 0;
     int left = 0;
 
-    while (1) {
+    while (1)
+    {
         int dec = decode64_table[(unsigned char)*p];
         if (dec == -1) break;
         p++;
-        switch (mode) {
+        switch (mode)
+        {
         case 0: // we have no bits and get 6
             left = dec;
             mode = 1;
@@ -201,7 +209,8 @@ vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
     }
 
     if (pfInvalid)
-        switch (mode) {
+        switch (mode)
+        {
         case 0: // 4n base64 characters processed: ok
             break;
 
@@ -242,7 +251,8 @@ SecureString DecodeBase64Secure(const SecureString& input)
     BIO_push(b64, mem);
 
     // Prepare buffer to receive decoded data
-    if (input.size() % 4 != 0) {
+    if (input.size() % 4 != 0)
+    {
         throw runtime_error("Input length should be a multiple of 4");
     }
     size_t nMaxLen = input.size() / 4 * 3; // upper bound, guaranteed divisible by 4
@@ -295,9 +305,11 @@ string EncodeBase32(const unsigned char* pch, size_t len)
     int mode = 0, left = 0;
     const unsigned char* pchEnd = pch + len;
 
-    while (pch < pchEnd) {
+    while (pch < pchEnd)
+    {
         int enc = *(pch++);
-        switch (mode) {
+        switch (mode)
+        {
         case 0: // we have no bits
             strRet += pbase32[enc >> 3];
             left = (enc & 7) << 2;
@@ -332,7 +344,8 @@ string EncodeBase32(const unsigned char* pch, size_t len)
     }
 
     static const int nPadding[5] = {0, 6, 4, 3, 1};
-    if (mode) {
+    if (mode)
+    {
         strRet += pbase32[left];
         for (int n = 0; n < nPadding[mode]; n++)
             strRet += '=';
@@ -374,11 +387,13 @@ vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
     int mode = 0;
     int left = 0;
 
-    while (1) {
+    while (1)
+    {
         int dec = decode32_table[(unsigned char)*p];
         if (dec == -1) break;
         p++;
-        switch (mode) {
+        switch (mode)
+        {
         case 0: // we have no bits and get 5
             left = dec;
             mode = 1;
@@ -426,7 +441,8 @@ vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
     }
 
     if (pfInvalid)
-        switch (mode) {
+        switch (mode)
+        {
         case 0: // 8n base32 characters processed: ok
             break;
 
@@ -528,7 +544,8 @@ std::string FormatParagraph(const std::string in, size_t width, size_t indent)
     std::stringstream out;
     size_t col = 0;
     size_t ptr = 0;
-    while (ptr < in.size()) {
+    while (ptr < in.size())
+    {
         // Find beginning of next word
         ptr = in.find_first_not_of(' ', ptr);
         if (ptr == std::string::npos)
@@ -538,13 +555,16 @@ std::string FormatParagraph(const std::string in, size_t width, size_t indent)
         if (endword == std::string::npos)
             endword = in.size();
         // Add newline and indentation if this wraps over the allowed width
-        if (col > 0) {
-            if ((col + endword - ptr) > width) {
+        if (col > 0)
+        {
+            if ((col + endword - ptr) > width)
+            {
                 out << '\n';
                 for (size_t i = 0; i < indent; ++i)
                     out << ' ';
                 col = 0;
-            } else
+            }
+            else
                 out << ' ';
         }
         // Append word

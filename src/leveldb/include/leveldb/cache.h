@@ -21,7 +21,8 @@
 #include <stdint.h>
 #include "leveldb/slice.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class Cache;
 
@@ -29,7 +30,8 @@ class Cache;
 // of Cache uses a least-recently-used eviction policy.
 extern Cache* NewLRUCache(size_t capacity);
 
-class Cache {
+class Cache
+{
 public:
     Cache() { }
 

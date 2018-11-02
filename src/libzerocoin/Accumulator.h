@@ -16,12 +16,14 @@
 
 #include "Coin.h"
 
-namespace libzerocoin {
+namespace libzerocoin
+{
 /**
  * \brief Implementation of the RSA-based accumulator.
  **/
 
-class Accumulator {
+class Accumulator
+{
 public:
 
     /**
@@ -31,12 +33,14 @@ public:
      * @throw      Zerocoin exception in case of invalid parameters
      **/
     template<typename Stream>
-    Accumulator(const AccumulatorAndProofParams* p, Stream& strm): params(p) {
+    Accumulator(const AccumulatorAndProofParams* p, Stream& strm): params(p)
+    {
         strm >> *this;
     }
 
     template<typename Stream>
-    Accumulator(const ZerocoinParams* p, Stream& strm) {
+    Accumulator(const ZerocoinParams* p, Stream& strm)
+    {
         strm >> *this;
         this->params = &(p->accumulatorParams);
     }
@@ -91,7 +95,8 @@ public:
     Accumulator& operator =(Accumulator rhs);
     bool operator==(const Accumulator rhs) const;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(value);
         READWRITE(denomination);
     }
@@ -104,10 +109,12 @@ private:
 /**A witness that a PublicCoin is in the accumulation of a set of coins
  *
  */
-class AccumulatorWitness {
+class AccumulatorWitness
+{
 public:
     template<typename Stream>
-    AccumulatorWitness(const ZerocoinParams* p, Stream& strm) {
+    AccumulatorWitness(const ZerocoinParams* p, Stream& strm)
+    {
         strm >> *this;
     }
 

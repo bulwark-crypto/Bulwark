@@ -7,13 +7,15 @@
 
 #include "leveldb/write_batch.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class MemTable;
 
 // WriteBatchInternal provides static methods for manipulating a
 // WriteBatch that we don't want in the public WriteBatch interface.
-class WriteBatchInternal {
+class WriteBatchInternal
+{
 public:
     // Return the number of entries in the batch.
     static int Count(const WriteBatch* batch);
@@ -28,11 +30,13 @@ public:
     // this batch.
     static void SetSequence(WriteBatch* batch, SequenceNumber seq);
 
-    static Slice Contents(const WriteBatch* batch) {
+    static Slice Contents(const WriteBatch* batch)
+    {
         return Slice(batch->rep_);
     }
 
-    static size_t ByteSize(const WriteBatch* batch) {
+    static size_t ByteSize(const WriteBatch* batch)
+    {
         return batch->rep_.size();
     }
 

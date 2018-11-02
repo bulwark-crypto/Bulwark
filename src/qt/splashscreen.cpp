@@ -54,7 +54,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.setFont(QFont(font, 28 * fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth = fm.width(titleText);
-    if (titleTextWidth > 160) {
+    if (titleTextWidth > 160)
+    {
         // strange font rendering, Arial probably not found
         fontFactor = 0.75;
     }
@@ -75,7 +76,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 36, copyrightTextBulwark);
 
     // draw additional text if special network
-    if (!titleAddText.isEmpty()) {
+    if (!titleAddText.isEmpty())
+    {
         QFont boldFont = QFont(font, 10 * fontFactor);
         boldFont.setWeight(QFont::Bold);
         pixPaint.setFont(boldFont);

@@ -155,7 +155,8 @@ void QtMaterialCheckable::setUseThemeColors(bool value)
 {
     Q_D(QtMaterialCheckable);
 
-    if (d->useThemeColors == value) {
+    if (d->useThemeColors == value)
+    {
         return;
     }
 
@@ -184,9 +185,12 @@ QColor QtMaterialCheckable::checkedColor() const
 {
     Q_D(const QtMaterialCheckable);
 
-    if (d->useThemeColors || !d->checkedColor.isValid()) {
+    if (d->useThemeColors || !d->checkedColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("primary1");
-    } else {
+    }
+    else
+    {
         return d->checkedColor;
     }
 }
@@ -205,9 +209,12 @@ QColor QtMaterialCheckable::uncheckedColor() const
 {
     Q_D(const QtMaterialCheckable);
 
-    if (d->useThemeColors || !d->uncheckedColor.isValid()) {
+    if (d->useThemeColors || !d->uncheckedColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("text");
-    } else {
+    }
+    else
+    {
         return d->uncheckedColor;
     }
 }
@@ -226,9 +233,12 @@ QColor QtMaterialCheckable::textColor() const
 {
     Q_D(const QtMaterialCheckable);
 
-    if (d->useThemeColors || !d->textColor.isValid()) {
+    if (d->useThemeColors || !d->textColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("text");
-    } else {
+    }
+    else
+    {
         return d->textColor;
     }
 }
@@ -247,9 +257,12 @@ QColor QtMaterialCheckable::disabledColor() const
 {
     Q_D(const QtMaterialCheckable);
 
-    if (d->useThemeColors || !d->disabledColor.isValid()) {
+    if (d->useThemeColors || !d->disabledColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("accent3");
-    } else {
+    }
+    else
+    {
         return d->disabledColor;
     }
 }
@@ -289,7 +302,8 @@ QIcon QtMaterialCheckable::uncheckedIcon() const
  */
 QSize QtMaterialCheckable::sizeHint() const
 {
-    if (text().isEmpty()) {
+    if (text().isEmpty())
+    {
         return QSize(40, 40);
     }
     return QSize(fontMetrics().size(Qt::TextShowMnemonic, text()).width()+52, 40);
@@ -319,7 +333,8 @@ bool QtMaterialCheckable::event(QEvent *event)
         break;
     case QEvent::ParentChange:
         QWidget *widget;
-        if ((widget = parentWidget())) {
+        if ((widget = parentWidget()))
+        {
             d->rippleOverlay->setParent(widget);
         }
         break;
@@ -352,19 +367,24 @@ void QtMaterialCheckable::mousePressEvent(QMouseEvent *event)
 
     Q_D(QtMaterialCheckable);
 
-    if (!isEnabled()) {
+    if (!isEnabled())
+    {
         return;
     }
 
     QtMaterialRipple *ripple;
-    if (QtMaterialCheckable::LabelPositionLeft == d->labelPosition) {
+    if (QtMaterialCheckable::LabelPositionLeft == d->labelPosition)
+    {
         ripple = new QtMaterialRipple(QPoint(width()-14, 28));
-    } else {
+    }
+    else
+    {
         ripple = new QtMaterialRipple(QPoint(28, 28));
     }
     ripple->setRadiusEndValue(22);
     ripple->setColor(isChecked() ? checkedColor() : uncheckedColor());
-    if (isChecked()) {
+    if (isChecked())
+    {
         ripple->setOpacityStartValue(1);
     }
     d->rippleOverlay->addRipple(ripple);
@@ -387,9 +407,12 @@ void QtMaterialCheckable::paintEvent(QPaintEvent *event)
     pen.setColor(isEnabled() ? textColor() : disabledColor());
     painter.setPen(pen);
 
-    if (QtMaterialCheckable::LabelPositionLeft == d->labelPosition) {
+    if (QtMaterialCheckable::LabelPositionLeft == d->labelPosition)
+    {
         painter.drawText(4, 25, text());
-    } else {
+    }
+    else
+    {
         painter.drawText(48, 25, text());
     }
 }
@@ -404,13 +427,19 @@ void QtMaterialCheckable::setupProperties()
     d->disabledUncheckedState->assignProperty(d->uncheckedIcon, "color", disabledColor());
     d->disabledCheckedState->assignProperty(d->checkedIcon, "color", disabledColor());
 
-    if (isEnabled()) {
-        if (isChecked()) {
+    if (isEnabled())
+    {
+        if (isChecked())
+        {
             d->checkedIcon->setColor(checkedColor());
-        } else {
+        }
+        else
+        {
             d->uncheckedIcon->setColor(uncheckedColor());
         }
-    } else {
+    }
+    else
+    {
         d->checkedIcon->setColor(disabledColor());
         d->uncheckedIcon->setColor(disabledColor());
     }

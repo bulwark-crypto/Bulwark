@@ -24,7 +24,8 @@ public:
     {
     }
 
-    enum Status {
+    enum Status
+    {
         Confirmed, /**< Have 6 or more confirmations (normal tx) or fully mature (mined tx) **/
         /// Normal (sent/received) transactions
         OpenUntilDate,  /**< Transaction not yet final, waiting for date */
@@ -71,7 +72,8 @@ public:
 class TransactionRecord
 {
 public:
-    enum Type {
+    enum Type
+    {
         Other,
         Generated,
         StakeMint,

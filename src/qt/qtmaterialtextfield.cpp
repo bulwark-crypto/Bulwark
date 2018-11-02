@@ -62,7 +62,8 @@ void QtMaterialTextField::setUseThemeColors(bool value)
 {
     Q_D(QtMaterialTextField);
 
-    if (d->useThemeColors == value) {
+    if (d->useThemeColors == value)
+    {
         return;
     }
 
@@ -81,20 +82,25 @@ void QtMaterialTextField::setShowLabel(bool value)
 {
     Q_D(QtMaterialTextField);
 
-    if (d->showLabel == value) {
+    if (d->showLabel == value)
+    {
         return;
     }
 
     d->showLabel = value;
 
-    if (!d->label && value) {
+    if (!d->label && value)
+    {
         d->label = new QtMaterialTextFieldLabel(this);
         d->stateMachine->setLabel(d->label);
     }
 
-    if (value) {
+    if (value)
+    {
         setContentsMargins(0, 23, 0, 0);
-    } else {
+    }
+    else
+    {
         setContentsMargins(0, 0, 0, 0);
     }
 }
@@ -159,9 +165,12 @@ QColor QtMaterialTextField::textColor() const
 {
     Q_D(const QtMaterialTextField);
 
-    if (d->useThemeColors || !d->textColor.isValid()) {
+    if (d->useThemeColors || !d->textColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("text");
-    } else {
+    }
+    else
+    {
         return d->textColor;
     }
 }
@@ -180,9 +189,12 @@ QColor QtMaterialTextField::labelColor() const
 {
     Q_D(const QtMaterialTextField);
 
-    if (d->useThemeColors || !d->labelColor.isValid()) {
+    if (d->useThemeColors || !d->labelColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("accent3");
-    } else {
+    }
+    else
+    {
         return d->labelColor;
     }
 }
@@ -201,9 +213,12 @@ QColor QtMaterialTextField::inkColor() const
 {
     Q_D(const QtMaterialTextField);
 
-    if (d->useThemeColors || !d->inkColor.isValid()) {
+    if (d->useThemeColors || !d->inkColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("primary1");
-    } else {
+    }
+    else
+    {
         return d->inkColor;
     }
 }
@@ -222,9 +237,12 @@ QColor QtMaterialTextField::inputLineColor() const
 {
     Q_D(const QtMaterialTextField);
 
-    if (d->useThemeColors || !d->inputLineColor.isValid()) {
+    if (d->useThemeColors || !d->inputLineColor.isValid())
+    {
         return QtMaterialStyle::instance().themeColor("border");
-    } else {
+    }
+    else
+    {
         return d->inputLineColor;
     }
 }
@@ -233,7 +251,8 @@ void QtMaterialTextField::setShowInputLine(bool value)
 {
     Q_D(QtMaterialTextField);
 
-    if (d->showInputLine == value) {
+    if (d->showInputLine == value)
+    {
         return;
     }
 
@@ -265,8 +284,10 @@ bool QtMaterialTextField::event(QEvent *event)
     switch (event->type())
     {
     case QEvent::Resize:
-    case QEvent::Move: {
-        if (d->label) {
+    case QEvent::Move:
+    {
+        if (d->label)
+        {
             d->label->setGeometry(rect());
         }
     }

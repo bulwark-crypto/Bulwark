@@ -29,13 +29,15 @@ void UnregisterAllValidationInterfaces();
 /** Push an updated transaction to all registered wallets */
 void SyncWithWallets(const CTransaction& tx, const CBlock* pblock);
 
-class CValidationInterface {
+class CValidationInterface
+{
 protected:
     virtual void UpdatedBlockTip(const CBlockIndex *pindex) {}
     virtual void SyncTransaction(const CTransaction &tx, const CBlock *pblock) {}
     virtual void NotifyTransactionLock(const CTransaction &tx) {}
     virtual void SetBestChain(const CBlockLocator &locator) {}
-    virtual bool UpdatedTransaction(const uint256 &hash) {
+    virtual bool UpdatedTransaction(const uint256 &hash)
+    {
         return false;
     }
     virtual void Inventory(const uint256 &hash) {}
@@ -49,7 +51,8 @@ protected:
     friend void ::UnregisterAllValidationInterfaces();
 };
 
-struct CMainSignals {
+struct CMainSignals
+{
     /** Notifies listeners of updated block chain tip */
     boost::signals2::signal<void (const CBlockIndex *)> UpdatedBlockTip;
     /** Notifies listeners of updated transaction data (transaction, and optionally the block it is found in. */

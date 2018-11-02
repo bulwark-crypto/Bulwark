@@ -88,7 +88,8 @@ int main(int argc, char **argv)
         --argc;
     }
 
-    if (numBits < MIN_MODULUS_SIZE) {
+    if (numBits < MIN_MODULUS_SIZE)
+    {
         cout << "Modulus is below minimum length (" << MIN_MODULUS_SIZE << ") bits" << endl;
         return(0);
     }
@@ -117,13 +118,17 @@ int main(int argc, char **argv)
 
     cout << endl << "N = " << endl << resultHex << endl;
 
-    if (writeToFile) {
-        try {
+    if (writeToFile)
+    {
+        try
+        {
             outfile.open (outfileName);
             outfile << resultHex;
             outfile.close();
             cout << endl << "Result has been written to file '" << outfileName << "'." << endl;
-        } catch (std::runtime_error &e) {
+        }
+        catch (std::runtime_error &e)
+        {
             cout << "Unable to write to file:" << e.what() << endl;
         }
     }

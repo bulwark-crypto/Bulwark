@@ -1,7 +1,8 @@
 // Automatically generated file. Do not modify.
 #ifndef BITCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
 #define BITCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
-static const char *escapes[256] = {
+static const char *escapes[256] =
+{
     "\\u0000",
     "\\u0001",
     "\\u0002",

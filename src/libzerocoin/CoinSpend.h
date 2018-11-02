@@ -72,7 +72,8 @@ public:
      *
      * @return the coin's serial number
      */
-    const CBigNum& getCoinSerialNumber() const {
+    const CBigNum& getCoinSerialNumber() const
+    {
         return this->coinSerialNumber;
     }
 
@@ -81,7 +82,8 @@ public:
      *
      * @return the denomination
      */
-    CoinDenomination getDenomination() const {
+    CoinDenomination getDenomination() const
+    {
         return this->denomination;
     }
 
@@ -90,7 +92,8 @@ public:
      *
      * @return the checksum
      */
-    uint32_t getAccumulatorChecksum() const {
+    uint32_t getAccumulatorChecksum() const
+    {
         return this->accChecksum;
     }
 
@@ -99,13 +102,16 @@ public:
      *
      * @return the txout hash
      */
-    uint256 getTxOutHash() const {
+    uint256 getTxOutHash() const
+    {
         return ptxHash;
     }
-    CBigNum getAccCommitment() const {
+    CBigNum getAccCommitment() const
+    {
         return accCommitmentToCoinValue;
     }
-    CBigNum getSerialComm() const {
+    CBigNum getSerialComm() const
+    {
         return serialCommitmentToCoinValue;
     }
 

@@ -70,7 +70,8 @@ public:
     void Serialize(Stream& s, int nType, int nVersion) const
     {
         std::vector<unsigned char> compr;
-        if (Compress(compr)) {
+        if (Compress(compr))
+        {
             s << CFlatData(compr);
             return;
         }
@@ -84,7 +85,8 @@ public:
     {
         unsigned int nSize = 0;
         s >> VARINT(nSize);
-        if (nSize < nSpecialScripts) {
+        if (nSize < nSpecialScripts)
+        {
             std::vector<unsigned char> vch(GetSpecialSize(nSize), 0x00);
             s >> REF(CFlatData(vch));
             Decompress(nSize, vch);
@@ -113,10 +115,13 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
     {
-        if (!ser_action.ForRead()) {
+        if (!ser_action.ForRead())
+        {
             uint64_t nVal = CompressAmount(txout.nValue);
             READWRITE(VARINT(nVal));
-        } else {
+        }
+        else
+        {
             uint64_t nVal = 0;
             READWRITE(VARINT(nVal));
             txout.nValue = DecompressAmount(nVal);

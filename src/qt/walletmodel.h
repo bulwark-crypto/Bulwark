@@ -84,7 +84,8 @@ public:
         READWRITE(sPaymentRequest);
         READWRITE(sAuthenticatedMerchant);
 
-        if (ser_action.ForRead()) {
+        if (ser_action.ForRead())
+        {
             address = QString::fromStdString(sAddress);
             label = QString::fromStdString(sLabel);
             message = QString::fromStdString(sMessage);
@@ -118,7 +119,8 @@ public:
         InsaneFee
     };
 
-    enum EncryptionStatus {
+    enum EncryptionStatus
+    {
         Unencrypted,                 // !wallet->IsCrypted()
         Locked,                      // wallet->IsCrypted() && wallet->IsLocked()
         Unlocked,                    // wallet->IsCrypted() && !wallet->IsLocked()
@@ -152,7 +154,8 @@ public:
     bool validateAddress(const QString& address);
 
     // Return status record for SendCoins, contains error id + information
-    struct SendCoinsReturn {
+    struct SendCoinsReturn
+    {
         SendCoinsReturn(StatusCode status = OK) : status(status) {}
         StatusCode status;
     };
@@ -180,12 +183,14 @@ public:
         UnlockContext(bool valid, bool relock);
         ~UnlockContext();
 
-        bool isValid() const {
+        bool isValid() const
+        {
             return valid;
         }
 
         // Copy operator and constructor transfer the context
-        UnlockContext(const UnlockContext& obj) {
+        UnlockContext(const UnlockContext& obj)
+        {
             CopyFrom(obj);
         }
         UnlockContext& operator=(const UnlockContext& rhs)

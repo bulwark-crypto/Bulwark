@@ -30,12 +30,14 @@ class AddressBookPage : public QDialog
     Q_OBJECT
 
 public:
-    enum Tabs {
+    enum Tabs
+    {
         SendingTab = 0,
         ReceivingTab = 1
     };
 
-    enum Mode {
+    enum Mode
+    {
         ForSelection, /**< Open address book to pick address */
         ForEditing    /**< Open address book for editing */
     };
@@ -44,7 +46,8 @@ public:
     ~AddressBookPage();
 
     void setModel(AddressTableModel* model);
-    const QString& getReturnValue() const {
+    const QString& getReturnValue() const
+    {
         return returnValue;
     }
 

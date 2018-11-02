@@ -54,7 +54,8 @@ bool CBasicKeyStore::GetCScript(const CScriptID& hash, CScript& redeemScriptOut)
 {
     LOCK(cs_KeyStore);
     ScriptMap::const_iterator mi = mapScripts.find(hash);
-    if (mi != mapScripts.end()) {
+    if (mi != mapScripts.end())
+    {
         redeemScriptOut = (*mi).second;
         return true;
     }

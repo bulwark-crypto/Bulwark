@@ -35,7 +35,8 @@ static void add_coin(const CAmount& nValue, int nAge = 6*24, bool fIsFromMe = fa
     tx.nLockTime = nextLockTime++;        // so all transactions get different hashes
     tx.vout.resize(nInput+1);
     tx.vout[nInput].nValue = nValue;
-    if (fIsFromMe) {
+    if (fIsFromMe)
+    {
         // IsFromMe() returns (GetDebit() > 0), and GetDebit() is 0 if vin.empty(),
         // so stop vin being empty, and cache a non-zero Debit to fake out IsFromMe()
         tx.vin.resize(1);
@@ -52,7 +53,8 @@ static void add_coin(const CAmount& nValue, int nAge = 6*24, bool fIsFromMe = fa
 
 static void empty_wallet(void)
 {
-    BOOST_FOREACH(COutput output, vCoins) {
+    BOOST_FOREACH(COutput output, vCoins)
+    {
         delete output.tx;
     }
     vCoins.clear();

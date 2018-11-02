@@ -61,16 +61,19 @@ QtMaterialTextFieldStateMachine::~QtMaterialTextFieldStateMachine()
 
 void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label)
 {
-    if (m_label) {
+    if (m_label)
+    {
         delete m_label;
     }
 
-    if (m_offsetAnimation) {
+    if (m_offsetAnimation)
+    {
         removeDefaultAnimation(m_offsetAnimation);
         delete m_offsetAnimation;
     }
 
-    if (m_colorAnimation) {
+    if (m_colorAnimation)
+    {
         removeDefaultAnimation(m_colorAnimation);
         delete m_colorAnimation;
     }
@@ -98,9 +101,12 @@ void QtMaterialTextFieldStateMachine::setupProperties()
     {
         const int m = m_textField->textMargins().top();
 
-        if (m_textField->text().isEmpty()) {
+        if (m_textField->text().isEmpty())
+        {
             m_normalState->assignProperty(m_label, "offset", QPointF(0, 26));
-        } else {
+        }
+        else
+        {
             m_normalState->assignProperty(m_label, "offset", QPointF(0, 0-m));
         }
 
@@ -108,9 +114,12 @@ void QtMaterialTextFieldStateMachine::setupProperties()
         m_focusedState->assignProperty(m_label, "color", m_textField->inkColor());
         m_normalState->assignProperty(m_label, "color", m_textField->labelColor());
 
-        if (0 != m_label->offset().y() && !m_textField->text().isEmpty()) {
+        if (0 != m_label->offset().y() && !m_textField->text().isEmpty())
+        {
             m_label->setOffset(QPointF(0, 0-m));
-        } else if (!m_textField->hasFocus() && m_label->offset().y() <= 0 && m_textField->text().isEmpty()) {
+        }
+        else if (!m_textField->hasFocus() && m_label->offset().y() <= 0 && m_textField->text().isEmpty())
+        {
             m_label->setOffset(QPointF(0, 26));
         }
     }
@@ -149,7 +158,8 @@ void QtMaterialTextFieldLabel::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
 
-    if (!m_textField->hasLabel()) {
+    if (!m_textField->hasLabel())
+    {
         return;
     }
 

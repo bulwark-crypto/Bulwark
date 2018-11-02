@@ -45,7 +45,8 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
     version += " " + tr("(%1-bit)").arg(32);
 #endif
 
-    if (about) {
+    if (about)
+    {
         setWindowTitle(tr("About Bulwark Core"));
 
         /// HTML-format the license message from the core
@@ -65,7 +66,9 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         ui->aboutMessage->setText(version + "<br><br>" + licenseInfoHTML);
         ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
-    } else {
+    }
+    else
+    {
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
                          "  bulwark-qt [" + tr("command-line options") + "]                     " + "\n";
@@ -96,7 +99,8 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         QTextCharFormat bold;
         bold.setFontWeight(QFont::Bold);
 
-        Q_FOREACH (const QString &line, coreOptions.split("\n")) {
+        Q_FOREACH (const QString &line, coreOptions.split("\n"))
+        {
             if (line.startsWith("  -"))
             {
                 cursor.currentTable()->appendRows(1);
@@ -104,9 +108,13 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
                 cursor.movePosition(QTextCursor::NextRow);
                 cursor.insertText(line.trimmed());
                 cursor.movePosition(QTextCursor::NextCell);
-            } else if (line.startsWith("   ")) {
+            }
+            else if (line.startsWith("   "))
+            {
                 cursor.insertText(line.trimmed()+' ');
-            } else if (line.size() > 0) {
+            }
+            else if (line.size() > 0)
+            {
                 //Title of a group
                 if (cursor.currentTable())
                     cursor.currentTable()->appendRows(1);

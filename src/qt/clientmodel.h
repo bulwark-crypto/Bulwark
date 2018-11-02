@@ -23,14 +23,16 @@ class QDateTime;
 class QTimer;
 QT_END_NAMESPACE
 
-enum BlockSource {
+enum BlockSource
+{
     BLOCK_SOURCE_NONE,
     BLOCK_SOURCE_REINDEX,
     BLOCK_SOURCE_DISK,
     BLOCK_SOURCE_NETWORK
 };
 
-enum NumConnections {
+enum NumConnections
+{
     CONNECTIONS_NONE = 0,
     CONNECTIONS_IN = (1U << 0),
     CONNECTIONS_OUT = (1U << 1),

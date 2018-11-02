@@ -51,20 +51,25 @@ public:
     CTxMemPoolEntry();
     CTxMemPoolEntry(const CTxMemPoolEntry& other);
 
-    const CTransaction& GetTx() const {
+    const CTransaction& GetTx() const
+    {
         return this->tx;
     }
     double GetPriority(unsigned int currentHeight) const;
-    CAmount GetFee() const {
+    CAmount GetFee() const
+    {
         return nFee;
     }
-    size_t GetTxSize() const {
+    size_t GetTxSize() const
+    {
         return nTxSize;
     }
-    int64_t GetTime() const {
+    int64_t GetTime() const
+    {
         return nTime;
     }
-    unsigned int GetHeight() const {
+    unsigned int GetHeight() const
+    {
         return nHeight;
     }
 };
@@ -78,7 +83,8 @@ public:
     const CTransaction* ptx;
     uint32_t n;
 
-    CInPoint() {
+    CInPoint()
+    {
         SetNull();
     }
     CInPoint(const CTransaction* ptxIn, uint32_t nIn)
@@ -91,7 +97,8 @@ public:
         ptx = NULL;
         n = (uint32_t)-1;
     }
-    bool IsNull() const {
+    bool IsNull() const
+    {
         return (ptx == NULL && n == (uint32_t)-1);
     }
 };
@@ -132,7 +139,8 @@ public:
      * check does nothing.
      */
     void check(const CCoinsViewCache* pcoins) const;
-    void setSanityCheck(bool _fSanityCheck) {
+    void setSanityCheck(bool _fSanityCheck)
+    {
         fSanityCheck = _fSanityCheck;
     }
 

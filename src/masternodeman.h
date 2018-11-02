@@ -33,7 +33,8 @@ private:
     std::string strMagicMessage;
 
 public:
-    enum ReadResult {
+    enum ReadResult
+    {
         Ok,
         FileError,
         HashReadError,
@@ -144,7 +145,8 @@ public:
     void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
     /// Return the number of (unique) Masternodes
-    int size() {
+    int size()
+    {
         return vMasternodes.size();
     }
 

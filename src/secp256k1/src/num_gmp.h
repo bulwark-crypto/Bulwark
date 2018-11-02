@@ -11,7 +11,8 @@
 
 #define NUM_LIMBS ((256+GMP_NUMB_BITS-1)/GMP_NUMB_BITS)
 
-typedef struct {
+typedef struct
+{
     mp_limb_t data[2*NUM_LIMBS];
     int neg;
     int limbs;

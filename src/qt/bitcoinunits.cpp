@@ -28,7 +28,8 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 
 bool BitcoinUnits::valid(int unit)
 {
-    switch (unit) {
+    switch (unit)
+    {
     case BWK:
     case mBWK:
     case uBWK:
@@ -40,7 +41,8 @@ bool BitcoinUnits::valid(int unit)
 
 QString BitcoinUnits::id(int unit)
 {
-    switch (unit) {
+    switch (unit)
+    {
     case BWK:
         return QString("bulwark");
     case mBWK:
@@ -54,8 +56,10 @@ QString BitcoinUnits::id(int unit)
 
 QString BitcoinUnits::name(int unit)
 {
-    if (Params().NetworkID() == CBaseChainParams::MAIN) {
-        switch (unit) {
+    if (Params().NetworkID() == CBaseChainParams::MAIN)
+    {
+        switch (unit)
+        {
         case BWK:
             return QString("BWK");
         case mBWK:
@@ -65,8 +69,11 @@ QString BitcoinUnits::name(int unit)
         default:
             return QString("???");
         }
-    } else {
-        switch (unit) {
+    }
+    else
+    {
+        switch (unit)
+        {
         case BWK:
             return QString("tBWK");
         case mBWK:
@@ -81,8 +88,10 @@ QString BitcoinUnits::name(int unit)
 
 QString BitcoinUnits::description(int unit)
 {
-    if (Params().NetworkID() == CBaseChainParams::MAIN) {
-        switch (unit) {
+    if (Params().NetworkID() == CBaseChainParams::MAIN)
+    {
+        switch (unit)
+        {
         case BWK:
             return QString("BWK");
         case mBWK:
@@ -92,8 +101,11 @@ QString BitcoinUnits::description(int unit)
         default:
             return QString("???");
         }
-    } else {
-        switch (unit) {
+    }
+    else
+    {
+        switch (unit)
+        {
         case BWK:
             return QString("TestBWKs");
         case mBWK:
@@ -108,7 +120,8 @@ QString BitcoinUnits::description(int unit)
 
 qint64 BitcoinUnits::factor(int unit)
 {
-    switch (unit) {
+    switch (unit)
+    {
     case BWK:
         return 100000000;
     case mBWK:
@@ -122,7 +135,8 @@ qint64 BitcoinUnits::factor(int unit)
 
 int BitcoinUnits::decimals(int unit)
 {
-    switch (unit) {
+    switch (unit)
+    {
     case BWK:
         return 8;
     case mBWK:
@@ -223,26 +237,31 @@ bool BitcoinUnits::parse(int unit, const QString& value, CAmount* val_out)
     // Ignore spaces and thin spaces when parsing
     QStringList parts = removeSpaces(value).split(".");
 
-    if (parts.size() > 2) {
+    if (parts.size() > 2)
+    {
         return false; // More than one dot
     }
     QString whole = parts[0];
     QString decimals;
 
-    if (parts.size() > 1) {
+    if (parts.size() > 1)
+    {
         decimals = parts[1];
     }
-    if (decimals.size() > num_decimals) {
+    if (decimals.size() > num_decimals)
+    {
         return false; // Exceeds max precision
     }
     bool ok = false;
     QString str = whole + decimals.leftJustified(num_decimals, '0');
 
-    if (str.size() > 18) {
+    if (str.size() > 18)
+    {
         return false; // Longer numbers will exceed 63 bits
     }
     CAmount retvalue(str.toLongLong(&ok));
-    if (val_out) {
+    if (val_out)
+    {
         *val_out = retvalue;
     }
     return ok;
@@ -251,7 +270,8 @@ bool BitcoinUnits::parse(int unit, const QString& value, CAmount* val_out)
 QString BitcoinUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (BitcoinUnits::valid(unit)) {
+    if (BitcoinUnits::valid(unit))
+    {
         amountTitle += " (" + BitcoinUnits::name(unit) + ")";
     }
     return amountTitle;
@@ -266,9 +286,11 @@ int BitcoinUnits::rowCount(const QModelIndex& parent) const
 QVariant BitcoinUnits::data(const QModelIndex& index, int role) const
 {
     int row = index.row();
-    if (row >= 0 && row < unitlist.size()) {
+    if (row >= 0 && row < unitlist.size())
+    {
         Unit unit = unitlist.at(row);
-        switch (role) {
+        switch (role)
+        {
         case Qt::EditRole:
         case Qt::DisplayRole:
             return QVariant(name(unit));

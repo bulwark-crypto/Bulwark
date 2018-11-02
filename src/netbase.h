@@ -29,7 +29,8 @@ static const int DEFAULT_NAME_LOOKUP = true;
 #undef SetPort
 #endif
 
-enum Network {
+enum Network
+{
     NET_UNROUTABLE = 0,
     NET_IPV4,
     NET_IPV6,
@@ -133,7 +134,8 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(network);
         READWRITE(FLATDATA(netmask));
         READWRITE(valid);
@@ -190,7 +192,8 @@ public:
     proxyType(): randomize_credentials(false) {}
     proxyType(const CService &proxy, bool randomize_credentials=false): proxy(proxy), randomize_credentials(randomize_credentials) {}
 
-    bool IsValid() const {
+    bool IsValid() const
+    {
         return proxy.IsValid();
     }
 

@@ -10,11 +10,13 @@
 #include <stdint.h>
 #include "leveldb/slice.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 struct Options;
 
-class BlockBuilder {
+class BlockBuilder
+{
 public:
     explicit BlockBuilder(const Options* options);
 
@@ -35,7 +37,8 @@ public:
     size_t CurrentSizeEstimate() const;
 
     // Return true iff no entries have been added since the last Reset()
-    bool empty() const {
+    bool empty() const
+    {
         return buffer_.empty();
     }
 

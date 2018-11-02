@@ -26,7 +26,8 @@ MultiSendDialog::MultiSendDialog(QWidget* parent) : QDialog(parent),
 {
     ui->setupUi(this);
     updateCheckBoxes();
-    for (int i = 0; i < pwalletMain->vMultiSend.size(); i++) {
+    for (int i = 0; i < pwalletMain->vMultiSend.size(); i++)
+    {
         addAddress(pwalletMain->vMultiSend[i].first,true);
     }
 }
@@ -50,16 +51,20 @@ void MultiSendDialog::updateCheckBoxes()
 
 void MultiSendDialog::updateStatus()
 {
-    if (pwalletMain->fMultiSendStake && pwalletMain->fMultiSendMasternodeReward) {
+    if (pwalletMain->fMultiSendStake && pwalletMain->fMultiSendMasternodeReward)
+    {
         ui->multiSendStatusLabel->setText(QStringLiteral("Enabled for Staking and Masternodes"));
     }
-    else if (pwalletMain->fMultiSendStake) {
+    else if (pwalletMain->fMultiSendStake)
+    {
         ui->multiSendStatusLabel->setText(QStringLiteral("Enabled for Staking"));
     }
-    else if (pwalletMain->fMultiSendMasternodeReward) {
+    else if (pwalletMain->fMultiSendMasternodeReward)
+    {
         ui->multiSendStatusLabel->setText(QStringLiteral("Enabled for Masternodes"));
     }
-    else {
+    else
+    {
         ui->multiSendStatusLabel->setText(QStringLiteral("Disabled"));
     }
 
@@ -67,14 +72,18 @@ void MultiSendDialog::updateStatus()
 
 void MultiSendDialog::on_addressBookButton_clicked()
 {
-    if (model && model->getAddressTableModel()) {
+    if (model && model->getAddressTableModel())
+    {
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
         dlg.setModel(model->getAddressTableModel());
-        if (dlg.exec()) {
-            if (pwalletMain->indexOfMSAddress(dlg.getReturnValue().toStdString()) == -1) {
+        if (dlg.exec())
+        {
+            if (pwalletMain->indexOfMSAddress(dlg.getReturnValue().toStdString()) == -1)
+            {
                 addAddress(dlg.getReturnValue().toStdString(), false);
             }
-            else {
+            else
+            {
                 QMessageBox::warning(this, tr("MultiSend Status"),
                                      tr("Address is already contained in MultiSend Vector"),
                                      QMessageBox::Ok, QMessageBox::Ok);
@@ -84,8 +93,10 @@ void MultiSendDialog::on_addressBookButton_clicked()
 
 }
 
-void MultiSendDialog::addAddress(std::string address, bool onLoad) {
-    if (!onLoad) {
+void MultiSendDialog::addAddress(std::string address, bool onLoad)
+{
+    if (!onLoad)
+    {
         std::pair<std::string, std::vector<std::pair<std::string, int>>> pMultiSendAddress;
         std::vector<std::pair<std::string, int>> vAddressConfig;
         pwalletMain->vMultiSend.push_back(std::make_pair(address, vAddressConfig));
@@ -142,7 +153,8 @@ void MultiSendDialog::addAddress(std::string address, bool onLoad) {
     ui->addressList->addWidget(addressFrame);
 }
 
-void MultiSendDialog::configureMultiSend() {
+void MultiSendDialog::configureMultiSend()
+{
     QWidget *buttonWidget = qobject_cast<QWidget*>(sender());
     if (!buttonWidget)return;
 
@@ -157,7 +169,8 @@ void MultiSendDialog::configureMultiSend() {
     multiSendConfigDialog->show();
 }
 
-void MultiSendDialog::deleteFrame() {
+void MultiSendDialog::deleteFrame()
+{
 
     QWidget *buttonWidget = qobject_cast<QWidget*>(sender());
     if (!buttonWidget)return;
@@ -168,8 +181,10 @@ void MultiSendDialog::deleteFrame() {
     walletdb.EraseMultiSend(pwalletMain->vMultiSend);
     QLabel* lbl = frame->findChild<QLabel*>("addressLabel");
     std::string address = lbl->text().toStdString();
-    for (unsigned int i = 0; i < pwalletMain->vMultiSend.size(); i++) {
-        if (pwalletMain->vMultiSend[i].first==address) {
+    for (unsigned int i = 0; i < pwalletMain->vMultiSend.size(); i++)
+    {
+        if (pwalletMain->vMultiSend[i].first==address)
+        {
             pwalletMain->vMultiSend.erase(pwalletMain->vMultiSend.begin() + i);
             break;
         }
@@ -183,11 +198,14 @@ void MultiSendDialog::deleteFrame() {
 void MultiSendDialog::on_activateButton_clicked()
 {
     std::string strRet = "";
-    if (!(ui->multiSendStakeCheckBox->isChecked() || ui->multiSendMasternodeCheckBox->isChecked())) {
+    if (!(ui->multiSendStakeCheckBox->isChecked() || ui->multiSendMasternodeCheckBox->isChecked()))
+    {
         QMessageBox::warning(this, tr("MultiSend Status"),
                              tr("Need to select to send for either staking or masternode rewards"),
                              QMessageBox::Ok, QMessageBox::Ok);
-    } else {
+    }
+    else
+    {
         pwalletMain->fMultiSendStake = ui->multiSendStakeCheckBox->isChecked();
         pwalletMain->fMultiSendMasternodeReward = ui->multiSendMasternodeCheckBox->isChecked();
         CWalletDB walletdb(pwalletMain->strWalletFile);

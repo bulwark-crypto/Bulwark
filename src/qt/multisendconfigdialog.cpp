@@ -29,7 +29,8 @@ MultiSendConfigDialog::MultiSendConfigDialog(QWidget* parent, std::string addy) 
 {
     ui->setupUi(this);
     unsigned int indexOfEntry = pwalletMain->indexOfMSAddress(address);
-    for (unsigned int i = 0; i < pwalletMain->vMultiSend[indexOfEntry].second.size(); i++) {
+    for (unsigned int i = 0; i < pwalletMain->vMultiSend[indexOfEntry].second.size(); i++)
+    {
         loadEntry(pwalletMain->vMultiSend[indexOfEntry].second[i]);
     }
     updateStatus();
@@ -117,7 +118,8 @@ void MultiSendConfigDialog::loadEntry(std::pair<std::string, int> entry)
 
 void MultiSendConfigDialog::on_addEntryButton_clicked()
 {
-    if (model) {
+    if (model)
+    {
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -191,10 +193,12 @@ void MultiSendConfigDialog::selectSendingAddress()
     QValidatedLineEdit* vle = addressFrame->findChild<QValidatedLineEdit*>("addressLine");
     if (!vle)return;
 
-    if (model && model->getAddressTableModel()) {
+    if (model && model->getAddressTableModel())
+    {
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::SendingTab, this);
         dlg.setModel(model->getAddressTableModel());
-        if (dlg.exec()) {
+        if (dlg.exec())
+        {
             vle->setText(dlg.getReturnValue());
         }
     }
@@ -215,7 +219,8 @@ void MultiSendConfigDialog::pasteText()
 }
 
 
-void MultiSendConfigDialog::deleteFrame() {
+void MultiSendConfigDialog::deleteFrame()
+{
 
     QWidget *buttonWidget = qobject_cast<QWidget*>(sender());
     if (!buttonWidget)return;
@@ -229,14 +234,16 @@ void MultiSendConfigDialog::deleteFrame() {
 
 void MultiSendConfigDialog::on_activateButton_clicked()
 {
-    if (!pwalletMain->isMSAddressEnabled(address)) {
+    if (!pwalletMain->isMSAddressEnabled(address))
+    {
         pwalletMain->vDisabledAddresses.erase(std::remove(pwalletMain->vDisabledAddresses.begin(), pwalletMain->vDisabledAddresses.end(), address), pwalletMain->vDisabledAddresses.end());
     }
 }
 
 void MultiSendConfigDialog::on_disableButton_clicked()
 {
-    if (pwalletMain->isMSAddressEnabled(address)) {
+    if (pwalletMain->isMSAddressEnabled(address))
+    {
         pwalletMain->vDisabledAddresses.push_back(address);
     }
 }
@@ -244,7 +251,8 @@ void MultiSendConfigDialog::on_disableButton_clicked()
 void MultiSendConfigDialog::on_saveButton_clicked()
 {
     int indexOfEntry = pwalletMain->indexOfMSAddress(address);
-    if (indexOfEntry == -1) {
+    if (indexOfEntry == -1)
+    {
         QMessageBox::warning(this, tr("Address not found"),
                              tr("Address does not exist inside MultiSend Vector anymore"),
                              QMessageBox::Ok, QMessageBox::Ok);
@@ -253,30 +261,36 @@ void MultiSendConfigDialog::on_saveButton_clicked()
     std::vector <std::pair<std::string, int>> vSending;
     std::pair<std::string, int> pMultiSendAddress;
     int total=0;
-    for (unsigned int i = 0; i < ui->addressList->count(); i++) {
+    for (unsigned int i = 0; i < ui->addressList->count(); i++)
+    {
         QWidget* addressEntry = ui->addressList->itemAt(i)->widget();
         QValidatedLineEdit* vle = addressEntry->findChild<QValidatedLineEdit*>("addressLine");
-        if (CBitcoinAddress(vle->text().toStdString()).IsValid()) {
+        if (CBitcoinAddress(vle->text().toStdString()).IsValid())
+        {
             QDoubleSpinBox* psb = addressEntry->findChild<QDoubleSpinBox*>("percentageSpinBox");
             total += psb->value();
-            if (total > 100) {
+            if (total > 100)
+            {
                 QMessageBox::warning(this, tr("MultiSend"),
                                      tr("The total percentage set is higher than 100"),
                                      QMessageBox::Ok, QMessageBox::Ok);
                 return;
             }
             pMultiSendAddress = std::make_pair(vle->text().toStdString(), psb->value());
-            if (!(std::find(vSending.begin(), vSending.end(), pMultiSendAddress) != vSending.end())) {
+            if (!(std::find(vSending.begin(), vSending.end(), pMultiSendAddress) != vSending.end()))
+            {
                 vSending.push_back(pMultiSendAddress);
             }
-            else {
+            else
+            {
                 QMessageBox::warning(this, tr("Duplicate Address"),
                                      tr("One of the entered Addresses is a duplicate"),
                                      QMessageBox::Ok, QMessageBox::Ok);
                 return;
             }
         }
-        else {
+        else
+        {
             QMessageBox::warning(this, tr("Invalid Address"),
                                  tr("One of the entered Addresses is invalid"),
                                  QMessageBox::Ok, QMessageBox::Ok);

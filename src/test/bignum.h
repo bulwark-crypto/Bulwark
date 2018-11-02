@@ -53,7 +53,8 @@ public:
         BN_clear_free(this);
     }
 
-    CBigNum(long long n)          {
+    CBigNum(long long n)
+    {
         BN_init(this);
         setint64(n);
     }
@@ -88,7 +89,9 @@ public:
             n = -(sn + 1);
             ++n;
             fNegative = true;
-        } else {
+        }
+        else
+        {
             n = sn;
             fNegative = false;
         }
@@ -173,22 +176,28 @@ inline const CBigNum operator-(const CBigNum& a)
     return r;
 }
 
-inline bool operator==(const CBigNum& a, const CBigNum& b) {
+inline bool operator==(const CBigNum& a, const CBigNum& b)
+{
     return (BN_cmp(&a, &b) == 0);
 }
-inline bool operator!=(const CBigNum& a, const CBigNum& b) {
+inline bool operator!=(const CBigNum& a, const CBigNum& b)
+{
     return (BN_cmp(&a, &b) != 0);
 }
-inline bool operator<=(const CBigNum& a, const CBigNum& b) {
+inline bool operator<=(const CBigNum& a, const CBigNum& b)
+{
     return (BN_cmp(&a, &b) <= 0);
 }
-inline bool operator>=(const CBigNum& a, const CBigNum& b) {
+inline bool operator>=(const CBigNum& a, const CBigNum& b)
+{
     return (BN_cmp(&a, &b) >= 0);
 }
-inline bool operator<(const CBigNum& a, const CBigNum& b)  {
+inline bool operator<(const CBigNum& a, const CBigNum& b)
+{
     return (BN_cmp(&a, &b) < 0);
 }
-inline bool operator>(const CBigNum& a, const CBigNum& b)  {
+inline bool operator>(const CBigNum& a, const CBigNum& b)
+{
     return (BN_cmp(&a, &b) > 0);
 }
 

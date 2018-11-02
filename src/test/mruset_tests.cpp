@@ -23,10 +23,12 @@ private:
     std::set<int> set;
 
 public:
-    mrutester() {
+    mrutester()
+    {
         mru.max_size(MAX_SIZE);
     }
-    int size() const {
+    int size() const
+    {
         return set.size();
     }
 

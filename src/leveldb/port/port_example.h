@@ -10,8 +10,10 @@
 #ifndef STORAGE_LEVELDB_PORT_PORT_EXAMPLE_H_
 #define STORAGE_LEVELDB_PORT_PORT_EXAMPLE_H_
 
-namespace leveldb {
-namespace port {
+namespace leveldb
+{
+namespace port
+{
 
 // TODO(jorlow): Many of these belong more in the environment class rather than
 //               here. We should try moving them and see if it affects perf.
@@ -23,7 +25,8 @@ static const bool kLittleEndian = true /* or some other expression */;
 // ------------------ Threading -------------------
 
 // A Mutex represents an exclusive lock.
-class Mutex {
+class Mutex
+{
 public:
     Mutex();
     ~Mutex();
@@ -42,7 +45,8 @@ public:
     void AssertHeld();
 };
 
-class CondVar {
+class CondVar
+{
 public:
     explicit CondVar(Mutex* mu);
     ~CondVar();
@@ -72,7 +76,8 @@ extern void InitOnce(port::OnceType*, void (*initializer)());
 
 // A type that holds a pointer that can be read or written atomically
 // (i.e., without word-tearing.)
-class AtomicPointer {
+class AtomicPointer
+{
 private:
     intptr_t rep_;
 public:

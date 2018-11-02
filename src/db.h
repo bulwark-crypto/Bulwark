@@ -50,7 +50,8 @@ public:
     CDBEnv();
     ~CDBEnv();
     void MakeMock();
-    bool IsMock() {
+    bool IsMock()
+    {
         return fMockDb;
     }
 
@@ -106,7 +107,8 @@ protected:
     bool fReadOnly;
 
     explicit CDB(const std::string& strFilename, const char* pszMode = "r+");
-    ~CDB() {
+    ~CDB()
+    {
         Close();
     }
 
@@ -140,10 +142,13 @@ protected:
             return false;
 
         // Unserialize value
-        try {
+        try
+        {
             CDataStream ssValue((char*)datValue.get_data(), (char*)datValue.get_data() + datValue.get_size(), SER_DISK, CLIENT_VERSION);
             ssValue >> value;
-        } catch (const std::exception&) {
+        }
+        catch (const std::exception&)
+        {
             return false;
         }
 
@@ -239,12 +244,14 @@ protected:
     {
         // Read at cursor
         Dbt datKey;
-        if (fFlags == DB_SET || fFlags == DB_SET_RANGE || fFlags == DB_GET_BOTH || fFlags == DB_GET_BOTH_RANGE) {
+        if (fFlags == DB_SET || fFlags == DB_SET_RANGE || fFlags == DB_GET_BOTH || fFlags == DB_GET_BOTH_RANGE)
+        {
             datKey.set_data(&ssKey[0]);
             datKey.set_size(ssKey.size());
         }
         Dbt datValue;
-        if (fFlags == DB_GET_BOTH || fFlags == DB_GET_BOTH_RANGE) {
+        if (fFlags == DB_GET_BOTH || fFlags == DB_GET_BOTH_RANGE)
+        {
             datValue.set_data(&ssValue[0]);
             datValue.set_size(ssValue.size());
         }

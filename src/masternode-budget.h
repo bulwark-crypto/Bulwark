@@ -154,7 +154,8 @@ private:
     std::string strMagicMessage;
 
 public:
-    enum ReadResult {
+    enum ReadResult
+    {
         Ok,
         FileError,
         HashReadError,
@@ -209,10 +210,12 @@ public:
         mapSeenFinalizedBudgetVotes.clear();
     }
 
-    int sizeFinalized() {
+    int sizeFinalized()
+    {
         return (int)mapFinalizedBudgets.size();
     }
-    int sizeProposals() {
+    int sizeProposals()
+    {
         return (int)mapProposals.size();
     }
 
@@ -338,17 +341,21 @@ public:
 
     bool IsValid(std::string& strError, bool fCheckCollateral = true);
 
-    std::string GetName() {
+    std::string GetName()
+    {
         return strBudgetName;
     }
     std::string GetProposals();
-    int GetBlockStart() {
+    int GetBlockStart()
+    {
         return nBlockStart;
     }
-    int GetBlockEnd() {
+    int GetBlockEnd()
+    {
         return nBlockStart + (int)(vecBudgetPayments.size() - 1);
     }
-    int GetVoteCount() {
+    int GetVoteCount()
+    {
         return (int)mapVotes.size();
     }
     bool IsTransactionValid(const CTransaction& txNew, int nBlockHeight);
@@ -511,19 +518,24 @@ public:
         return (nTime < GetTime() - (60 * 30 * 2));
     }
 
-    std::string GetName() {
+    std::string GetName()
+    {
         return strProposalName;
     }
-    std::string GetURL() {
+    std::string GetURL()
+    {
         return strURL;
     }
-    int GetBlockStart() {
+    int GetBlockStart()
+    {
         return nBlockStart;
     }
-    int GetBlockEnd() {
+    int GetBlockEnd()
+    {
         return nBlockEnd;
     }
-    CScript GetPayee() {
+    CScript GetPayee()
+    {
         return address;
     }
     int GetTotalPaymentCount();
@@ -535,13 +547,16 @@ public:
     int GetYeas();
     int GetNays();
     int GetAbstains();
-    CAmount GetAmount() {
+    CAmount GetAmount()
+    {
         return nAmount;
     }
-    void SetAllotted(CAmount nAllotedIn) {
+    void SetAllotted(CAmount nAllotedIn)
+    {
         nAlloted = nAllotedIn;
     }
-    CAmount GetAllotted() {
+    CAmount GetAllotted()
+    {
         return nAlloted;
     }
 

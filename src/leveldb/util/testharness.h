@@ -12,8 +12,10 @@
 #include "leveldb/slice.h"
 #include "util/random.h"
 
-namespace leveldb {
-namespace test {
+namespace leveldb
+{
+namespace test
+{
 
 // Run some of the tests registered by the TEST() macro.  If the
 // environment variable "LEVELDB_TESTS" is not set, runs all tests.
@@ -39,7 +41,8 @@ extern int RandomSeed();
 
 // An instance of Tester is allocated to hold temporary state during
 // the execution of an assertion.
-class Tester {
+class Tester
+{
 private:
     bool ok_;
     const char* fname_;
@@ -48,26 +51,33 @@ private:
 
 public:
     Tester(const char* f, int l)
-        : ok_(true), fname_(f), line_(l) {
+        : ok_(true), fname_(f), line_(l)
+    {
     }
 
-    ~Tester() {
-        if (!ok_) {
+    ~Tester()
+    {
+        if (!ok_)
+        {
             fprintf(stderr, "%s:%d:%s\n", fname_, line_, ss_.str().c_str());
             exit(1);
         }
     }
 
-    Tester& Is(bool b, const char* msg) {
-        if (!b) {
+    Tester& Is(bool b, const char* msg)
+    {
+        if (!b)
+        {
             ss_ << " Assertion failure " << msg;
             ok_ = false;
         }
         return *this;
     }
 
-    Tester& IsOk(const Status& s) {
-        if (!s.ok()) {
+    Tester& IsOk(const Status& s)
+    {
+        if (!s.ok())
+        {
             ss_ << " " << s.ToString();
             ok_ = false;
         }
@@ -94,8 +104,10 @@ public:
 
     // Attach the specified value to the error message if an error has occurred
     template <class V>
-    Tester& operator<<(const V& value) {
-        if (!ok_) {
+    Tester& operator<<(const V& value)
+    {
+        if (!ok_)
+        {
             ss_ << " " << value;
         }
         return *this;

@@ -20,7 +20,8 @@ public:
     {
         std::vector<unsigned char> vch;
         const unsigned char* p = this->begin();
-        for (unsigned int i = 0; i < 32; i++) {
+        for (unsigned int i = 0; i < 32; i++)
+        {
             vch.push_back(*p++);
         }
         uint256 retval(vch);

@@ -162,7 +162,8 @@ extern "C" {
 
 #if SPH_GROESTL_64
 
-static const sph_u64 T0[] = {
+static const sph_u64 T0[] =
+{
     C64e(0xc632f4a5f497a5c6), C64e(0xf86f978497eb84f8),
     C64e(0xee5eb099b0c799ee), C64e(0xf67a8c8d8cf78df6),
     C64e(0xffe8170d17e50dff), C64e(0xd60adcbddcb7bdd6),
@@ -295,7 +296,8 @@ static const sph_u64 T0[] = {
 
 #if !SPH_SMALL_FOOTPRINT_GROESTL
 
-static const sph_u64 T1[] = {
+static const sph_u64 T1[] =
+{
     C64e(0xc6c632f4a5f497a5), C64e(0xf8f86f978497eb84),
     C64e(0xeeee5eb099b0c799), C64e(0xf6f67a8c8d8cf78d),
     C64e(0xffffe8170d17e50d), C64e(0xd6d60adcbddcb7bd),
@@ -426,7 +428,8 @@ static const sph_u64 T1[] = {
     C64e(0x6d6d0c61d661dad6), C64e(0x2c2c624e3a4e583a)
 };
 
-static const sph_u64 T2[] = {
+static const sph_u64 T2[] =
+{
     C64e(0xa5c6c632f4a5f497), C64e(0x84f8f86f978497eb),
     C64e(0x99eeee5eb099b0c7), C64e(0x8df6f67a8c8d8cf7),
     C64e(0x0dffffe8170d17e5), C64e(0xbdd6d60adcbddcb7),
@@ -557,7 +560,8 @@ static const sph_u64 T2[] = {
     C64e(0xd66d6d0c61d661da), C64e(0x3a2c2c624e3a4e58)
 };
 
-static const sph_u64 T3[] = {
+static const sph_u64 T3[] =
+{
     C64e(0x97a5c6c632f4a5f4), C64e(0xeb84f8f86f978497),
     C64e(0xc799eeee5eb099b0), C64e(0xf78df6f67a8c8d8c),
     C64e(0xe50dffffe8170d17), C64e(0xb7bdd6d60adcbddc),
@@ -690,7 +694,8 @@ static const sph_u64 T3[] = {
 
 #endif
 
-static const sph_u64 T4[] = {
+static const sph_u64 T4[] =
+{
     C64e(0xf497a5c6c632f4a5), C64e(0x97eb84f8f86f9784),
     C64e(0xb0c799eeee5eb099), C64e(0x8cf78df6f67a8c8d),
     C64e(0x17e50dffffe8170d), C64e(0xdcb7bdd6d60adcbd),
@@ -823,7 +828,8 @@ static const sph_u64 T4[] = {
 
 #if !SPH_SMALL_FOOTPRINT_GROESTL
 
-static const sph_u64 T5[] = {
+static const sph_u64 T5[] =
+{
     C64e(0xa5f497a5c6c632f4), C64e(0x8497eb84f8f86f97),
     C64e(0x99b0c799eeee5eb0), C64e(0x8d8cf78df6f67a8c),
     C64e(0x0d17e50dffffe817), C64e(0xbddcb7bdd6d60adc),
@@ -954,7 +960,8 @@ static const sph_u64 T5[] = {
     C64e(0xd661dad66d6d0c61), C64e(0x3a4e583a2c2c624e)
 };
 
-static const sph_u64 T6[] = {
+static const sph_u64 T6[] =
+{
     C64e(0xf4a5f497a5c6c632), C64e(0x978497eb84f8f86f),
     C64e(0xb099b0c799eeee5e), C64e(0x8c8d8cf78df6f67a),
     C64e(0x170d17e50dffffe8), C64e(0xdcbddcb7bdd6d60a),
@@ -1085,7 +1092,8 @@ static const sph_u64 T6[] = {
     C64e(0x61d661dad66d6d0c), C64e(0x4e3a4e583a2c2c62)
 };
 
-static const sph_u64 T7[] = {
+static const sph_u64 T7[] =
+{
     C64e(0x32f4a5f497a5c6c6), C64e(0x6f978497eb84f8f8),
     C64e(0x5eb099b0c799eeee), C64e(0x7a8c8d8cf78df6f6),
     C64e(0xe8170d17e50dffff), C64e(0x0adcbddcb7bdd6d6),
@@ -1666,7 +1674,8 @@ static const sph_u64 T7[] = {
 
 #else
 
-static const sph_u32 T0up[] = {
+static const sph_u32 T0up[] =
+{
     C32e(0xc632f4a5), C32e(0xf86f9784), C32e(0xee5eb099), C32e(0xf67a8c8d),
     C32e(0xffe8170d), C32e(0xd60adcbd), C32e(0xde16c8b1), C32e(0x916dfc54),
     C32e(0x6090f050), C32e(0x02070503), C32e(0xce2ee0a9), C32e(0x56d1877d),
@@ -1733,7 +1742,8 @@ static const sph_u32 T0up[] = {
     C32e(0x7b3d46cb), C32e(0xa8b71ffc), C32e(0x6d0c61d6), C32e(0x2c624e3a)
 };
 
-static const sph_u32 T0dn[] = {
+static const sph_u32 T0dn[] =
+{
     C32e(0xf497a5c6), C32e(0x97eb84f8), C32e(0xb0c799ee), C32e(0x8cf78df6),
     C32e(0x17e50dff), C32e(0xdcb7bdd6), C32e(0xc8a7b1de), C32e(0xfc395491),
     C32e(0xf0c05060), C32e(0x05040302), C32e(0xe087a9ce), C32e(0x87ac7d56),
@@ -1800,7 +1810,8 @@ static const sph_u32 T0dn[] = {
     C32e(0x46f6cb7b), C32e(0x1f4bfca8), C32e(0x61dad66d), C32e(0x4e583a2c)
 };
 
-static const sph_u32 T1up[] = {
+static const sph_u32 T1up[] =
+{
     C32e(0xc6c632f4), C32e(0xf8f86f97), C32e(0xeeee5eb0), C32e(0xf6f67a8c),
     C32e(0xffffe817), C32e(0xd6d60adc), C32e(0xdede16c8), C32e(0x91916dfc),
     C32e(0x606090f0), C32e(0x02020705), C32e(0xcece2ee0), C32e(0x5656d187),
@@ -1867,7 +1878,8 @@ static const sph_u32 T1up[] = {
     C32e(0x7b7b3d46), C32e(0xa8a8b71f), C32e(0x6d6d0c61), C32e(0x2c2c624e)
 };
 
-static const sph_u32 T1dn[] = {
+static const sph_u32 T1dn[] =
+{
     C32e(0xa5f497a5), C32e(0x8497eb84), C32e(0x99b0c799), C32e(0x8d8cf78d),
     C32e(0x0d17e50d), C32e(0xbddcb7bd), C32e(0xb1c8a7b1), C32e(0x54fc3954),
     C32e(0x50f0c050), C32e(0x03050403), C32e(0xa9e087a9), C32e(0x7d87ac7d),
@@ -1934,7 +1946,8 @@ static const sph_u32 T1dn[] = {
     C32e(0xcb46f6cb), C32e(0xfc1f4bfc), C32e(0xd661dad6), C32e(0x3a4e583a)
 };
 
-static const sph_u32 T2up[] = {
+static const sph_u32 T2up[] =
+{
     C32e(0xa5c6c632), C32e(0x84f8f86f), C32e(0x99eeee5e), C32e(0x8df6f67a),
     C32e(0x0dffffe8), C32e(0xbdd6d60a), C32e(0xb1dede16), C32e(0x5491916d),
     C32e(0x50606090), C32e(0x03020207), C32e(0xa9cece2e), C32e(0x7d5656d1),
@@ -2001,7 +2014,8 @@ static const sph_u32 T2up[] = {
     C32e(0xcb7b7b3d), C32e(0xfca8a8b7), C32e(0xd66d6d0c), C32e(0x3a2c2c62)
 };
 
-static const sph_u32 T2dn[] = {
+static const sph_u32 T2dn[] =
+{
     C32e(0xf4a5f497), C32e(0x978497eb), C32e(0xb099b0c7), C32e(0x8c8d8cf7),
     C32e(0x170d17e5), C32e(0xdcbddcb7), C32e(0xc8b1c8a7), C32e(0xfc54fc39),
     C32e(0xf050f0c0), C32e(0x05030504), C32e(0xe0a9e087), C32e(0x877d87ac),
@@ -2068,7 +2082,8 @@ static const sph_u32 T2dn[] = {
     C32e(0x46cb46f6), C32e(0x1ffc1f4b), C32e(0x61d661da), C32e(0x4e3a4e58)
 };
 
-static const sph_u32 T3up[] = {
+static const sph_u32 T3up[] =
+{
     C32e(0x97a5c6c6), C32e(0xeb84f8f8), C32e(0xc799eeee), C32e(0xf78df6f6),
     C32e(0xe50dffff), C32e(0xb7bdd6d6), C32e(0xa7b1dede), C32e(0x39549191),
     C32e(0xc0506060), C32e(0x04030202), C32e(0x87a9cece), C32e(0xac7d5656),
@@ -2135,7 +2150,8 @@ static const sph_u32 T3up[] = {
     C32e(0xf6cb7b7b), C32e(0x4bfca8a8), C32e(0xdad66d6d), C32e(0x583a2c2c)
 };
 
-static const sph_u32 T3dn[] = {
+static const sph_u32 T3dn[] =
+{
     C32e(0x32f4a5f4), C32e(0x6f978497), C32e(0x5eb099b0), C32e(0x7a8c8d8c),
     C32e(0xe8170d17), C32e(0x0adcbddc), C32e(0x16c8b1c8), C32e(0x6dfc54fc),
     C32e(0x90f050f0), C32e(0x07050305), C32e(0x2ee0a9e0), C32e(0xd1877d87),
@@ -2776,7 +2792,8 @@ groestl_small_core(sph_groestl_small_context *sc, const void *data, size_t len)
 
     buf = sc->buf;
     ptr = sc->ptr;
-    if (len < (sizeof sc->buf) - ptr) {
+    if (len < (sizeof sc->buf) - ptr)
+    {
         memcpy(buf + ptr, data, len);
         ptr += len;
         sc->ptr = ptr;
@@ -2784,7 +2801,8 @@ groestl_small_core(sph_groestl_small_context *sc, const void *data, size_t len)
     }
 
     READ_STATE_SMALL(sc);
-    while (len > 0) {
+    while (len > 0)
+    {
         size_t clen;
 
         clen = (sizeof sc->buf) - ptr;
@@ -2794,7 +2812,8 @@ groestl_small_core(sph_groestl_small_context *sc, const void *data, size_t len)
         ptr += clen;
         data = (const unsigned char *)data + clen;
         len -= clen;
-        if (ptr == sizeof sc->buf) {
+        if (ptr == sizeof sc->buf)
+        {
             COMPRESS_SMALL;
 #if SPH_64
             sc->count ++;
@@ -2828,7 +2847,8 @@ groestl_small_close(sph_groestl_small_context *sc,
     ptr = sc->ptr;
     z = 0x80 >> n;
     pad[0] = ((ub & -z) | z) & 0xFF;
-    if (ptr < 56) {
+    if (ptr < 56)
+    {
         pad_len = 64 - ptr;
 #if SPH_64
         count = SPH_T64(sc->count + 1);
@@ -2838,7 +2858,9 @@ groestl_small_close(sph_groestl_small_context *sc,
         if (count_low == 0)
             count_high = SPH_T32(count_high + 1);
 #endif
-    } else {
+    }
+    else
+    {
         pad_len = 128 - ptr;
 #if SPH_64
         count = SPH_T64(sc->count + 2);
@@ -2912,7 +2934,8 @@ groestl_big_core(sph_groestl_big_context *sc, const void *data, size_t len)
 
     buf = sc->buf;
     ptr = sc->ptr;
-    if (len < (sizeof sc->buf) - ptr) {
+    if (len < (sizeof sc->buf) - ptr)
+    {
         memcpy(buf + ptr, data, len);
         ptr += len;
         sc->ptr = ptr;
@@ -2920,7 +2943,8 @@ groestl_big_core(sph_groestl_big_context *sc, const void *data, size_t len)
     }
 
     READ_STATE_BIG(sc);
-    while (len > 0) {
+    while (len > 0)
+    {
         size_t clen;
 
         clen = (sizeof sc->buf) - ptr;
@@ -2930,7 +2954,8 @@ groestl_big_core(sph_groestl_big_context *sc, const void *data, size_t len)
         ptr += clen;
         data = (const unsigned char *)data + clen;
         len -= clen;
-        if (ptr == sizeof sc->buf) {
+        if (ptr == sizeof sc->buf)
+        {
             COMPRESS_BIG;
 #if SPH_64
             sc->count ++;
@@ -2964,7 +2989,8 @@ groestl_big_close(sph_groestl_big_context *sc,
     ptr = sc->ptr;
     z = 0x80 >> n;
     pad[0] = ((ub & -z) | z) & 0xFF;
-    if (ptr < 120) {
+    if (ptr < 120)
+    {
         pad_len = 128 - ptr;
 #if SPH_64
         count = SPH_T64(sc->count + 1);
@@ -2974,7 +3000,9 @@ groestl_big_close(sph_groestl_big_context *sc,
         if (count_low == 0)
             count_high = SPH_T32(count_high + 1);
 #endif
-    } else {
+    }
+    else
+    {
         pad_len = 256 - ptr;
 #if SPH_64
         count = SPH_T64(sc->count + 2);

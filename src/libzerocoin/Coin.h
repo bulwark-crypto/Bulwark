@@ -44,24 +44,28 @@ public:
      * @param denomination The denomination of the coin.
      */
     PublicCoin(const ZerocoinParams* p, const CBigNum& coin, const CoinDenomination d);
-    const CBigNum& getValue() const {
+    const CBigNum& getValue() const
+    {
         return this->value;
     }
 
-    CoinDenomination getDenomination() const {
+    CoinDenomination getDenomination() const
+    {
         return this->denomination;
     }
     bool operator==(const PublicCoin& rhs) const
     {
         return ((this->value == rhs.value) && (this->params == rhs.params) && (this->denomination == rhs.denomination));
     }
-    bool operator!=(const PublicCoin& rhs) const {
+    bool operator!=(const PublicCoin& rhs) const
+    {
         return !(*this == rhs);
     }
     /** Checks that coin is prime and in the appropriate range given the parameters
      * @return true if valid
      */
-    bool validate() const {
+    bool validate() const
+    {
         return (this->params->accumulatorParams.minCoinValue < value) && (value < this->params->accumulatorParams.maxCoinValue) && value.isPrime(params->zkp_iterations);
     }
 
@@ -99,24 +103,30 @@ public:
         strm >> *this;
     }
     PrivateCoin(const ZerocoinParams* p, const CoinDenomination denomination);
-    const PublicCoin& getPublicCoin() const {
+    const PublicCoin& getPublicCoin() const
+    {
         return this->publicCoin;
     }
     // @return the coins serial number
-    const CBigNum& getSerialNumber() const {
+    const CBigNum& getSerialNumber() const
+    {
         return this->serialNumber;
     }
-    const CBigNum& getRandomness() const {
+    const CBigNum& getRandomness() const
+    {
         return this->randomness;
     }
 
-    void setPublicCoin(PublicCoin p) {
+    void setPublicCoin(PublicCoin p)
+    {
         publicCoin = p;
     }
-    void setRandomness(Bignum n) {
+    void setRandomness(Bignum n)
+    {
         randomness = n;
     }
-    void setSerialNumber(Bignum n) {
+    void setSerialNumber(Bignum n)
+    {
         serialNumber = n;
     }
 

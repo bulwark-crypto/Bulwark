@@ -123,7 +123,8 @@ inline std::string Hash(std::string input)
     SHA256_Update(&sha256, input.c_str(), input.size());
     SHA256_Final(hash, &sha256);
     stringstream ss;
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+    {
         ss << hex << setw(2) << setfill('0') << (int)hash[i];
     }
     return ss.str();

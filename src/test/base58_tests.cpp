@@ -27,7 +27,8 @@ BOOST_AUTO_TEST_SUITE(base58_tests)
 BOOST_AUTO_TEST_CASE(base58_EncodeBase58)
 {
     UniValue tests = read_json(std::string(json_tests::base58_encode_decode, json_tests::base58_encode_decode + sizeof(json_tests::base58_encode_decode)));
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         std::string strTest = test.write();
         if (test.size() < 2) // Allow for extra stuff (useful for comments)
@@ -49,7 +50,8 @@ BOOST_AUTO_TEST_CASE(base58_DecodeBase58)
     UniValue tests = read_json(std::string(json_tests::base58_encode_decode, json_tests::base58_encode_decode + sizeof(json_tests::base58_encode_decode)));
     std::vector<unsigned char> result;
 
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         std::string strTest = test.write();
         if (test.size() < 2) // Allow for extra stuff (useful for comments)
@@ -124,7 +126,8 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_parse)
     CBitcoinSecret secret;
     CBitcoinAddress addr;
 
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         std::string strTest = test.write();
         if (test.size() < 3) // Allow for extra stuff (useful for comments)
@@ -180,7 +183,8 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
     UniValue tests = read_json(std::string(json_tests::base58_keys_valid, json_tests::base58_keys_valid + sizeof(json_tests::base58_keys_valid)));
     std::vector<unsigned char> result;
 
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         std::string strTest = test.write();
         if (test.size() < 3) // Allow for extra stuff (useful for comments)
@@ -250,7 +254,8 @@ BOOST_AUTO_TEST_CASE(base58_keys_invalid)
     CBitcoinSecret secret;
     CBitcoinAddress addr;
 
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         std::string strTest = test.write();
         if (test.size() < 1) // Allow for extra stuff (useful for comments)

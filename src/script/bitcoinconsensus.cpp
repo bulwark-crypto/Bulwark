@@ -9,7 +9,8 @@
 #include "script/interpreter.h"
 #include "version.h"
 
-namespace {
+namespace
+{
 
 /** A class that deserializes a single CTransaction one time. */
 class TxInputStream
@@ -66,7 +67,8 @@ int bitcoinconsensus_verify_script(const unsigned char *scriptPubKey, unsigned i
                                    const unsigned char *txTo, unsigned int txToLen,
                                    unsigned int nIn, unsigned int flags, bitcoinconsensus_error* err)
 {
-    try {
+    try
+    {
         TxInputStream stream(SER_NETWORK, PROTOCOL_VERSION, txTo, txToLen);
         CTransaction tx;
         stream >> tx;
@@ -79,7 +81,9 @@ int bitcoinconsensus_verify_script(const unsigned char *scriptPubKey, unsigned i
         set_error(err, bitcoinconsensus_ERR_OK);
 
         return VerifyScript(tx.vin[nIn].scriptSig, CScript(scriptPubKey, scriptPubKey + scriptPubKeyLen), flags, TransactionSignatureChecker(&tx, nIn), NULL);
-    } catch (const std::exception&) {
+    }
+    catch (const std::exception&)
+    {
         return set_error(err, bitcoinconsensus_ERR_TX_DESERIALIZE); // Error deserializing
     }
 }

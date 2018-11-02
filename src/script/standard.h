@@ -66,12 +66,15 @@ enum txnouttype
     TX_ZEROCOINMINT,
 };
 
-class CNoDestination {
+class CNoDestination
+{
 public:
-    friend bool operator==(const CNoDestination &a, const CNoDestination &b) {
+    friend bool operator==(const CNoDestination &a, const CNoDestination &b)
+    {
         return true;
     }
-    friend bool operator<(const CNoDestination &a, const CNoDestination &b) {
+    friend bool operator<(const CNoDestination &a, const CNoDestination &b)
+    {
         return true;
     }
 };

@@ -13,11 +13,13 @@
 #include "leveldb/status.h"
 #include "port/port.h"
 
-namespace leveldb {
+namespace leveldb
+{
 
 class Env;
 
-enum FileType {
+enum FileType
+{
     kLogFile,
     kDBLockFile,
     kTableFile,

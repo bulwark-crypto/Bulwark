@@ -102,9 +102,12 @@ void TransactionFilterProxy::setShowInactive(bool showInactive)
 
 int TransactionFilterProxy::rowCount(const QModelIndex& parent) const
 {
-    if (limitRows != -1) {
+    if (limitRows != -1)
+    {
         return std::min(QSortFilterProxyModel::rowCount(parent), limitRows);
-    } else {
+    }
+    else
+    {
         return QSortFilterProxyModel::rowCount(parent);
     }
 }

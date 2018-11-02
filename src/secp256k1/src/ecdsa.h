@@ -13,7 +13,8 @@
 static void secp256k1_ecsda_start(void);
 static void secp256k1_ecdsa_stop(void);
 
-typedef struct {
+typedef struct
+{
     secp256k1_scalar_t r, s;
 } secp256k1_ecdsa_sig_t;
 

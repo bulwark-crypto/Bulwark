@@ -9,7 +9,8 @@
 #include "include/secp256k1.h"
 #include "util.h"
 
-int main(void) {
+int main(void)
+{
     secp256k1_start(SECP256K1_START_SIGN);
 
     unsigned char msg[32];
@@ -22,17 +23,20 @@ int main(void) {
 
     unsigned char sig[64];
 
-    for (int i=0; i<1000000; i++) {
+    for (int i=0; i<1000000; i++)
+    {
         int recid = 0;
         CHECK(secp256k1_ecdsa_sign_compact(msg, 32, sig, key, nonce, &recid));
-        for (int j = 0; j < 32; j++) {
+        for (int j = 0; j < 32; j++)
+        {
             nonce[j] = key[j];     /* Move former key to nonce  */
             msg[j] = sig[j];       /* Move former R to message. */
             key[j] = sig[j + 32];  /* Move former S to key.     */
         }
     }
 
-    static const unsigned char fini[64] = {
+    static const unsigned char fini[64] =
+    {
         0x92, 0x03, 0xef, 0xf1, 0x58, 0x0b, 0x49, 0x8d,
         0x22, 0x3d, 0x49, 0x0e, 0xbf, 0x26, 0x50, 0x0e,
         0x2d, 0x62, 0x90, 0xd7, 0x82, 0xbd, 0x3d, 0x5c,

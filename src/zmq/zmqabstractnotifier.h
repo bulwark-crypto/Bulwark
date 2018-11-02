@@ -24,16 +24,20 @@ public:
         return new T();
     }
 
-    std::string GetType() const {
+    std::string GetType() const
+    {
         return type;
     }
-    void SetType(const std::string &t) {
+    void SetType(const std::string &t)
+    {
         type = t;
     }
-    std::string GetAddress() const {
+    std::string GetAddress() const
+    {
         return address;
     }
-    void SetAddress(const std::string &a) {
+    void SetAddress(const std::string &a)
+    {
         address = a;
     }
 

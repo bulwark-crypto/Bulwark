@@ -74,7 +74,8 @@ public:
     void Process();
     bool IsSynced();
     bool IsBlockchainSynced();
-    bool IsMasternodeListSynced() {
+    bool IsMasternodeListSynced()
+    {
         return RequestedMasternodeAssets > MASTERNODE_SYNC_LIST;
     }
     void ClearFulfilledRequest();
