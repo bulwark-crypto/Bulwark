@@ -51,12 +51,22 @@ public:
     CTxMemPoolEntry();
     CTxMemPoolEntry(const CTxMemPoolEntry& other);
 
-    const CTransaction& GetTx() const { return this->tx; }
+    const CTransaction& GetTx() const {
+        return this->tx;
+    }
     double GetPriority(unsigned int currentHeight) const;
-    CAmount GetFee() const { return nFee; }
-    size_t GetTxSize() const { return nTxSize; }
-    int64_t GetTime() const { return nTime; }
-    unsigned int GetHeight() const { return nHeight; }
+    CAmount GetFee() const {
+        return nFee;
+    }
+    size_t GetTxSize() const {
+        return nTxSize;
+    }
+    int64_t GetTime() const {
+        return nTime;
+    }
+    unsigned int GetHeight() const {
+        return nHeight;
+    }
 };
 
 class CMinerPolicyEstimator;
@@ -68,7 +78,9 @@ public:
     const CTransaction* ptx;
     uint32_t n;
 
-    CInPoint() { SetNull(); }
+    CInPoint() {
+        SetNull();
+    }
     CInPoint(const CTransaction* ptxIn, uint32_t nIn)
     {
         ptx = ptxIn;
@@ -79,7 +91,9 @@ public:
         ptx = NULL;
         n = (uint32_t)-1;
     }
-    bool IsNull() const { return (ptx == NULL && n == (uint32_t)-1); }
+    bool IsNull() const {
+        return (ptx == NULL && n == (uint32_t)-1);
+    }
 };
 
 /**
@@ -118,7 +132,9 @@ public:
      * check does nothing.
      */
     void check(const CCoinsViewCache* pcoins) const;
-    void setSanityCheck(bool _fSanityCheck) { fSanityCheck = _fSanityCheck; }
+    void setSanityCheck(bool _fSanityCheck) {
+        fSanityCheck = _fSanityCheck;
+    }
 
     bool addUnchecked(const uint256& hash, const CTxMemPoolEntry& entry);
     void remove(const CTransaction& tx, std::list<CTransaction>& removed, bool fRecursive = false);
@@ -166,7 +182,7 @@ public:
     bool ReadFeeEstimates(CAutoFile& filein);
 };
 
-/** 
+/**
  * CCoinsView that brings transactions from a memorypool into view.
  * It does not check for spendings by memory pool transactions.
  */

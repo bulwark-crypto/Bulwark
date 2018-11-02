@@ -17,14 +17,14 @@
 #define YMARGIN 10
 
 TrafficGraphWidget::TrafficGraphWidget(QWidget* parent) : QWidget(parent),
-                                                          timer(0),
-                                                          fMax(0.0f),
-                                                          nMins(0),
-                                                          vSamplesIn(),
-                                                          vSamplesOut(),
-                                                          nLastBytesIn(0),
-                                                          nLastBytesOut(0),
-                                                          clientModel(0)
+    timer(0),
+    fMax(0.0f),
+    nMins(0),
+    vSamplesIn(),
+    vSamplesOut(),
+    nLastBytesIn(0),
+    nLastBytesOut(0),
+    clientModel(0)
 {
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), SLOT(updateRates()));

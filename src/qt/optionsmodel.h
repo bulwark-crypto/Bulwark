@@ -43,7 +43,7 @@ public:
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
-		ShowOrphans,         // bool
+        ShowOrphans,         // bool
         ZeromintPercentage,  // int
         ZeromintPrefDenom,   // int
         AnonymizeBulwarkAmount, //int
@@ -62,13 +62,25 @@ public:
     void setDisplayUnit(const QVariant& value);
 
     /* Explicit getters */
-    bool getMinimizeToTray() { return fMinimizeToTray; }
-    bool getMinimizeOnClose() { return fMinimizeOnClose; }
-    int getDisplayUnit() { return nDisplayUnit; }
-    QString getThirdPartyTxUrls() { return strThirdPartyTxUrls; }
+    bool getMinimizeToTray() {
+        return fMinimizeToTray;
+    }
+    bool getMinimizeOnClose() {
+        return fMinimizeOnClose;
+    }
+    int getDisplayUnit() {
+        return nDisplayUnit;
+    }
+    QString getThirdPartyTxUrls() {
+        return strThirdPartyTxUrls;
+    }
     bool getProxySettings(QNetworkProxy& proxy) const;
-    bool getCoinControlFeatures() { return fCoinControlFeatures; }
-    const QString& getOverriddenByCommandLine() { return strOverriddenByCommandLine; }
+    bool getCoinControlFeatures() {
+        return fCoinControlFeatures;
+    }
+    const QString& getOverriddenByCommandLine() {
+        return strOverriddenByCommandLine;
+    }
 
     /* Restart flag helper */
     void setRestartRequired(bool fRequired);
@@ -82,7 +94,7 @@ private:
     QString language;
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
-	bool fShowOrphans;
+    bool fShowOrphans;
     bool fCoinControlFeatures;
     /* settings that were overriden by command-line */
     QString strOverriddenByCommandLine;

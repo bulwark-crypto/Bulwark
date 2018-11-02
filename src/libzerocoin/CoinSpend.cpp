@@ -15,11 +15,11 @@
 namespace libzerocoin
 {
 CoinSpend::CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint32_t checksum, const AccumulatorWitness& witness, const uint256& ptxHash) : accChecksum(checksum),
-                                                                                                                                                                             ptxHash(ptxHash),
-                                                                                                                                                                             coinSerialNumber((coin.getSerialNumber())),
-                                                                                                                                                                             accumulatorPoK(&p->accumulatorParams),
-                                                                                                                                                                             serialNumberSoK(p),
-                                                                                                                                                                             commitmentPoK(&p->serialNumberSoKCommitmentGroup, &p->accumulatorParams.accumulatorPoKCommitmentGroup)
+    ptxHash(ptxHash),
+    coinSerialNumber((coin.getSerialNumber())),
+    accumulatorPoK(&p->accumulatorParams),
+    serialNumberSoK(p),
+    commitmentPoK(&p->serialNumberSoKCommitmentGroup, &p->accumulatorParams.accumulatorPoKCommitmentGroup)
 {
     denomination = coin.getPublicCoin().getDenomination();
     // Sanity check: let's verify that the Witness is valid with respect to

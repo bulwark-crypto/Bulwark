@@ -76,7 +76,7 @@ public:
             TRY_LOCK(cs_main, lockMain);
             if (lockMain) {
                 BOOST_FOREACH (CNodeCombinedStats& stats, cachedNodeStats)
-                    stats.fNodeStateStatsAvailable = GetNodeStateStats(stats.nodeStats.nodeid, stats.nodeStateStats);
+                stats.fNodeStateStatsAvailable = GetNodeStateStats(stats.nodeStats.nodeid, stats.nodeStateStats);
             }
         }
 
@@ -88,7 +88,7 @@ public:
         mapNodeRows.clear();
         int row = 0;
         BOOST_FOREACH (CNodeCombinedStats& stats, cachedNodeStats)
-            mapNodeRows.insert(std::pair<NodeId, int>(stats.nodeStats.nodeid, row++));
+        mapNodeRows.insert(std::pair<NodeId, int>(stats.nodeStats.nodeid, row++));
     }
 
     int size()
@@ -107,8 +107,8 @@ public:
 };
 
 PeerTableModel::PeerTableModel(ClientModel* parent) : QAbstractTableModel(parent),
-                                                      clientModel(parent),
-                                                      timer(0)
+    clientModel(parent),
+    timer(0)
 {
     columns << tr("Address/Hostname") << tr("Version") << tr("Ping Time");
     priv = new PeerTablePriv();

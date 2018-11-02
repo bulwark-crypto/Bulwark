@@ -240,12 +240,12 @@ bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
     BIGNUM *sig_r = NULL;
     BIGNUM *sig_s = NULL;
     if (!(sig_r = BN_bin2bn(&p64[0],  32, nullptr)) ||
-        !(sig_s = BN_bin2bn(&p64[32], 32, nullptr)) ||
-        !ECDSA_SIG_set0(sig, sig_r, sig_s)) {
-            BN_free(sig_r);
-            BN_free(sig_s);
-            return false;
-        }
+            !(sig_s = BN_bin2bn(&p64[32], 32, nullptr)) ||
+            !ECDSA_SIG_set0(sig, sig_r, sig_s)) {
+        BN_free(sig_r);
+        BN_free(sig_s);
+        return false;
+    }
 #else
     BN_bin2bn(&p64[0], 32, sig->r);
     BN_bin2bn(&p64[32], 32, sig->s);

@@ -243,7 +243,7 @@ public:
     int nStakeSetUpdateTime;
 
     //MultiSend
-	std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend;
+    std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend;
     bool fMultiSendStake;
     bool fMultiSendMasternodeReward;
     bool fMultiSendNotify;
@@ -321,7 +321,7 @@ public:
     {
         fBackupMints = fEnabled;
     }
-    
+
     bool isMultiSendEnabled()
     {
         return fMultiSendMasternodeReward || fMultiSendStake;
@@ -380,7 +380,9 @@ public:
     //! Adds a key to the store, and saves it to disk.
     bool AddKeyPubKey(const CKey& key, const CPubKey& pubkey);
     //! Adds a key to the store, without saving it to disk (used by LoadWallet)
-    bool LoadKey(const CKey& key, const CPubKey& pubkey) { return CCryptoKeyStore::AddKeyPubKey(key, pubkey); }
+    bool LoadKey(const CKey& key, const CPubKey& pubkey) {
+        return CCryptoKeyStore::AddKeyPubKey(key, pubkey);
+    }
     //! Load metadata (used by LoadWallet)
     bool LoadKeyMetadata(const CPubKey& pubkey, const CKeyMetadata& metadata);
 
@@ -469,14 +471,14 @@ public:
     CAmount GetImmatureWatchOnlyBalance() const;
     bool CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl);
     bool CreateTransaction(const std::vector<std::pair<CScript, CAmount> >& vecSend,
-        CWalletTx& wtxNew,
-        CReserveKey& reservekey,
-        CAmount& nFeeRet,
-        std::string& strFailReason,
-        const CCoinControl* coinControl = NULL,
-        AvailableCoinsType coin_type = ALL_COINS,
-        bool useIX = false,
-        CAmount nFeePay = 0);
+                           CWalletTx& wtxNew,
+                           CReserveKey& reservekey,
+                           CAmount& nFeeRet,
+                           std::string& strFailReason,
+                           const CCoinControl* coinControl = NULL,
+                           AvailableCoinsType coin_type = ALL_COINS,
+                           bool useIX = false,
+                           CAmount nFeePay = 0);
     bool CreateTransaction(CScript scriptPubKey, const CAmount& nValue, CWalletTx& wtxNew, CReserveKey& reservekey, CAmount& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, AvailableCoinsType coin_type = ALL_COINS, bool useIX = false, CAmount nFeePay = 0);
     bool CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, std::string strCommand = "tx");
     std::string PrepareObfuscationDenominate(int minRounds, int maxRounds);
@@ -485,8 +487,8 @@ public:
     bool ConvertList(std::vector<CTxIn> vCoins, std::vector<int64_t>& vecAmounts);
     bool CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, unsigned int& nTxNewTime);
     bool MultiSend();
-	bool isMSAddressEnabled(std::string address);
-	int indexOfMSAddress(std::string address);
+    bool isMSAddressEnabled(std::string address);
+    int indexOfMSAddress(std::string address);
     void AutoCombineDust();
     void AutoZeromint();
 
@@ -543,8 +545,8 @@ public:
     bool IsMine(const CTransaction& tx) const
     {
         BOOST_FOREACH (const CTxOut& txout, tx.vout)
-            if (IsMine(txout))
-                return true;
+        if (IsMine(txout))
+            return true;
         return false;
     }
     /** should probably be renamed to IsRelevantToMe */
@@ -1134,7 +1136,7 @@ public:
         return nCredit;
     }
 
-        // Return sum of unlocked coins
+    // Return sum of unlocked coins
     CAmount GetLockedCredit() const
     {
         if (pwallet == 0)
@@ -1263,10 +1265,10 @@ public:
     }
 
     void GetAmounts(std::list<COutputEntry>& listReceived,
-        std::list<COutputEntry>& listSent,
-        CAmount& nFee,
-        std::string& strSentAccount,
-        const isminefilter& filter) const;
+                    std::list<COutputEntry>& listSent,
+                    CAmount& nFee,
+                    std::string& strSentAccount,
+                    const isminefilter& filter) const;
 
     void GetAccountAmounts(const std::string& strAccount, CAmount& nReceived, CAmount& nSent, CAmount& nFee, const isminefilter& filter) const;
 
@@ -1335,7 +1337,7 @@ public:
     int Priority() const
     {
         BOOST_FOREACH (CAmount d, obfuScationDenominations)
-            if (tx->vout[i].nValue == d) return 10000;
+        if (tx->vout[i].nValue == d) return 10000;
         if (tx->vout[i].nValue < 1 * COIN) return 20000;
 
         //nondenom return largest first

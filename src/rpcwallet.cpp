@@ -62,12 +62,12 @@ void WalletTxToJSON(const CWalletTx& wtx, UniValue& entry)
     entry.push_back(Pair("txid", hash.GetHex()));
     UniValue conflicts(UniValue::VARR);
     BOOST_FOREACH (const uint256& conflict, wtx.GetConflicts())
-        conflicts.push_back(conflict.GetHex());
+    conflicts.push_back(conflict.GetHex());
     entry.push_back(Pair("walletconflicts", conflicts));
     entry.push_back(Pair("time", wtx.GetTxTime()));
     entry.push_back(Pair("timereceived", (int64_t)wtx.nTimeReceived));
     BOOST_FOREACH (const PAIRTYPE(string, string) & item, wtx.mapValue)
-        entry.push_back(Pair(item.first, item.second));
+    entry.push_back(Pair(item.first, item.second));
 }
 
 string AccountFromValue(const UniValue& value)
@@ -126,12 +126,12 @@ CBitcoinAddress GetAccountAddress(string strAccount, bool bForceNew = false)
     if (account.vchPubKey.IsValid()) {
         CScript scriptPubKey = GetScriptForDestination(account.vchPubKey.GetID());
         for (map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin();
-             it != pwalletMain->mapWallet.end() && account.vchPubKey.IsValid();
-             ++it) {
+                it != pwalletMain->mapWallet.end() && account.vchPubKey.IsValid();
+                ++it) {
             const CWalletTx& wtx = (*it).second;
             BOOST_FOREACH (const CTxOut& txout, wtx.vout)
-                if (txout.scriptPubKey == scriptPubKey)
-                    bKeyUsed = true;
+            if (txout.scriptPubKey == scriptPubKey)
+                bKeyUsed = true;
         }
     }
 
@@ -454,13 +454,13 @@ UniValue signmessage(const UniValue& params, bool fHelp)
             "signmessage \"bulwarkaddress\" \"message\"\n"
             "\nSign a message with the private key of an address" +
             HelpRequiringPassphrase() + "\n"
-                                        "\nArguments:\n"
-                                        "1. \"bulwarkaddress\"  (string, required) The bulwark address to use for the private key.\n"
-                                        "2. \"message\"         (string, required) The message to create a signature of.\n"
-                                        "\nResult:\n"
-                                        "\"signature\"          (string) The signature of the message encoded in base 64\n"
-                                        "\nExamples:\n"
-                                        "\nUnlock the wallet for 30 seconds\n" +
+            "\nArguments:\n"
+            "1. \"bulwarkaddress\"  (string, required) The bulwark address to use for the private key.\n"
+            "2. \"message\"         (string, required) The message to create a signature of.\n"
+            "\nResult:\n"
+            "\"signature\"          (string) The signature of the message encoded in base 64\n"
+            "\nExamples:\n"
+            "\nUnlock the wallet for 30 seconds\n" +
             HelpExampleCli("walletpassphrase", "\"mypassphrase\" 30") +
             "\nCreate the signature\n" + HelpExampleCli("signmessage", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" \"my message\"") +
             "\nVerify the signature\n" + HelpExampleCli("verifymessage", "\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" \"signature\" \"my message\"") +
@@ -533,9 +533,9 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
             continue;
 
         BOOST_FOREACH (const CTxOut& txout, wtx.vout)
-            if (txout.scriptPubKey == scriptPubKey)
-                if (wtx.GetDepthInMainChain() >= nMinDepth)
-                    nAmount += txout.nValue;
+        if (txout.scriptPubKey == scriptPubKey)
+            if (wtx.GetDepthInMainChain() >= nMinDepth)
+                nAmount += txout.nValue;
     }
 
     return ValueFromAmount(nAmount);
@@ -670,10 +670,10 @@ UniValue getbalance(const UniValue& params, bool fHelp)
             wtx.GetAmounts(listReceived, listSent, allFee, strSentAccount, filter);
             if (wtx.GetDepthInMainChain() >= nMinDepth) {
                 BOOST_FOREACH (const COutputEntry& r, listReceived)
-                    nBalance += r.amount;
+                nBalance += r.amount;
             }
             BOOST_FOREACH (const COutputEntry& s, listSent)
-                nBalance -= s.amount;
+            nBalance -= s.amount;
             nBalance -= allFee;
         }
         return ValueFromAmount(nBalance);
@@ -766,20 +766,20 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
             "\nSent an amount from an account to a bulwark address.\n"
             "The amount is a real and is rounded to the nearest 0.00000001." +
             HelpRequiringPassphrase() + "\n"
-                                        "\nArguments:\n"
-                                        "1. \"fromaccount\"       (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
-                                        "2. \"tobulwarkaddress\"  (string, required) The bulwark address to send funds to.\n"
-                                        "3. amount                (numeric, required) The amount in btc. (transaction fee is added on top).\n"
-                                        "4. minconf               (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
-                                        "5. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
-                                        "                                     This is not part of the transaction, just kept in your wallet.\n"
-                                        "6. \"comment-to\"        (string, optional) An optional comment to store the name of the person or organization \n"
-                                        "                                     to which you're sending the transaction. This is not part of the transaction, \n"
-                                        "                                     it is just kept in your wallet.\n"
-                                        "\nResult:\n"
-                                        "\"transactionid\"        (string) The transaction id.\n"
-                                        "\nExamples:\n"
-                                        "\nSend 0.01 btc from the default account to the address, must have at least 1 confirmation\n" +
+            "\nArguments:\n"
+            "1. \"fromaccount\"       (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
+            "2. \"tobulwarkaddress\"  (string, required) The bulwark address to send funds to.\n"
+            "3. amount                (numeric, required) The amount in btc. (transaction fee is added on top).\n"
+            "4. minconf               (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
+            "5. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
+            "                                     This is not part of the transaction, just kept in your wallet.\n"
+            "6. \"comment-to\"        (string, optional) An optional comment to store the name of the person or organization \n"
+            "                                     to which you're sending the transaction. This is not part of the transaction, \n"
+            "                                     it is just kept in your wallet.\n"
+            "\nResult:\n"
+            "\"transactionid\"        (string) The transaction id.\n"
+            "\nExamples:\n"
+            "\nSend 0.01 btc from the default account to the address, must have at least 1 confirmation\n" +
             HelpExampleCli("sendfrom", "\"\" \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.01") +
             "\nSend 0.01 from the tabby account to the given address, funds must have at least 6 confirmations\n" + HelpExampleCli("sendfrom", "\"tabby\" \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" 0.01 6 \"donation\" \"seans outpost\"") +
             "\nAs a json rpc call\n" + HelpExampleRpc("sendfrom", "\"tabby\", \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\", 0.01, 6, \"donation\", \"seans outpost\""));
@@ -820,20 +820,20 @@ UniValue sendmany(const UniValue& params, bool fHelp)
             "sendmany \"fromaccount\" {\"address\":amount,...} ( minconf \"comment\" )\n"
             "\nSend multiple times. Amounts are double-precision floating point numbers." +
             HelpRequiringPassphrase() + "\n"
-                                        "\nArguments:\n"
-                                        "1. \"fromaccount\"         (string, required) The account to send the funds from, can be \"\" for the default account\n"
-                                        "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
-                                        "    {\n"
-                                        "      \"address\":amount   (numeric) The bulwark address is the key, the numeric amount in btc is the value\n"
-                                        "      ,...\n"
-                                        "    }\n"
-                                        "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
-                                        "4. \"comment\"             (string, optional) A comment\n"
-                                        "\nResult:\n"
-                                        "\"transactionid\"          (string) The transaction id for the send. Only 1 transaction is created regardless of \n"
-                                        "                                    the number of addresses.\n"
-                                        "\nExamples:\n"
-                                        "\nSend two amounts to two different addresses:\n" +
+            "\nArguments:\n"
+            "1. \"fromaccount\"         (string, required) The account to send the funds from, can be \"\" for the default account\n"
+            "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
+            "    {\n"
+            "      \"address\":amount   (numeric) The bulwark address is the key, the numeric amount in btc is the value\n"
+            "      ,...\n"
+            "    }\n"
+            "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
+            "4. \"comment\"             (string, optional) A comment\n"
+            "\nResult:\n"
+            "\"transactionid\"          (string) The transaction id for the send. Only 1 transaction is created regardless of \n"
+            "                                    the number of addresses.\n"
+            "\nExamples:\n"
+            "\nSend two amounts to two different addresses:\n" +
             HelpExampleCli("sendmany", "\"tabby\" \"{\\\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\\\":0.01,\\\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\\\":0.02}\"") +
             "\nSend two amounts to two different addresses setting the confirmation and comment:\n" + HelpExampleCli("sendmany", "\"tabby\" \"{\\\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\\\":0.01,\\\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\\\":0.02}\" 6 \"testing\"") +
             "\nAs a json rpc call\n" + HelpExampleRpc("sendmany", "\"tabby\", \"{\\\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\\\":0.01,\\\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcg\\\":0.02}\", 6, \"testing\""));
@@ -1372,20 +1372,20 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
         wtx.GetAmounts(listReceived, listSent, nFee, strSentAccount, includeWatchonly);
         mapAccountBalances[strSentAccount] -= nFee;
         BOOST_FOREACH (const COutputEntry& s, listSent)
-            mapAccountBalances[strSentAccount] -= s.amount;
+        mapAccountBalances[strSentAccount] -= s.amount;
         if (nDepth >= nMinDepth) {
             BOOST_FOREACH (const COutputEntry& r, listReceived)
-                if (pwalletMain->mapAddressBook.count(r.destination))
-                    mapAccountBalances[pwalletMain->mapAddressBook[r.destination].name] += r.amount;
-                else
-                    mapAccountBalances[""] += r.amount;
+            if (pwalletMain->mapAddressBook.count(r.destination))
+                mapAccountBalances[pwalletMain->mapAddressBook[r.destination].name] += r.amount;
+            else
+                mapAccountBalances[""] += r.amount;
         }
     }
 
     list<CAccountingEntry> acentries;
     CWalletDB(pwalletMain->strWalletFile).ListAccountCreditDebit("*", acentries);
     BOOST_FOREACH (const CAccountingEntry& entry, acentries)
-        mapAccountBalances[entry.strAccount] += entry.nCreditDebit;
+    mapAccountBalances[entry.strAccount] += entry.nCreditDebit;
 
     UniValue ret(UniValue::VOBJ);
     BOOST_FOREACH (const PAIRTYPE(string, CAmount) & accountBalance, mapAccountBalances) {
@@ -1572,9 +1572,9 @@ UniValue keypoolrefill(const UniValue& params, bool fHelp)
             "keypoolrefill ( newsize )\n"
             "\nFills the keypool." +
             HelpRequiringPassphrase() + "\n"
-                                        "\nArguments\n"
-                                        "1. newsize     (numeric, optional, default=100) The new keypool size\n"
-                                        "\nExamples:\n" +
+            "\nArguments\n"
+            "1. newsize     (numeric, optional, default=100) The new keypool size\n"
+            "\nExamples:\n" +
             HelpExampleCli("keypoolrefill", "") + HelpExampleRpc("keypoolrefill", ""));
 
     // 0 is interpreted by TopUpKeyPool() as the default keypool size given by -keypool
@@ -2325,8 +2325,8 @@ UniValue getzerocoinbalance(const UniValue& params, bool fHelp)
 
     if (fHelp || params.size() != 0)
         throw runtime_error(
-                            "getzerocoinbalance\n"
-                            + HelpRequiringPassphrase());
+            "getzerocoinbalance\n"
+            + HelpRequiringPassphrase());
 
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
@@ -2339,8 +2339,8 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
 
     if (fHelp || params.size() != 0)
         throw runtime_error(
-                            "listmintedzerocoins\n"
-                            + HelpRequiringPassphrase());
+            "listmintedzerocoins\n"
+            + HelpRequiringPassphrase());
 
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
@@ -2464,10 +2464,10 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
             "mintchange: if there is left over BWK (change), the wallet can convert it automatically back to zerocoins [true]\n"
             "minimizechange: try to minimize the returning change  [false]\n"
             "security level: the amount of checkpoints to add to the accumulator. A checkpoint contains 10 blocks worth of zerocoinmints."
-                    "The more checkpoints that are added, the more untraceable the transaction will be. Use [100] to add the maximum amount"
-                    "of checkpoints available. Tip: adding more checkpoints makes the minting process take longer\n"
+            "The more checkpoints that are added, the more untraceable the transaction will be. Use [100] to add the maximum amount"
+            "of checkpoints available. Tip: adding more checkpoints makes the minting process take longer\n"
             "address: Send straight to an address or leave the address blank and the wallet will send to a change address. If there is change then"
-                    "an address is required"
+            "an address is required"
             + HelpRequiringPassphrase());
 
     if (GetAdjustedTime() < GetSporkValue(SPORK_21_ENABLE_ZEROCOIN))
@@ -2599,7 +2599,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "resetspentzerocoin\n"
-                "Scan the blockchain for all of the zerocoins that are held in the wallet.dat. Reset mints that are considered spent that did not make it into the blockchain."
+            "Scan the blockchain for all of the zerocoins that are held in the wallet.dat. Reset mints that are considered spent that did not make it into the blockchain."
             + HelpRequiringPassphrase());
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
@@ -2672,27 +2672,27 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || params.empty() || params.size() > 2)
         throw runtime_error(
             "exportzerocoins include_spent ( denomination )\n"
-                "Exports zerocoin mints that are held by this wallet.dat\n"
+            "Exports zerocoin mints that are held by this wallet.dat\n"
 
-                "\nArguments:\n"
-                "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-                "2. \"denomination\"         (integer, optional) Export a specific denomination of zBWK\n"
+            "\nArguments:\n"
+            "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
+            "2. \"denomination\"         (integer, optional) Export a specific denomination of zBWK\n"
 
-                "\nResult\n"
-                "[                   (array of json object)\n"
-                "  {\n"
-                "    \"d\" : n,        (numeric) the mint's zerocoin denomination \n"
-                "    \"p\" : \"pubcoin\", (string) The public coin\n"
-                "    \"s\" : \"serial\",  (string) The secret serial number\n"
-                "    \"r\" : \"random\",  (string) The secret random number\n"
-                "    \"t\" : \"txid\",    (string) The txid that the coin was minted in\n"
-                "    \"h\" : n,         (numeric) The height the tx was added to the blockchain\n"
-                "    \"u\" : used       (boolean) Whether the mint has been spent\n"
-                "  }\n"
-                "  ,...\n"
-                "]\n"
+            "\nResult\n"
+            "[                   (array of json object)\n"
+            "  {\n"
+            "    \"d\" : n,        (numeric) the mint's zerocoin denomination \n"
+            "    \"p\" : \"pubcoin\", (string) The public coin\n"
+            "    \"s\" : \"serial\",  (string) The secret serial number\n"
+            "    \"r\" : \"random\",  (string) The secret random number\n"
+            "    \"t\" : \"txid\",    (string) The txid that the coin was minted in\n"
+            "    \"h\" : n,         (numeric) The height the tx was added to the blockchain\n"
+            "    \"u\" : used       (boolean) Whether the mint has been spent\n"
+            "  }\n"
+            "  ,...\n"
+            "]\n"
 
-                "\nExamples\n" +
+            "\nExamples\n" +
             HelpExampleCli("exportzerocoins", "false 5") + HelpExampleRpc("exportzerocoins", "false 5"));
 
     if (pwalletMain->IsLocked())
@@ -2730,21 +2730,21 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || params.size() == 0)
         throw runtime_error(
             "importzerocoins importdata \n"
-                "[{\"d\":denomination,\"p\":\"pubcoin_hex\",\"s\":\"serial_hex\",\"r\":\"randomness_hex\",\"t\":\"txid\",\"h\":height, \"u\":used},{\"d\":...}]\n"
-                "\nImport zerocoin mints.\n"
-                "Adds raw zerocoin mints to the wallet.dat\n"
-                "Note it is recommended to use the json export created from the exportzerocoins RPC call\n"
+            "[{\"d\":denomination,\"p\":\"pubcoin_hex\",\"s\":\"serial_hex\",\"r\":\"randomness_hex\",\"t\":\"txid\",\"h\":height, \"u\":used},{\"d\":...}]\n"
+            "\nImport zerocoin mints.\n"
+            "Adds raw zerocoin mints to the wallet.dat\n"
+            "Note it is recommended to use the json export created from the exportzerocoins RPC call\n"
 
-                "\nArguments:\n"
-                "1. \"importdata\"    (string, required) A json array of json objects containing zerocoin mints\n"
+            "\nArguments:\n"
+            "1. \"importdata\"    (string, required) A json array of json objects containing zerocoin mints\n"
 
-                "\nResult:\n"
-                "\"added\"            (int) the quantity of zerocoin mints that were added\n"
-                "\"value\"            (string) the total zBWK value of zerocoin mints that were added\n"
+            "\nResult:\n"
+            "\"added\"            (int) the quantity of zerocoin mints that were added\n"
+            "\"value\"            (string) the total zBWK value of zerocoin mints that were added\n"
 
-                "\nExamples\n" +
+            "\nExamples\n" +
             HelpExampleCli("importzerocoins", "\'[{\"d\":100,\"p\":\"mypubcoin\",\"s\":\"myserial\",\"r\":\"randomness_hex\",\"t\":\"mytxid\",\"h\":104923, \"u\":false},{\"d\":5,...}]\'") +
-                HelpExampleRpc("importzerocoins", "[{\"d\":100,\"p\":\"mypubcoin\",\"s\":\"myserial\",\"r\":\"randomness_hex\",\"t\":\"mytxid\",\"h\":104923, \"u\":false},{\"d\":5,...}]"));
+            HelpExampleRpc("importzerocoins", "[{\"d\":100,\"p\":\"mypubcoin\",\"s\":\"myserial\",\"r\":\"randomness_hex\",\"t\":\"mytxid\",\"h\":104923, \"u\":false},{\"d\":5,...}]"));
 
     if(pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
@@ -2796,20 +2796,20 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw runtime_error(
             "reconsiderzerocoins\n"
-                "\nCheck archived zBWK list to see if any mints were added to the blockchain.\n"
+            "\nCheck archived zBWK list to see if any mints were added to the blockchain.\n"
 
-                "\nResult\n"
-                "[                                 (array of json objects)\n"
-                "  {\n"
-                "    \"txid\" : txid,              (numeric) the mint's zerocoin denomination \n"
-                "    \"denomination\" : \"denom\", (numeric) the mint's zerocoin denomination\n"
-                "    \"pubcoin\" : \"pubcoin\",    (string) The mint's public identifier\n"
-                "    \"height\" : n,               (numeric) The height the tx was added to the blockchain\n"
-                "  }\n"
-                "  ,...\n"
-                "]\n"
+            "\nResult\n"
+            "[                                 (array of json objects)\n"
+            "  {\n"
+            "    \"txid\" : txid,              (numeric) the mint's zerocoin denomination \n"
+            "    \"denomination\" : \"denom\", (numeric) the mint's zerocoin denomination\n"
+            "    \"pubcoin\" : \"pubcoin\",    (string) The mint's public identifier\n"
+            "    \"height\" : n,               (numeric) The height the tx was added to the blockchain\n"
+            "  }\n"
+            "  ,...\n"
+            "]\n"
 
-                "\nExamples\n" +
+            "\nExamples\n" +
             HelpExampleCli("reconsiderzerocoins", "") + HelpExampleRpc("reconsiderzerocoins", ""));
 
     if(pwalletMain->IsLocked())

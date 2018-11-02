@@ -136,7 +136,7 @@ void ZBwkControlDialog::updateList()
 void ZBwkControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
-    if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
+    if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()) {
 
         // see if this mint is already selected in the selection list
         std::string strPubcoin = item->text(COLUMN_PUBCOIN).toStdString();

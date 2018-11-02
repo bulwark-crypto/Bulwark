@@ -109,9 +109,9 @@ void OptionsModel::Init()
         settings.setValue("bSpendZeroConfChange", false);
     if (!SoftSetBoolArg("-spendzeroconfchange", settings.value("bSpendZeroConfChange").toBool()))
         addOverriddenOption("-spendzeroconfchange");
-	if (!settings.contains("fShowOrphans"))
-		settings.setValue("fShowOrphans", false);
-	fShowOrphans = settings.value("fShowOrphans").toBool();
+    if (!settings.contains("fShowOrphans"))
+        settings.setValue("fShowOrphans", false);
+    fShowOrphans = settings.value("fShowOrphans").toBool();
 #endif
 
     // Network
@@ -213,8 +213,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("bSpendZeroConfChange");
         case ShowMasternodesTab:
             return settings.value("fShowMasternodesTab");
-		case ShowOrphans:
-			return settings.value("fShowOrphans");
+        case ShowOrphans:
+            return settings.value("fShowOrphans");
 #endif
         case DisplayUnit:
             return nDisplayUnit;
@@ -287,7 +287,8 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 settings.setValue("addrProxy", strNewValue);
                 setRestartRequired(true);
             }
-        } break;
+        }
+        break;
         case ProxyPort: {
             // contains current IP at index 0 and current port at index 1
             QStringList strlIpPort = settings.value("addrProxy").toString().split(":", QString::SkipEmptyParts);
@@ -298,7 +299,8 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 settings.setValue("addrProxy", strNewValue);
                 setRestartRequired(true);
             }
-        } break;
+        }
+        break;
 #ifdef ENABLE_WALLET
         case SpendZeroConfChange:
             if (settings.value("bSpendZeroConfChange") != value) {
@@ -306,11 +308,11 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 setRestartRequired(true);
             }
             break;
-		case ShowOrphans:
-			if (settings.value("fShowOrphans") != value) {
-				settings.setValue("fShowOrphans", value);
-				setRestartRequired(true);
-			}
+        case ShowOrphans:
+            if (settings.value("fShowOrphans") != value) {
+                settings.setValue("fShowOrphans", value);
+                setRestartRequired(true);
+            }
         case ShowMasternodesTab:
             if (settings.value("fShowMasternodesTab") != value) {
                 settings.setValue("fShowMasternodesTab", value);

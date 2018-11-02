@@ -729,8 +729,8 @@ bool CNetAddr::IsIPv6() const
 bool CNetAddr::IsRFC1918() const
 {
     return IsIPv4() && (GetByte(3) == 10 ||
-                           (GetByte(3) == 192 && GetByte(2) == 168) ||
-                           (GetByte(3) == 172 && (GetByte(2) >= 16 && GetByte(2) <= 31)));
+                        (GetByte(3) == 192 && GetByte(2) == 168) ||
+                        (GetByte(3) == 172 && (GetByte(2) >= 16 && GetByte(2) <= 31)));
 }
 
 bool CNetAddr::IsRFC2544() const
@@ -751,8 +751,8 @@ bool CNetAddr::IsRFC6598() const
 bool CNetAddr::IsRFC5737() const
 {
     return IsIPv4() && ((GetByte(3) == 192 && GetByte(2) == 0 && GetByte(1) == 2) ||
-                           (GetByte(3) == 198 && GetByte(2) == 51 && GetByte(1) == 100) ||
-                           (GetByte(3) == 203 && GetByte(2) == 0 && GetByte(1) == 113));
+                        (GetByte(3) == 198 && GetByte(2) == 51 && GetByte(1) == 100) ||
+                        (GetByte(3) == 203 && GetByte(2) == 0 && GetByte(1) == 113));
 }
 
 bool CNetAddr::IsRFC3849() const
@@ -892,10 +892,10 @@ std::string CNetAddr::ToStringIP() const
         return strprintf("%u.%u.%u.%u", GetByte(3), GetByte(2), GetByte(1), GetByte(0));
     else
         return strprintf("%x:%x:%x:%x:%x:%x:%x:%x",
-            GetByte(15) << 8 | GetByte(14), GetByte(13) << 8 | GetByte(12),
-            GetByte(11) << 8 | GetByte(10), GetByte(9) << 8 | GetByte(8),
-            GetByte(7) << 8 | GetByte(6), GetByte(5) << 8 | GetByte(4),
-            GetByte(3) << 8 | GetByte(2), GetByte(1) << 8 | GetByte(0));
+                         GetByte(15) << 8 | GetByte(14), GetByte(13) << 8 | GetByte(12),
+                         GetByte(11) << 8 | GetByte(10), GetByte(9) << 8 | GetByte(8),
+                         GetByte(7) << 8 | GetByte(6), GetByte(5) << 8 | GetByte(4),
+                         GetByte(3) << 8 | GetByte(2), GetByte(1) << 8 | GetByte(0));
 }
 
 std::string CNetAddr::ToString() const
@@ -1308,10 +1308,10 @@ CSubNet::CSubNet(const std::string& strSubnet, bool fAllowLookup)
 }
 
 CSubNet::CSubNet(const CNetAddr &addr) :
-	valid(addr.IsValid())
+    valid(addr.IsValid())
 {
-	memset(netmask, 255, sizeof(netmask));
-	network = addr;
+    memset(netmask, 255, sizeof(netmask));
+    network = addr;
 }
 
 bool CSubNet::Match(const CNetAddr& addr) const
@@ -1326,57 +1326,77 @@ bool CSubNet::Match(const CNetAddr& addr) const
 
 static inline int NetmaskBits(uint8_t x)
 {
-	switch (x) {
-	case 0x00: return 0; break;
-	case 0x80: return 1; break;
-	case 0xc0: return 2; break;
-	case 0xe0: return 3; break;
-	case 0xf0: return 4; break;
-	case 0xf8: return 5; break;
-	case 0xfc: return 6; break;
-	case 0xfe: return 7; break;
-	case 0xff: return 8; break;
-	default: return -1; break;
-	}
+    switch (x) {
+    case 0x00:
+        return 0;
+        break;
+    case 0x80:
+        return 1;
+        break;
+    case 0xc0:
+        return 2;
+        break;
+    case 0xe0:
+        return 3;
+        break;
+    case 0xf0:
+        return 4;
+        break;
+    case 0xf8:
+        return 5;
+        break;
+    case 0xfc:
+        return 6;
+        break;
+    case 0xfe:
+        return 7;
+        break;
+    case 0xff:
+        return 8;
+        break;
+    default:
+        return -1;
+        break;
+    }
 }
 
 std::string CSubNet::ToString() const
 {
-	/* Parse binary 1{n}0{N-n} to see if mask can be represented as /n */
-	int cidr = 0;
-	bool valid_cidr = true;
-	int n = network.IsIPv4() ? 12 : 0;
-	for (; n < 16 && netmask[n] == 0xff; ++n)
-		cidr += 8;
-	if (n < 16) {
-		int bits = NetmaskBits(netmask[n]);
-		if (bits < 0)
-			valid_cidr = false;
-		else
-			cidr += bits;
-		++n;
-	}
-	for (; n < 16 && valid_cidr; ++n)
-		if (netmask[n] != 0x00)
-			valid_cidr = false;
+    /* Parse binary 1{n}0{N-n} to see if mask can be represented as /n */
+    int cidr = 0;
+    bool valid_cidr = true;
+    int n = network.IsIPv4() ? 12 : 0;
+    for (; n < 16 && netmask[n] == 0xff; ++n)
+        cidr += 8;
+    if (n < 16) {
+        int bits = NetmaskBits(netmask[n]);
+        if (bits < 0)
+            valid_cidr = false;
+        else
+            cidr += bits;
+        ++n;
+    }
+    for (; n < 16 && valid_cidr; ++n)
+        if (netmask[n] != 0x00)
+            valid_cidr = false;
 
-	/* Format output */
-	std::string strNetmask;
-	if (valid_cidr) {
-		strNetmask = strprintf("%u", cidr);
-	}
-	else {
-		if (network.IsIPv4())
-			strNetmask = strprintf("%u.%u.%u.%u", netmask[12], netmask[13], netmask[14], netmask[15]);
-		else
-			strNetmask = strprintf("%x:%x:%x:%x:%x:%x:%x:%x",
-				netmask[0] << 8 | netmask[1], netmask[2] << 8 | netmask[3],
-				netmask[4] << 8 | netmask[5], netmask[6] << 8 | netmask[7],
-				netmask[8] << 8 | netmask[9], netmask[10] << 8 | netmask[11],
-				netmask[12] << 8 | netmask[13], netmask[14] << 8 | netmask[15]);
-	}
+    /* Format output */
+    std::string strNetmask;
+    if (valid_cidr) {
+        strNetmask = strprintf("%u", cidr);
+    }
+    else {
+        if (network.IsIPv4())
+            strNetmask = strprintf("%u.%u.%u.%u", netmask[12], netmask[13], netmask[14], netmask[15]);
+        else
+            strNetmask = strprintf("%x:%x:%x:%x:%x:%x:%x:%x",
+                                   netmask[0] << 8 | netmask[1], netmask[2] << 8 | netmask[3],
+                                   netmask[4] << 8 | netmask[5], netmask[6] << 8 | netmask[7],
+                                   netmask[8] << 8 | netmask[9], netmask[10] << 8 | netmask[11],
+                                   netmask[12] << 8 | netmask[13], netmask[14] << 8 | netmask[15]);
+    }
 
-	return network.ToString() + "/" + strNetmask;
+    return network.ToString() + "/" + strNetmask;
 }
 
 bool CSubNet::IsValid() const
@@ -1405,8 +1425,8 @@ std::string NetworkErrorString(int err)
     char buf[256];
     buf[0] = 0;
     if (FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_MAX_WIDTH_MASK,
-            NULL, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-            buf, sizeof(buf), NULL)) {
+                       NULL, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+                       buf, sizeof(buf), NULL)) {
         return strprintf("%s (%d)", buf, err);
     } else {
         return strprintf("Unknown error (%d)", err);
@@ -1418,8 +1438,8 @@ std::string NetworkErrorString(int err)
     char buf[256];
     const char* s = buf;
     buf[0] = 0;
-/* Too bad there are two incompatible implementations of the
-     * thread-safe strerror. */
+    /* Too bad there are two incompatible implementations of the
+         * thread-safe strerror. */
 #ifdef STRERROR_R_CHAR_P /* GNU variant can return a pointer outside the passed buffer */
     s = strerror_r(err, buf, sizeof(buf));
 #else                    /* POSIX variant always returns message in buffer */

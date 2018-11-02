@@ -74,13 +74,13 @@ CTxOut::CTxOut(const CAmount& nValueIn, CScript scriptPubKeyIn)
 
 bool COutPoint::IsMasternodeReward(const CTransaction* tx) const
 {
-	if (tx->IsCoinStake())
-		return (n == tx->vout.size() - 1) && (tx->vout[1].scriptPubKey != tx->vout[n].scriptPubKey);
+    if (tx->IsCoinStake())
+        return (n == tx->vout.size() - 1) && (tx->vout[1].scriptPubKey != tx->vout[n].scriptPubKey);
 
-	if (tx->IsCoinBase())
-		return (n == tx->vout.size() - 1);
+    if (tx->IsCoinBase())
+        return (n == tx->vout.size() - 1);
 
-	return false;
+    return false;
 }
 
 uint256 CTxOut::GetHash() const
@@ -105,10 +105,10 @@ std::string CMutableTransaction::ToString() const
 {
     std::string str;
     str += strprintf("CMutableTransaction(ver=%d, vin.size=%u, vout.size=%u, nLockTime=%u)\n",
-        nVersion,
-        vin.size(),
-        vout.size(),
-        nLockTime);
+                     nVersion,
+                     vin.size(),
+                     vout.size(),
+                     nLockTime);
     for (unsigned int i = 0; i < vin.size(); i++)
         str += "    " + vin[i].ToString() + "\n";
     for (unsigned int i = 0; i < vout.size(); i++)
@@ -141,13 +141,13 @@ CAmount CTransaction::GetValueOut() const
     CAmount nValueOut = 0;
     for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
     {
-	if (it->nValue < 0)
-		throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
+        if (it->nValue < 0)
+            throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
 
-	if ((nValueOut + it->nValue) < nValueOut)
-		throw std::runtime_error("CTransaction::GetValueOut() : value out of range : wraps the int64_t boundary");
+        if ((nValueOut + it->nValue) < nValueOut)
+            throw std::runtime_error("CTransaction::GetValueOut() : value out of range : wraps the int64_t boundary");
 
-	nValueOut += it->nValue;
+        nValueOut += it->nValue;
     }
     return nValueOut;
 }
@@ -244,11 +244,11 @@ std::string CTransaction::ToString() const
 {
     std::string str;
     str += strprintf("CTransaction(hash=%s, ver=%d, vin.size=%u, vout.size=%u, nLockTime=%u)\n",
-        GetHash().ToString().substr(0,10),
-        nVersion,
-        vin.size(),
-        vout.size(),
-        nLockTime);
+                     GetHash().ToString().substr(0,10),
+                     nVersion,
+                     vin.size(),
+                     vout.size(),
+                     nLockTime);
     for (unsigned int i = 0; i < vin.size(); i++)
         str += "    " + vin[i].ToString() + "\n";
     for (unsigned int i = 0; i < vout.size(); i++)

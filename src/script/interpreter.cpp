@@ -80,8 +80,8 @@ bool static IsCompressedOrUncompressedPubKey(const valtype &vchPubKey) {
             return false;
         }
     } else {
-          //  Non-canonical public key: neither compressed nor uncompressed
-          return false;
+        //  Non-canonical public key: neither compressed nor uncompressed
+        return false;
     }
     return true;
 }
@@ -91,7 +91,7 @@ bool static IsCompressedOrUncompressedPubKey(const valtype &vchPubKey) {
  * Where R and S are not negative (their first byte has its highest bit not set), and not
  * excessively padded (do not start with a 0 byte, unless an otherwise negative number follows,
  * in which case a single 0 byte is necessary and even required).
- * 
+ *
  * See https://bitcointalk.org/index.php?topic=8392.msg127623#msg127623
  *
  * This function is consensus-critical since BIP66.
@@ -131,7 +131,7 @@ bool static IsValidSignatureEncoding(const std::vector<unsigned char> &sig) {
     // Verify that the length of the signature matches the sum of the length
     // of the elements.
     if ((size_t)(lenR + lenS + 7) != sig.size()) return false;
- 
+
     // Check whether the R element is an integer.
     if (sig[2] != 0x02) return false;
 
@@ -277,20 +277,20 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                 return set_error(serror, SCRIPT_ERR_OP_COUNT);
 
             if (opcode == OP_CAT ||
-                opcode == OP_SUBSTR ||
-                opcode == OP_LEFT ||
-                opcode == OP_RIGHT ||
-                opcode == OP_INVERT ||
-                opcode == OP_AND ||
-                opcode == OP_OR ||
-                opcode == OP_XOR ||
-                opcode == OP_2MUL ||
-                opcode == OP_2DIV ||
-                opcode == OP_MUL ||
-                opcode == OP_DIV ||
-                opcode == OP_MOD ||
-                opcode == OP_LSHIFT ||
-                opcode == OP_RSHIFT)
+                    opcode == OP_SUBSTR ||
+                    opcode == OP_LEFT ||
+                    opcode == OP_RIGHT ||
+                    opcode == OP_INVERT ||
+                    opcode == OP_AND ||
+                    opcode == OP_OR ||
+                    opcode == OP_XOR ||
+                    opcode == OP_2MUL ||
+                    opcode == OP_2DIV ||
+                    opcode == OP_MUL ||
+                    opcode == OP_DIV ||
+                    opcode == OP_MOD ||
+                    opcode == OP_LSHIFT ||
+                    opcode == OP_RSHIFT)
                 return set_error(serror, SCRIPT_ERR_DISABLED_OPCODE); // Disabled opcodes.
 
             if (fExec && 0 <= opcode && opcode <= OP_PUSHDATA4) {
@@ -299,8 +299,8 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                 }
                 stack.push_back(vchPushValue);
             } else if (fExec || (OP_IF <= opcode && opcode <= OP_ENDIF))
-            switch (opcode)
-            {
+                switch (opcode)
+                {
                 //
                 // Push value
                 //
@@ -335,10 +335,18 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                 // Control
                 //
                 case OP_NOP:
-                break;
+                    break;
 
-                case OP_NOP1: case OP_NOP2: case OP_NOP3: case OP_NOP4: case OP_NOP5:
-                case OP_NOP6: case OP_NOP7: case OP_NOP8: case OP_NOP9: case OP_NOP10:
+                case OP_NOP1:
+                case OP_NOP2:
+                case OP_NOP3:
+                case OP_NOP4:
+                case OP_NOP5:
+                case OP_NOP6:
+                case OP_NOP7:
+                case OP_NOP8:
+                case OP_NOP9:
+                case OP_NOP10:
                 {
                     if (flags & SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS)
                         return set_error(serror, SCRIPT_ERR_DISCOURAGE_UPGRADABLE_NOPS);
@@ -616,7 +624,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                 //
                 case OP_EQUAL:
                 case OP_EQUALVERIFY:
-                //case OP_NOTEQUAL: // use OP_NUMNOTEQUAL
+                    //case OP_NOTEQUAL: // use OP_NUMNOTEQUAL
                 {
                     // (x1 x2 - bool)
                     if (stack.size() < 2)
@@ -659,13 +667,27 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                     CScriptNum bn(stacktop(-1), fRequireMinimal);
                     switch (opcode)
                     {
-                    case OP_1ADD:       bn += bnOne; break;
-                    case OP_1SUB:       bn -= bnOne; break;
-                    case OP_NEGATE:     bn = -bn; break;
-                    case OP_ABS:        if (bn < bnZero) bn = -bn; break;
-                    case OP_NOT:        bn = (bn == bnZero); break;
-                    case OP_0NOTEQUAL:  bn = (bn != bnZero); break;
-                    default:            assert(!"invalid opcode"); break;
+                    case OP_1ADD:
+                        bn += bnOne;
+                        break;
+                    case OP_1SUB:
+                        bn -= bnOne;
+                        break;
+                    case OP_NEGATE:
+                        bn = -bn;
+                        break;
+                    case OP_ABS:
+                        if (bn < bnZero) bn = -bn;
+                        break;
+                    case OP_NOT:
+                        bn = (bn == bnZero);
+                        break;
+                    case OP_0NOTEQUAL:
+                        bn = (bn != bnZero);
+                        break;
+                    default:
+                        assert(!"invalid opcode");
+                        break;
                     }
                     popstack(stack);
                     stack.push_back(bn.getvch());
@@ -702,18 +724,42 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                         bn = bn1 - bn2;
                         break;
 
-                    case OP_BOOLAND:             bn = (bn1 != bnZero && bn2 != bnZero); break;
-                    case OP_BOOLOR:              bn = (bn1 != bnZero || bn2 != bnZero); break;
-                    case OP_NUMEQUAL:            bn = (bn1 == bn2); break;
-                    case OP_NUMEQUALVERIFY:      bn = (bn1 == bn2); break;
-                    case OP_NUMNOTEQUAL:         bn = (bn1 != bn2); break;
-                    case OP_LESSTHAN:            bn = (bn1 < bn2); break;
-                    case OP_GREATERTHAN:         bn = (bn1 > bn2); break;
-                    case OP_LESSTHANOREQUAL:     bn = (bn1 <= bn2); break;
-                    case OP_GREATERTHANOREQUAL:  bn = (bn1 >= bn2); break;
-                    case OP_MIN:                 bn = (bn1 < bn2 ? bn1 : bn2); break;
-                    case OP_MAX:                 bn = (bn1 > bn2 ? bn1 : bn2); break;
-                    default:                     assert(!"invalid opcode"); break;
+                    case OP_BOOLAND:
+                        bn = (bn1 != bnZero && bn2 != bnZero);
+                        break;
+                    case OP_BOOLOR:
+                        bn = (bn1 != bnZero || bn2 != bnZero);
+                        break;
+                    case OP_NUMEQUAL:
+                        bn = (bn1 == bn2);
+                        break;
+                    case OP_NUMEQUALVERIFY:
+                        bn = (bn1 == bn2);
+                        break;
+                    case OP_NUMNOTEQUAL:
+                        bn = (bn1 != bn2);
+                        break;
+                    case OP_LESSTHAN:
+                        bn = (bn1 < bn2);
+                        break;
+                    case OP_GREATERTHAN:
+                        bn = (bn1 > bn2);
+                        break;
+                    case OP_LESSTHANOREQUAL:
+                        bn = (bn1 <= bn2);
+                        break;
+                    case OP_GREATERTHANOREQUAL:
+                        bn = (bn1 >= bn2);
+                        break;
+                    case OP_MIN:
+                        bn = (bn1 < bn2 ? bn1 : bn2);
+                        break;
+                    case OP_MAX:
+                        bn = (bn1 > bn2 ? bn1 : bn2);
+                        break;
+                    default:
+                        assert(!"invalid opcode");
+                        break;
                     }
                     popstack(stack);
                     popstack(stack);
@@ -773,7 +819,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
                     popstack(stack);
                     stack.push_back(vchHash);
                 }
-                break;                                   
+                break;
 
                 case OP_CODESEPARATOR:
                 {
@@ -916,7 +962,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, un
 
                 default:
                     return set_error(serror, SCRIPT_ERR_BAD_OPCODE);
-            }
+                }
 
             // Size limits
             if (stack.size() + altstack.size() > 1000)
@@ -1020,12 +1066,12 @@ public:
         unsigned int nInputs = fAnyoneCanPay ? 1 : txTo.vin.size();
         ::WriteCompactSize(s, nInputs);
         for (unsigned int nInput = 0; nInput < nInputs; nInput++)
-             SerializeInput(s, nInput, nType, nVersion);
+            SerializeInput(s, nInput, nType, nVersion);
         // Serialize vout
         unsigned int nOutputs = fHashNone ? 0 : (fHashSingle ? nIn+1 : txTo.vout.size());
         ::WriteCompactSize(s, nOutputs);
         for (unsigned int nOutput = 0; nOutput < nOutputs; nOutput++)
-             SerializeOutput(s, nOutput, nType, nVersion);
+            SerializeOutput(s, nOutput, nType, nVersion);
         // Serialize nLockTime
         ::Serialize(s, txTo.nLockTime, nType, nVersion);
     }

@@ -50,7 +50,9 @@ public:
     CDBEnv();
     ~CDBEnv();
     void MakeMock();
-    bool IsMock() { return fMockDb; }
+    bool IsMock() {
+        return fMockDb;
+    }
 
     /**
      * Verify that database file strFile is OK. If it is not,
@@ -59,8 +61,9 @@ public:
      * Returns true if strFile is OK.
      */
     enum VerifyResult { VERIFY_OK,
-        RECOVER_OK,
-        RECOVER_FAIL };
+                        RECOVER_OK,
+                        RECOVER_FAIL
+                      };
     VerifyResult Verify(std::string strFile, bool (*recoverFunc)(CDBEnv& dbenv, std::string strFile));
     /**
      * Salvage data from a file that Verify says is bad.
@@ -103,7 +106,9 @@ protected:
     bool fReadOnly;
 
     explicit CDB(const std::string& strFilename, const char* pszMode = "r+");
-    ~CDB() { Close(); }
+    ~CDB() {
+        Close();
+    }
 
 public:
     void Flush();

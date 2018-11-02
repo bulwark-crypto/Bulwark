@@ -139,10 +139,10 @@ UniValue masternode(const UniValue& params, bool fHelp)
         strCommand = params[0].get_str();
 
     if (fHelp ||
-        (strCommand != "start" && strCommand != "start-alias" && strCommand != "start-many" && strCommand != "start-all" && strCommand != "start-missing" &&
-            strCommand != "start-disabled" && strCommand != "list" && strCommand != "list-conf" && strCommand != "count" && strCommand != "enforce" &&
-            strCommand != "debug" && strCommand != "current" && strCommand != "winners" && strCommand != "genkey" && strCommand != "connect" &&
-            strCommand != "outputs" && strCommand != "status" && strCommand != "calcscore"))
+            (strCommand != "start" && strCommand != "start-alias" && strCommand != "start-many" && strCommand != "start-all" && strCommand != "start-missing" &&
+             strCommand != "start-disabled" && strCommand != "list" && strCommand != "list-conf" && strCommand != "count" && strCommand != "enforce" &&
+             strCommand != "debug" && strCommand != "current" && strCommand != "winners" && strCommand != "genkey" && strCommand != "connect" &&
+             strCommand != "outputs" && strCommand != "status" && strCommand != "calcscore"))
         throw runtime_error(
             "masternode \"command\"...\n"
             "\nSet of commands to execute masternode related actions\n"
@@ -322,8 +322,8 @@ UniValue listmasternodes(const UniValue& params, bool fHelp)
 
         if (mn != NULL) {
             if (strFilter != "" && strTxHash.find(strFilter) == string::npos &&
-                mn->Status().find(strFilter) == string::npos &&
-                CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
+                    mn->Status().find(strFilter) == string::npos &&
+                    CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
 
             std::string strStatus = mn->Status();
             std::string strHost;
@@ -488,8 +488,8 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
     }
 
     if (fHelp || params.size() < 2 || params.size() > 3 ||
-        (params.size() == 2 && (strCommand != "local" && strCommand != "all" && strCommand != "many" && strCommand != "missing" && strCommand != "disabled")) ||
-        (params.size() == 3 && strCommand != "alias"))
+            (params.size() == 2 && (strCommand != "local" && strCommand != "all" && strCommand != "many" && strCommand != "missing" && strCommand != "disabled")) ||
+            (params.size() == 3 && strCommand != "alias"))
         throw runtime_error(
             "startmasternode \"local|all|many|missing|disabled|alias\" lockwallet ( \"alias\" )\n"
             "\nAttempts to start one or more masternode(s)\n"
@@ -540,8 +540,8 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
             throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
         if ((strCommand == "missing" || strCommand == "disabled") &&
-            (masternodeSync.RequestedMasternodeAssets <= MASTERNODE_SYNC_LIST ||
-                masternodeSync.RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED)) {
+                (masternodeSync.RequestedMasternodeAssets <= MASTERNODE_SYNC_LIST ||
+                 masternodeSync.RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED)) {
             throw runtime_error("You can't use this command until masternode list is synced\n");
         }
 
@@ -742,9 +742,9 @@ UniValue listmasternodeconf (const UniValue& params, bool fHelp)
         std::string strStatus = pmn ? pmn->Status() : "MISSING";
 
         if (strFilter != "" && mne.getAlias().find(strFilter) == string::npos &&
-            mne.getIp().find(strFilter) == string::npos &&
-            mne.getTxHash().find(strFilter) == string::npos &&
-            strStatus.find(strFilter) == string::npos) continue;
+                mne.getIp().find(strFilter) == string::npos &&
+                mne.getTxHash().find(strFilter) == string::npos &&
+                strStatus.find(strFilter) == string::npos) continue;
 
         UniValue mnObj(UniValue::VOBJ);
         mnObj.push_back(Pair("alias", mne.getAlias()));
@@ -892,7 +892,7 @@ UniValue getmasternodewinners (const UniValue& params, bool fHelp)
             obj.push_back(Pair("winner", winner));
         }
 
-            ret.push_back(obj);
+        ret.push_back(obj);
     }
 
     return ret;

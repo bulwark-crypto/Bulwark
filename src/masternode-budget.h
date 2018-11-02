@@ -209,8 +209,12 @@ public:
         mapSeenFinalizedBudgetVotes.clear();
     }
 
-    int sizeFinalized() { return (int)mapFinalizedBudgets.size(); }
-    int sizeProposals() { return (int)mapProposals.size(); }
+    int sizeFinalized() {
+        return (int)mapFinalizedBudgets.size();
+    }
+    int sizeProposals() {
+        return (int)mapProposals.size();
+    }
 
     void ResetSync();
     void MarkSynced();
@@ -334,11 +338,19 @@ public:
 
     bool IsValid(std::string& strError, bool fCheckCollateral = true);
 
-    std::string GetName() { return strBudgetName; }
+    std::string GetName() {
+        return strBudgetName;
+    }
     std::string GetProposals();
-    int GetBlockStart() { return nBlockStart; }
-    int GetBlockEnd() { return nBlockStart + (int)(vecBudgetPayments.size() - 1); }
-    int GetVoteCount() { return (int)mapVotes.size(); }
+    int GetBlockStart() {
+        return nBlockStart;
+    }
+    int GetBlockEnd() {
+        return nBlockStart + (int)(vecBudgetPayments.size() - 1);
+    }
+    int GetVoteCount() {
+        return (int)mapVotes.size();
+    }
     bool IsTransactionValid(const CTransaction& txNew, int nBlockHeight);
     bool GetBudgetPaymentByBlock(int64_t nBlockHeight, CTxBudgetPayment& payment)
     {
@@ -499,11 +511,21 @@ public:
         return (nTime < GetTime() - (60 * 30 * 2));
     }
 
-    std::string GetName() { return strProposalName; }
-    std::string GetURL() { return strURL; }
-    int GetBlockStart() { return nBlockStart; }
-    int GetBlockEnd() { return nBlockEnd; }
-    CScript GetPayee() { return address; }
+    std::string GetName() {
+        return strProposalName;
+    }
+    std::string GetURL() {
+        return strURL;
+    }
+    int GetBlockStart() {
+        return nBlockStart;
+    }
+    int GetBlockEnd() {
+        return nBlockEnd;
+    }
+    CScript GetPayee() {
+        return address;
+    }
     int GetTotalPaymentCount();
     int GetRemainingPaymentCount();
     int GetBlockStartCycle();
@@ -513,9 +535,15 @@ public:
     int GetYeas();
     int GetNays();
     int GetAbstains();
-    CAmount GetAmount() { return nAmount; }
-    void SetAllotted(CAmount nAllotedIn) { nAlloted = nAllotedIn; }
-    CAmount GetAllotted() { return nAlloted; }
+    CAmount GetAmount() {
+        return nAmount;
+    }
+    void SetAllotted(CAmount nAllotedIn) {
+        nAlloted = nAllotedIn;
+    }
+    CAmount GetAllotted() {
+        return nAlloted;
+    }
 
     void CleanAndRemove(bool fSignatureCheck);
 

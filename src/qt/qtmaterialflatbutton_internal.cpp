@@ -41,7 +41,7 @@ QtMaterialFlatButtonStateMachine::QtMaterialFlatButtonStateMachine(QtMaterialFla
     setInitialState(m_topLevelState);
 
     m_checkableState->setInitialState(parent->isChecked() ? m_checkedState
-                                                          : m_uncheckedState);
+                                      : m_uncheckedState);
     QtMaterialStateTransition *transition;
     QPropertyAnimation *animation;
 
@@ -187,7 +187,7 @@ void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
 }
 
 bool QtMaterialFlatButtonStateMachine::eventFilter(QObject *watched,
-                                                   QEvent  *event)
+        QEvent  *event)
 {
     if (QEvent::FocusIn == event->type()) {
         QFocusEvent *focusEvent = static_cast<QFocusEvent *>(event);
@@ -200,16 +200,16 @@ bool QtMaterialFlatButtonStateMachine::eventFilter(QObject *watched,
 }
 
 void QtMaterialFlatButtonStateMachine::addTransition(QObject *object,
-                                                     QEvent::Type eventType,
-                                                     QState *fromState,
-                                                     QState *toState)
+        QEvent::Type eventType,
+        QState *fromState,
+        QState *toState)
 {
     addTransition(new QEventTransition(object, eventType), fromState, toState);
 }
 
 void QtMaterialFlatButtonStateMachine::addTransition(QAbstractTransition *transition,
-                                                     QState *fromState,
-                                                     QState *toState)
+        QState *fromState,
+        QState *toState)
 {
     transition->setTargetState(toState);
 

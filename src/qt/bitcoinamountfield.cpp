@@ -24,8 +24,8 @@ class AmountSpinBox : public QAbstractSpinBox
 
 public:
     explicit AmountSpinBox(QWidget* parent) : QAbstractSpinBox(parent),
-                                              currentUnit(BitcoinUnits::BWK),
-                                              singleStep(100000) // satoshis
+        currentUnit(BitcoinUnits::BWK),
+        singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignRight);
 
@@ -181,7 +181,7 @@ signals:
 #include "bitcoinamountfield.moc"
 
 BitcoinAmountField::BitcoinAmountField(QWidget* parent) : QWidget(parent),
-                                                          amount(0)
+    amount(0)
 {
     this->setObjectName("BitcoinAmountField"); // ID as CSS-reference
     // For whatever reasons the Gods of Qt-CSS-manipulation won't let us change this class' stylesheet in the CSS file.

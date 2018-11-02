@@ -62,8 +62,8 @@ string EncodeHexTx(const CTransaction& tx)
 }
 
 void ScriptPubKeyToUniv(const CScript& scriptPubKey,
-    UniValue& out,
-    bool fIncludeHex)
+                        UniValue& out,
+                        bool fIncludeHex)
 {
     txnouttype type;
     vector<CTxDestination> addresses;
@@ -83,7 +83,7 @@ void ScriptPubKeyToUniv(const CScript& scriptPubKey,
 
     UniValue a(UniValue::VARR);
     BOOST_FOREACH (const CTxDestination& addr, addresses)
-        a.push_back(CBitcoinAddress(addr).ToString());
+    a.push_back(CBitcoinAddress(addr).ToString());
     out.pushKV("addresses", a);
 }
 

@@ -38,7 +38,8 @@ static void secp256k1_ecmult_gen_start(void) {
 
     /* get the generator */
     const secp256k1_ge_t *g = &secp256k1_ge_consts->g;
-    secp256k1_gej_t gj; secp256k1_gej_set_ge(&gj, g);
+    secp256k1_gej_t gj;
+    secp256k1_gej_set_ge(&gj, g);
 
     /* Construct a group element with no known corresponding scalar (nothing up my sleeve). */
     secp256k1_gej_t nums_gej;
@@ -57,8 +58,10 @@ static void secp256k1_ecmult_gen_start(void) {
     secp256k1_ge_t prec[1024];
     {
         secp256k1_gej_t precj[1024]; /* Jacobian versions of prec. */
-        secp256k1_gej_t gbase; gbase = gj; /* 16^j * G */
-        secp256k1_gej_t numsbase; numsbase = nums_gej; /* 2^j * nums. */
+        secp256k1_gej_t gbase;
+        gbase = gj; /* 16^j * G */
+        secp256k1_gej_t numsbase;
+        numsbase = nums_gej; /* 2^j * nums. */
         for (int j=0; j<64; j++) {
             /* Set precj[j*16 .. j*16+15] to (numsbase, numsbase + gbase, ..., numsbase + 15*gbase). */
             precj[j*16] = numsbase;

@@ -15,7 +15,7 @@
 #include <QUrl>
 
 OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent),
-                                                ui(new Ui::OpenURIDialog)
+    ui(new Ui::OpenURIDialog)
 {
     ui->setupUi(this);
 #if QT_VERSION >= 0x040700
@@ -45,7 +45,7 @@ void OpenURIDialog::on_acceptButton_clicked()
 }
 
 void OpenURIDialog::on_cancelButton_clicked() {
-	this->close();
+    this->close();
 }
 
 void OpenURIDialog::on_selectFileButton_clicked()

@@ -55,7 +55,7 @@ class TransactionTablePriv
 {
 public:
     TransactionTablePriv(CWallet* wallet, TransactionTableModel* parent) : wallet(wallet),
-                                                                           parent(parent)
+        parent(parent)
     {
     }
 
@@ -94,9 +94,9 @@ public:
 
         // Find bounds of this transaction in model
         QList<TransactionRecord>::iterator lower = qLowerBound(
-            cachedWallet.begin(), cachedWallet.end(), hash, TxLessThan());
+                    cachedWallet.begin(), cachedWallet.end(), hash, TxLessThan());
         QList<TransactionRecord>::iterator upper = qUpperBound(
-            cachedWallet.begin(), cachedWallet.end(), hash, TxLessThan());
+                    cachedWallet.begin(), cachedWallet.end(), hash, TxLessThan());
         int lowerIndex = (lower - cachedWallet.begin());
         int upperIndex = (upper - cachedWallet.begin());
         bool inModel = (lower != upper);
@@ -109,8 +109,8 @@ public:
         }
 
         qDebug() << "    inModel=" + QString::number(inModel) +
-                        " Index=" + QString::number(lowerIndex) + "-" + QString::number(upperIndex) +
-                        " showTransaction=" + QString::number(showTransaction) + " derivedStatus=" + QString::number(status);
+                 " Index=" + QString::number(lowerIndex) + "-" + QString::number(upperIndex) +
+                 " showTransaction=" + QString::number(showTransaction) + " derivedStatus=" + QString::number(status);
 
         switch (status) {
         case CT_NEW:
@@ -205,10 +205,10 @@ public:
 };
 
 TransactionTableModel::TransactionTableModel(CWallet* wallet, WalletModel* parent) : QAbstractTableModel(parent),
-                                                                                     wallet(wallet),
-                                                                                     walletModel(parent),
-                                                                                     priv(new TransactionTablePriv(wallet, this)),
-                                                                                     fProcessingQueuedTransactions(false)
+    wallet(wallet),
+    walletModel(parent),
+    priv(new TransactionTablePriv(wallet, this)),
+    fProcessingQueuedTransactions(false)
 {
     columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
     priv->refreshWallet();
@@ -510,7 +510,7 @@ QString TransactionTableModel::formatTooltip(const TransactionRecord* rec) const
 {
     QString tooltip = formatTxStatus(rec) + QString("\n") + formatTxType(rec);
     if (rec->type == TransactionRecord::RecvFromOther || rec->type == TransactionRecord::SendToOther ||
-        rec->type == TransactionRecord::SendToAddress || rec->type == TransactionRecord::RecvWithAddress || rec->type == TransactionRecord::MNReward) {
+            rec->type == TransactionRecord::SendToAddress || rec->type == TransactionRecord::RecvWithAddress || rec->type == TransactionRecord::MNReward) {
         tooltip += QString(" ") + formatTxToAddress(rec, true);
     }
     return tooltip;
@@ -671,9 +671,9 @@ public:
         QString strHash = QString::fromStdString(hash.GetHex());
         qDebug() << "NotifyTransactionChanged : " + strHash + " status= " + QString::number(status);
         QMetaObject::invokeMethod(ttm, "updateTransaction", Qt::QueuedConnection,
-            Q_ARG(QString, strHash),
-            Q_ARG(int, status),
-            Q_ARG(bool, showTransaction));
+                                  Q_ARG(QString, strHash),
+                                  Q_ARG(int, status),
+                                  Q_ARG(bool, showTransaction));
     }
 
 private:

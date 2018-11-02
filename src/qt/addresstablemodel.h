@@ -73,7 +73,9 @@ public:
      */
     int lookupAddress(const QString& address) const;
 
-    EditStatus getEditStatus() const { return editStatus; }
+    EditStatus getEditStatus() const {
+        return editStatus;
+    }
 
 private:
     WalletModel* walletModel;

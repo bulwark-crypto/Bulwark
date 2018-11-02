@@ -33,10 +33,10 @@
 #include <QTimer>
 
 OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(parent),
-                                                                   ui(new Ui::OptionsDialog),
-                                                                   model(0),
-                                                                   mapper(0),
-                                                                   fProxyIpValid(true)
+    ui(new Ui::OptionsDialog),
+    model(0),
+    mapper(0),
+    fProxyIpValid(true)
 {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nOptionsDialogWindow", this->size(), this);
@@ -47,7 +47,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->threadsScriptVerif->setMinimum(-(int)boost::thread::hardware_concurrency());
     ui->threadsScriptVerif->setMaximum(MAX_SCRIPTCHECK_THREADS);
 
-/* Network elements init */
+    /* Network elements init */
 #ifndef USE_UPNP
     ui->mapPortUpnp->setEnabled(false);
 #endif
@@ -61,7 +61,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
 
     ui->proxyIp->installEventFilter(this);
 
-/* Window elements init */
+    /* Window elements init */
 #ifdef Q_OS_MAC
     /* remove Window tab on Mac */
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWindow));
@@ -177,7 +177,7 @@ void OptionsDialog::setModel(OptionsModel* model)
     connect(ui->threadsScriptVerif, SIGNAL(valueChanged(int)), this, SLOT(showRestartWarning()));
     /* Wallet */
     connect(ui->spendZeroConfChange, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
-	connect(ui->showOrphans, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+    connect(ui->showOrphans, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     /* Network */
     connect(ui->allowIncoming, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     connect(ui->connectSocks, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
@@ -202,7 +202,7 @@ void OptionsDialog::setMapper()
 
     /* Wallet */
     mapper->addMapping(ui->spendZeroConfChange, OptionsModel::SpendZeroConfChange);
-	mapper->addMapping(ui->showOrphans, OptionsModel::ShowOrphans);
+    mapper->addMapping(ui->showOrphans, OptionsModel::ShowOrphans);
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
 
     /* Network */
@@ -253,8 +253,8 @@ void OptionsDialog::on_resetButton_clicked()
     if (model) {
         // confirmation dialog
         QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
-            tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
-            QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+                                                tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
+                                                QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
 
         if (btnRetVal == QMessageBox::Cancel)
             return;

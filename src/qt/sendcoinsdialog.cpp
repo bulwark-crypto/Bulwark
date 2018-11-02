@@ -31,11 +31,11 @@
 #include <QTextDocument>
 
 SendCoinsDialog::SendCoinsDialog(QWidget* parent) : QDialog(parent),
-                                                    ui(new Ui::SendCoinsDialog),
-                                                    clientModel(0),
-                                                    model(0),
-                                                    fNewRecipientAllowed(true),
-                                                    fFeeMinimized(true)
+    ui(new Ui::SendCoinsDialog),
+    clientModel(0),
+    model(0),
+    fNewRecipientAllowed(true),
+    fFeeMinimized(true)
 {
     ui->setupUi(this);
 
@@ -164,8 +164,8 @@ void SendCoinsDialog::setModel(WalletModel* model)
         setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance(),
                    model->getZerocoinBalance (), model->getUnconfirmedZerocoinBalance (), model->getImmatureZerocoinBalance (),
                    model->getWatchBalance(), model->getWatchUnconfirmedBalance(), model->getWatchImmatureBalance());
-        connect(model, SIGNAL(balanceChanged(CAmount, CAmount,  CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount)), this, 
-                         SLOT(setBalance(CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount)));
+        connect(model, SIGNAL(balanceChanged(CAmount, CAmount,  CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount)), this,
+                SLOT(setBalance(CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount)));
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
         updateDisplayUnit();
 
@@ -231,8 +231,8 @@ void SendCoinsDialog::on_sendButton_clicked()
             CoinControlDialog::coinControl->fSplitBlock = false;
             ui->splitBlockCheckBox->setCheckState(Qt::Unchecked);
             QMessageBox::warning(this, tr("Send Coins"),
-                tr("The split block tool does not work when sending to outside addresses. Try again."),
-                QMessageBox::Ok, QMessageBox::Ok);
+                                 tr("The split block tool does not work when sending to outside addresses. Try again."),
+                                 QMessageBox::Ok, QMessageBox::Ok);
             return;
         }
 
@@ -256,8 +256,8 @@ void SendCoinsDialog::on_sendButton_clicked()
         CoinControlDialog::coinControl->fSplitBlock = false;
         ui->splitBlockCheckBox->setCheckState(Qt::Unchecked);
         QMessageBox::warning(this, tr("Send Coins"),
-            tr("The split block tool does not work with multiple addresses. Try again."),
-            QMessageBox::Ok, QMessageBox::Ok);
+                             tr("The split block tool does not work with multiple addresses. Try again."),
+                             QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
 
@@ -349,7 +349,7 @@ void SendCoinsDialog::send(QList<SendCoinsRecipient> recipients, QString strFee,
 
     // process prepareStatus and on error generate message shown to user
     processSendCoinsReturn(prepareStatus,
-        BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), currentTransaction.getTransactionFee()), true);
+                           BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), currentTransaction.getTransactionFee()), true);
 
     if (prepareStatus.status != WalletModel::OK) {
         fNewRecipientAllowed = true;
@@ -384,8 +384,8 @@ void SendCoinsDialog::send(QList<SendCoinsRecipient> recipients, QString strFee,
 
     // Show total amount + all alternative units
     questionString.append(tr("Total Amount = <b>%1</b><br />= %2")
-                              .arg(BitcoinUnits::formatHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), totalAmount))
-                              .arg(alternativeUnits.join("<br />= ")));
+                          .arg(BitcoinUnits::formatHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), totalAmount))
+                          .arg(alternativeUnits.join("<br />= ")));
 
     // Limit number of displayed entries
     int messageEntries = formatted.size();
@@ -403,9 +403,9 @@ void SendCoinsDialog::send(QList<SendCoinsRecipient> recipients, QString strFee,
 
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm send coins"),
-        questionString.arg(formatted.join("<br />")),
-        QMessageBox::Yes | QMessageBox::Cancel,
-        QMessageBox::Cancel);
+                                         questionString.arg(formatted.join("<br />")),
+                                         QMessageBox::Yes | QMessageBox::Cancel,
+                                         QMessageBox::Cancel);
 
     if (retval != QMessageBox::Yes) {
         fNewRecipientAllowed = true;
@@ -431,7 +431,7 @@ void SendCoinsDialog::clear()
     while (ui->entries->count()) {
         ui->entries->takeAt(0)->widget()->deleteLater();
     }
-    addEntry(); 
+    addEntry();
 
     updateTabsAndLabels();
 
@@ -552,7 +552,7 @@ bool SendCoinsDialog::handlePaymentRequest(const SendCoinsRecipient& rv)
     return true;
 }
 
-void SendCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
+void SendCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
                                  const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                                  const CAmount& watchBalance, const CAmount& watchUnconfirmedBalance, const CAmount& watchImmatureBalance)
 {
@@ -577,7 +577,7 @@ void SendCoinsDialog::updateDisplayUnit()
     TRY_LOCK(cs_main, lockMain);
     if (!lockMain) return;
 
-    setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance(), 
+    setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance(),
                model->getZerocoinBalance (), model->getUnconfirmedZerocoinBalance (), model->getImmatureZerocoinBalance (),
                model->getWatchBalance(), model->getWatchUnconfirmedBalance(), model->getWatchImmatureBalance());
     coinControlUpdateLabels();
@@ -597,7 +597,7 @@ void SendCoinsDialog::updateSwiftTX()
 void SendCoinsDialog::processSendCoinsReturn(const WalletModel::SendCoinsReturn& sendCoinsReturn, const QString& msgArg, bool fPrepare)
 {
     bool fAskForUnlock = false;
-    
+
     QPair<QString, CClientUIInterface::MessageBoxFlags> msgParams;
     // Default to a warning message, override if error message is needed
     msgParams.second = CClientUIInterface::MSG_WARNING;

@@ -304,7 +304,7 @@ void QtMaterialTextField::paintEvent(QPaintEvent *event)
         pen.setWidth(1);
         pen.setColor(inputLineColor());
 
-        if (!isEnabled()) 
+        if (!isEnabled())
             pen.setStyle(Qt::DashLine);
 
         painter.setPen(pen);

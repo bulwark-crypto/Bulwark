@@ -44,7 +44,9 @@ public:
     ~AddressBookPage();
 
     void setModel(AddressTableModel* model);
-    const QString& getReturnValue() const { return returnValue; }
+    const QString& getReturnValue() const {
+        return returnValue;
+    }
 
 public slots:
     void done(int retval);

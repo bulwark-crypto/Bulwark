@@ -40,7 +40,7 @@ const size_t POST_READ_SIZE = 256 * 1024;
 
 /**
  * HTTP protocol
- * 
+ *
  * This ain't Apache.  We're just using HTTP header for the length field
  * and to be compatible with other JSON-RPC implementations.
  */
@@ -56,7 +56,7 @@ string HTTPPost(const string& strMsg, const map<string, string>& mapRequestHeade
       << "Connection: close\r\n"
       << "Accept: application/json\r\n";
     BOOST_FOREACH (const PAIRTYPE(string, string) & item, mapRequestHeaders)
-        s << item.first << ": " << item.second << "\r\n";
+    s << item.first << ": " << item.second << "\r\n";
     s << "\r\n"
       << strMsg;
 
@@ -105,29 +105,29 @@ string HTTPError(int nStatus, bool keepalive, bool headersOnly)
                          "</HEAD>\r\n"
                          "<BODY><H1>401 Unauthorized.</H1></BODY>\r\n"
                          "</HTML>\r\n",
-            rfc1123Time(), FormatFullVersion());
+                         rfc1123Time(), FormatFullVersion());
 
     return HTTPReply(nStatus, httpStatusDescription(nStatus), keepalive,
-        headersOnly, "text/plain");
+                     headersOnly, "text/plain");
 }
 
 string HTTPReplyHeader(int nStatus, bool keepalive, size_t contentLength, const char* contentType)
 {
     return strprintf(
-        "HTTP/1.1 %d %s\r\n"
-        "Date: %s\r\n"
-        "Connection: %s\r\n"
-        "Content-Length: %u\r\n"
-        "Content-Type: %s\r\n"
-        "Server: bulwark-json-rpc/%s\r\n"
-        "\r\n",
-        nStatus,
-        httpStatusDescription(nStatus),
-        rfc1123Time(),
-        keepalive ? "keep-alive" : "close",
-        contentLength,
-        contentType,
-        FormatFullVersion());
+               "HTTP/1.1 %d %s\r\n"
+               "Date: %s\r\n"
+               "Connection: %s\r\n"
+               "Content-Length: %u\r\n"
+               "Content-Type: %s\r\n"
+               "Server: bulwark-json-rpc/%s\r\n"
+               "\r\n",
+               nStatus,
+               httpStatusDescription(nStatus),
+               rfc1123Time(),
+               keepalive ? "keep-alive" : "close",
+               contentLength,
+               contentType,
+               FormatFullVersion());
 }
 
 string HTTPReply(int nStatus, const string& strMsg, bool keepalive, bool headersOnly, const char* contentType)
@@ -254,7 +254,7 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
  * JSON-RPC protocol.  Bulwark speaks version 1.0 for maximum compatibility,
  * but uses JSON-RPC 1.1/2.0 standards for parts of the 1.0 standard that were
  * unspecified (HTTP errors and contents of 'error').
- * 
+ *
  * 1.0 spec: http://json-rpc.org/wiki/specification
  * 1.2 spec: http://jsonrpc.org/historical/json-rpc-over-http.html
  * http://www.codeproject.com/KB/recipes/JSON_Spirit.aspx

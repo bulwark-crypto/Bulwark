@@ -25,7 +25,8 @@ static const struct {
     {"macosx", false, false, true},
     {"windows", true, false, false},
     /* Other: linux, unix, ... */
-    {"other", true, false, false}};
+    {"other", true, false, false}
+};
 static const unsigned platform_styles_count = sizeof(platform_styles) / sizeof(*platform_styles);
 
 namespace
@@ -70,11 +71,11 @@ QIcon ColorizeIcon(const QString& filename, const QColor& colorbase)
 
 
 PlatformStyle::PlatformStyle(const QString& name, bool imagesOnButtons, bool colorizeIcons, bool useExtraSpacing) : name(name),
-                                                                                                                    imagesOnButtons(imagesOnButtons),
-                                                                                                                    colorizeIcons(colorizeIcons),
-                                                                                                                    useExtraSpacing(useExtraSpacing),
-                                                                                                                    singleColor(0, 0, 0),
-                                                                                                                    textColor(0, 0, 0)
+    imagesOnButtons(imagesOnButtons),
+    colorizeIcons(colorizeIcons),
+    useExtraSpacing(useExtraSpacing),
+    singleColor(0, 0, 0),
+    textColor(0, 0, 0)
 {
     // Determine icon highlighting color
     if (colorizeIcons) {
@@ -129,10 +130,10 @@ const PlatformStyle* PlatformStyle::instantiate(const QString& platformId)
     for (unsigned x = 0; x < platform_styles_count; ++x) {
         if (platformId == platform_styles[x].platformId) {
             return new PlatformStyle(
-                platform_styles[x].platformId,
-                platform_styles[x].imagesOnButtons,
-                platform_styles[x].colorizeIcons,
-                platform_styles[x].useExtraSpacing);
+                       platform_styles[x].platformId,
+                       platform_styles[x].imagesOnButtons,
+                       platform_styles[x].colorizeIcons,
+                       platform_styles[x].useExtraSpacing);
         }
     }
     return 0;

@@ -50,7 +50,8 @@ void ShutdownRPCMining()
     if (!pMiningKey)
         return;
 
-    delete pMiningKey; pMiningKey = NULL;
+    delete pMiningKey;
+    pMiningKey = NULL;
 }
 #else
 void InitRPCMining()
@@ -184,7 +185,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
         int nGenerate = (nGenProcLimit > 0 ? nGenProcLimit : 1);
         CReserveKey reservekey(pwalletMain);
 
-        { // Don't keep cs_main locked
+        {   // Don't keep cs_main locked
             LOCK(cs_main);
             nHeightStart = chainActive.Height();
             nHeight = nHeightStart;
@@ -511,7 +512,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     static int64_t nStart;
     static CBlockTemplate* pblocktemplate;
     if (pindexPrev != chainActive.Tip() ||
-        (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 5)) {
+            (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 5)) {
         // Clear pindexPrev so future calls make a new block, despite any failures from here on
         pindexPrev = NULL;
 
@@ -526,7 +527,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
             pblocktemplate = NULL;
         }
 
-	    CScript scriptDummy = CScript() << OP_TRUE;
+        CScript scriptDummy = CScript() << OP_TRUE;
         pblocktemplate = CreateNewBlock(scriptDummy, pwalletMain, false);
         if (!pblocktemplate)
             throw JSONRPCError(RPC_OUT_OF_MEMORY, "Out of memory");
@@ -534,15 +535,16 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
         // Need to update only after we know CreateNewBlock succeeded
         pindexPrev = pindexPrevNew;
     }
-	
-	
+
+
     CBlock* pblock = &pblocktemplate->block; // pointer for convenience
 
     // Update nTime
     UpdateTime(pblock, pindexPrev);
     pblock->nNonce = 0;
 
-    UniValue aCaps(UniValue::VARR); aCaps.push_back("proposal");
+    UniValue aCaps(UniValue::VARR);
+    aCaps.push_back("proposal");
 
     UniValue transactions(UniValue::VARR);
     map<uint256, int64_t> setTxIndex;
@@ -573,37 +575,37 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
 
         transactions.push_back(entry);
     }
-	
-	UniValue coinbasetxn(UniValue::VARR);
+
+    UniValue coinbasetxn(UniValue::VARR);
     map<uint256, int64_t> setTxIndex1;
     int j = 0;
     BOOST_FOREACH (CTransaction& tx, pblock->vtx) {//Incase if multi coinbase
-		if(tx.IsCoinBase()){
-			uint256 txHash = tx.GetHash();
-			setTxIndex1[txHash] = j++;
+        if(tx.IsCoinBase()) {
+            uint256 txHash = tx.GetHash();
+            setTxIndex1[txHash] = j++;
 
-			/* if (tx.IsCoinBase())
+            /* if (tx.IsCoinBase())
             continue; */
 
-			UniValue entry(UniValue::VOBJ);
+            UniValue entry(UniValue::VOBJ);
 
-			entry.push_back(Pair("data", EncodeHexTx(tx)));
+            entry.push_back(Pair("data", EncodeHexTx(tx)));
 
-			entry.push_back(Pair("hash", txHash.GetHex()));
+            entry.push_back(Pair("hash", txHash.GetHex()));
 
-			UniValue deps(UniValue::VARR);
-			BOOST_FOREACH (const CTxIn& in, tx.vin) {
-				if (setTxIndex.count(in.prevout.hash))
-                deps.push_back(setTxIndex[in.prevout.hash]);
-			}
-			entry.push_back(Pair("depends", deps));
+            UniValue deps(UniValue::VARR);
+            BOOST_FOREACH (const CTxIn& in, tx.vin) {
+                if (setTxIndex.count(in.prevout.hash))
+                    deps.push_back(setTxIndex[in.prevout.hash]);
+            }
+            entry.push_back(Pair("depends", deps));
 
-			int index_in_template = j - 1;
-			entry.push_back(Pair("fee", pblocktemplate->vTxFees[index_in_template]));
-			entry.push_back(Pair("sigops", pblocktemplate->vTxSigOps[index_in_template]));
+            int index_in_template = j - 1;
+            entry.push_back(Pair("fee", pblocktemplate->vTxFees[index_in_template]));
+            entry.push_back(Pair("sigops", pblocktemplate->vTxSigOps[index_in_template]));
 
-			coinbasetxn.push_back(entry);
-		}
+            coinbasetxn.push_back(entry);
+        }
     }
 
     UniValue aux(UniValue::VOBJ);
@@ -627,7 +629,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     result.push_back(Pair("transactions", transactions));
     result.push_back(Pair("coinbaseaux", aux));
     result.push_back(Pair("coinbasevalue", (int64_t)pblock->vtx[0].GetValueOut()));
-	result.push_back(Pair("coinbasetxn", coinbasetxn[0]));
+    result.push_back(Pair("coinbasetxn", coinbasetxn[0]));
     result.push_back(Pair("longpollid", chainActive.Tip()->GetBlockHash().GetHex() + i64tostr(nTransactionsUpdatedLast)));
     result.push_back(Pair("target", hashTarget.GetHex()));
     result.push_back(Pair("mintime", (int64_t)pindexPrev->GetMedianTimePast() + 1));
@@ -665,7 +667,7 @@ public:
     bool found;
     CValidationState state;
 
-    submitblock_StateCatcher(const uint256& hashIn) : hash(hashIn), found(false), state(){};
+    submitblock_StateCatcher(const uint256& hashIn) : hash(hashIn), found(false), state() {};
 
 protected:
     virtual void BlockChecked(const CBlock& block, const CValidationState& stateIn)

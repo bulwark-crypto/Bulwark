@@ -22,7 +22,7 @@ BOOST_AUTO_TEST_CASE(zcparams_test)
     cout << "Running zcparams_test...\n";
 
     bool fPassed = true;
-    try{
+    try {
         SelectParams(CBaseChainParams::MAIN);
         ZerocoinParams *ZCParams = Params().Zerocoin_Params();
         (void)ZCParams;
@@ -34,11 +34,11 @@ BOOST_AUTO_TEST_CASE(zcparams_test)
 }
 
 std::string zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
-    "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
-    "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
-    "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
-    "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
-    "31438167899885040445364023527381951378636564391212010397122822120720357";
+                              "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
+                              "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
+                              "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
+                              "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
+                              "31438167899885040445364023527381951378636564391212010397122822120720357";
 CBigNum bnTrustedModulus(zerocoinModulus);
 libzerocoin::ZerocoinParams zerocoinParams = libzerocoin::ZerocoinParams(bnTrustedModulus);
 
@@ -69,7 +69,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinmint_test)
 
     CValidationState state;
     bool fFoundMint = false;
-    for(unsigned int i = 0; i < tx.vout.size(); i++){
+    for(unsigned int i = 0; i < tx.vout.size(); i++) {
         if(!tx.vout[i].scriptPubKey.empty() && tx.vout[i].scriptPubKey.IsZerocoinMint()) {
             BOOST_CHECK(CheckZerocoinMint(tx.GetHash(), tx.vout[i], state, true));
             fFoundMint = true;
@@ -82,7 +82,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinmint_test)
 bool CheckZerocoinSpendNoDB(const CTransaction tx, string& strError)
 {
     //max needed non-mint outputs should be 2 - one for redemption address and a possible 2nd for change
-    if (tx.vout.size() > 2){
+    if (tx.vout.size() > 2) {
         int outs = 0;
         for (const CTxOut out : tx.vout) {
             if (out.IsZerocoinMint())
@@ -155,8 +155,8 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, string& strError)
         serials.insert(newSpend.getCoinSerialNumber());
 
         //cannot check this without database
-       // if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
-       //     return state.DoS(100, error("Zerocoinspend is already known"));
+        // if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
+        //     return state.DoS(100, error("Zerocoinspend is already known"));
 
         //make sure that there is no over redemption of coins
         nTotalRedeemed += ZerocoinDenominationToAmount(newSpend.getDenomination());
@@ -191,7 +191,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinspend_test)
         CTransaction tx;
         BOOST_CHECK_MESSAGE(DecodeHexTx(tx, raw.first), "Failed to deserialize hex transaction");
 
-        for(const CTxOut out : tx.vout){
+        for(const CTxOut out : tx.vout) {
             if(!out.scriptPubKey.empty() && out.scriptPubKey.IsZerocoinMint()) {
                 PublicCoin publicCoin(Params().Zerocoin_Params());
                 BOOST_CHECK_MESSAGE(TxOutToPublicCoin(out, publicCoin, state), "Failed to convert CTxOut " << out.ToString() << " to PublicCoin");
@@ -251,7 +251,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinspend_test)
         cout << state.GetRejectCode() << endl;
         BOOST_CHECK_MESSAGE(false, strError);
     }
-    
+
     /**check an overspend*/
     CTxOut txOutOverSpend(100 * COIN, script);
     CTransaction txOverSpend;
@@ -341,7 +341,7 @@ BOOST_AUTO_TEST_CASE(checksum_tests)
     BOOST_CHECK_MESSAGE(checksum == uint256("a3219ef1abcdef00101029f3aaaaaeeeffffffffbbbbbbbb11111111eeeeeeee"), "checksum not properly concatenated");
 
     int i = 0;
-    for (auto& denom : zerocoinDenomList){
+    for (auto& denom : zerocoinDenomList) {
         uint32_t checksumParsed = ParseChecksum(checksum, denom);
         BOOST_CHECK_MESSAGE(checksumParsed == vChecksums[i], "checksum parse failed");
         i++;

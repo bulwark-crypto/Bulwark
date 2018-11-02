@@ -84,7 +84,9 @@ public:
     Qt::ItemFlags flags(const QModelIndex& index) const;
     /*@}*/
 
-    const RecentRequestEntry& entry(int row) const { return list[row]; }
+    const RecentRequestEntry& entry(int row) const {
+        return list[row];
+    }
     void addNewRequest(const SendCoinsRecipient& recipient);
     void addNewRequest(const std::string& recipient);
     void addNewRequest(RecentRequestEntry& recipient);

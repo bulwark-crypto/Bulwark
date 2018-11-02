@@ -67,9 +67,9 @@ BOOST_AUTO_TEST_CASE(test_LockedPageManagerBase)
     BOOST_CHECK(last_lock_addr == reinterpret_cast<void*>(test_page_size*(1200+500-1)));
 
     BOOST_CHECK(lpm.GetLockedPageCount() == (
-        (1000*33+test_page_size-1)/test_page_size + // small objects
-        101 + 100 +  // page-sized objects
-        501 + 500)); // large objects
+                    (1000*33+test_page_size-1)/test_page_size + // small objects
+                    101 + 100 +  // page-sized objects
+                    501 + 500)); // large objects
     BOOST_CHECK((last_lock_len & (test_page_size-1)) == 0); // always lock entire pages
     BOOST_CHECK(last_unlock_len == 0); // nothing unlocked yet
 

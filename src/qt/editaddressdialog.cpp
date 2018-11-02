@@ -15,10 +15,10 @@
 #include <QMessageBox>
 
 EditAddressDialog::EditAddressDialog(Mode mode, QWidget* parent) : QDialog(parent),
-                                                                   ui(new Ui::EditAddressDialog),
-                                                                   mapper(0),
-                                                                   mode(mode),
-                                                                   model(0)
+    ui(new Ui::EditAddressDialog),
+    mapper(0),
+    mode(mode),
+    model(0)
 {
     ui->setupUi(this);
 
@@ -75,9 +75,9 @@ bool EditAddressDialog::saveCurrentRow()
     case NewReceivingAddress:
     case NewSendingAddress:
         address = model->addRow(
-            mode == NewSendingAddress ? AddressTableModel::Send : AddressTableModel::Receive,
-            ui->labelEdit->text(),
-            ui->addressEdit->text());
+                      mode == NewSendingAddress ? AddressTableModel::Send : AddressTableModel::Receive,
+                      ui->labelEdit->text(),
+                      ui->addressEdit->text());
         break;
     case EditReceivingAddress:
     case EditSendingAddress:
@@ -104,23 +104,23 @@ void EditAddressDialog::accept()
             break;
         case AddressTableModel::INVALID_ADDRESS:
             QMessageBox::warning(this, windowTitle(),
-                tr("The entered address \"%1\" is not a valid Bulwark address.").arg(ui->addressEdit->text()),
-                QMessageBox::Ok, QMessageBox::Ok);
+                                 tr("The entered address \"%1\" is not a valid Bulwark address.").arg(ui->addressEdit->text()),
+                                 QMessageBox::Ok, QMessageBox::Ok);
             break;
         case AddressTableModel::DUPLICATE_ADDRESS:
             QMessageBox::warning(this, windowTitle(),
-                tr("The entered address \"%1\" is already in the address book.").arg(ui->addressEdit->text()),
-                QMessageBox::Ok, QMessageBox::Ok);
+                                 tr("The entered address \"%1\" is already in the address book.").arg(ui->addressEdit->text()),
+                                 QMessageBox::Ok, QMessageBox::Ok);
             break;
         case AddressTableModel::WALLET_UNLOCK_FAILURE:
             QMessageBox::critical(this, windowTitle(),
-                tr("Could not unlock wallet."),
-                QMessageBox::Ok, QMessageBox::Ok);
+                                  tr("Could not unlock wallet."),
+                                  QMessageBox::Ok, QMessageBox::Ok);
             break;
         case AddressTableModel::KEY_GENERATION_FAILURE:
             QMessageBox::critical(this, windowTitle(),
-                tr("New key generation failed."),
-                QMessageBox::Ok, QMessageBox::Ok);
+                                  tr("New key generation failed."),
+                                  QMessageBox::Ok, QMessageBox::Ok);
             break;
         }
         return;

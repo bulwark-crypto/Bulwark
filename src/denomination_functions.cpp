@@ -44,7 +44,7 @@ CoinDenomination getMaxDenomHeld(
 // Get Exact Amount with CoinsHeld
 // -------------------------------------------------------------------------------------------------------
 std::map<CoinDenomination, CAmount> getSpendCoins(const CAmount nValueTarget,
-    const std::map<CoinDenomination, CAmount> mapOfDenomsHeld)
+        const std::map<CoinDenomination, CAmount> mapOfDenomsHeld)
 
 {
     std::map<CoinDenomination, CAmount> mapUsed;
@@ -204,7 +204,7 @@ CoinDenomination getNextHighestDenom(const CoinDenomination& this_denom)
 // Return ZQ_ERROR if none found
 // -------------------------------------------------------------------------------------------------------
 CoinDenomination getNextLowerDenomHeld(const CoinDenomination& this_denom,
-    const std::map<CoinDenomination, CAmount>& mapCoinsHeld)
+                                       const std::map<CoinDenomination, CAmount>& mapCoinsHeld)
 {
     CoinDenomination nextValue = ZQ_ERROR;
     for (auto& denom : reverse_iterate(zerocoinDenomList)) {
@@ -409,8 +409,8 @@ int calculateChange(
 // 'spends' are required
 // -------------------------------------------------------------------------------------------------------
 std::vector<CZerocoinMint> SelectMintsFromList(const CAmount nValueTarget, CAmount& nSelectedValue, int nMaxNumberOfSpends, bool fMinimizeChange,
-                                               int& nCoinsReturned, const std::list<CZerocoinMint>& listMints, 
-                                               const std::map<CoinDenomination, CAmount> mapOfDenomsHeld, int& nNeededSpends)
+        int& nCoinsReturned, const std::list<CZerocoinMint>& listMints,
+        const std::map<CoinDenomination, CAmount> mapOfDenomsHeld, int& nNeededSpends)
 {
     std::vector<CZerocoinMint> vSelectedMints;
     std::map<CoinDenomination, CAmount> mapOfDenomsUsed;

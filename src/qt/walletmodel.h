@@ -180,10 +180,14 @@ public:
         UnlockContext(bool valid, bool relock);
         ~UnlockContext();
 
-        bool isValid() const { return valid; }
+        bool isValid() const {
+            return valid;
+        }
 
         // Copy operator and constructor transfer the context
-        UnlockContext(const UnlockContext& obj) { CopyFrom(obj); }
+        UnlockContext(const UnlockContext& obj) {
+            CopyFrom(obj);
+        }
         UnlockContext& operator=(const UnlockContext& rhs)
         {
             CopyFrom(rhs);
@@ -252,8 +256,8 @@ private:
 
 signals:
     // Signal that balance in wallet changed
-    void balanceChanged(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
-                        const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance, 
+    void balanceChanged(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
+                        const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                         const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 
     // Encryption status of wallet changed

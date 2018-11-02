@@ -212,7 +212,9 @@ struct is_wchar<wchar_t[n]> {
 // should never be called.
 template <typename T, typename fmtT, bool convertible = is_convertible<T, fmtT>::value>
 struct formatValueAsType {
-    static void invoke(std::ostream& /*out*/, const T& /*value*/) { assert(0); }
+    static void invoke(std::ostream& /*out*/, const T& /*value*/) {
+        assert(0);
+    }
 };
 // Specialized version for types that can actually be converted to fmtT, as
 // indicated by the "convertible" template parameter.
@@ -227,7 +229,9 @@ struct formatValueAsType<T, fmtT, true> {
 #ifdef TINYFORMAT_OLD_LIBSTDCPLUSPLUS_WORKAROUND
 template <typename T, bool convertible = is_convertible<T, int>::value>
 struct formatZeroIntegerWorkaround {
-    static bool invoke(std::ostream& /**/, const T& /**/) { return false; }
+    static bool invoke(std::ostream& /**/, const T& /**/) {
+        return false;
+    }
 };
 template <typename T>
 struct formatZeroIntegerWorkaround<T, true> {
@@ -256,7 +260,9 @@ struct convertToInt {
 // Specialization for convertToInt when conversion is possible
 template <typename T>
 struct convertToInt<T, true> {
-    static int invoke(const T& value) { return static_cast<int>(value); }
+    static int invoke(const T& value) {
+        return static_cast<int>(value);
+    }
 };
 
 } // namespace detail
@@ -547,7 +553,7 @@ private:
     // output.  The position of the first % character of the next
     // nontrivial format spec is returned, or the end of string.
     static const char* printFormatStringLiteral(std::ostream& out,
-        const char* fmt)
+            const char* fmt)
     {
         const char* c = fmt;
         for (; true; ++c) {
@@ -567,10 +573,10 @@ private:
     }
 
     static const char* streamStateFromFormat(std::ostream& out,
-        unsigned int& extraFlags,
-        const char* fmtStart,
-        int variableWidth,
-        int variablePrecision);
+            unsigned int& extraFlags,
+            const char* fmtStart,
+            int variableWidth,
+            int variablePrecision);
 
     // Private copy & assign: Kill gcc warnings with -Weffc++
     FormatIterator(const FormatIterator&);
@@ -596,8 +602,8 @@ private:
 // Accept a value for formatting into the internal stream.
 template <typename T>
 TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
-    void
-    FormatIterator::accept(const T& value)
+void
+FormatIterator::accept(const T& value)
 {
     // Parse the format string
     const char* fmtEnd = 0;
@@ -623,7 +629,7 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
         // If we get here, we've set both the variable precision and width as
         // required and we need to rerun the stream state setup to insert these.
         fmtEnd = streamStateFromFormat(m_out, m_extraFlags, m_fmt,
-            m_variableWidth, m_variablePrecision);
+                                       m_variableWidth, m_variablePrecision);
     }
 
     // Format the value into the stream.
@@ -653,7 +659,7 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
                     result[i] = ' ';
         }
         if ((m_extraFlags & Flag_TruncateToPrecision) &&
-            (int)result.size() > (int)m_out.precision())
+                (int)result.size() > (int)m_out.precision())
             m_out.write(result.c_str(), m_out.precision());
         else
             m_out << result;
@@ -672,10 +678,10 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
 // state are returned in the extraFlags parameter which is a bitwise
 // combination of values from the ExtraFormatFlags enum.
 inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
-    unsigned int& extraFlags,
-    const char* fmtStart,
-    int variableWidth,
-    int variablePrecision)
+        unsigned int& extraFlags,
+        const char* fmtStart,
+        int variableWidth,
+        int variablePrecision)
 {
     if (*fmtStart != '%') {
         TINYFORMAT_ERROR("tinyformat: Not enough conversion specifiers in format string");
@@ -760,7 +766,7 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
     }
     // 4) Ignore any C99 length modifier
     while (*c == 'l' || *c == 'h' || *c == 'L' ||
-           *c == 'j' || *c == 'z' || *c == 't')
+            *c == 'j' || *c == 'z' || *c == 't')
         ++c;
     // 5) We're up to the conversion specifier character.
     // Set stream flags based on conversion specifier (thanks to the

@@ -162,7 +162,7 @@ UniValue addnode(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         strCommand = params[1].get_str();
     if (fHelp || params.size() != 2 ||
-        (strCommand != "onetry" && strCommand != "add" && strCommand != "remove"))
+            (strCommand != "onetry" && strCommand != "add" && strCommand != "remove"))
         throw runtime_error(
             "addnode \"node\" \"add|remove|onetry\"\n"
             "\nAttempts add or remove a node from the addnode list.\n"
@@ -236,15 +236,15 @@ UniValue getaddednodeinfo(const UniValue& params, bool fHelp)
     if (params.size() == 1) {
         LOCK(cs_vAddedNodes);
         BOOST_FOREACH (string& strAddNode, vAddedNodes)
-            laddedNodes.push_back(strAddNode);
+        laddedNodes.push_back(strAddNode);
     } else {
         string strNode = params[1].get_str();
         LOCK(cs_vAddedNodes);
         BOOST_FOREACH (string& strAddNode, vAddedNodes)
-            if (strAddNode == strNode) {
-                laddedNodes.push_back(strAddNode);
-                break;
-            }
+        if (strAddNode == strNode) {
+            laddedNodes.push_back(strAddNode);
+            break;
+        }
         if (laddedNodes.size() == 0)
             throw JSONRPCError(RPC_CLIENT_NODE_NOT_ADDED, "Error: Node has not been added.");
     }
@@ -285,12 +285,12 @@ UniValue getaddednodeinfo(const UniValue& params, bool fHelp)
             UniValue node(UniValue::VOBJ);
             node.push_back(Pair("address", addrNode.ToString()));
             BOOST_FOREACH (CNode* pnode, vNodes)
-                if (pnode->addr == addrNode) {
-                    fFound = true;
-                    fConnected = true;
-                    node.push_back(Pair("connected", pnode->fInbound ? "inbound" : "outbound"));
-                    break;
-                }
+            if (pnode->addr == addrNode) {
+                fFound = true;
+                fConnected = true;
+                node.push_back(Pair("connected", pnode->fInbound ? "inbound" : "outbound"));
+                break;
+            }
             if (!fFound)
                 node.push_back(Pair("connected", "false"));
             addresses.push_back(node);
@@ -385,7 +385,7 @@ UniValue getnetworkinfo(const UniValue& params, bool fHelp)
     UniValue obj(UniValue::VOBJ);
     obj.push_back(Pair("version", CLIENT_VERSION));
     obj.push_back(Pair("subversion",
-        FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, std::vector<string>())));
+                       FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, std::vector<string>())));
     obj.push_back(Pair("protocolversion", PROTOCOL_VERSION));
     obj.push_back(Pair("localservices", strprintf("%016x", nLocalServices)));
     obj.push_back(Pair("timeoffset", GetTimeOffset()));
@@ -409,24 +409,24 @@ UniValue getnetworkinfo(const UniValue& params, bool fHelp)
 
 UniValue setban(const UniValue& params, bool fHelp)
 {
-    string strCommand; 
+    string strCommand;
     if (params.size() >= 2)
         strCommand = params[1].get_str();
     if (fHelp || params.size() < 2 ||
-        (strCommand != "add" && strCommand != "remove"))
+            (strCommand != "add" && strCommand != "remove"))
         throw runtime_error(
-                            "setban \"ip(/netmask)\" \"add|remove\" (bantime) (absolute)\n"
-                            "\nAttempts add or remove a IP/Subnet from the banned list.\n"
-                            "\nArguments:\n"
-                            "1. \"ip(/netmask)\" (string, required) The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)\n"
-                            "2. \"command\"      (string, required) 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list\n"
-                            "3. \"bantime\"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)\n"
-                            "4. \"absolute\"     (boolean, optional) If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)\n"
-                            "\nExamples:\n"
-                            + HelpExampleCli("setban", "\"192.168.0.6\" \"add\" 86400")
-                            + HelpExampleCli("setban", "\"192.168.0.0/24\" \"add\"")
-                            + HelpExampleRpc("setban", "\"192.168.0.6\", \"add\" 86400")
-                            );
+            "setban \"ip(/netmask)\" \"add|remove\" (bantime) (absolute)\n"
+            "\nAttempts add or remove a IP/Subnet from the banned list.\n"
+            "\nArguments:\n"
+            "1. \"ip(/netmask)\" (string, required) The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)\n"
+            "2. \"command\"      (string, required) 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list\n"
+            "3. \"bantime\"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)\n"
+            "4. \"absolute\"     (boolean, optional) If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)\n"
+            "\nExamples:\n"
+            + HelpExampleCli("setban", "\"192.168.0.6\" \"add\" 86400")
+            + HelpExampleCli("setban", "\"192.168.0.0/24\" \"add\"")
+            + HelpExampleRpc("setban", "\"192.168.0.6\", \"add\" 86400")
+        );
 
     CSubNet subNet;
     CNetAddr netAddr;
@@ -475,12 +475,12 @@ UniValue listbanned(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
         throw runtime_error(
-                            "listbanned\n"
-                            "\nList all banned IPs/Subnets.\n"
-                            "\nExamples:\n"
-                            + HelpExampleCli("listbanned", "")
-                            + HelpExampleRpc("listbanned", "")
-                            );
+            "listbanned\n"
+            "\nList all banned IPs/Subnets.\n"
+            "\nExamples:\n"
+            + HelpExampleCli("listbanned", "")
+            + HelpExampleRpc("listbanned", "")
+        );
 
     banmap_t banMap;
     CNode::GetBanned(banMap);
@@ -501,12 +501,12 @@ UniValue clearbanned(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
         throw runtime_error(
-                            "clearbanned\n"
-                            "\nClear all banned IPs.\n"
-                            "\nExamples:\n"
-                            + HelpExampleCli("clearbanned", "")
-                            + HelpExampleRpc("clearbanned", "")
-                            );
+            "clearbanned\n"
+            "\nClear all banned IPs.\n"
+            "\nExamples:\n"
+            + HelpExampleCli("clearbanned", "")
+            + HelpExampleRpc("clearbanned", "")
+        );
 
     CNode::ClearBanned();
 

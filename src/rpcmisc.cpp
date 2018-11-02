@@ -213,7 +213,9 @@ private:
 public:
     DescribeAddressVisitor(isminetype mineIn) : mine(mineIn) {}
 
-    UniValue operator()(const CNoDestination &dest) const { return UniValue(UniValue::VOBJ); }
+    UniValue operator()(const CNoDestination &dest) const {
+        return UniValue(UniValue::VOBJ);
+    }
 
     UniValue operator()(const CKeyID &keyID) const {
         UniValue obj(UniValue::VOBJ);
@@ -241,7 +243,7 @@ public:
             obj.push_back(Pair("hex", HexStr(subscript.begin(), subscript.end())));
             UniValue a(UniValue::VARR);
             BOOST_FOREACH (const CTxDestination& addr, addresses)
-                a.push_back(CBitcoinAddress(addr).ToString());
+            a.push_back(CBitcoinAddress(addr).ToString());
             obj.push_back(Pair("addresses", a));
             if (whichType == TX_MULTISIG)
                 obj.push_back(Pair("sigsrequired", nRequired));
@@ -355,7 +357,7 @@ CScript _createmultisig_redeemScript(const UniValue& params)
         throw runtime_error(
             strprintf("not enough keys supplied "
                       "(got %u keys, but need at least %d to redeem)",
-                keys.size(), nRequired));
+                      keys.size(), nRequired));
     if (keys.size() > 16)
         throw runtime_error("Number of addresses involved in the multisignature address creation > 16\nReduce the number");
     std::vector<CPubKey> pubkeys;
@@ -383,13 +385,13 @@ CScript _createmultisig_redeemScript(const UniValue& params)
         else
 #endif
             if (IsHex(ks)) {
-            CPubKey vchPubKey(ParseHex(ks));
-            if (!vchPubKey.IsFullyValid())
+                CPubKey vchPubKey(ParseHex(ks));
+                if (!vchPubKey.IsFullyValid())
+                    throw runtime_error(" Invalid public key: " + ks);
+                pubkeys[i] = vchPubKey;
+            } else {
                 throw runtime_error(" Invalid public key: " + ks);
-            pubkeys[i] = vchPubKey;
-        } else {
-            throw runtime_error(" Invalid public key: " + ks);
-        }
+            }
     }
     CScript result = GetScriptForMultisig(nRequired, pubkeys);
 

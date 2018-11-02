@@ -272,9 +272,9 @@ public:
 protected:
     // Denial-of-service detection/prevention
     // Key is IP address, value is banned-until-time
-	static banmap_t setBanned;
+    static banmap_t setBanned;
     static CCriticalSection cs_setBanned;
-	static bool setBannedIsDirty;
+    static bool setBannedIsDirty;
 
     std::vector<std::string> vecRequestsFulfilled; //keep track of what client has asked for
 
@@ -343,7 +343,7 @@ public:
     {
         unsigned int total = 0;
         BOOST_FOREACH (const CNetMessage& msg, vRecvMsg)
-            total += msg.vRecv.size() + 24;
+        total += msg.vRecv.size() + 24;
         return total;
     }
 
@@ -355,7 +355,7 @@ public:
     {
         nRecvVersion = nVersionIn;
         BOOST_FOREACH (CNetMessage& msg, vRecvMsg)
-            msg.SetVersion(nVersionIn);
+        msg.SetVersion(nVersionIn);
     }
 
     CNode* AddRef()
@@ -639,7 +639,7 @@ public:
     static bool IsBanned(CSubNet subNet);
     static void Ban(const CNetAddr& ip, int64_t bantimeoffset = 0, bool sinceUnixEpoch = false);
     static void Ban(const CSubNet& subNet, int64_t bantimeoffset = 0, bool sinceUnixEpoch = false);
-	static void DumpBanlist();
+    static void DumpBanlist();
     static bool Unban(const CNetAddr& ip);
     static bool Unban(const CSubNet& subNet);
     static bool BannedIsDirty();
@@ -647,8 +647,8 @@ public:
     static void SetBanned(const banmap_t &banmap);
     static void SetBannedIsDirty(bool dirty=true);
     void copyStats(CNodeStats& stats);
-	//!clean unused entries (if bantime has expired)
-	static void SweepBanned();
+    //!clean unused entries (if bantime has expired)
+    static void SweepBanned();
 
     static bool IsWhitelistedRange(const CNetAddr& ip);
     static void AddWhitelistedRange(const CSubNet& subnet);
@@ -659,7 +659,7 @@ public:
 
     static uint64_t GetTotalBytesRecv();
     static uint64_t GetTotalBytesSent();
-	
+
 };
 
 class CExplicitNetCleanup

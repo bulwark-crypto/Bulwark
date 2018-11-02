@@ -18,8 +18,8 @@
 #include <QClipboard>
 
 SendCoinsEntry::SendCoinsEntry(QWidget* parent) : QStackedWidget(parent),
-                                                  ui(new Ui::SendCoinsEntry),
-                                                  model(0)
+    ui(new Ui::SendCoinsEntry),
+    model(0)
 {
     ui->setupUi(this);
 

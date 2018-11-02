@@ -224,24 +224,60 @@ public:
     int CompareTo(const base_uint& b) const;
     bool EqualTo(uint64_t b) const;
 
-    friend inline const base_uint operator+(const base_uint& a, const base_uint& b) { return base_uint(a) += b; }
-    friend inline const base_uint operator-(const base_uint& a, const base_uint& b) { return base_uint(a) -= b; }
-    friend inline const base_uint operator*(const base_uint& a, const base_uint& b) { return base_uint(a) *= b; }
-    friend inline const base_uint operator/(const base_uint& a, const base_uint& b) { return base_uint(a) /= b; }
-    friend inline const base_uint operator|(const base_uint& a, const base_uint& b) { return base_uint(a) |= b; }
-    friend inline const base_uint operator&(const base_uint& a, const base_uint& b) { return base_uint(a) &= b; }
-    friend inline const base_uint operator^(const base_uint& a, const base_uint& b) { return base_uint(a) ^= b; }
-    friend inline const base_uint operator>>(const base_uint& a, int shift) { return base_uint(a) >>= shift; }
-    friend inline const base_uint operator<<(const base_uint& a, int shift) { return base_uint(a) <<= shift; }
-    friend inline const base_uint operator*(const base_uint& a, uint32_t b) { return base_uint(a) *= b; }
-    friend inline bool operator==(const base_uint& a, const base_uint& b) { return memcmp(a.pn, b.pn, sizeof(a.pn)) == 0; }
-    friend inline bool operator!=(const base_uint& a, const base_uint& b) { return memcmp(a.pn, b.pn, sizeof(a.pn)) != 0; }
-    friend inline bool operator>(const base_uint& a, const base_uint& b) { return a.CompareTo(b) > 0; }
-    friend inline bool operator<(const base_uint& a, const base_uint& b) { return a.CompareTo(b) < 0; }
-    friend inline bool operator>=(const base_uint& a, const base_uint& b) { return a.CompareTo(b) >= 0; }
-    friend inline bool operator<=(const base_uint& a, const base_uint& b) { return a.CompareTo(b) <= 0; }
-    friend inline bool operator==(const base_uint& a, uint64_t b) { return a.EqualTo(b); }
-    friend inline bool operator!=(const base_uint& a, uint64_t b) { return !a.EqualTo(b); }
+    friend inline const base_uint operator+(const base_uint& a, const base_uint& b) {
+        return base_uint(a) += b;
+    }
+    friend inline const base_uint operator-(const base_uint& a, const base_uint& b) {
+        return base_uint(a) -= b;
+    }
+    friend inline const base_uint operator*(const base_uint& a, const base_uint& b) {
+        return base_uint(a) *= b;
+    }
+    friend inline const base_uint operator/(const base_uint& a, const base_uint& b) {
+        return base_uint(a) /= b;
+    }
+    friend inline const base_uint operator|(const base_uint& a, const base_uint& b) {
+        return base_uint(a) |= b;
+    }
+    friend inline const base_uint operator&(const base_uint& a, const base_uint& b) {
+        return base_uint(a) &= b;
+    }
+    friend inline const base_uint operator^(const base_uint& a, const base_uint& b) {
+        return base_uint(a) ^= b;
+    }
+    friend inline const base_uint operator>>(const base_uint& a, int shift) {
+        return base_uint(a) >>= shift;
+    }
+    friend inline const base_uint operator<<(const base_uint& a, int shift) {
+        return base_uint(a) <<= shift;
+    }
+    friend inline const base_uint operator*(const base_uint& a, uint32_t b) {
+        return base_uint(a) *= b;
+    }
+    friend inline bool operator==(const base_uint& a, const base_uint& b) {
+        return memcmp(a.pn, b.pn, sizeof(a.pn)) == 0;
+    }
+    friend inline bool operator!=(const base_uint& a, const base_uint& b) {
+        return memcmp(a.pn, b.pn, sizeof(a.pn)) != 0;
+    }
+    friend inline bool operator>(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) > 0;
+    }
+    friend inline bool operator<(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) < 0;
+    }
+    friend inline bool operator>=(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) >= 0;
+    }
+    friend inline bool operator<=(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) <= 0;
+    }
+    friend inline bool operator==(const base_uint& a, uint64_t b) {
+        return a.EqualTo(b);
+    }
+    friend inline bool operator!=(const base_uint& a, uint64_t b) {
+        return !a.EqualTo(b);
+    }
 
     std::string GetHex() const;
     void SetHex(const char* psz);
@@ -347,12 +383,12 @@ public:
      * The lower 23 bits are the mantissa.
      * Bit number 24 (0x800000) represents the sign of N.
      * N = (-1^sign) * mantissa * 256^(exponent-3)
-     * 
+     *
      * Satoshi's original implementation used BN_bn2mpi() and BN_mpi2bn().
      * MPI uses the most significant bit of the first byte as sign.
      * Thus 0x1234560000 is compact (0x05123456)
      * and  0xc0de000000 is compact (0x0600c0de)
-     * 
+     *
      * Bitcoin only uses this "compact" format for encoding difficulty
      * targets, which are unsigned 256bit quantities.  Thus, all the
      * complexities of the sign bit and using base 256 are probably an

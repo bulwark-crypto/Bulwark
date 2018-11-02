@@ -21,7 +21,7 @@ RecentRequestsTableModel::RecentRequestsTableModel(CWallet* wallet, WalletModel*
     std::vector<std::string> vReceiveRequests;
     parent->loadReceiveRequests(vReceiveRequests);
     BOOST_FOREACH (const std::string& request, vReceiveRequests)
-        addNewRequest(request);
+    addNewRequest(request);
 
     /* These columns must match the indices in the ColumnIndex enumeration */
     columns << tr("Date") << tr("Label") << tr("Message") << getAmountTitle();

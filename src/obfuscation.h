@@ -119,10 +119,10 @@ public:
         }
 
         BOOST_FOREACH (const CTxIn& in, vinIn)
-            sev.push_back(in);
+        sev.push_back(in);
 
         BOOST_FOREACH (const CTxOut& out, voutIn)
-            vout.push_back(out);
+        vout.push_back(out);
 
         amount = amountIn;
         collateral = collateralIn;

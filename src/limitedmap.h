@@ -27,13 +27,27 @@ protected:
     size_type nMaxSize;
 
 public:
-    limitedmap(size_type nMaxSizeIn = 0) { nMaxSize = nMaxSizeIn; }
-    const_iterator begin() const { return map.begin(); }
-    const_iterator end() const { return map.end(); }
-    size_type size() const { return map.size(); }
-    bool empty() const { return map.empty(); }
-    const_iterator find(const key_type& k) const { return map.find(k); }
-    size_type count(const key_type& k) const { return map.count(k); }
+    limitedmap(size_type nMaxSizeIn = 0) {
+        nMaxSize = nMaxSizeIn;
+    }
+    const_iterator begin() const {
+        return map.begin();
+    }
+    const_iterator end() const {
+        return map.end();
+    }
+    size_type size() const {
+        return map.size();
+    }
+    bool empty() const {
+        return map.empty();
+    }
+    const_iterator find(const key_type& k) const {
+        return map.find(k);
+    }
+    size_type count(const key_type& k) const {
+        return map.count(k);
+    }
     void insert(const value_type& x)
     {
         std::pair<iterator, bool> ret = map.insert(x);
@@ -78,7 +92,9 @@ public:
         // Shouldn't ever get here
         assert(0);
     }
-    size_type max_size() const { return nMaxSize; }
+    size_type max_size() const {
+        return nMaxSize;
+    }
     size_type max_size(size_type s)
     {
         if (s)

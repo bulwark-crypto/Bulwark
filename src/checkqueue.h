@@ -16,7 +16,7 @@
 template <typename T>
 class CCheckQueueControl;
 
-/** 
+/**
  * Queue for verifications that have to be performed.
   * The verifications are represented by a type T, which must provide an
   * operator(), returning a bool.
@@ -120,8 +120,8 @@ private:
             }
             // execute work
             BOOST_FOREACH (T& check, vChecks)
-                if (fOk)
-                    fOk = check();
+            if (fOk)
+                fOk = check();
             vChecks.clear();
         } while (true);
     }
@@ -168,7 +168,7 @@ public:
     }
 };
 
-/** 
+/**
  * RAII-style controller object for a CCheckQueue that guarantees the passed
  * queue is finished before continuing.
  */

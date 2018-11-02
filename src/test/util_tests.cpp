@@ -240,7 +240,7 @@ BOOST_AUTO_TEST_CASE(util_seed_insecure_rand)
 
     seed_insecure_rand(true);
 
-    for (int mod=2;mod<11;mod++)
+    for (int mod=2; mod<11; mod++)
     {
         int mask = 1;
         // Really rough binomal confidence approximation.
@@ -250,12 +250,12 @@ BOOST_AUTO_TEST_CASE(util_seed_insecure_rand)
 
         count = 0;
         //How often does it get a zero from the uniform range [0,mod)?
-        for (i=0;i<10000;i++)
+        for (i=0; i<10000; i++)
         {
             uint32_t rval;
-            do{
+            do {
                 rval=insecure_rand()&mask;
-            }while(rval>=(uint32_t)mod);
+            } while(rval>=(uint32_t)mod);
             count += rval==0;
         }
         BOOST_CHECK(count<=10000/mod+err);

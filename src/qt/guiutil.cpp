@@ -257,15 +257,15 @@ void copyEntryData(QAbstractItemView* view, int column, int role)
 
 QString getEntryData(QAbstractItemView *view, int column, int role)
 {
-	if (!view || !view->selectionModel())
-		return QString();
-	QModelIndexList selection = view->selectionModel()->selectedRows(column);
+    if (!view || !view->selectionModel())
+        return QString();
+    QModelIndexList selection = view->selectionModel()->selectedRows(column);
 
-	if (!selection.isEmpty()) {
-		// Return first item
-		return (selection.at(0).data(role).toString());
-	}
-	return QString();
+    if (!selection.isEmpty()) {
+        // Return first item
+        return (selection.at(0).data(role).toString());
+    }
+    return QString();
 }
 
 QString getSaveFileName(QWidget* parent, const QString& caption, const QString& dir, const QString& filter, QString* selectedSuffixOut)
@@ -431,7 +431,7 @@ void SubstituteFonts(const QString& language)
 }
 
 ToolTipToRichTextFilter::ToolTipToRichTextFilter(int size_threshold, QObject* parent) : QObject(parent),
-                                                                                        size_threshold(size_threshold)
+    size_threshold(size_threshold)
 {
 }
 
@@ -554,8 +554,8 @@ void TableViewLastColumnResizingFixer::on_geometriesChanged()
  * the resize modes of the last 2 columns of the table and
  */
 TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* table, int lastColMinimumWidth, int allColsMinimumWidth) : tableView(table),
-                                                                                                                                          lastColumnMinimumWidth(lastColMinimumWidth),
-                                                                                                                                          allColumnsMinimumWidth(allColsMinimumWidth)
+    lastColumnMinimumWidth(lastColMinimumWidth),
+    allColumnsMinimumWidth(allColsMinimumWidth)
 {
     columnCount = tableView->horizontalHeader()->count();
     lastColumnIndex = columnCount - 1;
@@ -570,7 +570,7 @@ TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* t
  * @param[in] seconds   Number of seconds to convert to a DHMS string
  */
 DHMSTableWidgetItem::DHMSTableWidgetItem(const int64_t seconds) : QTableWidgetItem(),
-                                                                  value(seconds)
+    value(seconds)
 {
     this->setText(QString::fromStdString(DurationToDHMS(seconds)));
 }
@@ -615,8 +615,8 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Get a pointer to the IShellLink interface.
         IShellLink* psl = NULL;
         HRESULT hres = CoCreateInstance(CLSID_ShellLink, NULL,
-            CLSCTX_INPROC_SERVER, IID_IShellLink,
-            reinterpret_cast<void**>(&psl));
+                                        CLSCTX_INPROC_SERVER, IID_IShellLink,
+                                        reinterpret_cast<void**>(&psl));
 
         if (SUCCEEDED(hres)) {
             // Get the current executable path
@@ -636,7 +636,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
             // saving the shortcut in persistent storage.
             IPersistFile* ppf = NULL;
             hres = psl->QueryInterface(IID_IPersistFile,
-                reinterpret_cast<void**>(&ppf));
+                                       reinterpret_cast<void**>(&ppf));
             if (SUCCEEDED(hres)) {
                 WCHAR pwsz[MAX_PATH];
                 // Ensure that the string is ANSI.
@@ -687,7 +687,7 @@ bool GetStartOnSystemStartup()
     while (!optionFile.eof()) {
         getline(optionFile, line);
         if (line.find("Hidden") != std::string::npos &&
-            line.find("true") != std::string::npos)
+                line.find("true") != std::string::npos)
             return false;
     }
     optionFile.close();
@@ -780,7 +780,9 @@ bool GetStartOnSystemStartup()
 {
     return false;
 }
-bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
+bool SetStartOnSystemStartup(bool fAutoStart) {
+    return false;
+}
 
 #endif
 
@@ -906,10 +908,10 @@ QString formatServicesStr(quint64 mask)
         uint64_t check = 1 << i;
         if (mask & check) {
             switch (check) {
-	    case NODE_BLOOM:
-	    case NODE_BLOOM_WITHOUT_MN:
-		    strList.append(QObject::tr("BLOOM"));
-		    break;
+            case NODE_BLOOM:
+            case NODE_BLOOM_WITHOUT_MN:
+                strList.append(QObject::tr("BLOOM"));
+                break;
             case NODE_NETWORK:
                 strList.append(QObject::tr("NETWORK"));
                 break;

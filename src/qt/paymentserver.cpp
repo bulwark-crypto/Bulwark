@@ -65,19 +65,21 @@ const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/bulwark-paymentrequest"
 const qint64 BIP70_MAX_PAYMENTREQUEST_SIZE = 50000;
 
 struct X509StoreDeleter {
-      void operator()(X509_STORE* b) {
-          X509_STORE_free(b);
-      }
+    void operator()(X509_STORE* b) {
+        X509_STORE_free(b);
+    }
 };
 
 struct X509Deleter {
-      void operator()(X509* b) { X509_free(b); }
+    void operator()(X509* b) {
+        X509_free(b);
+    }
 };
 
 namespace // Anon namespace
 {
 
-    std::unique_ptr<X509_STORE, X509StoreDeleter> certStore;
+std::unique_ptr<X509_STORE, X509StoreDeleter> certStore;
 }
 
 //
@@ -270,10 +272,10 @@ bool PaymentServer::ipcSendCommandLine()
 }
 
 PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) : QObject(parent),
-                                                                       saveURIs(true),
-                                                                       uriServer(0),
-                                                                       netManager(0),
-                                                                       optionsModel(0)
+    saveURIs(true),
+    uriServer(0),
+    netManager(0),
+    optionsModel(0)
 {
     // Verify that the version of the library that we linked against is
     // compatible with the version of the headers we compiled against.
@@ -296,7 +298,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) : QObject(p
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "emit message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start bulwark: click-to-pay handler"));
+                                  tr("Cannot start bulwark: click-to-pay handler"));
         } else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
             connect(this, SIGNAL(receivedPaymentACK(QString)), this, SLOT(handlePaymentACK(QString)));
@@ -350,9 +352,9 @@ void PaymentServer::initNetManager()
         qDebug() << "PaymentServer::initNetManager : No active proxy server found.";
 
     connect(netManager, SIGNAL(finished(QNetworkReply*)),
-        this, SLOT(netRequestFinished(QNetworkReply*)));
+            this, SLOT(netRequestFinished(QNetworkReply*)));
     connect(netManager, SIGNAL(sslErrors(QNetworkReply*, const QList<QSslError>&)),
-        this, SLOT(reportSslErrors(QNetworkReply*, const QList<QSslError>&)));
+            this, SLOT(reportSslErrors(QNetworkReply*, const QList<QSslError>&)));
 }
 
 void PaymentServer::uiReady()
@@ -393,8 +395,8 @@ void PaymentServer::handleURIOrFile(const QString& s)
             } else {
                 qWarning() << "PaymentServer::handleURIOrFile : Invalid URL: " << fetchUrl;
                 emit message(tr("URI handling"),
-                    tr("Payment request fetch URL is invalid: %1").arg(fetchUrl.toString()),
-                    CClientUIInterface::ICON_WARNING);
+                             tr("Payment request fetch URL is invalid: %1").arg(fetchUrl.toString()),
+                             CClientUIInterface::ICON_WARNING);
             }
 
             return;
@@ -405,13 +407,13 @@ void PaymentServer::handleURIOrFile(const QString& s)
                 CBitcoinAddress address(recipient.address.toStdString());
                 if (!address.IsValid()) {
                     emit message(tr("URI handling"), tr("Invalid payment address %1").arg(recipient.address),
-                        CClientUIInterface::MSG_ERROR);
+                                 CClientUIInterface::MSG_ERROR);
                 } else
                     emit receivedPaymentRequest(recipient);
             } else
                 emit message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Bulwark address or malformed URI parameters."),
-                    CClientUIInterface::ICON_WARNING);
+                             tr("URI cannot be parsed! This can be caused by an invalid Bulwark address or malformed URI parameters."),
+                             CClientUIInterface::ICON_WARNING);
 
             return;
         }
@@ -423,8 +425,8 @@ void PaymentServer::handleURIOrFile(const QString& s)
         SendCoinsRecipient recipient;
         if (!readPaymentRequestFromFile(s, request)) {
             emit message(tr("Payment request file handling"),
-                tr("Payment request file cannot be read! This can be caused by an invalid payment request file."),
-                CClientUIInterface::ICON_WARNING);
+                         tr("Payment request file cannot be read! This can be caused by an invalid payment request file."),
+                         CClientUIInterface::ICON_WARNING);
         } else if (processPaymentRequest(request, recipient))
             emit receivedPaymentRequest(recipient);
 
@@ -440,7 +442,7 @@ void PaymentServer::handleURIConnection()
         clientConnection->waitForReadyRead();
 
     connect(clientConnection, SIGNAL(disconnected()),
-        clientConnection, SLOT(deleteLater()));
+            clientConnection, SLOT(deleteLater()));
 
     QDataStream in(clientConnection);
     in.setVersion(QDataStream::Qt_4_0);
@@ -468,10 +470,10 @@ bool PaymentServer::readPaymentRequestFromFile(const QString& filename, PaymentR
     // BIP70 DoS protection
     if (f.size() > BIP70_MAX_PAYMENTREQUEST_SIZE) {
         qWarning() << QString("PaymentServer::%1: Payment request %2 is too large (%3 bytes, allowed %4 bytes).")
-                          .arg(__func__)
-                          .arg(filename)
-                          .arg(f.size())
-                          .arg(BIP70_MAX_PAYMENTREQUEST_SIZE);
+                   .arg(__func__)
+                   .arg(filename)
+                   .arg(f.size())
+                   .arg(BIP70_MAX_PAYMENTREQUEST_SIZE);
         return false;
     }
 
@@ -491,7 +493,7 @@ bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoins
         // Payment request network matches client network?
         if (details.network() != Params().NetworkIDString()) {
             emit message(tr("Payment request rejected"), tr("Payment request network doesn't match client network."),
-                CClientUIInterface::MSG_ERROR);
+                         CClientUIInterface::MSG_ERROR);
 
             return false;
         }
@@ -499,13 +501,13 @@ bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoins
         // Expired payment request?
         if (details.has_expires() && (int64_t)details.expires() < GetTime()) {
             emit message(tr("Payment request rejected"), tr("Payment request has expired."),
-                CClientUIInterface::MSG_ERROR);
+                         CClientUIInterface::MSG_ERROR);
 
             return false;
         }
     } else {
         emit message(tr("Payment request error"), tr("Payment request is not initialized."),
-            CClientUIInterface::MSG_ERROR);
+                     CClientUIInterface::MSG_ERROR);
 
         return false;
     }
@@ -529,8 +531,8 @@ bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoins
             // (there is no good way to tell the user where they are paying in a way
             // they'd have a chance of understanding).
             emit message(tr("Payment request rejected"),
-                tr("Unverified payment requests to custom payment scripts are unsupported."),
-                CClientUIInterface::MSG_ERROR);
+                         tr("Unverified payment requests to custom payment scripts are unsupported."),
+                         CClientUIInterface::MSG_ERROR);
             return false;
         }
 
@@ -538,7 +540,7 @@ bool PaymentServer::processPaymentRequest(PaymentRequestPlus& request, SendCoins
         CTxOut txOut(sendingTo.second, sendingTo.first);
         if (txOut.IsDust(::minRelayTxFee)) {
             emit message(tr("Payment request error"), tr("Requested payment amount of %1 is too small (considered dust).").arg(BitcoinUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
-                CClientUIInterface::MSG_ERROR);
+                         CClientUIInterface::MSG_ERROR);
 
             return false;
         }
@@ -626,9 +628,9 @@ void PaymentServer::netRequestFinished(QNetworkReply* reply)
     // BIP70 DoS protection
     if (reply->size() > BIP70_MAX_PAYMENTREQUEST_SIZE) {
         QString msg = tr("Payment request %1 is too large (%2 bytes, allowed %3 bytes).")
-                          .arg(reply->request().url().toString())
-                          .arg(reply->size())
-                          .arg(BIP70_MAX_PAYMENTREQUEST_SIZE);
+                      .arg(reply->request().url().toString())
+                      .arg(reply->size())
+                      .arg(BIP70_MAX_PAYMENTREQUEST_SIZE);
 
         qWarning() << QString("PaymentServer::%1:").arg(__func__) << msg;
         emit message(tr("Payment request DoS protection"), msg, CClientUIInterface::MSG_ERROR);
@@ -637,8 +639,8 @@ void PaymentServer::netRequestFinished(QNetworkReply* reply)
 
     if (reply->error() != QNetworkReply::NoError) {
         QString msg = tr("Error communicating with %1: %2")
-                          .arg(reply->request().url().toString())
-                          .arg(reply->errorString());
+                      .arg(reply->request().url().toString())
+                      .arg(reply->errorString());
 
         qWarning() << "PaymentServer::netRequestFinished: " << msg;
         emit message(tr("Payment request error"), msg, CClientUIInterface::MSG_ERROR);
@@ -654,8 +656,8 @@ void PaymentServer::netRequestFinished(QNetworkReply* reply)
         if (!request.parse(data)) {
             qWarning() << "PaymentServer::netRequestFinished : Error parsing payment request";
             emit message(tr("Payment request error"),
-                tr("Payment request cannot be parsed!"),
-                CClientUIInterface::MSG_ERROR);
+                         tr("Payment request cannot be parsed!"),
+                         CClientUIInterface::MSG_ERROR);
         } else if (processPaymentRequest(request, recipient))
             emit receivedPaymentRequest(recipient);
 
@@ -664,7 +666,7 @@ void PaymentServer::netRequestFinished(QNetworkReply* reply)
         payments::PaymentACK paymentACK;
         if (!paymentACK.ParseFromArray(data.data(), data.size())) {
             QString msg = tr("Bad response from server %1")
-                              .arg(reply->request().url().toString());
+                          .arg(reply->request().url().toString());
 
             qWarning() << "PaymentServer::netRequestFinished : " << msg;
             emit message(tr("Payment request error"), msg, CClientUIInterface::MSG_ERROR);

@@ -90,8 +90,8 @@ void QtMaterialRipple::destroy()
  *  \internal
  */
 QPropertyAnimation *QtMaterialRipple::animate(const QByteArray &property,
-                                              const QEasingCurve &easing,
-                                              int duration)
+        const QEasingCurve &easing,
+        int duration)
 {
     QPropertyAnimation *animation = new QPropertyAnimation;
     animation->setTargetObject(this);

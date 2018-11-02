@@ -26,10 +26,10 @@ bool TransactionRecord::showTransaction(const CWalletTx& wtx)
         }
         return true;
     }
-	else {
-		QSettings settings;
-		return (!settings.value("fShowOrphans").toBool() || wtx.GetDepthInMainChain() >= 0);
-	}
+    else {
+        QSettings settings;
+        return (!settings.value("fShowOrphans").toBool() || wtx.GetDepthInMainChain() >= 0);
+    }
 }
 
 /*
@@ -254,7 +254,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                     // Sent to Bulwark Address
                     sub.type = TransactionRecord::SendToAddress;
                     sub.address = CBitcoinAddress(address).ToString();
-                } else if (txout.IsZerocoinMint()){
+                } else if (txout.IsZerocoinMint()) {
                     sub.type = TransactionRecord::ZerocoinMint;
                     sub.address = mapValue["zerocoinmint"];
                 } else {
@@ -302,10 +302,10 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
 
     // Sort order, unrecorded transactions sort to the top
     status.sortKey = strprintf("%010d-%01d-%010u-%03d",
-        (pindex ? pindex->nHeight : std::numeric_limits<int>::max()),
-        (wtx.IsCoinBase() ? 1 : 0),
-        wtx.nTimeReceived,
-        idx);
+                               (pindex ? pindex->nHeight : std::numeric_limits<int>::max()),
+                               (wtx.IsCoinBase() ? 1 : 0),
+                               wtx.nTimeReceived,
+                               idx);
     status.countsForBalance = wtx.IsTrusted() && !(wtx.GetBlocksToMaturity() > 0);
     status.depth = wtx.GetDepthInMainChain();
     status.cur_num_blocks = chainActive.Height();

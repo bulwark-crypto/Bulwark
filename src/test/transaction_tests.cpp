@@ -31,15 +31,15 @@ using namespace boost::algorithm;
 extern UniValue read_json(const std::string& jsondata);
 
 static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
-    (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
-    (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
-    (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
-    (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
-    (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
-    (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
-    (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
-    (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
-    (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
+        (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
+        (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
+        (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
+        (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
+        (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
+        (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
+        (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
+        (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
+        (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
 
 unsigned int ParseScriptFlags(string strFlags)
 {
@@ -104,8 +104,8 @@ BOOST_AUTO_TEST_CASE(tx_valid)
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
             UniValue inputs = test[0].get_array();
             bool fValid = true;
-	    for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
-	        const UniValue& input = inputs[inpIdx];
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
+                const UniValue& input = inputs[inpIdx];
                 if (!input.isArray())
                 {
                     fValid = false;
@@ -179,8 +179,8 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
             UniValue inputs = test[0].get_array();
             bool fValid = true;
-	    for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
-	        const UniValue& input = inputs[inpIdx];
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
+                const UniValue& input = inputs[inpIdx];
                 if (!input.isArray())
                 {
                     fValid = false;

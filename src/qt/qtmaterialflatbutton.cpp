@@ -60,7 +60,7 @@ void QtMaterialFlatButtonPrivate::init()
 
     QFont font("Roboto", fontSize, QFont::Medium);
     font.setCapitalization(QFont::AllUppercase);
-	font.setKerning(false);
+    font.setKerning(false);
     q->setFont(font);
 
     QPainterPath path;
@@ -680,7 +680,7 @@ void QtMaterialFlatButton::paintForeground(QPainter *painter)
         if (isCheckable() && progress > 0) {
             QColor source = foregroundColor();
             QColor dest = Qt::TransparentMode == d->bgMode ? Qt::white
-                                                           : backgroundColor();
+                          : backgroundColor();
             if (qFuzzyCompare(1, progress)) {
                 painter->setPen(dest);
             } else {

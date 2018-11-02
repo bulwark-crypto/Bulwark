@@ -209,24 +209,60 @@ public:
     int CompareTo(const base_uint& b) const;
     bool EqualTo(uint64_t b) const;
 
-    friend inline const base_uint operator+(const base_uint& a, const base_uint& b) { return base_uint(a) += b; }
-    friend inline const base_uint operator-(const base_uint& a, const base_uint& b) { return base_uint(a) -= b; }
-    friend inline const base_uint operator*(const base_uint& a, const base_uint& b) { return base_uint(a) *= b; }
-    friend inline const base_uint operator/(const base_uint& a, const base_uint& b) { return base_uint(a) /= b; }
-    friend inline const base_uint operator|(const base_uint& a, const base_uint& b) { return base_uint(a) |= b; }
-    friend inline const base_uint operator&(const base_uint& a, const base_uint& b) { return base_uint(a) &= b; }
-    friend inline const base_uint operator^(const base_uint& a, const base_uint& b) { return base_uint(a) ^= b; }
-    friend inline const base_uint operator>>(const base_uint& a, int shift) { return base_uint(a) >>= shift; }
-    friend inline const base_uint operator<<(const base_uint& a, int shift) { return base_uint(a) <<= shift; }
-    friend inline const base_uint operator*(const base_uint& a, uint32_t b) { return base_uint(a) *= b; }
-    friend inline bool operator==(const base_uint& a, const base_uint& b) { return memcmp(a.pn, b.pn, sizeof(a.pn)) == 0; }
-    friend inline bool operator!=(const base_uint& a, const base_uint& b) { return memcmp(a.pn, b.pn, sizeof(a.pn)) != 0; }
-    friend inline bool operator>(const base_uint& a, const base_uint& b) { return a.CompareTo(b) > 0; }
-    friend inline bool operator<(const base_uint& a, const base_uint& b) { return a.CompareTo(b) < 0; }
-    friend inline bool operator>=(const base_uint& a, const base_uint& b) { return a.CompareTo(b) >= 0; }
-    friend inline bool operator<=(const base_uint& a, const base_uint& b) { return a.CompareTo(b) <= 0; }
-    friend inline bool operator==(const base_uint& a, uint64_t b) { return a.EqualTo(b); }
-    friend inline bool operator!=(const base_uint& a, uint64_t b) { return !a.EqualTo(b); }
+    friend inline const base_uint operator+(const base_uint& a, const base_uint& b) {
+        return base_uint(a) += b;
+    }
+    friend inline const base_uint operator-(const base_uint& a, const base_uint& b) {
+        return base_uint(a) -= b;
+    }
+    friend inline const base_uint operator*(const base_uint& a, const base_uint& b) {
+        return base_uint(a) *= b;
+    }
+    friend inline const base_uint operator/(const base_uint& a, const base_uint& b) {
+        return base_uint(a) /= b;
+    }
+    friend inline const base_uint operator|(const base_uint& a, const base_uint& b) {
+        return base_uint(a) |= b;
+    }
+    friend inline const base_uint operator&(const base_uint& a, const base_uint& b) {
+        return base_uint(a) &= b;
+    }
+    friend inline const base_uint operator^(const base_uint& a, const base_uint& b) {
+        return base_uint(a) ^= b;
+    }
+    friend inline const base_uint operator>>(const base_uint& a, int shift) {
+        return base_uint(a) >>= shift;
+    }
+    friend inline const base_uint operator<<(const base_uint& a, int shift) {
+        return base_uint(a) <<= shift;
+    }
+    friend inline const base_uint operator*(const base_uint& a, uint32_t b) {
+        return base_uint(a) *= b;
+    }
+    friend inline bool operator==(const base_uint& a, const base_uint& b) {
+        return memcmp(a.pn, b.pn, sizeof(a.pn)) == 0;
+    }
+    friend inline bool operator!=(const base_uint& a, const base_uint& b) {
+        return memcmp(a.pn, b.pn, sizeof(a.pn)) != 0;
+    }
+    friend inline bool operator>(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) > 0;
+    }
+    friend inline bool operator<(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) < 0;
+    }
+    friend inline bool operator>=(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) >= 0;
+    }
+    friend inline bool operator<=(const base_uint& a, const base_uint& b) {
+        return a.CompareTo(b) <= 0;
+    }
+    friend inline bool operator==(const base_uint& a, uint64_t b) {
+        return a.EqualTo(b);
+    }
+    friend inline bool operator!=(const base_uint& a, uint64_t b) {
+        return !a.EqualTo(b);
+    }
 
     std::string GetHex() const;
     void SetHex(const char* psz);

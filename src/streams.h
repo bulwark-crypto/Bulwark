@@ -108,23 +108,47 @@ public:
     //
     // Vector subset
     //
-    const_iterator begin() const { return vch.begin() + nReadPos; }
-    iterator begin() { return vch.begin() + nReadPos; }
-    const_iterator end() const { return vch.end(); }
-    iterator end() { return vch.end(); }
-    size_type size() const { return vch.size() - nReadPos; }
-    bool empty() const { return vch.size() == nReadPos; }
-    void resize(size_type n, value_type c = 0) { vch.resize(n + nReadPos, c); }
-    void reserve(size_type n) { vch.reserve(n + nReadPos); }
-    const_reference operator[](size_type pos) const { return vch[pos + nReadPos]; }
-    reference operator[](size_type pos) { return vch[pos + nReadPos]; }
+    const_iterator begin() const {
+        return vch.begin() + nReadPos;
+    }
+    iterator begin() {
+        return vch.begin() + nReadPos;
+    }
+    const_iterator end() const {
+        return vch.end();
+    }
+    iterator end() {
+        return vch.end();
+    }
+    size_type size() const {
+        return vch.size() - nReadPos;
+    }
+    bool empty() const {
+        return vch.size() == nReadPos;
+    }
+    void resize(size_type n, value_type c = 0) {
+        vch.resize(n + nReadPos, c);
+    }
+    void reserve(size_type n) {
+        vch.reserve(n + nReadPos);
+    }
+    const_reference operator[](size_type pos) const {
+        return vch[pos + nReadPos];
+    }
+    reference operator[](size_type pos) {
+        return vch[pos + nReadPos];
+    }
     void clear()
     {
         vch.clear();
         nReadPos = 0;
     }
-    iterator insert(iterator it, const char& x = char()) { return vch.insert(it, x); }
-    void insert(iterator it, size_type n, const char& x) { vch.insert(it, n, x); }
+    iterator insert(iterator it, const char& x = char()) {
+        return vch.insert(it, x);
+    }
+    void insert(iterator it, size_type n, const char& x) {
+        vch.insert(it, n, x);
+    }
 
     void insert(iterator it, std::vector<char>::const_iterator first, std::vector<char>::const_iterator last)
     {
@@ -198,16 +222,34 @@ public:
     //
     // Stream subset
     //
-    bool eof() const { return size() == 0; }
-    CDataStream* rdbuf() { return this; }
-    int in_avail() { return size(); }
+    bool eof() const {
+        return size() == 0;
+    }
+    CDataStream* rdbuf() {
+        return this;
+    }
+    int in_avail() {
+        return size();
+    }
 
-    void SetType(int n) { nType = n; }
-    int GetType() { return nType; }
-    void SetVersion(int n) { nVersion = n; }
-    int GetVersion() { return nVersion; }
-    void ReadVersion() { *this >> nVersion; }
-    void WriteVersion() { *this << nVersion; }
+    void SetType(int n) {
+        nType = n;
+    }
+    int GetType() {
+        return nType;
+    }
+    void SetVersion(int n) {
+        nVersion = n;
+    }
+    int GetVersion() {
+        return nVersion;
+    }
+    void ReadVersion() {
+        *this >> nVersion;
+    }
+    void WriteVersion() {
+        *this << nVersion;
+    }
 
     CDataStream& read(char* pch, size_t nSize)
     {
@@ -343,21 +385,37 @@ public:
      * @note Ownership of the FILE* will remain with this class. Use this only if the scope of the
      * CAutoFile outlives use of the passed pointer.
      */
-    FILE* Get() const { return file; }
+    FILE* Get() const {
+        return file;
+    }
 
     /** Return true if the wrapped FILE* is NULL, false otherwise.
      */
-    bool IsNull() const { return (file == NULL); }
+    bool IsNull() const {
+        return (file == NULL);
+    }
 
     //
     // Stream subset
     //
-    void SetType(int n) { nType = n; }
-    int GetType() { return nType; }
-    void SetVersion(int n) { nVersion = n; }
-    int GetVersion() { return nVersion; }
-    void ReadVersion() { *this >> nVersion; }
-    void WriteVersion() { *this << nVersion; }
+    void SetType(int n) {
+        nType = n;
+    }
+    int GetType() {
+        return nType;
+    }
+    void SetVersion(int n) {
+        nVersion = n;
+    }
+    int GetVersion() {
+        return nVersion;
+    }
+    void ReadVersion() {
+        *this >> nVersion;
+    }
+    void WriteVersion() {
+        *this << nVersion;
+    }
 
     CAutoFile& read(char* pch, size_t nSize)
     {

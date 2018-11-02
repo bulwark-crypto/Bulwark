@@ -19,9 +19,9 @@
 CCriticalSection cs_masternodes;
 
 MasternodeList::MasternodeList(QWidget* parent) : QWidget(parent),
-                                                  ui(new Ui::MasternodeList),
-                                                  clientModel(0),
-                                                  walletModel(0)
+    ui(new Ui::MasternodeList),
+    clientModel(0),
+    walletModel(0)
 {
     ui->setupUi(this);
 
@@ -212,7 +212,7 @@ void MasternodeList::updateMyNodeList(bool fForce)
 
         CTxIn txin = CTxIn(uint256S(mne.getTxHash()), uint32_t(nIndex));
         CMasternode* pmn = mnodeman.Find(txin);
-	updateMyMasternodeInfo(QString::fromStdString(mne.getAlias()), QString::fromStdString(mne.getIp()), pmn);
+        updateMyMasternodeInfo(QString::fromStdString(mne.getAlias()), QString::fromStdString(mne.getIp()), pmn);
 
     }
     ui->tableWidgetMyMasternodes->setSortingEnabled(true);
@@ -235,9 +235,9 @@ void MasternodeList::on_startButton_clicked()
 
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm masternode start"),
-        tr("Are you sure you want to start masternode %1?").arg(QString::fromStdString(strAlias)),
-        QMessageBox::Yes | QMessageBox::Cancel,
-        QMessageBox::Cancel);
+                                         tr("Are you sure you want to start masternode %1?").arg(QString::fromStdString(strAlias)),
+                                         QMessageBox::Yes | QMessageBox::Cancel,
+                                         QMessageBox::Cancel);
 
     if (retval != QMessageBox::Yes) return;
 
@@ -259,9 +259,9 @@ void MasternodeList::on_startAllButton_clicked()
 {
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm all masternodes start"),
-        tr("Are you sure you want to start ALL masternodes?"),
-        QMessageBox::Yes | QMessageBox::Cancel,
-        QMessageBox::Cancel);
+                                         tr("Are you sure you want to start ALL masternodes?"),
+                                         QMessageBox::Yes | QMessageBox::Cancel,
+                                         QMessageBox::Cancel);
 
     if (retval != QMessageBox::Yes) return;
 
@@ -283,16 +283,16 @@ void MasternodeList::on_startMissingButton_clicked()
 {
     if (!masternodeSync.IsMasternodeListSynced()) {
         QMessageBox::critical(this, tr("Command is not available right now"),
-            tr("You can't use this command until masternode list is synced"));
+                              tr("You can't use this command until masternode list is synced"));
         return;
     }
 
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this,
-        tr("Confirm missing masternodes start"),
-        tr("Are you sure you want to start MISSING masternodes?"),
-        QMessageBox::Yes | QMessageBox::Cancel,
-        QMessageBox::Cancel);
+                                         tr("Confirm missing masternodes start"),
+                                         tr("Are you sure you want to start MISSING masternodes?"),
+                                         QMessageBox::Yes | QMessageBox::Cancel,
+                                         QMessageBox::Cancel);
 
     if (retval != QMessageBox::Yes) return;
 

@@ -358,9 +358,9 @@ void QtMaterialCheckable::mousePressEvent(QMouseEvent *event)
 
     QtMaterialRipple *ripple;
     if (QtMaterialCheckable::LabelPositionLeft == d->labelPosition) {
-         ripple = new QtMaterialRipple(QPoint(width()-14, 28));
+        ripple = new QtMaterialRipple(QPoint(width()-14, 28));
     } else {
-         ripple = new QtMaterialRipple(QPoint(28, 28));
+        ripple = new QtMaterialRipple(QPoint(28, 28));
     }
     ripple->setRadiusEndValue(22);
     ripple->setColor(isChecked() ? checkedColor() : uncheckedColor());

@@ -102,8 +102,8 @@ public:
     /** New block has been accepted */
     boost::signals2::signal<void(const uint256& hash)> NotifyBlockTip;
 
-	/** Banlist did change. */
-	boost::signals2::signal<void(void)> BannedListChanged;
+    /** Banlist did change. */
+    boost::signals2::signal<void(void)> BannedListChanged;
 };
 
 extern CClientUIInterface uiInterface;

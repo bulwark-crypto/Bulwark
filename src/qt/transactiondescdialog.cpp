@@ -13,7 +13,7 @@
 #include <QString>
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex& idx, QWidget* parent) : QDialog(parent),
-                                                                                        ui(new Ui::TransactionDescDialog)
+    ui(new Ui::TransactionDescDialog)
 {
     ui->setupUi(this);
 

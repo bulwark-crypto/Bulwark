@@ -30,15 +30,15 @@
 
 /** "Help message" or "About" dialog box */
 HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent),
-                                                                    ui(new Ui::HelpMessageDialog)
+    ui(new Ui::HelpMessageDialog)
 {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
 
     QString version = tr("Bulwark core") + " " + tr("version") + " " + QString::fromStdString(FormatFullVersion());
-/* On x86 add a bit specifier to the version so that users can distinguish between
-     * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
-     */
+    /* On x86 add a bit specifier to the version so that users can distinguish between
+         * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
+         */
 #if defined(__x86_64__)
     version += " " + tr("(%1-bit)").arg(64);
 #elif defined(__i386__)
@@ -155,8 +155,8 @@ ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(par
 {
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
-        tr("Bulwark Core is shutting down...") + "<br /><br />" +
-        tr("Do not shut down the computer until this window disappears.")));
+                          tr("Bulwark Core is shutting down...") + "<br /><br />" +
+                          tr("Do not shut down the computer until this window disappears.")));
     setLayout(layout);
 }
 

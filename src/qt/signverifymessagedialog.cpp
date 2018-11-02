@@ -23,8 +23,8 @@
 #include <QClipboard>
 
 SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget* parent) : QDialog(parent),
-                                                                    ui(new Ui::SignVerifyMessageDialog),
-                                                                    model(0)
+    ui(new Ui::SignVerifyMessageDialog),
+    model(0)
 {
     ui->setupUi(this);
 

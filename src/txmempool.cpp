@@ -72,18 +72,22 @@ public:
         prioritySamples.push_back(priority);
     }
 
-    size_t FeeSamples() const { return feeSamples.size(); }
+    size_t FeeSamples() const {
+        return feeSamples.size();
+    }
     size_t GetFeeSamples(std::vector<CFeeRate>& insertInto) const
     {
         BOOST_FOREACH (const CFeeRate& f, feeSamples)
-            insertInto.push_back(f);
+        insertInto.push_back(f);
         return feeSamples.size();
     }
-    size_t PrioritySamples() const { return prioritySamples.size(); }
+    size_t PrioritySamples() const {
+        return prioritySamples.size();
+    }
     size_t GetPrioritySamples(std::vector<double>& insertInto) const
     {
         BOOST_FOREACH (double d, prioritySamples)
-            insertInto.push_back(d);
+        insertInto.push_back(d);
         return prioritySamples.size();
     }
 
@@ -144,7 +148,7 @@ public:
             throw runtime_error("Corrupt priority value in estimates file.");
         if (feeSamples.size() + prioritySamples.size() > 0)
             LogPrint("estimatefee", "Read %d fee samples and %d priority samples\n",
-                feeSamples.size(), prioritySamples.size());
+                     feeSamples.size(), prioritySamples.size());
     }
 };
 
@@ -187,7 +191,7 @@ private:
             // don't know why they got confirmed.
         }
         LogPrint("estimatefee", "Seen TX confirm: %s : %s fee/%g priority, took %d blocks\n",
-            assignedTo, feeRate.ToString(), dPriority, nBlocksAgo);
+                 assignedTo, feeRate.ToString(), dPriority, nBlocksAgo);
     }
 
 public:
@@ -248,9 +252,9 @@ public:
         for (size_t i = 0; i < history.size(); i++) {
             if (history[i].FeeSamples() + history[i].PrioritySamples() > 0)
                 LogPrint("estimatefee", "estimates: for confirming within %d blocks based on %d/%d samples, fee=%s, prio=%g\n",
-                    i,
-                    history[i].FeeSamples(), history[i].PrioritySamples(),
-                    estimateFee(i + 1).ToString(), estimatePriority(i + 1));
+                         i,
+                         history[i].FeeSamples(), history[i].PrioritySamples(),
+                         estimateFee(i + 1).ToString(), estimatePriority(i + 1));
         }
     }
 
@@ -268,7 +272,7 @@ public:
             for (size_t i = 0; i < history.size(); i++)
                 history.at(i).GetFeeSamples(sortedFeeSamples);
             std::sort(sortedFeeSamples.begin(), sortedFeeSamples.end(),
-                std::greater<CFeeRate>());
+                      std::greater<CFeeRate>());
         }
         if (sortedFeeSamples.size() < 11) {
             // Eleven is Gavin's Favorite Number
@@ -301,7 +305,7 @@ public:
             for (size_t i = 0; i < history.size(); i++)
                 history.at(i).GetPrioritySamples(sortedPrioritySamples);
             std::sort(sortedPrioritySamples.begin(), sortedPrioritySamples.end(),
-                std::greater<double>());
+                      std::greater<double>());
         }
         if (sortedPrioritySamples.size() < 11)
             return -1.0;
@@ -356,7 +360,7 @@ public:
 
 
 CTxMemPool::CTxMemPool(const CFeeRate& _minRelayFee) : nTransactionsUpdated(0),
-                                                       minRelayFee(_minRelayFee)
+    minRelayFee(_minRelayFee)
 {
     // Sanity checks off by default for performance, because otherwise
     // accepting transactions becomes O(N^2) where N is the number
@@ -456,7 +460,7 @@ void CTxMemPool::remove(const CTransaction& origTx, std::list<CTransaction>& rem
                 }
             }
             BOOST_FOREACH (const CTxIn& txin, tx.vin)
-                mapNextTx.erase(txin.prevout);
+            mapNextTx.erase(txin.prevout);
 
             removed.push_back(tx);
             totalTxSize -= mapTx[hash].GetTxSize();

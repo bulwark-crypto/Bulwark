@@ -228,7 +228,7 @@ UniValue getrawmempool(const UniValue& params, bool fHelp)
 
         UniValue a(UniValue::VARR);
         BOOST_FOREACH (const uint256& hash, vtxid)
-            a.push_back(hash.ToString());
+        a.push_back(hash.ToString());
 
         return a;
     }
@@ -589,7 +589,7 @@ UniValue getchaintips(const UniValue& params, bool fHelp)
        of another block.  */
     std::set<const CBlockIndex*, CompareBlocksByHeight> setTips;
     BOOST_FOREACH (const PAIRTYPE(const uint256, CBlockIndex*) & item, mapBlockIndex)
-        setTips.insert(item.second);
+    setTips.insert(item.second);
     BOOST_FOREACH (const PAIRTYPE(const uint256, CBlockIndex*) & item, mapBlockIndex) {
         const CBlockIndex* pprev = item.second->pprev;
         if (pprev)
@@ -641,20 +641,20 @@ UniValue getfeeinfo(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-                "getfeeinfo blocks\n"
-                        "\nReturns details of transaction fees over the last n blocks.\n"
-                        "\nArguments:\n"
-                        "1. blocks     (int, required) the number of blocks to get transaction data from\n"
-                        "\nResult:\n"
-                        "{\n"
-                        "  \"txcount\": xxxxx                (numeric) Current tx count\n"
-                        "  \"txbytes\": xxxxx                (numeric) Sum of all tx sizes\n"
-                        "  \"ttlfee\": xxxxx                 (numeric) Sum of all fees\n"
-                        "  \"feeperkb\": xxxxx               (numeric) Average fee per kb over the block range\n"
-                        "  \"rec_highpriorityfee_perkb\": xxxxx    (numeric) Recommended fee per kb to use for a high priority tx\n"
-                        "}\n"
-                        "\nExamples:\n" +
-                HelpExampleCli("getfeeinfo", "5") + HelpExampleRpc("getfeeinfo", "5"));
+            "getfeeinfo blocks\n"
+            "\nReturns details of transaction fees over the last n blocks.\n"
+            "\nArguments:\n"
+            "1. blocks     (int, required) the number of blocks to get transaction data from\n"
+            "\nResult:\n"
+            "{\n"
+            "  \"txcount\": xxxxx                (numeric) Current tx count\n"
+            "  \"txbytes\": xxxxx                (numeric) Sum of all tx sizes\n"
+            "  \"ttlfee\": xxxxx                 (numeric) Sum of all fees\n"
+            "  \"feeperkb\": xxxxx               (numeric) Average fee per kb over the block range\n"
+            "  \"rec_highpriorityfee_perkb\": xxxxx    (numeric) Recommended fee per kb to use for a high priority tx\n"
+            "}\n"
+            "\nExamples:\n" +
+            HelpExampleCli("getfeeinfo", "5") + HelpExampleRpc("getfeeinfo", "5"));
 
 
     int nBlocks = params[0].get_int();
@@ -816,15 +816,15 @@ UniValue findserial(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 1)
         throw runtime_error(
             "findserial \"serial\"\n"
-                "\nSearches the zerocoin database for a zerocoin spend transaction that contains the specified serial\n"
-                "\nArguments:\n"
-                "1. serial   (string, required) the serial of a zerocoin spend to search for.\n"
-                "\nResult:\n"
-                "{\n"
-                "  \"success\": true/false        (boolean) Whether the serial was found\n"
-                "  \"txid\": xxxxx                (numeric) The transaction that contains the spent serial\n"
-                "}\n"
-                "\nExamples:\n" +
+            "\nSearches the zerocoin database for a zerocoin spend transaction that contains the specified serial\n"
+            "\nArguments:\n"
+            "1. serial   (string, required) the serial of a zerocoin spend to search for.\n"
+            "\nResult:\n"
+            "{\n"
+            "  \"success\": true/false        (boolean) Whether the serial was found\n"
+            "  \"txid\": xxxxx                (numeric) The transaction that contains the spent serial\n"
+            "}\n"
+            "\nExamples:\n" +
             HelpExampleCli("findserial", "\"serial\"") + HelpExampleRpc("findserial", "\"serial\""));
 
     std::string strSerial = params[0].get_str();

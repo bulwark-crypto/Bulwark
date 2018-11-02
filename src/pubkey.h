@@ -13,7 +13,7 @@
 #include <stdexcept>
 #include <vector>
 
-/** 
+/**
  * secp256k1:
  * const unsigned int PRIVATE_KEY_SIZE = 279;
  * const unsigned int PUBLIC_KEY_SIZE  = 65;
@@ -89,10 +89,18 @@ public:
     }
 
     //! Simple read-only vector-like interface to the pubkey data.
-    unsigned int size() const { return GetLen(vch[0]); }
-    const unsigned char* begin() const { return vch; }
-    const unsigned char* end() const { return vch + size(); }
-    const unsigned char& operator[](unsigned int pos) const { return vch[pos]; }
+    unsigned int size() const {
+        return GetLen(vch[0]);
+    }
+    const unsigned char* begin() const {
+        return vch;
+    }
+    const unsigned char* end() const {
+        return vch + size();
+    }
+    const unsigned char& operator[](unsigned int pos) const {
+        return vch[pos];
+    }
 
     //! Comparator implementation.
     friend bool operator==(const CPubKey& a, const CPubKey& b)
@@ -151,7 +159,7 @@ public:
 
     /*
      * Check syntactic correctness.
-     * 
+     *
      * Note that this is consensus critical as CheckSig() calls it!
      */
     bool IsValid() const

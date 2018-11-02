@@ -106,9 +106,9 @@ void FreespaceChecker::check()
 
 
 Intro::Intro(QWidget* parent) : QDialog(parent),
-                                ui(new Ui::Intro),
-                                thread(0),
-                                signalled(false)
+    ui(new Ui::Intro),
+    thread(0),
+    signalled(false)
 {
     ui->setupUi(this);
     ui->sizeWarningLabel->setText(ui->sizeWarningLabel->text().arg(BLOCK_CHAIN_SIZE / GB_BYTES));
@@ -169,7 +169,7 @@ bool Intro::pickDataDirectory()
         while (true) {
             if (!intro.exec()) {
                 /* Cancel clicked */
-		return false;
+                return false;
             }
             dataDir = intro.getDataDirectory();
             try {
@@ -177,7 +177,7 @@ bool Intro::pickDataDirectory()
                 break;
             } catch (fs::filesystem_error& e) {
                 QMessageBox::critical(0, tr("Bulwark Core"),
-                    tr("Error: Specified data directory \"%1\" cannot be created.").arg(dataDir));
+                                      tr("Error: Specified data directory \"%1\" cannot be created.").arg(dataDir));
                 /* fall through, back to choosing screen */
             }
         }

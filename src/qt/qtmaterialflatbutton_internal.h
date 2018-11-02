@@ -66,7 +66,7 @@ private:
     QState               *const m_hoveredFocusedState;
     QState               *const m_pressedState;
     QSequentialAnimationGroup
-                         *const m_haloAnimation;
+    *const m_haloAnimation;
     qreal                       m_overlayOpacity;
     qreal                       m_checkedOverlayProgress;
     qreal                       m_haloOpacity;

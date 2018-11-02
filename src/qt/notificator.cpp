@@ -34,13 +34,13 @@ const int FREEDESKTOP_NOTIFICATION_ICON_SIZE = 128;
 #endif
 
 Notificator::Notificator(const QString& programName, QSystemTrayIcon* trayicon, QWidget* parent) : QObject(parent),
-                                                                                                   parent(parent),
-                                                                                                   programName(programName),
-                                                                                                   mode(None),
-                                                                                                   trayIcon(trayicon)
+    parent(parent),
+    programName(programName),
+    mode(None),
+    trayIcon(trayicon)
 #ifdef USE_DBUS
-                                                                                                   ,
-                                                                                                   interface(0)
+    ,
+    interface(0)
 #endif
 {
     if (trayicon && trayicon->supportsMessages()) {
@@ -48,7 +48,7 @@ Notificator::Notificator(const QString& programName, QSystemTrayIcon* trayicon, 
     }
 #ifdef USE_DBUS
     interface = new QDBusInterface("org.freedesktop.Notifications",
-        "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
+                                       "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
     if (interface->isValid()) {
         mode = Freedesktop;
     }
@@ -116,11 +116,11 @@ const int BYTES_PER_PIXEL = 4;
 const int BITS_PER_SAMPLE = 8;
 
 FreedesktopImage::FreedesktopImage(const QImage& img) : width(img.width()),
-                                                        height(img.height()),
-                                                        stride(img.width() * BYTES_PER_PIXEL),
-                                                        hasAlpha(true),
-                                                        channels(CHANNELS),
-                                                        bitsPerSample(BITS_PER_SAMPLE)
+    height(img.height()),
+    stride(img.width() * BYTES_PER_PIXEL),
+    hasAlpha(true),
+    channels(CHANNELS),
+    bitsPerSample(BITS_PER_SAMPLE)
 {
     // Convert 00xAARRGGBB to RGBA bytewise (endian-independent) format
     QImage tmp = img.convertToFormat(QImage::Format_ARGB32);

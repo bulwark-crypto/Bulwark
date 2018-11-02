@@ -16,7 +16,7 @@
 
 #include <math.h>
 
-unsigned int static DarkGravityWave(const CBlockIndex* pindexLast) 
+unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 {
     /* current difficulty formula, bulwark - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex* BlockLastSolved = pindexLast;
@@ -41,14 +41,14 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 
     if (pindexLast->nHeight >= nLastPOWBlock) {
         uint256 bnTargetLimit = (~uint256(0) >> 24);
-        
-        // For first 20 blocks return limit to avoid high 
+
+        // For first 20 blocks return limit to avoid high
         // difficulty from TH/s PoW.
         if (pindexLast->nHeight <= (nLastPOWBlock + 20)) {
             bnTargetLimit = (~uint256(0) >> 12);
             return bnTargetLimit.GetCompact();
         }
-        
+
         int64_t nTargetSpacing = Params().TargetSpacing(); // mainnet vs testnet
         int64_t nTargetTimespan = 60 * 30; //1800
 
@@ -120,12 +120,12 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         bnNew = Params().ProofOfWorkLimit();
     }
 
-    return bnNew.GetCompact();	
+    return bnNew.GetCompact();
 }
-	
+
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
 {
-	return DarkGravityWave(pindexLast);
+    return DarkGravityWave(pindexLast);
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)

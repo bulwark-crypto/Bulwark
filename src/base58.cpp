@@ -137,7 +137,7 @@ std::string EncodeBase58Check(const std::vector<unsigned char>& vchIn)
 bool DecodeBase58Check(const char* psz, std::vector<unsigned char>& vchRet)
 {
     if (!DecodeBase58(psz, vchRet) ||
-        (vchRet.size() < 4)) {
+            (vchRet.size() < 4)) {
         vchRet.clear();
         return false;
     }
@@ -227,9 +227,15 @@ private:
 public:
     CBitcoinAddressVisitor(CBitcoinAddress* addrIn) : addr(addrIn) {}
 
-    bool operator()(const CKeyID& id) const { return addr->Set(id); }
-    bool operator()(const CScriptID& id) const { return addr->Set(id); }
-    bool operator()(const CNoDestination& no) const { return false; }
+    bool operator()(const CKeyID& id) const {
+        return addr->Set(id);
+    }
+    bool operator()(const CScriptID& id) const {
+        return addr->Set(id);
+    }
+    bool operator()(const CNoDestination& no) const {
+        return false;
+    }
 };
 
 } // anon namespace

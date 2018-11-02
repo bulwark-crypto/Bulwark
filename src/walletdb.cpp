@@ -74,7 +74,7 @@ bool CWalletDB::WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey, c
     nWalletDBUpdated++;
 
     if (!Write(std::make_pair(std::string("keymeta"), vchPubKey),
-            keyMeta, false))
+               keyMeta, false))
         return false;
 
     // hash pubkey/privkey to accelerate wallet load
@@ -87,14 +87,14 @@ bool CWalletDB::WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey, c
 }
 
 bool CWalletDB::WriteCryptedKey(const CPubKey& vchPubKey,
-    const std::vector<unsigned char>& vchCryptedSecret,
-    const CKeyMetadata& keyMeta)
+                                const std::vector<unsigned char>& vchCryptedSecret,
+                                const CKeyMetadata& keyMeta)
 {
     const bool fEraseUnencryptedKey = true;
     nWalletDBUpdated++;
 
     if (!Write(std::make_pair(std::string("keymeta"), vchPubKey),
-            keyMeta))
+               keyMeta))
         return false;
 
     if (!Write(std::make_pair(std::string("ckey"), vchPubKey), vchCryptedSecret, false))
@@ -171,22 +171,22 @@ bool CWalletDB::WriteMultiSend(std::vector<std::pair<std::string,std::vector<std
 {
     nWalletDBUpdated++;
     bool ret = true;
-	for (unsigned int i = 0; i < vMultiSend.size(); i++) {
-		if (!Write(std::make_pair(std::string("multisendv2"),i), vMultiSend[i], true))
-			ret = false;
-	}
-	return ret;
+    for (unsigned int i = 0; i < vMultiSend.size(); i++) {
+        if (!Write(std::make_pair(std::string("multisendv2"),i), vMultiSend[i], true))
+            ret = false;
+    }
+    return ret;
 }
 //presstab HyperStake
 bool CWalletDB::EraseMultiSend(std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend)
 {
-	nWalletDBUpdated++;
-	bool ret = true;
-	for (unsigned int i = 0; i < vMultiSend.size(); i++) {
-		if (!Erase(std::make_pair(std::string("multisendv2"), i)))
-			ret = false;
-	}
-	return ret;
+    nWalletDBUpdated++;
+    bool ret = true;
+    for (unsigned int i = 0; i < vMultiSend.size(); i++) {
+        if (!Erase(std::make_pair(std::string("multisendv2"), i)))
+            ret = false;
+    }
+    return ret;
 }
 //presstab HyperStake
 bool CWalletDB::WriteMSettings(bool fMultiSendStake, bool fMultiSendMasternode, int nLastMultiSendHeight)
@@ -284,7 +284,7 @@ CAmount CWalletDB::GetAccountCreditDebit(const string& strAccount)
 
     CAmount nCreditDebit = 0;
     BOOST_FOREACH (const CAccountingEntry& entry, entries)
-        nCreditDebit += entry.nCreditDebit;
+    nCreditDebit += entry.nCreditDebit;
 
     return nCreditDebit;
 }
@@ -445,7 +445,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
                     char fUnused;
                     ssValue >> fTmp >> fUnused >> wtx.strFromAccount;
                     strErr = strprintf("LoadWallet() upgrading tx ver=%d %d '%s' %s",
-                        wtx.fTimeReceivedIsTxTime, fTmp, wtx.strFromAccount, hash.ToString());
+                                       wtx.fTimeReceivedIsTxTime, fTmp, wtx.strFromAccount, hash.ToString());
                     wtx.fTimeReceivedIsTxTime = fTmp;
                 } else {
                     strErr = strprintf("LoadWallet() repairing tx ver=%d %s", wtx.fTimeReceivedIsTxTime, hash.ToString());
@@ -584,7 +584,7 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
 
             // find earliest key creation time, as wallet birthday
             if (!pwallet->nTimeFirstKey ||
-                (keyMeta.nCreateTime < pwallet->nTimeFirstKey))
+                    (keyMeta.nCreateTime < pwallet->nTimeFirstKey))
                 pwallet->nTimeFirstKey = keyMeta.nCreateTime;
         } else if (strType == "defaultkey") {
             ssValue >> pwallet->vchDefaultKey;
@@ -623,9 +623,9 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
         {
             unsigned int i;
             ssKey >> i;
-			std::pair<std::string, std::vector<std::pair<std::string, int>>> pMultiSend;
+            std::pair<std::string, std::vector<std::pair<std::string, int>>> pMultiSend;
             ssValue >> pMultiSend;
-			pwallet->vMultiSend.push_back(pMultiSend);
+            pwallet->vMultiSend.push_back(pMultiSend);
         } else if (strType == "msettingsv2") //presstab HyperStake
         {
             std::pair<std::pair<bool, bool>, int> pSettings;
@@ -736,14 +736,14 @@ DBErrors CWalletDB::LoadWallet(CWallet* pwallet)
     LogPrintf("nFileVersion = %d\n", wss.nFileVersion);
 
     LogPrintf("Keys: %u plaintext, %u encrypted, %u w/ metadata, %u total\n",
-        wss.nKeys, wss.nCKeys, wss.nKeyMeta, wss.nKeys + wss.nCKeys);
+              wss.nKeys, wss.nCKeys, wss.nKeyMeta, wss.nKeys + wss.nCKeys);
 
     // nTimeFirstKey is only reliable if all keys have metadata
     if ((wss.nKeys + wss.nCKeys) != wss.nKeyMeta)
         pwallet->nTimeFirstKey = 1; // 0 would be considered 'no value'
 
     BOOST_FOREACH (uint256 hash, wss.vWalletUpgrade)
-        WriteTx(hash, pwallet->mapWallet[hash]);
+    WriteTx(hash, pwallet->mapWallet[hash]);
 
     // Rewrite encrypted wallets of versions 0.4.0 and 0.5.0rc:
     if (wss.fIsEncrypted && (wss.nFileVersion == 40000 || wss.nFileVersion == 50000))
@@ -946,7 +946,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
     std::string newFilename = strprintf("wallet.%d.bak", now);
 
     int result = dbenv.dbenv.dbrename(NULL, filename.c_str(), NULL,
-        newFilename.c_str(), DB_AUTO_COMMIT);
+                                      newFilename.c_str(), DB_AUTO_COMMIT);
     if (result == 0)
         LogPrintf("Renamed %s to %s\n", filename, newFilename);
     else {
@@ -965,11 +965,11 @@ bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
     bool fSuccess = allOK;
     boost::scoped_ptr<Db> pdbCopy(new Db(&dbenv.dbenv, 0));
     int ret = pdbCopy->open(NULL, // Txn pointer
-        filename.c_str(),         // Filename
-        "main",                   // Logical db name
-        DB_BTREE,                 // Database type
-        DB_CREATE,                // Flags
-        0);
+                            filename.c_str(),         // Filename
+                            "main",                   // Logical db name
+                            DB_BTREE,                 // Database type
+                            DB_CREATE,                // Flags
+                            0);
     if (ret > 0) {
         LogPrintf("Cannot create database file %s\n", filename);
         return false;
@@ -984,7 +984,7 @@ bool CWalletDB::Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys)
             CDataStream ssValue(row.second, SER_DISK, CLIENT_VERSION);
             string strType, strErr;
             bool fReadOK = ReadKeyValue(&dummyWallet, ssKey, ssValue,
-                wss, strType, strErr);
+                                        wss, strType, strErr);
             if (!IsKeyType(strType))
                 continue;
             if (!fReadOK) {
@@ -1162,7 +1162,7 @@ std::list<CZerocoinMint> CWalletDB::ListMintedCoins(bool fUnusedOnly, bool fMatu
                 if (mapBlockIndex.count(hashBlock)) {
                     mint.SetHeight(mapBlockIndex[hashBlock]->nHeight);
                     vOverWrite.emplace_back(mint);
-                } else if (fMaturedOnly){
+                } else if (fMaturedOnly) {
                     continue;
                 }
             }
@@ -1217,7 +1217,7 @@ std::list<CBigNum> CWalletDB::ListMintedCoinsSerial()
 {
     std::list<CBigNum> listPubCoin;
     std::list<CZerocoinMint> listCoins = ListMintedCoins(true, false, false);
-    
+
     for ( auto& coin : listCoins) {
         listPubCoin.push_back(coin.GetSerialNumber());
     }
@@ -1273,7 +1273,7 @@ std::list<CBigNum> CWalletDB::ListSpentCoinsSerial()
 {
     std::list<CBigNum> listPubCoin;
     std::list<CZerocoinSpend> listCoins = ListSpentCoins();
-    
+
     for ( auto& coin : listCoins) {
         listPubCoin.push_back(coin.GetSerial());
     }

@@ -12,15 +12,15 @@ namespace leveldb {
 namespace log {
 
 enum RecordType {
-  // Zero is reserved for preallocated files
-  kZeroType = 0,
+    // Zero is reserved for preallocated files
+    kZeroType = 0,
 
-  kFullType = 1,
+    kFullType = 1,
 
-  // For fragments
-  kFirstType = 2,
-  kMiddleType = 3,
-  kLastType = 4
+    // For fragments
+    kFirstType = 2,
+    kMiddleType = 3,
+    kLastType = 4
 };
 static const int kMaxRecordType = kLastType;
 

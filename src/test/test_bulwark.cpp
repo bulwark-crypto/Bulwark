@@ -79,15 +79,15 @@ BOOST_GLOBAL_FIXTURE(TestingSetup);
 
 void Shutdown(void* parg)
 {
-  exit(0);
+    exit(0);
 }
 
 void StartShutdown()
 {
-  exit(0);
+    exit(0);
 }
 
 bool ShutdownRequested()
 {
-  return false;
+    return false;
 }

@@ -13,7 +13,7 @@
 #include <QLabel>
 
 WalletFrame::WalletFrame(BitcoinGUI* _gui) : QFrame(_gui),
-                                             gui(_gui)
+    gui(_gui)
 {
     // Leave HBox hook for adding a list view later
     QHBoxLayout* walletFrameLayout = new QHBoxLayout(this);
@@ -185,7 +185,7 @@ void WalletFrame::gotoMultiSendDialog()
 void WalletFrame::gotoMultisigDialog(int index)
 {
     WalletView* walletView = currentWalletView();
-    if(walletView){
+    if(walletView) {
         walletView->gotoMultisigDialog(index);
     }
 }

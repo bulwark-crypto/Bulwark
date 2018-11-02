@@ -23,7 +23,7 @@ namespace {
 class CSignatureCache
 {
 private:
-     //! sigdata_type is (signature hash, signature, public key):
+    //! sigdata_type is (signature hash, signature, public key):
     typedef boost::tuple<uint256, std::vector<unsigned char>, CPubKey> sigdata_type;
     std::set< sigdata_type> setValid;
     boost::shared_mutex cs_sigcache;

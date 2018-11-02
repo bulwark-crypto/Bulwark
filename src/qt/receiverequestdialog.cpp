@@ -88,8 +88,8 @@ void QRImageWidget::contextMenuEvent(QContextMenuEvent* event)
 }
 
 ReceiveRequestDialog::ReceiveRequestDialog(QWidget* parent) : QDialog(parent),
-                                                              ui(new Ui::ReceiveRequestDialog),
-                                                              model(0)
+    ui(new Ui::ReceiveRequestDialog),
+    model(0)
 {
     ui->setupUi(this);
 
@@ -185,7 +185,7 @@ void ReceiveRequestDialog::on_btnCopyURI_clicked()
 
 void ReceiveRequestDialog::on_closeButton_clicked()
 {
-	this->close();
+    this->close();
 }
 
 void ReceiveRequestDialog::on_btnCopyAddress_clicked()

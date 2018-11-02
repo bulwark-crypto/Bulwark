@@ -223,7 +223,9 @@ public:
     void requestShutdown();
 
     /// Get process return value
-    int getReturnValue() { return returnValue; }
+    int getReturnValue() {
+        return returnValue;
+    }
 
     /// Get window identifier of QMainWindow (BitcoinGUI)
     WId getMainWinId() const;
@@ -329,16 +331,16 @@ void BitcoinCore::shutdown()
 }
 
 BitcoinApplication::BitcoinApplication(int& argc, char** argv) : QApplication(argc, argv),
-                                                                 coreThread(0),
-                                                                 optionsModel(0),
-                                                                 clientModel(0),
-                                                                 window(0),
-                                                                 pollShutdownTimer(0),
+    coreThread(0),
+    optionsModel(0),
+    clientModel(0),
+    window(0),
+    pollShutdownTimer(0),
 #ifdef ENABLE_WALLET
-                                                                 paymentServer(0),
-                                                                 walletModel(0),
+    paymentServer(0),
+    walletModel(0),
 #endif
-                                                                 returnValue(0)
+    returnValue(0)
 {
     setQuitOnLastWindowClosed(false);
 }
@@ -473,7 +475,7 @@ void BitcoinApplication::initializeResult(int retval)
             window->setCurrentWallet(BitcoinGUI::DEFAULT_WALLET);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*, SendCoinsRecipient, QByteArray)),
-                paymentServer, SLOT(fetchPaymentACK(CWallet*, const SendCoinsRecipient&, QByteArray)));
+                    paymentServer, SLOT(fetchPaymentACK(CWallet*, const SendCoinsRecipient&, QByteArray)));
         }
 #endif
 
@@ -489,11 +491,11 @@ void BitcoinApplication::initializeResult(int retval)
         // Now that initialization/startup is done, process any command-line
         // Bulwark: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
-            window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
+                window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
-            paymentServer, SLOT(handleURIOrFile(QString)));
+                paymentServer, SLOT(handleURIOrFile(QString)));
         connect(paymentServer, SIGNAL(message(QString, QString, unsigned int)),
-            window, SLOT(message(QString, QString, unsigned int)));
+                window, SLOT(message(QString, QString, unsigned int)));
         QTimer::singleShot(100, paymentServer, SLOT(uiReady()));
 #endif
     } else {
@@ -585,7 +587,7 @@ int main(int argc, char* argv[])
     }
 #endif
 #endif
-    
+
     // Show help message immediately after parsing command-line options (for "-lang") and setting locale,
     // but before showing splash screen.
     if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
@@ -602,14 +604,14 @@ int main(int argc, char* argv[])
     /// - Do not call GetDataDir(true) before this step finishes
     if (!boost::filesystem::is_directory(GetDataDir(false))) {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
-            QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
+                              QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
     try {
         ReadConfigFile(mapArgs, mapMultiArgs);
     } catch (std::exception& e) {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
-            QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
+                              QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return 0;
     }
 
@@ -641,7 +643,7 @@ int main(int argc, char* argv[])
     string strErr;
     if (!masternodeConfig.read(strErr)) {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
-            QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
+                              QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return 0;
     }
 

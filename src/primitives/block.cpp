@@ -123,12 +123,12 @@ std::string CBlock::ToString() const
 {
     std::stringstream s;
     s << strprintf("CBlock(hash=%s, ver=%d, hashPrevBlock=%s, hashMerkleRoot=%s, nTime=%u, nBits=%08x, nNonce=%u, vtx=%u)\n",
-        GetHash().ToString(),
-        nVersion,
-        hashPrevBlock.ToString(),
-        hashMerkleRoot.ToString(),
-        nTime, nBits, nNonce,
-        vtx.size());
+                   GetHash().ToString(),
+                   nVersion,
+                   hashPrevBlock.ToString(),
+                   hashMerkleRoot.ToString(),
+                   nTime, nBits, nNonce,
+                   vtx.size());
     for (unsigned int i = 0; i < vtx.size(); i++)
     {
         s << "  " << vtx[i].ToString() << "\n";
@@ -172,7 +172,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
                 //vector<unsigned char> vchSig;
                 if (!key.Sign(GetHash(), vchBlockSig))
-                     return false;
+                    return false;
 
                 return true;
             }
@@ -197,7 +197,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
             //vector<unsigned char> vchSig;
             if (!key.Sign(GetHash(), vchBlockSig))
-                 return false;
+                return false;
 
             return true;
 
@@ -212,7 +212,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
             //vector<unsigned char> vchSig;
             if (!key.Sign(GetHash(), vchBlockSig))
-                 return false;
+                return false;
 
             return true;
         }
@@ -240,7 +240,7 @@ bool CBlock::CheckBlockSignature() const
         valtype& vchPubKey = vSolutions[0];
         CPubKey pubkey(vchPubKey);
         if (!pubkey.IsValid())
-          return false;
+            return false;
 
         if (vchBlockSig.empty())
             return false;
@@ -255,7 +255,7 @@ bool CBlock::CheckBlockSignature() const
         CPubKey pubkey(vchPubKey);
 
         if (!pubkey.IsValid())
-          return false;
+            return false;
 
         if (vchBlockSig.empty())
             return false;

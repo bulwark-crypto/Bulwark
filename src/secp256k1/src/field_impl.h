@@ -58,7 +58,8 @@ static int secp256k1_fe_set_hex(secp256k1_fe_t *r, const char *a, int alen) {
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
-                                 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0};
+                                 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0
+                                };
     for (int i=0; i<32; i++) {
         if (alen > i*2)
             tmp[32 - alen/2 + i] = (cvt[(unsigned char)a[2*i]] << 4) + cvt[(unsigned char)a[2*i+1]];
@@ -231,7 +232,8 @@ static void secp256k1_fe_inv_all(size_t len, secp256k1_fe_t r[len], const secp25
         secp256k1_fe_mul(&r[i], &r[i - 1], &a[i]);
     }
 
-    secp256k1_fe_t u; secp256k1_fe_inv(&u, &r[--i]);
+    secp256k1_fe_t u;
+    secp256k1_fe_inv(&u, &r[--i]);
 
     while (i > 0) {
         int j = i--;
@@ -255,7 +257,8 @@ static void secp256k1_fe_inv_all_var(size_t len, secp256k1_fe_t r[len], const se
         secp256k1_fe_mul(&r[i], &r[i - 1], &a[i]);
     }
 
-    secp256k1_fe_t u; secp256k1_fe_inv_var(&u, &r[--i]);
+    secp256k1_fe_t u;
+    secp256k1_fe_inv_var(&u, &r[--i]);
 
     while (i > 0) {
         int j = i--;

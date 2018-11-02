@@ -144,7 +144,9 @@ public:
     void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
     /// Return the number of (unique) Masternodes
-    int size() { return vMasternodes.size(); }
+    int size() {
+        return vMasternodes.size();
+    }
 
     int stable_size ();
 

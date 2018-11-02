@@ -40,8 +40,8 @@ int CoinControlDialog::nSplitBlockDummy;
 CCoinControl* CoinControlDialog::coinControl = new CCoinControl();
 
 CoinControlDialog::CoinControlDialog(QWidget* parent, bool fMultisigEnabled) : QDialog(parent),
-                                                        ui(new Ui::CoinControlDialog),
-                                                        model(0)
+    ui(new Ui::CoinControlDialog),
+    model(0)
 {
     ui->setupUi(this);
     this->fMultisigEnabled = fMultisigEnabled;
@@ -440,7 +440,7 @@ void CoinControlDialog::viewItemChanged(QTreeWidgetItem* item, int column)
             coinControl->Select(outpt);
 
         // selection changed -> update labels
-        if (ui->treeWidget->isEnabled()){ // do not update on every click for (un)select all
+        if (ui->treeWidget->isEnabled()) { // do not update on every click for (un)select all
             CoinControlDialog::updateLabels(model, this);
             updateDialogLabels();
         }

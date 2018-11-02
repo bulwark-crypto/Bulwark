@@ -18,7 +18,7 @@ class CPubKey;
 
 struct CExtPubKey;
 
-/** 
+/**
  * secp256k1:
  * const unsigned int PRIVATE_KEY_SIZE = 279;
  * const unsigned int PUBLIC_KEY_SIZE  = 65;
@@ -95,15 +95,25 @@ public:
     }
 
     //! Simple read-only vector-like interface.
-    unsigned int size() const { return (fValid ? 32 : 0); }
-    const unsigned char* begin() const { return vch; }
-    const unsigned char* end() const { return vch + size(); }
+    unsigned int size() const {
+        return (fValid ? 32 : 0);
+    }
+    const unsigned char* begin() const {
+        return vch;
+    }
+    const unsigned char* end() const {
+        return vch + size();
+    }
 
     //! Check whether this private key is valid.
-    bool IsValid() const { return fValid; }
+    bool IsValid() const {
+        return fValid;
+    }
 
     //! Check whether the public key corresponding to this private key is (to be) compressed.
-    bool IsCompressed() const { return fCompressed; }
+    bool IsCompressed() const {
+        return fCompressed;
+    }
 
     //! Initialize from a CPrivKey (serialized OpenSSL private key data).
     bool SetPrivKey(const CPrivKey& vchPrivKey, bool fCompressed);
@@ -115,7 +125,7 @@ public:
 
     /**
      * Convert the private key to a CPrivKey (serialized OpenSSL private key data).
-     * This is expensive. 
+     * This is expensive.
      */
     CPrivKey GetPrivKey() const;
 
