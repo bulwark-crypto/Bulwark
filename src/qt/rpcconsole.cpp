@@ -615,6 +615,11 @@ void RPCConsole::message(int category, const QString& message, bool html)
     out += "<table><tr><td class=\"time\" width=\"65\">" + timeString + "</td>";
     out += "<td class=\"icon\" width=\"32\"><img src=\"" + categoryClass(category) + "\"></td>";
     out += "<td class=\"message " + categoryClass(category) + "\" valign=\"middle\">";
+    // Print error message when dumpprivkey is ran to try
+    // and aid in the prevention of BWK being stolen.
+    if (message == "dumpprivkey" || message == "dumpwallet") {
+        out += "<div><span style=\"color:red;font-weight:bold;\">WARNING: Scammers have been active, telling users to type commands here and stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</span></div><br />";
+    }
     if (html)
         out += message;
     else
