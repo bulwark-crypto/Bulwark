@@ -565,11 +565,18 @@ void RPCConsole::clear()
         "td.message { font-family: Courier, Courier New, Lucida Console, monospace; font-size: 12px; } " // Todo: Remove fixed font-size
         "td.cmd-request { color: #006060; } "
         "td.cmd-error { color: red; } "
+      	".secwarning { color: red; }"
         "b { color: #006060; } ");
 
-    message(CMD_REPLY, (tr("Welcome to the Bulwark RPC console.") + "<br>" +
+        message(CMD_REPLY, (tr("Welcome to the Bulwark RPC console.") + "<br>" +
                            tr("Use up and down arrows to navigate history, and <b>Ctrl-L</b> to clear screen.") + "<br>" +
                            tr("Type <b>help</b> for an overview of available commands.")),
+	    		   		   "<br><span class=\"secwarning\"><br>" +
+                     	   tr("WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command. Bulwark team members will never private message you console commands.") +
+                           "</span>"),
+        true);
+}
+            
         true);
 }
 
