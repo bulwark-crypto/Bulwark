@@ -575,10 +575,7 @@ void RPCConsole::clear()
                      	   tr("WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command. Bulwark team members will never private message you console commands.") +
                            "</span>"),
         true);
-}
-            
-        true);
-}
+}            
 
 void RPCConsole::reject()
 {
