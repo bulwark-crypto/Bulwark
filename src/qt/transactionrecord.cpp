@@ -411,7 +411,7 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
         {
             status.status = TransactionStatus::Unconfirmed;
         }
-        else if (status.depth <= Params().Zerocoin_MintRequiredConfirmations())
+        else if (status.depth < Params().Zerocoin_MintRequiredConfirmations())
         {
             status.status = TransactionStatus::Confirming;
         }
