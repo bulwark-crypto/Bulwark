@@ -402,6 +402,24 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
             status.status = TransactionStatus::Confirmed;
         }
     }
+    else if (type == TransactionRecord::ZerocoinMint)
+    {
+        if (status.depth < 0) {
+            status.status = TransactionStatus::Conflicted;
+        }
+        else if (status.depth == 0) 
+        {
+            status.status = TransactionStatus::Unconfirmed;
+        }
+        else if (status.depth <= Params().Zerocoin_MintRequiredConfirmations())
+        {
+            status.status = TransactionStatus::Confirming;
+        }
+        else
+        {
+            status.status = TransactionStatus::Confirmed;
+        }
+    }
     else
     {
         if (status.depth < 0)

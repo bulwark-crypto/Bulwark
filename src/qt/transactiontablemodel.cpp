@@ -280,6 +280,10 @@ QString TransactionTableModel::formatTxStatus(const TransactionRecord* wtx) cons
 {
     QString status;
 
+    int depth = wtx->status.depth;
+    int required = TransactionRecord::RecommendedNumConfirmations;
+    if (wtx->type == TransactionRecord::ZerocoinMint) required = Params().Zerocoin_MintRequiredConfirmations();
+
     switch (wtx->status.status)
     {
     case TransactionStatus::OpenUntilBlock:
@@ -295,16 +299,16 @@ QString TransactionTableModel::formatTxStatus(const TransactionRecord* wtx) cons
         status = tr("Unconfirmed");
         break;
     case TransactionStatus::Confirming:
-        status = tr("Confirming (%1 of %2 recommended confirmations)").arg(wtx->status.depth).arg(TransactionRecord::RecommendedNumConfirmations);
+        status = tr("Confirming (%1 of %2 recommended confirmations)").arg(depth).arg(required);
         break;
     case TransactionStatus::Confirmed:
-        status = tr("Confirmed (%1 confirmations)").arg(wtx->status.depth);
+        status = tr("Confirmed (%1 confirmations)").arg(depth);
         break;
     case TransactionStatus::Conflicted:
         status = tr("Conflicted");
         break;
     case TransactionStatus::Immature:
-        status = tr("Immature (%1 confirmations, will be available after %2)").arg(wtx->status.depth).arg(wtx->status.depth + wtx->status.matures_in);
+        status = tr("Immature (%1 confirmations, will be available after %2)").arg(depth).arg(wtx->status.depth + wtx->status.matures_in);
         break;
     case TransactionStatus::MaturesWarning:
         status = tr("This block was not received by any other nodes and will probably not be accepted!");
@@ -462,8 +466,8 @@ QVariant TransactionTableModel::addressColor(const TransactionRecord* wtx) const
     case TransactionRecord::MNReward:
     {
         QString label = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(wtx->address));
-        if (label.isEmpty())
-            return COLOR_BAREADDRESS;
+        if (label.isEmpty()) return COLOR_BAREADDRESS;
+        return COLOR_BLACK;
     }
     default:
         // To avoid overriding above conditional formats a default text color for this QTableView is not defined in stylesheet,
