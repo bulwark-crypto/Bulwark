@@ -4378,6 +4378,8 @@ int CMerkleTx::GetBlocksToMaturity() const
 {
     if (!(IsCoinBase() || IsCoinStake()))
         return 0;
+    // TODO: modify.
+    std::cout << (Params().COINBASE_MATURITY() + 1) << " " << GetDepthInMainChain() << " " << max(0, (Params().COINBASE_MATURITY() + 1) - GetDepthInMainChain()) << std::endl;
     return max(0, (Params().COINBASE_MATURITY() + 1) - GetDepthInMainChain());
 }
 
@@ -4775,7 +4777,7 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
 
     if ((static_cast<int>(vSelectedMints.size()) > Params().Zerocoin_MaxSpendsPerTransaction()))
     {
-        receipt.SetStatus(_("Failed to find coin set amongst held coins with less than maxNumber of Spends"), nStatus);
+        receipt.SetStatus(_("This requires too many zBWK mints to complete and should be less than or equal to 7 mints max per spend transaction.  Try breaking up the spend amount into smaller amounts that require less than 7 mints each."), nStatus);
         return false;
     }
 
