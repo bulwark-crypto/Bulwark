@@ -2229,7 +2229,7 @@ unsigned int sumMultiSend()
 UniValue multisend(const UniValue& params, bool fHelp)
 {
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    bool fFileBacked;
+    
     //MultiSend Commands
     if (params.size() == 1)
     {
@@ -2400,7 +2400,6 @@ UniValue multisend(const UniValue& params, bool fHelp)
 
     LOCK(pwalletMain->cs_wallet);
     {
-        fFileBacked = pwalletMain->fFileBacked;
         //Error if 0 is entered
         if (nPercent == 0)
         {

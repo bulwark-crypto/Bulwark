@@ -54,6 +54,13 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     case UnlockAnonymize:
         ui->anonymizationCheckBox->setChecked(true);
         ui->anonymizationCheckBox->show();
+        ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
+        ui->passLabel2->hide();
+        ui->passEdit2->hide();
+        ui->passLabel3->hide();
+        ui->passEdit3->hide();
+        setWindowTitle(tr("Unlock wallet"));
+        break;
     case Unlock: // Ask passphrase
         ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
         ui->passLabel2->hide();
@@ -228,7 +235,7 @@ void AskPassphraseDialog::textChanged()
         acceptable = !ui->passEdit1->text().isEmpty() && !ui->passEdit2->text().isEmpty() && !ui->passEdit3->text().isEmpty();
         break;
     }
-    ui->acceptButton->setEnabled(true);
+    ui->acceptButton->setEnabled(acceptable);
 }
 
 bool AskPassphraseDialog::event(QEvent* event)
