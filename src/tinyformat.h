@@ -806,9 +806,9 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         precisionSet = true;
     }
     // 4) Ignore any C99 length modifier
-    while (*c == 'l' || *c == 'h' || *c == 'L' ||
-            *c == 'j' || *c == 'z' || *c == 't')
+    while (*c == 'l' || *c == 'h' || *c == 'L' || *c == 'j' || *c == 'z' || *c == 't') {
         ++c;
+    }
     // 5) We're up to the conversion specifier character.
     // Set stream flags based on conversion specifier (thanks to the
     // boost::format class for forging the way here).
@@ -816,7 +816,13 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
     switch (*c)
     {
     case 'u':
+        out.setf(std::ios::dec, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'd':
+        out.setf(std::ios::dec, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'i':
         out.setf(std::ios::dec, std::ios::basefield);
         intConversion = true;
@@ -827,30 +833,48 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         break;
     case 'X':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::hex, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'x':
+        out.setf(std::ios::hex, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'p':
         out.setf(std::ios::hex, std::ios::basefield);
         intConversion = true;
         break;
     case 'E':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::scientific, std::ios::floatfield);
+        out.setf(std::ios::dec, std::ios::basefield);
+        break;
     case 'e':
         out.setf(std::ios::scientific, std::ios::floatfield);
         out.setf(std::ios::dec, std::ios::basefield);
         break;
     case 'F':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::fixed, std::ios::floatfield);
+        break;
     case 'f':
         out.setf(std::ios::fixed, std::ios::floatfield);
         break;
     case 'G':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::dec, std::ios::basefield);
+        // As in boost::format, let stream decide float format.
+        out.flags(out.flags() & ~std::ios::floatfield);
+        break;
     case 'g':
         out.setf(std::ios::dec, std::ios::basefield);
         // As in boost::format, let stream decide float format.
         out.flags(out.flags() & ~std::ios::floatfield);
         break;
     case 'a':
+        TINYFORMAT_ERROR("tinyformat: the %a and %A conversion specs "
+                         "are not supported");
+        break;
     case 'A':
         TINYFORMAT_ERROR("tinyformat: the %a and %A conversion specs "
                          "are not supported");

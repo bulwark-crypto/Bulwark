@@ -253,7 +253,7 @@ bool CWallet::LoadMultiSig(const CScript& dest)
 bool CWallet::Unlock(const SecureString& strWalletPassphrase, bool anonymizeOnly)
 {
     SecureString strWalletPassphraseFinal;
-
+    std::cout << "Locked: " << (IsLocked() ? "Y" : "N") << " Anon: " << (anonymizeOnly ? "Y" : "N") << std::endl;
     if (!IsLocked())
     {
         fWalletUnlockAnonymizeOnly = anonymizeOnly;
@@ -2324,7 +2324,7 @@ bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<
     nValueRet = 0;
 
     vector<COutput> vCoins;
-    AvailableCoins(vCoins, true, coinControl, nObfuscationRoundsMin < 0 ? ONLY_NONDENOMINATED_NOT10000IFMN : ONLY_DENOMINATED);
+    AvailableCoins(vCoins, true, coinControl, true);
 
     set<pair<const CWalletTx*, unsigned int> > setCoinsRet2;
 
