@@ -181,13 +181,18 @@ void PrivacyDialog::on_pushButtonMintzBWK_clicked()
 
     // Request unlock if wallet was locked or unlocked for mixing:
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
-    if (encStatus == walletModel->Locked)
+    if (encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForAnonymizationOnly)
     {
         WalletModel::UnlockContext ctx(walletModel->requestUnlock(true));
         if (!ctx.isValid())
         {
             // Unlock wallet was cancelled
             ui->TEMintStatus->setPlainText(tr("Error: Your wallet is locked. Please enter the wallet passphrase first."));
+            return;
+        }
+        else if (walletModel->isAnonymizeOnlyUnlocked())
+        {
+            QMessageBox::critical(this, tr("Spend Zerocoin"), tr("Error: The wallet was unlocked only to anonymize coins. Mint canceled."), QMessageBox::Ok, QMessageBox::Ok);
             return;
         }
     }
