@@ -253,7 +253,7 @@ bool CWallet::LoadMultiSig(const CScript& dest)
 bool CWallet::Unlock(const SecureString& strWalletPassphrase, bool anonymizeOnly)
 {
     SecureString strWalletPassphraseFinal;
-    std::cout << "Locked: " << (IsLocked() ? "Y" : "N") << " Anon: " << (anonymizeOnly ? "Y" : "N") << std::endl;
+    
     if (!IsLocked())
     {
         fWalletUnlockAnonymizeOnly = anonymizeOnly;

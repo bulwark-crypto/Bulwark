@@ -640,7 +640,7 @@ void WalletModel::unsubscribeFromCoreSignals()
 WalletModel::UnlockContext WalletModel::requestUnlock(bool relock)
 {
     bool was_locked = getEncryptionStatus() == Locked;
-
+    
     if (!was_locked && isAnonymizeOnlyUnlocked())
     {
         setWalletLocked(true);
@@ -648,7 +648,7 @@ WalletModel::UnlockContext WalletModel::requestUnlock(bool relock)
         was_locked = getEncryptionStatus() == Locked;
     }
 
-    if (was_locked)
+    if (was_locked || isAnonymizeOnlyUnlocked())
     {
         // Request UI to unlock wallet
         emit requireUnlock();

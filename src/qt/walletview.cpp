@@ -348,7 +348,6 @@ void WalletView::unlockWallet()
 {
     if (!walletModel)
         return;
-    // Unlock wallet when requested by wallet model
 
     if (walletModel->getEncryptionStatus() == WalletModel::Locked || walletModel->getEncryptionStatus() == WalletModel::UnlockedForAnonymizationOnly)
     {
@@ -372,13 +371,11 @@ void WalletView::toggleLockWallet()
 
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
 
-    // Unlock the wallet when requested
     if (encStatus == walletModel->Locked)
     {
         AskPassphraseDialog dlg(AskPassphraseDialog::UnlockAnonymize, this, walletModel);
         dlg.exec();
     }
-
     else if (encStatus == walletModel->Unlocked || encStatus == walletModel->UnlockedForAnonymizationOnly)
     {
         walletModel->setWalletLocked(true);

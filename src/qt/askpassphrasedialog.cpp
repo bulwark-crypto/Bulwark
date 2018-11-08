@@ -42,7 +42,9 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     ui->passEdit3->installEventFilter(this);
 
     this->model = model;
-
+    
+    ui->anonymizationCheckBox->setChecked(model->isAnonymizeOnlyUnlocked());
+    
     switch (mode)
     {
     case Encrypt: // Ask passphrase x2
@@ -62,6 +64,8 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
         setWindowTitle(tr("Unlock wallet"));
         break;
     case Unlock: // Ask passphrase
+        ui->anonymizationCheckBox->setChecked(false);
+        ui->anonymizationCheckBox->hide();
         ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
         ui->passLabel2->hide();
         ui->passEdit2->hide();
@@ -82,8 +86,6 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
         ui->warningLabel->setText(tr("Enter the old and new passphrase to the wallet."));
         break;
     }
-
-    ui->anonymizationCheckBox->setChecked(model->isAnonymizeOnlyUnlocked());
 
     textChanged();
     connect(ui->passEdit1, SIGNAL(textChanged(QString)), this, SLOT(textChanged()));

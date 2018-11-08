@@ -295,8 +295,7 @@ void PrivacyDialog::on_pushButtonSpendzBWK_clicked()
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_22_ZEROCOIN_MAINTENANCE_MODE))
     {
-        QMessageBox::information(this, tr("Mint Zerocoin"),
-                                 tr("zBWK is currently undergoing maintenance."), QMessageBox::Ok, QMessageBox::Ok);
+        QMessageBox::information(this, tr("Mint Zerocoin"), tr("zBWK is currently undergoing maintenance."), QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
 
@@ -308,6 +307,11 @@ void PrivacyDialog::on_pushButtonSpendzBWK_clicked()
         if (!ctx.isValid())
         {
             // Unlock wallet was cancelled
+            return;
+        }
+        else if (walletModel->isAnonymizeOnlyUnlocked())
+        {
+            QMessageBox::critical(this, tr("Spend Zerocoin"), tr("Error: The wallet was unlocked only to anonymize coins. Spend canceled."), QMessageBox::Ok, QMessageBox::Ok);
             return;
         }
         // Wallet is unlocked now, sedn zBWK
