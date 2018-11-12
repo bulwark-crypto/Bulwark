@@ -157,7 +157,7 @@ void CBudgetManager::SubmitFinalBudget()
     int nBlockStart = nCurrentHeight - nCurrentHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
     if (nSubmittedHeight >= nBlockStart)
     {
-        LogPrint("mnbudget","CBudgetManager::SubmitFinalBudget - nSubmittedHeight(=%ld) < nBlockStart(=%ld) condition not fulfilled.\n", nSubmittedHeight, nBlockStart);
+        LogPrint("mnbudget", "CBudgetManager::SubmitFinalBudget - nSubmittedHeight(=%ld) < nBlockStart(=%ld) condition not fulfilled.\n", nSubmittedHeight, nBlockStart);
         return;
     }
     // finalization window taken from PIVX to allow for the expansion on testnet
@@ -171,8 +171,9 @@ void CBudgetManager::SubmitFinalBudget()
     std::cout << "CBudgetManager SubmitFinalBudget blocks: " << GetBudgetPaymentCycleBlocks() << " height: " << nCurrentHeight << " start: " << nBlockStart << " final: " << nFinalizationStart << " offset: " << nOffsetToStart << " window: " << nFinalizationWindow << std::endl;
     if (nBlockStart - nCurrentHeight > nFinalizationWindow)
     {
-        LogPrint("mnbudget","CBudgetManager::SubmitFinalBudget - Too early for finalization. Current block is %ld, next Superblock is %ld.\n", nCurrentHeight, nBlockStart);
-        LogPrint("mnbudget","CBudgetManager::SubmitFinalBudget - First possible block for finalization: %ld. Last possible block for finalization: %ld. You have to wait for %ld block(s) until Budget finalization will be possible\n", nFinalizationStart, nBlockStart, nOffsetToStart);
+        printf("CBudgetManager::SubmitFinalBudget - Too early for finalization. Current block is %ld, next Superblock is %ld.\n", nCurrentHeight, nBlockStart);
+        LogPrint("mnbudget", "CBudgetManager::SubmitFinalBudget - Too early for finalization. Current block is %ld, next Superblock is %ld.\n", nCurrentHeight, nBlockStart);
+        LogPrint("mnbudget", "CBudgetManager::SubmitFinalBudget - First possible block for finalization: %ld. Last possible block for finalization: %ld. You have to wait for %ld block(s) until Budget finalization will be possible\n", nFinalizationStart, nBlockStart, nOffsetToStart);
 
         return;
     }
@@ -454,6 +455,7 @@ void DumpBudgets()
 
 bool CBudgetManager::AddFinalizedBudget(CFinalizedBudget& finalizedBudget)
 {
+    std::cout << "CBudgetManager AddFinalizedBudget" << std::endl;
     std::string strError = "";
     if (!finalizedBudget.IsValid(strError)) return false;
 
@@ -496,6 +498,7 @@ void CBudgetManager::CheckAndRemove()
 
     std::string strError = "";
 
+    printf("CBudgetManager::CheckAndRemove - mapFinalizedBudgets cleanup - size before: %d\n", mapFinalizedBudgets.size());
     LogPrint("mnbudget", "CBudgetManager::CheckAndRemove - mapFinalizedBudgets cleanup - size before: %d\n", mapFinalizedBudgets.size());
     std::map<uint256, CFinalizedBudget>::iterator it = mapFinalizedBudgets.begin();
     while (it != mapFinalizedBudgets.end())
@@ -503,7 +506,7 @@ void CBudgetManager::CheckAndRemove()
         CFinalizedBudget* pfinalizedBudget = &((*it).second);
 
         pfinalizedBudget->fValid = pfinalizedBudget->IsValid(strError);
-        if (!strError.empty ())
+        if (!strError.empty())
         {
             LogPrint("mnbudget","CBudgetManager::CheckAndRemove - Invalid finalized budget: %s\n", strError);
         }
@@ -522,13 +525,14 @@ void CBudgetManager::CheckAndRemove()
         ++it;
     }
 
+    printf("CBudgetManager::CheckAndRemove - mapProposals cleanup - size before: %d\n", mapProposals.size());
     LogPrint("mnbudget", "CBudgetManager::CheckAndRemove - mapProposals cleanup - size before: %d\n", mapProposals.size());
     std::map<uint256, CBudgetProposal>::iterator it2 = mapProposals.begin();
     while (it2 != mapProposals.end())
     {
         CBudgetProposal* pbudgetProposal = &((*it2).second);
         pbudgetProposal->fValid = pbudgetProposal->IsValid(strError);
-        if (!strError.empty ())
+        if (!strError.empty())
         {
             LogPrint("mnbudget","CBudgetManager::CheckAndRemove - Invalid budget proposal - %s\n", strError);
             strError = "";
@@ -549,7 +553,9 @@ void CBudgetManager::CheckAndRemove()
     // mapFinalizedBudgets = tmpMapFinalizedBudgets;
     // mapProposals = tmpMapProposals;
 
+    printf("CBudgetManager::CheckAndRemove - mapFinalizedBudgets cleanup - size after: %d\n", mapFinalizedBudgets.size());
     // LogPrint("mnbudget", "CBudgetManager::CheckAndRemove - mapFinalizedBudgets cleanup - size after: %d\n", mapFinalizedBudgets.size());
+    printf("CBudgetManager::CheckAndRemove - mapProposals cleanup - size after: %d\n", mapProposals.size());
     // LogPrint("mnbudget", "CBudgetManager::CheckAndRemove - mapProposals cleanup - size after: %d\n", mapProposals.size());
     LogPrint("mnbudget","CBudgetManager::CheckAndRemove - PASSED\n");
 
@@ -699,6 +705,7 @@ bool CBudgetManager::IsBudgetPaymentBlock(int nBlockHeight)
 
 bool CBudgetManager::HasNextFinalizedBudget()
 {
+    std::cout << "CBudgetManager HasNextFinalizedBudget" << std::endl;
     CBlockIndex* pindexPrev = chainActive.Tip();
     if (!pindexPrev) return false;
 
@@ -717,6 +724,7 @@ bool CBudgetManager::HasNextFinalizedBudget()
 
 bool CBudgetManager::IsTransactionValid(const CTransaction& txNew, int nBlockHeight)
 {
+    std::cout << "CBudgetManager IsTransactionValid" << std::endl;
     LOCK(cs);
 
     int nHighestCount = 0;
@@ -744,7 +752,7 @@ bool CBudgetManager::IsTransactionValid(const CTransaction& txNew, int nBlockHei
     /*
         If budget doesn't have 5% of the network votes, then we should pay a masternode instead
     */
-    if (nHighestCount < mnodeman.CountEnabled(ActiveProtocol()) / 20) return false;
+    if (nHighestCount < nFivePercent) return false;
 
     // check the highest finalized budgets (+/- 10% to assist in consensus)
 
@@ -807,6 +815,7 @@ struct sortProposalsByVotes
 //Need to review this function
 std::vector<CBudgetProposal*> CBudgetManager::GetBudget()
 {
+    std::cout << "CBudgetManager GetBudget" << std::endl;
     LOCK(cs);
 
     // ------- Sort budgets by Yes Count
@@ -834,7 +843,7 @@ std::vector<CBudgetProposal*> CBudgetManager::GetBudget()
     int nBlockStart = pindexPrev->nHeight - pindexPrev->nHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
     int nBlockEnd = nBlockStart + GetBudgetPaymentCycleBlocks() - 1;
     CAmount nTotalBudget = GetTotalBudget(nBlockStart);
-    std::cout << "CBudgetManager GetBudget() total: " << nTotalBudget << std::endl;
+    std::cout << "CBudgetManager GetBudget() total: " << (nTotalBudget / COIN) << std::endl;
 
     std::vector<std::pair<CBudgetProposal*, int> >::iterator it2 = vBudgetPorposalsSort.begin();
     while (it2 != vBudgetPorposalsSort.end())
@@ -1099,7 +1108,8 @@ void CBudgetManager::NewBlock()
 
     //remove invalid votes once in a while (we have to check the signatures and validity of every vote, somewhat CPU intensive)
 
-    LogPrint("mnbudget","CBudgetManager::NewBlock - askedForSourceProposalOrBudget cleanup - size: %d\n", askedForSourceProposalOrBudget.size());
+    printf("CBudgetManager::NewBlock - askedForSourceProposalOrBudget cleanup - size: %d\n", askedForSourceProposalOrBudget.size());
+    LogPrint("mnbudget", "CBudgetManager::NewBlock - askedForSourceProposalOrBudget cleanup - size: %d\n", askedForSourceProposalOrBudget.size());
     std::map<uint256, int64_t>::iterator it = askedForSourceProposalOrBudget.begin();
     while (it != askedForSourceProposalOrBudget.end())
     {
@@ -1113,7 +1123,8 @@ void CBudgetManager::NewBlock()
         }
     }
 
-    LogPrint("mnbudget","CBudgetManager::NewBlock - mapProposals cleanup - size: %d\n", mapProposals.size());
+    printf("CBudgetManager::NewBlock - mapProposals cleanup - size: %d\n", mapProposals.size());
+    LogPrint("mnbudget", "CBudgetManager::NewBlock - mapProposals cleanup - size: %d\n", mapProposals.size());
     std::map<uint256, CBudgetProposal>::iterator it2 = mapProposals.begin();
     while (it2 != mapProposals.end())
     {
@@ -1121,7 +1132,8 @@ void CBudgetManager::NewBlock()
         ++it2;
     }
 
-    LogPrint("mnbudget","CBudgetManager::NewBlock - mapFinalizedBudgets cleanup - size: %d\n", mapFinalizedBudgets.size());
+    printf("CBudgetManager::NewBlock - mapFinalizedBudgets cleanup - size: %d\n", mapFinalizedBudgets.size());
+    LogPrint("mnbudget", "CBudgetManager::NewBlock - mapFinalizedBudgets cleanup - size: %d\n", mapFinalizedBudgets.size());
     std::map<uint256, CFinalizedBudget>::iterator it3 = mapFinalizedBudgets.begin();
     while (it3 != mapFinalizedBudgets.end())
     {
@@ -1129,7 +1141,8 @@ void CBudgetManager::NewBlock()
         ++it3;
     }
 
-    LogPrint("mnbudget","CBudgetManager::NewBlock - vecImmatureBudgetProposals cleanup - size: %d\n", vecImmatureBudgetProposals.size());
+    printf("CBudgetManager::NewBlock - vecImmatureBudgetProposals cleanup - size: %d\n", vecImmatureBudgetProposals.size());
+    LogPrint("mnbudget", "CBudgetManager::NewBlock - vecImmatureBudgetProposals cleanup - size: %d\n", vecImmatureBudgetProposals.size());
     std::vector<CBudgetProposalBroadcast>::iterator it4 = vecImmatureBudgetProposals.begin();
     while (it4 != vecImmatureBudgetProposals.end())
     {
@@ -1158,7 +1171,8 @@ void CBudgetManager::NewBlock()
         it4 = vecImmatureBudgetProposals.erase(it4);
     }
 
-    LogPrint("mnbudget","CBudgetManager::NewBlock - vecImmatureFinalizedBudgets cleanup - size: %d\n", vecImmatureFinalizedBudgets.size());
+    printf("CBudgetManager::NewBlock - vecImmatureFinalizedBudgets cleanup - size: %d\n", vecImmatureFinalizedBudgets.size());
+    LogPrint("mnbudget", "CBudgetManager::NewBlock - vecImmatureFinalizedBudgets cleanup - size: %d\n", vecImmatureFinalizedBudgets.size());
     std::vector<CFinalizedBudgetBroadcast>::iterator it5 = vecImmatureFinalizedBudgets.begin();
     while (it5 != vecImmatureFinalizedBudgets.end())
     {
@@ -1187,6 +1201,7 @@ void CBudgetManager::NewBlock()
 
         it5 = vecImmatureFinalizedBudgets.erase(it5);
     }
+    printf("CBudgetManager::NewBlock - PASSED\n");
     LogPrint("mnbudget","CBudgetManager::NewBlock - PASSED\n");
 }
 
@@ -1198,7 +1213,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
     LOCK(cs_budget);
 
-    std::cout << pfrom->addr.ToString() << " " << strCommand << std::endl;
+    std::cout << "CBudgetManager ProcessMessage " << pfrom->addr.ToString() << " " << strCommand << std::endl;
 
     if (strCommand == "mnvs")   //Masternode vote sync
     {
@@ -1530,6 +1545,7 @@ void CBudgetManager::Sync(CNode* pfrom, uint256 nProp, bool fPartial)
 
     pfrom->PushMessage("ssc", MASTERNODE_SYNC_BUDGET_PROP, nInvCount);
 
+    printf("CBudgetManager::Sync - sent %d items\n", nInvCount);
     LogPrint("mnbudget", "CBudgetManager::Sync - sent %d items\n", nInvCount);
 
     nInvCount = 0;
@@ -1597,6 +1613,7 @@ bool CBudgetManager::UpdateProposal(CBudgetVote& vote, CNode* pfrom, std::string
 
 bool CBudgetManager::UpdateFinalizedBudget(CFinalizedBudgetVote& vote, CNode* pfrom, std::string& strError)
 {
+    std::cout << "CBudgetManager UpdateFinalizedBudget" << std::endl;
     LOCK(cs);
 
     if (!mapFinalizedBudgets.count(vote.nBudgetHash))
@@ -1861,7 +1878,7 @@ int CBudgetProposal::GetAbstains()
 int CBudgetProposal::GetBlockStartCycle()
 {
     //end block is half way through the next cycle (so the proposal will be removed much after the payment is sent)
-
+    std::cout << "CBudgetManager GetBlockStartCycle block: " << (nBlockStart - nBlockStart % GetBudgetPaymentCycleBlocks()) << std::endl;
     return nBlockStart - nBlockStart % GetBudgetPaymentCycleBlocks();
 }
 
@@ -2069,6 +2086,7 @@ bool CFinalizedBudget::AddOrUpdateVote(CFinalizedBudgetVote& vote, std::string& 
 //evaluate if we should vote for this. Masternode only
 void CFinalizedBudget::AutoCheck()
 {
+    std::cout << "CBudgetManager AutoCheck" << std::endl;
     LOCK(cs);
 
     CBlockIndex* pindexPrev = chainActive.Tip();
