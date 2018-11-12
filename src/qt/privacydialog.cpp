@@ -253,39 +253,6 @@ void PrivacyDialog::on_pushButtonMintzBWK_clicked()
     return;
 }
 
-void PrivacyDialog::on_pushButtonMintReset_clicked()
-{
-    if (!walletModel || !walletModel->getOptionsModel())
-        return;
-
-    ui->TEMintStatus->setPlainText(tr("Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware. \nPlease be patient..."));
-    ui->TEMintStatus->repaint ();
-
-    int64_t nTime = GetTimeMillis();
-    string strResetMintResult = pwalletMain->ResetMintZerocoin(false); // do not do the extended search from GUI
-    double fDuration = (double)(GetTimeMillis() - nTime)/1000.0;
-    ui->TEMintStatus->setPlainText(QString::fromStdString(strResetMintResult) + tr("Duration: ") + QString::number(fDuration) + tr(" sec.\n"));
-    ui->TEMintStatus->repaint ();
-
-    return;
-}
-
-void PrivacyDialog::on_pushButtonSpentReset_clicked()
-{
-    if (!walletModel || !walletModel->getOptionsModel())
-        return;
-
-    ui->TEMintStatus->setPlainText(tr("Starting ResetSpentZerocoin: "));
-    ui->TEMintStatus->repaint ();
-    int64_t nTime = GetTimeMillis();
-    string strResetSpentResult = pwalletMain->ResetSpentZerocoin();
-    double fDuration = (double)(GetTimeMillis() - nTime)/1000.0;
-    ui->TEMintStatus->setPlainText(QString::fromStdString(strResetSpentResult) + tr("Duration: ") + QString::number(fDuration) + tr(" sec.\n"));
-    ui->TEMintStatus->repaint ();
-
-    return;
-}
-
 void PrivacyDialog::on_pushButtonSpendzBWK_clicked()
 {
 

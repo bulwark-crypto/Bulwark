@@ -98,8 +98,6 @@ private slots:
 //    void coinControlClipboardChange();
 
     void on_pushButtonMintzBWK_clicked();
-    void on_pushButtonMintReset_clicked();
-    void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzBWK_clicked();
     void on_pushButtonZBWKControl_clicked();
     void on_pasteButton_clicked();
