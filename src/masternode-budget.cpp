@@ -163,7 +163,7 @@ void CBudgetManager::SubmitFinalBudget()
     // finalization window taken from PIVX to allow for the expansion on testnet
     // for voting to happen amongst masternodes.
     int nFinalizationWindow = ((GetBudgetPaymentCycleBlocks() / 30) * 2);
-    if (Params().NetworkID() == CBaseChainParams::TESTNET) nFinalizationWindow = 64;
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) nFinalizationWindow = 128;
 
     // Submit final budget during the last 2 days before payment for Mainnet, about 9 minutes for Testnet
     int nFinalizationStart = nBlockStart - nFinalizationWindow;
@@ -747,8 +747,8 @@ bool CBudgetManager::IsTransactionValid(const CTransaction& txNew, int nBlockHei
         ++it;
     }
 
-    LogPrint("mnbudget","CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n",
-             nHighestCount, nFivePercent, mapFinalizedBudgets.size());
+    printf("CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n", nHighestCount, nFivePercent, mapFinalizedBudgets.size());
+    LogPrint("mnbudget","CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n", nHighestCount, nFivePercent, mapFinalizedBudgets.size());
     /*
         If budget doesn't have 5% of the network votes, then we should pay a masternode instead
     */
@@ -760,9 +760,13 @@ bool CBudgetManager::IsTransactionValid(const CTransaction& txNew, int nBlockHei
     while (it != mapFinalizedBudgets.end())
     {
         CFinalizedBudget* pfinalizedBudget = &((*it).second);
+        int nTenPercent = mnodeman.CountEnabled(ActiveProtocol()) / 10;
+        if (nTenPercent < 1) nTenPercent = 1;
 
-        if (pfinalizedBudget->GetVoteCount() > nHighestCount - mnodeman.CountEnabled(ActiveProtocol()) / 10)
+        std::cout << "\t" << pfinalizedBudget->GetName() << " count: " << pfinalizedBudget->GetVoteCount() << " min: " << (nHighestCount - nTenPercent) << std::endl;
+        if (pfinalizedBudget->GetVoteCount() > nHighestCount - nTenPercent)
         {
+            std::cout << "\theight: " << nBlockHeight << " start: " << pfinalizedBudget->GetBlockStart() << " end: " << pfinalizedBudget->GetBlockEnd() << std::endl;
             if (nBlockHeight >= pfinalizedBudget->GetBlockStart() && nBlockHeight <= pfinalizedBudget->GetBlockEnd())
             {
                 if (pfinalizedBudget->IsTransactionValid(txNew, nBlockHeight))
