@@ -274,6 +274,7 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     {
         if (budget.IsBudgetPaymentBlock(nBlockHeight))
         {
+            std::cout << "\tIsTransactionValid: " << (budget.IsTransactionValid(txNew, nBlockHeight) ? "Y" : "N") << std::endl;
             if (budget.IsTransactionValid(txNew, nBlockHeight))
                 return true;
 
