@@ -58,17 +58,11 @@ void Accumulator::accumulate(const PublicCoin& coin)
     // Make sure we're initialized
     if(!(this->value))
     {
-        std::cout << "Accumulator is not initialized" << "\n";
         throw std::runtime_error("Accumulator is not initialized");
     }
 
     if(this->denomination != coin.getDenomination())
     {
-        std::cout << "Wrong denomination for coin. Expected coins of denomination: ";
-        std::cout << this->denomination;
-        std::cout << ". Instead, got a coin of denomination: ";
-        std::cout << coin.getDenomination();
-        std::cout << "\n";
         throw std::runtime_error("Wrong denomination for coin");
     }
 
@@ -78,7 +72,6 @@ void Accumulator::accumulate(const PublicCoin& coin)
     }
     else
     {
-        std::cout << "Coin not valid\n";
         throw std::runtime_error("Coin is not valid");
     }
 }

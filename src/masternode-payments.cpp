@@ -274,9 +274,7 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     {
         if (budget.IsBudgetPaymentBlock(nBlockHeight))
         {
-            std::cout << "\tIsTransactionValid: " << (budget.IsTransactionValid(txNew, nBlockHeight) ? "Y" : "N") << std::endl;
-            if (budget.IsTransactionValid(txNew, nBlockHeight))
-                return true;
+            if (budget.IsTransactionValid(txNew, nBlockHeight)) return true;
 
             LogPrint("mnbudget", "Invalid budget payment detected %s\n", txNew.ToString().c_str());
             if (IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
@@ -284,10 +282,6 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
 
             LogPrint("mnbudget", "Budget enforcement is disabled, accepting block\n");
             return true;
-        }
-        else
-        {
-            std::cout << "masternode-payments IsBlockPayeeValid = Not budget block" << std::endl;
         }
     }
 
@@ -310,7 +304,6 @@ void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStak
 
     if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(pindexPrev->nHeight + 1))
     {
-        std::cout << "MNPayments FillBlockPayee fees: " << nFees << " PoS: " << (fProofOfStake ? "Y" : "N") << std::endl;
         budget.FillBlockPayee(txNew, nFees, fProofOfStake);
     }
     else
@@ -323,7 +316,6 @@ std::string GetRequiredPaymentsString(int nBlockHeight)
 {
     if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(nBlockHeight))
     {
-        std::cout << "MNPayments GetRequiredPaymentString height: " << nBlockHeight << std::endl;
         return budget.GetRequiredPaymentsString(nBlockHeight);
     }
     else

@@ -26,7 +26,6 @@ CoinSpend::CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulat
     // the coin and Accumulator provided.
     if (!(witness.VerifyWitness(a, coin.getPublicCoin())))
     {
-        std::cout << "CoinSpend: Accumulator witness does not verify\n";
         throw std::runtime_error("Accumulator witness does not verify");
     }
 
