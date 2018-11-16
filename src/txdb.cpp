@@ -273,7 +273,7 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
                 pindexNew->nStakeTime = diskindex.nStakeTime;
                 pindexNew->hashProofOfStake = diskindex.hashProofOfStake;
 
-                LogPrintf("%s: %s\n", pindexNew->hashMerkleRoot.ToString().c_str(), pindexNew->GetBlockHash().ToString().c_str());
+                if (fDebug) LogPrintf("%s: %s\n", pindexNew->hashMerkleRoot.ToString().c_str(), pindexNew->GetBlockHash().ToString().c_str());
 
                 if (pindexNew->nHeight <= Params().LAST_POW_BLOCK())
                 {
