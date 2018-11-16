@@ -1856,7 +1856,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     }
 
     //get the mode of budget voting for this masternode
-    strBudgetMode = GetArg("-budgetvotemode", "suggest");
+    strBudgetMode = GetArg("-budgetvotemode", "auto");
 
     if (GetBoolArg("-mnconflock", true) && pwalletMain)
     {
