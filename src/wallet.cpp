@@ -2508,7 +2508,7 @@ bool CWallet::GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useI
     CAmount nFeeRet = 0;
     std::string strFail = "";
     vector<pair<CScript, CAmount> > vecSend;
-    vecSend.push_back(make_pair(scriptChange, BUDGET_FEE_TX));
+    vecSend.push_back(make_pair(scriptChange, PROPOSAL_FEE_TX));
 
     CCoinControl* coinControl = NULL;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, strFail, coinControl, ALL_COINS, useIX, (CAmount)0);
