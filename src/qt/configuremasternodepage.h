@@ -48,13 +48,13 @@ public:
     ~ConfigureMasternodePage();
 
 	void counter(int counter);
-	void MNAliasCache(std::string MnAliasCache);
+	void MNAliasCache(QString MnAliasCache);
     void loadAlias(QString strAlias);
     void loadIP(QString strIP);
     void loadPrivKey(QString strPrivKey);
     void loadTxHash(QString strTxHash);
     void loadOutputIndex(QString strOutputIndex);
-	void updateAlias(std::string Alias, std::string IP, std::string PrivKey, std::string TxHash, std::string OutputIndex);
+	void updateAlias(std::string Alias, std::string IP, std::string PrivKey, std::string TxHash, std::string OutputIndex, std::string mnAlias);
 	int getCounters()
 	{
 		return counters;
@@ -65,12 +65,12 @@ public:
 		counters = counter;
 	}
 	
-	std::string getMnAliasCache()
+	QString getMnAliasCache()
 	{
 		return mnAliasCache;
 	}
 	
-	std::string setMnAliasCache(std::string mnAliasCaches)
+	std::string setMnAliasCache(QString mnAliasCaches)
 	{
 		mnAliasCache = mnAliasCaches;
 	}
@@ -86,7 +86,7 @@ public slots:
 private:
     void saveCurrentRow();
 	int counters;
-	std::string mnAliasCache;
+	QString mnAliasCache;
     Ui::ConfigureMasternodePage* ui;
     QDataWidgetMapper* mapper;
     Mode mode;
