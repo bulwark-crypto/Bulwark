@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/curium-config.h"
+#include "config/phore-config.h"
 #endif
 
 #include "configuremasternodepage.h"
