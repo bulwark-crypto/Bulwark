@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/phore-config.h"
+#include "config/curium-config.h"
 #endif
 
 #include "configuremasternodepage.h"
@@ -74,7 +74,7 @@ void ConfigureMasternodePage::counter(int counter)
 }
 
 
-void ConfigureMasternodePage::MNAliasCache(std::string MnAliasCache)
+void ConfigureMasternodePage::MNAliasCache(QString MnAliasCache)
 {
    setMnAliasCache(MnAliasCache);
 }
@@ -115,7 +115,9 @@ void ConfigureMasternodePage::saveCurrentRow()
 		if(ui->aliasEdit->text().toStdString().empty() || ui->vpsIpEdit->text().toStdString().empty() || ui->privKeyEdit->text().toStdString().empty() || ui->outputEdit->text().toStdString().empty() || ui->outputIdEdit->text().toStdString().empty()) {
 			break;
 		}
-		ConfigureMasternodePage::updateAlias(ui->aliasEdit->text().toStdString(), ui->vpsIpEdit->text().toStdString(), ui->privKeyEdit->text().toStdString(), ui->outputEdit->text().toStdString(), ui->outputIdEdit->text().toStdString());
+	    
+	    QString MnAlias = getMnAliasCache();
+		ConfigureMasternodePage::updateAlias(ui->aliasEdit->text().toStdString(), ui->vpsIpEdit->text().toStdString(), ui->privKeyEdit->text().toStdString(), ui->outputEdit->text().toStdString(), ui->outputIdEdit->text().toStdString(), MnAlias.toStdString());
 		break;
     }
 }
@@ -128,12 +130,10 @@ void ConfigureMasternodePage::accept()
 }
 
 
-void ConfigureMasternodePage::updateAlias(std::string Alias, std::string IP, std::string PrivKey, std::string TxHash, std::string OutputIndex)
+void ConfigureMasternodePage::updateAlias(std::string Alias, std::string IP, std::string PrivKey, std::string TxHash, std::string OutputIndex, std::string mnAlias)
 {
-	std::string MnAlias = "";
-	MnAlias = getMnAliasCache();
 	BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
-		if(MnAlias == mne.getAlias()) {
+		if(mnAlias == mne.getAlias()) {
 			int count = 0;
 			count = getCounters();
 			vector<COutPoint> confLockedCoins;
@@ -175,8 +175,10 @@ void ConfigureMasternodePage::on_AutoFillOutputs_clicked()
                 BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
                         if(OutputID == mne.getOutputIndex() && TXHash == mne.getTxHash()) {
                                 test = 1;
+
                         }
                 }
+
                 if(test == 0) {
                         ui->outputEdit->setText(QString::fromStdString(out.tx->GetHash().ToString()));
                         ui->outputIdEdit->setText(QString::fromStdString(std::to_string(out.i)));
