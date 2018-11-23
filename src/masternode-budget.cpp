@@ -35,7 +35,7 @@ int GetBudgetPaymentCycleBlocks()
     return 288; //ten times per day
 }
 
-bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, std::string& strError, int64_t& nTime, int& nConf)
+bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, std::string& strError, int64_t& nTime, int& nConf, bool fBudgetFinalization)
 {
     CTransaction txCollateral;
     uint256 nBlockHash;
@@ -61,7 +61,30 @@ bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, s
             LogPrint("mnbudget","CBudgetProposalBroadcast::IsBudgetCollateralValid - %s\n", strError);
             return false;
         }
-        if (o.scriptPubKey == findScript && o.nValue >= PROPOSAL_FEE_TX) foundOpReturn = true;
+        if (fBudgetFinalization) 
+        {
+            // Collateral for budget finalization
+            // Note: there are still old valid budgets out there, but the check for the new 5 PIV finalization collateral
+            //       will also cover the old 50 PIV finalization collateral.
+            LogPrint("mnbudget", "Final Budget: o.scriptPubKey(%s) == findScript(%s) ?\n", o.scriptPubKey.ToString(), findScript.ToString());
+            if (o.scriptPubKey == findScript) {
+                LogPrint("mnbudget", "Final Budget: o.nValue(%ld) >= BUDGET_FEE_TX(%ld) ?\n", o.nValue, BUDGET_FEE_TX);
+                if(o.nValue >= BUDGET_FEE_TX) {
+                    foundOpReturn = true;
+                }
+            }
+        }
+        else 
+        {
+            // Collateral for normal budget proposal
+            LogPrint("mnbudget", "Normal Budget: o.scriptPubKey(%s) == findScript(%s) ?\n", o.scriptPubKey.ToString(), findScript.ToString());
+            if (o.scriptPubKey == findScript) {
+                LogPrint("mnbudget", "Normal Budget: o.nValue(%ld) >= PROPOSAL_FEE_TX(%ld) ?\n", o.nValue, PROPOSAL_FEE_TX);
+                if(o.nValue >= PROPOSAL_FEE_TX) {
+                    foundOpReturn = true;
+                }
+            }
+        }
     }
     if (!foundOpReturn)
     {
@@ -1149,7 +1172,7 @@ void CBudgetManager::NewBlock()
     {
         std::string strError = "";
         int nConf = 0;
-        if (!IsBudgetCollateralValid((*it5).nFeeTXHash, (*it5).GetHash(), strError, (*it5).nTime, nConf))
+        if (!IsBudgetCollateralValid((*it5).nFeeTXHash, (*it5).GetHash(), strError, (*it5).nTime, nConf, true))
         {
             ++it5;
             continue;
@@ -1301,7 +1324,7 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         std::string strError = "";
         int nConf = 0;
-        if (!IsBudgetCollateralValid(finalizedBudgetBroadcast.nFeeTXHash, finalizedBudgetBroadcast.GetHash(), strError, finalizedBudgetBroadcast.nTime, nConf))
+        if (!IsBudgetCollateralValid(finalizedBudgetBroadcast.nFeeTXHash, finalizedBudgetBroadcast.GetHash(), strError, finalizedBudgetBroadcast.nTime, nConf, true))
         {
             LogPrint("mnbudget","Finalized Budget FeeTX is not valid - %s - %s\n", finalizedBudgetBroadcast.nFeeTXHash.ToString(), strError);
 
@@ -2279,7 +2302,7 @@ bool CFinalizedBudget::IsValid(std::string& strError, bool fCheckCollateral)
     if (fCheckCollateral)
     {
         int nConf = 0;
-        if (!IsBudgetCollateralValid(nFeeTXHash, GetHash(), strError2, nTime, nConf))
+        if (!IsBudgetCollateralValid(nFeeTXHash, GetHash(), strError2, nTime, nConf, true))
         {
             {
                 strError = "Budget " + strBudgetName + " Invalid Collateral : " + strError2;
