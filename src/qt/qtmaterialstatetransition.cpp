@@ -7,7 +7,8 @@ QtMaterialStateTransition::QtMaterialStateTransition(QtMaterialStateTransitionTy
 
 bool QtMaterialStateTransition::eventTest(QEvent *event)
 {
-    if (event->type() != QEvent::Type(QEvent::User + 1)) {
+    if (event->type() != QEvent::Type(QEvent::User + 1))
+    {
         return false;
     }
     QtMaterialStateTransitionEvent *transition = static_cast<QtMaterialStateTransitionEvent *>(event);

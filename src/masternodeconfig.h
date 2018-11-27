@@ -1,4 +1,3 @@
-
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2017-2018 The Bulwark developers
@@ -109,7 +108,8 @@ public:
     int getCount()
     {
         int c = -1;
-        BOOST_FOREACH (CMasternodeEntry e, entries) {
+        BOOST_FOREACH(CMasternodeEntry e, entries)
+        {
             if (e.getAlias() != "") c++;
         }
         return c;

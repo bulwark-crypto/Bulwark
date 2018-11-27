@@ -64,13 +64,13 @@ private:
     void sortView(int, Qt::SortOrder);
     void updateView();
 
-    enum {
+    enum
+    {
         COLUMN_CHECKBOX,
         COLUMN_AMOUNT,
         COLUMN_LABEL,
         COLUMN_ADDRESS,
-		COLUMN_TYPE,
-        COLUMN_OBFUSCATION_ROUNDS,
+        COLUMN_TYPE,
         COLUMN_DATE,
         COLUMN_CONFIRMATIONS,
         COLUMN_PRIORITY,
@@ -84,14 +84,17 @@ private:
     // some columns have a hidden column containing the value used for sorting
     int getMappedColumn(int column, bool fVisibleColumn = true)
     {
-        if (fVisibleColumn) {
+        if (fVisibleColumn)
+        {
             if (column == COLUMN_AMOUNT_INT64)
                 return COLUMN_AMOUNT;
             else if (column == COLUMN_PRIORITY_INT64)
                 return COLUMN_PRIORITY;
             else if (column == COLUMN_DATE_INT64)
                 return COLUMN_DATE;
-        } else {
+        }
+        else
+        {
             if (column == COLUMN_AMOUNT)
                 return COLUMN_AMOUNT_INT64;
             else if (column == COLUMN_PRIORITY)

@@ -18,31 +18,33 @@
 
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>
+#include <boost/assign/list_of.hpp>
 #include <boost/test/unit_test.hpp>
 #include <boost/assign/list_of.hpp>
-#include "json/json_spirit_writer_template.h"
+
+#include <univalue.h>
 
 using namespace std;
-using namespace json_spirit;
 using namespace boost::algorithm;
 
 // In script_tests.cpp
-extern Array read_json(const std::string& jsondata);
+extern UniValue read_json(const std::string& jsondata);
 
 static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
-    (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
-    (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
-    (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
-    (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
-    (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
-    (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
-    (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
-    (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
-    (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
+        (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
+        (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
+        (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
+        (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
+        (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
+        (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
+        (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
+        (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
+        (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
 
 unsigned int ParseScriptFlags(string strFlags)
 {
-    if (strFlags.empty()) {
+    if (strFlags.empty())
+    {
         return 0;
     }
     unsigned int flags = 0;
@@ -61,13 +63,16 @@ unsigned int ParseScriptFlags(string strFlags)
 
 string FormatScriptFlags(unsigned int flags)
 {
-    if (flags == 0) {
+    if (flags == 0)
+    {
         return "";
     }
     string ret;
     std::map<string, unsigned int>::const_iterator it = mapFlagNames.begin();
-    while (it != mapFlagNames.end()) {
-        if (flags & it->second) {
+    while (it != mapFlagNames.end())
+    {
+        if (flags & it->second)
+        {
             ret += it->first + ",";
         }
         it++;
@@ -86,32 +91,33 @@ BOOST_AUTO_TEST_CASE(tx_valid)
     // ... where all scripts are stringified scripts.
     //
     // verifyFlags is a comma separated list of script verification flags to apply, or "NONE"
-    Array tests = read_json(std::string(json_tests::tx_valid, json_tests::tx_valid + sizeof(json_tests::tx_valid)));
+    UniValue tests = read_json(std::string(json_tests::tx_valid, json_tests::tx_valid + sizeof(json_tests::tx_valid)));
 
     ScriptError err;
-    BOOST_FOREACH(Value& tv, tests)
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
     {
-        Array test = tv.get_array();
-        string strTest = write_string(tv, false);
-        if (test[0].type() == array_type)
+        UniValue test = tests[idx];
+        string strTest = test.write();
+        if (test[0].isArray())
         {
-            if (test.size() != 3 || test[1].type() != str_type || test[2].type() != str_type)
+            if (test.size() != 3 || !test[1].isStr() || !test[2].isStr())
             {
                 BOOST_ERROR("Bad test: " << strTest);
                 continue;
             }
 
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
-            Array inputs = test[0].get_array();
+            UniValue inputs = test[0].get_array();
             bool fValid = true;
-            BOOST_FOREACH(Value& input, inputs)
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++)
             {
-                if (input.type() != array_type)
+                const UniValue& input = inputs[inpIdx];
+                if (!input.isArray())
                 {
                     fValid = false;
                     break;
                 }
-                Array vinput = input.get_array();
+                UniValue vinput = input.get_array();
                 if (vinput.size() != 3)
                 {
                     fValid = false;
@@ -132,7 +138,7 @@ BOOST_AUTO_TEST_CASE(tx_valid)
             stream >> tx;
 
             CValidationState state;
-            BOOST_CHECK_MESSAGE(CheckTransaction(tx, state), strTest);
+            BOOST_CHECK_MESSAGE(CheckTransaction(tx, false, false, state), strTest);
             BOOST_CHECK(state.IsValid());
 
             for (unsigned int i = 0; i < tx.vin.size(); i++)
@@ -162,32 +168,33 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
     // ... where all scripts are stringified scripts.
     //
     // verifyFlags is a comma separated list of script verification flags to apply, or "NONE"
-    Array tests = read_json(std::string(json_tests::tx_invalid, json_tests::tx_invalid + sizeof(json_tests::tx_invalid)));
+    UniValue tests = read_json(std::string(json_tests::tx_invalid, json_tests::tx_invalid + sizeof(json_tests::tx_invalid)));
 
     ScriptError err;
-    BOOST_FOREACH(Value& tv, tests)
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
     {
-        Array test = tv.get_array();
-        string strTest = write_string(tv, false);
-        if (test[0].type() == array_type)
+        UniValue test = tests[idx];
+        string strTest = test.write();
+        if (test[0].isArray())
         {
-            if (test.size() != 3 || test[1].type() != str_type || test[2].type() != str_type)
+            if (test.size() != 3 || !test[1].isStr() || !test[2].isStr())
             {
                 BOOST_ERROR("Bad test: " << strTest);
                 continue;
             }
 
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
-            Array inputs = test[0].get_array();
+            UniValue inputs = test[0].get_array();
             bool fValid = true;
-            BOOST_FOREACH(Value& input, inputs)
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++)
             {
-                if (input.type() != array_type)
+                const UniValue& input = inputs[inpIdx];
+                if (!input.isArray())
                 {
                     fValid = false;
                     break;
                 }
-                Array vinput = input.get_array();
+                UniValue vinput = input.get_array();
                 if (vinput.size() != 3)
                 {
                     fValid = false;
@@ -208,7 +215,7 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             stream >> tx;
 
             CValidationState state;
-            fValid = CheckTransaction(tx, state) && state.IsValid();
+            fValid = CheckTransaction(tx, false, false, state) && state.IsValid();
 
             for (unsigned int i = 0; i < tx.vin.size() && fValid; i++)
             {
@@ -237,11 +244,11 @@ BOOST_AUTO_TEST_CASE(basic_transaction_tests)
     CMutableTransaction tx;
     stream >> tx;
     CValidationState state;
-    BOOST_CHECK_MESSAGE(CheckTransaction(tx, state) && state.IsValid(), "Simple deserialized transaction should be valid.");
+    BOOST_CHECK_MESSAGE(CheckTransaction(tx, false, false, state) && state.IsValid(), "Simple deserialized transaction should be valid.");
 
     // Check that duplicate txins fail
     tx.vin.push_back(tx.vin[0]);
-    BOOST_CHECK_MESSAGE(!CheckTransaction(tx, state) || !state.IsValid(), "Transaction with duplicate txins should be invalid.");
+    BOOST_CHECK_MESSAGE(!CheckTransaction(tx, false, false, state) || !state.IsValid(), "Transaction with duplicate txins should be invalid.");
 }
 
 //

@@ -10,7 +10,8 @@
 #include "include/secp256k1.h"
 #include "util.h"
 
-int main(void) {
+int main(void)
+{
     secp256k1_start(SECP256K1_START_VERIFY);
 
     unsigned char msg[32];
@@ -20,17 +21,20 @@ int main(void) {
     for (int i = 0; i < 64; i++) sig[i] = 65 + i;
 
     unsigned char pubkey[33];
-    for (int i=0; i<1000000; i++) {
+    for (int i=0; i<1000000; i++)
+    {
         int pubkeylen = 33;
         CHECK(secp256k1_ecdsa_recover_compact(msg, 32, sig, pubkey, &pubkeylen, 1, i % 2));
-        for (int j = 0; j < 32; j++) {
+        for (int j = 0; j < 32; j++)
+        {
             sig[j + 32] = msg[j];    /* Move former message to S. */
             msg[j] = sig[j];         /* Move former R to message. */
             sig[j] = pubkey[j + 1];  /* Move recovered pubkey X coordinate to R (which must be a valid X coordinate). */
         }
     }
 
-    static const unsigned char fini[33] = {
+    static const unsigned char fini[33] =
+    {
         0x02,
         0x52, 0x63, 0xae, 0x9a, 0x9d, 0x47, 0x1f, 0x1a,
         0xb2, 0x36, 0x65, 0x89, 0x11, 0xe7, 0xcc, 0x86,

@@ -80,7 +80,8 @@ const CBaseChainParams& BaseParams()
 
 void SelectBaseParams(CBaseChainParams::Network network)
 {
-    switch (network) {
+    switch (network)
+    {
     case CBaseChainParams::MAIN:
         pCurrentBaseParams = &mainParams;
         break;

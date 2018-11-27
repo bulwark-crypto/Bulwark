@@ -13,7 +13,8 @@
 #include <QPalette>
 #include <QPixmap>
 
-static const struct {
+static const struct
+{
     const char* platformId;
     /** Show images on push buttons */
     const bool imagesOnButtons;
@@ -21,11 +22,13 @@ static const struct {
     const bool colorizeIcons;
     /** Extra padding/spacing in transactionview */
     const bool useExtraSpacing;
-} platform_styles[] = {
+} platform_styles[] =
+{
     {"macosx", false, false, true},
     {"windows", true, false, false},
     /* Other: linux, unix, ... */
-    {"other", true, false, false}};
+    {"other", true, false, false}
+};
 static const unsigned platform_styles_count = sizeof(platform_styles) / sizeof(*platform_styles);
 
 namespace
@@ -35,8 +38,10 @@ namespace
 void MakeSingleColorImage(QImage& img, const QColor& colorbase)
 {
     img = img.convertToFormat(QImage::Format_ARGB32);
-    for (int x = img.width(); x--;) {
-        for (int y = img.height(); y--;) {
+    for (int x = img.width(); x--;)
+    {
+        for (int y = img.height(); y--;)
+        {
             const QRgb rgb = img.pixel(x, y);
             img.setPixel(x, y, qRgba(colorbase.red(), colorbase.green(), colorbase.blue(), qAlpha(rgb)));
         }
@@ -47,7 +52,8 @@ QIcon ColorizeIcon(const QIcon& ico, const QColor& colorbase)
 {
     QIcon new_ico;
     QSize sz;
-    Q_FOREACH (sz, ico.availableSizes()) {
+    Q_FOREACH (sz, ico.availableSizes())
+    {
         QImage img(ico.pixmap(sz).toImage());
         MakeSingleColorImage(img, colorbase);
         new_ico.addPixmap(QPixmap::fromImage(img));
@@ -70,14 +76,15 @@ QIcon ColorizeIcon(const QString& filename, const QColor& colorbase)
 
 
 PlatformStyle::PlatformStyle(const QString& name, bool imagesOnButtons, bool colorizeIcons, bool useExtraSpacing) : name(name),
-                                                                                                                    imagesOnButtons(imagesOnButtons),
-                                                                                                                    colorizeIcons(colorizeIcons),
-                                                                                                                    useExtraSpacing(useExtraSpacing),
-                                                                                                                    singleColor(0, 0, 0),
-                                                                                                                    textColor(0, 0, 0)
+    imagesOnButtons(imagesOnButtons),
+    colorizeIcons(colorizeIcons),
+    useExtraSpacing(useExtraSpacing),
+    singleColor(0, 0, 0),
+    textColor(0, 0, 0)
 {
     // Determine icon highlighting color
-    if (colorizeIcons) {
+    if (colorizeIcons)
+    {
         const QColor colorHighlightBg(QApplication::palette().color(QPalette::Highlight));
         const QColor colorHighlightFg(QApplication::palette().color(QPalette::HighlightedText));
         const QColor colorText(QApplication::palette().color(QPalette::WindowText));
@@ -126,13 +133,15 @@ QIcon PlatformStyle::TextColorIcon(const QIcon& icon) const
 
 const PlatformStyle* PlatformStyle::instantiate(const QString& platformId)
 {
-    for (unsigned x = 0; x < platform_styles_count; ++x) {
-        if (platformId == platform_styles[x].platformId) {
+    for (unsigned x = 0; x < platform_styles_count; ++x)
+    {
+        if (platformId == platform_styles[x].platformId)
+        {
             return new PlatformStyle(
-                platform_styles[x].platformId,
-                platform_styles[x].imagesOnButtons,
-                platform_styles[x].colorizeIcons,
-                platform_styles[x].useExtraSpacing);
+                       platform_styles[x].platformId,
+                       platform_styles[x].imagesOnButtons,
+                       platform_styles[x].colorizeIcons,
+                       platform_styles[x].useExtraSpacing);
         }
     }
     return 0;

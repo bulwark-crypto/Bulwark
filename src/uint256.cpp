@@ -32,7 +32,8 @@ base_uint<BITS>& base_uint<BITS>::operator<<=(unsigned int shift)
         pn[i] = 0;
     int k = shift / 32;
     shift = shift % 32;
-    for (int i = 0; i < WIDTH; i++) {
+    for (int i = 0; i < WIDTH; i++)
+    {
         if (i + k + 1 < WIDTH && shift != 0)
             pn[i + k + 1] |= (a.pn[i] >> (32 - shift));
         if (i + k < WIDTH)
@@ -49,7 +50,8 @@ base_uint<BITS>& base_uint<BITS>::operator>>=(unsigned int shift)
         pn[i] = 0;
     int k = shift / 32;
     shift = shift % 32;
-    for (int i = 0; i < WIDTH; i++) {
+    for (int i = 0; i < WIDTH; i++)
+    {
         if (i - k - 1 >= 0 && shift != 0)
             pn[i - k - 1] |= (a.pn[i] << (32 - shift));
         if (i - k >= 0)
@@ -62,7 +64,8 @@ template <unsigned int BITS>
 base_uint<BITS>& base_uint<BITS>::operator*=(uint32_t b32)
 {
     uint64_t carry = 0;
-    for (int i = 0; i < WIDTH; i++) {
+    for (int i = 0; i < WIDTH; i++)
+    {
         uint64_t n = carry + (uint64_t)b32 * pn[i];
         pn[i] = n & 0xffffffff;
         carry = n >> 32;
@@ -75,9 +78,11 @@ base_uint<BITS>& base_uint<BITS>::operator*=(const base_uint& b)
 {
     base_uint<BITS> a = *this;
     *this = 0;
-    for (int j = 0; j < WIDTH; j++) {
+    for (int j = 0; j < WIDTH; j++)
+    {
         uint64_t carry = 0;
-        for (int i = 0; i + j < WIDTH; i++) {
+        for (int i = 0; i + j < WIDTH; i++)
+        {
             uint64_t n = carry + pn[i + j] + (uint64_t)a.pn[j] * b.pn[i];
             pn[i + j] = n & 0xffffffff;
             carry = n >> 32;
@@ -100,8 +105,10 @@ base_uint<BITS>& base_uint<BITS>::operator/=(const base_uint& b)
         return *this;
     int shift = num_bits - div_bits;
     div <<= shift; // shift so that div and nun align.
-    while (shift >= 0) {
-        if (num >= div) {
+    while (shift >= 0)
+    {
+        if (num >= div)
+        {
             num -= div;
             pn[shift / 32] |= (1 << (shift & 31)); // set a bit of the result.
         }
@@ -115,7 +122,8 @@ base_uint<BITS>& base_uint<BITS>::operator/=(const base_uint& b)
 template <unsigned int BITS>
 int base_uint<BITS>::CompareTo(const base_uint<BITS>& b) const
 {
-    for (int i = WIDTH - 1; i >= 0; i--) {
+    for (int i = WIDTH - 1; i >= 0; i--)
+    {
         if (pn[i] < b.pn[i])
             return -1;
         if (pn[i] > b.pn[i])
@@ -127,7 +135,8 @@ int base_uint<BITS>::CompareTo(const base_uint<BITS>& b) const
 template <unsigned int BITS>
 bool base_uint<BITS>::EqualTo(uint64_t b) const
 {
-    for (int i = WIDTH - 1; i >= 2; i--) {
+    for (int i = WIDTH - 1; i >= 2; i--)
+    {
         if (pn[i])
             return false;
     }
@@ -143,7 +152,8 @@ double base_uint<BITS>::getdouble() const
 {
     double ret = 0.0;
     double fact = 1.0;
-    for (int i = 0; i < WIDTH; i++) {
+    for (int i = 0; i < WIDTH; i++)
+    {
         ret += fact * pn[i];
         fact *= 4294967296.0;
     }
@@ -179,9 +189,11 @@ void base_uint<BITS>::SetHex(const char* psz)
     psz--;
     unsigned char* p1 = (unsigned char*)pn;
     unsigned char* pend = p1 + WIDTH * 4;
-    while (psz >= pbegin && p1 < pend) {
+    while (psz >= pbegin && p1 < pend)
+    {
         *p1 = ::HexDigit(*psz--);
-        if (psz >= pbegin) {
+        if (psz >= pbegin)
+        {
             *p1 |= ((unsigned char)::HexDigit(*psz--) << 4);
             p1++;
         }
@@ -212,9 +224,12 @@ std::string base_uint<BITS>::ToStringReverseEndian() const
 template <unsigned int BITS>
 unsigned int base_uint<BITS>::bits() const
 {
-    for (int pos = WIDTH - 1; pos >= 0; pos--) {
-        if (pn[pos]) {
-            for (int bits = 31; bits > 0; bits--) {
+    for (int pos = WIDTH - 1; pos >= 0; pos--)
+    {
+        if (pn[pos])
+        {
+            for (int bits = 31; bits > 0; bits--)
+            {
                 if (pn[pos] & 1 << bits)
                     return 32 * pos + bits + 1;
             }
@@ -273,10 +288,13 @@ uint256& uint256::SetCompact(uint32_t nCompact, bool* pfNegative, bool* pfOverfl
 {
     int nSize = nCompact >> 24;
     uint32_t nWord = nCompact & 0x007fffff;
-    if (nSize <= 3) {
+    if (nSize <= 3)
+    {
         nWord >>= 8 * (3 - nSize);
         *this = nWord;
-    } else {
+    }
+    else
+    {
         *this = nWord;
         *this <<= 8 * (nSize - 3);
     }
@@ -284,8 +302,8 @@ uint256& uint256::SetCompact(uint32_t nCompact, bool* pfNegative, bool* pfOverfl
         *pfNegative = nWord != 0 && (nCompact & 0x00800000) != 0;
     if (pfOverflow)
         *pfOverflow = nWord != 0 && ((nSize > 34) ||
-                                        (nWord > 0xff && nSize > 33) ||
-                                        (nWord > 0xffff && nSize > 32));
+                                     (nWord > 0xff && nSize > 33) ||
+                                     (nWord > 0xffff && nSize > 32));
     return *this;
 }
 
@@ -293,15 +311,19 @@ uint32_t uint256::GetCompact(bool fNegative) const
 {
     int nSize = (bits() + 7) / 8;
     uint32_t nCompact = 0;
-    if (nSize <= 3) {
+    if (nSize <= 3)
+    {
         nCompact = GetLow64() << 8 * (3 - nSize);
-    } else {
+    }
+    else
+    {
         uint256 bn = *this >> 8 * (nSize - 3);
         nCompact = bn.GetLow64();
     }
     // The 0x00800000 bit denotes the sign.
     // Thus, if it is already set, divide the mantissa by 256 and increase the exponent.
-    if (nCompact & 0x00800000) {
+    if (nCompact & 0x00800000)
+    {
         nCompact >>= 8;
         nSize++;
     }

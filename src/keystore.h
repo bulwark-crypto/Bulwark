@@ -45,6 +45,8 @@ public:
     virtual bool RemoveWatchOnly(const CScript& dest) = 0;
     virtual bool HaveWatchOnly(const CScript& dest) const = 0;
     virtual bool HaveWatchOnly() const = 0;
+
+    //! Support for MultiSig addresses
     virtual bool AddMultiSig(const CScript& dest) = 0;
     virtual bool RemoveMultiSig(const CScript& dest) = 0;
     virtual bool HaveMultiSig(const CScript& dest) const = 0;
@@ -64,7 +66,7 @@ protected:
     ScriptMap mapScripts;
     WatchOnlySet setWatchOnly;
     MultiSigScriptSet setMultiSig;
-  
+
 public:
     bool AddKeyPubKey(const CKey& key, const CPubKey& pubkey);
     bool HaveKey(const CKeyID& address) const
@@ -82,7 +84,8 @@ public:
         {
             LOCK(cs_KeyStore);
             KeyMap::const_iterator mi = mapKeys.begin();
-            while (mi != mapKeys.end()) {
+            while (mi != mapKeys.end())
+            {
                 setAddress.insert((*mi).first);
                 mi++;
             }
@@ -93,7 +96,8 @@ public:
         {
             LOCK(cs_KeyStore);
             KeyMap::const_iterator mi = mapKeys.find(address);
-            if (mi != mapKeys.end()) {
+            if (mi != mapKeys.end())
+            {
                 keyOut = mi->second;
                 return true;
             }
@@ -108,7 +112,7 @@ public:
     virtual bool RemoveWatchOnly(const CScript& dest);
     virtual bool HaveWatchOnly(const CScript& dest) const;
     virtual bool HaveWatchOnly() const;
-    
+
     virtual bool AddMultiSig(const CScript& dest);
     virtual bool RemoveMultiSig(const CScript& dest);
     virtual bool HaveMultiSig(const CScript& dest) const;

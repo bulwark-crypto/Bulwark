@@ -24,17 +24,20 @@ public:
     explicit AddressTableModel(CWallet* wallet, WalletModel* parent = 0);
     ~AddressTableModel();
 
-    enum ColumnIndex {
+    enum ColumnIndex
+    {
         Label = 0,  /**< User specified label */
         Address = 1 /**< Bitcoin address */
     };
 
-    enum RoleIndex {
+    enum RoleIndex
+    {
         TypeRole = Qt::UserRole /**< Type of address (#Send or #Receive) */
     };
 
     /** Return status of edit/insert operation */
-    enum EditStatus {
+    enum EditStatus
+    {
         OK,                    /**< Everything ok */
         NO_CHANGES,            /**< No changes were made during edit operation */
         INVALID_ADDRESS,       /**< Unparseable address */
@@ -45,6 +48,7 @@ public:
 
     static const QString Send;    /**< Specifies send address */
     static const QString Receive; /**< Specifies receive address */
+    static const QString Zerocoin; /**< Specifies stealth address */
 
     /** @name Methods overridden from QAbstractTableModel
         @{*/
@@ -72,7 +76,10 @@ public:
      */
     int lookupAddress(const QString& address) const;
 
-    EditStatus getEditStatus() const { return editStatus; }
+    EditStatus getEditStatus() const
+    {
+        return editStatus;
+    }
 
 private:
     WalletModel* walletModel;
@@ -88,7 +95,7 @@ public slots:
     /* Update address list from core.
      */
     void updateEntry(const QString& address, const QString& label, bool isMine, const QString& purpose, int status);
-
+    void updateEntry(const QString &pubCoin, const QString &isUsed, int status);
     friend class AddressTablePriv;
 };
 

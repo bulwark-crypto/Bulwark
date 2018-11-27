@@ -4,6 +4,7 @@
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #ifndef MASTERNODE_BUDGET_H
 #define MASTERNODE_BUDGET_H
 
@@ -33,7 +34,7 @@ class CTxBudgetPayment;
 #define VOTE_NO 2
 
 static const CAmount PROPOSAL_FEE_TX = (50 * COIN);
-static const CAmount BUDGET_FEE_TX = (50 * COIN);
+static const CAmount BUDGET_FEE_TX = (5 * COIN);
 static const int64_t BUDGET_FEE_CONFIRMATIONS = 6;
 static const int64_t BUDGET_VOTE_UPDATE_MIN = 60 * 60;
 
@@ -47,7 +48,7 @@ void DumpBudgets();
 int GetBudgetPaymentCycleBlocks();
 
 //Check the collateral transaction for the budget proposal/finalized budget
-bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, std::string& strError, int64_t& nTime, int& nConf);
+bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, std::string& strError, int64_t& nTime, int& nConf, bool fBudgetFinalization = false);
 
 //
 // CBudgetVote - Allow a masternode node to vote and broadcast throughout the network
@@ -153,7 +154,8 @@ private:
     std::string strMagicMessage;
 
 public:
-    enum ReadResult {
+    enum ReadResult
+    {
         Ok,
         FileError,
         HashReadError,
@@ -208,8 +210,14 @@ public:
         mapSeenFinalizedBudgetVotes.clear();
     }
 
-    int sizeFinalized() { return (int)mapFinalizedBudgets.size(); }
-    int sizeProposals() { return (int)mapProposals.size(); }
+    int sizeFinalized()
+    {
+        return (int)mapFinalizedBudgets.size();
+    }
+    int sizeProposals()
+    {
+        return (int)mapProposals.size();
+    }
 
     void ResetSync();
     void MarkSynced();
@@ -333,11 +341,23 @@ public:
 
     bool IsValid(std::string& strError, bool fCheckCollateral = true);
 
-    std::string GetName() { return strBudgetName; }
+    std::string GetName()
+    {
+        return strBudgetName;
+    }
     std::string GetProposals();
-    int GetBlockStart() { return nBlockStart; }
-    int GetBlockEnd() { return nBlockStart + (int)(vecBudgetPayments.size() - 1); }
-    int GetVoteCount() { return (int)mapVotes.size(); }
+    int GetBlockStart()
+    {
+        return nBlockStart;
+    }
+    int GetBlockEnd()
+    {
+        return nBlockStart + (int)(vecBudgetPayments.size() - 1);
+    }
+    int GetVoteCount()
+    {
+        return (int)mapVotes.size();
+    }
     bool IsTransactionValid(const CTransaction& txNew, int nBlockHeight);
     bool GetBudgetPaymentByBlock(int64_t nBlockHeight, CTxBudgetPayment& payment)
     {
@@ -491,18 +511,33 @@ public:
 
     bool IsEstablished()
     {
-        //Proposals must be at least a day old to make it into a budget
-        if (Params().NetworkID() == CBaseChainParams::MAIN) return (nTime < GetTime() - (60 * 60 * 24));
+        // Proposals must be at least a day old to make it into a budget (90 seconds blocks)
+        if (Params().NetworkID() == CBaseChainParams::MAIN) return (nTime < GetTime() - (90 * 960));
 
-        //for testing purposes - 4 hours
-        return (nTime < GetTime() - (60 * 5));
+        //for testing purposes - 5 minutes (30 second blocks)
+        return (nTime < GetTime() - (5 * 30 * 2));
     }
 
-    std::string GetName() { return strProposalName; }
-    std::string GetURL() { return strURL; }
-    int GetBlockStart() { return nBlockStart; }
-    int GetBlockEnd() { return nBlockEnd; }
-    CScript GetPayee() { return address; }
+    std::string GetName()
+    {
+        return strProposalName;
+    }
+    std::string GetURL()
+    {
+        return strURL;
+    }
+    int GetBlockStart()
+    {
+        return nBlockStart;
+    }
+    int GetBlockEnd()
+    {
+        return nBlockEnd;
+    }
+    CScript GetPayee()
+    {
+        return address;
+    }
     int GetTotalPaymentCount();
     int GetRemainingPaymentCount();
     int GetBlockStartCycle();
@@ -512,9 +547,18 @@ public:
     int GetYeas();
     int GetNays();
     int GetAbstains();
-    CAmount GetAmount() { return nAmount; }
-    void SetAllotted(CAmount nAllotedIn) { nAlloted = nAllotedIn; }
-    CAmount GetAllotted() { return nAlloted; }
+    CAmount GetAmount()
+    {
+        return nAmount;
+    }
+    void SetAllotted(CAmount nAllotedIn)
+    {
+        nAlloted = nAllotedIn;
+    }
+    CAmount GetAllotted()
+    {
+        return nAlloted;
+    }
 
     void CleanAndRemove(bool fSignatureCheck);
 

@@ -34,36 +34,43 @@ const int FREEDESKTOP_NOTIFICATION_ICON_SIZE = 128;
 #endif
 
 Notificator::Notificator(const QString& programName, QSystemTrayIcon* trayicon, QWidget* parent) : QObject(parent),
-                                                                                                   parent(parent),
-                                                                                                   programName(programName),
-                                                                                                   mode(None),
-                                                                                                   trayIcon(trayicon)
+    parent(parent),
+    programName(programName),
+    mode(None),
+    trayIcon(trayicon)
 #ifdef USE_DBUS
-                                                                                                   ,
-                                                                                                   interface(0)
+    ,
+    interface(0)
 #endif
 {
-    if (trayicon && trayicon->supportsMessages()) {
+    if (trayicon && trayicon->supportsMessages())
+    {
         mode = QSystemTray;
     }
 #ifdef USE_DBUS
     interface = new QDBusInterface("org.freedesktop.Notifications",
-        "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
-    if (interface->isValid()) {
+                                       "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
+    if (interface->isValid())
+    {
         mode = Freedesktop;
     }
 #endif
 #ifdef Q_OS_MAC
     // check if users OS has support for NSUserNotification
-    if (MacNotificationHandler::instance()->hasUserNotificationCenterSupport()) {
+    if (MacNotificationHandler::instance()->hasUserNotificationCenterSupport())
+    {
         mode = UserNotificationCenter;
-    } else {
+    }
+    else
+    {
         // Check if Growl is installed (based on Qt's tray icon implementation)
         CFURLRef cfurl;
         OSStatus status = LSGetApplicationForInfo(kLSUnknownType, kLSUnknownCreator, CFSTR("growlTicket"), kLSRolesAll, 0, &cfurl);
-        if (status != kLSApplicationNotFoundErr) {
+        if (status != kLSApplicationNotFoundErr)
+        {
             CFBundleRef bundle = CFBundleCreate(0, cfurl);
-            if (CFStringCompare(CFBundleGetIdentifier(bundle), CFSTR("com.Growl.GrowlHelperApp"), kCFCompareCaseInsensitive | kCFCompareBackwards) == kCFCompareEqualTo) {
+            if (CFStringCompare(CFBundleGetIdentifier(bundle), CFSTR("com.Growl.GrowlHelperApp"), kCFCompareCaseInsensitive | kCFCompareBackwards) == kCFCompareEqualTo)
+            {
                 if (CFStringHasSuffix(CFURLGetString(cfurl), CFSTR("/Growl.app/")))
                     mode = Growl13;
                 else
@@ -116,11 +123,11 @@ const int BYTES_PER_PIXEL = 4;
 const int BITS_PER_SAMPLE = 8;
 
 FreedesktopImage::FreedesktopImage(const QImage& img) : width(img.width()),
-                                                        height(img.height()),
-                                                        stride(img.width() * BYTES_PER_PIXEL),
-                                                        hasAlpha(true),
-                                                        channels(CHANNELS),
-                                                        bitsPerSample(BITS_PER_SAMPLE)
+    height(img.height()),
+    stride(img.width() * BYTES_PER_PIXEL),
+    hasAlpha(true),
+    channels(CHANNELS),
+    bitsPerSample(BITS_PER_SAMPLE)
 {
     // Convert 00xAARRGGBB to RGBA bytewise (endian-independent) format
     QImage tmp = img.convertToFormat(QImage::Format_ARGB32);
@@ -129,7 +136,8 @@ FreedesktopImage::FreedesktopImage(const QImage& img) : width(img.width()),
     unsigned int num_pixels = width * height;
     image.resize(num_pixels * BYTES_PER_PIXEL);
 
-    for (unsigned int ptr = 0; ptr < num_pixels; ++ptr) {
+    for (unsigned int ptr = 0; ptr < num_pixels; ++ptr)
+    {
         image[ptr * BYTES_PER_PIXEL + 0] = data[ptr] >> 16; // R
         image[ptr * BYTES_PER_PIXEL + 1] = data[ptr] >> 8;  // G
         image[ptr * BYTES_PER_PIXEL + 2] = data[ptr];       // B
@@ -194,9 +202,11 @@ void Notificator::notifyDBus(Class cls, const QString& title, const QString& tex
 
     // If no icon specified, set icon based on class
     QIcon tmpicon;
-    if (icon.isNull()) {
+    if (icon.isNull())
+    {
         QStyle::StandardPixmap sicon = QStyle::SP_MessageBoxQuestion;
-        switch (cls) {
+        switch (cls)
+        {
         case Information:
             sicon = QStyle::SP_MessageBoxInformation;
             break;
@@ -210,7 +220,9 @@ void Notificator::notifyDBus(Class cls, const QString& title, const QString& tex
             break;
         }
         tmpicon = QApplication::style()->standardIcon(sicon);
-    } else {
+    }
+    else
+    {
         tmpicon = icon;
     }
     hints["icon_data"] = FreedesktopImage::toVariant(tmpicon.pixmap(FREEDESKTOP_NOTIFICATION_ICON_SIZE).toImage());
@@ -260,9 +272,11 @@ void Notificator::notifyGrowl(Class cls, const QString& title, const QString& te
         notificationApp = "Application";
 
     QPixmap notificationIconPixmap;
-    if (icon.isNull()) { // If no icon specified, set icon based on class
+    if (icon.isNull())   // If no icon specified, set icon based on class
+    {
         QStyle::StandardPixmap sicon = QStyle::SP_MessageBoxQuestion;
-        switch (cls) {
+        switch (cls)
+        {
         case Information:
             sicon = QStyle::SP_MessageBoxInformation;
             break;
@@ -274,14 +288,17 @@ void Notificator::notifyGrowl(Class cls, const QString& title, const QString& te
             break;
         }
         notificationIconPixmap = QApplication::style()->standardPixmap(sicon);
-    } else {
+    }
+    else
+    {
         QSize size = icon.actualSize(QSize(48, 48));
         notificationIconPixmap = icon.pixmap(size);
     }
 
     QString notificationIcon;
     QTemporaryFile notificationIconFile;
-    if (!notificationIconPixmap.isNull() && notificationIconFile.open()) {
+    if (!notificationIconPixmap.isNull() && notificationIconFile.open())
+    {
         QImageWriter writer(&notificationIconFile, "PNG");
         if (writer.write(notificationIconPixmap.toImage()))
             notificationIcon = QString(" image from location \"file://%1\"").arg(notificationIconFile.fileName());
@@ -304,7 +321,8 @@ void Notificator::notifyMacUserNotificationCenter(Class cls, const QString& titl
 
 void Notificator::notify(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout)
 {
-    switch (mode) {
+    switch (mode)
+    {
 #ifdef USE_DBUS
     case Freedesktop:
         notifyDBus(cls, title, text, icon, millisTimeout);
@@ -323,7 +341,8 @@ void Notificator::notify(Class cls, const QString& title, const QString& text, c
         break;
 #endif
     default:
-        if (cls == Critical) {
+        if (cls == Critical)
+        {
             // Fall back to old fashioned pop-up dialog if critical and no other notification available
             QMessageBox::critical(parent, title, text, QMessageBox::Ok, QMessageBox::Ok);
         }

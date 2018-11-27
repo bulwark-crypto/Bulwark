@@ -24,10 +24,22 @@ public:
         return new T();
     }
 
-    std::string GetType() const { return type; }
-    void SetType(const std::string &t) { type = t; }
-    std::string GetAddress() const { return address; }
-    void SetAddress(const std::string &a) { address = a; }
+    std::string GetType() const
+    {
+        return type;
+    }
+    void SetType(const std::string &t)
+    {
+        type = t;
+    }
+    std::string GetAddress() const
+    {
+        return address;
+    }
+    void SetAddress(const std::string &a)
+    {
+        address = a;
+    }
 
     virtual bool Initialize(void *pcontext) = 0;
     virtual void Shutdown() = 0;

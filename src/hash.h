@@ -123,7 +123,8 @@ inline std::string Hash(std::string input)
     SHA256_Update(&sha256, input.c_str(), input.size());
     SHA256_Final(hash, &sha256);
     stringstream ss;
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+    {
         ss << hex << setw(2) << setfill('0') << (int)hash[i];
     }
     return ss.str();
@@ -205,7 +206,7 @@ inline uint160 Hash160(const T1 pbegin, const T1 pend)
     static unsigned char pblank[1] = {};
     uint160 result;
     CHash160().Write(pbegin == pend ? pblank : (const unsigned char*)&pbegin[0], (pend - pbegin) * sizeof(pbegin[0]))
-	    .Finalize((unsigned char*)&result);
+    .Finalize((unsigned char*)&result);
     return result;
 }
 

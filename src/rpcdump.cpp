@@ -26,9 +26,8 @@
 #include <openssl/aes.h>
 #include <openssl/sha.h>
 
-#include "json/json_spirit_value.h"
+#include <univalue.h>
 
-using namespace json_spirit;
 using namespace std;
 
 void EnsureWalletIsUnlocked();
@@ -42,7 +41,7 @@ int64_t static DecodeDumpTime(const std::string& str)
 {
     static const boost::posix_time::ptime epoch = boost::posix_time::from_time_t(0);
     static const std::locale loc(std::locale::classic(),
-        new boost::posix_time::time_input_facet("%Y-%m-%dT%H:%M:%SZ"));
+                                 new boost::posix_time::time_input_facet("%Y-%m-%dT%H:%M:%SZ"));
     std::istringstream iss(str);
     iss.imbue(loc);
     boost::posix_time::ptime ptime(boost::date_time::not_a_date_time);
@@ -55,10 +54,14 @@ int64_t static DecodeDumpTime(const std::string& str)
 std::string static EncodeDumpString(const std::string& str)
 {
     std::stringstream ret;
-    BOOST_FOREACH (unsigned char c, str) {
-        if (c <= 32 || c >= 128 || c == '%') {
+    BOOST_FOREACH(unsigned char c, str)
+    {
+        if (c <= 32 || c >= 128 || c == '%')
+        {
             ret << '%' << HexStr(&c, &c + 1);
-        } else {
+        }
+        else
+        {
             ret << c;
         }
     }
@@ -68,9 +71,11 @@ std::string static EncodeDumpString(const std::string& str)
 std::string DecodeDumpString(const std::string& str)
 {
     std::stringstream ret;
-    for (unsigned int pos = 0; pos < str.length(); pos++) {
+    for (unsigned int pos = 0; pos < str.length(); pos++)
+    {
         unsigned char c = str[pos];
-        if (c == '%' && pos + 2 < str.length()) {
+        if (c == '%' && pos + 2 < str.length())
+        {
             c = (((str[pos + 1] >> 6) * 9 + ((str[pos + 1] - '0') & 15)) << 4) |
                 ((str[pos + 2] >> 6) * 9 + ((str[pos + 2] - '0') & 15));
             pos += 2;
@@ -80,7 +85,7 @@ std::string DecodeDumpString(const std::string& str)
     return ret.str();
 }
 
-Value importprivkey(const Array& params, bool fHelp)
+UniValue importprivkey(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
@@ -127,7 +132,7 @@ Value importprivkey(const Array& params, bool fHelp)
 
         // Don't throw error in case a key is already there
         if (pwalletMain->HaveKey(vchAddress))
-            return Value::null;
+            return NullUniValue;
 
         pwalletMain->mapKeyMetadata[vchAddress].nCreateTime = 1;
 
@@ -137,15 +142,16 @@ Value importprivkey(const Array& params, bool fHelp)
         // whenever a key is imported, we need to scan the whole chain
         pwalletMain->nTimeFirstKey = 1; // 0 would be considered 'no value'
 
-        if (fRescan) {
+        if (fRescan)
+        {
             pwalletMain->ScanForWalletTransactions(chainActive.Genesis(), true);
         }
     }
 
-    return Value::null;
+    return NullUniValue;
 }
 
-Value importaddress(const Array& params, bool fHelp)
+UniValue importaddress(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
@@ -165,12 +171,17 @@ Value importaddress(const Array& params, bool fHelp)
     CScript script;
 
     CBitcoinAddress address(params[0].get_str());
-    if (address.IsValid()) {
+    if (address.IsValid())
+    {
         script = GetScriptForDestination(address.Get());
-    } else if (IsHex(params[0].get_str())) {
+    }
+    else if (IsHex(params[0].get_str()))
+    {
         std::vector<unsigned char> data(ParseHex(params[0].get_str()));
         script = CScript(data.begin(), data.end());
-    } else {
+    }
+    else
+    {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Bulwark address or script");
     }
 
@@ -193,23 +204,24 @@ Value importaddress(const Array& params, bool fHelp)
 
         // Don't throw error in case an address is already there
         if (pwalletMain->HaveWatchOnly(script))
-            return Value::null;
+            return NullUniValue;
 
         pwalletMain->MarkDirty();
 
         if (!pwalletMain->AddWatchOnly(script))
             throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
 
-        if (fRescan) {
+        if (fRescan)
+        {
             pwalletMain->ScanForWalletTransactions(chainActive.Genesis(), true);
             pwalletMain->ReacceptWalletTransactions();
         }
     }
 
-    return Value::null;
+    return NullUniValue;
 }
 
-Value importwallet(const Array& params, bool fHelp)
+UniValue importwallet(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
@@ -238,7 +250,8 @@ Value importwallet(const Array& params, bool fHelp)
     file.seekg(0, file.beg);
 
     pwalletMain->ShowProgress(_("Importing..."), 0); // show progress dialog in GUI
-    while (file.good()) {
+    while (file.good())
+    {
         pwalletMain->ShowProgress("", std::max(1, std::min(99, (int)(((double)file.tellg() / (double)nFilesize) * 100))));
         std::string line;
         std::getline(file, line);
@@ -256,27 +269,31 @@ Value importwallet(const Array& params, bool fHelp)
         CPubKey pubkey = key.GetPubKey();
         assert(key.VerifyPubKey(pubkey));
         CKeyID keyid = pubkey.GetID();
-        if (pwalletMain->HaveKey(keyid)) {
+        if (pwalletMain->HaveKey(keyid))
+        {
             LogPrintf("Skipping import of %s (key already present)\n", CBitcoinAddress(keyid).ToString());
             continue;
         }
         int64_t nTime = DecodeDumpTime(vstr[1]);
         std::string strLabel;
         bool fLabel = true;
-        for (unsigned int nStr = 2; nStr < vstr.size(); nStr++) {
+        for (unsigned int nStr = 2; nStr < vstr.size(); nStr++)
+        {
             if (boost::algorithm::starts_with(vstr[nStr], "#"))
                 break;
             if (vstr[nStr] == "change=1")
                 fLabel = false;
             if (vstr[nStr] == "reserve=1")
                 fLabel = false;
-            if (boost::algorithm::starts_with(vstr[nStr], "label=")) {
+            if (boost::algorithm::starts_with(vstr[nStr], "label="))
+            {
                 strLabel = DecodeDumpString(vstr[nStr].substr(6));
                 fLabel = true;
             }
         }
         LogPrintf("Importing %s...\n", CBitcoinAddress(keyid).ToString());
-        if (!pwalletMain->AddKeyPubKey(key, pubkey)) {
+        if (!pwalletMain->AddKeyPubKey(key, pubkey))
+        {
             fGood = false;
             continue;
         }
@@ -302,10 +319,10 @@ Value importwallet(const Array& params, bool fHelp)
     if (!fGood)
         throw JSONRPCError(RPC_WALLET_ERROR, "Error adding some keys to wallet");
 
-    return Value::null;
+    return NullUniValue;
 }
 
-Value dumpprivkey(const Array& params, bool fHelp)
+UniValue dumpprivkey(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
@@ -335,7 +352,7 @@ Value dumpprivkey(const Array& params, bool fHelp)
 }
 
 
-Value dumpwallet(const Array& params, bool fHelp)
+UniValue dumpwallet(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
@@ -360,7 +377,8 @@ Value dumpwallet(const Array& params, bool fHelp)
 
     // sort time/key pairs
     std::vector<std::pair<int64_t, CKeyID> > vKeyBirth;
-    for (std::map<CKeyID, int64_t>::const_iterator it = mapKeyBirth.begin(); it != mapKeyBirth.end(); it++) {
+    for (std::map<CKeyID, int64_t>::const_iterator it = mapKeyBirth.begin(); it != mapKeyBirth.end(); it++)
+    {
         vKeyBirth.push_back(std::make_pair(it->second, it->first));
     }
     mapKeyBirth.clear();
@@ -372,17 +390,24 @@ Value dumpwallet(const Array& params, bool fHelp)
     file << strprintf("# * Best block at time of backup was %i (%s),\n", chainActive.Height(), chainActive.Tip()->GetBlockHash().ToString());
     file << strprintf("#   mined on %s\n", EncodeDumpTime(chainActive.Tip()->GetBlockTime()));
     file << "\n";
-    for (std::vector<std::pair<int64_t, CKeyID> >::const_iterator it = vKeyBirth.begin(); it != vKeyBirth.end(); it++) {
+    for (std::vector<std::pair<int64_t, CKeyID> >::const_iterator it = vKeyBirth.begin(); it != vKeyBirth.end(); it++)
+    {
         const CKeyID& keyid = it->second;
         std::string strTime = EncodeDumpTime(it->first);
         std::string strAddr = CBitcoinAddress(keyid).ToString();
         CKey key;
-        if (pwalletMain->GetKey(keyid, key)) {
-            if (pwalletMain->mapAddressBook.count(keyid)) {
+        if (pwalletMain->GetKey(keyid, key))
+        {
+            if (pwalletMain->mapAddressBook.count(keyid))
+            {
                 file << strprintf("%s %s label=%s # addr=%s\n", CBitcoinSecret(key).ToString(), strTime, EncodeDumpString(pwalletMain->mapAddressBook[keyid].name), strAddr);
-            } else if (setKeyPool.count(keyid)) {
+            }
+            else if (setKeyPool.count(keyid))
+            {
                 file << strprintf("%s %s reserve=1 # addr=%s\n", CBitcoinSecret(key).ToString(), strTime, strAddr);
-            } else {
+            }
+            else
+            {
                 file << strprintf("%s %s change=1 # addr=%s\n", CBitcoinSecret(key).ToString(), strTime, strAddr);
             }
         }
@@ -390,10 +415,10 @@ Value dumpwallet(const Array& params, bool fHelp)
     file << "\n";
     file << "# End of dump\n";
     file.close();
-    return Value::null;
+    return NullUniValue;
 }
 
-Value bip38encrypt(const Array& params, bool fHelp)
+UniValue bip38encrypt(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
@@ -422,24 +447,24 @@ Value bip38encrypt(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_ERROR, "Private key for address " + strAddress + " is not known");
 
     uint256 privKey = vchSecret.GetPrivKey_256();
-    string encryptedOut = BIP38_Encrypt(strAddress, strPassphrase, privKey);
+    string encryptedOut = BIP38_Encrypt(strAddress, strPassphrase, privKey, vchSecret.IsCompressed());
 
-    Object result;
+    UniValue result(UniValue::VOBJ);
     result.push_back(Pair("Addess", strAddress));
     result.push_back(Pair("Encrypted Key", encryptedOut));
 
     return result;
 }
 
-Value bip38decrypt(const Array& params, bool fHelp)
+UniValue bip38decrypt(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
             "bip38decrypt \"bulwarkaddress\"\n"
             "\nDecrypts and then imports password protected private key.\n"
             "\nArguments:\n"
-            "1. \"passphrase\"   (string, required) The passphrase you want the private key to be encrypted with\n"
-            "2. \"encryptedkey\"   (string, required) The encrypted private key\n"
+            "1. \"encryptedkey\"   (string, required) The encrypted private key\n"
+            "2. \"passphrase\"   (string, required) The passphrase you want the private key to be encrypted with\n"
 
             "\nResult:\n"
             "\"key\"                (string) The decrypted private key\n"
@@ -448,15 +473,15 @@ Value bip38decrypt(const Array& params, bool fHelp)
     EnsureWalletIsUnlocked();
 
     /** Collect private key and passphrase **/
-    string strPassphrase = params[0].get_str();
-    string strKey = params[1].get_str();
+    string strKey = params[0].get_str();
+    string strPassphrase = params[1].get_str();
 
     uint256 privKey;
     bool fCompressed;
     if (!BIP38_Decrypt(strPassphrase, strKey, privKey, fCompressed))
         throw JSONRPCError(RPC_WALLET_ERROR, "Failed To Decrypt");
 
-    Object result;
+    UniValue result(UniValue::VOBJ);
     result.push_back(Pair("privatekey", HexStr(privKey)));
 
     CKey key;

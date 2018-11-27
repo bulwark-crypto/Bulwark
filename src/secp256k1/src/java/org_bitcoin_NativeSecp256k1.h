@@ -13,7 +13,7 @@ extern "C" {
  * Signature: (Ljava/nio/ByteBuffer;)I
  */
 JNIEXPORT jint JNICALL Java_org_bitcoin_NativeSecp256k1_secp256k1_1ecdsa_1verify
-  (JNIEnv *, jclass, jobject);
+(JNIEnv *, jclass, jobject);
 
 #ifdef __cplusplus
 }

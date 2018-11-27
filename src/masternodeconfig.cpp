@@ -1,3 +1,8 @@
+// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 // clang-format off
 #include "net.h"
 #include "masternodeconfig.h"
@@ -20,9 +25,11 @@ bool CMasternodeConfig::read(std::string& strErr)
     boost::filesystem::path pathMasternodeConfigFile = GetMasternodeConfigFile();
     boost::filesystem::ifstream streamConfig(pathMasternodeConfigFile);
 
-    if (!streamConfig.good()) {
+    if (!streamConfig.good())
+    {
         FILE* configFile = fopen(pathMasternodeConfigFile.string().c_str(), "a");
-        if (configFile != NULL) {
+        if (configFile != NULL)
+        {
             std::string strHeader = "# Masternode config file\n"
                                     "# Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index\n"
                                     "# Example: mn1 127.0.0.2:52543 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0\n";
@@ -32,22 +39,26 @@ bool CMasternodeConfig::read(std::string& strErr)
         return true; // Nothing to read, so just return
     }
 
-    for (std::string line; std::getline(streamConfig, line); linenumber++) {
+    for (std::string line; std::getline(streamConfig, line); linenumber++)
+    {
         if (line.empty()) continue;
 
         std::istringstream iss(line);
         std::string comment, alias, ip, privKey, txHash, outputIndex;
 
-        if (iss >> comment) {
+        if (iss >> comment)
+        {
             if (comment.at(0) == '#') continue;
             iss.str(line);
             iss.clear();
         }
 
-        if (!(iss >> alias >> ip >> privKey >> txHash >> outputIndex)) {
+        if (!(iss >> alias >> ip >> privKey >> txHash >> outputIndex))
+        {
             iss.str(line);
             iss.clear();
-            if (!(iss >> alias >> ip >> privKey >> txHash >> outputIndex)) {
+            if (!(iss >> alias >> ip >> privKey >> txHash >> outputIndex))
+            {
                 strErr = _("Could not parse masternode.conf") + "\n" +
                          strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"";
                 streamConfig.close();
@@ -55,15 +66,19 @@ bool CMasternodeConfig::read(std::string& strErr)
             }
         }
 
-        if (Params().NetworkID() == CBaseChainParams::MAIN) {
-            if (CService(ip).GetPort() != 52543) {
+        if (Params().NetworkID() == CBaseChainParams::MAIN)
+        {
+            if (CService(ip).GetPort() != 52543)
+            {
                 strErr = _("Invalid port detected in masternode.conf") + "\n" +
                          strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
                          _("(must be 52543 for mainnet)");
                 streamConfig.close();
                 return false;
             }
-        } else if (CService(ip).GetPort() == 52543) {
+        }
+        else if (CService(ip).GetPort() == 52543)
+        {
             strErr = _("Invalid port detected in masternode.conf") + "\n" +
                      strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
                      _("(52543 could be used only on mainnet)");
@@ -81,9 +96,12 @@ bool CMasternodeConfig::read(std::string& strErr)
 
 bool CMasternodeConfig::CMasternodeEntry::castOutputIndex(int &n)
 {
-    try {
+    try
+    {
         n = std::stoi(outputIndex);
-    } catch (const std::exception e) {
+    }
+    catch (const std::exception e)
+    {
         LogPrintf("%s: %s on getOutputIndex\n", __func__, e.what());
         return false;
     }

@@ -23,8 +23,14 @@ private:
     std::set<int> set;
 
 public:
-    mrutester() { mru.max_size(MAX_SIZE); }
-    int size() const { return set.size(); }
+    mrutester()
+    {
+        mru.max_size(MAX_SIZE);
+    }
+    int size() const
+    {
+        return set.size();
+    }
 
     void insert(int n)
     {
@@ -69,12 +75,13 @@ int static permute(int n)
 {
     // hexadecimals of pi; verified to be linearly independent
     static const int table[16] = {0x243F, 0x6A88, 0x85A3, 0x08D3, 0x1319, 0x8A2E, 0x0370, 0x7344,
-                                  0xA409, 0x3822, 0x299F, 0x31D0, 0x082E, 0xFA98, 0xEC4E, 0x6C89};
+                                  0xA409, 0x3822, 0x299F, 0x31D0, 0x082E, 0xFA98, 0xEC4E, 0x6C89
+                                 };
 
     int ret = 0;
     for (int bit=0; bit<16; bit++)
-         if (n & (1<<bit))
-             ret ^= table[bit];
+        if (n & (1<<bit))
+            ret ^= table[bit];
 
     return ret;
 }

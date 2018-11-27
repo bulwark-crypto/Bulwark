@@ -39,9 +39,11 @@ bool CKey::Check(const unsigned char* vch)
 
 void CKey::MakeNewKey(bool fCompressedIn)
 {
-    do {
+    do
+    {
         GetRandBytes(vch, sizeof(vch));
-    } while (!Check(vch));
+    }
+    while (!Check(vch));
     fValid = true;
     fCompressed = fCompressedIn;
 }
@@ -94,23 +96,27 @@ bool CKey::Sign(const uint256& hash, std::vector<unsigned char>& vchSig, uint32_
         return false;
     vchSig.resize(72);
     RFC6979_HMAC_SHA256 prng(begin(), 32, (unsigned char*)&hash, 32);
-    do {
+    do
+    {
         uint256 nonce;
         prng.Generate((unsigned char*)&nonce, 32);
         nonce += test_case;
         int nSigLen = 72;
         int ret = secp256k1_ecdsa_sign((const unsigned char*)&hash, 32, (unsigned char*)&vchSig[0], &nSigLen, begin(), (unsigned char*)&nonce);
         nonce = 0;
-        if (ret) {
+        if (ret)
+        {
             vchSig.resize(nSigLen);
             return true;
         }
-    } while (true);
+    }
+    while (true);
 }
 
 bool CKey::VerifyPubKey(const CPubKey& pubkey) const
 {
-    if (pubkey.IsCompressed() != fCompressed) {
+    if (pubkey.IsCompressed() != fCompressed)
+    {
         return false;
     }
     unsigned char rnd[8];
@@ -130,14 +136,16 @@ bool CKey::SignCompact(const uint256& hash, std::vector<unsigned char>& vchSig) 
     vchSig.resize(65);
     int rec = -1;
     RFC6979_HMAC_SHA256 prng(begin(), 32, (unsigned char*)&hash, 32);
-    do {
+    do
+    {
         uint256 nonce;
         prng.Generate((unsigned char*)&nonce, 32);
         int ret = secp256k1_ecdsa_sign_compact((const unsigned char*)&hash, 32, &vchSig[1], begin(), (unsigned char*)&nonce, &rec);
         nonce = 0;
         if (ret)
             break;
-    } while (true);
+    }
+    while (true);
     assert(rec != -1);
     vchSig[0] = 27 + rec + (fCompressed ? 4 : 0);
     return true;
@@ -162,11 +170,14 @@ bool CKey::Derive(CKey& keyChild, unsigned char ccChild[32], unsigned int nChild
     assert(IsCompressed());
     unsigned char out[64];
     LockObject(out);
-    if ((nChild >> 31) == 0) {
+    if ((nChild >> 31) == 0)
+    {
         CPubKey pubkey = GetPubKey();
         assert(pubkey.begin() + 33 == pubkey.end());
         BIP32Hash(cc, nChild, *pubkey.begin(), pubkey.begin() + 1, out);
-    } else {
+    }
+    else
+    {
         assert(begin() + 32 == end());
         BIP32Hash(cc, nChild, 0, begin(), out);
     }
@@ -239,7 +250,8 @@ void CExtKey::Decode(const unsigned char code[74])
 bool ECC_InitSanityCheck()
 {
 #if !defined(USE_SECP256K1)
-    if (!CECKey::SanityCheck()) {
+    if (!CECKey::SanityCheck())
+    {
         return false;
     }
 #endif

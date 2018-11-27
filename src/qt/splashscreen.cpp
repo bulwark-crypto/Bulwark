@@ -54,7 +54,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.setFont(QFont(font, 28 * fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth = fm.width(titleText);
-    if (titleTextWidth > 160) {
+    if (titleTextWidth > 160)
+    {
         // strange font rendering, Arial probably not found
         fontFactor = 0.75;
     }
@@ -75,7 +76,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 36, copyrightTextBulwark);
 
     // draw additional text if special network
-    if (!titleAddText.isEmpty()) {
+    if (!titleAddText.isEmpty())
+    {
         QFont boldFont = QFont(font, 10 * fontFactor);
         boldFont.setWeight(QFont::Bold);
         pixPaint.setFont(boldFont);
@@ -112,10 +114,10 @@ void SplashScreen::slotFinish(QWidget* mainWin)
 static void InitMessage(SplashScreen* splash, const std::string& message)
 {
     QMetaObject::invokeMethod(splash, "showMessage",
-        Qt::QueuedConnection,
-        Q_ARG(QString, QString::fromStdString(message)),
-        Q_ARG(int, Qt::AlignBottom | Qt::AlignHCenter),
-        Q_ARG(QColor, QColor(55, 55, 55)));
+                              Qt::QueuedConnection,
+                              Q_ARG(QString, QString::fromStdString(message)),
+                              Q_ARG(int, Qt::AlignBottom | Qt::AlignHCenter),
+                              Q_ARG(QColor, QColor(55, 55, 55)));
 }
 
 static void ShowProgress(SplashScreen* splash, const std::string& title, int nProgress)

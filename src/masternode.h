@@ -1,8 +1,8 @@
-
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #ifndef MASTERNODE_H
 #define MASTERNODE_H
 
@@ -111,7 +111,8 @@ private:
     int64_t lastTimeChecked;
 
 public:
-    enum state {
+    enum state
+    {
         MASTERNODE_PRE_ENABLED,
         MASTERNODE_ENABLED,
         MASTERNODE_EXPIRED,
@@ -257,7 +258,8 @@ public:
     {
         if (chainActive.Tip() == NULL) return 0;
 
-        if (cacheInputAge == 0) {
+        if (cacheInputAge == 0)
+        {
             cacheInputAge = GetInputAge(vin);
             cacheInputAgeBlock = chainActive.Tip()->nHeight;
         }

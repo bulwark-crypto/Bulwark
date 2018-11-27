@@ -30,16 +30,16 @@
 static const int64_t nClientStartupTime = GetTime();
 
 ClientModel::ClientModel(OptionsModel* optionsModel, QObject* parent) : QObject(parent),
-                                                                        optionsModel(optionsModel),
-                                                                        peerTableModel(0),
-																		banTableModel(0),
-                                                                        cachedNumBlocks(0),
-                                                                        cachedMasternodeCountString(""),
-                                                                        cachedReindexing(0), cachedImporting(0),
-                                                                        numBlocksAtStartup(-1), pollTimer(0)
+    optionsModel(optionsModel),
+    peerTableModel(0),
+    banTableModel(0),
+    cachedNumBlocks(0),
+    cachedMasternodeCountString(""),
+    cachedReindexing(0), cachedImporting(0),
+    numBlocksAtStartup(-1), pollTimer(0)
 {
     peerTableModel = new PeerTableModel(this);
-	banTableModel = new BanTableModel(this);
+    banTableModel = new BanTableModel(this);
     pollTimer = new QTimer(this);
     connect(pollTimer, SIGNAL(timeout()), this, SLOT(updateTimer()));
     pollTimer->start(MODEL_UPDATE_DELAY);
@@ -64,16 +64,22 @@ int ClientModel::getNumConnections(unsigned int flags) const
         return vNodes.size();
 
     int nNum = 0;
-    BOOST_FOREACH (CNode* pnode, vNodes)
+    BOOST_FOREACH(CNode* pnode, vNodes)
+    {
         if (flags & (pnode->fInbound ? CONNECTIONS_IN : CONNECTIONS_OUT))
             nNum++;
+    }
 
     return nNum;
 }
 
 QString ClientModel::getMasternodeCountString() const
 {
-    return tr("Total: %1 (OBF compatible: %2 / Enabled: %3)").arg(QString::number((int)mnodeman.size())).arg(QString::number((int)mnodeman.CountEnabled(ActiveProtocol()))).arg(QString::number((int)mnodeman.CountEnabled()));
+    int ipv4 = 0, ipv6 = 0, onion = 0;
+    mnodeman.CountNetworks(ActiveProtocol(), ipv4, ipv6, onion);
+    int nUnknown = mnodeman.size() - ipv4 - ipv6 - onion;
+    if(nUnknown < 0) nUnknown = 0;
+    return tr("Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)").arg(QString::number((int)mnodeman.size())).arg(QString::number((int)ipv4)).arg(QString::number((int)ipv6)).arg(QString::number((int)onion)).arg(QString::number((int)nUnknown));
 }
 
 int ClientModel::getNumBlocks() const
@@ -130,8 +136,9 @@ void ClientModel::updateTimer()
 
     // check for changed number of blocks we have, number of blocks peers claim to have, reindexing state and importing state
     if (cachedNumBlocks != newNumBlocks ||
-        cachedReindexing != fReindex || cachedImporting != fImporting ||
-        masternodeSync.RequestedMasternodeAttempt != prevAttempt || masternodeSync.RequestedMasternodeAssets != prevAssets) {
+            cachedReindexing != fReindex || cachedImporting != fImporting ||
+            masternodeSync.RequestedMasternodeAttempt != prevAttempt || masternodeSync.RequestedMasternodeAssets != prevAssets)
+    {
         cachedNumBlocks = newNumBlocks;
         cachedReindexing = fReindex;
         cachedImporting = fImporting;
@@ -154,7 +161,8 @@ void ClientModel::updateMnTimer()
         return;
     QString newMasternodeCountString = getMasternodeCountString();
 
-    if (cachedMasternodeCountString != newMasternodeCountString) {
+    if (cachedMasternodeCountString != newMasternodeCountString)
+    {
         cachedMasternodeCountString = newMasternodeCountString;
 
         emit strMasternodesChanged(cachedMasternodeCountString);
@@ -169,11 +177,13 @@ void ClientModel::updateNumConnections(int numConnections)
 void ClientModel::updateAlert(const QString& hash, int status)
 {
     // Show error message notification for new alert
-    if (status == CT_NEW) {
+    if (status == CT_NEW)
+    {
         uint256 hash_256;
         hash_256.SetHex(hash.toStdString());
         CAlert alert = CAlert::getAlertByHash(hash_256);
-        if (!alert.IsNull()) {
+        if (!alert.IsNull())
+        {
             emit message(tr("Network Alert"), QString::fromStdString(alert.strStatusBar), CClientUIInterface::ICON_ERROR);
         }
     }
@@ -215,7 +225,7 @@ PeerTableModel* ClientModel::getPeerTableModel()
 
 BanTableModel *ClientModel::getBanTableModel()
 {
-	return banTableModel;
+    return banTableModel;
 }
 
 QString ClientModel::formatFullVersion() const
@@ -245,7 +255,7 @@ QString ClientModel::formatClientStartupTime() const
 
 void ClientModel::updateBanlist()
 {
-	banTableModel->refresh();
+    banTableModel->refresh();
 }
 
 // Handlers for core signals
@@ -253,29 +263,29 @@ static void ShowProgress(ClientModel* clientmodel, const std::string& title, int
 {
     // emits signal "showProgress"
     QMetaObject::invokeMethod(clientmodel, "showProgress", Qt::QueuedConnection,
-        Q_ARG(QString, QString::fromStdString(title)),
-        Q_ARG(int, nProgress));
+                              Q_ARG(QString, QString::fromStdString(title)),
+                              Q_ARG(int, nProgress));
 }
 
 static void NotifyNumConnectionsChanged(ClientModel* clientmodel, int newNumConnections)
 {
     // Too noisy: qDebug() << "NotifyNumConnectionsChanged : " + QString::number(newNumConnections);
     QMetaObject::invokeMethod(clientmodel, "updateNumConnections", Qt::QueuedConnection,
-        Q_ARG(int, newNumConnections));
+                              Q_ARG(int, newNumConnections));
 }
 
 static void NotifyAlertChanged(ClientModel* clientmodel, const uint256& hash, ChangeType status)
 {
     qDebug() << "NotifyAlertChanged : " + QString::fromStdString(hash.GetHex()) + " status=" + QString::number(status);
     QMetaObject::invokeMethod(clientmodel, "updateAlert", Qt::QueuedConnection,
-        Q_ARG(QString, QString::fromStdString(hash.GetHex())),
-        Q_ARG(int, status));
+                              Q_ARG(QString, QString::fromStdString(hash.GetHex())),
+                              Q_ARG(int, status));
 }
 
 static void BannedListChanged(ClientModel *clientmodel)
 {
-	qDebug() << QString("%1: Requesting update for peer banlist").arg(__func__);
-	QMetaObject::invokeMethod(clientmodel, "updateBanlist", Qt::QueuedConnection);
+    qDebug() << QString("%1: Requesting update for peer banlist").arg(__func__);
+    QMetaObject::invokeMethod(clientmodel, "updateBanlist", Qt::QueuedConnection);
 }
 
 void ClientModel::subscribeToCoreSignals()
@@ -284,7 +294,7 @@ void ClientModel::subscribeToCoreSignals()
     uiInterface.ShowProgress.connect(boost::bind(ShowProgress, this, _1, _2));
     uiInterface.NotifyNumConnectionsChanged.connect(boost::bind(NotifyNumConnectionsChanged, this, _1));
     uiInterface.NotifyAlertChanged.connect(boost::bind(NotifyAlertChanged, this, _1, _2));
-	uiInterface.BannedListChanged.connect(boost::bind(BannedListChanged, this));
+    uiInterface.BannedListChanged.connect(boost::bind(BannedListChanged, this));
 }
 
 void ClientModel::unsubscribeFromCoreSignals()

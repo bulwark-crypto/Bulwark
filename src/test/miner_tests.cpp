@@ -14,10 +14,12 @@
 BOOST_AUTO_TEST_SUITE(miner_tests)
 
 static
-struct {
+struct
+{
     unsigned char extranonce;
     unsigned int nonce;
-} blockinfo[] = {
+} blockinfo[] =
+{
     {4, 0xa4a3e223}, {2, 0x15c32f9e}, {1, 0x0375b547}, {1, 0x7004a8a5},
     {2, 0xce440296}, {2, 0x52cfe198}, {1, 0x77a72cd0}, {2, 0xbb5d6f84},
     {2, 0x83f30c2c}, {1, 0x48a73d5b}, {1, 0xef7dcd01}, {2, 0x6809c6c4},
@@ -259,7 +261,9 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     mempool.clear();
 
     BOOST_FOREACH(CTransaction *tx, txFirst)
+    {
         delete tx;
+    }
 
     Checkpoints::fEnabled = true;
 }

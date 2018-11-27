@@ -12,19 +12,22 @@
 #include <string>
 #include <vector>
 
-struct TestDerivation {
+struct TestDerivation
+{
     std::string pub;
     std::string prv;
     unsigned int nChild;
 };
 
-struct TestVector {
+struct TestVector
+{
     std::string strHexMaster;
     std::vector<TestDerivation> vDerive;
 
     TestVector(std::string strHexMasterIn) : strHexMaster(strHexMasterIn) {}
 
-    TestVector& operator()(std::string pub, std::string prv, unsigned int nChild) {
+    TestVector& operator()(std::string pub, std::string prv, unsigned int nChild)
+    {
         vDerive.push_back(TestDerivation());
         TestDerivation &der = vDerive.back();
         der.pub = pub;
@@ -35,7 +38,7 @@ struct TestVector {
 };
 
 TestVector test1 =
-  TestVector("000102030405060708090a0b0c0d0e0f")
+    TestVector("000102030405060708090a0b0c0d0e0f")
     ("xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8",
      "xprv9s21ZrQH143K3QTDL4LXw2F7HEK3wJUD2nW2nRk4stbPy6cq3jPPqjiChkVvvNKmPGJxWUtg6LnF5kejMRNNU3TGtRBeJgk33yuGBxrMPHi",
      0x80000000)
@@ -56,7 +59,7 @@ TestVector test1 =
      0);
 
 TestVector test2 =
-  TestVector("fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c696663605d5a5754514e4b484542")
+    TestVector("fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c696663605d5a5754514e4b484542")
     ("xpub661MyMwAqRbcFW31YEwpkMuc5THy2PSt5bDMsktWQcFF8syAmRUapSCGu8ED9W6oDMSgv6Zz8idoc4a6mr8BDzTJY47LJhkJ8UB7WEGuduB",
      "xprv9s21ZrQH143K31xYSDQpPDxsXRTUcvj2iNHm5NUtrGiGG5e2DtALGdso3pGz6ssrdK4PFmM8NSpSBHNqPqm55Qn3LqFtT2emdEXVYsCzC2U",
      0)
@@ -76,27 +79,32 @@ TestVector test2 =
      "xprvA2nrNbFZABcdryreWet9Ea4LvTJcGsqrMzxHx98MMrotbir7yrKCEXw7nadnHM8Dq38EGfSh6dqA9QWTyefMLEcBYJUuekgW4BYPJcr9E7j",
      0);
 
-void RunTest(const TestVector &test) {
+void RunTest(const TestVector &test)
+{
     std::vector<unsigned char> seed = ParseHex(test.strHexMaster);
     CExtKey key;
     CExtPubKey pubkey;
     key.SetMaster(&seed[0], seed.size());
     pubkey = key.Neuter();
-    BOOST_FOREACH(const TestDerivation &derive, test.vDerive) {
+    BOOST_FOREACH(const TestDerivation &derive, test.vDerive)
+    {
         unsigned char data[74];
         key.Encode(data);
         pubkey.Encode(data);
         // Test private key
-        CBitcoinExtKey b58key; b58key.SetKey(key);
+        CBitcoinExtKey b58key;
+        b58key.SetKey(key);
         BOOST_CHECK(b58key.ToString() == derive.prv);
         // Test public key
-        CBitcoinExtPubKey b58pubkey; b58pubkey.SetKey(pubkey);
+        CBitcoinExtPubKey b58pubkey;
+        b58pubkey.SetKey(pubkey);
         BOOST_CHECK(b58pubkey.ToString() == derive.pub);
         // Derive new keys
         CExtKey keyNew;
         BOOST_CHECK(key.Derive(keyNew, derive.nChild));
         CExtPubKey pubkeyNew = keyNew.Neuter();
-        if (!(derive.nChild & 0x80000000)) {
+        if (!(derive.nChild & 0x80000000))
+        {
             // Compare with public derivation
             CExtPubKey pubkeyNew2;
             BOOST_CHECK(pubkey.Derive(pubkeyNew2, derive.nChild));
@@ -109,11 +117,13 @@ void RunTest(const TestVector &test) {
 
 BOOST_AUTO_TEST_SUITE(bip32_tests)
 
-BOOST_AUTO_TEST_CASE(bip32_test1) {
+BOOST_AUTO_TEST_CASE(bip32_test1)
+{
     RunTest(test1);
 }
 
-BOOST_AUTO_TEST_CASE(bip32_test2) {
+BOOST_AUTO_TEST_CASE(bip32_test2)
+{
     RunTest(test2);
 }
 

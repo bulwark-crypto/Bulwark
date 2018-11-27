@@ -54,7 +54,7 @@ bool SignN(const vector<valtype>& multisigdata, const CKeyStore& keystore, uint2
  * Returns false if scriptPubKey could not be completely satisfied.
  */
 bool Solver(const CKeyStore& keystore, const CScript& scriptPubKey, uint256 hash, int nHashType,
-                  CScript& scriptSigRet, txnouttype& whichTypeRet)
+            CScript& scriptSigRet, txnouttype& whichTypeRet)
 {
     scriptSigRet.clear();
 
@@ -74,6 +74,8 @@ bool Solver(const CKeyStore& keystore, const CScript& scriptPubKey, uint256 hash
         LogPrintf("*** null data \n");
         return false;
     }
+    case TX_ZEROCOINMINT:
+        return false;
     case TX_PUBKEY:
         keyID = CPubKey(vSolutions[0]).GetID();
         if(!Sign1(keyID, keystore, hash, nHashType, scriptSigRet))
@@ -156,7 +158,9 @@ static CScript PushAll(const vector<valtype>& values)
 {
     CScript result;
     BOOST_FOREACH(const valtype& v, values)
+    {
         result << v;
+    }
     return result;
 }
 
@@ -199,7 +203,8 @@ static CScript CombineMultisig(const CScript& scriptPubKey, const CTransaction& 
     }
     // Now build a merged CScript:
     unsigned int nSigsHave = 0;
-    CScript result; result << OP_0; // pop-one-too-many workaround
+    CScript result;
+    result << OP_0; // pop-one-too-many workaround
     for (unsigned int i = 0; i < nPubKeys && nSigsHave < nSigsRequired; i++)
     {
         if (sigs.count(vSolutions[i+1]))
@@ -223,6 +228,7 @@ static CScript CombineSignatures(const CScript& scriptPubKey, const CTransaction
     {
     case TX_NONSTANDARD:
     case TX_NULL_DATA:
+    case TX_ZEROCOINMINT:
         // Don't know anything about this, assume bigger one is correct:
         if (sigs1.size() >= sigs2.size())
             return PushAll(sigs1);

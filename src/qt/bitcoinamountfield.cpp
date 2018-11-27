@@ -6,6 +6,7 @@
 
 #include "bitcoinunits.h"
 #include "guiconstants.h"
+#include "guiutil.h"
 #include "qvaluecombobox.h"
 
 #include <QAbstractSpinBox>
@@ -23,8 +24,8 @@ class AmountSpinBox : public QAbstractSpinBox
 
 public:
     explicit AmountSpinBox(QWidget* parent) : QAbstractSpinBox(parent),
-                                              currentUnit(BitcoinUnits::BWK),
-                                              singleStep(100000) // satoshis
+        currentUnit(BitcoinUnits::BWK),
+        singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignRight);
 
@@ -45,7 +46,8 @@ public:
     {
         bool valid = false;
         CAmount val = parse(input, &valid);
-        if (valid) {
+        if (valid)
+        {
             input = BitcoinUnits::format(currentUnit, val, false, BitcoinUnits::separatorAlways);
             lineEdit()->setText(input);
         }
@@ -91,7 +93,8 @@ public:
 
     QSize minimumSizeHint() const
     {
-        if (cachedMinimumSizeHint.isEmpty()) {
+        if (cachedMinimumSizeHint.isEmpty())
+        {
             ensurePolished();
 
             const QFontMetrics fm(fontMetrics());
@@ -132,7 +135,8 @@ private:
     {
         CAmount val = 0;
         bool valid = BitcoinUnits::parse(currentUnit, text, &val);
-        if (valid) {
+        if (valid)
+        {
             if (val < 0 || val > BitcoinUnits::maxMoney())
                 valid = false;
         }
@@ -144,9 +148,11 @@ private:
 protected:
     bool event(QEvent* event)
     {
-        if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease) {
+        if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease)
+        {
             QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-            if (keyEvent->key() == Qt::Key_Comma) {
+            if (keyEvent->key() == Qt::Key_Comma)
+            {
                 // Translate a comma into a period
                 QKeyEvent periodKeyEvent(event->type(), Qt::Key_Period, keyEvent->modifiers(), ".", keyEvent->isAutoRepeat(), keyEvent->count());
                 return QAbstractSpinBox::event(&periodKeyEvent);
@@ -164,7 +170,8 @@ protected:
             return StepUpEnabled;
         bool valid = false;
         CAmount val = value(&valid);
-        if (valid) {
+        if (valid)
+        {
             if (val > 0)
                 rv |= StepDownEnabled;
             if (val < BitcoinUnits::maxMoney())
@@ -180,9 +187,18 @@ signals:
 #include "bitcoinamountfield.moc"
 
 BitcoinAmountField::BitcoinAmountField(QWidget* parent) : QWidget(parent),
-                                                          amount(0)
+    amount(0)
 {
+    this->setObjectName("BitcoinAmountField"); // ID as CSS-reference
+    // For whatever reasons the Gods of Qt-CSS-manipulation won't let us change this class' stylesheet in the CSS file.
+    // Workaround for the people after me:
+    // - name all UI objects, preferably with a unique name
+    // - address those names globally in the CSS file
+
     amount = new AmountSpinBox(this);
+    // According to the Qt-CSS specs this should work, but doesn't
+    amount->setStyleSheet("QSpinBox::up-button:hover { background-color: #f2f2f2; }"
+                          "QSpinBox::down-button:hover { background-color: #f2f2f2; }");
     amount->setLocale(QLocale::c());
     amount->installEventFilter(this);
     amount->setMaximumWidth(170);
@@ -231,14 +247,17 @@ bool BitcoinAmountField::validate()
 void BitcoinAmountField::setValid(bool valid)
 {
     if (valid)
-        amount->setStyleSheet("");
+        // According to the Qt-CSS specs this should work, but doesn't
+        amount->setStyleSheet("QSpinBox::up-button:hover { background-color: #f2f2f2 }"
+                              "QSpinBox::down-button:hover { background-color: #f2f2f2 }");
     else
         amount->setStyleSheet(STYLE_INVALID);
 }
 
 bool BitcoinAmountField::eventFilter(QObject* object, QEvent* event)
 {
-    if (event->type() == QEvent::FocusIn) {
+    if (event->type() == QEvent::FocusIn)
+    {
         // Clear invalid flag on focus
         setValid(true);
     }

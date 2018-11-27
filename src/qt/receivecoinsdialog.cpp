@@ -22,8 +22,8 @@
 #include <QTextDocument>
 
 ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent),
-                                                          ui(new Ui::ReceiveCoinsDialog),
-                                                          model(0)
+    ui(new Ui::ReceiveCoinsDialog),
+    model(0)
 {
     ui->setupUi(this);
 
@@ -58,7 +58,8 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
 {
     this->model = model;
 
-    if (model && model->getOptionsModel()) {
+    if (model && model->getOptionsModel())
+    {
         model->getRecentRequestsTableModel()->sort(RecentRequestsTableModel::Date, Qt::DescendingOrder);
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
         updateDisplayUnit();
@@ -75,8 +76,8 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
         tableView->setColumnWidth(RecentRequestsTableModel::Label, LABEL_COLUMN_WIDTH);
 
         connect(tableView->selectionModel(),
-            SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this,
-            SLOT(recentRequestsView_selectionChanged(QItemSelection, QItemSelection)));
+                SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this,
+                SLOT(recentRequestsView_selectionChanged(QItemSelection, QItemSelection)));
         // Last 2 columns are set by the columnResizingFixer, when the table geometry is ready.
         columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(tableView, AMOUNT_MINIMUM_COLUMN_WIDTH, DATE_COLUMN_WIDTH);
     }
@@ -108,7 +109,8 @@ void ReceiveCoinsDialog::accept()
 
 void ReceiveCoinsDialog::updateDisplayUnit()
 {
-    if (model && model->getOptionsModel()) {
+    if (model && model->getOptionsModel())
+    {
         ui->reqAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     }
 }
@@ -120,25 +122,31 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
 
     QString address;
     QString label = ui->reqLabel->text();
-    if (ui->reuseAddress->isChecked()) {
+    if (ui->reuseAddress->isChecked())
+    {
         /* Choose existing receiving address */
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
         dlg.setModel(model->getAddressTableModel());
-        if (dlg.exec()) {
+        if (dlg.exec())
+        {
             address = dlg.getReturnValue();
             if (label.isEmpty()) /* If no label provided, use the previously used label */
             {
                 label = model->getAddressTableModel()->labelForAddress(address);
             }
-        } else {
+        }
+        else
+        {
             return;
         }
-    } else {
+    }
+    else
+    {
         /* Generate new receiving address */
         address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "");
     }
     SendCoinsRecipient info(address, label,
-        ui->reqAmount->value(), ui->reqMessage->text());
+                            ui->reqAmount->value(), ui->reqMessage->text());
     ReceiveRequestDialog* dialog = new ReceiveRequestDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setModel(model->getOptionsModel());
@@ -174,7 +182,8 @@ void ReceiveCoinsDialog::on_showRequestButton_clicked()
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
 
-    foreach (QModelIndex index, selection) {
+    foreach (QModelIndex index, selection)
+    {
         on_recentRequestsView_doubleClicked(index);
     }
 }
@@ -201,9 +210,11 @@ void ReceiveCoinsDialog::resizeEvent(QResizeEvent* event)
 
 void ReceiveCoinsDialog::keyPressEvent(QKeyEvent* event)
 {
-    if (event->key() == Qt::Key_Return) {
+    if (event->key() == Qt::Key_Return)
+    {
         // press return -> submit form
-        if (ui->reqLabel->hasFocus() || ui->reqAmount->hasFocus() || ui->reqMessage->hasFocus()) {
+        if (ui->reqLabel->hasFocus() || ui->reqAmount->hasFocus() || ui->reqMessage->hasFocus())
+        {
             event->ignore();
             on_receiveButton_clicked();
             return;

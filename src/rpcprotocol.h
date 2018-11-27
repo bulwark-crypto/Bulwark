@@ -6,21 +6,21 @@
 #ifndef BITCOIN_RPCPROTOCOL_H
 #define BITCOIN_RPCPROTOCOL_H
 
-#include <boost/asio.hpp>
-#include <boost/asio/ssl.hpp>
-#include <boost/iostreams/concepts.hpp>
-#include <boost/iostreams/stream.hpp>
 #include <list>
 #include <map>
 #include <stdint.h>
 #include <string>
+#include <boost/iostreams/concepts.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
+#include <boost/filesystem.hpp>
 
-#include "json/json_spirit_reader_template.h"
-#include "json/json_spirit_utils.h"
-#include "json/json_spirit_writer_template.h"
+#include <univalue.h>
 
 //! HTTP status codes
-enum HTTPStatusCode {
+enum HTTPStatusCode
+{
     HTTP_OK = 200,
     HTTP_BAD_REQUEST = 400,
     HTTP_UNAUTHORIZED = 401,
@@ -31,7 +31,8 @@ enum HTTPStatusCode {
 };
 
 //! Bulwark RPC error codes
-enum RPCErrorCode {
+enum RPCErrorCode
+{
     //! Standard JSON-RPC 2.0 errors
     RPC_INVALID_REQUEST = -32600,
     RPC_METHOD_NOT_FOUND = -32601,
@@ -52,6 +53,7 @@ enum RPCErrorCode {
     RPC_VERIFY_REJECTED = -26,         //! Transaction or block was rejected by network rules
     RPC_VERIFY_ALREADY_IN_CHAIN = -27, //! Transaction already in chain
     RPC_IN_WARMUP = -28,               //! Client still warming up
+    RPC_GBT_POS_ERROR = -29,           //! GetBlockTemplate error during PoS period
 
     //! Aliases for backward compatibility
     RPC_TRANSACTION_ERROR = RPC_VERIFY_ERROR,
@@ -114,7 +116,8 @@ public:
         tcp::resolver resolver(stream.get_io_service());
         tcp::resolver::iterator endpoint_iterator;
 #if BOOST_VERSION >= 104300
-        try {
+        try
+        {
 #endif
             // The default query (flags address_configured) tries IPv6 if
             // non-localhost IPv6 configured, and IPv4 if non-localhost IPv4
@@ -122,7 +125,9 @@ public:
             tcp::resolver::query query(server.c_str(), port.c_str());
             endpoint_iterator = resolver.resolve(query);
 #if BOOST_VERSION >= 104300
-        } catch (boost::system::system_error& e) {
+        }
+        catch (boost::system::system_error& e)
+        {
             // If we at first don't succeed, try blanket lookup (IPv4+IPv6 independent of configured interfaces)
             tcp::resolver::query query(server.c_str(), port.c_str(), resolver_query_base::flags());
             endpoint_iterator = resolver.resolve(query);
@@ -130,7 +135,8 @@ public:
 #endif
         boost::system::error_code error = boost::asio::error::host_not_found;
         tcp::resolver::iterator end;
-        while (error && endpoint_iterator != end) {
+        while (error && endpoint_iterator != end)
+        {
             stream.lowest_layer().close();
             stream.lowest_layer().connect(*endpoint_iterator++, error);
         }
@@ -153,9 +159,18 @@ bool ReadHTTPRequestLine(std::basic_istream<char>& stream, int& proto, std::stri
 int ReadHTTPStatus(std::basic_istream<char>& stream, int& proto);
 int ReadHTTPHeaders(std::basic_istream<char>& stream, std::map<std::string, std::string>& mapHeadersRet);
 int ReadHTTPMessage(std::basic_istream<char>& stream, std::map<std::string, std::string>& mapHeadersRet, std::string& strMessageRet, int nProto, size_t max_size);
-std::string JSONRPCRequest(const std::string& strMethod, const json_spirit::Array& params, const json_spirit::Value& id);
-json_spirit::Object JSONRPCReplyObj(const json_spirit::Value& result, const json_spirit::Value& error, const json_spirit::Value& id);
-std::string JSONRPCReply(const json_spirit::Value& result, const json_spirit::Value& error, const json_spirit::Value& id);
-json_spirit::Object JSONRPCError(int code, const std::string& message);
+std::string JSONRPCRequest(const std::string& strMethod, const UniValue& params, const UniValue& id);
+UniValue JSONRPCReplyObj(const UniValue& result, const UniValue& error, const UniValue& id);
+std::string JSONRPCReply(const UniValue& result, const UniValue& error, const UniValue& id);
+UniValue JSONRPCError(int code, const std::string& message);
+
+/** Get name of RPC authentication cookie file */
+boost::filesystem::path GetAuthCookieFile();
+/** Generate a new RPC authentication cookie and write it to disk */
+bool GenerateAuthCookie(std::string *cookie_out);
+/** Read the RPC authentication cookie from disk */
+bool GetAuthCookie(std::string *cookie_out);
+/** Delete RPC authentication cookie from disk */
+void DeleteAuthCookie();
 
 #endif // BITCOIN_RPCPROTOCOL_H

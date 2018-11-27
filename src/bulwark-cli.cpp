@@ -15,12 +15,13 @@
 
 #include <boost/filesystem/operations.hpp>
 
+#include <univalue.h>
+
 #define _(x) std::string(x) /* Keep the _() around in case gettext or such will be used later to translate non-UI */
 
 using namespace std;
 using namespace boost;
 using namespace boost::asio;
-using namespace json_spirit;
 
 std::string HelpMessageCli()
 {
@@ -31,7 +32,7 @@ std::string HelpMessageCli()
     strUsage += HelpMessageOpt("-datadir=<dir>", _("Specify data directory"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
     strUsage += HelpMessageOpt("-regtest", _("Enter regression test mode, which uses a special chain in which blocks can be "
-                                             "solved instantly. This is intended for regression testing tools and app development."));
+                               "solved instantly. This is intended for regression testing tools and app development."));
     strUsage += HelpMessageOpt("-rpcconnect=<ip>", strprintf(_("Send commands to node running on <ip> (default: %s)"), "127.0.0.1"));
     strUsage += HelpMessageOpt("-rpcport=<port>", strprintf(_("Connect to JSON-RPC on <port> (default: %u or testnet: %u)"), 52543, 42132));
     strUsage += HelpMessageOpt("-rpcwait", _("Wait for RPC server to start"));
@@ -67,9 +68,11 @@ static bool AppInitRPC(int argc, char* argv[])
     // Parameters
     //
     ParseParameters(argc, argv);
-    if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
+    if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version"))
+    {
         std::string strUsage = _("Bulwark Core RPC client version") + " " + FormatFullVersion() + "\n";
-        if (!mapArgs.count("-version")) {
+        if (!mapArgs.count("-version"))
+        {
             strUsage += "\n" + _("Usage:") + "\n" +
                         "  bulwark-cli [options] <command> [params]  " + _("Send command to Bulwark Core") + "\n" +
                         "  bulwark-cli [options] help                " + _("List commands") + "\n" +
@@ -81,32 +84,31 @@ static bool AppInitRPC(int argc, char* argv[])
         fprintf(stdout, "%s", strUsage.c_str());
         return false;
     }
-    if (!boost::filesystem::is_directory(GetDataDir(false))) {
+    if (!boost::filesystem::is_directory(GetDataDir(false)))
+    {
         fprintf(stderr, "Error: Specified data directory \"%s\" does not exist.\n", mapArgs["-datadir"].c_str());
         return false;
     }
-    try {
+    try
+    {
         ReadConfigFile(mapArgs, mapMultiArgs);
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         fprintf(stderr, "Error reading configuration file: %s\n", e.what());
         return false;
     }
     // Check for -testnet or -regtest parameter (BaseParams() calls are only valid after this clause)
-    if (!SelectBaseParamsFromCommandLine()) {
+    if (!SelectBaseParamsFromCommandLine())
+    {
         fprintf(stderr, "Error: Invalid combination of -regtest and -testnet.\n");
         return false;
     }
     return true;
 }
 
-Object CallRPC(const string& strMethod, const Array& params)
+UniValue CallRPC(const string& strMethod, const UniValue& params)
 {
-    if (mapArgs["-rpcuser"] == "" && mapArgs["-rpcpassword"] == "")
-        throw runtime_error(strprintf(
-            _("You must set rpcpassword=<password> in the configuration file:\n%s\n"
-              "If the file does not exist, create it with owner-readable-only file permissions."),
-            GetConfigFile().string().c_str()));
-
     // Connect to localhost
     bool fUseSSL = GetBoolArg("-rpcssl", false);
     asio::io_service io_service;
@@ -120,10 +122,28 @@ Object CallRPC(const string& strMethod, const Array& params)
     if (!fConnected)
         throw CConnectionFailed("couldn't connect to server");
 
+    // Find credentials to use
+    std::string strRPCUserColonPass;
+    if (mapArgs["-rpcpassword"] == "")
+    {
+        // Try fall back to cookie-based authentication if no password is provided
+        if (!GetAuthCookie(&strRPCUserColonPass))
+        {
+            throw runtime_error(strprintf(
+                                    _("You must set rpcpassword=<password> in the configuration file:\n%s\n"
+                                      "If the file does not exist, create it with owner-readable-only file permissions."),
+                                    GetConfigFile().string().c_str()));
+
+        }
+    }
+    else
+    {
+        strRPCUserColonPass = mapArgs["-rpcuser"] + ":" + mapArgs["-rpcpassword"];
+    }
+
     // HTTP basic authentication
-    string strUserPass64 = EncodeBase64(mapArgs["-rpcuser"] + ":" + mapArgs["-rpcpassword"]);
     map<string, string> mapRequestHeaders;
-    mapRequestHeaders["Authorization"] = string("Basic ") + strUserPass64;
+    mapRequestHeaders["Authorization"] = string("Basic ") + EncodeBase64(strRPCUserColonPass);
 
     // Send request
     string strRequest = JSONRPCRequest(strMethod, params, 1);
@@ -147,10 +167,10 @@ Object CallRPC(const string& strMethod, const Array& params)
         throw runtime_error("no response from server");
 
     // Parse reply
-    Value valReply;
-    if (!read_string(strReply, valReply))
+    UniValue valReply(UniValue::VSTR);
+    if (!valReply.read(strReply))
         throw runtime_error("couldn't parse reply from server");
-    const Object& reply = valReply.get_obj();
+    const UniValue& reply = valReply.get_obj();
     if (reply.empty())
         throw runtime_error("expected reply to have result, error and id properties");
 
@@ -161,9 +181,11 @@ int CommandLineRPC(int argc, char* argv[])
 {
     string strPrint;
     int nRet = 0;
-    try {
+    try
+    {
         // Skip switches
-        while (argc > 1 && IsSwitchChar(argv[1][0])) {
+        while (argc > 1 && IsSwitchChar(argv[1][0]))
+        {
             argc--;
             argv++;
         }
@@ -175,55 +197,69 @@ int CommandLineRPC(int argc, char* argv[])
 
         // Parameters default to strings
         std::vector<std::string> strParams(&argv[2], &argv[argc]);
-        Array params = RPCConvertValues(strMethod, strParams);
+        UniValue params = RPCConvertValues(strMethod, strParams);
 
         // Execute and handle connection failures with -rpcwait
         const bool fWait = GetBoolArg("-rpcwait", false);
-        do {
-            try {
-                const Object reply = CallRPC(strMethod, params);
+        do
+        {
+            try
+            {
+                const UniValue reply = CallRPC(strMethod, params);
 
                 // Parse reply
-                const Value& result = find_value(reply, "result");
-                const Value& error = find_value(reply, "error");
+                const UniValue& result = find_value(reply, "result");
+                const UniValue& error = find_value(reply, "error");
 
-                if (error.type() != null_type) {
+                if (!error.isNull())
+                {
                     // Error
-                    const int code = find_value(error.get_obj(), "code").get_int();
+                    int code = error["code"].get_int();
                     if (fWait && code == RPC_IN_WARMUP)
                         throw CConnectionFailed("server in warmup");
-                    strPrint = "error: " + write_string(error, false);
+                    strPrint = "error: " + error.write();
                     nRet = abs(code);
-                } else {
+                }
+                else
+                {
                     // Result
-                    if (result.type() == null_type)
+                    if (result.isNull())
                         strPrint = "";
-                    else if (result.type() == str_type)
+                    else if (result.isStr())
                         strPrint = result.get_str();
                     else
-                        strPrint = write_string(result, true);
+                        strPrint = result.write(2);
                 }
-
                 // Connection succeeded, no need to retry.
                 break;
-            } catch (const CConnectionFailed& e) {
+            }
+            catch (const CConnectionFailed& e)
+            {
                 if (fWait)
                     MilliSleep(1000);
                 else
                     throw;
             }
-        } while (fWait);
-    } catch (boost::thread_interrupted) {
+        }
+        while (fWait);
+    }
+    catch (boost::thread_interrupted)
+    {
         throw;
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         strPrint = string("error: ") + e.what();
         nRet = EXIT_FAILURE;
-    } catch (...) {
+    }
+    catch (...)
+    {
         PrintExceptionContinue(NULL, "CommandLineRPC()");
         throw;
     }
 
-    if (strPrint != "") {
+    if (strPrint != "")
+    {
         fprintf((nRet == 0 ? stdout : stderr), "%s\n", strPrint.c_str());
     }
     return nRet;
@@ -233,23 +269,33 @@ int main(int argc, char* argv[])
 {
     SetupEnvironment();
 
-    try {
+    try
+    {
         if (!AppInitRPC(argc, argv))
             return EXIT_FAILURE;
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         PrintExceptionContinue(&e, "AppInitRPC()");
         return EXIT_FAILURE;
-    } catch (...) {
+    }
+    catch (...)
+    {
         PrintExceptionContinue(NULL, "AppInitRPC()");
         return EXIT_FAILURE;
     }
 
     int ret = EXIT_FAILURE;
-    try {
+    try
+    {
         ret = CommandLineRPC(argc, argv);
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         PrintExceptionContinue(&e, "CommandLineRPC()");
-    } catch (...) {
+    }
+    catch (...)
+    {
         PrintExceptionContinue(NULL, "CommandLineRPC()");
     }
     return ret;

@@ -27,18 +27,41 @@ protected:
     size_type nMaxSize;
 
 public:
-    limitedmap(size_type nMaxSizeIn = 0) { nMaxSize = nMaxSizeIn; }
-    const_iterator begin() const { return map.begin(); }
-    const_iterator end() const { return map.end(); }
-    size_type size() const { return map.size(); }
-    bool empty() const { return map.empty(); }
-    const_iterator find(const key_type& k) const { return map.find(k); }
-    size_type count(const key_type& k) const { return map.count(k); }
+    limitedmap(size_type nMaxSizeIn = 0)
+    {
+        nMaxSize = nMaxSizeIn;
+    }
+    const_iterator begin() const
+    {
+        return map.begin();
+    }
+    const_iterator end() const
+    {
+        return map.end();
+    }
+    size_type size() const
+    {
+        return map.size();
+    }
+    bool empty() const
+    {
+        return map.empty();
+    }
+    const_iterator find(const key_type& k) const
+    {
+        return map.find(k);
+    }
+    size_type count(const key_type& k) const
+    {
+        return map.count(k);
+    }
     void insert(const value_type& x)
     {
         std::pair<iterator, bool> ret = map.insert(x);
-        if (ret.second) {
-            if (nMaxSize && map.size() == nMaxSize) {
+        if (ret.second)
+        {
+            if (nMaxSize && map.size() == nMaxSize)
+            {
                 map.erase(rmap.begin()->second);
                 rmap.erase(rmap.begin());
             }
@@ -53,7 +76,8 @@ public:
             return;
         std::pair<rmap_iterator, rmap_iterator> itPair = rmap.equal_range(itTarget->second);
         for (rmap_iterator it = itPair.first; it != itPair.second; ++it)
-            if (it->second == itTarget) {
+            if (it->second == itTarget)
+            {
                 rmap.erase(it);
                 map.erase(itTarget);
                 return;
@@ -69,7 +93,8 @@ public:
             return;
         std::pair<rmap_iterator, rmap_iterator> itPair = rmap.equal_range(itTarget->second);
         for (rmap_iterator it = itPair.first; it != itPair.second; ++it)
-            if (it->second == itTarget) {
+            if (it->second == itTarget)
+            {
                 rmap.erase(it);
                 itTarget->second = v;
                 rmap.insert(make_pair(v, itTarget));
@@ -78,11 +103,15 @@ public:
         // Shouldn't ever get here
         assert(0);
     }
-    size_type max_size() const { return nMaxSize; }
+    size_type max_size() const
+    {
+        return nMaxSize;
+    }
     size_type max_size(size_type s)
     {
         if (s)
-            while (map.size() > s) {
+            while (map.size() > s)
+            {
                 map.erase(rmap.begin()->second);
                 rmap.erase(rmap.begin());
             }

@@ -31,12 +31,10 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/foreach.hpp>
 #include <boost/test/unit_test.hpp>
-#include "json/json_spirit_reader_template.h"
-#include "json/json_spirit_utils.h"
-#include "json/json_spirit_writer_template.h"
+
+#include <univalue.h>
 
 using namespace std;
-using namespace json_spirit;
 using namespace boost::algorithm;
 
 // Uncomment if you want to output updated JSON tests.
@@ -47,15 +45,15 @@ static const unsigned int flags = SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_STRICTENC;
 unsigned int ParseScriptFlags(string strFlags);
 string FormatScriptFlags(unsigned int flags);
 
-Array
+UniValue
 read_json(const std::string& jsondata)
 {
-    Value v;
+    UniValue v;
 
-    if (!read_string(jsondata, v) || v.type() != array_type)
+    if (!v.read(jsondata) || !v.isArray())
     {
         BOOST_ERROR("Parse error.");
-        return Array();
+        return UniValue(UniValue::VARR);
     }
     return v.get_array();
 }
@@ -109,7 +107,8 @@ void DoTest(const CScript& scriptPubKey, const CScript& scriptSig, int flags, bo
 #endif
 }
 
-void static NegateSignatureS(std::vector<unsigned char>& vchSig) {
+void static NegateSignatureS(std::vector<unsigned char>& vchSig)
+{
     // Parse the signature.
     std::vector<unsigned char> r, s;
     r = std::vector<unsigned char>(vchSig.begin() + 4, vchSig.begin() + 4 + vchSig[3]);
@@ -117,24 +116,28 @@ void static NegateSignatureS(std::vector<unsigned char>& vchSig) {
     unsigned char hashtype = vchSig.back();
 
     // Really ugly to implement mod-n negation here, but it would be feature creep to expose such functionality from libsecp256k1.
-    static const unsigned char order[33] = {
+    static const unsigned char order[33] =
+    {
         0x00,
         0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
         0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE,
         0xBA, 0xAE, 0xDC, 0xE6, 0xAF, 0x48, 0xA0, 0x3B,
         0xBF, 0xD2, 0x5E, 0x8C, 0xD0, 0x36, 0x41, 0x41
     };
-    while (s.size() < 33) {
+    while (s.size() < 33)
+    {
         s.insert(s.begin(), 0x00);
     }
     int carry = 0;
-    for (int p = 32; p >= 1; p--) {
+    for (int p = 32; p >= 1; p--)
+    {
         int n = (int)order[p] - s[p] - carry;
         s[p] = (n + 256) & 0xFF;
         carry = (n < 0);
     }
     assert(carry == 0);
-    if (s.size() > 1 && s[0] == 0 && s[1] < 0x80) {
+    if (s.size() > 1 && s[0] == 0 && s[1] < 0x80)
+    {
         s.erase(s.begin());
     }
 
@@ -200,7 +203,8 @@ private:
 
     void DoPush()
     {
-        if (havePush) {
+        if (havePush)
+        {
             spendTx.vin[0].scriptSig << push;
             havePush = false;
         }
@@ -208,17 +212,20 @@ private:
 
     void DoPush(const std::vector<unsigned char>& data)
     {
-         DoPush();
-         push = data;
-         havePush = true;
+        DoPush();
+        push = data;
+        havePush = true;
     }
 
 public:
     TestBuilder(const CScript& redeemScript, const std::string& comment_, int flags_, bool P2SH = false) : scriptPubKey(redeemScript), havePush(false), comment(comment_), flags(flags_)
     {
-        if (P2SH) {
+        if (P2SH)
+        {
             creditTx = BuildCreditingTransaction(CScript() << OP_HASH160 << ToByteVector(CScriptID(redeemScript)) << OP_EQUAL);
-        } else {
+        }
+        else
+        {
             creditTx = BuildCreditingTransaction(redeemScript);
         }
         spendTx = BuildSpendingTransaction(CScript(), creditTx);
@@ -249,14 +256,17 @@ public:
         uint256 hash = SignatureHash(scriptPubKey, spendTx, 0, nHashType);
         std::vector<unsigned char> vchSig, r, s;
         uint32_t iter = 0;
-        do {
+        do
+        {
             key.Sign(hash, vchSig, iter++);
-            if ((lenS == 33) != (vchSig[5 + vchSig[3]] == 33)) {
+            if ((lenS == 33) != (vchSig[5 + vchSig[3]] == 33))
+            {
                 NegateSignatureS(vchSig);
             }
             r = std::vector<unsigned char>(vchSig.begin() + 4, vchSig.begin() + 4 + vchSig[3]);
             s = std::vector<unsigned char>(vchSig.begin() + 6 + vchSig[3], vchSig.begin() + 6 + vchSig[3] + vchSig[5 + vchSig[3]]);
-        } while (lenR != r.size() || lenS != s.size());
+        }
+        while (lenR != r.size() || lenS != s.size());
         vchSig.push_back(static_cast<unsigned char>(nHashType));
         DoPush(vchSig);
         return *this;
@@ -303,10 +313,10 @@ public:
         return *this;
     }
 
-    Array GetJSON()
+    UniValue GetJSON()
     {
         DoPush();
-        Array array;
+        UniValue array(UniValue::VARR);
         array.push_back(FormatScript(spendTx.vin[0].scriptSig));
         array.push_back(FormatScript(creditTx.vout[0].scriptPubKey));
         array.push_back(FormatScriptFlags(flags));
@@ -568,35 +578,43 @@ BOOST_AUTO_TEST_CASE(script_build)
     std::set<std::string> tests_bad;
 
     {
-        Array json_good = read_json(std::string(json_tests::script_valid, json_tests::script_valid + sizeof(json_tests::script_valid)));
-        Array json_bad = read_json(std::string(json_tests::script_invalid, json_tests::script_invalid + sizeof(json_tests::script_invalid)));
+        UniValue json_good = read_json(std::string(json_tests::script_valid, json_tests::script_valid + sizeof(json_tests::script_valid)));
+        UniValue json_bad = read_json(std::string(json_tests::script_invalid, json_tests::script_invalid + sizeof(json_tests::script_invalid)));
 
-        BOOST_FOREACH(Value& tv, json_good) {
-            tests_good.insert(write_string(Value(tv.get_array()), true));
+        for (unsigned int idx = 0; idx < json_good.size(); idx++)
+        {
+            const UniValue& tv = json_good[idx];
+            tests_good.insert(tv.get_array().write());
         }
-        BOOST_FOREACH(Value& tv, json_bad) {
-            tests_bad.insert(write_string(Value(tv.get_array()), true));
+        for (unsigned int idx = 0; idx < json_bad.size(); idx++)
+        {
+            const UniValue& tv = json_bad[idx];
+            tests_bad.insert(tv.get_array().write());
         }
     }
 
     std::string strGood;
     std::string strBad;
 
-    BOOST_FOREACH(TestBuilder& test, good) {
+    BOOST_FOREACH(TestBuilder& test, good)
+    {
         test.Test(true);
-        std::string str = write_string(Value(test.GetJSON()), true);
+        std::string str = test.GetJSON().write();
 #ifndef UPDATE_JSON_TESTS
-        if (tests_good.count(str) == 0) {
+        if (tests_good.count(str) == 0)
+        {
             BOOST_CHECK_MESSAGE(false, "Missing auto script_valid test: " + test.GetComment());
         }
 #endif
         strGood += str + ",\n";
     }
-    BOOST_FOREACH(TestBuilder& test, bad) {
+    BOOST_FOREACH(TestBuilder& test, bad)
+    {
         test.Test(false);
-        std::string str = write_string(Value(test.GetJSON()), true);
+        std::string str = test.GetJSON().write();
 #ifndef UPDATE_JSON_TESTS
-        if (tests_bad.count(str) == 0) {
+        if (tests_bad.count(str) == 0)
+        {
             BOOST_CHECK_MESSAGE(false, "Missing auto script_invalid test: " + test.GetComment());
         }
 #endif
@@ -620,15 +638,16 @@ BOOST_AUTO_TEST_CASE(script_valid)
     // Inner arrays are [ "scriptSig", "scriptPubKey", "flags" ]
     // ... where scriptSig and scriptPubKey are stringified
     // scripts.
-    Array tests = read_json(std::string(json_tests::script_valid, json_tests::script_valid + sizeof(json_tests::script_valid)));
+    UniValue tests = read_json(std::string(json_tests::script_valid, json_tests::script_valid + sizeof(json_tests::script_valid)));
 
-    BOOST_FOREACH(Value& tv, tests)
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
     {
-        Array test = tv.get_array();
-        string strTest = write_string(tv, false);
+        UniValue test = tests[idx];
+        string strTest = test.write();
         if (test.size() < 3) // Allow size > 3; extra stuff ignored (useful for comments)
         {
-            if (test.size() != 1) {
+            if (test.size() != 1)
+            {
                 BOOST_ERROR("Bad test: " << strTest);
             }
             continue;
@@ -646,15 +665,16 @@ BOOST_AUTO_TEST_CASE(script_valid)
 BOOST_AUTO_TEST_CASE(script_invalid)
 {
     // Scripts that should evaluate as invalid
-    Array tests = read_json(std::string(json_tests::script_invalid, json_tests::script_invalid + sizeof(json_tests::script_invalid)));
+    UniValue tests = read_json(std::string(json_tests::script_invalid, json_tests::script_invalid + sizeof(json_tests::script_invalid)));
 
-    BOOST_FOREACH(Value& tv, tests)
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
     {
-        Array test = tv.get_array();
-        string strTest = write_string(tv, false);
+        UniValue test = tests[idx];
+        string strTest = test.write();
         if (test.size() < 3) // Allow size > 3; extra stuff ignored (useful for comments)
         {
-            if (test.size() != 1) {
+            if (test.size() != 1)
+            {
                 BOOST_ERROR("Bad test: " << strTest);
             }
             continue;
@@ -777,49 +797,57 @@ BOOST_AUTO_TEST_CASE(script_CHECKMULTISIG23)
     CMutableTransaction txTo23 = BuildSpendingTransaction(CScript(), txFrom23);
 
     std::vector<CKey> keys;
-    keys.push_back(key1); keys.push_back(key2);
+    keys.push_back(key1);
+    keys.push_back(key2);
     CScript goodsig1 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(VerifyScript(goodsig1, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_OK, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key1); keys.push_back(key3);
+    keys.push_back(key1);
+    keys.push_back(key3);
     CScript goodsig2 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(VerifyScript(goodsig2, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_OK, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key2); keys.push_back(key3);
+    keys.push_back(key2);
+    keys.push_back(key3);
     CScript goodsig3 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(VerifyScript(goodsig3, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_OK, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key2); keys.push_back(key2); // Can't re-use sig
+    keys.push_back(key2);
+    keys.push_back(key2); // Can't re-use sig
     CScript badsig1 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(!VerifyScript(badsig1, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_EVAL_FALSE, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key2); keys.push_back(key1); // sigs must be in correct order
+    keys.push_back(key2);
+    keys.push_back(key1); // sigs must be in correct order
     CScript badsig2 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(!VerifyScript(badsig2, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_EVAL_FALSE, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key3); keys.push_back(key2); // sigs must be in correct order
+    keys.push_back(key3);
+    keys.push_back(key2); // sigs must be in correct order
     CScript badsig3 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(!VerifyScript(badsig3, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_EVAL_FALSE, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key4); keys.push_back(key2); // sigs must match pubkeys
+    keys.push_back(key4);
+    keys.push_back(key2); // sigs must match pubkeys
     CScript badsig4 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(!VerifyScript(badsig4, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_EVAL_FALSE, ScriptErrorString(err));
 
     keys.clear();
-    keys.push_back(key1); keys.push_back(key4); // sigs must match pubkeys
+    keys.push_back(key1);
+    keys.push_back(key4); // sigs must match pubkeys
     CScript badsig5 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(!VerifyScript(badsig5, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_EVAL_FALSE, ScriptErrorString(err));
@@ -828,7 +856,7 @@ BOOST_AUTO_TEST_CASE(script_CHECKMULTISIG23)
     CScript badsig6 = sign_multisig(scriptPubKey23, keys, txTo23);
     BOOST_CHECK(!VerifyScript(badsig6, scriptPubKey23, flags, MutableTransactionSignatureChecker(&txTo23, 0), &err));
     BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_INVALID_STACK_OPERATION, ScriptErrorString(err));
-}    
+}
 
 BOOST_AUTO_TEST_CASE(script_combineSigs)
 {
@@ -867,7 +895,8 @@ BOOST_AUTO_TEST_CASE(script_combineSigs)
     BOOST_CHECK(combined == scriptSigCopy || combined == scriptSig);
 
     // P2SH, single-signature case:
-    CScript pkSingle; pkSingle << ToByteVector(keys[0].GetPubKey()) << OP_CHECKSIG;
+    CScript pkSingle;
+    pkSingle << ToByteVector(keys[0].GetPubKey()) << OP_CHECKSIG;
     keystore.AddCScript(pkSingle);
     scriptPubKey = GetScriptForDestination(CScriptID(pkSingle));
     SignSignature(keystore, txFrom, txTo, 0);
@@ -942,7 +971,8 @@ BOOST_AUTO_TEST_CASE(script_combineSigs)
 BOOST_AUTO_TEST_CASE(script_standard_push)
 {
     ScriptError err;
-    for (int i=0; i<67000; i++) {
+    for (int i=0; i<67000; i++)
+    {
         CScript script;
         script << i;
         BOOST_CHECK_MESSAGE(script.IsPushOnly(), "Number " << i << " is not pure push.");
@@ -950,7 +980,8 @@ BOOST_AUTO_TEST_CASE(script_standard_push)
         BOOST_CHECK_MESSAGE(err == SCRIPT_ERR_OK, ScriptErrorString(err));
     }
 
-    for (unsigned int i=0; i<=MAX_SCRIPT_ELEMENT_SIZE; i++) {
+    for (unsigned int i=0; i<=MAX_SCRIPT_ELEMENT_SIZE; i++)
+    {
         std::vector<unsigned char> data(i, '\111');
         CScript script;
         script << data;

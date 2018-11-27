@@ -17,14 +17,14 @@ const QDateTime TransactionFilterProxy::MIN_DATE = QDateTime::fromTime_t(0);
 const QDateTime TransactionFilterProxy::MAX_DATE = QDateTime::fromTime_t(0xFFFFFFFF);
 
 TransactionFilterProxy::TransactionFilterProxy(QObject* parent) : QSortFilterProxyModel(parent),
-                                                                  dateFrom(MIN_DATE),
-                                                                  dateTo(MAX_DATE),
-                                                                  addrPrefix(),
-                                                                  typeFilter(COMMON_TYPES),
-                                                                  watchOnlyFilter(WatchOnlyFilter_All),
-                                                                  minAmount(0),
-                                                                  limitRows(-1),
-                                                                  showInactive(true)
+    dateFrom(MIN_DATE),
+    dateTo(MAX_DATE),
+    addrPrefix(),
+    typeFilter(COMMON_TYPES),
+    watchOnlyFilter(WatchOnlyFilter_All),
+    minAmount(0),
+    limitRows(-1),
+    showInactive(true)
 {
 }
 
@@ -102,9 +102,12 @@ void TransactionFilterProxy::setShowInactive(bool showInactive)
 
 int TransactionFilterProxy::rowCount(const QModelIndex& parent) const
 {
-    if (limitRows != -1) {
+    if (limitRows != -1)
+    {
         return std::min(QSortFilterProxyModel::rowCount(parent), limitRows);
-    } else {
+    }
+    else
+    {
         return QSortFilterProxyModel::rowCount(parent);
     }
 }

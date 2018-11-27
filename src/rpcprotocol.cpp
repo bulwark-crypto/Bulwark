@@ -9,6 +9,7 @@
 #include "rpcprotocol.h"
 
 #include "clientversion.h"
+#include "random.h"
 #include "tinyformat.h"
 #include "util.h"
 #include "utilstrencodings.h"
@@ -16,8 +17,8 @@
 #include "version.h"
 
 #include <stdint.h>
+#include <fstream>
 
-#include "json/json_spirit_writer_template.h"
 #include <boost/algorithm/string.hpp>
 #include <boost/asio.hpp>
 #include <boost/asio/ssl.hpp>
@@ -28,17 +29,18 @@
 #include <boost/iostreams/stream.hpp>
 #include <boost/shared_ptr.hpp>
 
+#include <univalue.h>
+
 using namespace std;
 using namespace boost;
 using namespace boost::asio;
-using namespace json_spirit;
 
 //! Number of bytes to allocate and read at most at once in post data
 const size_t POST_READ_SIZE = 256 * 1024;
 
 /**
  * HTTP protocol
- * 
+ *
  * This ain't Apache.  We're just using HTTP header for the length field
  * and to be compatible with other JSON-RPC implementations.
  */
@@ -53,8 +55,10 @@ string HTTPPost(const string& strMsg, const map<string, string>& mapRequestHeade
       << "Content-Length: " << strMsg.size() << "\r\n"
       << "Connection: close\r\n"
       << "Accept: application/json\r\n";
-    BOOST_FOREACH (const PAIRTYPE(string, string) & item, mapRequestHeaders)
+    BOOST_FOREACH(const PAIRTYPE(string, string) & item, mapRequestHeaders)
+    {
         s << item.first << ": " << item.second << "\r\n";
+    }
     s << "\r\n"
       << strMsg;
 
@@ -68,7 +72,8 @@ static string rfc1123Time()
 
 static const char* httpStatusDescription(int nStatus)
 {
-    switch (nStatus) {
+    switch (nStatus)
+    {
     case HTTP_OK:
         return "OK";
     case HTTP_BAD_REQUEST:
@@ -103,36 +108,39 @@ string HTTPError(int nStatus, bool keepalive, bool headersOnly)
                          "</HEAD>\r\n"
                          "<BODY><H1>401 Unauthorized.</H1></BODY>\r\n"
                          "</HTML>\r\n",
-            rfc1123Time(), FormatFullVersion());
+                         rfc1123Time(), FormatFullVersion());
 
     return HTTPReply(nStatus, httpStatusDescription(nStatus), keepalive,
-        headersOnly, "text/plain");
+                     headersOnly, "text/plain");
 }
 
 string HTTPReplyHeader(int nStatus, bool keepalive, size_t contentLength, const char* contentType)
 {
     return strprintf(
-        "HTTP/1.1 %d %s\r\n"
-        "Date: %s\r\n"
-        "Connection: %s\r\n"
-        "Content-Length: %u\r\n"
-        "Content-Type: %s\r\n"
-        "Server: bulwark-json-rpc/%s\r\n"
-        "\r\n",
-        nStatus,
-        httpStatusDescription(nStatus),
-        rfc1123Time(),
-        keepalive ? "keep-alive" : "close",
-        contentLength,
-        contentType,
-        FormatFullVersion());
+               "HTTP/1.1 %d %s\r\n"
+               "Date: %s\r\n"
+               "Connection: %s\r\n"
+               "Content-Length: %u\r\n"
+               "Content-Type: %s\r\n"
+               "Server: bulwark-json-rpc/%s\r\n"
+               "\r\n",
+               nStatus,
+               httpStatusDescription(nStatus),
+               rfc1123Time(),
+               keepalive ? "keep-alive" : "close",
+               contentLength,
+               contentType,
+               FormatFullVersion());
 }
 
 string HTTPReply(int nStatus, const string& strMsg, bool keepalive, bool headersOnly, const char* contentType)
 {
-    if (headersOnly) {
+    if (headersOnly)
+    {
         return HTTPReplyHeader(nStatus, keepalive, 0, contentType);
-    } else {
+    }
+    else
+    {
         return HTTPReplyHeader(nStatus, keepalive, strMsg.size(), contentType) + strMsg;
     }
 }
@@ -190,13 +198,15 @@ int ReadHTTPStatus(std::basic_istream<char>& stream, int& proto)
 int ReadHTTPHeaders(std::basic_istream<char>& stream, map<string, string>& mapHeadersRet)
 {
     int nLen = 0;
-    while (true) {
+    while (true)
+    {
         string str;
         std::getline(stream, str);
         if (str.empty() || str == "\r")
             break;
         string::size_type nColon = str.find(":");
-        if (nColon != string::npos) {
+        if (nColon != string::npos)
+        {
             string strHeader = str.substr(0, nColon);
             boost::trim(strHeader);
             boost::to_lower(strHeader);
@@ -222,10 +232,12 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
         return HTTP_INTERNAL_SERVER_ERROR;
 
     // Read message
-    if (nLen > 0) {
+    if (nLen > 0)
+    {
         vector<char> vch;
         size_t ptr = 0;
-        while (ptr < (size_t)nLen) {
+        while (ptr < (size_t)nLen)
+        {
             size_t bytes_to_read = std::min((size_t)nLen - ptr, POST_READ_SIZE);
             vch.resize(ptr + bytes_to_read);
             stream.read(&vch[ptr], bytes_to_read);
@@ -238,7 +250,8 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
 
     string sConHdr = mapHeadersRet["connection"];
 
-    if ((sConHdr != "close") && (sConHdr != "keep-alive")) {
+    if ((sConHdr != "close") && (sConHdr != "keep-alive"))
+    {
         if (nProto >= 1)
             mapHeadersRet["connection"] = "keep-alive";
         else
@@ -252,26 +265,26 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
  * JSON-RPC protocol.  Bulwark speaks version 1.0 for maximum compatibility,
  * but uses JSON-RPC 1.1/2.0 standards for parts of the 1.0 standard that were
  * unspecified (HTTP errors and contents of 'error').
- * 
+ *
  * 1.0 spec: http://json-rpc.org/wiki/specification
  * 1.2 spec: http://jsonrpc.org/historical/json-rpc-over-http.html
  * http://www.codeproject.com/KB/recipes/JSON_Spirit.aspx
  */
 
-string JSONRPCRequest(const string& strMethod, const Array& params, const Value& id)
+string JSONRPCRequest(const string& strMethod, const UniValue& params, const UniValue& id)
 {
-    Object request;
+    UniValue request(UniValue::VOBJ);
     request.push_back(Pair("method", strMethod));
     request.push_back(Pair("params", params));
     request.push_back(Pair("id", id));
-    return write_string(Value(request), false) + "\n";
+    return request.write() + "\n";
 }
 
-Object JSONRPCReplyObj(const Value& result, const Value& error, const Value& id)
+UniValue JSONRPCReplyObj(const UniValue& result, const UniValue& error, const UniValue& id)
 {
-    Object reply;
-    if (error.type() != null_type)
-        reply.push_back(Pair("result", Value::null));
+    UniValue reply(UniValue::VOBJ);
+    if (!error.isNull())
+        reply.push_back(Pair("result", NullUniValue));
     else
         reply.push_back(Pair("result", result));
     reply.push_back(Pair("error", error));
@@ -279,16 +292,84 @@ Object JSONRPCReplyObj(const Value& result, const Value& error, const Value& id)
     return reply;
 }
 
-string JSONRPCReply(const Value& result, const Value& error, const Value& id)
+string JSONRPCReply(const UniValue& result, const UniValue& error, const UniValue& id)
 {
-    Object reply = JSONRPCReplyObj(result, error, id);
-    return write_string(Value(reply), false) + "\n";
+    UniValue reply = JSONRPCReplyObj(result, error, id);
+    return reply.write() + "\n";
 }
 
-Object JSONRPCError(int code, const string& message)
+UniValue JSONRPCError(int code, const string& message)
 {
-    Object error;
+    UniValue error(UniValue::VOBJ);
     error.push_back(Pair("code", code));
     error.push_back(Pair("message", message));
     return error;
+}
+
+/** Username used when cookie authentication is in use (arbitrary, only for
+ * recognizability in debugging/logging purposes)
+ */
+static const std::string COOKIEAUTH_USER = "__cookie__";
+/** Default name for auth cookie file */
+static const std::string COOKIEAUTH_FILE = ".cookie";
+
+boost::filesystem::path GetAuthCookieFile()
+{
+    boost::filesystem::path path(GetArg("-rpccookiefile", COOKIEAUTH_FILE));
+    if (!path.is_complete()) path = GetDataDir() / path;
+    return path;
+}
+
+bool GenerateAuthCookie(std::string *cookie_out)
+{
+    unsigned char rand_pwd[32];
+    GetRandBytes(rand_pwd, 32);
+    std::string cookie = COOKIEAUTH_USER + ":" + EncodeBase64(&rand_pwd[0],32);
+
+    /** the umask determines what permissions are used to create this file -
+     * these are set to 077 in init.cpp unless overridden with -sysperms.
+     */
+    std::ofstream file;
+    boost::filesystem::path filepath = GetAuthCookieFile();
+    file.open(filepath.string().c_str());
+    if (!file.is_open())
+    {
+        LogPrintf("Unable to open cookie authentication file %s for writing\n", filepath.string());
+        return false;
+    }
+    file << cookie;
+    file.close();
+    LogPrintf("Generated RPC authentication cookie %s\n", filepath.string());
+
+    if (cookie_out)
+        *cookie_out = cookie;
+    return true;
+}
+
+bool GetAuthCookie(std::string *cookie_out)
+{
+    std::ifstream file;
+    std::string cookie;
+    boost::filesystem::path filepath = GetAuthCookieFile();
+    file.open(filepath.string().c_str());
+    if (!file.is_open())
+        return false;
+    std::getline(file, cookie);
+    file.close();
+
+    if (cookie_out)
+        *cookie_out = cookie;
+    return true;
+}
+
+void DeleteAuthCookie()
+{
+    try
+    {
+        boost::filesystem::remove(GetAuthCookieFile());
+    }
+    catch (const boost::filesystem::filesystem_error& e)
+    {
+        LogPrintf("%s: Unable to remove random auth cookie file: %s\n", __func__, e.what());
+    }
 }

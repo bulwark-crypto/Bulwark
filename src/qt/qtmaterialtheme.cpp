@@ -56,7 +56,8 @@ QColor QtMaterialTheme::getColor(const QString &key) const
 {
     Q_D(const QtMaterialTheme);
 
-    if (!d->colors.contains(key)) {
+    if (!d->colors.contains(key))
+    {
         qWarning() << "A theme color matching the key '" << key << "' could not be found.";
         return QColor();
     }
@@ -74,7 +75,8 @@ void QtMaterialTheme::setColor(const QString &key, Material::Color color)
 {
     Q_D(QtMaterialTheme);
 
-    static const QColor palette[] = {
+    static const QColor palette[] =
+    {
         QColor("#ffebee"), QColor("#ffcdd2"), QColor("#ef9a9a"), QColor("#e57373"),
         QColor("#ef5350"), QColor("#f44336"), QColor("#e53935"), QColor("#d32f2f"),
         QColor("#c62828"), QColor("#b71c1c"), QColor("#ff8a80"), QColor("#ff5252"),

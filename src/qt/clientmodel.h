@@ -23,14 +23,16 @@ class QDateTime;
 class QTimer;
 QT_END_NAMESPACE
 
-enum BlockSource {
+enum BlockSource
+{
     BLOCK_SOURCE_NONE,
     BLOCK_SOURCE_REINDEX,
     BLOCK_SOURCE_DISK,
     BLOCK_SOURCE_NETWORK
 };
 
-enum NumConnections {
+enum NumConnections
+{
     CONNECTIONS_NONE = 0,
     CONNECTIONS_IN = (1U << 0),
     CONNECTIONS_OUT = (1U << 1),
@@ -48,7 +50,7 @@ public:
 
     OptionsModel* getOptionsModel();
     PeerTableModel* getPeerTableModel();
-	BanTableModel *getBanTableModel();
+    BanTableModel *getBanTableModel();
 
     //! Return number of connections, default is in- and outbound (total)
     int getNumConnections(unsigned int flags = CONNECTIONS_ALL) const;
@@ -78,7 +80,7 @@ public:
 private:
     OptionsModel* optionsModel;
     PeerTableModel* peerTableModel;
-	BanTableModel *banTableModel;
+    BanTableModel *banTableModel;
 
     int cachedNumBlocks;
     QString cachedMasternodeCountString;
@@ -111,7 +113,7 @@ public slots:
     void updateMnTimer();
     void updateNumConnections(int numConnections);
     void updateAlert(const QString& hash, int status);
-	void updateBanlist();
+    void updateBanlist();
 };
 
 #endif // BITCOIN_QT_CLIENTMODEL_H

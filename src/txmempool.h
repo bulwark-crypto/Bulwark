@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2016-2017 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,7 +18,7 @@ class CAutoFile;
 
 inline double AllowFreeThreshold()
 {
-    return COIN * 576 / 250;
+    return COIN * 1440 / 250;
 }
 
 inline bool AllowFree(double dPriority)
@@ -50,12 +51,27 @@ public:
     CTxMemPoolEntry();
     CTxMemPoolEntry(const CTxMemPoolEntry& other);
 
-    const CTransaction& GetTx() const { return this->tx; }
+    const CTransaction& GetTx() const
+    {
+        return this->tx;
+    }
     double GetPriority(unsigned int currentHeight) const;
-    CAmount GetFee() const { return nFee; }
-    size_t GetTxSize() const { return nTxSize; }
-    int64_t GetTime() const { return nTime; }
-    unsigned int GetHeight() const { return nHeight; }
+    CAmount GetFee() const
+    {
+        return nFee;
+    }
+    size_t GetTxSize() const
+    {
+        return nTxSize;
+    }
+    int64_t GetTime() const
+    {
+        return nTime;
+    }
+    unsigned int GetHeight() const
+    {
+        return nHeight;
+    }
 };
 
 class CMinerPolicyEstimator;
@@ -67,7 +83,10 @@ public:
     const CTransaction* ptx;
     uint32_t n;
 
-    CInPoint() { SetNull(); }
+    CInPoint()
+    {
+        SetNull();
+    }
     CInPoint(const CTransaction* ptxIn, uint32_t nIn)
     {
         ptx = ptxIn;
@@ -78,7 +97,10 @@ public:
         ptx = NULL;
         n = (uint32_t)-1;
     }
-    bool IsNull() const { return (ptx == NULL && n == (uint32_t)-1); }
+    bool IsNull() const
+    {
+        return (ptx == NULL && n == (uint32_t)-1);
+    }
 };
 
 /**
@@ -117,7 +139,10 @@ public:
      * check does nothing.
      */
     void check(const CCoinsViewCache* pcoins) const;
-    void setSanityCheck(bool _fSanityCheck) { fSanityCheck = _fSanityCheck; }
+    void setSanityCheck(bool _fSanityCheck)
+    {
+        fSanityCheck = _fSanityCheck;
+    }
 
     bool addUnchecked(const uint256& hash, const CTxMemPoolEntry& entry);
     void remove(const CTransaction& tx, std::list<CTransaction>& removed, bool fRecursive = false);
@@ -165,7 +190,7 @@ public:
     bool ReadFeeEstimates(CAutoFile& filein);
 };
 
-/** 
+/**
  * CCoinsView that brings transactions from a memorypool into view.
  * It does not check for spendings by memory pool transactions.
  */

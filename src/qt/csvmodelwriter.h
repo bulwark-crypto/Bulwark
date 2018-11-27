@@ -34,7 +34,8 @@ private:
     QString filename;
     const QAbstractItemModel* model;
 
-    struct Column {
+    struct Column
+    {
         QString title;
         int column;
         int role;

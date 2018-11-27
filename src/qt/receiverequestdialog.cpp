@@ -50,7 +50,8 @@ QImage QRImageWidget::exportImage()
 
 void QRImageWidget::mousePressEvent(QMouseEvent* event)
 {
-    if (event->button() == Qt::LeftButton && pixmap()) {
+    if (event->button() == Qt::LeftButton && pixmap())
+    {
         event->accept();
         QMimeData* mimeData = new QMimeData;
         mimeData->setImageData(exportImage());
@@ -58,7 +59,9 @@ void QRImageWidget::mousePressEvent(QMouseEvent* event)
         QDrag* drag = new QDrag(this);
         drag->setMimeData(mimeData);
         drag->exec();
-    } else {
+    }
+    else
+    {
         QLabel::mousePressEvent(event);
     }
 }
@@ -68,7 +71,8 @@ void QRImageWidget::saveImage()
     if (!pixmap())
         return;
     QString fn = GUIUtil::getSaveFileName(this, tr("Save QR Code"), QString(), tr("PNG Image (*.png)"), NULL);
-    if (!fn.isEmpty()) {
+    if (!fn.isEmpty())
+    {
         exportImage().save(fn);
     }
 }
@@ -88,8 +92,8 @@ void QRImageWidget::contextMenuEvent(QContextMenuEvent* event)
 }
 
 ReceiveRequestDialog::ReceiveRequestDialog(QWidget* parent) : QDialog(parent),
-                                                              ui(new Ui::ReceiveRequestDialog),
-                                                              model(0)
+    ui(new Ui::ReceiveRequestDialog),
+    model(0)
 {
     ui->setupUi(this);
 
@@ -150,21 +154,28 @@ void ReceiveRequestDialog::update()
 
 #ifdef USE_QRCODE
     ui->lblQRCode->setText("");
-    if (!uri.isEmpty()) {
+    if (!uri.isEmpty())
+    {
         // limit URI length
-        if (uri.length() > MAX_URI_LENGTH) {
+        if (uri.length() > MAX_URI_LENGTH)
+        {
             ui->lblQRCode->setText(tr("Resulting URI too long, try to reduce the text for label / message."));
-        } else {
+        }
+        else
+        {
             QRcode* code = QRcode_encodeString(uri.toUtf8().constData(), 0, QR_ECLEVEL_L, QR_MODE_8, 1);
-            if (!code) {
+            if (!code)
+            {
                 ui->lblQRCode->setText(tr("Error encoding URI into QR Code."));
                 return;
             }
             QImage myImage = QImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
             myImage.fill(0xffffff);
             unsigned char* p = code->data;
-            for (int y = 0; y < code->width; y++) {
-                for (int x = 0; x < code->width; x++) {
+            for (int y = 0; y < code->width; y++)
+            {
+                for (int x = 0; x < code->width; x++)
+                {
                     myImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xffffff));
                     p++;
                 }
@@ -185,7 +196,7 @@ void ReceiveRequestDialog::on_btnCopyURI_clicked()
 
 void ReceiveRequestDialog::on_closeButton_clicked()
 {
-	this->close();
+    this->close();
 }
 
 void ReceiveRequestDialog::on_btnCopyAddress_clicked()

@@ -24,23 +24,28 @@ BOOST_AUTO_TEST_CASE(util_criticalsection)
 {
     CCriticalSection cs;
 
-    do {
+    do
+    {
         LOCK(cs);
         break;
 
         BOOST_ERROR("break was swallowed!");
-    } while(0);
+    }
+    while(0);
 
-    do {
+    do
+    {
         TRY_LOCK(cs, lockTest);
         if (lockTest)
             break;
 
         BOOST_ERROR("break was swallowed!");
-    } while(0);
+    }
+    while(0);
 }
 
-static const unsigned char ParseHex_expected[65] = {
+static const unsigned char ParseHex_expected[65] =
+{
     0x04, 0x67, 0x8a, 0xfd, 0xb0, 0xfe, 0x55, 0x48, 0x27, 0x19, 0x67, 0xf1, 0xa6, 0x71, 0x30, 0xb7,
     0x10, 0x5c, 0xd6, 0xa8, 0x28, 0xe0, 0x39, 0x09, 0xa6, 0x79, 0x62, 0xe0, 0xea, 0x1f, 0x61, 0xde,
     0xb6, 0x49, 0xf6, 0xbc, 0x3f, 0x4c, 0xef, 0x38, 0xc4, 0xf3, 0x55, 0x04, 0xe5, 0x1e, 0xc1, 0x12,
@@ -240,7 +245,7 @@ BOOST_AUTO_TEST_CASE(util_seed_insecure_rand)
 
     seed_insecure_rand(true);
 
-    for (int mod=2;mod<11;mod++)
+    for (int mod=2; mod<11; mod++)
     {
         int mask = 1;
         // Really rough binomal confidence approximation.
@@ -250,12 +255,14 @@ BOOST_AUTO_TEST_CASE(util_seed_insecure_rand)
 
         count = 0;
         //How often does it get a zero from the uniform range [0,mod)?
-        for (i=0;i<10000;i++)
+        for (i=0; i<10000; i++)
         {
             uint32_t rval;
-            do{
+            do
+            {
                 rval=insecure_rand()&mask;
-            }while(rval>=(uint32_t)mod);
+            }
+            while(rval>=(uint32_t)mod);
             count += rval==0;
         }
         BOOST_CHECK(count<=10000/mod+err);
@@ -329,6 +336,64 @@ BOOST_AUTO_TEST_CASE(test_ParseInt32)
     BOOST_CHECK(!ParseInt32("2147483648", NULL));
     BOOST_CHECK(!ParseInt32("-32482348723847471234", NULL));
     BOOST_CHECK(!ParseInt32("32482348723847471234", NULL));
+}
+
+BOOST_AUTO_TEST_CASE(test_ParseInt64)
+{
+    int64_t n;
+    // Valid values
+    BOOST_CHECK(ParseInt64("1234", NULL));
+    BOOST_CHECK(ParseInt64("0", &n) && n == 0LL);
+    BOOST_CHECK(ParseInt64("1234", &n) && n == 1234LL);
+    BOOST_CHECK(ParseInt64("01234", &n) && n == 1234LL); // no octal
+    BOOST_CHECK(ParseInt64("2147483647", &n) && n == 2147483647LL);
+    BOOST_CHECK(ParseInt64("-2147483648", &n) && n == -2147483648LL);
+    BOOST_CHECK(ParseInt64("9223372036854775807", &n) && n == 9223372036854775807LL);
+    BOOST_CHECK(ParseInt64("-9223372036854775808", &n) && n == -9223372036854775808LL);
+    BOOST_CHECK(ParseInt64("-1234", &n) && n == -1234LL);
+    // Invalid values
+    BOOST_CHECK(!ParseInt64("", &n));
+    BOOST_CHECK(!ParseInt64(" 1", &n)); // no padding inside
+    BOOST_CHECK(!ParseInt64("1 ", &n));
+    BOOST_CHECK(!ParseInt64("1a", &n));
+    BOOST_CHECK(!ParseInt64("aap", &n));
+    BOOST_CHECK(!ParseInt64("0x1", &n)); // no hex
+    const char test_bytes[] = {'1', 0, '1'};
+    std::string teststr(test_bytes, sizeof(test_bytes));
+    BOOST_CHECK(!ParseInt64(teststr, &n)); // no embedded NULs
+    // Overflow and underflow
+    BOOST_CHECK(!ParseInt64("-9223372036854775809", NULL));
+    BOOST_CHECK(!ParseInt64("9223372036854775808", NULL));
+    BOOST_CHECK(!ParseInt64("-32482348723847471234", NULL));
+    BOOST_CHECK(!ParseInt64("32482348723847471234", NULL));
+}
+
+BOOST_AUTO_TEST_CASE(test_ParseDouble)
+{
+    double n;
+    // Valid values
+    BOOST_CHECK(ParseDouble("1234", NULL));
+    BOOST_CHECK(ParseDouble("0", &n) && n == 0.0);
+    BOOST_CHECK(ParseDouble("1234", &n) && n == 1234.0);
+    BOOST_CHECK(ParseDouble("01234", &n) && n == 1234.0); // no octal
+    BOOST_CHECK(ParseDouble("2147483647", &n) && n == 2147483647.0);
+    BOOST_CHECK(ParseDouble("-2147483648", &n) && n == -2147483648.0);
+    BOOST_CHECK(ParseDouble("-1234", &n) && n == -1234.0);
+    BOOST_CHECK(ParseDouble("1e6", &n) && n == 1e6);
+    BOOST_CHECK(ParseDouble("-1e6", &n) && n == -1e6);
+    // Invalid values
+    BOOST_CHECK(!ParseDouble("", &n));
+    BOOST_CHECK(!ParseDouble(" 1", &n)); // no padding inside
+    BOOST_CHECK(!ParseDouble("1 ", &n));
+    BOOST_CHECK(!ParseDouble("1a", &n));
+    BOOST_CHECK(!ParseDouble("aap", &n));
+    BOOST_CHECK(!ParseDouble("0x1", &n)); // no hex
+    const char test_bytes[] = {'1', 0, '1'};
+    std::string teststr(test_bytes, sizeof(test_bytes));
+    BOOST_CHECK(!ParseDouble(teststr, &n)); // no embedded NULs
+    // Overflow and underflow
+    BOOST_CHECK(!ParseDouble("-1e10000", NULL));
+    BOOST_CHECK(!ParseDouble("1e10000", NULL));
 }
 
 BOOST_AUTO_TEST_CASE(test_FormatParagraph)

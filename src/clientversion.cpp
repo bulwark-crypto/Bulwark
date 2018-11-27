@@ -43,7 +43,6 @@ const std::string CLIENT_NAME("Bulwark Core");
 #endif
 
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives.
-#define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
 #define GIT_COMMIT_ID "cbcb549"
 #define GIT_COMMIT_DATE "Tue, 9 Feb 2016 16:54:57 -0500"
@@ -89,18 +88,20 @@ static std::string FormatVersion(int nVersion)
 
 std::string FormatFullVersion()
 {
-    return CLIENT_BUILD;
+    return FormatVersion(CLIENT_VERSION);
+    //return CLIENT_BUILD;
 }
 
-/** 
- * Format the subversion field according to BIP 14 spec (https://github.com/bitcoin/bips/blob/master/bip-0014.mediawiki) 
+/**
+ * Format the subversion field according to BIP 14 spec (https://github.com/bitcoin/bips/blob/master/bip-0014.mediawiki)
  */
 std::string FormatSubVersion(const std::string& name, int nClientVersion, const std::vector<std::string>& comments)
 {
     std::ostringstream ss;
     ss << "/";
     ss << name << ":" << FormatVersion(nClientVersion);
-    if (!comments.empty()) {
+    if (!comments.empty())
+    {
         std::vector<std::string>::const_iterator it(comments.begin());
         ss << "(" << *it;
         for (++it; it != comments.end(); ++it)

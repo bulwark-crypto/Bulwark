@@ -1,3 +1,7 @@
+// Copyright (c) 2017 The PIVX Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #pragma once
 #include "arith_uint256.h"
 #include "uint256.h"
@@ -16,7 +20,8 @@ public:
     {
         std::vector<unsigned char> vch;
         const unsigned char* p = this->begin();
-        for (unsigned int i = 0; i < 32; i++) {
+        for (unsigned int i = 0; i < 32; i++)
+        {
             vch.push_back(*p++);
         }
         uint256 retval(vch);

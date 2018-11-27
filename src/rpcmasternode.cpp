@@ -1,4 +1,3 @@
-// Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2017-2018 The Bulwark developers
@@ -16,10 +15,11 @@
 #include "rpcserver.h"
 #include "utilmoneystr.h"
 
-#include <boost/tokenizer.hpp>
+#include <univalue.h>
 
+#include <boost/tokenizer.hpp>
 #include <fstream>
-using namespace json_spirit;
+
 
 void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew, AvailableCoinsType coin_type = ALL_COINS)
 {
@@ -31,7 +31,8 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Insufficient funds");
 
     string strError;
-    if (pwalletMain->IsLocked()) {
+    if (pwalletMain->IsLocked())
+    {
         strError = "Error: Wallet locked, unable to create transaction!";
         LogPrintf("SendMoney() : %s", strError);
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
@@ -43,7 +44,8 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
     // Create and send the transaction
     CReserveKey reservekey(pwalletMain);
     CAmount nFeeRequired;
-    if (!pwalletMain->CreateTransaction(scriptPubKey, nValue, wtxNew, reservekey, nFeeRequired, strError, NULL, coin_type)) {
+    if (!pwalletMain->CreateTransaction(scriptPubKey, nValue, wtxNew, reservekey, nFeeRequired, strError, NULL, coin_type))
+    {
         if (nValue + nFeeRequired > pwalletMain->GetBalance())
             strError = strprintf("Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!", FormatMoney(nFeeRequired));
         LogPrintf("SendMoney() : %s\n", strError);
@@ -53,8 +55,10 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.");
 }
 
-Value obfuscation(const Array& params, bool fHelp)
+UniValue obfuscation(const UniValue& params, bool fHelp)
 {
+    throw runtime_error("Obfuscation is not supported any more. Use Zerocoin\n");
+
     if (fHelp || params.size() == 0)
         throw runtime_error(
             "obfuscation <bulwarkaddress> <amount>\n"
@@ -65,14 +69,16 @@ Value obfuscation(const Array& params, bool fHelp)
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-    if (params[0].get_str() == "auto") {
+    if (params[0].get_str() == "auto")
+    {
         if (fMasterNode)
             return "ObfuScation is not supported from masternodes";
 
         return "DoAutomaticDenominating " + (obfuScationPool.DoAutomaticDenominating() ? "successful" : ("failed: " + obfuScationPool.GetStatus()));
     }
 
-    if (params[0].get_str() == "reset") {
+    if (params[0].get_str() == "reset")
+    {
         obfuScationPool.Reset();
         return "successfully reset obfuscation";
     }
@@ -101,7 +107,8 @@ Value obfuscation(const Array& params, bool fHelp)
     return wtx.GetHash().GetHex();
 }
 
-Value getpoolinfo(const Array& params, bool fHelp)
+
+UniValue getpoolinfo(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
         throw runtime_error(
@@ -119,7 +126,7 @@ Value getpoolinfo(const Array& params, bool fHelp)
             "\nExamples:\n" +
             HelpExampleCli("getpoolinfo", "") + HelpExampleRpc("getpoolinfo", ""));
 
-    Object obj;
+    UniValue obj(UniValue::VOBJ);
     obj.push_back(Pair("current_masternode", mnodeman.GetCurrentMasterNode()->addr.ToString()));
     obj.push_back(Pair("state", obfuScationPool.GetState()));
     obj.push_back(Pair("entries", obfuScationPool.GetEntriesCount()));
@@ -129,17 +136,17 @@ Value getpoolinfo(const Array& params, bool fHelp)
 
 // This command is retained for backwards compatibility, but is depreciated.
 // Future removal of this command is planned to keep things clean.
-Value masternode(const Array& params, bool fHelp)
+UniValue masternode(const UniValue& params, bool fHelp)
 {
     string strCommand;
     if (params.size() >= 1)
         strCommand = params[0].get_str();
 
     if (fHelp ||
-        (strCommand != "start" && strCommand != "start-alias" && strCommand != "start-many" && strCommand != "start-all" && strCommand != "start-missing" &&
-            strCommand != "start-disabled" && strCommand != "list" && strCommand != "list-conf" && strCommand != "count" && strCommand != "enforce" &&
-            strCommand != "debug" && strCommand != "current" && strCommand != "winners" && strCommand != "genkey" && strCommand != "connect" &&
-            strCommand != "outputs" && strCommand != "status" && strCommand != "calcscore"))
+            (strCommand != "start" && strCommand != "start-alias" && strCommand != "start-many" && strCommand != "start-all" && strCommand != "start-missing" &&
+             strCommand != "start-disabled" && strCommand != "list" && strCommand != "list-conf" && strCommand != "count" && strCommand != "enforce" &&
+             strCommand != "debug" && strCommand != "current" && strCommand != "winners" && strCommand != "genkey" && strCommand != "connect" &&
+             strCommand != "outputs" && strCommand != "status" && strCommand != "calcscore"))
         throw runtime_error(
             "masternode \"command\"...\n"
             "\nSet of commands to execute masternode related actions\n"
@@ -162,80 +169,136 @@ Value masternode(const Array& params, bool fHelp)
             "  list-conf    - Print masternode.conf in JSON format\n"
             "  winners      - Print list of masternode winners\n");
 
-    if (strCommand == "list") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "list")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return listmasternodes(newParams, fHelp);
     }
 
-    if (strCommand == "connect") {
-        Array newParams(params.size() -1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "connect")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return masternodeconnect(newParams, fHelp);
     }
 
-    if (strCommand == "count") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "count")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return getmasternodecount(newParams, fHelp);
     }
 
-    if (strCommand == "current") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "current")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return masternodecurrent(newParams, fHelp);
     }
 
-    if (strCommand == "debug") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "debug")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return masternodedebug(newParams, fHelp);
     }
 
-    if (strCommand == "start" || strCommand == "start-alias" || strCommand == "start-many" || strCommand == "start-all" || strCommand == "start-missing" || strCommand == "start-disabled") {
+    if (strCommand == "start" || strCommand == "start-alias" || strCommand == "start-many" || strCommand == "start-all" || strCommand == "start-missing" || strCommand == "start-disabled")
+    {
         return startmasternode(params, fHelp);
     }
 
-    if (strCommand == "genkey") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "genkey")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return createmasternodekey(newParams, fHelp);
     }
 
-    if (strCommand == "list-conf") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "list-conf")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return listmasternodeconf(newParams, fHelp);
     }
 
-    if (strCommand == "outputs") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "outputs")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return getmasternodeoutputs(newParams, fHelp);
     }
 
-    if (strCommand == "status") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "status")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return getmasternodestatus(newParams, fHelp);
     }
 
-    if (strCommand == "winners") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "winners")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return getmasternodewinners(newParams, fHelp);
     }
 
-    if (strCommand == "calcscore") {
-        Array newParams(params.size() - 1);
-        std::copy(params.begin() + 1, params.end(), newParams.begin());
+    if (strCommand == "calcscore")
+    {
+        UniValue newParams(UniValue::VARR);
+        // forward params but skip command
+        for (unsigned int i = 1; i < params.size(); i++)
+        {
+            newParams.push_back(params[i]);
+        }
         return getmasternodescores(newParams, fHelp);
     }
 
-    return Value::null;
+    return NullUniValue;
 }
 
-Value listmasternodes(const Array& params, bool fHelp)
+UniValue listmasternodes(const UniValue& params, bool fHelp)
 {
     std::string strFilter = "";
 
@@ -267,7 +330,7 @@ Value listmasternodes(const Array& params, bool fHelp)
             "\nExamples:\n" +
             HelpExampleCli("masternodelist", "") + HelpExampleRpc("masternodelist", ""));
 
-    Array ret;
+    UniValue ret(UniValue::VARR);
     int nHeight;
     {
         LOCK(cs_main);
@@ -276,18 +339,20 @@ Value listmasternodes(const Array& params, bool fHelp)
         nHeight = pindex->nHeight;
     }
     std::vector<pair<int, CMasternode> > vMasternodeRanks = mnodeman.GetMasternodeRanks(nHeight);
-    BOOST_FOREACH (PAIRTYPE(int, CMasternode) & s, vMasternodeRanks) {
-        Object obj;
+    BOOST_FOREACH(PAIRTYPE(int, CMasternode) & s, vMasternodeRanks)
+    {
+        UniValue obj(UniValue::VOBJ);
         std::string strVin = s.second.vin.prevout.ToStringShort();
         std::string strTxHash = s.second.vin.prevout.hash.ToString();
         uint32_t oIdx = s.second.vin.prevout.n;
 
         CMasternode* mn = mnodeman.Find(s.second.vin);
 
-        if (mn != NULL) {
+        if (mn != NULL)
+        {
             if (strFilter != "" && strTxHash.find(strFilter) == string::npos &&
-                mn->Status().find(strFilter) == string::npos &&
-                CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
+                    mn->Status().find(strFilter) == string::npos &&
+                    CBitcoinAddress(mn->pubKeyCollateralAddress.GetID()).ToString().find(strFilter) == string::npos) continue;
 
             std::string strStatus = mn->Status();
             std::string strHost;
@@ -314,7 +379,7 @@ Value listmasternodes(const Array& params, bool fHelp)
     return ret;
 }
 
-Value masternodeconnect(const Array& params, bool fHelp)
+UniValue masternodeconnect(const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() != 1))
         throw runtime_error(
@@ -332,15 +397,18 @@ Value masternodeconnect(const Array& params, bool fHelp)
     CService addr = CService(strAddress);
 
     CNode* pnode = ConnectNode((CAddress)addr, NULL, false);
-    if (pnode) {
+    if (pnode)
+    {
         pnode->Release();
-        return Value::null;
-    } else {
+        return NullUniValue;
+    }
+    else
+    {
         throw runtime_error("error connecting\n");
     }
 }
 
-Value getmasternodecount (const Array& params, bool fHelp)
+UniValue getmasternodecount (const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() > 0))
         throw runtime_error(
@@ -358,7 +426,7 @@ Value getmasternodecount (const Array& params, bool fHelp)
             "\nExamples:\n" +
             HelpExampleCli("getmasternodecount", "") + HelpExampleRpc("getmasternodecount", ""));
 
-    Object obj;
+    UniValue obj(UniValue::VOBJ);
     int nCount = 0;
     int ipv4 = 0, ipv6 = 0, onion = 0;
 
@@ -379,7 +447,7 @@ Value getmasternodecount (const Array& params, bool fHelp)
     return obj;
 }
 
-Value masternodecurrent (const Array& params, bool fHelp)
+UniValue masternodecurrent (const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() != 0))
         throw runtime_error(
@@ -398,8 +466,9 @@ Value masternodecurrent (const Array& params, bool fHelp)
             HelpExampleCli("masternodecurrent", "") + HelpExampleRpc("masternodecurrent", ""));
 
     CMasternode* winner = mnodeman.GetCurrentMasterNode(1);
-    if (winner) {
-        Object obj;
+    if (winner)
+    {
+        UniValue obj(UniValue::VOBJ);
 
         obj.push_back(Pair("protocol", (int64_t)winner->protocolVersion));
         obj.push_back(Pair("txhash", winner->vin.prevout.hash.ToString()));
@@ -412,7 +481,7 @@ Value masternodecurrent (const Array& params, bool fHelp)
     throw runtime_error("unknown");
 }
 
-Value masternodedebug (const Array& params, bool fHelp)
+UniValue masternodedebug (const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() != 0))
         throw runtime_error(
@@ -436,10 +505,11 @@ Value masternodedebug (const Array& params, bool fHelp)
         return activeMasternode.GetStatus();
 }
 
-Value startmasternode (const Array& params, bool fHelp)
+UniValue startmasternode (const UniValue& params, bool fHelp)
 {
     std::string strCommand;
-    if (params.size() >= 1) {
+    if (params.size() >= 1)
+    {
         strCommand = params[0].get_str();
 
         // Backwards compatibility with legacy 'masternode' super-command forwarder
@@ -452,8 +522,8 @@ Value startmasternode (const Array& params, bool fHelp)
     }
 
     if (fHelp || params.size() < 2 || params.size() > 3 ||
-        (params.size() == 2 && (strCommand != "local" && strCommand != "all" && strCommand != "many" && strCommand != "missing" && strCommand != "disabled")) ||
-        (params.size() == 3 && strCommand != "alias"))
+            (params.size() == 2 && (strCommand != "local" && strCommand != "all" && strCommand != "many" && strCommand != "missing" && strCommand != "disabled")) ||
+            (params.size() == 3 && strCommand != "alias"))
         throw runtime_error(
             "startmasternode \"local|all|many|missing|disabled|alias\" lockwallet ( \"alias\" )\n"
             "\nAttempts to start one or more masternode(s)\n"
@@ -479,17 +549,19 @@ Value startmasternode (const Array& params, bool fHelp)
             "  ]\n"
             "}\n"
             "\nExamples:\n" +
-            HelpExampleCli("masternodestart", "\"alias\" \"my_mn\"") + HelpExampleRpc("masternodestart", "\"alias\" \"my_mn\""));
+            HelpExampleCli("startmasternode", "\"alias\" \"0\" \"my_mn\"") + HelpExampleRpc("startmasternode", "\"alias\" \"0\" \"my_mn\""));
 
     bool fLock = (params[1].get_str() == "true" ? true : false);
 
-    if (strCommand == "local") {
+    if (strCommand == "local")
+    {
         if (!fMasterNode) throw runtime_error("you must set masternode=1 in the configuration\n");
 
         if (pwalletMain->IsLocked())
             throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-        if (activeMasternode.status != ACTIVE_MASTERNODE_STARTED) {
+        if (activeMasternode.status != ACTIVE_MASTERNODE_STARTED)
+        {
             activeMasternode.status = ACTIVE_MASTERNODE_INITIAL; // TODO: consider better way
             activeMasternode.ManageStatus();
             if (fLock)
@@ -499,13 +571,15 @@ Value startmasternode (const Array& params, bool fHelp)
         return activeMasternode.GetStatus();
     }
 
-    if (strCommand == "all" || strCommand == "many" || strCommand == "missing" || strCommand == "disabled") {
+    if (strCommand == "all" || strCommand == "many" || strCommand == "missing" || strCommand == "disabled")
+    {
         if (pwalletMain->IsLocked())
             throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
         if ((strCommand == "missing" || strCommand == "disabled") &&
-            (masternodeSync.RequestedMasternodeAssets <= MASTERNODE_SYNC_LIST ||
-                masternodeSync.RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED)) {
+                (masternodeSync.RequestedMasternodeAssets <= MASTERNODE_SYNC_LIST ||
+                 masternodeSync.RequestedMasternodeAssets == MASTERNODE_SYNC_FAILED))
+        {
             throw runtime_error("You can't use this command until masternode list is synced\n");
         }
 
@@ -515,9 +589,10 @@ Value startmasternode (const Array& params, bool fHelp)
         int successful = 0;
         int failed = 0;
 
-        Array resultsObj;
+        UniValue resultsObj(UniValue::VARR);
 
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries())
+        {
             std::string errorMessage;
             int nIndex;
             if(!mne.castOutputIndex(nIndex))
@@ -525,21 +600,25 @@ Value startmasternode (const Array& params, bool fHelp)
             CTxIn vin = CTxIn(uint256(mne.getTxHash()), uint32_t(nIndex));
             CMasternode* pmn = mnodeman.Find(vin);
 
-            if (pmn != NULL) {
+            if (pmn != NULL)
+            {
                 if (strCommand == "missing") continue;
                 if (strCommand == "disabled" && pmn->IsEnabled()) continue;
             }
 
             bool result = activeMasternode.Register(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage);
 
-            Object statusObj;
+            UniValue statusObj(UniValue::VOBJ);
             statusObj.push_back(Pair("alias", mne.getAlias()));
             statusObj.push_back(Pair("result", result ? "success" : "failed"));
 
-            if (result) {
+            if (result)
+            {
                 successful++;
                 statusObj.push_back(Pair("error", ""));
-            } else {
+            }
+            else
+            {
                 failed++;
                 statusObj.push_back(Pair("error", errorMessage));
             }
@@ -549,14 +628,15 @@ Value startmasternode (const Array& params, bool fHelp)
         if (fLock)
             pwalletMain->Lock();
 
-        Object returnObj;
+        UniValue returnObj(UniValue::VOBJ);
         returnObj.push_back(Pair("overall", strprintf("Successfully started %d masternodes, failed to start %d, total %d", successful, failed, successful + failed)));
         returnObj.push_back(Pair("detail", resultsObj));
 
         return returnObj;
     }
 
-    if (strCommand == "alias") {
+    if (strCommand == "alias")
+    {
         std::string alias = params[2].get_str();
 
         if (pwalletMain->IsLocked())
@@ -566,12 +646,14 @@ Value startmasternode (const Array& params, bool fHelp)
         int successful = 0;
         int failed = 0;
 
-        Array resultsObj;
-        Object statusObj;
+        UniValue resultsObj(UniValue::VARR);
+        UniValue statusObj(UniValue::VOBJ);
         statusObj.push_back(Pair("alias", alias));
 
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
-            if (mne.getAlias() == alias) {
+        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries())
+        {
+            if (mne.getAlias() == alias)
+            {
                 found = true;
                 std::string errorMessage;
 
@@ -579,10 +661,13 @@ Value startmasternode (const Array& params, bool fHelp)
 
                 statusObj.push_back(Pair("result", result ? "successful" : "failed"));
 
-                if (result) {
+                if (result)
+                {
                     successful++;
                     statusObj.push_back(Pair("error", ""));
-                } else {
+                }
+                else
+                {
                     failed++;
                     statusObj.push_back(Pair("error", errorMessage));
                 }
@@ -590,7 +675,8 @@ Value startmasternode (const Array& params, bool fHelp)
             }
         }
 
-        if (!found) {
+        if (!found)
+        {
             failed++;
             statusObj.push_back(Pair("result", "failed"));
             statusObj.push_back(Pair("error", "could not find alias in config. Verify with list-conf."));
@@ -601,16 +687,16 @@ Value startmasternode (const Array& params, bool fHelp)
         if (fLock)
             pwalletMain->Lock();
 
-        Object returnObj;
+        UniValue returnObj(UniValue::VOBJ);
         returnObj.push_back(Pair("overall", strprintf("Successfully started %d masternodes, failed to start %d, total %d", successful, failed, successful + failed)));
         returnObj.push_back(Pair("detail", resultsObj));
 
         return returnObj;
     }
-    return Value::null;
+    return NullUniValue;
 }
 
-Value createmasternodekey (const Array& params, bool fHelp)
+UniValue createmasternodekey (const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() != 0))
         throw runtime_error(
@@ -628,7 +714,7 @@ Value createmasternodekey (const Array& params, bool fHelp)
     return CBitcoinSecret(secret).ToString();
 }
 
-Value getmasternodeoutputs (const Array& params, bool fHelp)
+UniValue getmasternodeoutputs (const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() != 0))
         throw runtime_error(
@@ -650,9 +736,10 @@ Value getmasternodeoutputs (const Array& params, bool fHelp)
     // Find possible candidates
     vector<COutput> possibleCoins = activeMasternode.SelectCoinsMasternode();
 
-    Array ret;
-    BOOST_FOREACH (COutput& out, possibleCoins) {
-        Object obj;
+    UniValue ret(UniValue::VARR);
+    BOOST_FOREACH(COutput& out, possibleCoins)
+    {
+        UniValue obj(UniValue::VOBJ);
         obj.push_back(Pair("txhash", out.tx->GetHash().ToString()));
         obj.push_back(Pair("outputidx", out.i));
         ret.push_back(obj);
@@ -661,7 +748,7 @@ Value getmasternodeoutputs (const Array& params, bool fHelp)
     return ret;
 }
 
-Value listmasternodeconf (const Array& params, bool fHelp)
+UniValue listmasternodeconf (const UniValue& params, bool fHelp)
 {
     std::string strFilter = "";
 
@@ -694,9 +781,10 @@ Value listmasternodeconf (const Array& params, bool fHelp)
     std::vector<CMasternodeConfig::CMasternodeEntry> mnEntries;
     mnEntries = masternodeConfig.getEntries();
 
-    Array ret;
+    UniValue ret(UniValue::VARR);
 
-    BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+    BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries())
+    {
         int nIndex;
         if(!mne.castOutputIndex(nIndex))
             continue;
@@ -706,11 +794,11 @@ Value listmasternodeconf (const Array& params, bool fHelp)
         std::string strStatus = pmn ? pmn->Status() : "MISSING";
 
         if (strFilter != "" && mne.getAlias().find(strFilter) == string::npos &&
-            mne.getIp().find(strFilter) == string::npos &&
-            mne.getTxHash().find(strFilter) == string::npos &&
-            strStatus.find(strFilter) == string::npos) continue;
+                mne.getIp().find(strFilter) == string::npos &&
+                mne.getTxHash().find(strFilter) == string::npos &&
+                strStatus.find(strFilter) == string::npos) continue;
 
-        Object mnObj;
+        UniValue mnObj(UniValue::VOBJ);
         mnObj.push_back(Pair("alias", mne.getAlias()));
         mnObj.push_back(Pair("address", mne.getIp()));
         mnObj.push_back(Pair("privateKey", mne.getPrivKey()));
@@ -723,7 +811,7 @@ Value listmasternodeconf (const Array& params, bool fHelp)
     return ret;
 }
 
-Value getmasternodestatus (const Array& params, bool fHelp)
+UniValue getmasternodestatus (const UniValue& params, bool fHelp)
 {
     if (fHelp || (params.size() != 0))
         throw runtime_error(
@@ -747,8 +835,9 @@ Value getmasternodestatus (const Array& params, bool fHelp)
 
     CMasternode* pmn = mnodeman.Find(activeMasternode.vin);
 
-    if (pmn) {
-        Object mnObj;
+    if (pmn)
+    {
+        UniValue mnObj(UniValue::VOBJ);
         mnObj.push_back(Pair("txhash", activeMasternode.vin.prevout.hash.ToString()));
         mnObj.push_back(Pair("outputidx", (uint64_t)activeMasternode.vin.prevout.n));
         mnObj.push_back(Pair("netaddr", activeMasternode.service.ToString()));
@@ -761,7 +850,7 @@ Value getmasternodestatus (const Array& params, bool fHelp)
                         + activeMasternode.GetStatus());
 }
 
-Value getmasternodewinners (const Array& params, bool fHelp)
+UniValue getmasternodewinners (const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() > 3)
         throw runtime_error(
@@ -818,21 +907,24 @@ Value getmasternodewinners (const Array& params, bool fHelp)
     if (params.size() == 2)
         strFilter = params[1].get_str();
 
-    Array ret;
+    UniValue ret(UniValue::VARR);
 
-    for (int i = nHeight - nLast; i < nHeight + 20; i++) {
-        Object obj;
+    for (int i = nHeight - nLast; i < nHeight + 20; i++)
+    {
+        UniValue obj(UniValue::VOBJ);
         obj.push_back(Pair("nHeight", i));
 
         std::string strPayment = GetRequiredPaymentsString(i);
         if (strFilter != "" && strPayment.find(strFilter) == std::string::npos) continue;
 
-        if (strPayment.find(',') != std::string::npos) {
-            Array winner;
+        if (strPayment.find(',') != std::string::npos)
+        {
+            UniValue winner(UniValue::VARR);
             boost::char_separator<char> sep(",");
             boost::tokenizer< boost::char_separator<char> > tokens(strPayment, sep);
-            BOOST_FOREACH (const string& t, tokens) {
-                Object addr;
+            BOOST_FOREACH(const string& t, tokens)
+            {
+                UniValue addr(UniValue::VOBJ);
                 std::size_t pos = t.find(":");
                 std::string strAddress = t.substr(0,pos);
                 uint64_t nVotes = atoi(t.substr(pos+1));
@@ -841,28 +933,32 @@ Value getmasternodewinners (const Array& params, bool fHelp)
                 winner.push_back(addr);
             }
             obj.push_back(Pair("winner", winner));
-        } else if (strPayment.find("Unknown") == std::string::npos) {
-            Object winner;
+        }
+        else if (strPayment.find("Unknown") == std::string::npos)
+        {
+            UniValue winner(UniValue::VOBJ);
             std::size_t pos = strPayment.find(":");
             std::string strAddress = strPayment.substr(0,pos);
             uint64_t nVotes = atoi(strPayment.substr(pos+1));
             winner.push_back(Pair("address", strAddress));
             winner.push_back(Pair("nVotes", nVotes));
             obj.push_back(Pair("winner", winner));
-        } else {
-            Object winner;
+        }
+        else
+        {
+            UniValue winner(UniValue::VOBJ);
             winner.push_back(Pair("address", strPayment));
             winner.push_back(Pair("nVotes", 0));
             obj.push_back(Pair("winner", winner));
         }
 
-            ret.push_back(obj);
+        ret.push_back(obj);
     }
 
     return ret;
 }
 
-Value getmasternodescores (const Array& params, bool fHelp)
+UniValue getmasternodescores (const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)
         throw runtime_error(
@@ -882,22 +978,29 @@ Value getmasternodescores (const Array& params, bool fHelp)
 
     int nLast = 10;
 
-    if (params.size() == 1) {
-        try {
+    if (params.size() == 1)
+    {
+        try
+        {
             nLast = std::stoi(params[0].get_str());
-        } catch (const boost::bad_lexical_cast &) {
+        }
+        catch (const boost::bad_lexical_cast &)
+        {
             throw runtime_error("Exception on param 2");
         }
     }
-    Object obj;
+    UniValue obj(UniValue::VOBJ);
 
     std::vector<CMasternode> vMasternodes = mnodeman.GetFullMasternodeVector();
-    for (int nHeight = chainActive.Tip()->nHeight - nLast; nHeight < chainActive.Tip()->nHeight + 20; nHeight++) {
+    for (int nHeight = chainActive.Tip()->nHeight - nLast; nHeight < chainActive.Tip()->nHeight + 20; nHeight++)
+    {
         uint256 nHigh = 0;
         CMasternode* pBestMasternode = NULL;
-        BOOST_FOREACH (CMasternode& mn, vMasternodes) {
+        BOOST_FOREACH(CMasternode& mn, vMasternodes)
+        {
             uint256 n = mn.CalculateScore(1, nHeight - 100);
-            if (n > nHigh) {
+            if (n > nHigh)
+            {
                 nHigh = n;
                 pBestMasternode = &mn;
             }

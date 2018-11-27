@@ -47,7 +47,8 @@ static inline void be32enc(void *pp, uint32_t x)
 }
 #endif
 
-typedef struct HMAC_SHA256Context {
+typedef struct HMAC_SHA256Context
+{
     SHA256_CTX ictx;
     SHA256_CTX octx;
 } HMAC_SHA256_CTX;
@@ -62,7 +63,8 @@ HMAC_SHA256_Init(HMAC_SHA256_CTX *ctx, const void *_K, size_t Klen)
     size_t i;
 
     /* If Klen > 64, the key is really SHA256(K). */
-    if (Klen > 64) {
+    if (Klen > 64)
+    {
         SHA256_Init(&ctx->ictx);
         SHA256_Update(&ctx->ictx, K, Klen);
         SHA256_Final(khash, &ctx->ictx);
@@ -138,7 +140,8 @@ PBKDF2_SHA256(const uint8_t *passwd, size_t passwdlen, const uint8_t *salt,
     HMAC_SHA256_Update(&PShctx, salt, saltlen);
 
     /* Iterate through the blocks. */
-    for (i = 0; i * 32 < dkLen; i++) {
+    for (i = 0; i * 32 < dkLen; i++)
+    {
         /* Generate INT(i + 1). */
         be32enc(ivec, (uint32_t)(i + 1));
 
@@ -150,7 +153,8 @@ PBKDF2_SHA256(const uint8_t *passwd, size_t passwdlen, const uint8_t *salt,
         /* T_i = U_1 ... */
         memcpy(T, U, 32);
 
-        for (j = 2; j <= c; j++) {
+        for (j = 2; j <= c; j++)
+        {
             /* Compute U_j. */
             HMAC_SHA256_Init(&hctx, passwd, passwdlen);
             HMAC_SHA256_Update(&hctx, U, 32);
@@ -227,33 +231,50 @@ salsa20_8(uint32_t B[16])
     size_t i;
 
     blkcpy(x, B, 64);
-    for (i = 0; i < 8; i += 2) {
+    for (i = 0; i < 8; i += 2)
+    {
 #define R(a,b) (((a) << (b)) | ((a) >> (32 - (b))))
         /* Operate on columns. */
-        x[ 4] ^= R(x[ 0]+x[12], 7);  x[ 8] ^= R(x[ 4]+x[ 0], 9);
-        x[12] ^= R(x[ 8]+x[ 4],13);  x[ 0] ^= R(x[12]+x[ 8],18);
+        x[ 4] ^= R(x[ 0]+x[12], 7);
+        x[ 8] ^= R(x[ 4]+x[ 0], 9);
+        x[12] ^= R(x[ 8]+x[ 4],13);
+        x[ 0] ^= R(x[12]+x[ 8],18);
 
-        x[ 9] ^= R(x[ 5]+x[ 1], 7);  x[13] ^= R(x[ 9]+x[ 5], 9);
-        x[ 1] ^= R(x[13]+x[ 9],13);  x[ 5] ^= R(x[ 1]+x[13],18);
+        x[ 9] ^= R(x[ 5]+x[ 1], 7);
+        x[13] ^= R(x[ 9]+x[ 5], 9);
+        x[ 1] ^= R(x[13]+x[ 9],13);
+        x[ 5] ^= R(x[ 1]+x[13],18);
 
-        x[14] ^= R(x[10]+x[ 6], 7);  x[ 2] ^= R(x[14]+x[10], 9);
-        x[ 6] ^= R(x[ 2]+x[14],13);  x[10] ^= R(x[ 6]+x[ 2],18);
+        x[14] ^= R(x[10]+x[ 6], 7);
+        x[ 2] ^= R(x[14]+x[10], 9);
+        x[ 6] ^= R(x[ 2]+x[14],13);
+        x[10] ^= R(x[ 6]+x[ 2],18);
 
-        x[ 3] ^= R(x[15]+x[11], 7);  x[ 7] ^= R(x[ 3]+x[15], 9);
-        x[11] ^= R(x[ 7]+x[ 3],13);  x[15] ^= R(x[11]+x[ 7],18);
+        x[ 3] ^= R(x[15]+x[11], 7);
+        x[ 7] ^= R(x[ 3]+x[15], 9);
+        x[11] ^= R(x[ 7]+x[ 3],13);
+        x[15] ^= R(x[11]+x[ 7],18);
 
         /* Operate on rows. */
-        x[ 1] ^= R(x[ 0]+x[ 3], 7);  x[ 2] ^= R(x[ 1]+x[ 0], 9);
-        x[ 3] ^= R(x[ 2]+x[ 1],13);  x[ 0] ^= R(x[ 3]+x[ 2],18);
+        x[ 1] ^= R(x[ 0]+x[ 3], 7);
+        x[ 2] ^= R(x[ 1]+x[ 0], 9);
+        x[ 3] ^= R(x[ 2]+x[ 1],13);
+        x[ 0] ^= R(x[ 3]+x[ 2],18);
 
-        x[ 6] ^= R(x[ 5]+x[ 4], 7);  x[ 7] ^= R(x[ 6]+x[ 5], 9);
-        x[ 4] ^= R(x[ 7]+x[ 6],13);  x[ 5] ^= R(x[ 4]+x[ 7],18);
+        x[ 6] ^= R(x[ 5]+x[ 4], 7);
+        x[ 7] ^= R(x[ 6]+x[ 5], 9);
+        x[ 4] ^= R(x[ 7]+x[ 6],13);
+        x[ 5] ^= R(x[ 4]+x[ 7],18);
 
-        x[11] ^= R(x[10]+x[ 9], 7);  x[ 8] ^= R(x[11]+x[10], 9);
-        x[ 9] ^= R(x[ 8]+x[11],13);  x[10] ^= R(x[ 9]+x[ 8],18);
+        x[11] ^= R(x[10]+x[ 9], 7);
+        x[ 8] ^= R(x[11]+x[10], 9);
+        x[ 9] ^= R(x[ 8]+x[11],13);
+        x[10] ^= R(x[ 9]+x[ 8],18);
 
-        x[12] ^= R(x[15]+x[14], 7);  x[13] ^= R(x[12]+x[15], 9);
-        x[14] ^= R(x[13]+x[12],13);  x[15] ^= R(x[14]+x[13],18);
+        x[12] ^= R(x[15]+x[14], 7);
+        x[13] ^= R(x[12]+x[15], 9);
+        x[14] ^= R(x[13]+x[12],13);
+        x[15] ^= R(x[14]+x[13],18);
 #undef R
     }
     for (i = 0; i < 16; i++)
@@ -275,7 +296,8 @@ blockmix_salsa8(const uint32_t * Bin, uint32_t * Bout, uint32_t * X, size_t r)
     blkcpy(X, &Bin[(2 * r - 1) * 16], 64);
 
     /* 2: for i = 0 to 2r - 1 do */
-    for (i = 0; i < 2 * r; i += 2) {
+    for (i = 0; i < 2 * r; i += 2)
+    {
         /* 3: X <-- H(X \xor B_i) */
         blkxor(X, &Bin[i * 16], 64);
         salsa20_8(X);

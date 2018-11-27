@@ -1,8 +1,8 @@
-
-
 // Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2015-2017 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #ifndef MASTERNODE_PAYMENTS_H
 #define MASTERNODE_PAYMENTS_H
 
@@ -43,7 +43,8 @@ private:
     std::string strMagicMessage;
 
 public:
-    enum ReadResult {
+    enum ReadResult
+    {
         Ok,
         FileError,
         HashReadError,
@@ -108,8 +109,10 @@ public:
     {
         LOCK(cs_vecPayments);
 
-        BOOST_FOREACH (CMasternodePayee& payee, vecPayments) {
-            if (payee.scriptPubKey == payeeIn) {
+        BOOST_FOREACH(CMasternodePayee& payee, vecPayments)
+        {
+            if (payee.scriptPubKey == payeeIn)
+            {
                 payee.nVotes += nIncrement;
                 return;
             }
@@ -124,8 +127,10 @@ public:
         LOCK(cs_vecPayments);
 
         int nVotes = -1;
-        BOOST_FOREACH (CMasternodePayee& p, vecPayments) {
-            if (p.nVotes > nVotes) {
+        BOOST_FOREACH(CMasternodePayee& p, vecPayments)
+        {
+            if (p.nVotes > nVotes)
+            {
                 payee = p.scriptPubKey;
                 nVotes = p.nVotes;
             }
@@ -138,7 +143,8 @@ public:
     {
         LOCK(cs_vecPayments);
 
-        BOOST_FOREACH (CMasternodePayee& p, vecPayments) {
+        BOOST_FOREACH(CMasternodePayee& p, vecPayments)
+        {
             if (p.nVotes >= nVotesReq && p.scriptPubKey == payee) return true;
         }
 
@@ -269,8 +275,10 @@ public:
     {
         LOCK(cs_mapMasternodePayeeVotes);
 
-        if (mapMasternodesLastVote.count(outMasternode.hash + outMasternode.n)) {
-            if (mapMasternodesLastVote[outMasternode.hash + outMasternode.n] == nBlockHeight) {
+        if (mapMasternodesLastVote.count(outMasternode.hash + outMasternode.n))
+        {
+            if (mapMasternodesLastVote[outMasternode.hash + outMasternode.n] == nBlockHeight)
+            {
                 return false;
             }
         }

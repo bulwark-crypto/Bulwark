@@ -11,14 +11,16 @@
 #include "field.h"
 
 /** A group element of the secp256k1 curve, in affine coordinates. */
-typedef struct {
+typedef struct
+{
     secp256k1_fe_t x;
     secp256k1_fe_t y;
     int infinity; /* whether this represents the point at infinity */
 } secp256k1_ge_t;
 
 /** A group element of the secp256k1 curve, in jacobian coordinates. */
-typedef struct {
+typedef struct
+{
     secp256k1_fe_t x; /* actual X: x/z^2 */
     secp256k1_fe_t y; /* actual Y: y/z^3 */
     secp256k1_fe_t z;
@@ -26,7 +28,8 @@ typedef struct {
 } secp256k1_gej_t;
 
 /** Global constants related to the group */
-typedef struct {
+typedef struct
+{
     secp256k1_ge_t g; /* the generator point */
 
 #ifdef USE_ENDOMORPHISM

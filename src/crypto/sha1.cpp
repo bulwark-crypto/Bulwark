@@ -21,11 +21,23 @@ void inline Round(uint32_t a, uint32_t& b, uint32_t c, uint32_t d, uint32_t& e, 
     b = (b << 30) | (b >> 2);
 }
 
-uint32_t inline f1(uint32_t b, uint32_t c, uint32_t d) { return d ^ (b & (c ^ d)); }
-uint32_t inline f2(uint32_t b, uint32_t c, uint32_t d) { return b ^ c ^ d; }
-uint32_t inline f3(uint32_t b, uint32_t c, uint32_t d) { return (b & c) | (d & (b | c)); }
+uint32_t inline f1(uint32_t b, uint32_t c, uint32_t d)
+{
+    return d ^ (b & (c ^ d));
+}
+uint32_t inline f2(uint32_t b, uint32_t c, uint32_t d)
+{
+    return b ^ c ^ d;
+}
+uint32_t inline f3(uint32_t b, uint32_t c, uint32_t d)
+{
+    return (b & c) | (d & (b | c));
+}
 
-uint32_t inline left(uint32_t x) { return (x << 1) | (x >> 31); }
+uint32_t inline left(uint32_t x)
+{
+    return (x << 1) | (x >> 31);
+}
 
 /** Initialize SHA-1 state. */
 void inline Initialize(uint32_t* s)
@@ -155,7 +167,8 @@ CSHA1& CSHA1::Write(const unsigned char* data, size_t len)
 {
     const unsigned char* end = data + len;
     size_t bufsize = bytes % 64;
-    if (bufsize && bufsize + len >= 64) {
+    if (bufsize && bufsize + len >= 64)
+    {
         // Fill the buffer, and process it.
         memcpy(buf + bufsize, data, 64 - bufsize);
         bytes += 64 - bufsize;
@@ -163,13 +176,15 @@ CSHA1& CSHA1::Write(const unsigned char* data, size_t len)
         sha1::Transform(s, buf);
         bufsize = 0;
     }
-    while (end >= data + 64) {
+    while (end >= data + 64)
+    {
         // Process full chunks directly from the source.
         sha1::Transform(s, data);
         bytes += 64;
         data += 64;
     }
-    if (end > data) {
+    if (end > data)
+    {
         // Fill the buffer with what remains.
         memcpy(buf + bufsize, data, end - data);
         bytes += end - data;

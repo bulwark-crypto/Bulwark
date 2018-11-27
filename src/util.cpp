@@ -111,15 +111,20 @@ bool fMasterNode = false;
 string strMasterNodePrivKey = "";
 string strMasterNodeAddr = "";
 bool fLiteMode = false;
+// SwiftX
 bool fEnableSwiftTX = true;
 int nSwiftTXDepth = 5;
-int nObfuscationRounds = 2;
+// Automatic Zerocoin minting
+bool fEnableZeromint = true;
+int nZeromintPercentage = 10;
+int nPreferredDenom = 0;
+const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
+
 int nAnonymizeBulwarkAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
 bool fSucessfullyLoaded = false;
-bool fEnableObfuscation = false;
 /** All denominations used by obfuscation */
 std::vector<int64_t> obfuScationDenominations;
 string strBudgetMode = "";
@@ -140,9 +145,12 @@ volatile bool fReopenDebugLog = false;
 static CCriticalSection** ppmutexOpenSSL;
 void locking_callback(int mode, int i, const char* file, int line)
 {
-    if (mode & CRYPTO_LOCK) {
+    if (mode & CRYPTO_LOCK)
+    {
         ENTER_CRITICAL_SECTION(*ppmutexOpenSSL[i]);
-    } else {
+    }
+    else
+    {
         LEAVE_CRITICAL_SECTION(*ppmutexOpenSSL[i]);
     }
 }
@@ -219,7 +227,8 @@ static void DebugPrintInit()
 
 bool LogAcceptCategory(const char* category)
 {
-    if (category != NULL) {
+    if (category != NULL)
+    {
         if (!fDebug)
             return false;
 
@@ -228,16 +237,19 @@ bool LogAcceptCategory(const char* category)
         // where mapMultiArgs might be deleted before another
         // global destructor calls LogPrint()
         static boost::thread_specific_ptr<set<string> > ptrCategory;
-        if (ptrCategory.get() == NULL) {
+        if (ptrCategory.get() == NULL)
+        {
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
             // "bulwark" is a composite category enabling all Bulwark-related debug output
-            if (ptrCategory->count(string("bulwark"))) {
+            if (ptrCategory->count(string("bulwark")))
+            {
                 ptrCategory->insert(string("obfuscation"));
-                ptrCategory->insert(string("swifttx"));
+                ptrCategory->insert(string("swiftx"));
                 ptrCategory->insert(string("masternode"));
                 ptrCategory->insert(string("mnpayments"));
+                ptrCategory->insert(string("zero"));
                 ptrCategory->insert(string("mnbudget"));
             }
         }
@@ -245,7 +257,7 @@ bool LogAcceptCategory(const char* category)
 
         // if not debugging everything and not debugging specific category, LogPrint does nothing.
         if (setCategories.count(string("")) == 0 &&
-            setCategories.count(string(category)) == 0)
+                setCategories.count(string(category)) == 0)
             return false;
     }
     return true;
@@ -254,11 +266,14 @@ bool LogAcceptCategory(const char* category)
 int LogPrintStr(const std::string& str)
 {
     int ret = 0; // Returns total number of characters written
-    if (fPrintToConsole) {
+    if (fPrintToConsole)
+    {
         // print to console
         ret = fwrite(str.data(), 1, str.size(), stdout);
         fflush(stdout);
-    } else if (fPrintToDebugLog && AreBaseParamsConfigured()) {
+    }
+    else if (fPrintToDebugLog && AreBaseParamsConfigured())
+    {
         static bool fStartedNewLine = true;
         boost::call_once(&DebugPrintInit, debugPrintInitFlag);
 
@@ -268,7 +283,8 @@ int LogPrintStr(const std::string& str)
         boost::mutex::scoped_lock scoped_lock(*mutexDebugLog);
 
         // reopen the log file, if requested
-        if (fReopenDebugLog) {
+        if (fReopenDebugLog)
+        {
             fReopenDebugLog = false;
             boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
             if (freopen(pathDebug.string().c_str(), "a", fileout) != NULL)
@@ -289,19 +305,22 @@ int LogPrintStr(const std::string& str)
     return ret;
 }
 
+/** Interpret string as boolean, for argument parsing */
 static bool InterpretBool(const std::string& strValue)
 {
-	if (strValue.empty())
-		return true;
-	return (atoi(strValue) != 0);
+    if (strValue.empty())
+        return true;
+    return (atoi(strValue) != 0);
 }
 
+/** Turn -noX into -X=0 */
 static void InterpretNegativeSetting(std::string& strKey, std::string& strValue)
 {
-	if (strKey.length()>3 && strKey[0]=='-' && strKey[1]=='n' && strKey[2]=='o') {
-		strKey = "-" + strKey.substr(3);
-		strValue = InterpretBool(strValue) ? "0" : "1";
-	}
+    if (strKey.length()>3 && strKey[0]=='-' && strKey[1]=='n' && strKey[2]=='o')
+    {
+        strKey = "-" + strKey.substr(3);
+        strValue = InterpretBool(strValue) ? "0" : "1";
+    }
 }
 
 void ParseParameters(int argc, const char* const argv[])
@@ -309,11 +328,13 @@ void ParseParameters(int argc, const char* const argv[])
     mapArgs.clear();
     mapMultiArgs.clear();
 
-    for (int i = 1; i < argc; i++) {
+    for (int i = 1; i < argc; i++)
+    {
         std::string str(argv[i]);
         std::string strValue;
         size_t is_index = str.find('=');
-        if (is_index != std::string::npos) {
+        if (is_index != std::string::npos)
+        {
             strValue = str.substr(is_index + 1);
             str = str.substr(0, is_index);
         }
@@ -330,12 +351,11 @@ void ParseParameters(int argc, const char* const argv[])
         // If both --foo and -foo are set, the last takes effect.
         if (str.length() > 1 && str[1] == '-')
             str = str.substr(1);
-	InterpretNegativeSetting(str, strValue);
+        InterpretNegativeSetting(str, strValue);
 
         mapArgs[str] = strValue;
         mapMultiArgs[str].push_back(strValue);
     }
-
 }
 
 std::string GetArg(const std::string& strArg, const std::string& strDefault)
@@ -347,16 +367,16 @@ std::string GetArg(const std::string& strArg, const std::string& strDefault)
 
 int64_t GetArg(const std::string& strArg, int64_t nDefault)
 {
-	if (mapArgs.count(strArg))
-		return atoi64(mapArgs[strArg]);
-	return nDefault;
+    if (mapArgs.count(strArg))
+        return atoi64(mapArgs[strArg]);
+    return nDefault;
 }
 
 bool GetBoolArg(const std::string& strArg, bool fDefault)
 {
-	if (mapArgs.count(strArg))
-		return InterpretBool(mapArgs[strArg]);
-	return fDefault;
+    if (mapArgs.count(strArg))
+        return InterpretBool(mapArgs[strArg]);
+    return fDefault;
 }
 
 bool SoftSetArg(const std::string& strArg, const std::string& strValue)
@@ -379,11 +399,13 @@ static const int screenWidth = 79;
 static const int optIndent = 2;
 static const int msgIndent = 7;
 
-std::string HelpMessageGroup(const std::string &message) {
+std::string HelpMessageGroup(const std::string &message)
+{
     return std::string(message) + std::string("\n\n");
 }
 
-std::string HelpMessageOpt(const std::string &option, const std::string &message) {
+std::string HelpMessageOpt(const std::string &option, const std::string &message)
+{
     return std::string(optIndent,' ') + std::string(option) +
            std::string("\n") + std::string(msgIndent,' ') +
            FormatParagraph(message, screenWidth - msgIndent, msgIndent) +
@@ -400,10 +422,10 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
 #endif
     if (pex)
         return strprintf(
-            "EXCEPTION: %s       \n%s       \n%s in %s       \n", typeid(*pex).name(), pex->what(), pszModule, pszThread);
+                   "EXCEPTION: %s       \n%s       \n%s in %s       \n", typeid(*pex).name(), pex->what(), pszModule, pszThread);
     else
         return strprintf(
-            "UNKNOWN EXCEPTION       \n%s in %s       \n", pszModule, pszThread);
+                   "UNKNOWN EXCEPTION       \n%s in %s       \n", pszModule, pszThread);
 }
 
 void PrintExceptionContinue(std::exception* pex, const char* pszThread)
@@ -460,13 +482,17 @@ const boost::filesystem::path& GetDataDir(bool fNetSpecific)
     if (!path.empty())
         return path;
 
-    if (mapArgs.count("-datadir")) {
+    if (mapArgs.count("-datadir"))
+    {
         path = fs::system_complete(mapArgs["-datadir"]);
-        if (!fs::is_directory(path)) {
+        if (!fs::is_directory(path))
+        {
             path = "";
             return path;
         }
-    } else {
+    }
+    else
+    {
         path = GetDefaultDataDir();
     }
     if (fNetSpecific)
@@ -500,10 +526,11 @@ boost::filesystem::path GetMasternodeConfigFile()
 }
 
 void ReadConfigFile(map<string, string>& mapSettingsRet,
-    map<string, vector<string> >& mapMultiSettingsRet)
+                    map<string, vector<string> >& mapMultiSettingsRet)
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
-    if (!streamConfig.good()) {
+    if (!streamConfig.good())
+    {
         // Create empty bulwark.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
@@ -514,15 +541,15 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     set<string> setOptions;
     setOptions.insert("*");
 
-    for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
+    for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
+    {
         // Don't overwrite existing settings so command line settings override bulwark.conf
         string strKey = string("-") + it->string_key;
-    	string strValue = it->value[0];
-	InterpretNegativeSetting(strKey, strValue);
-	if (mapSettingsRet.count(strKey) == 0)
-		mapSettingsRet[strKey] = strValue;
-	mapMultiSettingsRet[strKey].push_back(strValue);
-
+        string strValue = it->value[0];
+        InterpretNegativeSetting(strKey, strValue);
+        if (mapSettingsRet.count(strKey) == 0)
+            mapSettingsRet[strKey] = strValue;
+        mapMultiSettingsRet[strKey].push_back(strValue);
     }
     // If datadir is changed in .conf file:
     ClearDatadirCache();
@@ -539,7 +566,8 @@ boost::filesystem::path GetPidFile()
 void CreatePidFile(const boost::filesystem::path& path, pid_t pid)
 {
     FILE* file = fopen(path.string().c_str(), "w");
-    if (file) {
+    if (file)
+    {
         fprintf(file, "%d\n", pid);
         fclose(file);
     }
@@ -550,7 +578,7 @@ bool RenameOver(boost::filesystem::path src, boost::filesystem::path dest)
 {
 #ifdef WIN32
     return MoveFileExA(src.string().c_str(), dest.string().c_str(),
-               MOVEFILE_REPLACE_EXISTING) != 0;
+                       MOVEFILE_REPLACE_EXISTING) != 0;
 #else
     int rc = std::rename(src.string().c_str(), dest.string().c_str());
     return (rc == 0);
@@ -564,9 +592,12 @@ bool RenameOver(boost::filesystem::path src, boost::filesystem::path dest)
  */
 bool TryCreateDirectory(const boost::filesystem::path& p)
 {
-    try {
+    try
+    {
         return boost::filesystem::create_directory(p);
-    } catch (boost::filesystem::filesystem_error) {
+    }
+    catch (boost::filesystem::filesystem_error)
+    {
         if (!boost::filesystem::exists(p) || !boost::filesystem::is_directory(p))
             throw;
     }
@@ -611,8 +642,10 @@ int RaiseFileDescriptorLimit(int nMinFD)
     return 2048;
 #else
     struct rlimit limitFD;
-    if (getrlimit(RLIMIT_NOFILE, &limitFD) != -1) {
-        if (limitFD.rlim_cur < (rlim_t)nMinFD) {
+    if (getrlimit(RLIMIT_NOFILE, &limitFD) != -1)
+    {
+        if (limitFD.rlim_cur < (rlim_t)nMinFD)
+        {
             limitFD.rlim_cur = nMinFD;
             if (limitFD.rlim_cur > limitFD.rlim_max)
                 limitFD.rlim_cur = limitFD.rlim_max;
@@ -648,7 +681,8 @@ void AllocateFileRange(FILE* file, unsigned int offset, unsigned int length)
     fst.fst_offset = 0;
     fst.fst_length = (off_t)offset + length;
     fst.fst_bytesalloc = 0;
-    if (fcntl(fileno(file), F_PREALLOCATE, &fst) == -1) {
+    if (fcntl(fileno(file), F_PREALLOCATE, &fst) == -1)
+    {
         fst.fst_flags = F_ALLOCATEALL;
         fcntl(fileno(file), F_PREALLOCATE, &fst);
     }
@@ -662,7 +696,8 @@ void AllocateFileRange(FILE* file, unsigned int offset, unsigned int length)
     // TODO: just write one byte per block
     static const char buf[65536] = {};
     fseek(file, offset, SEEK_SET);
-    while (length > 0) {
+    while (length > 0)
+    {
         unsigned int now = 65536;
         if (length < now)
             now = length;
@@ -677,7 +712,8 @@ void ShrinkDebugFile()
     // Scroll debug.log if it's getting too big
     boost::filesystem::path pathLog = GetDataDir() / "debug.log";
     FILE* file = fopen(pathLog.string().c_str(), "r");
-    if (file && boost::filesystem::file_size(pathLog) > 10 * 1000000) {
+    if (file && boost::filesystem::file_size(pathLog) > 10 * 1000000)
+    {
         // Restart the file with some of the end
         std::vector<char> vch(200000, 0);
         fseek(file, -((long)vch.size()), SEEK_END);
@@ -685,11 +721,13 @@ void ShrinkDebugFile()
         fclose(file);
 
         file = fopen(pathLog.string().c_str(), "w");
-        if (file) {
+        if (file)
+        {
             fwrite(begin_ptr(vch), 1, nBytes, file);
             fclose(file);
         }
-    } else if (file != NULL)
+    }
+    else if (file != NULL)
         fclose(file);
 }
 
@@ -700,7 +738,8 @@ boost::filesystem::path GetSpecialFolderPath(int nFolder, bool fCreate)
 
     char pszPath[MAX_PATH] = "";
 
-    if (SHGetSpecialFolderPathA(NULL, pszPath, nFolder, fCreate)) {
+    if (SHGetSpecialFolderPathA(NULL, pszPath, nFolder, fCreate))
+    {
         return fs::path(pszPath);
     }
 
@@ -724,7 +763,8 @@ boost::filesystem::path GetTempPath()
 #else
     path = boost::filesystem::path("/tmp");
 #endif
-    if (path.empty() || !boost::filesystem::is_directory(path)) {
+    if (path.empty() || !boost::filesystem::is_directory(path))
+    {
         LogPrintf("GetTempPath(): failed to find temp path\n");
         return boost::filesystem::path("");
     }
@@ -768,9 +808,12 @@ void SetupEnvironment()
 // On most POSIX systems (e.g. Linux, but not BSD) the environment's locale
 // may be invalid, in which case the "C" locale is used as fallback.
 #if !defined(WIN32) && !defined(MAC_OSX) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
-    try {
+    try
+    {
         std::locale(""); // Raises a runtime error if current locale is invalid
-    } catch (const std::runtime_error&) {
+    }
+    catch (const std::runtime_error&)
+    {
         setenv("LC_ALL", "C", 1);
     }
 #endif

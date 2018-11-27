@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2015-2017 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +16,7 @@
 
 #include <math.h>
 
-unsigned int static DarkGravityWave(const CBlockIndex* pindexLast) 
+unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 {
     /* current difficulty formula, bulwark - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex* BlockLastSolved = pindexLast;
@@ -28,7 +29,8 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
     uint256 PastDifficultyAverage;
     uint256 PastDifficultyAveragePrev;
 
-    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin) {
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin)
+    {
         return Params().ProofOfWorkLimit().GetCompact();
     }
 
@@ -38,17 +40,19 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
     if (IsSporkActive(SPORK_19_POW_ROLLBACK))
         nLastPOWBlock = Params().LAST_POW_BLOCK_OLD();
 
-    if (pindexLast->nHeight >= nLastPOWBlock) {
+    if (pindexLast->nHeight >= nLastPOWBlock)
+    {
         uint256 bnTargetLimit = (~uint256(0) >> 24);
-        
-        // For first 20 blocks return limit to avoid high 
+
+        // For first 20 blocks return limit to avoid high
         // difficulty from TH/s PoW.
-        if (pindexLast->nHeight <= (nLastPOWBlock + 20)) {
+        if (pindexLast->nHeight <= (nLastPOWBlock + 20))
+        {
             bnTargetLimit = (~uint256(0) >> 12);
             return bnTargetLimit.GetCompact();
         }
-        
-        int64_t nTargetSpacing = 90;
+
+        int64_t nTargetSpacing = Params().TargetSpacing(); // mainnet vs testnet
         int64_t nTargetTimespan = 60 * 30; //1800
 
         int64_t nActualSpacing = 0;
@@ -62,39 +66,47 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         // ppcoin: retarget with exponential moving toward target spacing
         uint256 bnNew;
         bnNew.SetCompact(pindexLast->nBits);
-
         int64_t nInterval = nTargetTimespan / nTargetSpacing;
+        
         bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
         bnNew /= ((nInterval + 1) * nTargetSpacing);
-
+        
         if (bnNew <= 0 || bnNew > bnTargetLimit)
             bnNew = bnTargetLimit;
 
         return bnNew.GetCompact();
     }
 
-    for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
-        if (PastBlocksMax > 0 && i > PastBlocksMax) {
+    for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++)
+    {
+        if (PastBlocksMax > 0 && i > PastBlocksMax)
+        {
             break;
         }
         CountBlocks++;
 
-        if (CountBlocks <= PastBlocksMin) {
-            if (CountBlocks == 1) {
+        if (CountBlocks <= PastBlocksMin)
+        {
+            if (CountBlocks == 1)
+            {
                 PastDifficultyAverage.SetCompact(BlockReading->nBits);
-            } else {
+            }
+            else
+            {
                 PastDifficultyAverage = ((PastDifficultyAveragePrev * CountBlocks) + (uint256().SetCompact(BlockReading->nBits))) / (CountBlocks + 1);
             }
             PastDifficultyAveragePrev = PastDifficultyAverage;
         }
 
-        if (LastBlockTime > 0) {
+        if (LastBlockTime > 0)
+        {
             int64_t Diff = (LastBlockTime - BlockReading->GetBlockTime());
             nActualTimespan += Diff;
         }
         LastBlockTime = BlockReading->GetBlockTime();
 
-        if (BlockReading->pprev == NULL) {
+        if (BlockReading->pprev == NULL)
+        {
             assert(BlockReading);
             break;
         }
@@ -114,16 +126,17 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
     bnNew *= nActualTimespan;
     bnNew /= _nTargetTimespan;
 
-    if (bnNew > Params().ProofOfWorkLimit()) {
+    if (bnNew > Params().ProofOfWorkLimit())
+    {
         bnNew = Params().ProofOfWorkLimit();
     }
 
-    return bnNew.GetCompact();	
+    return bnNew.GetCompact();
 }
-	
+
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
 {
-	return DarkGravityWave(pindexLast);
+    return DarkGravityWave(pindexLast);
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)

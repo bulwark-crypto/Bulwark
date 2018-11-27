@@ -4,6 +4,7 @@
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #ifndef MASTERNODE_SYNC_H
 #define MASTERNODE_SYNC_H
 
@@ -73,7 +74,10 @@ public:
     void Process();
     bool IsSynced();
     bool IsBlockchainSynced();
-    bool IsMasternodeListSynced() { return RequestedMasternodeAssets > MASTERNODE_SYNC_LIST; }
+    bool IsMasternodeListSynced()
+    {
+        return RequestedMasternodeAssets > MASTERNODE_SYNC_LIST;
+    }
     void ClearFulfilledRequest();
 };
 

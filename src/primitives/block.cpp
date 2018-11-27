@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The Bulwark developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,13 +12,17 @@
 #include "tinyformat.h"
 #include "script/standard.h"
 #include "script/sign.h"
+#include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "crypto/common.h"
 #include "util.h"
 
 uint256 CBlockHeader::GetHash() const
 {
-    return Nist5(BEGIN(nVersion), END(nNonce));
+    if(nVersion < 4)
+        return Nist5(BEGIN(nVersion), END(nNonce));
+
+    return Hash(BEGIN(nVersion), END(nAccumulatorCheckpoint));
 }
 
 uint256 CBlock::BuildMerkleTree(bool* fMutated) const
@@ -67,7 +73,8 @@ uint256 CBlock::BuildMerkleTree(bool* fMutated) const
         for (int i = 0; i < nSize; i += 2)
         {
             int i2 = std::min(i+1, nSize-1);
-            if (i2 == i + 1 && i2 + 1 == nSize && vMerkleTree[j+i] == vMerkleTree[j+i2]) {
+            if (i2 == i + 1 && i2 + 1 == nSize && vMerkleTree[j+i] == vMerkleTree[j+i2])
+            {
                 // Two identical hashes at the end of the list at a particular level.
                 mutated = true;
             }
@@ -76,7 +83,8 @@ uint256 CBlock::BuildMerkleTree(bool* fMutated) const
         }
         j += nSize;
     }
-    if (fMutated) {
+    if (fMutated)
+    {
         *fMutated = mutated;
     }
     return (vMerkleTree.empty() ? uint256() : vMerkleTree.back());
@@ -117,12 +125,12 @@ std::string CBlock::ToString() const
 {
     std::stringstream s;
     s << strprintf("CBlock(hash=%s, ver=%d, hashPrevBlock=%s, hashMerkleRoot=%s, nTime=%u, nBits=%08x, nNonce=%u, vtx=%u)\n",
-        GetHash().ToString(),
-        nVersion,
-        hashPrevBlock.ToString(),
-        hashMerkleRoot.ToString(),
-        nTime, nBits, nNonce,
-        vtx.size());
+                   GetHash().ToString(),
+                   nVersion,
+                   hashPrevBlock.ToString(),
+                   hashMerkleRoot.ToString(),
+                   nTime, nBits, nNonce,
+                   vtx.size());
     for (unsigned int i = 0; i < vtx.size(); i++)
     {
         s << "  " << vtx[i].ToString() << "\n";
@@ -166,7 +174,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
                 //vector<unsigned char> vchSig;
                 if (!key.Sign(GetHash(), vchBlockSig))
-                     return false;
+                    return false;
 
                 return true;
             }
@@ -191,7 +199,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
             //vector<unsigned char> vchSig;
             if (!key.Sign(GetHash(), vchBlockSig))
-                 return false;
+                return false;
 
             return true;
 
@@ -206,7 +214,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
             //vector<unsigned char> vchSig;
             if (!key.Sign(GetHash(), vchBlockSig))
-                 return false;
+                return false;
 
             return true;
         }
@@ -234,7 +242,7 @@ bool CBlock::CheckBlockSignature() const
         valtype& vchPubKey = vSolutions[0];
         CPubKey pubkey(vchPubKey);
         if (!pubkey.IsValid())
-          return false;
+            return false;
 
         if (vchBlockSig.empty())
             return false;
@@ -249,7 +257,7 @@ bool CBlock::CheckBlockSignature() const
         CPubKey pubkey(vchPubKey);
 
         if (!pubkey.IsValid())
-          return false;
+            return false;
 
         if (vchBlockSig.empty())
             return false;

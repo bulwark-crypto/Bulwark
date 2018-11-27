@@ -21,13 +21,16 @@ extern bool fNameLookup;
 
 /** -timeout default */
 static const int DEFAULT_CONNECT_TIMEOUT = 5000;
+//! -dns default
+static const int DEFAULT_NAME_LOOKUP = true;
 
 #ifdef WIN32
 // In MSVC, this is defined as a macro, undefine it to prevent a compile and link error
 #undef SetPort
 #endif
 
-enum Network {
+enum Network
+{
     NET_UNROUTABLE = 0,
     NET_IPV4,
     NET_IPV6,
@@ -117,7 +120,7 @@ protected:
 public:
     CSubNet();
     explicit CSubNet(const std::string& strSubnet, bool fAllowLookup = false);
-	explicit CSubNet(const CNetAddr &addr);
+    explicit CSubNet(const CNetAddr &addr);
 
     bool Match(const CNetAddr& addr) const;
 
@@ -125,17 +128,18 @@ public:
     bool IsValid() const;
 
     friend bool operator==(const CSubNet& a, const CSubNet& b);
-	friend bool operator!=(const CSubNet& a, const CSubNet& b);
+    friend bool operator!=(const CSubNet& a, const CSubNet& b);
     friend bool operator<(const CSubNet& a, const CSubNet& b);
 
-	ADD_SERIALIZE_METHODS;
+    ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-	inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-	READWRITE(network);
-	READWRITE(FLATDATA(netmask));
-	READWRITE(valid);
-	}
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
+        READWRITE(network);
+        READWRITE(FLATDATA(netmask));
+        READWRITE(valid);
+    }
 };
 
 /** A combination of a network address (CNetAddr) and a (TCP) port */
@@ -182,15 +186,28 @@ public:
     }
 };
 
-typedef CService proxyType;
+class proxyType
+{
+public:
+    proxyType(): randomize_credentials(false) {}
+    proxyType(const CService &proxy, bool randomize_credentials=false): proxy(proxy), randomize_credentials(randomize_credentials) {}
+
+    bool IsValid() const
+    {
+        return proxy.IsValid();
+    }
+
+    CService proxy;
+    bool randomize_credentials;
+};
 
 enum Network ParseNetwork(std::string net);
 std::string GetNetworkName(enum Network net);
 void SplitHostPort(std::string in, int& portOut, std::string& hostOut);
-bool SetProxy(enum Network net, CService addrProxy);
+bool SetProxy(enum Network net, const proxyType &addrProxy);
 bool GetProxy(enum Network net, proxyType& proxyInfoOut);
 bool IsProxy(const CNetAddr& addr);
-bool SetNameProxy(CService addrProxy);
+bool SetNameProxy(const proxyType &addrProxy);
 bool HaveNameProxy();
 bool LookupHost(const char* pszName, std::vector<CNetAddr>& vIP, unsigned int nMaxSolutions = 0, bool fAllowLookup = true);
 bool Lookup(const char* pszName, CService& addr, int portDefault = 0, bool fAllowLookup = true);

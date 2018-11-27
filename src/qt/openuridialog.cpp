@@ -15,7 +15,7 @@
 #include <QUrl>
 
 OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent),
-                                                ui(new Ui::OpenURIDialog)
+    ui(new Ui::OpenURIDialog)
 {
     ui->setupUi(this);
 #if QT_VERSION >= 0x040700
@@ -36,16 +36,20 @@ QString OpenURIDialog::getURI()
 void OpenURIDialog::on_acceptButton_clicked()
 {
     SendCoinsRecipient rcp;
-    if (GUIUtil::parseBitcoinURI(getURI(), &rcp)) {
+    if (GUIUtil::parseBitcoinURI(getURI(), &rcp))
+    {
         /* Only accept value URIs */
         QDialog::accept();
-    } else {
+    }
+    else
+    {
         ui->uriEdit->setValid(false);
     }
 }
 
-void OpenURIDialog::on_cancelButton_clicked() {
-	this->close();
+void OpenURIDialog::on_cancelButton_clicked()
+{
+    this->close();
 }
 
 void OpenURIDialog::on_selectFileButton_clicked()

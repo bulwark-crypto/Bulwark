@@ -20,11 +20,12 @@ class TransactionStatus
 {
 public:
     TransactionStatus() : countsForBalance(false), sortKey(""),
-                          matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1)
+        matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1)
     {
     }
 
-    enum Status {
+    enum Status
+    {
         Confirmed, /**< Have 6 or more confirmations (normal tx) or fully mature (mined tx) **/
         /// Normal (sent/received) transactions
         OpenUntilDate,  /**< Transaction not yet final, waiting for date */
@@ -71,7 +72,8 @@ public:
 class TransactionRecord
 {
 public:
-    enum Type {
+    enum Type
+    {
         Other,
         Generated,
         StakeMint,
@@ -81,6 +83,11 @@ public:
         MNReward,
         RecvFromOther,
         SendToSelf,
+        ZerocoinMint,
+        ZerocoinSpend,
+        RecvFromZerocoinSpend,
+        ZerocoinSpend_Change_zBWK,
+        ZerocoinSpend_FromMe,
         RecvWithObfuscation,
         ObfuscationDenominate,
         ObfuscationCollateralPayment,
@@ -97,12 +104,12 @@ public:
     }
 
     TransactionRecord(uint256 hash, qint64 time) : hash(hash), time(time), type(Other), address(""), debit(0),
-                                                   credit(0), idx(0)
+        credit(0), idx(0)
     {
     }
 
     TransactionRecord(uint256 hash, qint64 time, Type type, const std::string& address, const CAmount& debit, const CAmount& credit) : hash(hash), time(time), type(type), address(address), debit(debit), credit(credit),
-                                                                                                                                       idx(0)
+        idx(0)
     {
     }
 
