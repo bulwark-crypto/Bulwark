@@ -1018,7 +1018,7 @@ bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nC
 
     // On protocol change update the staking requirements.
     unsigned int nMinStakeAge = nStakeMinAge;
-    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus())
+    if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS) && nTxTime >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS))
     {
         nMinStakeAge = nStakeMinAgeConsensus;
     }
@@ -4902,8 +4902,12 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
         // If consensus level checks are in place then make sure
         // the min. value is provided in tx.
-        if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus() && block.vtx[1].vout[1].nValue < Params().Stake_MinAmount())
+        if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS) 
+                && block.GetBlockTime() >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS) 
+                && block.vtx[1].vout[1].nValue < Params().Stake_MinAmount()) 
+        {
             return state.DoS(100, error("CheckBlock() : under min. stake value"));
+        }
     }
 
     // ----------- swiftTX transaction scanning -----------

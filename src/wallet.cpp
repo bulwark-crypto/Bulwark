@@ -1919,7 +1919,7 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
     }
     // Consensus implementation of protocol change.
     unsigned int nMinStakeAge = nStakeMinAge;
-    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus())
+    if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS))
     {
         nMinStakeAge = nStakeMinAgeConsensus;
     }
@@ -1972,7 +1972,7 @@ bool CWallet::MintableCoins()
 
     // On protocol change update the staking requirements.
     unsigned int nMinStakeAge = nStakeMinAge;
-    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus())
+    if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS))
     {
         nMinStakeAge = nStakeMinAgeConsensus;
     }

@@ -10,6 +10,7 @@
 #include "db.h"
 #include "kernel.h"
 #include "script/interpreter.h"
+#include "spork.h"
 #include "timedata.h"
 #include "util.h"
 
@@ -32,18 +33,6 @@ unsigned int getIntervalVersion(bool fTestNet)
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of(0, 0xfd11f4e7u);
-
-// Get time weight
-int64_t GetWeight(int64_t nIntervalBeginning, int64_t nIntervalEnd)
-{
-    // Consensus implementation of protocol change.
-    unsigned int nMinStakeAge = nStakeMinAge;
-    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus())
-    {
-        nMinStakeAge = nStakeMinAgeConsensus;
-    }
-    return nIntervalEnd - nIntervalBeginning - nMinStakeAge;
-}
 
 // Get the last stake modifier and its generation time from a given block
 static bool GetLastStakeModifier(const CBlockIndex* pindex, uint64_t& nStakeModifier, int64_t& nModifierTime)
@@ -324,7 +313,7 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTra
 
     // Consensus implementation of protocol change.
     unsigned int nMinStakeAge = nStakeMinAge;
-    if (ActiveProtocol() >= Params().Stake_MinProtocolConsensus())
+    if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS) && nTimeBlockFrom >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS))
     {
         nMinStakeAge = nStakeMinAgeConsensus;
     }

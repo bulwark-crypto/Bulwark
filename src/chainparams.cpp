@@ -229,7 +229,6 @@ public:
 
         /** Staking Requirements */
         nStakeMinStartProtocol = 70850; // Starting protocol version (ActiveProtocol())
-        nStakeMinStartProtocolConsensus = 70860; // Starting protocol consensus version (ActiveProtocol())
         nStakeMinConfirmations = 475; // Required number of confirmations
         nStakeMinAmount = 100 * COIN; // Minimum required staking amount
     }
@@ -318,7 +317,6 @@ public:
 
         /** Staking Requirements */
         nStakeMinStartProtocol = 70850; // Starting protocol version (ActiveProtocol())
-        nStakeMinStartProtocolConsensus = 70860; // Starting protocol consensus version (ActiveProtocol())
         nStakeMinConfirmations = 30; // Required number of confirmations
         nStakeMinAmount = 500 * COIN; // Minimum required staking amount
     }

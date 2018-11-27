@@ -26,7 +26,7 @@ using namespace boost;
     - This would result in old clients getting confused about which spork is for what
 */
 #define SPORK_START 10001
-#define SPORK_END 10021
+#define SPORK_END 10022
 
 #define SPORK_2_SWIFTTX 10001
 #define SPORK_3_SWIFTTX_BLOCK_FILTERING 10002
@@ -47,6 +47,7 @@ using namespace boost;
 #define SPORK_20_NEW_PROTOCOL_DYNAMIC 10019
 #define SPORK_21_ENABLE_ZEROCOIN 10020
 #define SPORK_22_ZEROCOIN_MAINTENANCE_MODE 10021
+#define SPORK_23_STAKING_REQUIREMENTS 10022
 
 #define SPORK_2_SWIFTTX_DEFAULT 978307200                         //2001-1-1
 #define SPORK_3_SWIFTTX_BLOCK_FILTERING_DEFAULT 1424217600        //2015-2-18
@@ -72,6 +73,7 @@ using namespace boost;
 // protocol version to `70850`.
 #define SPORK_21_ENABLE_ZEROCOIN_DEFAULT 4070908800               //OFF
 #define SPORK_22_ZEROCOIN_MAINTENANCE_MODE_DEFAULT 4070908800     //OFF
+#define SPORK_23_STAKING_REQUIREMENTS_DEFAULT 4070908800          //OFF
 
 class CSporkMessage;
 class CSporkManager;
