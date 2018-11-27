@@ -200,7 +200,7 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
     {
         nHeight = pindexPrev->nHeight + 1;
     }
-    else     //out of order
+    else //out of order
     {
         BlockMap::iterator mi = mapBlockIndex.find(block.hashPrevBlock);
         if (mi != mapBlockIndex.end() && (*mi).second)
@@ -214,7 +214,7 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
 
     //LogPrintf("XX69----------> IsBlockValueValid(): nMinted: %d, nExpectedValue: %d\n", FormatMoney(nMinted), FormatMoney(nExpectedValue));
 
-    if (!masternodeSync.IsSynced())   //there is no budget data to use to check anything
+    if (!masternodeSync.IsSynced()) //there is no budget data to use to check anything
     {
         //super blocks will always be on these blocks, max 100 per budgeting
         if (nHeight % GetBudgetPaymentCycleBlocks() < 100)
@@ -257,7 +257,9 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
 
 bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
 {
-    if (!masternodeSync.IsSynced())   //there is no budget data to use to check anything -- find the longest chain
+    TrxValidationStatus transactionStatus = TrxValidationStatus::InValid;
+
+    if (!masternodeSync.IsSynced()) //there is no budget data to use to check anything -- find the longest chain
     {
         LogPrint("mnpayments", "Client not synced, skipping block payee checks\n");
         return true;
@@ -270,20 +272,27 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     const CTransaction& txNew = (nBlockHeight > nLastPOWBlock ? block.vtx[1] : block.vtx[0]);
 
     //check if it's a budget block
-    if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS))
-    {
-        if (budget.IsBudgetPaymentBlock(nBlockHeight))
-        {
-            if (budget.IsTransactionValid(txNew, nBlockHeight)) return true;
+    if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
+        if (budget.IsBudgetPaymentBlock(nBlockHeight)) {
+            transactionStatus = budget.IsTransactionValid(txNew, nBlockHeight);
+            if (transactionStatus == TrxValidationStatus::Valid) {
+                return true;
+            }
 
-            LogPrint("mnbudget", "Invalid budget payment detected %s\n", txNew.ToString().c_str());
-            if (IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
-                return false;
+            if (transactionStatus == TrxValidationStatus::InValid) {
+                LogPrint("masternode", "Invalid budget payment detected %s\n", txNew.ToString().c_str());
+                if (IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
+                    return false;
 
-            LogPrint("mnbudget", "Budget enforcement is disabled, accepting block\n");
-            return true;
+                LogPrint("masternode", "Budget enforcement is disabled, accepting block\n");
+            }
         }
     }
+
+    // If we end here the transaction was either TrxValidationStatus::InValid and Budget enforcement is disabled, or
+    // a double budget payment (status = TrxValidationStatus::DoublePayment) was detected, or no/not enough masternode
+    // votes (status = TrxValidationStatus::VoteThreshold) for a finalized budget were found
+    // In all cases a masternode will get the payment for this block
 
     //check for masternode payee
     if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
@@ -328,6 +337,7 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
 {
     CBlockIndex* pindexPrev = chainActive.Tip();
     if (!pindexPrev) return;
+
     bool hasPayment = true;
     CScript payee;
 
@@ -391,9 +401,9 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
 int CMasternodePayments::GetMinMasternodePaymentsProto()
 {
     if (IsSporkActive(SPORK_10_MASTERNODE_PAY_UPDATED_NODES))
-        return ActiveProtocol();
+        return ActiveProtocol();                          // Allow only updated peers
     else
-        return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+        return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT; // Also allow old peers as long as they are allowed to run
 }
 
 void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
@@ -466,10 +476,12 @@ void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::st
             return;
         }
 
-        if (!winner.SignatureValid())
-        {
-            // LogPrint("masternode", "mnw - invalid signature\n");
-            if (masternodeSync.IsSynced()) Misbehaving(pfrom->GetId(), 20);
+        if (!winner.SignatureValid()) {
+            if (masternodeSync.IsSynced()) 
+	    {
+                LogPrintf("CMasternodePayments::ProcessMessageMasternodePayments() : mnw - invalid signature\n");
+                Misbehaving(pfrom->GetId(), 20);
+            }
             // it could just be a non-synced masternode
             mnodeman.AskForMN(pfrom, winner.vinMasternode);
             return;
