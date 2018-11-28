@@ -27,7 +27,6 @@ CMasternodeSync::CMasternodeSync()
 
 bool CMasternodeSync::IsSynced()
 {
-    return true;
     return RequestedMasternodeAssets == MASTERNODE_SYNC_FINISHED;
 }
 
