@@ -1970,7 +1970,7 @@ bool CWallet::MintableCoins()
     vector<COutput> vCoins;
     AvailableCoins(vCoins, true);
 
-    // On protocol change update the staking requirements.
+    // On spork activation update the staking requirements.
     unsigned int nMinStakeAge = nStakeMinAge;
     if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS))
     {
