@@ -476,9 +476,10 @@ void CMasternodePayments::ProcessMessageMasternodePayments(CNode* pfrom, std::st
             return;
         }
 
-        if (!winner.SignatureValid()) {
+        if (!winner.SignatureValid()) 
+        {
             if (masternodeSync.IsSynced()) 
-	    {
+	        {
                 LogPrintf("CMasternodePayments::ProcessMessageMasternodePayments() : mnw - invalid signature\n");
                 Misbehaving(pfrom->GetId(), 20);
             }
