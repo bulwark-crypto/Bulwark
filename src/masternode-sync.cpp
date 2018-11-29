@@ -265,9 +265,9 @@ void CMasternodeSync::Process()
             Reset();
         }
         else
-	{
+	    {
             return;
-	}
+	    }
     }
 
     //try syncing again
@@ -347,8 +347,7 @@ void CMasternodeSync::Process()
                 pnode->FulfilledRequest("mnsync");
 
                 // timeout
-                if (lastMasternodeList == 0 &&
-                        (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5))
+                if (lastMasternodeList == 0 && (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5))
                 {
                     if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
                     {
@@ -383,9 +382,14 @@ void CMasternodeSync::Process()
                 if (pnode->HasFulfilledRequest("mnwsync")) continue;
                 pnode->FulfilledRequest("mnwsync");
 
+                // [dustin] TODO: revisit 
+                if (Params().NetworkID() == CBaseChainParams::TESTNET && lastMasternodeWinner == 0 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD)
+                {
+                    GetNextAsset();
+                }
+
                 // timeout
-                if (lastMasternodeWinner == 0 &&
-                        (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5))
+                if (lastMasternodeWinner == 0 && (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5))
                 {
                     if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
                     {
@@ -434,8 +438,7 @@ void CMasternodeSync::Process()
                 }
 
                 // timeout
-                if (lastBudgetItem == 0 &&
-                        (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5))
+                if (lastBudgetItem == 0 && (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5))
                 {
                     // maybe there is no budgets at all, so just finish syncing
                     GetNextAsset();
