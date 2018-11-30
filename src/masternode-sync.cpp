@@ -382,10 +382,11 @@ void CMasternodeSync::Process()
                 if (pnode->HasFulfilledRequest("mnwsync")) continue;
                 pnode->FulfilledRequest("mnwsync");
 
-                // [dustin] TODO: revisit 
+                // [dustin] TODO: what the 
                 if (Params().NetworkID() == CBaseChainParams::TESTNET && lastMasternodeWinner == 0 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD)
                 {
                     GetNextAsset();
+                    return;
                 }
 
                 // timeout
