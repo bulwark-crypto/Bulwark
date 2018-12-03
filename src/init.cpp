@@ -192,7 +192,11 @@ void PrepareShutdown()
 #endif
     StopNode();
     DumpMasternodes();
-    DumpBudgets();
+    // Use budget cache only when explicitely wanted
+    if (GetBoolArg("-budgetcache", false)) 
+    {
+        DumpBudgets();
+    }
     DumpMasternodePayments();
     UnregisterNodeSignals(GetNodeSignals());
 
@@ -323,6 +327,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-alertnotify=<cmd>", _("Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)"));
     strUsage += HelpMessageOpt("-alerts", strprintf(_("Receive and display P2P network alerts (default: %u)"), DEFAULT_ALERTS));
     strUsage += HelpMessageOpt("-blocknotify=<cmd>", _("Execute command when the best block changes (%s in cmd is replaced by block hash)"));
+    strUsage += HelpMessageOpt("-budgetcache", _("Cache budget information in budget.dat (default: 0 (no caching))"));
     strUsage += HelpMessageOpt("-checkblocks=<n>", strprintf(_("How many blocks to check at startup (default: %u, 0 = all)"), 500));
     strUsage += HelpMessageOpt("-checklevel=<n>", strprintf(_("How thorough the block verification of -checkblocks is (0-4, default: %u)"), 3));
     strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), "bulwark.conf"));
@@ -1772,20 +1777,30 @@ bool AppInit2(boost::thread_group& threadGroup)
             LogPrintf("file format is unknown or invalid, please fix it manually\n");
     }
 
-    uiInterface.InitMessage(_("Loading budget cache..."));
-
-    CBudgetDB budgetdb;
-    CBudgetDB::ReadResult readResult2 = budgetdb.Read(budget);
-
-    if (readResult2 == CBudgetDB::FileError)
-        LogPrintf("Missing budget cache - budget.dat, will try to recreate\n");
-    else if (readResult2 != CBudgetDB::Ok)
+    // Use budget cache only when explicitely wanted
+    if (GetBoolArg("-budgetcache", false)) 
     {
-        LogPrintf("Error reading budget.dat: ");
-        if (readResult2 == CBudgetDB::IncorrectFormat)
-            LogPrintf("magic is ok but data has invalid format, will try to recreate\n");
-        else
-            LogPrintf("file format is unknown or invalid, please fix it manually\n");
+        uiInterface.InitMessage(_("Loading budget cache..."));
+
+        CBudgetDB budgetdb;
+        CBudgetDB::ReadResult readResult2 = budgetdb.Read(budget);
+
+        if (readResult2 == CBudgetDB::FileError)
+        {
+            LogPrintf("Missing budget cache - budget.dat, will try to recreate\n");
+        }
+        else if (readResult2 != CBudgetDB::Ok) 
+        {
+            LogPrintf("Error reading budget.dat: ");
+            if (readResult2 == CBudgetDB::IncorrectFormat)
+            {
+                LogPrintf("magic is ok but data has invalid format, will try to recreate\n");
+            }
+            else
+            {
+                LogPrintf("file format is unknown or invalid, please fix it manually\n");
+            }
+        }
     }
 
     //flag our cached items so we send them to our peers
@@ -1799,14 +1814,20 @@ bool AppInit2(boost::thread_group& threadGroup)
     CMasternodePaymentDB::ReadResult readResult3 = mnpayments.Read(masternodePayments);
 
     if (readResult3 == CMasternodePaymentDB::FileError)
+    {
         LogPrintf("Missing masternode payment cache - mnpayments.dat, will try to recreate\n");
+    }
     else if (readResult3 != CMasternodePaymentDB::Ok)
     {
         LogPrintf("Error reading mnpayments.dat: ");
-        if (readResult3 == CMasternodePaymentDB::IncorrectFormat)
+        if (readResult3 == CMasternodePaymentDB::IncorrectFormat) 
+        {
             LogPrintf("magic is ok but data has invalid format, will try to recreate\n");
+        }
         else
+        {
             LogPrintf("file format is unknown or invalid, please fix it manually\n");
+        }
     }
 
     fMasterNode = GetBoolArg("-masternode", false);
