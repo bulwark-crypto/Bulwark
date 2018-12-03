@@ -160,6 +160,13 @@ void WalletFrame::gotoSignMessageTab(QString addr)
         walletView->gotoSignMessageTab(addr);
 }
 
+void WalletFrame::gotoProposalPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoProposalPage();
+}
+
 void WalletFrame::gotoVerifyMessageTab(QString addr)
 {
     WalletView* walletView = currentWalletView();

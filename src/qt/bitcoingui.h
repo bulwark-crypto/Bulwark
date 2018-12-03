@@ -30,6 +30,7 @@ class UnitDisplayStatusBarControl;
 class WalletFrame;
 class WalletModel;
 class MasternodeList;
+class ProposalList;
 
 class CWallet;
 
@@ -99,6 +100,7 @@ private:
     QAction* usedSendingAddressesAction;
     QAction* usedReceivingAddressesAction;
     QAction* signMessageAction;
+    QAction* proposalAction;
     QAction* verifyMessageAction;
     QAction* bip38ToolAction;
     QAction* multisigCreateAction;
@@ -211,6 +213,8 @@ private slots:
     void gotoPrivacyPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
+    /** Switch to proposal page */
+    void gotoProposalPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
