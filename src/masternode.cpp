@@ -10,7 +10,6 @@
 #include "obfuscation.h"
 #include "sync.h"
 #include "util.h"
-#include <boost/lexical_cast.hpp>
 
 // keep track of the scanning errors I've seen
 map<uint256, int> mapSeenMasternodeScanningErrors;
@@ -507,7 +506,7 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
 
     std::string vchPubKey(pubKeyCollateralAddress.begin(), pubKeyCollateralAddress.end());
     std::string vchPubKey2(pubKeyMasternode.begin(), pubKeyMasternode.end());
-    std::string strMessage = addr.ToString() + boost::lexical_cast<std::string>(sigTime) + vchPubKey + vchPubKey2 + boost::lexical_cast<std::string>(protocolVersion);
+    std::string strMessage = addr.ToString() + std::to_string(sigTime) + vchPubKey + vchPubKey2 + std::to_string(protocolVersion);
 
     if (protocolVersion < masternodePayments.GetMinMasternodePaymentsProto())
     {
@@ -697,7 +696,7 @@ bool CMasternodeBroadcast::Sign(CKey& keyCollateralAddress)
 
     sigTime = GetAdjustedTime();
 
-    std::string strMessage = addr.ToString() + boost::lexical_cast<std::string>(sigTime) + vchPubKey + vchPubKey2 + boost::lexical_cast<std::string>(protocolVersion);
+    std::string strMessage = addr.ToString() + std::to_string(sigTime) + vchPubKey + vchPubKey2 + std::to_string(protocolVersion);
 
     if (!obfuScationSigner.SignMessage(strMessage, errorMessage, sig, keyCollateralAddress))
     {
@@ -737,7 +736,7 @@ bool CMasternodePing::Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode)
     std::string strMasterNodeSignMessage;
 
     sigTime = GetAdjustedTime();
-    std::string strMessage = vin.ToString() + blockHash.ToString() + boost::lexical_cast<std::string>(sigTime);
+    std::string strMessage = vin.ToString() + blockHash.ToString() + std::to_string(sigTime);
 
     if (!obfuScationSigner.SignMessage(strMessage, errorMessage, vchSig, keyMasternode))
     {
@@ -783,7 +782,7 @@ bool CMasternodePing::CheckAndUpdate(int& nDos, bool fRequireEnabled)
         // last ping was more then MASTERNODE_MIN_MNP_SECONDS-60 ago comparing to this one
         if (!pmn->IsPingedWithin(MASTERNODE_MIN_MNP_SECONDS - 60, sigTime))
         {
-            std::string strMessage = vin.ToString() + blockHash.ToString() + boost::lexical_cast<std::string>(sigTime);
+            std::string strMessage = vin.ToString() + blockHash.ToString() + std::to_string(sigTime);
 
             std::string errorMessage = "";
             if (!obfuScationSigner.VerifyMessage(pmn->pubKeyMasternode, vchSig, strMessage, errorMessage))

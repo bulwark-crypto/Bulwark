@@ -1867,7 +1867,7 @@ bool AppInit2(boost::thread_group& threadGroup)
         {
             LogPrintf("  %s %s\n", mne.getTxHash(), mne.getOutputIndex());
             mnTxHash.SetHex(mne.getTxHash());
-            COutPoint outpoint = COutPoint(mnTxHash, boost::lexical_cast<unsigned int>(mne.getOutputIndex()));
+            COutPoint outpoint = COutPoint(mnTxHash, std::stoi(mne.getOutputIndex()));
             pwalletMain->LockCoin(outpoint);
         }
     }

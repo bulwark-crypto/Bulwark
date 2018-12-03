@@ -16,7 +16,6 @@
 #include "net.h"
 #include "sync.h"
 #include "util.h"
-#include <boost/lexical_cast.hpp>
 
 using namespace std;
 

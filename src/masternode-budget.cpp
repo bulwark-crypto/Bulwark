@@ -15,7 +15,6 @@
 #include "obfuscation.h"
 #include "util.h"
 #include <boost/filesystem.hpp>
-#include <boost/lexical_cast.hpp>
 
 CBudgetManager budget;
 CCriticalSection cs_budget;
@@ -182,6 +181,7 @@ void CBudgetManager::SubmitFinalBudget()
         LogPrint("mnbudget", "CBudgetManager::SubmitFinalBudget - nSubmittedHeight(=%ld) < nBlockStart(=%ld) condition not fulfilled.\n", nSubmittedHeight, nBlockStart);
         return;
     }
+    
     // finalization window taken from PIVX to allow for the expansion on testnet
     // for voting to happen amongst masternodes.
     int nFinalizationWindow = ((GetBudgetPaymentCycleBlocks() / 30) * 2);
@@ -195,7 +195,6 @@ void CBudgetManager::SubmitFinalBudget()
     {
         LogPrint("mnbudget", "CBudgetManager::SubmitFinalBudget - Too early for finalization. Current block is %ld, next Superblock is %ld.\n", nCurrentHeight, nBlockStart);
         LogPrint("mnbudget", "CBudgetManager::SubmitFinalBudget - First possible block for finalization: %ld. Last possible block for finalization: %ld. You have to wait for %ld block(s) until Budget finalization will be possible\n", nFinalizationStart, nBlockStart, nOffsetToStart);
-
         return;
     }
 
@@ -633,7 +632,8 @@ void CBudgetManager::FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, b
             CTxDestination address1;
             ExtractDestination(payee, address1);
             CBitcoinAddress address2(address1);
-            LogPrint("mnbudget","CBudgetManager::FillBlockPayee - Budget payment to %s for %lld, nHighestCount = %d\n", address2.ToString(), nAmount, nHighestCount);
+            printf("CBudgetManager::FillBlockPayee - Budget payment to %s for %ld, nHighestCount = %d\n", address2.ToString().c_str(), nAmount, nHighestCount);
+            LogPrint("mnbudget","CBudgetManager::FillBlockPayee - Budget payment to %s for %lld, nHighestCount = %d\n", address2.ToString().c_str(), nAmount, nHighestCount);
         }
     }
     else
@@ -1316,9 +1316,9 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         mapSeenMasternodeBudgetVotes.insert(make_pair(vote.GetHash(), vote));
         if (!vote.SignatureValid(true)) 
-	{
-            if (masternodeSync.IsSynced()) 
 	    {
+            if (masternodeSync.IsSynced()) 
+	        {
                 LogPrintf("CBudgetManager::ProcessMessage() : mvote - signature invalid\n");
                 Misbehaving(pfrom->GetId(), 20);
             }
@@ -1401,9 +1401,9 @@ void CBudgetManager::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         mapSeenFinalizedBudgetVotes.insert(make_pair(vote.GetHash(), vote));
         if (!vote.SignatureValid(true)) 
-	{
-            if (masternodeSync.IsSynced()) 
 	    {
+            if (masternodeSync.IsSynced()) 
+	        {
                 LogPrintf("CBudgetManager::ProcessMessage() : fbvote - signature invalid\n");
                 Misbehaving(pfrom->GetId(), 20);
             }
@@ -1800,7 +1800,7 @@ bool CBudgetProposal::AddOrUpdateVote(CBudgetVote& vote, std::string& strError)
         }
         if (vote.nTime - mapVotes[hash].nTime < BUDGET_VOTE_UPDATE_MIN)
         {
-            strError = strprintf("time between votes is too soon - %s - %lli sec < %lli sec\n", vote.GetHash().ToString(), vote.nTime - mapVotes[hash].nTime,BUDGET_VOTE_UPDATE_MIN);
+            strError = strprintf("time between votes is too soon - %s - %lli sec < %lli sec\n", vote.GetHash().ToString(), vote.nTime - mapVotes[hash].nTime, BUDGET_VOTE_UPDATE_MIN);
             LogPrint("mnbudget", "CBudgetProposal::AddOrUpdateVote - %s\n", strError);
             return false;
         }
@@ -1996,7 +1996,7 @@ bool CBudgetVote::Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode)
     CKey keyCollateralAddress;
 
     std::string errorMessage;
-    std::string strMessage = vin.prevout.ToStringShort() + nProposalHash.ToString() + boost::lexical_cast<std::string>(nVote) + boost::lexical_cast<std::string>(nTime);
+    std::string strMessage = vin.prevout.ToStringShort() + nProposalHash.ToString() + std::to_string(nVote) + std::to_string(nTime);
 
     if (!obfuScationSigner.SignMessage(strMessage, errorMessage, vchSig, keyMasternode))
     {
@@ -2016,7 +2016,7 @@ bool CBudgetVote::Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode)
 bool CBudgetVote::SignatureValid(bool fSignatureCheck)
 {
     std::string errorMessage;
-    std::string strMessage = vin.prevout.ToStringShort() + nProposalHash.ToString() + boost::lexical_cast<std::string>(nVote) + boost::lexical_cast<std::string>(nTime);
+    std::string strMessage = vin.prevout.ToStringShort() + nProposalHash.ToString() + std::to_string(nVote) + std::to_string(nTime);
 
     CMasternode* pmn = mnodeman.Find(vin);
 
@@ -2595,7 +2595,7 @@ bool CFinalizedBudgetVote::Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode)
     CKey keyCollateralAddress;
 
     std::string errorMessage;
-    std::string strMessage = vin.prevout.ToStringShort() + nBudgetHash.ToString() + boost::lexical_cast<std::string>(nTime);
+    std::string strMessage = vin.prevout.ToStringShort() + nBudgetHash.ToString() + std::to_string(nTime);
 
     if (!obfuScationSigner.SignMessage(strMessage, errorMessage, vchSig, keyMasternode))
     {
@@ -2616,7 +2616,7 @@ bool CFinalizedBudgetVote::SignatureValid(bool fSignatureCheck)
 {
     std::string errorMessage;
 
-    std::string strMessage = vin.prevout.ToStringShort() + nBudgetHash.ToString() + boost::lexical_cast<std::string>(nTime);
+    std::string strMessage = vin.prevout.ToStringShort() + nBudgetHash.ToString() + std::to_string(nTime);
 
     CMasternode* pmn = mnodeman.Find(vin);
 

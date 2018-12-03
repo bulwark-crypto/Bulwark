@@ -1,11 +1,12 @@
 /* @flow */
 // Copyright (c) 2012-2013 The PPCoin developers
 // Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The Bulwark Developers
+
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <boost/assign/list_of.hpp>
-#include <boost/lexical_cast.hpp>
 
 #include "db.h"
 #include "kernel.h"
@@ -172,7 +173,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
         return error("ComputeNextStakeModifier: unable to get last modifier");
 
     if (GetBoolArg("-printstakemodifier", false))
-        LogPrintf("ComputeNextStakeModifier: prev modifier= %s time=%s\n", boost::lexical_cast<std::string>(nStakeModifier).c_str(), DateTimeStrFormat("%Y-%m-%d %H:%M:%S", nModifierTime).c_str());
+        LogPrintf("ComputeNextStakeModifier: prev modifier= %s time=%s\n", std::to_string(nStakeModifier).c_str(), DateTimeStrFormat("%Y-%m-%d %H:%M:%S", nModifierTime).c_str());
 
     if (nModifierTime / getIntervalVersion(fTestNet) >= pindexPrev->GetBlockTime() / getIntervalVersion(fTestNet))
         return true;
@@ -241,7 +242,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
     }
     if (fDebug || GetBoolArg("-printstakemodifier", false))
     {
-        LogPrintf("ComputeNextStakeModifier: new modifier=%s time=%s\n", boost::lexical_cast<std::string>(nStakeModifierNew).c_str(), DateTimeStrFormat("%Y-%m-%d %H:%M:%S", pindexPrev->GetBlockTime()).c_str());
+        LogPrintf("ComputeNextStakeModifier: new modifier=%s time=%s\n", std::to_string(nStakeModifierNew).c_str(), DateTimeStrFormat("%Y-%m-%d %H:%M:%S", pindexPrev->GetBlockTime()).c_str());
     }
 
     nStakeModifier = nStakeModifierNew;
@@ -369,13 +370,13 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTra
         if (fDebug || fPrintProofOfStake)
         {
             LogPrintf("CheckStakeKernelHash() : using modifier %s at height=%d timestamp=%s for block from height=%d timestamp=%s\n",
-                      boost::lexical_cast<std::string>(nStakeModifier).c_str(), nStakeModifierHeight,
+                      std::to_string(nStakeModifier).c_str(), nStakeModifierHeight,
                       DateTimeStrFormat("%Y-%m-%d %H:%M:%S", nStakeModifierTime).c_str(),
                       mapBlockIndex[blockFrom.GetHash()]->nHeight,
                       DateTimeStrFormat("%Y-%m-%d %H:%M:%S", blockFrom.GetBlockTime()).c_str());
             LogPrintf("CheckStakeKernelHash() : pass protocol=%s modifier=%s nTimeBlockFrom=%u prevoutHash=%s nTimeTxPrev=%u nPrevout=%u nTimeTx=%u hashProof=%s\n",
                       "0.3",
-                      boost::lexical_cast<std::string>(nStakeModifier).c_str(),
+                      std::to_string(nStakeModifier).c_str(),
                       nTimeBlockFrom, prevout.hash.ToString().c_str(), nTimeBlockFrom, prevout.n, nTryTime,
                       hashProofOfStake.ToString().c_str());
         }

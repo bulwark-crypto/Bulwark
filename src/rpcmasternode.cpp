@@ -984,7 +984,7 @@ UniValue getmasternodescores (const UniValue& params, bool fHelp)
         {
             nLast = std::stoi(params[0].get_str());
         }
-        catch (const boost::bad_lexical_cast &)
+        catch (...)
         {
             throw runtime_error("Exception on param 2");
         }
