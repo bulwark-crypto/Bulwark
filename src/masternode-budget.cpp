@@ -632,7 +632,7 @@ void CBudgetManager::FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, b
             CTxDestination address1;
             ExtractDestination(payee, address1);
             CBitcoinAddress address2(address1);
-            printf("CBudgetManager::FillBlockPayee - Budget payment to %s for %ld, nHighestCount = %d\n", address2.ToString().c_str(), nAmount, nHighestCount);
+            
             LogPrint("mnbudget","CBudgetManager::FillBlockPayee - Budget payment to %s for %lld, nHighestCount = %d\n", address2.ToString().c_str(), nAmount, nHighestCount);
         }
     }
@@ -756,7 +756,6 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
     if (nHighestCount < nFivePercent) return TrxValidationStatus::InValid;
 
     // check the highest finalized budgets (+/- 10% to assist in consensus)
-
     std::string strProposals = "";
     int nCountThreshold = nHighestCount - mnodeman.CountEnabled(ActiveProtocol()) / 10;
     bool fThreshold = false;
@@ -770,26 +769,26 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
                  strProposals.c_str(), pfinalizedBudget->GetBlockStart(), pfinalizedBudget->GetBlockEnd(), 
                  nBlockHeight, pfinalizedBudget->GetVoteCount(), nCountThreshold);
 
-        if (pfinalizedBudget->GetVoteCount() > nCountThreshold) 
-	{
+        if (pfinalizedBudget->GetVoteCount() >= nCountThreshold) 
+	    {
             fThreshold = true;
             LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetVoteCount() > nCountThreshold passed\n");
             if (nBlockHeight >= pfinalizedBudget->GetBlockStart() && nBlockHeight <= pfinalizedBudget->GetBlockEnd()) 
-	    {
+	        {
                 LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetBlockStart() passed\n");
                 transactionStatus = pfinalizedBudget->IsTransactionValid(txNew, nBlockHeight);
                 if (transactionStatus == TrxValidationStatus::Valid) 
-		{
+		        {
                     LogPrint("mnbudget","CBudgetManager::IsTransactionValid - pfinalizedBudget->IsTransactionValid() passed\n");
                     return TrxValidationStatus::Valid;
                 }
                 else 
-		{
+		        {   
                     LogPrint("mnbudget","CBudgetManager::IsTransactionValid - pfinalizedBudget->IsTransactionValid() error\n");
                 }
             }
             else 
-	    {
+	        {
                 LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetBlockStart() failed, budget is outside current payment cycle and will be ignored.\n");
             }
                
