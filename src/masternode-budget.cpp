@@ -1000,7 +1000,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     if (Params().NetworkID() == CBaseChainParams::TESTNET)
     {
         // Changed testnet budget starting block.
-        if (nHeight > 2000)
+        if (nHeight >= 288)
         {
             nSubsidy = 500 * COIN;
             // 30 sec blocks, 2880 per 24 hrs, 30 days a month
