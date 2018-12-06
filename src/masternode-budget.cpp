@@ -2286,7 +2286,7 @@ std::string CFinalizedBudget::GetStatus()
         {
             if (retBadHashes == "")
             {
-                retBadHashes = "Unknown proposal hash! Check this proposal before voting" + budgetPayment.nProposalHash.ToString();
+                retBadHashes = "Unknown or completed proposal! Check this proposal before voting" + budgetPayment.nProposalHash.ToString();
             }
             else
             {
