@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfigureMasternodePage</class>
+ <widget class="QDialog" name="ConfigureMasternodePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>457</width>
+    <height>126</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Edit Address</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Alias Name</string>
+       </property>
+       <property name="buddy">
+        <cstring>aliasEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QValidatedLineEdit" name="aliasEdit">
+       <property name="toolTip">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&amp;VPS IP</string>
+       </property>
+       <property name="buddy">
+        <cstring>vpsIpEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QValidatedLineEdit" name="vpsIpEdit">
+       <property name="toolTip">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>&amp;Priv Key</string>
+       </property>
+       <property name="buddy">
+        <cstring>privKeyEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QValidatedLineEdit" name="privKeyEdit">
+       <property name="toolTip">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>&amp;Output</string>
+       </property>
+       <property name="buddy">
+        <cstring>outputEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QValidatedLineEdit" name="outputEdit">
+       <property name="toolTip">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>&amp;Output ID</string>
+       </property>
+       <property name="buddy">
+        <cstring>outputIdEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QValidatedLineEdit" name="outputIdEdit">
+       <property name="toolTip">
+        <string></string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>  
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QtMaterialFlatButton" name="AutoFillPrivKey">
+       <property name="text">
+        <string>AutoFill PrivKey</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QtMaterialFlatButton" name="AutoFillOutputs">
+       <property name="text">
+        <string>AutoFill Outputs</string>
+       </property>
+      </widget>
+     </item>
+   <item>
+     <widget class="QtMaterialFlatButton" name="cancelButton" native="true">
+     <property name="text" stdset="0">
+      <string>Cancel</string>
+      </property>
+      <property name="autoDefault" stdset="0">
+       <bool>true</bool>
+      </property>
+    </widget>
+   </item>
+      <item>
+     <widget class="QtMaterialFlatButton" name="acceptButton" native="true">
+     <property name="text" stdset="0">
+      <string>Ok</string>
+      </property>
+      <property name="autoDefault" stdset="0">
+       <bool>true</bool>
+      </property>
+    </widget>
+   </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../bulwark.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ConfigureMasternodePage</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ConfigureMasternodePage</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
