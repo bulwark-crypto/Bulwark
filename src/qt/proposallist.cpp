@@ -23,6 +23,7 @@
 #include "obfuscation.h"
 
 #include "ui_interface.h"
+#include "qtmaterialflatbutton.h"
 
 #include <QComboBox>
 #include <QDateTimeEdit>
@@ -144,15 +145,15 @@ ProposalList::ProposalList(QWidget *parent) :
     actionBar->setSpacing(11);
     actionBar->setContentsMargins(0,20,0,20);
 
-    QPushButton *voteYesButton = new QPushButton(tr("Vote Yes"), this);
+    QtMaterialFlatButton *voteYesButton = new QtMaterialFlatButton(tr("Vote Yes"), this);
     voteYesButton->setToolTip(tr("Yote Yes on the selected proposal"));
     actionBar->addWidget(voteYesButton);
 
-    QPushButton *voteAbstainButton = new QPushButton(tr("Vote Abstain"), this);
+    QtMaterialFlatButton *voteAbstainButton = new QtMaterialFlatButton(tr("Vote Abstain"), this);
     voteAbstainButton->setToolTip(tr("Yote Abstain on the selected proposal"));
     actionBar->addWidget(voteAbstainButton);
 
-    QPushButton *voteNoButton = new QPushButton(tr("Vote No"), this);
+    QtMaterialFlatButton *voteNoButton = new QtMaterialFlatButton(tr("Vote No"), this);
     voteNoButton->setToolTip(tr("Yote No on the selected proposal"));
     actionBar->addWidget(voteNoButton);
 
