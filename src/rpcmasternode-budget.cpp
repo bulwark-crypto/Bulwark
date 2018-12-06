@@ -1050,6 +1050,10 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
         std::vector<CFinalizedBudget*> winningFbs = budget.GetFinalizedBudgets();
         BOOST_FOREACH(CFinalizedBudget* finalizedBudget, winningFbs)
         {
+            // Ignore old finalized budgets to avoid displaying misleading error
+            // messages about missing proposals.  Include the previous final budget cycle.
+            if (finalizedBudget->GetBlockEnd() < (chainActive.Tip()->nHeight - GetBudgetPaymentCycleBlocks())) continue;
+
             UniValue bObj(UniValue::VOBJ);
             bObj.push_back(Pair("FeeTX", finalizedBudget->nFeeTXHash.ToString()));
             bObj.push_back(Pair("Hash", finalizedBudget->GetHash().ToString()));

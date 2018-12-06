@@ -731,6 +731,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
     int nFivePercent = mnodeman.CountEnabled(ActiveProtocol()) / 20;
     std::vector<CFinalizedBudget*> ret;
 
+    printf("CBudgetManager::IsTransactionValid - checking %lli finalized budgets\n", mapFinalizedBudgets.size());
     LogPrint("mnbudget","CBudgetManager::IsTransactionValid - checking %lli finalized budgets\n", mapFinalizedBudgets.size());
 
     // ------- Grab The Highest Count
@@ -750,6 +751,7 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
         ++it;
     }
 
+    printf("CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n", nHighestCount, nFivePercent, mapFinalizedBudgets.size());
     LogPrint("mnbudget","CBudgetManager::IsTransactionValid() - nHighestCount: %lli, 5%% of Masternodes: %lli mapFinalizedBudgets.size(): %ld\n", nHighestCount, nFivePercent, mapFinalizedBudgets.size());
     
     //If budget doesn't have 5% of the network votes, then we should pay a masternode instead
@@ -765,6 +767,9 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
         CFinalizedBudget* pfinalizedBudget = &((*it).second);
         strProposals = pfinalizedBudget->GetProposals();
 
+        printf("CBudgetManager::IsTransactionValid - checking budget (%s) with blockstart %lli, blockend %lli, nBlockHeight %lli, votes %lli, nCountThreshold %lli\n",
+                 strProposals.c_str(), pfinalizedBudget->GetBlockStart(), pfinalizedBudget->GetBlockEnd(), 
+                 nBlockHeight, pfinalizedBudget->GetVoteCount(), nCountThreshold);
         LogPrint("mnbudget","CBudgetManager::IsTransactionValid - checking budget (%s) with blockstart %lli, blockend %lli, nBlockHeight %lli, votes %lli, nCountThreshold %lli\n",
                  strProposals.c_str(), pfinalizedBudget->GetBlockStart(), pfinalizedBudget->GetBlockEnd(), 
                  nBlockHeight, pfinalizedBudget->GetVoteCount(), nCountThreshold);
@@ -772,23 +777,28 @@ TrxValidationStatus CBudgetManager::IsTransactionValid(const CTransaction& txNew
         if (pfinalizedBudget->GetVoteCount() >= nCountThreshold) 
 	    {
             fThreshold = true;
+            printf("CBudgetManager::IsTransactionValid - GetVoteCount() > nCountThreshold passed\n");
             LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetVoteCount() > nCountThreshold passed\n");
             if (nBlockHeight >= pfinalizedBudget->GetBlockStart() && nBlockHeight <= pfinalizedBudget->GetBlockEnd()) 
 	        {
+                printf("CBudgetManager::IsTransactionValid - GetBlockStart() passed\n");
                 LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetBlockStart() passed\n");
                 transactionStatus = pfinalizedBudget->IsTransactionValid(txNew, nBlockHeight);
                 if (transactionStatus == TrxValidationStatus::Valid) 
 		        {
+                    printf("CBudgetManager::IsTransactionValid - pfinalizedBudget->IsTransactionValid() passed\n");
                     LogPrint("mnbudget","CBudgetManager::IsTransactionValid - pfinalizedBudget->IsTransactionValid() passed\n");
                     return TrxValidationStatus::Valid;
                 }
                 else 
 		        {   
+                    printf("CBudgetManager::IsTransactionValid - pfinalizedBudget->IsTransactionValid() error\n");
                     LogPrint("mnbudget","CBudgetManager::IsTransactionValid - pfinalizedBudget->IsTransactionValid() error\n");
                 }
             }
             else 
 	        {
+                printf("CBudgetManager::IsTransactionValid - GetBlockStart() failed, budget is outside current payment cycle and will be ignored.\n");
                 LogPrint("mnbudget","CBudgetManager::IsTransactionValid - GetBlockStart() failed, budget is outside current payment cycle and will be ignored.\n");
             }
                
