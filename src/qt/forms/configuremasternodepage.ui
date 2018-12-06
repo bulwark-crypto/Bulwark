@@ -109,27 +109,37 @@
    <item>  
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="AutoFillPrivKey">
+      <widget class="QtMaterialFlatButton" name="AutoFillPrivKey">
        <property name="text">
-        <string>&amp;AutoFill PrivKey</string>
+        <string>AutoFill PrivKey</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="AutoFillOutputs">
+      <widget class="QtMaterialFlatButton" name="AutoFillOutputs">
        <property name="text">
-        <string>&amp;AutoFill Outputs</string>
+        <string>AutoFill Outputs</string>
        </property>
       </widget>
      </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
+     <widget class="QtMaterialFlatButton" name="cancelButton" native="true">
+     <property name="text" stdset="0">
+      <string>Cancel</string>
+      </property>
+      <property name="autoDefault" stdset="0">
+       <bool>true</bool>
+      </property>
+    </widget>
+   </item>
+      <item>
+     <widget class="QtMaterialFlatButton" name="acceptButton" native="true">
+     <property name="text" stdset="0">
+      <string>Ok</string>
+      </property>
+      <property name="autoDefault" stdset="0">
+       <bool>true</bool>
+      </property>
     </widget>
    </item>
     </layout>
@@ -137,7 +147,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../phore.qrc"/>
+  <include location="../bulwark.qrc"/>
  </resources>
  <connections>
   <connection>

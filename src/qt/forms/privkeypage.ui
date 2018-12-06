@@ -14,29 +14,25 @@
    <item>
        <widget class="QValidatedLineEdit" name="payTo">
         <property name="toolTip">
-         <string>The Phore address to send the payment to</string>
+         <string>The Bulwark address to send the payment to</string>
         </property>
         <property name="inputMask">
          <string/>
         </property>
 		    <property name="placeholderText">
-         <string>Enter a Phore address (e.g. PCYiHgGJJ6xGHqivmdZrYjRnhaYf6AJ2Mp)</string>
+         <string>Enter a Bulwark address (e.g. bQa7nWZdDYBSCqfA0yMU9Prn4TmJZJEXE4)</string>
         </property>
        </widget>
       </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="copyAddress">
+      <widget class="QtMaterialFlatButton" name="copyAddress">
        <property name="toolTip">
         <string>Copy the currently selected address to the system clipboard</string>
        </property>
        <property name="text">
-        <string>&amp;Copy</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../phore.qrc">
-         <normaloff>:/icons/editcopy</normaloff>:/icons/editcopy</iconset>
+        <string>Copy</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -44,11 +40,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="closeButton">
+      <widget class="QtMaterialFlatButton" name="closeButton">
        <property name="toolTip">
        </property>
        <property name="text">
-        <string>C&amp;lose</string>
+        <string>Close</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -60,7 +56,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../phore.qrc"/>
+  <include location="../bulwark.qrc"/>
  </resources>
  <connections/>
 </ui>

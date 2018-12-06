@@ -4,7 +4,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/phore-config.h"
+#include "config/bulwark-config.h"
 #endif
 
 #include "configuremasternodepage.h"
@@ -21,6 +21,8 @@
 #include "masternodeman.h"
 #include "masternodelist.h"
 #include "wallet.h"
+#include "qtmaterialflatbutton.h"
+
 
 #include <univalue.h>
 #include <QIcon>
@@ -122,13 +124,17 @@ void ConfigureMasternodePage::saveCurrentRow()
     }
 }
 
-void ConfigureMasternodePage::accept()
+void ConfigureMasternodePage::on_acceptButton_clicked()
 {
 	saveCurrentRow();
 	emit accepted();
     QDialog::accept();
 }
 
+void ConfigureMasternodePage::on_cancelButton_clicked()
+{
+    this->close();
+}
 
 void ConfigureMasternodePage::updateAlias(std::string Alias, std::string IP, std::string PrivKey, std::string TxHash, std::string OutputIndex, std::string mnAlias)
 {
@@ -162,7 +168,6 @@ void ConfigureMasternodePage::on_AutoFillPrivKey_clicked()
 
 	ui->privKeyEdit->setText(QString::fromStdString(CBitcoinSecret(secret).ToString()));
 }
-
 
 void ConfigureMasternodePage::on_AutoFillOutputs_clicked()
 {

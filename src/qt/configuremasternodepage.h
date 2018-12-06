@@ -79,7 +79,8 @@ public:
     void setAddress(const QString& address);
 
 public slots:
-    void accept();
+    void on_acceptButton_clicked();
+    void on_cancelButton_clicked();
     void on_AutoFillPrivKey_clicked();
     void on_AutoFillOutputs_clicked();
 

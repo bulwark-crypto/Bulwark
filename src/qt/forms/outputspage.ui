@@ -33,11 +33,11 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="closeButton">
+      <widget class="QtMaterialFlatButton" name="closeButton">
        <property name="toolTip">
        </property>
        <property name="text">
-        <string>C&amp;lose</string>
+        <string>Close</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -49,7 +49,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../phore.qrc"/>
+  <include location="../bulwark.qrc"/>
  </resources>
  <connections/>
 </ui>
