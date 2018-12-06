@@ -117,6 +117,66 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }
 
+void setupAliasWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+#if QT_VERSION >= 0x040700
+    // We don't want translators to use own addresses in translations
+    // and this is the only place, where this address is supplied.
+    widget->setPlaceholderText(QObject::tr("Enter a Masternode Alias (e.g. %1)").arg("mn1"));
+#endif
+}
+
+void setupIPWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+#if QT_VERSION >= 0x040700
+    // We don't want translators to use own addresses in translations
+    // and this is the only place, where this address is supplied.
+    widget->setPlaceholderText(QObject::tr("Enter a VPS IP (e.g. %1)").arg("127.0.0.2:11771"));
+#endif
+}
+
+void setupPrivKeyWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+#if QT_VERSION >= 0x040700
+    // We don't want translators to use own addresses in translations
+    // and this is the only place, where this address is supplied.
+    widget->setPlaceholderText(QObject::tr("Enter a Private Key (e.g. %1)").arg("93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xt"));
+#endif
+}
+
+void setupTXIDWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+#if QT_VERSION >= 0x040700
+    // We don't want translators to use own addresses in translations
+    // and this is the only place, where this address is supplied.
+    widget->setPlaceholderText(QObject::tr("Enter a TX Output (e.g. %1)").arg("2bcd3c84c84f87eaa86e4e56834c92937a07f9e18718810b92e0d0324456a57c"));
+#endif
+}
+
+void setupTXIDIndexWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+#if QT_VERSION >= 0x040700
+    // We don't want translators to use own addresses in translations
+    // and this is the only place, where this address is supplied.
+    widget->setPlaceholderText(QObject::tr("Enter a TX Index (e.g. %1)").arg("1"));
+#endif
+}
+
 void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 {
     QDoubleValidator* amountValidator = new QDoubleValidator(parent);
