@@ -108,3 +108,43 @@ bool CMasternodeConfig::CMasternodeEntry::castOutputIndex(int &n)
 
     return true;
 }
+
+void CMasternodeConfig::clear()
+{
+	entries.clear();
+}
+
+void CMasternodeConfig::deleteAlias(int count)
+{
+	count = count - 1;
+	entries.erase(entries.begin()+count);
+}
+
+void CMasternodeConfig::writeToMasternodeConf()
+{
+    boost::filesystem::path pathMasternodeConfigFile = GetMasternodeConfigFile();
+    boost::filesystem::ifstream streamConfig(pathMasternodeConfigFile);
+
+    FILE* configFile = fopen(pathMasternodeConfigFile.string().c_str(), "w");
+
+	// Add file header back as each time this runs it restarts the file
+    std::string strHeader = "# Masternode config file\n"
+                            "# Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index\n"
+                            "# Example: mn1 127.0.0.2:11771 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0\n";
+    fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
+	
+	std::string masternodeAliasBase = "";
+	
+	BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+		// Orders configs in proper strings
+		std::string masternodeAliasLine  = mne.getAlias() + " " + mne.getIp() + " " + mne.getPrivKey() + " " + mne.getTxHash() + " " + mne.getOutputIndex() + "\n";
+		masternodeAliasBase = masternodeAliasBase + masternodeAliasLine;
+	}
+	//Writes it to the string
+	fwrite(masternodeAliasBase.c_str(), std::strlen(masternodeAliasBase.c_str()), 1, configFile);
+	// When done adding all the masternodes to the config close the file	
+    fclose(configFile);
+	clear();
+	std::string strErr;
+	read(strErr);
+}

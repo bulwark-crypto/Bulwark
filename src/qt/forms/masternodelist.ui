@@ -195,6 +195,27 @@
                    <number>0</number>
                   </property>
                   <item>
+                   <widget class="QPushButton" name="getMNPrivKeyButton">
+                    <property name="text">
+                     <string>G&amp;et MN Priv Key</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="getOutputsButton">
+                    <property name="text">
+                     <string>G&amp;et Outputs</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="configureMasternodeButton">
+                    <property name="text">
+                     <string>C&amp;onfigure Masternode</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QtMaterialFlatButton" name="startButton" native="true">
                     <property name="text" stdset="0">
                      <string>Start alias</string>
