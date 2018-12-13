@@ -87,14 +87,14 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     typeWidget->addItem(tr("Received with"), TransactionFilterProxy::TYPE(TransactionRecord::RecvWithAddress) | TransactionFilterProxy::TYPE(TransactionRecord::RecvFromOther));
     typeWidget->addItem(tr("Sent to"), TransactionFilterProxy::TYPE(TransactionRecord::SendToAddress) | TransactionFilterProxy::TYPE(TransactionRecord::SendToOther));
 
-    /* Obsolete Obfuscation entries. Remove once the corresponding TYPES are removed:
-     *
-        typeWidget->addItem(tr("Obfuscated"), TransactionFilterProxy::TYPE(TransactionRecord::Obfuscated));
-        typeWidget->addItem(tr("Obfuscation Make Collateral Inputs"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationMakeCollaterals));
-        typeWidget->addItem(tr("Obfuscation Create Denominations"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationCreateDenominations));
-        typeWidget->addItem(tr("Obfuscation Denominate"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationDenominate));
-        typeWidget->addItem(tr("Obfuscation Collateral Payment"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationCollateralPayment));
-     */
+/* Obsolete Obfuscation entries. Remove once the corresponding TYPES are removed:
+ *
+    typeWidget->addItem(tr("Obfuscated"), TransactionFilterProxy::TYPE(TransactionRecord::Obfuscated));
+    typeWidget->addItem(tr("Obfuscation Make Collateral Inputs"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationMakeCollaterals));
+    typeWidget->addItem(tr("Obfuscation Create Denominations"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationCreateDenominations));
+    typeWidget->addItem(tr("Obfuscation Denominate"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationDenominate));
+    typeWidget->addItem(tr("Obfuscation Collateral Payment"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationCollateralPayment));
+ */
 
     typeWidget->addItem(tr("To yourself"), TransactionFilterProxy::TYPE(TransactionRecord::SendToSelf));
     typeWidget->addItem(tr("Mined"), TransactionFilterProxy::TYPE(TransactionRecord::Generated));
@@ -111,15 +111,11 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     hlayout->addWidget(typeWidget);
 
     addressWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     addressWidget->setPlaceholderText(tr("Enter address or label to search"));
-#endif
     hlayout->addWidget(addressWidget);
 
     amountWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
-#endif
 #ifdef Q_OS_MAC
     amountWidget->setFixedWidth(97);
 #else
