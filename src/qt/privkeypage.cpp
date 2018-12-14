@@ -26,7 +26,7 @@
 #include <QMessageBox>
 #include <QSortFilterProxyModel>
 
-PrivKeyPage::PrivKeyPage(QWidget* parent) : QDialog(parent),
+PrivKeyPage::PrivKeyPage(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                             ui(new Ui::PrivKeyPage)
 {
     ui->setupUi(this);
