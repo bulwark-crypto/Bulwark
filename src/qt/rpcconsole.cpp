@@ -37,10 +37,6 @@
 #include <QTime>
 #include <QStringList>
 
-#if QT_VERSION < 0x050000
-#include <QUrl>
-#endif
-
 // TODO: add a scrollback limit, as there is currently none
 // TODO: make it possible to filter out categories (esp debug messages when implemented)
 // TODO: receive errors and debug messages through ClientModel
@@ -240,7 +236,7 @@ void RPCExecutor::request(const QString& command)
     }
 }
 
-RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent),
+RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
     ui(new Ui::RPCConsole),
     clientModel(0),
     historyPtr(0),
