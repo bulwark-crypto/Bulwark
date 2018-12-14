@@ -74,6 +74,7 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     unitDisplayControl(0),
     labelStakingIcon(0),
     labelEncryptionIcon(0),
+    labelTorIcon(0),
     labelConnectionsIcon(0),
     labelBlocksIcon(0),
     progressBarLabel(0),
