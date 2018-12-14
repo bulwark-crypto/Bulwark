@@ -122,20 +122,20 @@
        </property>
       </widget>
      </item>
-   <item>
-     <widget class="QtMaterialFlatButton" name="cancelButton" native="true">
+      <item>
+     <widget class="QtMaterialFlatButton" name="acceptButton" native="true">
      <property name="text" stdset="0">
-      <string>Cancel</string>
+      <string>Ok</string>
       </property>
       <property name="autoDefault" stdset="0">
        <bool>true</bool>
       </property>
     </widget>
    </item>
-      <item>
-     <widget class="QtMaterialFlatButton" name="acceptButton" native="true">
+   <item>
+     <widget class="QtMaterialFlatButton" name="cancelButton" native="true">
      <property name="text" stdset="0">
-      <string>Ok</string>
+      <string>Cancel</string>
       </property>
       <property name="autoDefault" stdset="0">
        <bool>true</bool>

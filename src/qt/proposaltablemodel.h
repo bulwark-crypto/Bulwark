@@ -1,5 +1,6 @@
 // Copyright (c) 2018 The Phore developers
 // Copyright (c) 2018 The Curium developers
+// Copyright (c) 2017-2018 The Bulwark Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -42,10 +43,12 @@ public:
         Amount = 1,
         StartDate = 2,
         EndDate = 3,
-        YesVotes = 4,
-        NoVotes = 5,
-        AbstainVotes = 6,
-        Percentage = 7
+        TotalPaymentCount = 4,
+        RemainingPaymentCount = 5,
+        YesVotes = 6,
+        NoVotes = 7,
+        AbstainVotes = 8,
+        Percentage = 9
     };
 
     enum RoleIndex {
@@ -53,12 +56,14 @@ public:
         AmountRole,
         StartDateRole,
         EndDateRole,
+        TotalPaymentCountRole,
+        RemainingPaymentCountRole,
         YesVotesRole,
         NoVotesRole,
         AbstainVotesRole,
         PercentageRole,
         ProposalUrlRole,
-        ProposalHashRole,
+        ProposalHashRole
     };
 
     int rowCount(const QModelIndex &parent) const;
@@ -67,6 +72,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const;
+    void setProposalType(const int &type);
 
 private:
     QNetworkAccessManager *networkManager;
@@ -75,8 +81,9 @@ private:
     QList<ProposalRecord*> proposalRecords;
     QStringList columns;
 
-public Q_SLOTS:
+    int proposalType = 0;
 
+public Q_SLOTS:
     void onResult(QNetworkReply *result);
 };
 

@@ -1052,7 +1052,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
         {
             // Ignore old finalized budgets to avoid displaying misleading error
             // messages about missing proposals.  Include the previous final budget cycle.
-            if (finalizedBudget->GetBlockEnd() < (chainActive.Tip()->nHeight - GetBudgetPaymentCycleBlocks())) continue;
+            if (finalizedBudget->GetBlockStart() < (chainActive.Tip()->nHeight - GetBudgetPaymentCycleBlocks())) continue;
 
             UniValue bObj(UniValue::VOBJ);
             bObj.push_back(Pair("FeeTX", finalizedBudget->nFeeTXHash.ToString()));

@@ -1,17 +1,19 @@
 // Copyright (c) 2018 The Phore developers
 // Copyright (c) 2018 The Curium developers
+// Copyright (c) 2017-2018 The Bulwark Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BULWARK_QT_PROPOSALLIST_H
 #define BULWARK_QT_PROPOSALLIST_H
 
+#include "columnalignedlayout.h"
 #include "guiutil.h"
 #include "proposaltablemodel.h"
-#include "columnalignedlayout.h"
-#include <QWidget>
+
 #include <QKeyEvent>
 #include <QTimer>
+#include <QWidget>
 
 class ProposalFilterProxy;
 
@@ -54,6 +56,8 @@ public:
         AMOUNT_COLUMN_WIDTH = 100,
         START_DATE_COLUMN_WIDTH = 110,
         END_DATE_COLUMN_WIDTH = 110,
+        TOTAL_PAYMENT_COLUMN_WIDTH = 80,
+        REMAINING_PAYMENT_COLUMN_WIDTH = 80,
         YES_VOTES_COLUMN_WIDTH = 60,
         NO_VOTES_COLUMN_WIDTH = 60,
         ABSTAIN_COLUMN_WIDTH = 60,
@@ -70,6 +74,8 @@ private:
     QLineEdit *proposalWidget;
     QLineEdit *startDateWidget;
     QLineEdit *endDateWidget;
+    QLineEdit *totalPaymentCountWidget;
+    QLineEdit *remainingPaymentCountWidget;
     QTimer *timer;
 
     QLineEdit *yesVotesWidget;
@@ -86,6 +92,11 @@ private:
     QLineEdit *proposalEndDate;
     ColumnAlignedLayout *hlayout;
 
+    /* Header - Info/Projection */
+    QComboBox *proposalTypeCombo;
+    QHBoxLayout *headLayout;
+    /* End Header - Info/Projection */
+
     void vote_click_handler(const std::string voteString);
 
     GUIUtil::TableViewLastColumnResizingFixer *columnResizingFixer;
@@ -93,6 +104,8 @@ private:
     virtual void resizeEvent(QResizeEvent* event);
 
 private Q_SLOTS:
+    void createProposal();
+    void proposalType(int type);
     void contextualMenu(const QPoint &);
     void voteYes();
     void voteNo();
@@ -108,6 +121,8 @@ public Q_SLOTS:
     void changedProposal(const QString &proposal);
     void chooseStartDate(const QString &startDate);
     void chooseEndDate(const QString &endDate);
+    void changedTotalPaymentCount(const QString &totalPaymentCount);
+    void changedRemainingPaymentCount(const QString &remainingPaymentCount);
     void changedYesVotes(const QString &minYesVotes);
     void changedNoVotes(const QString &minNoVotes);
     void changedAbstainVotes(const QString &minAbstainVotes);
