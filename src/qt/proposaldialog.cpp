@@ -94,6 +94,7 @@ ProposalDialog::ProposalDialog(Mode mode, QWidget* parent) : QDialog(parent), ui
 
 ProposalDialog::~ProposalDialog()
 {
+    timer->stop();
     delete ui;
 }
 
@@ -199,7 +200,6 @@ void ProposalDialog::submitProposal()
     
     if (!strError.empty()) 
     {
-        std::cout << strError << std::endl;
         QMessageBox::critical(this, tr("Submit Proposal Error"), QString::fromStdString(strError));
         return;
     }

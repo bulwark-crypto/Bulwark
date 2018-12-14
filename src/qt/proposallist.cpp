@@ -248,9 +248,9 @@ ProposalList::ProposalList(QWidget *parent) :
     proposalProxyModel->setSortRole(Qt::EditRole);
     proposalProxyModel->setSourceModel(proposalTableModel);
 
+    proposalList->setAlternatingRowColors(true);
     proposalList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     proposalList->setModel(proposalProxyModel);
-    proposalList->setAlternatingRowColors(true);
     proposalList->setSelectionBehavior(QAbstractItemView::SelectRows);
     proposalList->setSortingEnabled(true);
     proposalList->sortByColumn(ProposalTableModel::YesVotes, Qt::DescendingOrder);
