@@ -499,7 +499,7 @@ void BlockExplorer::showEvent(QShowEvent*)
         m_History.push_back(text);
         updateNavButtons();
 
-        if (!GetBoolArg("-txindex", false))
+        if (!GetBoolArg("-txindex", true))
         {
             QString Warning = tr("Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).");
             QMessageBox::warning(this, "Bulwark Core Blockchain Explorer", Warning, QMessageBox::Ok);
