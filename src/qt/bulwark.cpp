@@ -206,6 +206,21 @@ public:
     explicit BitcoinApplication(int& argc, char** argv);
     ~BitcoinApplication();
 
+    /// Override notify for Qt errors that propagate.
+    virtual bool notify(QObject *receiver, QEvent *e) override
+    {
+        try
+        {
+            return QApplication::notify(receiver, e);
+        }
+        catch (...)
+        {
+            LogPrintf("ERROR: BitcoinApplication::notify from %s of type %s\n", receiver->objectName().toStdString(), e->type());
+            QMessageBox::information(0, tr("Error"), tr("There was an unexpected error, please check the debug.log for more details."));
+        }
+        return false;
+    }
+
 #ifdef ENABLE_WALLET
     /// Create payment server
     void createPaymentServer();
