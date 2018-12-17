@@ -985,8 +985,8 @@ void RPCConsole::banSelectedNode(int bantime)
         bannedNode->fDisconnect = true;
 
         clearSelectedNode();
-        clientModel->getBanTableModel()->refresh();
     }
+    clientModel->getBanTableModel()->refresh();
 }
 
 void RPCConsole::unbanSelectedNode()
@@ -1001,8 +1001,8 @@ void RPCConsole::unbanSelectedNode()
     if (possibleSubnet.IsValid())
     {
         CNode::Unban(possibleSubnet);
-        clientModel->getBanTableModel()->refresh();
     }
+    clientModel->getBanTableModel()->refresh();
 }
 
 void RPCConsole::clearSelectedNode()

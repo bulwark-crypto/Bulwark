@@ -532,7 +532,9 @@ bool CNode::setBannedIsDirty;
 
 void CNode::ClearBanned()
 {
+    LOCK(cs_setBanned);
     setBanned.clear();
+    DumpBanlist();
 }
 
 bool CNode::IsBanned(CNetAddr ip)
@@ -587,11 +589,10 @@ void CNode::Ban(const CSubNet& subNet, int64_t bantimeoffset, bool sinceUnixEpoc
     }
     banEntry.nBanUntil = (sinceUnixEpoch ? 0 : GetTime()) + bantimeoffset;
 
-
-    LOCK(cs_setBanned);
-    if (setBanned[subNet].nBanUntil < banEntry.nBanUntil)
-        setBanned[subNet] = banEntry;
-
+    {
+        LOCK(cs_setBanned);
+        if (setBanned[subNet].nBanUntil < banEntry.nBanUntil) setBanned[subNet] = banEntry;
+    }
     setBannedIsDirty = true;
 }
 
