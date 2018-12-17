@@ -61,80 +61,60 @@ ProposalList::ProposalList(QWidget *parent) :
     hlayout->setSpacing(0);
 
     proposalWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     proposalWidget->setPlaceholderText(tr("Enter proposal name"));
-#endif
     proposalWidget->setObjectName("proposalWidget");
     hlayout->addWidget(proposalWidget);
 
     amountWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
-#endif
     amountWidget->setValidator(new QDoubleValidator(0, 1e20, 0, this));
     amountWidget->setObjectName("amountWidget");
     hlayout->addWidget(amountWidget);
 
     startDateWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     startDateWidget->setPlaceholderText(tr("Start Block"));
-#endif
     startDateWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     startDateWidget->setObjectName("startDateWidget");
     hlayout->addWidget(startDateWidget);
 
     endDateWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     endDateWidget->setPlaceholderText(tr("End Block"));
-#endif
     endDateWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     endDateWidget->setObjectName("endDateWidget");
     hlayout->addWidget(endDateWidget);
 
     totalPaymentCountWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     totalPaymentCountWidget->setPlaceholderText(tr("Total"));
-#endif
     totalPaymentCountWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     totalPaymentCountWidget->setObjectName("totalPaymentCountWidget");
     hlayout->addWidget(totalPaymentCountWidget);
 
     remainingPaymentCountWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     remainingPaymentCountWidget->setPlaceholderText(tr("Remaining"));
-#endif
     remainingPaymentCountWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     remainingPaymentCountWidget->setObjectName("remainingPaymentCountWidget");
     hlayout->addWidget(remainingPaymentCountWidget);
 
     yesVotesWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     yesVotesWidget->setPlaceholderText(tr("Min yes votes"));
-#endif
     yesVotesWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     yesVotesWidget->setObjectName("yesVotesWidget");
     hlayout->addWidget(yesVotesWidget);
 
     noVotesWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     noVotesWidget->setPlaceholderText(tr("Min no votes"));
-#endif
     noVotesWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     noVotesWidget->setObjectName("noVotesWidget");
     hlayout->addWidget(noVotesWidget);
 
     abstainVotesWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     abstainVotesWidget->setPlaceholderText(tr("Min abstain votes"));
-#endif
     abstainVotesWidget->setValidator(new QIntValidator(0, INT_MAX, this));
     abstainVotesWidget->setObjectName("abstainVotesWidget");
     hlayout->addWidget(abstainVotesWidget);
 
     percentageWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     percentageWidget->setPlaceholderText(tr("Min percentage"));
-#endif
     percentageWidget->setValidator(new QIntValidator(-100, 100, this));
     percentageWidget->setObjectName("percentageWidget");
     hlayout->addWidget(percentageWidget);
