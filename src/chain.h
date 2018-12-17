@@ -278,6 +278,7 @@ public:
     CDiskBlockPos GetUndoPos() const
     {
         CDiskBlockPos ret;
+        std::cout << "CDiskBlockPos GetUndoPos() nStatus: " << nStatus << std::endl;
         if (nStatus & BLOCK_HAVE_UNDO)
         {
             ret.nFile = nFile;
