@@ -309,14 +309,20 @@ void ClientModel::unsubscribeFromCoreSignals()
 bool ClientModel::getTorInfo(std::string& ip_port) const
 {
     proxyType onion;
-    if (GetProxy((Network) 3, onion) && IsReachable((Network) 3)) {
+    if (GetProxy(Network::NET_TOR, onion) && IsReachable(Network::NET_TOR)) 
+    {
         {
             LOCK(cs_mapLocalHost);
+            if (mapLocalHost.size() == 0 && onion.IsValid())
+            {
+                ip_port = onion.proxy.ToStringIPPort();
+                return true;
+            }
             for (const std::pair<CNetAddr, LocalServiceInfo> &item : mapLocalHost) {
-                if (item.first.IsTor()) {
-                     CService addrOnion = CService(item.first.ToString(), item.second.nPort);
-                     ip_port = addrOnion.ToStringIPPort();
-                     return true;
+                if (item.first.IsTor()) 
+                {
+                    ip_port = item.first.ToStringIP() + ":" + std::to_string(item.second.nPort);
+                    return true;
                 }
             }
         }

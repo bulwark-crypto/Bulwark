@@ -276,7 +276,13 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     QTimer* timerStakingIcon = new QTimer(labelStakingIcon);
     connect(timerStakingIcon, SIGNAL(timeout()), this, SLOT(setStakingStatus()));
     timerStakingIcon->start(10000);
+
+    QTimer* timerTorIcon = new QTimer(labelTorIcon);
+    connect(timerTorIcon, SIGNAL(timeout()), this, SLOT(updateTorIcon()));
+    timerTorIcon->start(10000);
+
     setStakingStatus();
+    updateTorIcon();
 }
 
 BitcoinGUI::~BitcoinGUI()
@@ -636,8 +642,6 @@ void BitcoinGUI::setClientModel(ClientModel* clientModel)
         connect(clientModel, SIGNAL(showProgress(QString, int)), this, SLOT(showProgress(QString, int)));
 
         rpcConsole->setClientModel(clientModel);
-
-        updateTorIcon();
 
 #ifdef ENABLE_WALLET
         if (walletFrame)
@@ -1348,7 +1352,6 @@ void BitcoinGUI::updateTorIcon()
 {
     std::string ip_port;
     bool tor_enabled = clientModel->getTorInfo(ip_port);
-
     if (tor_enabled) {
         if (labelTorIcon->pixmap() == 0) {
             QString ip_port_q = QString::fromStdString(ip_port);

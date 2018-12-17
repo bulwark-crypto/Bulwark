@@ -184,6 +184,8 @@ public slots:
     void message(const QString& title, const QString& message, unsigned int style, bool* ret = NULL);
 
     void setStakingStatus();
+    /** Set the Tor-enabled icon as shown in the UI. */
+    void updateTorIcon();
 
 #ifdef ENABLE_WALLET
     /** Set the encryption status as shown in the UI.
@@ -199,8 +201,6 @@ public slots:
 #endif // ENABLE_WALLET
 
 private:
-    /** Set the Tor-enabled icon as shown in the UI. */
-    void updateTorIcon();
 
 private slots:
 #ifdef ENABLE_WALLET
