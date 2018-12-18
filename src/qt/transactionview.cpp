@@ -36,7 +36,7 @@
 #include <QVBoxLayout>
 
 TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), transactionProxyModel(0),
-                                                    transactionView(0)
+    transactionView(0)
 {
     QSettings settings;
     // Build filter row
@@ -88,7 +88,7 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     typeWidget->addItem(tr("Sent to"), TransactionFilterProxy::TYPE(TransactionRecord::SendToAddress) | TransactionFilterProxy::TYPE(TransactionRecord::SendToOther));
 
 /* Obsolete Obfuscation entries. Remove once the corresponding TYPES are removed:
- * 
+ *
     typeWidget->addItem(tr("Obfuscated"), TransactionFilterProxy::TYPE(TransactionRecord::Obfuscated));
     typeWidget->addItem(tr("Obfuscation Make Collateral Inputs"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationMakeCollaterals));
     typeWidget->addItem(tr("Obfuscation Create Denominations"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationCreateDenominations));
@@ -111,15 +111,11 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     hlayout->addWidget(typeWidget);
 
     addressWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     addressWidget->setPlaceholderText(tr("Enter address or label to search"));
-#endif
     hlayout->addWidget(addressWidget);
 
     amountWidget = new QLineEdit(this);
-#if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
-#endif
 #ifdef Q_OS_MAC
     amountWidget->setFixedWidth(97);
 #else
@@ -196,7 +192,8 @@ void TransactionView::setModel(WalletModel* model)
 {
     QSettings settings;
     this->model = model;
-    if (model) {
+    if (model)
+    {
         transactionProxyModel = new TransactionFilterProxy(this);
         transactionProxyModel->setSourceModel(model->getTransactionTableModel());
         transactionProxyModel->setDynamicSortFilter(true);
@@ -225,12 +222,15 @@ void TransactionView::setModel(WalletModel* model)
 
         columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(transactionView, AMOUNT_MINIMUM_COLUMN_WIDTH, MINIMUM_COLUMN_WIDTH);
 
-        if (model->getOptionsModel()) {
+        if (model->getOptionsModel())
+        {
             // Add third party transaction URLs to context menu
             QStringList listUrls = model->getOptionsModel()->getThirdPartyTxUrls().split("|", QString::SkipEmptyParts);
-            for (int i = 0; i < listUrls.size(); ++i) {
+            for (int i = 0; i < listUrls.size(); ++i)
+            {
                 QString host = QUrl(listUrls[i].trimmed(), QUrl::StrictMode).host();
-                if (!host.isEmpty()) {
+                if (!host.isEmpty())
+                {
                     QAction* thirdPartyTxUrlAction = new QAction(host, this); // use host as menu item label
                     if (i == 0)
                         contextMenu->addSeparator();
@@ -259,7 +259,8 @@ void TransactionView::chooseDate(int idx)
         return;
     QDate current = QDate::currentDate();
     dateRangeWidget->setVisible(false);
-    switch (dateWidget->itemData(idx).toInt()) {
+    switch (dateWidget->itemData(idx).toInt())
+    {
     case All:
         transactionProxyModel->setDateRange(
             TransactionFilterProxy::MIN_DATE,
@@ -270,14 +271,16 @@ void TransactionView::chooseDate(int idx)
             QDateTime(current),
             TransactionFilterProxy::MAX_DATE);
         break;
-    case ThisWeek: {
+    case ThisWeek:
+    {
         // Find last Monday
         QDate startOfWeek = current.addDays(-(current.dayOfWeek() - 1));
         transactionProxyModel->setDateRange(
             QDateTime(startOfWeek),
             TransactionFilterProxy::MAX_DATE);
 
-    } break;
+    }
+    break;
     case ThisMonth:
         transactionProxyModel->setDateRange(
             QDateTime(QDate(current.year(), current.month(), 1)),
@@ -299,7 +302,8 @@ void TransactionView::chooseDate(int idx)
         break;
     }
     // Persist settings
-    if (dateWidget->itemData(idx).toInt() != Range) {
+    if (dateWidget->itemData(idx).toInt() != Range)
+    {
         QSettings settings;
         settings.setValue("transactionDate", idx);
     }
@@ -337,14 +341,18 @@ void TransactionView::changedAmount(const QString& amount)
         return;
     CAmount amount_parsed = 0;
 
-    if (model) {
+    if (model)
+    {
         // Replace "," by "." so BitcoinUnits::parse will not fail for users entering "," as decimal separator
         QString newAmount = amount;
         newAmount.replace(QString(","), QString("."));
 
-        if (BitcoinUnits::parse(model->getOptionsModel()->getDisplayUnit(), newAmount, &amount_parsed)) {
+        if (BitcoinUnits::parse(model->getOptionsModel()->getDisplayUnit(), newAmount, &amount_parsed))
+        {
             transactionProxyModel->setMinAmount(amount_parsed);
-        } else {
+        }
+        else
+        {
             transactionProxyModel->setMinAmount(0);
         }
     }
@@ -354,8 +362,8 @@ void TransactionView::exportClicked()
 {
     // CSV is currently the only supported format
     QString filename = GUIUtil::getSaveFileName(this,
-        tr("Export Transaction History"), QString(),
-        tr("Comma separated file (*.csv)"), NULL);
+                       tr("Export Transaction History"), QString(),
+                       tr("Comma separated file (*.csv)"), NULL);
 
     if (filename.isNull())
         return;
@@ -363,7 +371,8 @@ void TransactionView::exportClicked()
     CSVModelWriter writer(filename);
     bool fExport = false;
 
-    if (model) {
+    if (model)
+    {
         // name, column, role
         writer.setModel(transactionProxyModel);
         writer.addColumn(tr("Confirmed"), 0, TransactionTableModel::ConfirmedRole);
@@ -379,11 +388,13 @@ void TransactionView::exportClicked()
         fExport = writer.write();
     }
 
-    if (fExport) {
+    if (fExport)
+    {
         emit message(tr("Exporting Successful"), tr("The transaction history was successfully saved to %1.").arg(filename),
                      CClientUIInterface::MSG_INFORMATION);
-    } 
-    else {
+    }
+    else
+    {
         emit message(tr("Exporting Failed"), tr("There was an error trying to save the transaction history to %1.").arg(filename),
                      CClientUIInterface::MSG_ERROR);
     }
@@ -392,7 +403,8 @@ void TransactionView::exportClicked()
 void TransactionView::contextualMenu(const QPoint& point)
 {
     QModelIndex index = transactionView->indexAt(point);
-    if (index.isValid()) {
+    if (index.isValid())
+    {
         contextMenu->exec(QCursor::pos());
     }
 }
@@ -422,19 +434,22 @@ void TransactionView::editLabel()
     if (!transactionView->selectionModel() || !model)
         return;
     QModelIndexList selection = transactionView->selectionModel()->selectedRows();
-    if (!selection.isEmpty()) {
+    if (!selection.isEmpty())
+    {
         AddressTableModel* addressBook = model->getAddressTableModel();
         if (!addressBook)
             return;
         QString address = selection.at(0).data(TransactionTableModel::AddressRole).toString();
-        if (address.isEmpty()) {
+        if (address.isEmpty())
+        {
             // If this transaction has no associated address, exit
             return;
         }
         // Is address in address book? Address book can miss address when a transaction is
         // sent from outside the UI.
         int idx = addressBook->lookupAddress(address);
-        if (idx != -1) {
+        if (idx != -1)
+        {
             // Edit sending / receiving address
             QModelIndex modelIdx = addressBook->index(idx, 0, QModelIndex());
             // Determine type of address, launch appropriate editor dialog type
@@ -445,10 +460,12 @@ void TransactionView::editLabel()
             dlg.setModel(addressBook);
             dlg.loadRow(idx);
             dlg.exec();
-        } else {
+        }
+        else
+        {
             // Add sending address
             EditAddressDialog dlg(EditAddressDialog::NewSendingAddress,
-                this);
+                                  this);
             dlg.setModel(addressBook);
             dlg.setAddress(address);
             dlg.exec();
@@ -461,7 +478,8 @@ void TransactionView::showDetails()
     if (!transactionView->selectionModel())
         return;
     QModelIndexList selection = transactionView->selectionModel()->selectedRows();
-    if (!selection.isEmpty()) {
+    if (!selection.isEmpty())
+    {
         TransactionDescDialog dlg(selection.at(0));
         dlg.exec();
     }
@@ -476,7 +494,8 @@ void TransactionView::computeSum()
         return;
     QModelIndexList selection = transactionView->selectionModel()->selectedRows();
 
-    foreach (QModelIndex index, selection) {
+    foreach (QModelIndex index, selection)
+    {
         amount += index.data(TransactionTableModel::AmountRole).toLongLong();
     }
     QString strAmount(BitcoinUnits::formatWithUnit(nDisplayUnit, amount, true, BitcoinUnits::separatorAlways));
@@ -561,11 +580,14 @@ void TransactionView::resizeEvent(QResizeEvent* event)
 // Need to override default Ctrl+C action for amount as default behaviour is just to copy DisplayRole text
 bool TransactionView::eventFilter(QObject* obj, QEvent* event)
 {
-    if (event->type() == QEvent::KeyPress) {
+    if (event->type() == QEvent::KeyPress)
+    {
         QKeyEvent* ke = static_cast<QKeyEvent*>(event);
-        if (ke->key() == Qt::Key_C && ke->modifiers().testFlag(Qt::ControlModifier)) {
+        if (ke->key() == Qt::Key_C && ke->modifiers().testFlag(Qt::ControlModifier))
+        {
             QModelIndex i = this->transactionView->currentIndex();
-            if (i.isValid() && i.column() == TransactionTableModel::Amount) {
+            if (i.isValid() && i.column() == TransactionTableModel::Amount)
+            {
                 GUIUtil::setClipboard(i.data(TransactionTableModel::FormattedAmountRole).toString());
                 return true;
             }

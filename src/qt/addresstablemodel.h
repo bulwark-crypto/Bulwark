@@ -24,17 +24,20 @@ public:
     explicit AddressTableModel(CWallet* wallet, WalletModel* parent = 0);
     ~AddressTableModel();
 
-    enum ColumnIndex {
+    enum ColumnIndex
+    {
         Label = 0,  /**< User specified label */
         Address = 1 /**< Bitcoin address */
     };
 
-    enum RoleIndex {
+    enum RoleIndex
+    {
         TypeRole = Qt::UserRole /**< Type of address (#Send or #Receive) */
     };
 
     /** Return status of edit/insert operation */
-    enum EditStatus {
+    enum EditStatus
+    {
         OK,                    /**< Everything ok */
         NO_CHANGES,            /**< No changes were made during edit operation */
         INVALID_ADDRESS,       /**< Unparseable address */
@@ -73,7 +76,10 @@ public:
      */
     int lookupAddress(const QString& address) const;
 
-    EditStatus getEditStatus() const { return editStatus; }
+    EditStatus getEditStatus() const
+    {
+        return editStatus;
+    }
 
 private:
     WalletModel* walletModel;

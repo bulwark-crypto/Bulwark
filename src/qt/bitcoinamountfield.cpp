@@ -24,8 +24,8 @@ class AmountSpinBox : public QAbstractSpinBox
 
 public:
     explicit AmountSpinBox(QWidget* parent) : QAbstractSpinBox(parent),
-                                              currentUnit(BitcoinUnits::BWK),
-                                              singleStep(100000) // satoshis
+        currentUnit(BitcoinUnits::BWK),
+        singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignRight);
 
@@ -46,7 +46,8 @@ public:
     {
         bool valid = false;
         CAmount val = parse(input, &valid);
-        if (valid) {
+        if (valid)
+        {
             input = BitcoinUnits::format(currentUnit, val, false, BitcoinUnits::separatorAlways);
             lineEdit()->setText(input);
         }
@@ -92,7 +93,8 @@ public:
 
     QSize minimumSizeHint() const
     {
-        if (cachedMinimumSizeHint.isEmpty()) {
+        if (cachedMinimumSizeHint.isEmpty())
+        {
             ensurePolished();
 
             const QFontMetrics fm(fontMetrics());
@@ -133,7 +135,8 @@ private:
     {
         CAmount val = 0;
         bool valid = BitcoinUnits::parse(currentUnit, text, &val);
-        if (valid) {
+        if (valid)
+        {
             if (val < 0 || val > BitcoinUnits::maxMoney())
                 valid = false;
         }
@@ -145,9 +148,11 @@ private:
 protected:
     bool event(QEvent* event)
     {
-        if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease) {
+        if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease)
+        {
             QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-            if (keyEvent->key() == Qt::Key_Comma) {
+            if (keyEvent->key() == Qt::Key_Comma)
+            {
                 // Translate a comma into a period
                 QKeyEvent periodKeyEvent(event->type(), Qt::Key_Period, keyEvent->modifiers(), ".", keyEvent->isAutoRepeat(), keyEvent->count());
                 return QAbstractSpinBox::event(&periodKeyEvent);
@@ -165,7 +170,8 @@ protected:
             return StepUpEnabled;
         bool valid = false;
         CAmount val = value(&valid);
-        if (valid) {
+        if (valid)
+        {
             if (val > 0)
                 rv |= StepDownEnabled;
             if (val < BitcoinUnits::maxMoney())
@@ -181,7 +187,7 @@ signals:
 #include "bitcoinamountfield.moc"
 
 BitcoinAmountField::BitcoinAmountField(QWidget* parent) : QWidget(parent),
-                                                          amount(0)
+    amount(0)
 {
     this->setObjectName("BitcoinAmountField"); // ID as CSS-reference
     // For whatever reasons the Gods of Qt-CSS-manipulation won't let us change this class' stylesheet in the CSS file.
@@ -250,7 +256,8 @@ void BitcoinAmountField::setValid(bool valid)
 
 bool BitcoinAmountField::eventFilter(QObject* object, QEvent* event)
 {
-    if (event->type() == QEvent::FocusIn) {
+    if (event->type() == QEvent::FocusIn)
+    {
         // Clear invalid flag on focus
         setValid(true);
     }

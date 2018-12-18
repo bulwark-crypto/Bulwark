@@ -5,7 +5,7 @@
  * ==========================(LICENSE BEGIN)============================
  *
  * Copyright (c) 2007-2010  Projet RNRT SAPHIR
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -13,10 +13,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -36,7 +36,7 @@
 #include "sph_keccak.h"
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
 
 /*
@@ -46,7 +46,7 @@ extern "C"{
  *  SPH_KECCAK_UNROLL      number of loops to unroll (0/undef for full unroll)
  *  SPH_KECCAK_INTERLEAVE  use bit-interleaving (32-bit type only)
  *  SPH_KECCAK_NOCOPY      do not copy the state into local variables
- * 
+ *
  * If there is no usable 64-bit type, the code automatically switches
  * back to the 32-bit implementation.
  *
@@ -133,19 +133,20 @@ extern "C"{
 
 #if SPH_KECCAK_64
 
-static const sph_u64 RC[] = {
-	SPH_C64(0x0000000000000001), SPH_C64(0x0000000000008082),
-	SPH_C64(0x800000000000808A), SPH_C64(0x8000000080008000),
-	SPH_C64(0x000000000000808B), SPH_C64(0x0000000080000001),
-	SPH_C64(0x8000000080008081), SPH_C64(0x8000000000008009),
-	SPH_C64(0x000000000000008A), SPH_C64(0x0000000000000088),
-	SPH_C64(0x0000000080008009), SPH_C64(0x000000008000000A),
-	SPH_C64(0x000000008000808B), SPH_C64(0x800000000000008B),
-	SPH_C64(0x8000000000008089), SPH_C64(0x8000000000008003),
-	SPH_C64(0x8000000000008002), SPH_C64(0x8000000000000080),
-	SPH_C64(0x000000000000800A), SPH_C64(0x800000008000000A),
-	SPH_C64(0x8000000080008081), SPH_C64(0x8000000000008080),
-	SPH_C64(0x0000000080000001), SPH_C64(0x8000000080008008)
+static const sph_u64 RC[] =
+{
+    SPH_C64(0x0000000000000001), SPH_C64(0x0000000000008082),
+    SPH_C64(0x800000000000808A), SPH_C64(0x8000000080008000),
+    SPH_C64(0x000000000000808B), SPH_C64(0x0000000080000001),
+    SPH_C64(0x8000000080008081), SPH_C64(0x8000000000008009),
+    SPH_C64(0x000000000000008A), SPH_C64(0x0000000000000088),
+    SPH_C64(0x0000000080008009), SPH_C64(0x000000008000000A),
+    SPH_C64(0x000000008000808B), SPH_C64(0x800000000000008B),
+    SPH_C64(0x8000000000008089), SPH_C64(0x8000000000008003),
+    SPH_C64(0x8000000000008002), SPH_C64(0x8000000000000080),
+    SPH_C64(0x000000000000800A), SPH_C64(0x800000008000000A),
+    SPH_C64(0x8000000080008081), SPH_C64(0x8000000000008080),
+    SPH_C64(0x0000000080000001), SPH_C64(0x8000000080008008)
 };
 
 #if SPH_KECCAK_NOCOPY
@@ -366,59 +367,61 @@ static const sph_u64 RC[] = {
 
 #else
 
-static const struct {
-	sph_u32 high, low;
-} RC[] = {
+static const struct
+{
+    sph_u32 high, low;
+} RC[] =
+{
 #if SPH_KECCAK_INTERLEAVE
-	{ SPH_C32(0x00000000), SPH_C32(0x00000001) },
-	{ SPH_C32(0x00000089), SPH_C32(0x00000000) },
-	{ SPH_C32(0x8000008B), SPH_C32(0x00000000) },
-	{ SPH_C32(0x80008080), SPH_C32(0x00000000) },
-	{ SPH_C32(0x0000008B), SPH_C32(0x00000001) },
-	{ SPH_C32(0x00008000), SPH_C32(0x00000001) },
-	{ SPH_C32(0x80008088), SPH_C32(0x00000001) },
-	{ SPH_C32(0x80000082), SPH_C32(0x00000001) },
-	{ SPH_C32(0x0000000B), SPH_C32(0x00000000) },
-	{ SPH_C32(0x0000000A), SPH_C32(0x00000000) },
-	{ SPH_C32(0x00008082), SPH_C32(0x00000001) },
-	{ SPH_C32(0x00008003), SPH_C32(0x00000000) },
-	{ SPH_C32(0x0000808B), SPH_C32(0x00000001) },
-	{ SPH_C32(0x8000000B), SPH_C32(0x00000001) },
-	{ SPH_C32(0x8000008A), SPH_C32(0x00000001) },
-	{ SPH_C32(0x80000081), SPH_C32(0x00000001) },
-	{ SPH_C32(0x80000081), SPH_C32(0x00000000) },
-	{ SPH_C32(0x80000008), SPH_C32(0x00000000) },
-	{ SPH_C32(0x00000083), SPH_C32(0x00000000) },
-	{ SPH_C32(0x80008003), SPH_C32(0x00000000) },
-	{ SPH_C32(0x80008088), SPH_C32(0x00000001) },
-	{ SPH_C32(0x80000088), SPH_C32(0x00000000) },
-	{ SPH_C32(0x00008000), SPH_C32(0x00000001) },
-	{ SPH_C32(0x80008082), SPH_C32(0x00000000) }
+    { SPH_C32(0x00000000), SPH_C32(0x00000001) },
+    { SPH_C32(0x00000089), SPH_C32(0x00000000) },
+    { SPH_C32(0x8000008B), SPH_C32(0x00000000) },
+    { SPH_C32(0x80008080), SPH_C32(0x00000000) },
+    { SPH_C32(0x0000008B), SPH_C32(0x00000001) },
+    { SPH_C32(0x00008000), SPH_C32(0x00000001) },
+    { SPH_C32(0x80008088), SPH_C32(0x00000001) },
+    { SPH_C32(0x80000082), SPH_C32(0x00000001) },
+    { SPH_C32(0x0000000B), SPH_C32(0x00000000) },
+    { SPH_C32(0x0000000A), SPH_C32(0x00000000) },
+    { SPH_C32(0x00008082), SPH_C32(0x00000001) },
+    { SPH_C32(0x00008003), SPH_C32(0x00000000) },
+    { SPH_C32(0x0000808B), SPH_C32(0x00000001) },
+    { SPH_C32(0x8000000B), SPH_C32(0x00000001) },
+    { SPH_C32(0x8000008A), SPH_C32(0x00000001) },
+    { SPH_C32(0x80000081), SPH_C32(0x00000001) },
+    { SPH_C32(0x80000081), SPH_C32(0x00000000) },
+    { SPH_C32(0x80000008), SPH_C32(0x00000000) },
+    { SPH_C32(0x00000083), SPH_C32(0x00000000) },
+    { SPH_C32(0x80008003), SPH_C32(0x00000000) },
+    { SPH_C32(0x80008088), SPH_C32(0x00000001) },
+    { SPH_C32(0x80000088), SPH_C32(0x00000000) },
+    { SPH_C32(0x00008000), SPH_C32(0x00000001) },
+    { SPH_C32(0x80008082), SPH_C32(0x00000000) }
 #else
-	{ SPH_C32(0x00000000), SPH_C32(0x00000001) },
-	{ SPH_C32(0x00000000), SPH_C32(0x00008082) },
-	{ SPH_C32(0x80000000), SPH_C32(0x0000808A) },
-	{ SPH_C32(0x80000000), SPH_C32(0x80008000) },
-	{ SPH_C32(0x00000000), SPH_C32(0x0000808B) },
-	{ SPH_C32(0x00000000), SPH_C32(0x80000001) },
-	{ SPH_C32(0x80000000), SPH_C32(0x80008081) },
-	{ SPH_C32(0x80000000), SPH_C32(0x00008009) },
-	{ SPH_C32(0x00000000), SPH_C32(0x0000008A) },
-	{ SPH_C32(0x00000000), SPH_C32(0x00000088) },
-	{ SPH_C32(0x00000000), SPH_C32(0x80008009) },
-	{ SPH_C32(0x00000000), SPH_C32(0x8000000A) },
-	{ SPH_C32(0x00000000), SPH_C32(0x8000808B) },
-	{ SPH_C32(0x80000000), SPH_C32(0x0000008B) },
-	{ SPH_C32(0x80000000), SPH_C32(0x00008089) },
-	{ SPH_C32(0x80000000), SPH_C32(0x00008003) },
-	{ SPH_C32(0x80000000), SPH_C32(0x00008002) },
-	{ SPH_C32(0x80000000), SPH_C32(0x00000080) },
-	{ SPH_C32(0x00000000), SPH_C32(0x0000800A) },
-	{ SPH_C32(0x80000000), SPH_C32(0x8000000A) },
-	{ SPH_C32(0x80000000), SPH_C32(0x80008081) },
-	{ SPH_C32(0x80000000), SPH_C32(0x00008080) },
-	{ SPH_C32(0x00000000), SPH_C32(0x80000001) },
-	{ SPH_C32(0x80000000), SPH_C32(0x80008008) }
+    { SPH_C32(0x00000000), SPH_C32(0x00000001) },
+    { SPH_C32(0x00000000), SPH_C32(0x00008082) },
+    { SPH_C32(0x80000000), SPH_C32(0x0000808A) },
+    { SPH_C32(0x80000000), SPH_C32(0x80008000) },
+    { SPH_C32(0x00000000), SPH_C32(0x0000808B) },
+    { SPH_C32(0x00000000), SPH_C32(0x80000001) },
+    { SPH_C32(0x80000000), SPH_C32(0x80008081) },
+    { SPH_C32(0x80000000), SPH_C32(0x00008009) },
+    { SPH_C32(0x00000000), SPH_C32(0x0000008A) },
+    { SPH_C32(0x00000000), SPH_C32(0x00000088) },
+    { SPH_C32(0x00000000), SPH_C32(0x80008009) },
+    { SPH_C32(0x00000000), SPH_C32(0x8000000A) },
+    { SPH_C32(0x00000000), SPH_C32(0x8000808B) },
+    { SPH_C32(0x80000000), SPH_C32(0x0000008B) },
+    { SPH_C32(0x80000000), SPH_C32(0x00008089) },
+    { SPH_C32(0x80000000), SPH_C32(0x00008003) },
+    { SPH_C32(0x80000000), SPH_C32(0x00008002) },
+    { SPH_C32(0x80000000), SPH_C32(0x00000080) },
+    { SPH_C32(0x00000000), SPH_C32(0x0000800A) },
+    { SPH_C32(0x80000000), SPH_C32(0x8000000A) },
+    { SPH_C32(0x80000000), SPH_C32(0x80008081) },
+    { SPH_C32(0x80000000), SPH_C32(0x00008080) },
+    { SPH_C32(0x00000000), SPH_C32(0x80000001) },
+    { SPH_C32(0x80000000), SPH_C32(0x80008008) }
 #endif
 };
 
@@ -1525,81 +1528,84 @@ static const struct {
 static void
 keccak_init(sph_keccak_context *kc, unsigned out_size)
 {
-	int i;
+    int i;
 
 #if SPH_KECCAK_64
-	for (i = 0; i < 25; i ++)
-		kc->u.wide[i] = 0;
-	/*
-	 * Initialization for the "lane complement".
-	 */
-	kc->u.wide[ 1] = SPH_C64(0xFFFFFFFFFFFFFFFF);
-	kc->u.wide[ 2] = SPH_C64(0xFFFFFFFFFFFFFFFF);
-	kc->u.wide[ 8] = SPH_C64(0xFFFFFFFFFFFFFFFF);
-	kc->u.wide[12] = SPH_C64(0xFFFFFFFFFFFFFFFF);
-	kc->u.wide[17] = SPH_C64(0xFFFFFFFFFFFFFFFF);
-	kc->u.wide[20] = SPH_C64(0xFFFFFFFFFFFFFFFF);
+    for (i = 0; i < 25; i ++)
+        kc->u.wide[i] = 0;
+    /*
+     * Initialization for the "lane complement".
+     */
+    kc->u.wide[ 1] = SPH_C64(0xFFFFFFFFFFFFFFFF);
+    kc->u.wide[ 2] = SPH_C64(0xFFFFFFFFFFFFFFFF);
+    kc->u.wide[ 8] = SPH_C64(0xFFFFFFFFFFFFFFFF);
+    kc->u.wide[12] = SPH_C64(0xFFFFFFFFFFFFFFFF);
+    kc->u.wide[17] = SPH_C64(0xFFFFFFFFFFFFFFFF);
+    kc->u.wide[20] = SPH_C64(0xFFFFFFFFFFFFFFFF);
 #else
 
-	for (i = 0; i < 50; i ++)
-		kc->u.narrow[i] = 0;
-	/*
-	 * Initialization for the "lane complement".
-	 * Note: since we set to all-one full 64-bit words,
-	 * interleaving (if applicable) is a no-op.
-	 */
-	kc->u.narrow[ 2] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[ 3] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[ 4] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[ 5] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[16] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[17] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[24] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[25] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[34] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[35] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[40] = SPH_C32(0xFFFFFFFF);
-	kc->u.narrow[41] = SPH_C32(0xFFFFFFFF);
+    for (i = 0; i < 50; i ++)
+        kc->u.narrow[i] = 0;
+    /*
+     * Initialization for the "lane complement".
+     * Note: since we set to all-one full 64-bit words,
+     * interleaving (if applicable) is a no-op.
+     */
+    kc->u.narrow[ 2] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[ 3] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[ 4] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[ 5] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[16] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[17] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[24] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[25] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[34] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[35] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[40] = SPH_C32(0xFFFFFFFF);
+    kc->u.narrow[41] = SPH_C32(0xFFFFFFFF);
 #endif
-	kc->ptr = 0;
-	kc->lim = 200 - (out_size >> 2);
+    kc->ptr = 0;
+    kc->lim = 200 - (out_size >> 2);
 }
 
 static void
 keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
 {
-	unsigned char *buf;
-	size_t ptr;
-	DECL_STATE
+    unsigned char *buf;
+    size_t ptr;
+    DECL_STATE
 
-	buf = kc->buf;
-	ptr = kc->ptr;
+    buf = kc->buf;
+    ptr = kc->ptr;
 
-	if (len < (lim - ptr)) {
-		memcpy(buf + ptr, data, len);
-		kc->ptr = ptr + len;
-		return;
-	}
+    if (len < (lim - ptr))
+    {
+        memcpy(buf + ptr, data, len);
+        kc->ptr = ptr + len;
+        return;
+    }
 
-	READ_STATE(kc);
-	while (len > 0) {
-		size_t clen;
+    READ_STATE(kc);
+    while (len > 0)
+    {
+        size_t clen;
 
-		clen = (lim - ptr);
-		if (clen > len)
-			clen = len;
-		memcpy(buf + ptr, data, clen);
-		ptr += clen;
-		data = (const unsigned char *)data + clen;
-		len -= clen;
-		if (ptr == lim) {
-			INPUT_BUF(lim);
-			KECCAK_F_1600;
-			ptr = 0;
-		}
-	}
-	WRITE_STATE(kc);
-	kc->ptr = ptr;
+        clen = (lim - ptr);
+        if (clen > len)
+            clen = len;
+        memcpy(buf + ptr, data, clen);
+        ptr += clen;
+        data = (const unsigned char *)data + clen;
+        len -= clen;
+        if (ptr == lim)
+        {
+            INPUT_BUF(lim);
+            KECCAK_F_1600;
+            ptr = 0;
+        }
+    }
+    WRITE_STATE(kc);
+    kc->ptr = ptr;
 }
 
 #if SPH_KECCAK_64
@@ -1710,112 +1716,112 @@ DEFCLOSE(64, 72)
 void
 sph_keccak224_init(void *cc)
 {
-	keccak_init(cc, 224);
+    keccak_init(cc, 224);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak224(void *cc, const void *data, size_t len)
 {
-	keccak_core(cc, data, len, 144);
+    keccak_core(cc, data, len, 144);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak224_close(void *cc, void *dst)
 {
-	sph_keccak224_addbits_and_close(cc, 0, 0, dst);
+    sph_keccak224_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak224_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
-	keccak_close28(cc, ub, n, dst);
+    keccak_close28(cc, ub, n, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak256_init(void *cc)
 {
-	keccak_init(cc, 256);
+    keccak_init(cc, 256);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak256(void *cc, const void *data, size_t len)
 {
-	keccak_core(cc, data, len, 136);
+    keccak_core(cc, data, len, 136);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak256_close(void *cc, void *dst)
 {
-	sph_keccak256_addbits_and_close(cc, 0, 0, dst);
+    sph_keccak256_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak256_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
-	keccak_close32(cc, ub, n, dst);
+    keccak_close32(cc, ub, n, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak384_init(void *cc)
 {
-	keccak_init(cc, 384);
+    keccak_init(cc, 384);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak384(void *cc, const void *data, size_t len)
 {
-	keccak_core(cc, data, len, 104);
+    keccak_core(cc, data, len, 104);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak384_close(void *cc, void *dst)
 {
-	sph_keccak384_addbits_and_close(cc, 0, 0, dst);
+    sph_keccak384_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak384_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
-	keccak_close48(cc, ub, n, dst);
+    keccak_close48(cc, ub, n, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak512_init(void *cc)
 {
-	keccak_init(cc, 512);
+    keccak_init(cc, 512);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak512(void *cc, const void *data, size_t len)
 {
-	keccak_core(cc, data, len, 72);
+    keccak_core(cc, data, len, 72);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak512_close(void *cc, void *dst)
 {
-	sph_keccak512_addbits_and_close(cc, 0, 0, dst);
+    sph_keccak512_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
 sph_keccak512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
-	keccak_close64(cc, ub, n, dst);
+    keccak_close64(cc, ub, n, dst);
 }
 
 

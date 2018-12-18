@@ -16,7 +16,6 @@
 
 #include "obfuscation.h"
 #include "protocol.h"
-#include <boost/lexical_cast.hpp>
 
 using namespace std;
 using namespace boost;
@@ -26,7 +25,7 @@ using namespace boost;
     - This would result in old clients getting confused about which spork is for what
 */
 #define SPORK_START 10001
-#define SPORK_END 10021
+#define SPORK_END 10022
 
 #define SPORK_2_SWIFTTX 10001
 #define SPORK_3_SWIFTTX_BLOCK_FILTERING 10002
@@ -47,6 +46,7 @@ using namespace boost;
 #define SPORK_20_NEW_PROTOCOL_DYNAMIC 10019
 #define SPORK_21_ENABLE_ZEROCOIN 10020
 #define SPORK_22_ZEROCOIN_MAINTENANCE_MODE 10021
+#define SPORK_23_STAKING_REQUIREMENTS 10022
 
 #define SPORK_2_SWIFTTX_DEFAULT 978307200                         //2001-1-1
 #define SPORK_3_SWIFTTX_BLOCK_FILTERING_DEFAULT 1424217600        //2015-2-18
@@ -61,17 +61,18 @@ using namespace boost;
 #define SPORK_14_NEW_PROTOCOL_ENFORCEMENT_DEFAULT 1512087450      //ON
 #define SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2_DEFAULT 1512087450    //ON
 #define SPORK_16_MN_WINNER_MINIMUM_AGE_DEFAULT 8000                // Age in seconds. This should be > MASTERNODE_REMOVAL_SECONDS to avoid
-                                                                   // misconfigured new nodes in the list. 
-                                                                   // Set this to zero to emulate classic behaviour
+// misconfigured new nodes in the list.
+// Set this to zero to emulate classic behaviour
 #define SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3_DEFAULT 1529303404    //ON
 #define SPORK_18_NEW_PROTOCOL_ENFORCEMENT_4_DEFAULT 1529303404    //ON
 #define SPORK_19_POW_ROLLBACK_DEFAULT 4070908800                  //OFF
 #define SPORK_20_NEW_PROTOCOL_DYNAMIC_DEFAULT 4070908800          //OFF
-                                                                   // Will be whatever value is provided during spork update.
-                                                                   // Example `spork SPORK_20_NEW_PROTOCOL_DYNAMIC 70850` will set active
-                                                                   // protocol version to `70850`.
+// Will be whatever value is provided during spork update.
+// Example `spork SPORK_20_NEW_PROTOCOL_DYNAMIC 70850` will set active
+// protocol version to `70850`.
 #define SPORK_21_ENABLE_ZEROCOIN_DEFAULT 4070908800               //OFF
 #define SPORK_22_ZEROCOIN_MAINTENANCE_MODE_DEFAULT 4070908800     //OFF
+#define SPORK_23_STAKING_REQUIREMENTS_DEFAULT 4070908800          //OFF
 
 class CSporkMessage;
 class CSporkManager;

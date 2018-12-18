@@ -150,7 +150,8 @@ bool BIP38_Decrypt(std::string strPassphrase, std::string strEncryptedKey, uint2
     fCompressed = (flag & uint256(0x20)) != 0;
 
     //not ec multiplied
-    if (type == uint256(0x42)) {
+    if (type == uint256(0x42))
+    {
         uint512 hashed;
         encryptedPart1 = uint256(ReverseEndianString(strKey.substr(14, 32)));
         uint64_t salt = uint256(ReverseEndianString(strAddressHash)).Get64();
@@ -173,7 +174,8 @@ bool BIP38_Decrypt(std::string strPassphrase, std::string strEncryptedKey, uint2
         privKey = temp1 ^ derivedHalf1;
 
         return true;
-    } else if (type != uint256(0x43)) //invalid type
+    }
+    else if (type != uint256(0x43))   //invalid type
         return false;
 
     bool fLotSequence = (flag & 0x04) != 0;

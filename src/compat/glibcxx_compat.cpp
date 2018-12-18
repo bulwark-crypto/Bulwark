@@ -30,7 +30,8 @@ bool sanity_test_list(unsigned int size)
     if (test.size() != size)
         return false;
 
-    while (!test.empty()) {
+    while (!test.empty())
+    {
         if (test.back() != test.size())
             return false;
         test.pop_back();
@@ -46,11 +47,16 @@ bool sanity_test_list(unsigned int size)
 bool sanity_test_range_fmt()
 {
     std::string test;
-    try {
+    try
+    {
         test.at(1);
-    } catch (const std::out_of_range&) {
+    }
+    catch (const std::out_of_range&)
+    {
         return true;
-    } catch (...) {
+    }
+    catch (...)
+    {
     }
     return false;
 }

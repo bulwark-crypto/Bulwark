@@ -73,7 +73,8 @@ uint256 CBlock::BuildMerkleTree(bool* fMutated) const
         for (int i = 0; i < nSize; i += 2)
         {
             int i2 = std::min(i+1, nSize-1);
-            if (i2 == i + 1 && i2 + 1 == nSize && vMerkleTree[j+i] == vMerkleTree[j+i2]) {
+            if (i2 == i + 1 && i2 + 1 == nSize && vMerkleTree[j+i] == vMerkleTree[j+i2])
+            {
                 // Two identical hashes at the end of the list at a particular level.
                 mutated = true;
             }
@@ -82,7 +83,8 @@ uint256 CBlock::BuildMerkleTree(bool* fMutated) const
         }
         j += nSize;
     }
-    if (fMutated) {
+    if (fMutated)
+    {
         *fMutated = mutated;
     }
     return (vMerkleTree.empty() ? uint256() : vMerkleTree.back());
@@ -123,12 +125,12 @@ std::string CBlock::ToString() const
 {
     std::stringstream s;
     s << strprintf("CBlock(hash=%s, ver=%d, hashPrevBlock=%s, hashMerkleRoot=%s, nTime=%u, nBits=%08x, nNonce=%u, vtx=%u)\n",
-        GetHash().ToString(),
-        nVersion,
-        hashPrevBlock.ToString(),
-        hashMerkleRoot.ToString(),
-        nTime, nBits, nNonce,
-        vtx.size());
+                   GetHash().ToString(),
+                   nVersion,
+                   hashPrevBlock.ToString(),
+                   hashMerkleRoot.ToString(),
+                   nTime, nBits, nNonce,
+                   vtx.size());
     for (unsigned int i = 0; i < vtx.size(); i++)
     {
         s << "  " << vtx[i].ToString() << "\n";
@@ -172,7 +174,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
                 //vector<unsigned char> vchSig;
                 if (!key.Sign(GetHash(), vchBlockSig))
-                     return false;
+                    return false;
 
                 return true;
             }
@@ -197,7 +199,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
             //vector<unsigned char> vchSig;
             if (!key.Sign(GetHash(), vchBlockSig))
-                 return false;
+                return false;
 
             return true;
 
@@ -212,7 +214,7 @@ bool CBlock::SignBlock(const CKeyStore& keystore)
 
             //vector<unsigned char> vchSig;
             if (!key.Sign(GetHash(), vchBlockSig))
-                 return false;
+                return false;
 
             return true;
         }
@@ -240,7 +242,7 @@ bool CBlock::CheckBlockSignature() const
         valtype& vchPubKey = vSolutions[0];
         CPubKey pubkey(vchPubKey);
         if (!pubkey.IsValid())
-          return false;
+            return false;
 
         if (vchBlockSig.empty())
             return false;
@@ -255,7 +257,7 @@ bool CBlock::CheckBlockSignature() const
         CPubKey pubkey(vchPubKey);
 
         if (!pubkey.IsValid())
-          return false;
+            return false;
 
         if (vchBlockSig.empty())
             return false;

@@ -18,7 +18,7 @@
 #include <boost/foreach.hpp>
 #include <boost/unordered_map.hpp>
 
-/** 
+/**
 
     ****Note - for Bulwark we added fCoinStake to the 2nd bit. Keep in mind when reading the following and adjust as needed.
  * Pruned version of CTransaction: only retains metadata and unspent transaction outputs
@@ -127,7 +127,8 @@ public:
 
     void ClearUnspendable()
     {
-        BOOST_FOREACH (CTxOut& txout, vout) {
+        BOOST_FOREACH(CTxOut& txout, vout)
+        {
             if (txout.scriptPubKey.IsUnspendable())
                 txout.SetNull();
         }
@@ -210,7 +211,8 @@ public:
         // header code
         ::Serialize(s, VARINT(nCode), nType, nVersion);
         // spentness bitmask
-        for (unsigned int b = 0; b < nMaskSize; b++) {
+        for (unsigned int b = 0; b < nMaskSize; b++)
+        {
             unsigned char chAvail = 0;
             for (unsigned int i = 0; i < 8 && 2 + b * 8 + i < vout.size(); i++)
                 if (!vout[2 + b * 8 + i].IsNull())
@@ -218,7 +220,8 @@ public:
             ::Serialize(s, chAvail, nType, nVersion);
         }
         // txouts themself
-        for (unsigned int i = 0; i < vout.size(); i++) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
             if (!vout[i].IsNull())
                 ::Serialize(s, CTxOutCompressor(REF(vout[i])), nType, nVersion);
         }
@@ -241,10 +244,12 @@ public:
         vAvail[1] = (nCode & 8) != 0; // 1000
         unsigned int nMaskCode = (nCode / 16) + ((nCode & 12) != 0 ? 0 : 1);
         // spentness bitmask
-        while (nMaskCode > 0) {
+        while (nMaskCode > 0)
+        {
             unsigned char chAvail = 0;
             ::Unserialize(s, chAvail, nType, nVersion);
-            for (unsigned int p = 0; p < 8; p++) {
+            for (unsigned int p = 0; p < 8; p++)
+            {
                 bool f = (chAvail & (1 << p)) != 0;
                 vAvail.push_back(f);
             }
@@ -253,7 +258,8 @@ public:
         }
         // txouts themself
         vout.assign(vAvail.size(), CTxOut());
-        for (unsigned int i = 0; i < vAvail.size(); i++) {
+        for (unsigned int i = 0; i < vAvail.size(); i++)
+        {
             if (vAvail[i])
                 ::Unserialize(s, REF(CTxOutCompressor(vout[i])), nType, nVersion);
         }
@@ -278,9 +284,10 @@ public:
     //! note that only !IsPruned() CCoins can be serialized
     bool IsPruned() const
     {
-        BOOST_FOREACH (const CTxOut& out, vout)
-            if (!out.IsNull())
-                return false;
+        BOOST_FOREACH(const CTxOut& out, vout)
+        {
+            if (!out.IsNull()) return false;
+        }
         return true;
     }
 };
@@ -304,11 +311,13 @@ public:
     }
 };
 
-struct CCoinsCacheEntry {
+struct CCoinsCacheEntry
+{
     CCoins coins; // The actual cached data.
     unsigned char flags;
 
-    enum Flags {
+    enum Flags
+    {
         DIRTY = (1 << 0), // This cache entry is potentially different from the version in the parent view.
         FRESH = (1 << 1), // The parent view does not have this entry (or it is pruned).
     };
@@ -318,7 +327,8 @@ struct CCoinsCacheEntry {
 
 typedef boost::unordered_map<uint256, CCoinsCacheEntry, CCoinsKeyHasher> CCoinsMap;
 
-struct CCoinsStats {
+struct CCoinsStats
+{
     int nHeight;
     uint256 hashBlock;
     uint64_t nTransactions;
@@ -376,7 +386,8 @@ public:
 class CCoinsViewCache;
 
 /** Flags for nSequence and nLockTime locks */
-enum {
+enum
+{
     /* Interpret sequence numbers as relative lock-time constraints. */
     LOCKTIME_VERIFY_SEQUENCE = (1 << 0),
 
@@ -386,12 +397,12 @@ enum {
 
 /** Used as the flags parameter to sequence and nLocktime checks in non-consensus code. */
 static const unsigned int STANDARD_LOCKTIME_VERIFY_FLAGS = LOCKTIME_VERIFY_SEQUENCE |
-                                                           LOCKTIME_MEDIAN_TIME_PAST;
+        LOCKTIME_MEDIAN_TIME_PAST;
 
-/** 
+/**
  * A reference to a mutable cache entry. Encapsulating it allows us to run
  *  cleanup code after the modification is finished, and keeping track of
- *  concurrent modifications. 
+ *  concurrent modifications.
  */
 class CCoinsModifier
 {
@@ -401,8 +412,14 @@ private:
     CCoinsModifier(CCoinsViewCache& cache_, CCoinsMap::iterator it_);
 
 public:
-    CCoins* operator->() { return &it->second.coins; }
-    CCoins& operator*() { return it->second.coins; }
+    CCoins* operator->()
+    {
+        return &it->second.coins;
+    }
+    CCoins& operator*()
+    {
+        return it->second.coins;
+    }
     ~CCoinsModifier();
     friend class CCoinsViewCache;
 };
@@ -416,7 +433,7 @@ protected:
 
     /**
      * Make mutable so that we can "fill the cache" even from Get-methods
-     * declared as "const".  
+     * declared as "const".
      */
     mutable uint256 hashBlock;
     mutable CCoinsMap cacheCoins;
@@ -456,7 +473,7 @@ public:
     //! Calculate the size of the cache (in number of transactions)
     unsigned int GetCacheSize() const;
 
-    /** 
+    /**
      * Amount of bulwark coming in to a transaction
      * Note that lightweight clients may not know anything besides the hash of previous transactions,
      * so may not be able to calculate this.

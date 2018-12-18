@@ -33,7 +33,8 @@ public:
     ~Notificator();
 
     // Message class
-    enum Class {
+    enum Class
+    {
         Information, /**< Informational message */
         Warning,     /**< Notify user of potential problem */
         Critical     /**< An error occurred */
@@ -52,7 +53,8 @@ public slots:
 
 private:
     QWidget* parent;
-    enum Mode {
+    enum Mode
+    {
         None,                  /**< Ignore informational notifications, and show a modal pop-up dialog for Critical notifications. */
         Freedesktop,           /**< Use DBus org.freedesktop.Notifications */
         QSystemTray,           /**< Use QSystemTray::showMessage */

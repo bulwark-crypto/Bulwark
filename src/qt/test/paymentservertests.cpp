@@ -35,7 +35,7 @@ static SendCoinsRecipient handleRequest(PaymentServer* server, std::vector<unsig
 {
     RecipientCatcher sigCatcher;
     QObject::connect(server, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
-        &sigCatcher, SLOT(getRecipient(SendCoinsRecipient)));
+                     &sigCatcher, SLOT(getRecipient(SendCoinsRecipient)));
 
     // Write data to a temp file:
     QTemporaryFile f;
@@ -53,7 +53,7 @@ static SendCoinsRecipient handleRequest(PaymentServer* server, std::vector<unsig
     QCoreApplication::sendEvent(&object, &event);
 
     QObject::disconnect(server, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
-        &sigCatcher, SLOT(getRecipient(SendCoinsRecipient)));
+                        &sigCatcher, SLOT(getRecipient(SendCoinsRecipient)));
 
     // Return results from sigCatcher
     return sigCatcher.recipient;

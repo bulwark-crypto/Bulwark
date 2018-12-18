@@ -29,23 +29,24 @@
 #include <QVBoxLayout>
 
 /** "Help message" or "About" dialog box */
-HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent),
-                                                                    ui(new Ui::HelpMessageDialog)
+HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::HelpMessageDialog)
 {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
 
     QString version = tr("Bulwark core") + " " + tr("version") + " " + QString::fromStdString(FormatFullVersion());
-/* On x86 add a bit specifier to the version so that users can distinguish between
-     * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
-     */
+    /* On x86 add a bit specifier to the version so that users can distinguish between
+         * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
+         */
 #if defined(__x86_64__)
     version += " " + tr("(%1-bit)").arg(64);
 #elif defined(__i386__)
     version += " " + tr("(%1-bit)").arg(32);
 #endif
 
-    if (about) {
+    if (about)
+    {
         setWindowTitle(tr("About Bulwark Core"));
 
         /// HTML-format the license message from the core
@@ -65,7 +66,9 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         ui->aboutMessage->setText(version + "<br><br>" + licenseInfoHTML);
         ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
-    } else {
+    }
+    else
+    {
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
                          "  bulwark-qt [" + tr("command-line options") + "]                     " + "\n";
@@ -96,7 +99,8 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         QTextCharFormat bold;
         bold.setFontWeight(QFont::Bold);
 
-        Q_FOREACH (const QString &line, coreOptions.split("\n")) {
+        Q_FOREACH (const QString &line, coreOptions.split("\n"))
+        {
             if (line.startsWith("  -"))
             {
                 cursor.currentTable()->appendRows(1);
@@ -104,9 +108,13 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
                 cursor.movePosition(QTextCursor::NextRow);
                 cursor.insertText(line.trimmed());
                 cursor.movePosition(QTextCursor::NextCell);
-            } else if (line.startsWith("   ")) {
+            }
+            else if (line.startsWith("   "))
+            {
                 cursor.insertText(line.trimmed()+' ');
-            } else if (line.size() > 0) {
+            }
+            else if (line.size() > 0)
+            {
                 //Title of a group
                 if (cursor.currentTable())
                     cursor.currentTable()->appendRows(1);
@@ -155,8 +163,8 @@ ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(par
 {
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
-        tr("Bulwark Core is shutting down...") + "<br /><br />" +
-        tr("Do not shut down the computer until this window disappears.")));
+                          tr("Bulwark Core is shutting down...") + "<br /><br />" +
+                          tr("Do not shut down the computer until this window disappears.")));
     setLayout(layout);
 }
 

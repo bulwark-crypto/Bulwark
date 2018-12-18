@@ -38,7 +38,8 @@ void QtMaterialRippleOverlay::addRipple(const QPoint &position, qreal radius)
 
 void QtMaterialRippleOverlay::removeRipple(QtMaterialRipple *ripple)
 {
-    if (m_ripples.removeOne(ripple)) {
+    if (m_ripples.removeOne(ripple))
+    {
         delete ripple;
         update();
     }
@@ -55,12 +56,14 @@ void QtMaterialRippleOverlay::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen);
 
-    if (m_useClip) {
+    if (m_useClip)
+    {
         painter.setClipPath(m_clipPath);
     }
 
     QList<QtMaterialRipple *>::const_iterator i;
-    for (i = m_ripples.begin(); i != m_ripples.end(); ++i) {
+    for (i = m_ripples.begin(); i != m_ripples.end(); ++i)
+    {
         paintRipple(&painter, *i);
     }
 }

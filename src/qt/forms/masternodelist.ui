@@ -195,6 +195,27 @@
                    <number>0</number>
                   </property>
                   <item>
+                   <widget class="QtMaterialFlatButton" name="getMNPrivKeyButton">
+                    <property name="text">
+                     <string>Priv Key</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QtMaterialFlatButton" name="getOutputsButton">
+                    <property name="text">
+                     <string>Outputs</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QtMaterialFlatButton" name="configureMasternodeButton">
+                    <property name="text">
+                     <string>Configure</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QtMaterialFlatButton" name="startButton" native="true">
                     <property name="text" stdset="0">
                      <string>Start alias</string>

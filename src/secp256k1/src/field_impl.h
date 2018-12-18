@@ -23,8 +23,10 @@
 #error "Please select field implementation"
 #endif
 
-static void secp256k1_fe_get_hex(char *r, int *rlen, const secp256k1_fe_t *a) {
-    if (*rlen < 65) {
+static void secp256k1_fe_get_hex(char *r, int *rlen, const secp256k1_fe_t *a)
+{
+    if (*rlen < 65)
+    {
         *rlen = 65;
         return;
     }
@@ -33,7 +35,8 @@ static void secp256k1_fe_get_hex(char *r, int *rlen, const secp256k1_fe_t *a) {
     secp256k1_fe_t b = *a;
     secp256k1_fe_normalize(&b);
     secp256k1_fe_get_b32(tmp, &b);
-    for (int i=0; i<32; i++) {
+    for (int i=0; i<32; i++)
+    {
         static const char *c = "0123456789ABCDEF";
         r[2*i]   = c[(tmp[i] >> 4) & 0xF];
         r[2*i+1] = c[(tmp[i]) & 0xF];
@@ -41,7 +44,8 @@ static void secp256k1_fe_get_hex(char *r, int *rlen, const secp256k1_fe_t *a) {
     r[64] = 0x00;
 }
 
-static int secp256k1_fe_set_hex(secp256k1_fe_t *r, const char *a, int alen) {
+static int secp256k1_fe_set_hex(secp256k1_fe_t *r, const char *a, int alen)
+{
     unsigned char tmp[32] = {};
     static const int cvt[256] = {0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
@@ -58,15 +62,18 @@ static int secp256k1_fe_set_hex(secp256k1_fe_t *r, const char *a, int alen) {
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
                                  0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,
-                                 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0};
-    for (int i=0; i<32; i++) {
+                                 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0
+                                };
+    for (int i=0; i<32; i++)
+    {
         if (alen > i*2)
             tmp[32 - alen/2 + i] = (cvt[(unsigned char)a[2*i]] << 4) + cvt[(unsigned char)a[2*i+1]];
     }
     return secp256k1_fe_set_b32(r, tmp);
 }
 
-static int secp256k1_fe_sqrt(secp256k1_fe_t *r, const secp256k1_fe_t *a) {
+static int secp256k1_fe_sqrt(secp256k1_fe_t *r, const secp256k1_fe_t *a)
+{
 
     /** The binary representation of (p + 1)/4 has 3 blocks of 1s, with lengths in
      *  { 2, 22, 223 }. Use an addition chain to calculate 2^n - 1 for each block:
@@ -136,7 +143,8 @@ static int secp256k1_fe_sqrt(secp256k1_fe_t *r, const secp256k1_fe_t *a) {
     return secp256k1_fe_is_zero(&t1);
 }
 
-static void secp256k1_fe_inv(secp256k1_fe_t *r, const secp256k1_fe_t *a) {
+static void secp256k1_fe_inv(secp256k1_fe_t *r, const secp256k1_fe_t *a)
+{
 
     /** The binary representation of (p - 2) has 5 blocks of 1s, with lengths in
      *  { 1, 2, 22, 223 }. Use an addition chain to calculate 2^n - 1 for each block:
@@ -200,7 +208,8 @@ static void secp256k1_fe_inv(secp256k1_fe_t *r, const secp256k1_fe_t *a) {
     secp256k1_fe_mul(r, a, &t1);
 }
 
-static void secp256k1_fe_inv_var(secp256k1_fe_t *r, const secp256k1_fe_t *a) {
+static void secp256k1_fe_inv_var(secp256k1_fe_t *r, const secp256k1_fe_t *a)
+{
 #if defined(USE_FIELD_INV_BUILTIN)
     secp256k1_fe_inv(r, a);
 #elif defined(USE_FIELD_INV_NUM)
@@ -218,7 +227,8 @@ static void secp256k1_fe_inv_var(secp256k1_fe_t *r, const secp256k1_fe_t *a) {
 #endif
 }
 
-static void secp256k1_fe_inv_all(size_t len, secp256k1_fe_t r[len], const secp256k1_fe_t a[len]) {
+static void secp256k1_fe_inv_all(size_t len, secp256k1_fe_t r[len], const secp256k1_fe_t a[len])
+{
     if (len < 1)
         return;
 
@@ -227,13 +237,16 @@ static void secp256k1_fe_inv_all(size_t len, secp256k1_fe_t r[len], const secp25
     r[0] = a[0];
 
     size_t i = 0;
-    while (++i < len) {
+    while (++i < len)
+    {
         secp256k1_fe_mul(&r[i], &r[i - 1], &a[i]);
     }
 
-    secp256k1_fe_t u; secp256k1_fe_inv(&u, &r[--i]);
+    secp256k1_fe_t u;
+    secp256k1_fe_inv(&u, &r[--i]);
 
-    while (i > 0) {
+    while (i > 0)
+    {
         int j = i--;
         secp256k1_fe_mul(&r[j], &r[i], &u);
         secp256k1_fe_mul(&u, &u, &a[j]);
@@ -242,7 +255,8 @@ static void secp256k1_fe_inv_all(size_t len, secp256k1_fe_t r[len], const secp25
     r[0] = u;
 }
 
-static void secp256k1_fe_inv_all_var(size_t len, secp256k1_fe_t r[len], const secp256k1_fe_t a[len]) {
+static void secp256k1_fe_inv_all_var(size_t len, secp256k1_fe_t r[len], const secp256k1_fe_t a[len])
+{
     if (len < 1)
         return;
 
@@ -251,13 +265,16 @@ static void secp256k1_fe_inv_all_var(size_t len, secp256k1_fe_t r[len], const se
     r[0] = a[0];
 
     size_t i = 0;
-    while (++i < len) {
+    while (++i < len)
+    {
         secp256k1_fe_mul(&r[i], &r[i - 1], &a[i]);
     }
 
-    secp256k1_fe_t u; secp256k1_fe_inv_var(&u, &r[--i]);
+    secp256k1_fe_t u;
+    secp256k1_fe_inv_var(&u, &r[--i]);
 
-    while (i > 0) {
+    while (i > 0)
+    {
         int j = i--;
         secp256k1_fe_mul(&r[j], &r[i], &u);
         secp256k1_fe_mul(&u, &u, &a[j]);
@@ -266,16 +283,19 @@ static void secp256k1_fe_inv_all_var(size_t len, secp256k1_fe_t r[len], const se
     r[0] = u;
 }
 
-static void secp256k1_fe_start(void) {
+static void secp256k1_fe_start(void)
+{
 #ifndef USE_NUM_NONE
-    static const unsigned char secp256k1_fe_consts_p[] = {
+    static const unsigned char secp256k1_fe_consts_p[] =
+    {
         0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
         0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
         0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
         0xFF,0xFF,0xFF,0xFE,0xFF,0xFF,0xFC,0x2F
     };
 #endif
-    if (secp256k1_fe_consts == NULL) {
+    if (secp256k1_fe_consts == NULL)
+    {
         secp256k1_fe_inner_start();
         secp256k1_fe_consts_t *ret = (secp256k1_fe_consts_t*)malloc(sizeof(secp256k1_fe_consts_t));
 #ifndef USE_NUM_NONE
@@ -285,8 +305,10 @@ static void secp256k1_fe_start(void) {
     }
 }
 
-static void secp256k1_fe_stop(void) {
-    if (secp256k1_fe_consts != NULL) {
+static void secp256k1_fe_stop(void)
+{
+    if (secp256k1_fe_consts != NULL)
+    {
         secp256k1_fe_consts_t *c = (secp256k1_fe_consts_t*)secp256k1_fe_consts;
         free((void*)c);
         secp256k1_fe_consts = NULL;

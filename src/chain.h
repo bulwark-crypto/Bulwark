@@ -17,9 +17,9 @@
 #include <vector>
 
 #include <boost/foreach.hpp>
-#include <boost/lexical_cast.hpp>
 
-struct CDiskBlockPos {
+struct CDiskBlockPos
+{
     int nFile;
     unsigned int nPos;
 
@@ -58,10 +58,14 @@ struct CDiskBlockPos {
         nFile = -1;
         nPos = 0;
     }
-    bool IsNull() const { return (nFile == -1); }
+    bool IsNull() const
+    {
+        return (nFile == -1);
+    }
 };
 
-enum BlockStatus {
+enum BlockStatus
+{
     //! Unused.
     BLOCK_VALID_UNKNOWN = 0,
 
@@ -151,7 +155,8 @@ public:
     unsigned int nStatus;
 
     unsigned int nFlags; // ppcoin: block index flags
-    enum {
+    enum
+    {
         BLOCK_PROOF_OF_STAKE = (1 << 0), // is proof-of-stake block
         BLOCK_STAKE_ENTROPY = (1 << 1),  // entropy bit for stake modifier
         BLOCK_STAKE_MODIFIER = (1 << 2), // regenerated stake modifier
@@ -177,11 +182,11 @@ public:
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     uint32_t nSequenceId;
-    
+
     //! zerocoin specific fields
     std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
     std::vector<libzerocoin::CoinDenomination> vMintDenominationsInBlock;
-    
+
     void SetNull()
     {
         phashBlock = NULL;
@@ -212,7 +217,8 @@ public:
         nNonce = 0;
         nAccumulatorCheckpoint = 0;
         // Start supply of each denomination with 0s
-        for (auto& denom : libzerocoin::zerocoinDenomList) {
+        for (auto& denom : libzerocoin::zerocoinDenomList)
+        {
             mapZerocoinSupply.insert(make_pair(denom, 0));
         }
         vMintDenominationsInBlock.clear();
@@ -244,21 +250,25 @@ public:
         nStakeModifierChecksum = 0;
         hashProofOfStake = uint256();
 
-        if (block.IsProofOfStake()) {
+        if (block.IsProofOfStake())
+        {
             SetProofOfStake();
             prevoutStake = block.vtx[1].vin[0].prevout;
             nStakeTime = block.nTime;
-        } else {
+        }
+        else
+        {
             prevoutStake.SetNull();
             nStakeTime = 0;
         }
     }
-    
+
 
     CDiskBlockPos GetBlockPos() const
     {
         CDiskBlockPos ret;
-        if (nStatus & BLOCK_HAVE_DATA) {
+        if (nStatus & BLOCK_HAVE_DATA)
+        {
             ret.nFile = nFile;
             ret.nPos = nDataPos;
         }
@@ -268,7 +278,8 @@ public:
     CDiskBlockPos GetUndoPos() const
     {
         CDiskBlockPos ret;
-        if (nStatus & BLOCK_HAVE_UNDO) {
+        if (nStatus & BLOCK_HAVE_UNDO)
+        {
             ret.nFile = nFile;
             ret.nPos = nUndoPos;
         }
@@ -292,7 +303,8 @@ public:
     int64_t GetZerocoinSupply() const
     {
         int64_t nTotal = 0;
-        for (auto& denom : libzerocoin::zerocoinDenomList) {
+        for (auto& denom : libzerocoin::zerocoinDenomList)
+        {
             nTotal += libzerocoin::ZerocoinDenominationToAmount(denom) * mapZerocoinSupply.at(denom);
         }
         return nTotal;
@@ -373,14 +385,19 @@ public:
             nFlags |= BLOCK_STAKE_MODIFIER;
     }
 
+    /**
+     * Returns true if there are nRequired or more blocks of minVersion or above
+     * in the last Params().ToCheckBlockUpgradeMajority() blocks, starting at pstart 
+     * and going backwards.
+     */
     static bool IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired);
 
     std::string ToString() const
     {
         return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, hashBlock=%s)",
-            pprev, nHeight,
-            hashMerkleRoot.ToString(),
-            GetBlockHash().ToString());
+                         pprev, nHeight,
+                         hashMerkleRoot.ToString(),
+                         GetBlockHash().ToString());
     }
 
     //! Check whether this block index entry is valid up to the passed validity level.
@@ -399,7 +416,8 @@ public:
         assert(!(nUpTo & ~BLOCK_VALID_MASK)); // Only validity flags allowed.
         if (nStatus & BLOCK_FAILED_MASK)
             return false;
-        if ((nStatus & BLOCK_VALID_MASK) < nUpTo) {
+        if ((nStatus & BLOCK_VALID_MASK) < nUpTo)
+        {
             nStatus = (nStatus & ~BLOCK_VALID_MASK) | nUpTo;
             return true;
         }
@@ -455,10 +473,13 @@ public:
         READWRITE(nMoneySupply);
         READWRITE(nFlags);
         READWRITE(nStakeModifier);
-        if (IsProofOfStake()) {
+        if (IsProofOfStake())
+        {
             READWRITE(prevoutStake);
             READWRITE(nStakeTime);
-        } else {
+        }
+        else
+        {
             const_cast<CDiskBlockIndex*>(this)->prevoutStake.SetNull();
             const_cast<CDiskBlockIndex*>(this)->nStakeTime = 0;
             const_cast<CDiskBlockIndex*>(this)->hashProofOfStake = uint256();
@@ -472,7 +493,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        if(this->nVersion > 3) {
+        if(this->nVersion > 3)
+        {
             READWRITE(nAccumulatorCheckpoint);
             READWRITE(mapZerocoinSupply);
             READWRITE(vMintDenominationsInBlock);
@@ -499,8 +521,8 @@ public:
         std::string str = "CDiskBlockIndex(";
         str += CBlockIndex::ToString();
         str += strprintf("\n                hashBlock=%s, hashPrev=%s)",
-            GetBlockHash().ToString(),
-            hashPrev.ToString());
+                         GetBlockHash().ToString(),
+                         hashPrev.ToString());
         return str;
     }
 };
@@ -526,7 +548,8 @@ public:
 
         CBlockIndex* pindex = vChain[vChain.size() - 1];
 
-        if (fProofOfStake) {
+        if (fProofOfStake)
+        {
             while (pindex && pindex->pprev && !pindex->IsProofOfStake())
                 pindex = pindex->pprev;
         }

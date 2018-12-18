@@ -41,17 +41,20 @@ bool CObfuScationRelay::Sign(std::string strSharedKey)
     CPubKey pubkey2;
     std::string errorMessage = "";
 
-    if (!obfuScationSigner.SetKey(strSharedKey, errorMessage, key2, pubkey2)) {
+    if (!obfuScationSigner.SetKey(strSharedKey, errorMessage, key2, pubkey2))
+    {
         LogPrintf("CObfuScationRelay():Sign - ERROR: Invalid shared key: '%s'\n", errorMessage.c_str());
         return false;
     }
 
-    if (!obfuScationSigner.SignMessage(strMessage, errorMessage, vchSig2, key2)) {
+    if (!obfuScationSigner.SignMessage(strMessage, errorMessage, vchSig2, key2))
+    {
         LogPrintf("CObfuScationRelay():Sign - Sign message failed\n");
         return false;
     }
 
-    if (!obfuScationSigner.VerifyMessage(pubkey2, vchSig2, strMessage, errorMessage)) {
+    if (!obfuScationSigner.VerifyMessage(pubkey2, vchSig2, strMessage, errorMessage))
+    {
         LogPrintf("CObfuScationRelay():Sign - Verify message failed\n");
         return false;
     }
@@ -67,12 +70,14 @@ bool CObfuScationRelay::VerifyMessage(std::string strSharedKey)
     CPubKey pubkey2;
     std::string errorMessage = "";
 
-    if (!obfuScationSigner.SetKey(strSharedKey, errorMessage, key2, pubkey2)) {
+    if (!obfuScationSigner.SetKey(strSharedKey, errorMessage, key2, pubkey2))
+    {
         LogPrintf("CObfuScationRelay()::VerifyMessage - ERROR: Invalid shared key: '%s'\n", errorMessage.c_str());
         return false;
     }
 
-    if (!obfuScationSigner.VerifyMessage(pubkey2, vchSig2, strMessage, errorMessage)) {
+    if (!obfuScationSigner.VerifyMessage(pubkey2, vchSig2, strMessage, errorMessage))
+    {
         LogPrintf("CObfuScationRelay()::VerifyMessage - Verify message failed\n");
         return false;
     }
@@ -101,16 +106,20 @@ void CObfuScationRelay::RelayThroughNode(int nRank)
 {
     CMasternode* pmn = mnodeman.GetMasternodeByRank(nRank, nBlockHeight, ActiveProtocol());
 
-    if (pmn != NULL) {
+    if (pmn != NULL)
+    {
         //printf("RelayThroughNode %s\n", pmn->addr.ToString().c_str());
         CNode* pnode = ConnectNode((CAddress)pmn->addr, NULL, false);
-        if (pnode) {
+        if (pnode)
+        {
             //printf("Connected\n");
             pnode->PushMessage("dsr", (*this));
             pnode->Release();
             return;
         }
-    } else {
+    }
+    else
+    {
         //printf("RelayThroughNode NULL\n");
     }
 }

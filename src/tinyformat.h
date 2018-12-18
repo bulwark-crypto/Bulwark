@@ -156,13 +156,16 @@ namespace detail
 {
 // Test whether type T1 is convertible to type T2
 template <typename T1, typename T2>
-struct is_convertible {
+struct is_convertible
+{
 private:
     // two types of different size
-    struct fail {
+    struct fail
+    {
         char dummy[2];
     };
-    struct succeed {
+    struct succeed
+    {
         char dummy;
     };
     // Try to convert a T1 to a T2 by plugging into tryConvert
@@ -191,33 +194,43 @@ public:
 
 // Detect when a type is not a wchar_t string
 template <typename T>
-struct is_wchar {
+struct is_wchar
+{
     typedef int tinyformat_wchar_is_not_supported;
 };
 template <>
-struct is_wchar<wchar_t*> {
+struct is_wchar<wchar_t*>
+{
 };
 template <>
-struct is_wchar<const wchar_t*> {
+struct is_wchar<const wchar_t*>
+{
 };
 template <int n>
-struct is_wchar<const wchar_t[n]> {
+struct is_wchar<const wchar_t[n]>
+{
 };
 template <int n>
-struct is_wchar<wchar_t[n]> {
+struct is_wchar<wchar_t[n]>
+{
 };
 
 
 // Format the value by casting to type fmtT.  This default implementation
 // should never be called.
 template <typename T, typename fmtT, bool convertible = is_convertible<T, fmtT>::value>
-struct formatValueAsType {
-    static void invoke(std::ostream& /*out*/, const T& /*value*/) { assert(0); }
+struct formatValueAsType
+{
+    static void invoke(std::ostream& /*out*/, const T& /*value*/)
+    {
+        assert(0);
+    }
 };
 // Specialized version for types that can actually be converted to fmtT, as
 // indicated by the "convertible" template parameter.
 template <typename T, typename fmtT>
-struct formatValueAsType<T, fmtT, true> {
+struct formatValueAsType<T, fmtT, true>
+{
     static void invoke(std::ostream& out, const T& value)
     {
         out << static_cast<fmtT>(value);
@@ -226,14 +239,20 @@ struct formatValueAsType<T, fmtT, true> {
 
 #ifdef TINYFORMAT_OLD_LIBSTDCPLUSPLUS_WORKAROUND
 template <typename T, bool convertible = is_convertible<T, int>::value>
-struct formatZeroIntegerWorkaround {
-    static bool invoke(std::ostream& /**/, const T& /**/) { return false; }
+struct formatZeroIntegerWorkaround
+{
+    static bool invoke(std::ostream& /**/, const T& /**/)
+    {
+        return false;
+    }
 };
 template <typename T>
-struct formatZeroIntegerWorkaround<T, true> {
+struct formatZeroIntegerWorkaround<T, true>
+{
     static bool invoke(std::ostream& out, const T& value)
     {
-        if (static_cast<int>(value) == 0 && out.flags() & std::ios::showpos) {
+        if (static_cast<int>(value) == 0 && out.flags() & std::ios::showpos)
+        {
             out << "+0";
             return true;
         }
@@ -245,7 +264,8 @@ struct formatZeroIntegerWorkaround<T, true> {
 // Convert an arbitrary type to integer.  The version with convertible=false
 // throws an error.
 template <typename T, bool convertible = is_convertible<T, int>::value>
-struct convertToInt {
+struct convertToInt
+{
     static int invoke(const T& /*value*/)
     {
         TINYFORMAT_ERROR("tinyformat: Cannot convert from argument type to "
@@ -255,8 +275,12 @@ struct convertToInt {
 };
 // Specialization for convertToInt when conversion is possible
 template <typename T>
-struct convertToInt<T, true> {
-    static int invoke(const T& value) { return static_cast<int>(value); }
+struct convertToInt<T, true>
+{
+    static int invoke(const T& value)
+    {
+        return static_cast<int>(value);
+    }
 };
 
 } // namespace detail
@@ -458,7 +482,8 @@ class FormatIterator
 {
 public:
     // Flags for features not representable with standard stream state
-    enum ExtraFormatFlags {
+    enum ExtraFormatFlags
+    {
         Flag_None = 0,
         Flag_TruncateToPrecision = 1 << 0, // truncate length to stream precision()
         Flag_SpacePadPositive = 1 << 1,    // pad positive values with spaces
@@ -547,11 +572,13 @@ private:
     // output.  The position of the first % character of the next
     // nontrivial format spec is returned, or the end of string.
     static const char* printFormatStringLiteral(std::ostream& out,
-        const char* fmt)
+            const char* fmt)
     {
         const char* c = fmt;
-        for (; true; ++c) {
-            switch (*c) {
+        for (; true; ++c)
+        {
+            switch (*c)
+            {
             case '\0':
                 out.write(fmt, static_cast<std::streamsize>(c - fmt));
                 return c;
@@ -567,10 +594,10 @@ private:
     }
 
     static const char* streamStateFromFormat(std::ostream& out,
-        unsigned int& extraFlags,
-        const char* fmtStart,
-        int variableWidth,
-        int variablePrecision);
+            unsigned int& extraFlags,
+            const char* fmtStart,
+            int variableWidth,
+            int variablePrecision);
 
     // Private copy & assign: Kill gcc warnings with -Weffc++
     FormatIterator(const FormatIterator&);
@@ -596,25 +623,31 @@ private:
 // Accept a value for formatting into the internal stream.
 template <typename T>
 TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
-    void
-    FormatIterator::accept(const T& value)
+void
+FormatIterator::accept(const T& value)
 {
     // Parse the format string
     const char* fmtEnd = 0;
-    if (m_extraFlags == Flag_None && !m_wantWidth && !m_wantPrecision) {
+    if (m_extraFlags == Flag_None && !m_wantWidth && !m_wantPrecision)
+    {
         m_fmt = printFormatStringLiteral(m_out, m_fmt);
         fmtEnd = streamStateFromFormat(m_out, m_extraFlags, m_fmt, 0, 0);
         m_wantWidth = (m_extraFlags & Flag_VariableWidth) != 0;
         m_wantPrecision = (m_extraFlags & Flag_VariablePrecision) != 0;
     }
     // Consume value as variable width and precision specifier if necessary
-    if (m_extraFlags & (Flag_VariableWidth | Flag_VariablePrecision)) {
-        if (m_wantWidth || m_wantPrecision) {
+    if (m_extraFlags & (Flag_VariableWidth | Flag_VariablePrecision))
+    {
+        if (m_wantWidth || m_wantPrecision)
+        {
             int v = convertToInt<T>::invoke(value);
-            if (m_wantWidth) {
+            if (m_wantWidth)
+            {
                 m_variableWidth = v;
                 m_wantWidth = false;
-            } else if (m_wantPrecision) {
+            }
+            else if (m_wantPrecision)
+            {
                 m_variablePrecision = v;
                 m_wantPrecision = false;
             }
@@ -623,13 +656,14 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
         // If we get here, we've set both the variable precision and width as
         // required and we need to rerun the stream state setup to insert these.
         fmtEnd = streamStateFromFormat(m_out, m_extraFlags, m_fmt,
-            m_variableWidth, m_variablePrecision);
+                                       m_variableWidth, m_variablePrecision);
     }
 
     // Format the value into the stream.
     if (!(m_extraFlags & (Flag_SpacePadPositive | Flag_TruncateToPrecision)))
         formatValue(m_out, m_fmt, fmtEnd, value);
-    else {
+    else
+    {
         // The following are special cases where there's no direct
         // correspondence between stream formatting and the printf() behaviour.
         // Instead, we simulate the behaviour crudely by formatting into a
@@ -642,18 +676,20 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
         // "%.4s" where at most 4 characters of the c-string should be read.
         // If we didn't include this special case, we might read off the end.
         if (!((m_extraFlags & Flag_TruncateToPrecision) &&
-                formatCStringTruncate(tmpStream, value, m_out.precision()))) {
+                formatCStringTruncate(tmpStream, value, m_out.precision())))
+        {
             // Not a truncated c-string; just format normally.
             formatValue(tmpStream, m_fmt, fmtEnd, value);
         }
         std::string result = tmpStream.str(); // allocates... yuck.
-        if (m_extraFlags & Flag_SpacePadPositive) {
+        if (m_extraFlags & Flag_SpacePadPositive)
+        {
             for (size_t i = 0, iend = result.size(); i < iend; ++i)
                 if (result[i] == '+')
                     result[i] = ' ';
         }
         if ((m_extraFlags & Flag_TruncateToPrecision) &&
-            (int)result.size() > (int)m_out.precision())
+                (int)result.size() > (int)m_out.precision())
             m_out.write(result.c_str(), m_out.precision());
         else
             m_out << result;
@@ -672,12 +708,13 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
 // state are returned in the extraFlags parameter which is a bitwise
 // combination of values from the ExtraFormatFlags enum.
 inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
-    unsigned int& extraFlags,
-    const char* fmtStart,
-    int variableWidth,
-    int variablePrecision)
+        unsigned int& extraFlags,
+        const char* fmtStart,
+        int variableWidth,
+        int variablePrecision)
 {
-    if (*fmtStart != '%') {
+    if (*fmtStart != '%')
+    {
         TINYFORMAT_ERROR("tinyformat: Not enough conversion specifiers in format string");
         return fmtStart;
     }
@@ -694,14 +731,17 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
     bool widthSet = false;
     const char* c = fmtStart + 1;
     // 1) Parse flags
-    for (;; ++c) {
-        switch (*c) {
+    for (;; ++c)
+    {
+        switch (*c)
+        {
         case '#':
             out.setf(std::ios::showpoint | std::ios::showbase);
             continue;
         case '0':
             // overridden by left alignment ('-' flag)
-            if (!(out.flags() & std::ios::left)) {
+            if (!(out.flags() & std::ios::left))
+            {
                 // Use internal padding so that numeric values are
                 // formatted correctly, eg -00010 rather than 000-10
                 out.fill('0');
@@ -725,13 +765,16 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         break;
     }
     // 2) Parse width
-    if (*c >= '0' && *c <= '9') {
+    if (*c >= '0' && *c <= '9')
+    {
         widthSet = true;
         out.width(parseIntAndAdvance(c));
     }
-    if (*c == '*') {
+    if (*c == '*')
+    {
         widthSet = true;
-        if (variableWidth < 0) {
+        if (variableWidth < 0)
+        {
             // negative widths correspond to '-' flag set
             out.fill(' ');
             out.setf(std::ios::left, std::ios::adjustfield);
@@ -742,14 +785,18 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         ++c;
     }
     // 3) Parse precision
-    if (*c == '.') {
+    if (*c == '.')
+    {
         ++c;
         int precision = 0;
-        if (*c == '*') {
+        if (*c == '*')
+        {
             ++c;
             extraFlags |= Flag_VariablePrecision;
             precision = variablePrecision;
-        } else {
+        }
+        else
+        {
             if (*c >= '0' && *c <= '9')
                 precision = parseIntAndAdvance(c);
             else if (*c == '-') // negative precisions ignored, treated as zero.
@@ -759,16 +806,23 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         precisionSet = true;
     }
     // 4) Ignore any C99 length modifier
-    while (*c == 'l' || *c == 'h' || *c == 'L' ||
-           *c == 'j' || *c == 'z' || *c == 't')
+    while (*c == 'l' || *c == 'h' || *c == 'L' || *c == 'j' || *c == 'z' || *c == 't') {
         ++c;
+    }
     // 5) We're up to the conversion specifier character.
     // Set stream flags based on conversion specifier (thanks to the
     // boost::format class for forging the way here).
     bool intConversion = false;
-    switch (*c) {
+    switch (*c)
+    {
     case 'u':
+        out.setf(std::ios::dec, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'd':
+        out.setf(std::ios::dec, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'i':
         out.setf(std::ios::dec, std::ios::basefield);
         intConversion = true;
@@ -779,30 +833,48 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         break;
     case 'X':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::hex, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'x':
+        out.setf(std::ios::hex, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'p':
         out.setf(std::ios::hex, std::ios::basefield);
         intConversion = true;
         break;
     case 'E':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::scientific, std::ios::floatfield);
+        out.setf(std::ios::dec, std::ios::basefield);
+        break;
     case 'e':
         out.setf(std::ios::scientific, std::ios::floatfield);
         out.setf(std::ios::dec, std::ios::basefield);
         break;
     case 'F':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::fixed, std::ios::floatfield);
+        break;
     case 'f':
         out.setf(std::ios::fixed, std::ios::floatfield);
         break;
     case 'G':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::dec, std::ios::basefield);
+        // As in boost::format, let stream decide float format.
+        out.flags(out.flags() & ~std::ios::floatfield);
+        break;
     case 'g':
         out.setf(std::ios::dec, std::ios::basefield);
         // As in boost::format, let stream decide float format.
         out.flags(out.flags() & ~std::ios::floatfield);
         break;
     case 'a':
+        TINYFORMAT_ERROR("tinyformat: the %a and %A conversion specs "
+                         "are not supported");
+        break;
     case 'A':
         TINYFORMAT_ERROR("tinyformat: the %a and %A conversion specs "
                          "are not supported");
@@ -825,7 +897,8 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
                          "terminated by end of string");
         return c;
     }
-    if (intConversion && precisionSet && !widthSet) {
+    if (intConversion && precisionSet && !widthSet)
+    {
         // "precision" for integers gives the minimum number of digits (to be
         // padded with zeros on the left).  This isn't really supported by the
         // iostreams, but we can approximately simulate it with the width if

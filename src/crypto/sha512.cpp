@@ -14,12 +14,30 @@ namespace
 /// Internal SHA-512 implementation.
 namespace sha512
 {
-uint64_t inline Ch(uint64_t x, uint64_t y, uint64_t z) { return z ^ (x & (y ^ z)); }
-uint64_t inline Maj(uint64_t x, uint64_t y, uint64_t z) { return (x & y) | (z & (x | y)); }
-uint64_t inline Sigma0(uint64_t x) { return (x >> 28 | x << 36) ^ (x >> 34 | x << 30) ^ (x >> 39 | x << 25); }
-uint64_t inline Sigma1(uint64_t x) { return (x >> 14 | x << 50) ^ (x >> 18 | x << 46) ^ (x >> 41 | x << 23); }
-uint64_t inline sigma0(uint64_t x) { return (x >> 1 | x << 63) ^ (x >> 8 | x << 56) ^ (x >> 7); }
-uint64_t inline sigma1(uint64_t x) { return (x >> 19 | x << 45) ^ (x >> 61 | x << 3) ^ (x >> 6); }
+uint64_t inline Ch(uint64_t x, uint64_t y, uint64_t z)
+{
+    return z ^ (x & (y ^ z));
+}
+uint64_t inline Maj(uint64_t x, uint64_t y, uint64_t z)
+{
+    return (x & y) | (z & (x | y));
+}
+uint64_t inline Sigma0(uint64_t x)
+{
+    return (x >> 28 | x << 36) ^ (x >> 34 | x << 30) ^ (x >> 39 | x << 25);
+}
+uint64_t inline Sigma1(uint64_t x)
+{
+    return (x >> 14 | x << 50) ^ (x >> 18 | x << 46) ^ (x >> 41 | x << 23);
+}
+uint64_t inline sigma0(uint64_t x)
+{
+    return (x >> 1 | x << 63) ^ (x >> 8 | x << 56) ^ (x >> 7);
+}
+uint64_t inline sigma1(uint64_t x)
+{
+    return (x >> 19 | x << 45) ^ (x >> 61 | x << 3) ^ (x >> 6);
+}
 
 /** One round of SHA-512. */
 void inline Round(uint64_t a, uint64_t b, uint64_t c, uint64_t& d, uint64_t e, uint64_t f, uint64_t g, uint64_t& h, uint64_t k, uint64_t w)
@@ -160,7 +178,8 @@ CSHA512& CSHA512::Write(const unsigned char* data, size_t len)
 {
     const unsigned char* end = data + len;
     size_t bufsize = bytes % 128;
-    if (bufsize && bufsize + len >= 128) {
+    if (bufsize && bufsize + len >= 128)
+    {
         // Fill the buffer, and process it.
         memcpy(buf + bufsize, data, 128 - bufsize);
         bytes += 128 - bufsize;
@@ -168,13 +187,15 @@ CSHA512& CSHA512::Write(const unsigned char* data, size_t len)
         sha512::Transform(s, buf);
         bufsize = 0;
     }
-    while (end >= data + 128) {
+    while (end >= data + 128)
+    {
         // Process full chunks directly from the source.
         sha512::Transform(s, data);
         data += 128;
         bytes += 128;
     }
-    if (end > data) {
+    if (end > data)
+    {
         // Fill the buffer with what remains.
         memcpy(buf + bufsize, data, end - data);
         bytes += end - data;

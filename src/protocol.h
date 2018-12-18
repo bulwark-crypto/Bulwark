@@ -48,7 +48,8 @@ public:
 
     // TODO: make private (improves encapsulation)
 public:
-    enum {
+    enum
+    {
         COMMAND_SIZE = 12,
         MESSAGE_SIZE_SIZE = sizeof(int),
         CHECKSUM_SIZE = sizeof(int),
@@ -64,7 +65,8 @@ public:
 };
 
 /** nServices flags */
-enum {
+enum
+{
     NODE_NETWORK = (1 << 0),
 
     // NODE_BLOOM means the node is capable and willing to handle bloom-filtered connections.
@@ -101,7 +103,7 @@ public:
         if (nType & SER_DISK)
             READWRITE(nVersion);
         if ((nType & SER_DISK) ||
-            (nVersion >= CADDR_TIME_VERSION && !(nType & SER_GETHASH)))
+                (nVersion >= CADDR_TIME_VERSION && !(nType & SER_GETHASH)))
             READWRITE(nTime);
         READWRITE(nServices);
         READWRITE(*(CService*)this);
@@ -148,7 +150,8 @@ public:
     uint256 hash;
 };
 
-enum {
+enum
+{
     MSG_TX = 1,
     MSG_BLOCK,
     // Nodes may always request a MSG_FILTERED_BLOCK in a getdata, however,

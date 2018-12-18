@@ -58,8 +58,10 @@ bool CCoinsViewDB::BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock)
     CLevelDBBatch batch;
     size_t count = 0;
     size_t changed = 0;
-    for (CCoinsMap::iterator it = mapCoins.begin(); it != mapCoins.end();) {
-        if (it->second.flags & CCoinsCacheEntry::DIRTY) {
+    for (CCoinsMap::iterator it = mapCoins.begin(); it != mapCoins.end();)
+    {
+        if (it->second.flags & CCoinsCacheEntry::DIRTY)
+        {
             BatchWriteCoins(batch, it->first, it->second.coins);
             changed++;
         }
@@ -129,14 +131,17 @@ bool CCoinsViewDB::GetStats(CCoinsStats& stats) const
     stats.hashBlock = GetBestBlock();
     ss << stats.hashBlock;
     CAmount nTotalAmount = 0;
-    while (pcursor->Valid()) {
+    while (pcursor->Valid())
+    {
         boost::this_thread::interruption_point();
-        try {
+        try
+        {
             leveldb::Slice slKey = pcursor->key();
             CDataStream ssKey(slKey.data(), slKey.data() + slKey.size(), SER_DISK, CLIENT_VERSION);
             char chType;
             ssKey >> chType;
-            if (chType == 'c') {
+            if (chType == 'c')
+            {
                 leveldb::Slice slValue = pcursor->value();
                 CDataStream ssValue(slValue.data(), slValue.data() + slValue.size(), SER_DISK, CLIENT_VERSION);
                 CCoins coins;
@@ -148,9 +153,11 @@ bool CCoinsViewDB::GetStats(CCoinsStats& stats) const
                 ss << (coins.fCoinBase ? 'c' : 'n');
                 ss << VARINT(coins.nHeight);
                 stats.nTransactions++;
-                for (unsigned int i = 0; i < coins.vout.size(); i++) {
+                for (unsigned int i = 0; i < coins.vout.size(); i++)
+                {
                     const CTxOut& out = coins.vout[i];
-                    if (!out.IsNull()) {
+                    if (!out.IsNull())
+                    {
                         stats.nTransactionOutputs++;
                         ss << VARINT(i + 1);
                         ss << out;
@@ -161,7 +168,9 @@ bool CCoinsViewDB::GetStats(CCoinsStats& stats) const
                 ss << VARINT(0);
             }
             pcursor->Next();
-        } catch (std::exception& e) {
+        }
+        catch (std::exception& e)
+        {
             return error("%s : Deserialize or I/O error - %s", __func__, e.what());
         }
     }
@@ -218,14 +227,17 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
 
     // Load mapBlockIndex
     uint256 nPreviousCheckpoint;
-    while (pcursor->Valid()) {
+    while (pcursor->Valid())
+    {
         boost::this_thread::interruption_point();
-        try {
+        try
+        {
             leveldb::Slice slKey = pcursor->key();
             CDataStream ssKey(slKey.data(), slKey.data() + slKey.size(), SER_DISK, CLIENT_VERSION);
             char chType;
             ssKey >> chType;
-            if (chType == 'b') {
+            if (chType == 'b')
+            {
                 leveldb::Slice slValue = pcursor->value();
                 CDataStream ssValue(slValue.data(), slValue.data() + slValue.size(), SER_DISK, CLIENT_VERSION);
                 CDiskBlockIndex diskindex;
@@ -261,9 +273,10 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
                 pindexNew->nStakeTime = diskindex.nStakeTime;
                 pindexNew->hashProofOfStake = diskindex.hashProofOfStake;
 
-                LogPrintf("%s: %s\n", pindexNew->hashMerkleRoot.ToString().c_str(), pindexNew->GetBlockHash().ToString().c_str());
+                if (fDebug) LogPrintf("%s: %s\n", pindexNew->hashMerkleRoot.ToString().c_str(), pindexNew->GetBlockHash().ToString().c_str());
 
-                if (pindexNew->nHeight <= Params().LAST_POW_BLOCK()) {
+                if (pindexNew->nHeight <= Params().LAST_POW_BLOCK())
+                {
                     if (!CheckProofOfWork(pindexNew->GetBlockHash(), pindexNew->nBits))
                         return error("LoadBlockIndex() : CheckProofOfWork failed: %s", pindexNew->ToString());
                 }
@@ -272,16 +285,21 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
                     setStakeSeen.insert(make_pair(pindexNew->prevoutStake, pindexNew->nStakeTime));
 
                 //populate accumulator checksum map in memory
-                if(pindexNew->nAccumulatorCheckpoint != 0 && pindexNew->nAccumulatorCheckpoint != nPreviousCheckpoint) {
+                if(pindexNew->nAccumulatorCheckpoint != 0 && pindexNew->nAccumulatorCheckpoint != nPreviousCheckpoint)
+                {
                     LoadAccumulatorValuesFromDB(pindexNew->nAccumulatorCheckpoint);
                     nPreviousCheckpoint = pindexNew->nAccumulatorCheckpoint;
                 }
 
                 pcursor->Next();
-            } else {
+            }
+            else
+            {
                 break; // if shutdown requested or finished loading block index
             }
-        } catch (std::exception& e) {
+        }
+        catch (std::exception& e)
+        {
             return error("%s : Deserialize or I/O error - %s", __func__, e.what());
         }
     }

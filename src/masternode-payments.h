@@ -9,7 +9,6 @@
 #include "key.h"
 #include "main.h"
 #include "masternode.h"
-#include <boost/lexical_cast.hpp>
 
 using namespace std;
 
@@ -43,7 +42,8 @@ private:
     std::string strMagicMessage;
 
 public:
-    enum ReadResult {
+    enum ReadResult
+    {
         Ok,
         FileError,
         HashReadError,
@@ -108,8 +108,10 @@ public:
     {
         LOCK(cs_vecPayments);
 
-        BOOST_FOREACH (CMasternodePayee& payee, vecPayments) {
-            if (payee.scriptPubKey == payeeIn) {
+        BOOST_FOREACH(CMasternodePayee& payee, vecPayments)
+        {
+            if (payee.scriptPubKey == payeeIn)
+            {
                 payee.nVotes += nIncrement;
                 return;
             }
@@ -124,8 +126,10 @@ public:
         LOCK(cs_vecPayments);
 
         int nVotes = -1;
-        BOOST_FOREACH (CMasternodePayee& p, vecPayments) {
-            if (p.nVotes > nVotes) {
+        BOOST_FOREACH(CMasternodePayee& p, vecPayments)
+        {
+            if (p.nVotes > nVotes)
+            {
                 payee = p.scriptPubKey;
                 nVotes = p.nVotes;
             }
@@ -138,7 +142,8 @@ public:
     {
         LOCK(cs_vecPayments);
 
-        BOOST_FOREACH (CMasternodePayee& p, vecPayments) {
+        BOOST_FOREACH(CMasternodePayee& p, vecPayments)
+        {
             if (p.nVotes >= nVotesReq && p.scriptPubKey == payee) return true;
         }
 
@@ -218,9 +223,9 @@ public:
     {
         std::string ret = "";
         ret += vinMasternode.ToString();
-        ret += ", " + boost::lexical_cast<std::string>(nBlockHeight);
+        ret += ", " + std::to_string(nBlockHeight);
         ret += ", " + payee.ToString();
-        ret += ", " + boost::lexical_cast<std::string>((int)vchSig.size());
+        ret += ", " + std::to_string((int)vchSig.size());
         return ret;
     }
 };
@@ -269,8 +274,10 @@ public:
     {
         LOCK(cs_mapMasternodePayeeVotes);
 
-        if (mapMasternodesLastVote.count(outMasternode.hash + outMasternode.n)) {
-            if (mapMasternodesLastVote[outMasternode.hash + outMasternode.n] == nBlockHeight) {
+        if (mapMasternodesLastVote.count(outMasternode.hash + outMasternode.n))
+        {
+            if (mapMasternodesLastVote[outMasternode.hash + outMasternode.n] == nBlockHeight)
+            {
                 return false;
             }
         }

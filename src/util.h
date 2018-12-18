@@ -219,18 +219,26 @@ void LoopForever(const char* name, Callable func, int64_t msecs)
     std::string s = strprintf("bulwark-%s", name);
     RenameThread(s.c_str());
     LogPrintf("%s thread start\n", name);
-    try {
-        while (1) {
+    try
+    {
+        while (1)
+        {
             MilliSleep(msecs);
             func();
         }
-    } catch (boost::thread_interrupted) {
+    }
+    catch (boost::thread_interrupted)
+    {
         LogPrintf("%s thread stop\n", name);
         throw;
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         PrintExceptionContinue(&e, name);
         throw;
-    } catch (...) {
+    }
+    catch (...)
+    {
         PrintExceptionContinue(NULL, name);
         throw;
     }
@@ -244,17 +252,24 @@ void TraceThread(const char* name, Callable func)
 {
     std::string s = strprintf("bulwark-%s", name);
     RenameThread(s.c_str());
-    try {
+    try
+    {
         LogPrintf("%s thread start\n", name);
         func();
         LogPrintf("%s thread exit\n", name);
-    } catch (boost::thread_interrupted) {
+    }
+    catch (boost::thread_interrupted)
+    {
         LogPrintf("%s thread interrupt\n", name);
         throw;
-    } catch (std::exception& e) {
+    }
+    catch (std::exception& e)
+    {
         PrintExceptionContinue(&e, name);
         throw;
-    } catch (...) {
+    }
+    catch (...)
+    {
         PrintExceptionContinue(NULL, name);
         throw;
     }

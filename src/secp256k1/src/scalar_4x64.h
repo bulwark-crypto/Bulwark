@@ -10,7 +10,8 @@
 #include <stdint.h>
 
 /** A scalar modulo the group order of the secp256k1 curve. */
-typedef struct {
+typedef struct
+{
     uint64_t d[4];
 } secp256k1_scalar_t;
 

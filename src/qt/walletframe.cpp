@@ -13,7 +13,7 @@
 #include <QLabel>
 
 WalletFrame::WalletFrame(BitcoinGUI* _gui) : QFrame(_gui),
-                                             gui(_gui)
+    gui(_gui)
 {
     // Leave HBox hook for adding a list view later
     QHBoxLayout* walletFrameLayout = new QHBoxLayout(this);
@@ -160,6 +160,13 @@ void WalletFrame::gotoSignMessageTab(QString addr)
         walletView->gotoSignMessageTab(addr);
 }
 
+void WalletFrame::gotoProposalPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoProposalPage();
+}
+
 void WalletFrame::gotoVerifyMessageTab(QString addr)
 {
     WalletView* walletView = currentWalletView();
@@ -185,7 +192,8 @@ void WalletFrame::gotoMultiSendDialog()
 void WalletFrame::gotoMultisigDialog(int index)
 {
     WalletView* walletView = currentWalletView();
-    if(walletView){
+    if(walletView)
+    {
         walletView->gotoMultisigDialog(index);
     }
 }

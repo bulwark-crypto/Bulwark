@@ -4,7 +4,7 @@
 
 #include "winshutdownmonitor.h"
 
-#if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
+#if defined(Q_OS_WIN)
 #include "init.h"
 #include "util.h"
 
@@ -23,17 +23,21 @@ bool WinShutdownMonitor::nativeEventFilter(const QByteArray& eventType, void* pM
     MSG* pMsg = static_cast<MSG*>(pMessage);
 
     // Seed OpenSSL PRNG with Windows event data (e.g.  mouse movements and other user interactions)
-    if (RAND_event(pMsg->message, pMsg->wParam, pMsg->lParam) == 0) {
+    if (RAND_event(pMsg->message, pMsg->wParam, pMsg->lParam) == 0)
+    {
         // Warn only once as this is performance-critical
         static bool warned = false;
-        if (!warned) {
+        if (!warned)
+        {
             LogPrint("%s: OpenSSL RAND_event() failed to seed OpenSSL PRNG with enough data.\n", __func__);
             warned = true;
         }
     }
 
-    switch (pMsg->message) {
-    case WM_QUERYENDSESSION: {
+    switch (pMsg->message)
+    {
+    case WM_QUERYENDSESSION:
+    {
         // Initiate a client shutdown after receiving a WM_QUERYENDSESSION and block
         // Windows session end until we have finished client shutdown.
         StartShutdown();
@@ -41,7 +45,8 @@ bool WinShutdownMonitor::nativeEventFilter(const QByteArray& eventType, void* pM
         return true;
     }
 
-    case WM_ENDSESSION: {
+    case WM_ENDSESSION:
+    {
         *pnResult = FALSE;
         return true;
     }
@@ -54,7 +59,8 @@ void WinShutdownMonitor::registerShutdownBlockReason(const QString& strReason, c
 {
     typedef BOOL(WINAPI * PSHUTDOWNBRCREATE)(HWND, LPCWSTR);
     PSHUTDOWNBRCREATE shutdownBRCreate = (PSHUTDOWNBRCREATE)GetProcAddress(GetModuleHandleA("User32.dll"), "ShutdownBlockReasonCreate");
-    if (shutdownBRCreate == NULL) {
+    if (shutdownBRCreate == NULL)
+    {
         qWarning() << "registerShutdownBlockReason: GetProcAddress for ShutdownBlockReasonCreate failed";
         return;
     }

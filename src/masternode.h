@@ -111,7 +111,8 @@ private:
     int64_t lastTimeChecked;
 
 public:
-    enum state {
+    enum state
+    {
         MASTERNODE_PRE_ENABLED,
         MASTERNODE_ENABLED,
         MASTERNODE_EXPIRED,
@@ -257,7 +258,8 @@ public:
     {
         if (chainActive.Tip() == NULL) return 0;
 
-        if (cacheInputAge == 0) {
+        if (cacheInputAge == 0)
+        {
             cacheInputAge = GetInputAge(vin);
             cacheInputAgeBlock = chainActive.Tip()->nHeight;
         }

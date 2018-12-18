@@ -68,7 +68,8 @@ class CScript;
 class CWalletTx;
 
 /** (client) version numbers for particular wallet features */
-enum WalletFeature {
+enum WalletFeature
+{
     FEATURE_BASE = 10500, // the earliest version new wallets supports (only useful for getinfo's clientversion output)
 
     FEATURE_WALLETCRYPT = 40000, // wallet encryption
@@ -77,7 +78,8 @@ enum WalletFeature {
     FEATURE_LATEST = 61000
 };
 
-enum AvailableCoinsType {
+enum AvailableCoinsType
+{
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
@@ -87,7 +89,8 @@ enum AvailableCoinsType {
 };
 
 // Possible states for zBWK send
-enum ZerocoinSpendStatus {
+enum ZerocoinSpendStatus
+{
     ZBWK_SPEND_OKAY = 0,                            // No error
     ZBWK_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
     ZBWK_WALLET_LOCKED = 2,                         // Wallet was locked
@@ -106,7 +109,8 @@ enum ZerocoinSpendStatus {
     ZBWK_TX_TOO_LARGE = 15                          // The transaction is larger than the max tx size
 };
 
-struct CompactTallyItem {
+struct CompactTallyItem
+{
     CBitcoinAddress address;
     CAmount nAmount;
     std::vector<CTxIn> vecTxIn;
@@ -243,7 +247,7 @@ public:
     int nStakeSetUpdateTime;
 
     //MultiSend
-	std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend;
+    std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend;
     bool fMultiSendStake;
     bool fMultiSendMasternodeReward;
     bool fMultiSendNotify;
@@ -321,7 +325,7 @@ public:
     {
         fBackupMints = fEnabled;
     }
-    
+
     bool isMultiSendEnabled()
     {
         return fMultiSendMasternodeReward || fMultiSendStake;
@@ -380,7 +384,10 @@ public:
     //! Adds a key to the store, and saves it to disk.
     bool AddKeyPubKey(const CKey& key, const CPubKey& pubkey);
     //! Adds a key to the store, without saving it to disk (used by LoadWallet)
-    bool LoadKey(const CKey& key, const CPubKey& pubkey) { return CCryptoKeyStore::AddKeyPubKey(key, pubkey); }
+    bool LoadKey(const CKey& key, const CPubKey& pubkey)
+    {
+        return CCryptoKeyStore::AddKeyPubKey(key, pubkey);
+    }
     //! Load metadata (used by LoadWallet)
     bool LoadKeyMetadata(const CPubKey& pubkey, const CKeyMetadata& metadata);
 
@@ -469,14 +476,14 @@ public:
     CAmount GetImmatureWatchOnlyBalance() const;
     bool CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl);
     bool CreateTransaction(const std::vector<std::pair<CScript, CAmount> >& vecSend,
-        CWalletTx& wtxNew,
-        CReserveKey& reservekey,
-        CAmount& nFeeRet,
-        std::string& strFailReason,
-        const CCoinControl* coinControl = NULL,
-        AvailableCoinsType coin_type = ALL_COINS,
-        bool useIX = false,
-        CAmount nFeePay = 0);
+                           CWalletTx& wtxNew,
+                           CReserveKey& reservekey,
+                           CAmount& nFeeRet,
+                           std::string& strFailReason,
+                           const CCoinControl* coinControl = NULL,
+                           AvailableCoinsType coin_type = ALL_COINS,
+                           bool useIX = false,
+                           CAmount nFeePay = 0);
     bool CreateTransaction(CScript scriptPubKey, const CAmount& nValue, CWalletTx& wtxNew, CReserveKey& reservekey, CAmount& nFeeRet, std::string& strFailReason, const CCoinControl* coinControl = NULL, AvailableCoinsType coin_type = ALL_COINS, bool useIX = false, CAmount nFeePay = 0);
     bool CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, std::string strCommand = "tx");
     std::string PrepareObfuscationDenominate(int minRounds, int maxRounds);
@@ -485,8 +492,8 @@ public:
     bool ConvertList(std::vector<CTxIn> vCoins, std::vector<int64_t>& vecAmounts);
     bool CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew, unsigned int& nTxNewTime);
     bool MultiSend();
-	bool isMSAddressEnabled(std::string address);
-	int indexOfMSAddress(std::string address);
+    bool isMSAddressEnabled(std::string address);
+    int indexOfMSAddress(std::string address);
     void AutoCombineDust();
     void AutoZeromint();
 
@@ -507,8 +514,8 @@ public:
 
     std::set<CTxDestination> GetAccountAddresses(std::string strAccount) const;
 
-    bool GetBudgetSystemCollateralTX(CTransaction& tx, uint256 hash, bool useIX);
     bool GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useIX);
+    bool GetBudgetFinalizationCollateralTX(CWalletTx& tx, uint256 hash, bool useIX);
 
     // get the Obfuscation chain depth for a given input
     int GetRealInputObfuscationRounds(CTxIn in, int rounds) const;
@@ -542,9 +549,11 @@ public:
     }
     bool IsMine(const CTransaction& tx) const
     {
-        BOOST_FOREACH (const CTxOut& txout, tx.vout)
+        BOOST_FOREACH(const CTxOut& txout, tx.vout)
+        {
             if (IsMine(txout))
                 return true;
+        }
         return false;
     }
     /** should probably be renamed to IsRelevantToMe */
@@ -555,7 +564,8 @@ public:
     CAmount GetDebit(const CTransaction& tx, const isminefilter& filter) const
     {
         CAmount nDebit = 0;
-        BOOST_FOREACH (const CTxIn& txin, tx.vin) {
+        BOOST_FOREACH(const CTxIn& txin, tx.vin)
+        {
             nDebit += GetDebit(txin, filter);
             if (!MoneyRange(nDebit))
                 throw std::runtime_error("CWallet::GetDebit() : value out of range");
@@ -565,7 +575,8 @@ public:
     CAmount GetCredit(const CTransaction& tx, const isminefilter& filter) const
     {
         CAmount nCredit = 0;
-        BOOST_FOREACH (const CTxOut& txout, tx.vout) {
+        BOOST_FOREACH(const CTxOut& txout, tx.vout)
+        {
             nCredit += GetCredit(txout, filter);
             if (!MoneyRange(nCredit))
                 throw std::runtime_error("CWallet::GetCredit() : value out of range");
@@ -575,7 +586,8 @@ public:
     CAmount GetChange(const CTransaction& tx) const
     {
         CAmount nChange = 0;
-        BOOST_FOREACH (const CTxOut& txout, tx.vout) {
+        BOOST_FOREACH(const CTxOut& txout, tx.vout)
+        {
             nChange += GetChange(txout);
             if (!MoneyRange(nChange))
                 throw std::runtime_error("CWallet::GetChange() : value out of range");
@@ -680,7 +692,8 @@ typedef std::map<std::string, std::string> mapValue_t;
 
 static void ReadOrderPos(int64_t& nOrderPos, mapValue_t& mapValue)
 {
-    if (!mapValue.count("n")) {
+    if (!mapValue.count("n"))
+    {
         nOrderPos = -1; // TODO: calculate elsewhere
         return;
     }
@@ -695,7 +708,8 @@ static void WriteOrderPos(const int64_t& nOrderPos, mapValue_t& mapValue)
     mapValue["n"] = i64tostr(nOrderPos);
 }
 
-struct COutputEntry {
+struct COutputEntry
+{
     CTxDestination destination;
     CAmount amount;
     int vout;
@@ -886,7 +900,8 @@ public:
             Init(NULL);
         char fSpent = false;
 
-        if (!ser_action.ForRead()) {
+        if (!ser_action.ForRead())
+        {
             mapValue["fromaccount"] = strFromAccount;
 
             WriteOrderPos(nOrderPos, mapValue);
@@ -905,7 +920,8 @@ public:
         READWRITE(fFromMe);
         READWRITE(fSpent);
 
-        if (ser_action.ForRead()) {
+        if (ser_action.ForRead())
+        {
             strFromAccount = mapValue["fromaccount"];
 
             ReadOrderPos(nOrderPos, mapValue);
@@ -950,19 +966,23 @@ public:
             return 0;
 
         CAmount debit = 0;
-        if (filter & ISMINE_SPENDABLE) {
+        if (filter & ISMINE_SPENDABLE)
+        {
             if (fDebitCached)
                 debit += nDebitCached;
-            else {
+            else
+            {
                 nDebitCached = pwallet->GetDebit(*this, ISMINE_SPENDABLE);
                 fDebitCached = true;
                 debit += nDebitCached;
             }
         }
-        if (filter & ISMINE_WATCH_ONLY) {
+        if (filter & ISMINE_WATCH_ONLY)
+        {
             if (fWatchDebitCached)
                 debit += nWatchDebitCached;
-            else {
+            else
+            {
                 nWatchDebitCached = pwallet->GetDebit(*this, ISMINE_WATCH_ONLY);
                 fWatchDebitCached = true;
                 debit += nWatchDebitCached;
@@ -978,20 +998,24 @@ public:
             return 0;
 
         CAmount credit = 0;
-        if (filter & ISMINE_SPENDABLE) {
+        if (filter & ISMINE_SPENDABLE)
+        {
             // GetBalance can assume transactions in mapWallet won't change
             if (fCreditCached)
                 credit += nCreditCached;
-            else {
+            else
+            {
                 nCreditCached = pwallet->GetCredit(*this, ISMINE_SPENDABLE);
                 fCreditCached = true;
                 credit += nCreditCached;
             }
         }
-        if (filter & ISMINE_WATCH_ONLY) {
+        if (filter & ISMINE_WATCH_ONLY)
+        {
             if (fWatchCreditCached)
                 credit += nWatchCreditCached;
-            else {
+            else
+            {
                 nWatchCreditCached = pwallet->GetCredit(*this, ISMINE_WATCH_ONLY);
                 fWatchCreditCached = true;
                 credit += nWatchCreditCached;
@@ -1002,7 +1026,8 @@ public:
 
     CAmount GetImmatureCredit(bool fUseCache = true) const
     {
-        if ((IsCoinBase() || IsCoinStake()) && GetBlocksToMaturity() > 0 && IsInMainChain()) {
+        if ((IsCoinBase() || IsCoinStake()) && GetBlocksToMaturity() > 0 && IsInMainChain())
+        {
             if (fUseCache && fImmatureCreditCached)
                 return nImmatureCreditCached;
             nImmatureCreditCached = pwallet->GetCredit(*this, ISMINE_SPENDABLE);
@@ -1027,8 +1052,10 @@ public:
 
         CAmount nCredit = 0;
         uint256 hashTx = GetHash();
-        for (unsigned int i = 0; i < vout.size(); i++) {
-            if (!pwallet->IsSpent(hashTx, i)) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
+            if (!pwallet->IsSpent(hashTx, i))
+            {
                 const CTxOut& txout = vout[i];
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
                 if (!MoneyRange(nCredit))
@@ -1055,7 +1082,8 @@ public:
 
         CAmount nCredit = 0;
         uint256 hashTx = GetHash();
-        for (unsigned int i = 0; i < vout.size(); i++) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
             const CTxOut& txout = vout[i];
             const CTxIn vin = CTxIn(hashTx, i);
 
@@ -1063,7 +1091,8 @@ public:
             if (fMasterNode && vout[i].nValue == 5000 * COIN) continue; // do not count MN-like outputs
 
             const int rounds = pwallet->GetInputObfuscationRounds(vin);
-            if (rounds >= -2 && rounds < nZeromintPercentage) {
+            if (rounds >= -2 && rounds < nZeromintPercentage)
+            {
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
                 if (!MoneyRange(nCredit))
                     throw std::runtime_error("CWalletTx::GetAnonamizableCredit() : value out of range");
@@ -1089,14 +1118,16 @@ public:
 
         CAmount nCredit = 0;
         uint256 hashTx = GetHash();
-        for (unsigned int i = 0; i < vout.size(); i++) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
             const CTxOut& txout = vout[i];
             const CTxIn vin = CTxIn(hashTx, i);
 
             if (pwallet->IsSpent(hashTx, i) || !pwallet->IsDenominated(vin)) continue;
 
             const int rounds = pwallet->GetInputObfuscationRounds(vin);
-            if (rounds >= nZeromintPercentage) {
+            if (rounds >= nZeromintPercentage)
+            {
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
                 if (!MoneyRange(nCredit))
                     throw std::runtime_error("CWalletTx::GetAnonymizedCredit() : value out of range");
@@ -1120,7 +1151,8 @@ public:
 
         CAmount nCredit = 0;
         uint256 hashTx = GetHash();
-        for (unsigned int i = 0; i < vout.size(); i++) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
             const CTxOut& txout = vout[i];
 
             if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
@@ -1134,7 +1166,7 @@ public:
         return nCredit;
     }
 
-        // Return sum of unlocked coins
+    // Return sum of unlocked coins
     CAmount GetLockedCredit() const
     {
         if (pwallet == 0)
@@ -1146,19 +1178,22 @@ public:
 
         CAmount nCredit = 0;
         uint256 hashTx = GetHash();
-        for (unsigned int i = 0; i < vout.size(); i++) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
             const CTxOut& txout = vout[i];
 
             // Skip spent coins
             if (pwallet->IsSpent(hashTx, i)) continue;
 
             // Add locked coins
-            if (pwallet->IsLockedCoin(hashTx, i)) {
+            if (pwallet->IsLockedCoin(hashTx, i))
+            {
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
             }
 
             // Add masternode collaterals which are handled likc locked coins
-            if (fMasterNode && vout[i].nValue == 10000 * COIN) {
+            if (fMasterNode && vout[i].nValue == 10000 * COIN)
+            {
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
             }
 
@@ -1184,7 +1219,8 @@ public:
         bool isUnconfirmed = !IsFinalTx(*this) || (!IsTrusted() && nDepth == 0);
         if (unconfirmed != isUnconfirmed) return 0;
 
-        if (fUseCache) {
+        if (fUseCache)
+        {
             if (unconfirmed && fDenomUnconfCreditCached)
                 return nDenomUnconfCreditCached;
             else if (!unconfirmed && fDenomConfCreditCached)
@@ -1193,7 +1229,8 @@ public:
 
         CAmount nCredit = 0;
         uint256 hashTx = GetHash();
-        for (unsigned int i = 0; i < vout.size(); i++) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
             const CTxOut& txout = vout[i];
 
             if (pwallet->IsSpent(hashTx, i) || !pwallet->IsDenominatedAmount(vout[i].nValue)) continue;
@@ -1203,10 +1240,13 @@ public:
                 throw std::runtime_error("CWalletTx::GetDenominatedCredit() : value out of range");
         }
 
-        if (unconfirmed) {
+        if (unconfirmed)
+        {
             nDenomUnconfCreditCached = nCredit;
             fDenomUnconfCreditCached = true;
-        } else {
+        }
+        else
+        {
             nDenomConfCreditCached = nCredit;
             fDenomConfCreditCached = true;
         }
@@ -1215,7 +1255,8 @@ public:
 
     CAmount GetImmatureWatchOnlyCredit(const bool& fUseCache = true) const
     {
-        if (IsCoinBase() && GetBlocksToMaturity() > 0 && IsInMainChain()) {
+        if (IsCoinBase() && GetBlocksToMaturity() > 0 && IsInMainChain())
+        {
             if (fUseCache && fImmatureWatchCreditCached)
                 return nImmatureWatchCreditCached;
             nImmatureWatchCreditCached = pwallet->GetCredit(*this, ISMINE_WATCH_ONLY);
@@ -1239,8 +1280,10 @@ public:
             return nAvailableWatchCreditCached;
 
         CAmount nCredit = 0;
-        for (unsigned int i = 0; i < vout.size(); i++) {
-            if (!pwallet->IsSpent(GetHash(), i)) {
+        for (unsigned int i = 0; i < vout.size(); i++)
+        {
+            if (!pwallet->IsSpent(GetHash(), i))
+            {
                 const CTxOut& txout = vout[i];
                 nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
                 if (!MoneyRange(nCredit))
@@ -1263,10 +1306,10 @@ public:
     }
 
     void GetAmounts(std::list<COutputEntry>& listReceived,
-        std::list<COutputEntry>& listSent,
-        CAmount& nFee,
-        std::string& strSentAccount,
-        const isminefilter& filter) const;
+                    std::list<COutputEntry>& listSent,
+                    CAmount& nFee,
+                    std::string& strSentAccount,
+                    const isminefilter& filter) const;
 
     void GetAccountAmounts(const std::string& strAccount, CAmount& nReceived, CAmount& nSent, CAmount& nFee, const isminefilter& filter) const;
 
@@ -1291,7 +1334,8 @@ public:
             return false;
 
         // Trusted if all inputs are from us and are in the mempool:
-        BOOST_FOREACH (const CTxIn& txin, vin) {
+        BOOST_FOREACH(const CTxIn& txin, vin)
+        {
             // Transactions not sent by us: not trusted
             const CWalletTx* parent = pwallet->GetWalletTx(txin.prevout.hash);
             if (parent == NULL)
@@ -1334,8 +1378,10 @@ public:
     //Used with Obfuscation. Will return largest nondenom, then denominations, then very small inputs
     int Priority() const
     {
-        BOOST_FOREACH (CAmount d, obfuScationDenominations)
+        BOOST_FOREACH(CAmount d, obfuScationDenominations)
+        {
             if (tx->vout[i].nValue == d) return 10000;
+        }
         if (tx->vout[i].nValue < 1 * COIN) return 20000;
 
         //nondenom return largest first
@@ -1454,10 +1500,12 @@ public:
         READWRITE(nTime);
         READWRITE(LIMITED_STRING(strOtherAccount, 65536));
 
-        if (!ser_action.ForRead()) {
+        if (!ser_action.ForRead())
+        {
             WriteOrderPos(nOrderPos, mapValue);
 
-            if (!(mapValue.empty() && _ssExtra.empty())) {
+            if (!(mapValue.empty() && _ssExtra.empty()))
+            {
                 CDataStream ss(nType, nVersion);
                 ss.insert(ss.begin(), '\0');
                 ss << mapValue;
@@ -1469,9 +1517,11 @@ public:
         READWRITE(LIMITED_STRING(strComment, 65536));
 
         size_t nSepPos = strComment.find("\0", 0, 1);
-        if (ser_action.ForRead()) {
+        if (ser_action.ForRead())
+        {
             mapValue.clear();
-            if (std::string::npos != nSepPos) {
+            if (std::string::npos != nSepPos)
+            {
                 CDataStream ss(std::vector<char>(strComment.begin() + nSepPos + 1, strComment.end()), nType, nVersion);
                 ss >> mapValue;
                 _ssExtra = std::vector<char>(ss.begin(), ss.end());

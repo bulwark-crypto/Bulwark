@@ -34,7 +34,8 @@ class PrivacyDialog : public QDialog
     Q_OBJECT
 
 public:
-    enum ColumnWidths {
+    enum ColumnWidths
+    {
         DATE_COLUMN_WIDTH = 130,
         LABEL_COLUMN_WIDTH = 120,
         AMOUNT_MINIMUM_COLUMN_WIDTH = 160,
@@ -49,7 +50,7 @@ public:
     void setZBwkControlLabels(int64_t nAmount, int nQuantity);
 
 public slots:
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
                     const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 protected:
@@ -70,7 +71,7 @@ private:
     CAmount currentWatchOnlyBalance;
     CAmount currentWatchUnconfBalance;
     CAmount currentWatchImmatureBalance;
-    
+
     int nSecurityLevel = 0;
     bool fMinimizeChange = false;
 
@@ -97,8 +98,6 @@ private slots:
 //    void coinControlClipboardChange();
 
     void on_pushButtonMintzBWK_clicked();
-    void on_pushButtonMintReset_clicked();
-    void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzBWK_clicked();
     void on_pushButtonZBWKControl_clicked();
     void on_pasteButton_clicked();

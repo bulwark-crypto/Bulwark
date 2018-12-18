@@ -31,19 +31,20 @@ using namespace boost::algorithm;
 extern UniValue read_json(const std::string& jsondata);
 
 static std::map<string, unsigned int> mapFlagNames = boost::assign::map_list_of
-    (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
-    (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
-    (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
-    (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
-    (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
-    (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
-    (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
-    (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
-    (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
+        (string("NONE"), (unsigned int)SCRIPT_VERIFY_NONE)
+        (string("P2SH"), (unsigned int)SCRIPT_VERIFY_P2SH)
+        (string("STRICTENC"), (unsigned int)SCRIPT_VERIFY_STRICTENC)
+        (string("DERSIG"), (unsigned int)SCRIPT_VERIFY_DERSIG)
+        (string("LOW_S"), (unsigned int)SCRIPT_VERIFY_LOW_S)
+        (string("SIGPUSHONLY"), (unsigned int)SCRIPT_VERIFY_SIGPUSHONLY)
+        (string("MINIMALDATA"), (unsigned int)SCRIPT_VERIFY_MINIMALDATA)
+        (string("NULLDUMMY"), (unsigned int)SCRIPT_VERIFY_NULLDUMMY)
+        (string("DISCOURAGE_UPGRADABLE_NOPS"), (unsigned int)SCRIPT_VERIFY_DISCOURAGE_UPGRADABLE_NOPS);
 
 unsigned int ParseScriptFlags(string strFlags)
 {
-    if (strFlags.empty()) {
+    if (strFlags.empty())
+    {
         return 0;
     }
     unsigned int flags = 0;
@@ -62,13 +63,16 @@ unsigned int ParseScriptFlags(string strFlags)
 
 string FormatScriptFlags(unsigned int flags)
 {
-    if (flags == 0) {
+    if (flags == 0)
+    {
         return "";
     }
     string ret;
     std::map<string, unsigned int>::const_iterator it = mapFlagNames.begin();
-    while (it != mapFlagNames.end()) {
-        if (flags & it->second) {
+    while (it != mapFlagNames.end())
+    {
+        if (flags & it->second)
+        {
             ret += it->first + ",";
         }
         it++;
@@ -90,7 +94,8 @@ BOOST_AUTO_TEST_CASE(tx_valid)
     UniValue tests = read_json(std::string(json_tests::tx_valid, json_tests::tx_valid + sizeof(json_tests::tx_valid)));
 
     ScriptError err;
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         string strTest = test.write();
         if (test[0].isArray())
@@ -104,8 +109,9 @@ BOOST_AUTO_TEST_CASE(tx_valid)
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
             UniValue inputs = test[0].get_array();
             bool fValid = true;
-	    for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
-	        const UniValue& input = inputs[inpIdx];
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++)
+            {
+                const UniValue& input = inputs[inpIdx];
                 if (!input.isArray())
                 {
                     fValid = false;
@@ -165,7 +171,8 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
     UniValue tests = read_json(std::string(json_tests::tx_invalid, json_tests::tx_invalid + sizeof(json_tests::tx_invalid)));
 
     ScriptError err;
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
+    for (unsigned int idx = 0; idx < tests.size(); idx++)
+    {
         UniValue test = tests[idx];
         string strTest = test.write();
         if (test[0].isArray())
@@ -179,8 +186,9 @@ BOOST_AUTO_TEST_CASE(tx_invalid)
             map<COutPoint, CScript> mapprevOutScriptPubKeys;
             UniValue inputs = test[0].get_array();
             bool fValid = true;
-	    for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++) {
-	        const UniValue& input = inputs[inpIdx];
+            for (unsigned int inpIdx = 0; inpIdx < inputs.size(); inpIdx++)
+            {
+                const UniValue& input = inputs[inpIdx];
                 if (!input.isArray())
                 {
                     fValid = false;

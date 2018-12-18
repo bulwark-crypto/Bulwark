@@ -21,7 +21,8 @@ class AskPassphraseDialog : public QDialog
     Q_OBJECT
 
 public:
-    enum Mode {
+    enum Mode
+    {
         Encrypt,         /**< Ask passphrase twice and encrypt */
         UnlockAnonymize, /**< Ask passphrase and unlock only for anonymization */
         Unlock,          /**< Ask passphrase and unlock */
@@ -41,8 +42,8 @@ private:
 
 private slots:
     void textChanged();
-	void on_acceptButton_clicked();
-	void on_cancelButton_clicked();
+    void on_acceptButton_clicked();
+    void on_cancelButton_clicked();
 
 protected:
     bool event(QEvent* event);

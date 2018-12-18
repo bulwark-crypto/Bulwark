@@ -24,26 +24,37 @@ string FormatScript(const CScript& script)
     string ret;
     CScript::const_iterator it = script.begin();
     opcodetype op;
-    while (it != script.end()) {
+    while (it != script.end())
+    {
         CScript::const_iterator it2 = it;
         vector<unsigned char> vch;
-        if (script.GetOp2(it, op, &vch)) {
-            if (op == OP_0) {
+        if (script.GetOp2(it, op, &vch))
+        {
+            if (op == OP_0)
+            {
                 ret += "0 ";
                 continue;
-            } else if ((op >= OP_1 && op <= OP_16) || op == OP_1NEGATE) {
+            }
+            else if ((op >= OP_1 && op <= OP_16) || op == OP_1NEGATE)
+            {
                 ret += strprintf("%i ", op - OP_1NEGATE - 1);
                 continue;
-            } else if (op >= OP_NOP && op <= OP_CHECKMULTISIGVERIFY) {
+            }
+            else if (op >= OP_NOP && op <= OP_CHECKMULTISIGVERIFY)
+            {
                 string str(GetOpName(op));
-                if (str.substr(0, 3) == string("OP_")) {
+                if (str.substr(0, 3) == string("OP_"))
+                {
                     ret += str.substr(3, string::npos) + " ";
                     continue;
                 }
             }
-            if (vch.size() > 0) {
+            if (vch.size() > 0)
+            {
                 ret += strprintf("0x%x 0x%x ", HexStr(it2, it - vch.size()), HexStr(it - vch.size(), it));
-            } else {
+            }
+            else
+            {
                 ret += strprintf("0x%x", HexStr(it2, it));
             }
             continue;
@@ -62,8 +73,8 @@ string EncodeHexTx(const CTransaction& tx)
 }
 
 void ScriptPubKeyToUniv(const CScript& scriptPubKey,
-    UniValue& out,
-    bool fIncludeHex)
+                        UniValue& out,
+                        bool fIncludeHex)
 {
     txnouttype type;
     vector<CTxDestination> addresses;
@@ -73,7 +84,8 @@ void ScriptPubKeyToUniv(const CScript& scriptPubKey,
     if (fIncludeHex)
         out.pushKV("hex", HexStr(scriptPubKey.begin(), scriptPubKey.end()));
 
-    if (!ExtractDestinations(scriptPubKey, type, addresses, nRequired)) {
+    if (!ExtractDestinations(scriptPubKey, type, addresses, nRequired))
+    {
         out.pushKV("type", GetTxnOutputType(type));
         return;
     }
@@ -82,8 +94,10 @@ void ScriptPubKeyToUniv(const CScript& scriptPubKey,
     out.pushKV("type", GetTxnOutputType(type));
 
     UniValue a(UniValue::VARR);
-    BOOST_FOREACH (const CTxDestination& addr, addresses)
+    BOOST_FOREACH(const CTxDestination& addr, addresses)
+    {
         a.push_back(CBitcoinAddress(addr).ToString());
+    }
     out.pushKV("addresses", a);
 }
 
@@ -94,11 +108,13 @@ void TxToUniv(const CTransaction& tx, const uint256& hashBlock, UniValue& entry)
     entry.pushKV("locktime", (int64_t)tx.nLockTime);
 
     UniValue vin(UniValue::VARR);
-    BOOST_FOREACH (const CTxIn& txin, tx.vin) {
+    BOOST_FOREACH(const CTxIn& txin, tx.vin)
+    {
         UniValue in(UniValue::VOBJ);
         if (tx.IsCoinBase())
             in.pushKV("coinbase", HexStr(txin.scriptSig.begin(), txin.scriptSig.end()));
-        else {
+        else
+        {
             in.pushKV("txid", txin.prevout.hash.GetHex());
             in.pushKV("vout", (int64_t)txin.prevout.n);
             UniValue o(UniValue::VOBJ);
@@ -112,7 +128,8 @@ void TxToUniv(const CTransaction& tx, const uint256& hashBlock, UniValue& entry)
     entry.pushKV("vin", vin);
 
     UniValue vout(UniValue::VARR);
-    for (unsigned int i = 0; i < tx.vout.size(); i++) {
+    for (unsigned int i = 0; i < tx.vout.size(); i++)
+    {
         const CTxOut& txout = tx.vout[i];
 
         UniValue out(UniValue::VOBJ);

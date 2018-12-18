@@ -9,33 +9,33 @@
 
 #undef PLATFORM_IS_LITTLE_ENDIAN
 #if defined(OS_MACOSX)
-  #include <machine/endian.h>
-  #if defined(__DARWIN_LITTLE_ENDIAN) && defined(__DARWIN_BYTE_ORDER)
-    #define PLATFORM_IS_LITTLE_ENDIAN \
+#include <machine/endian.h>
+#if defined(__DARWIN_LITTLE_ENDIAN) && defined(__DARWIN_BYTE_ORDER)
+#define PLATFORM_IS_LITTLE_ENDIAN \
         (__DARWIN_BYTE_ORDER == __DARWIN_LITTLE_ENDIAN)
-  #endif
+#endif
 #elif defined(OS_SOLARIS)
-  #include <sys/isa_defs.h>
-  #ifdef _LITTLE_ENDIAN
-    #define PLATFORM_IS_LITTLE_ENDIAN true
-  #else
-    #define PLATFORM_IS_LITTLE_ENDIAN false
-  #endif
+#include <sys/isa_defs.h>
+#ifdef _LITTLE_ENDIAN
+#define PLATFORM_IS_LITTLE_ENDIAN true
+#else
+#define PLATFORM_IS_LITTLE_ENDIAN false
+#endif
 #elif defined(OS_FREEBSD) || defined(OS_OPENBSD) ||\
       defined(OS_NETBSD) || defined(OS_DRAGONFLYBSD)
-  #include <sys/types.h>
-  #include <sys/endian.h>
-  #define PLATFORM_IS_LITTLE_ENDIAN (_BYTE_ORDER == _LITTLE_ENDIAN)
+#include <sys/types.h>
+#include <sys/endian.h>
+#define PLATFORM_IS_LITTLE_ENDIAN (_BYTE_ORDER == _LITTLE_ENDIAN)
 #elif defined(OS_HPUX)
-  #define PLATFORM_IS_LITTLE_ENDIAN false
+#define PLATFORM_IS_LITTLE_ENDIAN false
 #elif defined(OS_ANDROID)
-  // Due to a bug in the NDK x86 <sys/endian.h> definition,
-  // _BYTE_ORDER must be used instead of __BYTE_ORDER on Android.
-  // See http://code.google.com/p/android/issues/detail?id=39824
-  #include <endian.h>
-  #define PLATFORM_IS_LITTLE_ENDIAN  (_BYTE_ORDER == _LITTLE_ENDIAN)
+// Due to a bug in the NDK x86 <sys/endian.h> definition,
+// _BYTE_ORDER must be used instead of __BYTE_ORDER on Android.
+// See http://code.google.com/p/android/issues/detail?id=39824
+#include <endian.h>
+#define PLATFORM_IS_LITTLE_ENDIAN  (_BYTE_ORDER == _LITTLE_ENDIAN)
 #else
-  #include <endian.h>
+#include <endian.h>
 #endif
 
 #include <pthread.h>
@@ -75,42 +75,46 @@
 #define fdatasync fsync
 #endif
 
-namespace leveldb {
-namespace port {
+namespace leveldb
+{
+namespace port
+{
 
 static const bool kLittleEndian = PLATFORM_IS_LITTLE_ENDIAN;
 #undef PLATFORM_IS_LITTLE_ENDIAN
 
 class CondVar;
 
-class Mutex {
- public:
-  Mutex();
-  ~Mutex();
+class Mutex
+{
+public:
+    Mutex();
+    ~Mutex();
 
-  void Lock();
-  void Unlock();
-  void AssertHeld() { }
+    void Lock();
+    void Unlock();
+    void AssertHeld() { }
 
- private:
-  friend class CondVar;
-  pthread_mutex_t mu_;
+private:
+    friend class CondVar;
+    pthread_mutex_t mu_;
 
-  // No copying
-  Mutex(const Mutex&);
-  void operator=(const Mutex&);
+    // No copying
+    Mutex(const Mutex&);
+    void operator=(const Mutex&);
 };
 
-class CondVar {
- public:
-  explicit CondVar(Mutex* mu);
-  ~CondVar();
-  void Wait();
-  void Signal();
-  void SignalAll();
- private:
-  pthread_cond_t cv_;
-  Mutex* mu_;
+class CondVar
+{
+public:
+    explicit CondVar(Mutex* mu);
+    ~CondVar();
+    void Wait();
+    void Signal();
+    void SignalAll();
+private:
+    pthread_cond_t cv_;
+    Mutex* mu_;
 };
 
 typedef pthread_once_t OnceType;
@@ -118,38 +122,42 @@ typedef pthread_once_t OnceType;
 extern void InitOnce(OnceType* once, void (*initializer)());
 
 inline bool Snappy_Compress(const char* input, size_t length,
-                            ::std::string* output) {
+                            ::std::string* output)
+{
 #ifdef SNAPPY
-  output->resize(snappy::MaxCompressedLength(length));
-  size_t outlen;
-  snappy::RawCompress(input, length, &(*output)[0], &outlen);
-  output->resize(outlen);
-  return true;
+    output->resize(snappy::MaxCompressedLength(length));
+    size_t outlen;
+    snappy::RawCompress(input, length, &(*output)[0], &outlen);
+    output->resize(outlen);
+    return true;
 #endif
 
-  return false;
+    return false;
 }
 
 inline bool Snappy_GetUncompressedLength(const char* input, size_t length,
-                                         size_t* result) {
+        size_t* result)
+{
 #ifdef SNAPPY
-  return snappy::GetUncompressedLength(input, length, result);
+    return snappy::GetUncompressedLength(input, length, result);
 #else
-  return false;
+    return false;
 #endif
 }
 
 inline bool Snappy_Uncompress(const char* input, size_t length,
-                              char* output) {
+                              char* output)
+{
 #ifdef SNAPPY
-  return snappy::RawUncompress(input, length, output);
+    return snappy::RawUncompress(input, length, output);
 #else
-  return false;
+    return false;
 #endif
 }
 
-inline bool GetHeapProfile(void (*func)(void*, const char*, int), void* arg) {
-  return false;
+inline bool GetHeapProfile(void (*func)(void*, const char*, int), void* arg)
+{
+    return false;
 }
 
 } // namespace port

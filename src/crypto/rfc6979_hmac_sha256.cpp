@@ -30,12 +30,14 @@ RFC6979_HMAC_SHA256::~RFC6979_HMAC_SHA256()
 
 void RFC6979_HMAC_SHA256::Generate(unsigned char* output, size_t outputlen)
 {
-    if (retry) {
+    if (retry)
+    {
         CHMAC_SHA256(K, sizeof(K)).Write(V, sizeof(V)).Write(zero, sizeof(zero)).Finalize(K);
         CHMAC_SHA256(K, sizeof(K)).Write(V, sizeof(V)).Finalize(V);
     }
 
-    while (outputlen > 0) {
+    while (outputlen > 0)
+    {
         CHMAC_SHA256(K, sizeof(K)).Write(V, sizeof(V)).Finalize(V);
         size_t len = std::min(outputlen, sizeof(V));
         memcpy(output, V, len);

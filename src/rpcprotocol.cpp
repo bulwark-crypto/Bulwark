@@ -40,7 +40,7 @@ const size_t POST_READ_SIZE = 256 * 1024;
 
 /**
  * HTTP protocol
- * 
+ *
  * This ain't Apache.  We're just using HTTP header for the length field
  * and to be compatible with other JSON-RPC implementations.
  */
@@ -55,8 +55,10 @@ string HTTPPost(const string& strMsg, const map<string, string>& mapRequestHeade
       << "Content-Length: " << strMsg.size() << "\r\n"
       << "Connection: close\r\n"
       << "Accept: application/json\r\n";
-    BOOST_FOREACH (const PAIRTYPE(string, string) & item, mapRequestHeaders)
+    BOOST_FOREACH(const PAIRTYPE(string, string) & item, mapRequestHeaders)
+    {
         s << item.first << ": " << item.second << "\r\n";
+    }
     s << "\r\n"
       << strMsg;
 
@@ -70,7 +72,8 @@ static string rfc1123Time()
 
 static const char* httpStatusDescription(int nStatus)
 {
-    switch (nStatus) {
+    switch (nStatus)
+    {
     case HTTP_OK:
         return "OK";
     case HTTP_BAD_REQUEST:
@@ -105,36 +108,39 @@ string HTTPError(int nStatus, bool keepalive, bool headersOnly)
                          "</HEAD>\r\n"
                          "<BODY><H1>401 Unauthorized.</H1></BODY>\r\n"
                          "</HTML>\r\n",
-            rfc1123Time(), FormatFullVersion());
+                         rfc1123Time(), FormatFullVersion());
 
     return HTTPReply(nStatus, httpStatusDescription(nStatus), keepalive,
-        headersOnly, "text/plain");
+                     headersOnly, "text/plain");
 }
 
 string HTTPReplyHeader(int nStatus, bool keepalive, size_t contentLength, const char* contentType)
 {
     return strprintf(
-        "HTTP/1.1 %d %s\r\n"
-        "Date: %s\r\n"
-        "Connection: %s\r\n"
-        "Content-Length: %u\r\n"
-        "Content-Type: %s\r\n"
-        "Server: bulwark-json-rpc/%s\r\n"
-        "\r\n",
-        nStatus,
-        httpStatusDescription(nStatus),
-        rfc1123Time(),
-        keepalive ? "keep-alive" : "close",
-        contentLength,
-        contentType,
-        FormatFullVersion());
+               "HTTP/1.1 %d %s\r\n"
+               "Date: %s\r\n"
+               "Connection: %s\r\n"
+               "Content-Length: %u\r\n"
+               "Content-Type: %s\r\n"
+               "Server: bulwark-json-rpc/%s\r\n"
+               "\r\n",
+               nStatus,
+               httpStatusDescription(nStatus),
+               rfc1123Time(),
+               keepalive ? "keep-alive" : "close",
+               contentLength,
+               contentType,
+               FormatFullVersion());
 }
 
 string HTTPReply(int nStatus, const string& strMsg, bool keepalive, bool headersOnly, const char* contentType)
 {
-    if (headersOnly) {
+    if (headersOnly)
+    {
         return HTTPReplyHeader(nStatus, keepalive, 0, contentType);
-    } else {
+    }
+    else
+    {
         return HTTPReplyHeader(nStatus, keepalive, strMsg.size(), contentType) + strMsg;
     }
 }
@@ -192,13 +198,15 @@ int ReadHTTPStatus(std::basic_istream<char>& stream, int& proto)
 int ReadHTTPHeaders(std::basic_istream<char>& stream, map<string, string>& mapHeadersRet)
 {
     int nLen = 0;
-    while (true) {
+    while (true)
+    {
         string str;
         std::getline(stream, str);
         if (str.empty() || str == "\r")
             break;
         string::size_type nColon = str.find(":");
-        if (nColon != string::npos) {
+        if (nColon != string::npos)
+        {
             string strHeader = str.substr(0, nColon);
             boost::trim(strHeader);
             boost::to_lower(strHeader);
@@ -224,10 +232,12 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
         return HTTP_INTERNAL_SERVER_ERROR;
 
     // Read message
-    if (nLen > 0) {
+    if (nLen > 0)
+    {
         vector<char> vch;
         size_t ptr = 0;
-        while (ptr < (size_t)nLen) {
+        while (ptr < (size_t)nLen)
+        {
             size_t bytes_to_read = std::min((size_t)nLen - ptr, POST_READ_SIZE);
             vch.resize(ptr + bytes_to_read);
             stream.read(&vch[ptr], bytes_to_read);
@@ -240,7 +250,8 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
 
     string sConHdr = mapHeadersRet["connection"];
 
-    if ((sConHdr != "close") && (sConHdr != "keep-alive")) {
+    if ((sConHdr != "close") && (sConHdr != "keep-alive"))
+    {
         if (nProto >= 1)
             mapHeadersRet["connection"] = "keep-alive";
         else
@@ -254,7 +265,7 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
  * JSON-RPC protocol.  Bulwark speaks version 1.0 for maximum compatibility,
  * but uses JSON-RPC 1.1/2.0 standards for parts of the 1.0 standard that were
  * unspecified (HTTP errors and contents of 'error').
- * 
+ *
  * 1.0 spec: http://json-rpc.org/wiki/specification
  * 1.2 spec: http://jsonrpc.org/historical/json-rpc-over-http.html
  * http://www.codeproject.com/KB/recipes/JSON_Spirit.aspx
@@ -321,7 +332,8 @@ bool GenerateAuthCookie(std::string *cookie_out)
     std::ofstream file;
     boost::filesystem::path filepath = GetAuthCookieFile();
     file.open(filepath.string().c_str());
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         LogPrintf("Unable to open cookie authentication file %s for writing\n", filepath.string());
         return false;
     }
@@ -352,9 +364,12 @@ bool GetAuthCookie(std::string *cookie_out)
 
 void DeleteAuthCookie()
 {
-    try {
+    try
+    {
         boost::filesystem::remove(GetAuthCookieFile());
-    } catch (const boost::filesystem::filesystem_error& e) {
+    }
+    catch (const boost::filesystem::filesystem_error& e)
+    {
         LogPrintf("%s: Unable to remove random auth cookie file: %s\n", __func__, e.what());
     }
 }

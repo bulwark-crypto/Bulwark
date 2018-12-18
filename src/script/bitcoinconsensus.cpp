@@ -9,17 +9,18 @@
 #include "script/interpreter.h"
 #include "version.h"
 
-namespace {
+namespace
+{
 
 /** A class that deserializes a single CTransaction one time. */
 class TxInputStream
 {
 public:
     TxInputStream(int nTypeIn, int nVersionIn, const unsigned char *txTo, size_t txToLen) :
-    m_type(nTypeIn),
-    m_version(nVersionIn),
-    m_data(txTo),
-    m_remaining(txToLen)
+        m_type(nTypeIn),
+        m_version(nVersionIn),
+        m_data(txTo),
+        m_remaining(txToLen)
     {}
 
     TxInputStream& read(char* pch, size_t nSize)
@@ -63,10 +64,11 @@ inline int set_error(bitcoinconsensus_error* ret, bitcoinconsensus_error serror)
 } // anon namespace
 
 int bitcoinconsensus_verify_script(const unsigned char *scriptPubKey, unsigned int scriptPubKeyLen,
-                                    const unsigned char *txTo        , unsigned int txToLen,
-                                    unsigned int nIn, unsigned int flags, bitcoinconsensus_error* err)
+                                   const unsigned char *txTo, unsigned int txToLen,
+                                   unsigned int nIn, unsigned int flags, bitcoinconsensus_error* err)
 {
-    try {
+    try
+    {
         TxInputStream stream(SER_NETWORK, PROTOCOL_VERSION, txTo, txToLen);
         CTransaction tx;
         stream >> tx;
@@ -75,11 +77,13 @@ int bitcoinconsensus_verify_script(const unsigned char *scriptPubKey, unsigned i
         if (tx.GetSerializeSize(SER_NETWORK, PROTOCOL_VERSION) != txToLen)
             return set_error(err, bitcoinconsensus_ERR_TX_SIZE_MISMATCH);
 
-         // Regardless of the verification result, the tx did not error.
-         set_error(err, bitcoinconsensus_ERR_OK);
+        // Regardless of the verification result, the tx did not error.
+        set_error(err, bitcoinconsensus_ERR_OK);
 
         return VerifyScript(tx.vin[nIn].scriptSig, CScript(scriptPubKey, scriptPubKey + scriptPubKeyLen), flags, TransactionSignatureChecker(&tx, nIn), NULL);
-    } catch (const std::exception&) {
+    }
+    catch (const std::exception&)
+    {
         return set_error(err, bitcoinconsensus_ERR_TX_DESERIALIZE); // Error deserializing
     }
 }

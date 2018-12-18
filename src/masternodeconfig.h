@@ -1,5 +1,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2018 The Phore developers
+// Copyright (c) 2018 The Curium developers
 // Copyright (c) 2017-2018 The Bulwark developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -98,7 +100,9 @@ public:
 
     void clear();
     bool read(std::string& strErr);
+	void writeToMasternodeConf();
     void add(std::string alias, std::string ip, std::string privKey, std::string txHash, std::string outputIndex);
+	void deleteAlias(int count);
 
     std::vector<CMasternodeEntry>& getEntries()
     {
@@ -108,7 +112,8 @@ public:
     int getCount()
     {
         int c = -1;
-        BOOST_FOREACH (CMasternodeEntry e, entries) {
+        BOOST_FOREACH(CMasternodeEntry e, entries)
+        {
             if (e.getAlias() != "") c++;
         }
         return c;

@@ -71,12 +71,12 @@ void secp256k1_stop(void);
  * Requires starting using SECP256K1_START_VERIFY.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_verify(
-  const unsigned char *msg,
-  int msglen,
-  const unsigned char *sig,
-  int siglen,
-  const unsigned char *pubkey,
-  int pubkeylen
+    const unsigned char *msg,
+    int msglen,
+    const unsigned char *sig,
+    int siglen,
+    const unsigned char *pubkey,
+    int pubkeylen
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(5);
 
 /** Create an ECDSA signature.
@@ -92,12 +92,12 @@ SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_verify(
  * Requires starting using SECP256K1_START_SIGN.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_sign(
-  const unsigned char *msg,
-  int msglen,
-  unsigned char *sig,
-  int *siglen,
-  const unsigned char *seckey,
-  const unsigned char *nonce
+    const unsigned char *msg,
+    int msglen,
+    unsigned char *sig,
+    int *siglen,
+    const unsigned char *seckey,
+    const unsigned char *nonce
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(4) SECP256K1_ARG_NONNULL(5) SECP256K1_ARG_NONNULL(6);
 
 /** Create a compact ECDSA signature (64 byte + recovery id).
@@ -112,12 +112,12 @@ SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_sign(
  * Requires starting using SECP256K1_START_SIGN.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_sign_compact(
-  const unsigned char *msg,
-  int msglen,
-  unsigned char *sig64,
-  const unsigned char *seckey,
-  const unsigned char *nonce,
-  int *recid
+    const unsigned char *msg,
+    int msglen,
+    unsigned char *sig64,
+    const unsigned char *seckey,
+    const unsigned char *nonce,
+    int *recid
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(4) SECP256K1_ARG_NONNULL(5);
 
 /** Recover an ECDSA public key from a compact signature.
@@ -133,13 +133,13 @@ SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_sign_compact(
  * Requires starting using SECP256K1_START_VERIFY.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_recover_compact(
-  const unsigned char *msg,
-  int msglen,
-  const unsigned char *sig64,
-  unsigned char *pubkey,
-  int *pubkeylen,
-  int compressed,
-  int recid
+    const unsigned char *msg,
+    int msglen,
+    const unsigned char *sig64,
+    unsigned char *pubkey,
+    int *pubkeylen,
+    int compressed,
+    int recid
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(4) SECP256K1_ARG_NONNULL(5);
 
 /** Verify an ECDSA secret key.
@@ -169,10 +169,10 @@ SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_pubkey_verify(const unsigned char 
  * Requires starting using SECP256K1_START_SIGN.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_pubkey_create(
-  unsigned char *pubkey,
-  int *pubkeylen,
-  const unsigned char *seckey,
-  int compressed
+    unsigned char *pubkey,
+    int *pubkeylen,
+    const unsigned char *seckey,
+    int compressed
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3);
 
 /** Decompress a public key.
@@ -184,53 +184,53 @@ SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_pubkey_create(
             pubkey is replaced with its decompressed version.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_pubkey_decompress(
-  unsigned char *pubkey,
-  int *pubkeylen
+    unsigned char *pubkey,
+    int *pubkeylen
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2);
 
 /** Export a private key in DER format. */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_privkey_export(
-  const unsigned char *seckey,
-  unsigned char *privkey,
-  int *privkeylen,
-  int compressed
+    const unsigned char *seckey,
+    unsigned char *privkey,
+    int *privkeylen,
+    int compressed
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3);
 
 /** Import a private key in DER format. */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_privkey_import(
-  unsigned char *seckey,
-  const unsigned char *privkey,
-  int privkeylen
+    unsigned char *seckey,
+    const unsigned char *privkey,
+    int privkeylen
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2);
 
 /** Tweak a private key by adding tweak to it. */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_privkey_tweak_add(
-  unsigned char *seckey,
-  const unsigned char *tweak
+    unsigned char *seckey,
+    const unsigned char *tweak
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2);
 
 /** Tweak a public key by adding tweak times the generator to it.
  * Requires starting with SECP256K1_START_VERIFY.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_pubkey_tweak_add(
-  unsigned char *pubkey,
-  int pubkeylen,
-  const unsigned char *tweak
+    unsigned char *pubkey,
+    int pubkeylen,
+    const unsigned char *tweak
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(3);
 
 /** Tweak a private key by multiplying it with tweak. */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_privkey_tweak_mul(
-  unsigned char *seckey,
-  const unsigned char *tweak
+    unsigned char *seckey,
+    const unsigned char *tweak
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2);
 
 /** Tweak a public key by multiplying it with tweak.
  * Requires starting with SECP256K1_START_VERIFY.
  */
 SECP256K1_WARN_UNUSED_RESULT int secp256k1_ec_pubkey_tweak_mul(
-  unsigned char *pubkey,
-  int pubkeylen,
-  const unsigned char *tweak
+    unsigned char *pubkey,
+    int pubkeylen,
+    const unsigned char *tweak
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(3);
 
 # ifdef __cplusplus

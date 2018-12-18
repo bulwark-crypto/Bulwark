@@ -29,7 +29,8 @@ static const int DEFAULT_NAME_LOOKUP = true;
 #undef SetPort
 #endif
 
-enum Network {
+enum Network
+{
     NET_UNROUTABLE = 0,
     NET_IPV4,
     NET_IPV6,
@@ -119,7 +120,7 @@ protected:
 public:
     CSubNet();
     explicit CSubNet(const std::string& strSubnet, bool fAllowLookup = false);
-	explicit CSubNet(const CNetAddr &addr);
+    explicit CSubNet(const CNetAddr &addr);
 
     bool Match(const CNetAddr& addr) const;
 
@@ -127,17 +128,18 @@ public:
     bool IsValid() const;
 
     friend bool operator==(const CSubNet& a, const CSubNet& b);
-	friend bool operator!=(const CSubNet& a, const CSubNet& b);
+    friend bool operator!=(const CSubNet& a, const CSubNet& b);
     friend bool operator<(const CSubNet& a, const CSubNet& b);
 
-	ADD_SERIALIZE_METHODS;
+    ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-	inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-	READWRITE(network);
-	READWRITE(FLATDATA(netmask));
-	READWRITE(valid);
-	}
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
+        READWRITE(network);
+        READWRITE(FLATDATA(netmask));
+        READWRITE(valid);
+    }
 };
 
 /** A combination of a network address (CNetAddr) and a (TCP) port */
@@ -190,7 +192,10 @@ public:
     proxyType(): randomize_credentials(false) {}
     proxyType(const CService &proxy, bool randomize_credentials=false): proxy(proxy), randomize_credentials(randomize_credentials) {}
 
-    bool IsValid() const { return proxy.IsValid(); }
+    bool IsValid() const
+    {
+        return proxy.IsValid();
+    }
 
     CService proxy;
     bool randomize_credentials;

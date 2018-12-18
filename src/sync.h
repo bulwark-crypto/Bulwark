@@ -87,7 +87,8 @@ void static inline DeleteLock(void* cs) {}
 class CCriticalSection : public AnnotatedMixin<boost::recursive_mutex>
 {
 public:
-    ~CCriticalSection() {
+    ~CCriticalSection()
+    {
         DeleteLock((void*)this);
     }
 };
@@ -114,7 +115,8 @@ private:
     {
         EnterCritical(pszName, pszFile, nLine, (void*)(lock.mutex()));
 #ifdef DEBUG_LOCKCONTENTION
-        if (!lock.try_lock()) {
+        if (!lock.try_lock())
+        {
             PrintLockContention(pszName, pszFile, nLine);
 #endif
             lock.lock();
@@ -195,7 +197,8 @@ public:
     void wait()
     {
         boost::unique_lock<boost::mutex> lock(mutex);
-        while (value < 1) {
+        while (value < 1)
+        {
             condition.wait(lock);
         }
         value--;

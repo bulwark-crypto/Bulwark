@@ -57,12 +57,9 @@
 #include <QSettings>
 #include <QTextDocument> // for Qt::mightBeRichText
 #include <QThread>
-
-#if QT_VERSION < 0x050000
-#include <QUrl>
-#else
 #include <QUrlQuery>
-#endif
+#include <QMouseEvent>
+
 
 #if BOOST_FILESYSTEM_VERSION >= 3
 static boost::filesystem::detail::utf8_codecvt_facet utf8;
@@ -94,12 +91,8 @@ QString dateTimeStr(qint64 nTime)
 
 QFont bitcoinAddressFont()
 {
-    QFont font("Roboto",10,QFont::Medium);
-#if QT_VERSION >= 0x040800
+    QFont font("Monospace");
     font.setStyleHint(QFont::Monospace);
-#else
-    font.setStyleHint(QFont::TypeWriter);
-#endif
     return font;
 }
 
@@ -108,13 +101,51 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     parent->setFocusProxy(widget);
 
     widget->setFont(bitcoinAddressFont());
-#if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
     widget->setPlaceholderText(QObject::tr("Enter a Bulwark address (e.g. %1)").arg("bWMiJk57wsPJuGFFJCp8MzSsvzepf7CFAi"));
-#endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
+}
+
+void setupAliasWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+    widget->setPlaceholderText(QObject::tr("Enter a Masternode Alias (e.g. %1)").arg("mn1"));
+}
+
+void setupIPWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+    widget->setPlaceholderText(QObject::tr("Enter a VPS IP (e.g. %1)").arg("127.0.0.2:11771"));
+}
+
+void setupPrivKeyWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+    widget->setPlaceholderText(QObject::tr("Enter a Private Key (e.g. %1)").arg("93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xt"));
+}
+
+void setupTXIDWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+    widget->setPlaceholderText(QObject::tr("Enter a TX Output (e.g. %1)").arg("2bcd3c84c84f87eaa86e4e56834c92937a07f9e18718810b92e0d0324456a57c"));
+}
+
+void setupTXIDIndexWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(bitcoinAddressFont());
+    widget->setPlaceholderText(QObject::tr("Enter a TX Index (e.g. %1)").arg("1"));
 }
 
 void setupAmountWidget(QLineEdit* widget, QWidget* parent)
@@ -135,34 +166,39 @@ bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
     SendCoinsRecipient rv;
     rv.address = uri.path();
     // Trim any following forward slash which may have been added by the OS
-    if (rv.address.endsWith("/")) {
+    if (rv.address.endsWith("/"))
+    {
         rv.address.truncate(rv.address.length() - 1);
     }
     rv.amount = 0;
 
-#if QT_VERSION < 0x050000
-    QList<QPair<QString, QString> > items = uri.queryItems();
-#else
     QUrlQuery uriQuery(uri);
     QList<QPair<QString, QString> > items = uriQuery.queryItems();
-#endif
-    for (QList<QPair<QString, QString> >::iterator i = items.begin(); i != items.end(); i++) {
+    for (QList<QPair<QString, QString> >::iterator i = items.begin(); i != items.end(); i++)
+    {
         bool fShouldReturnFalse = false;
-        if (i->first.startsWith("req-")) {
+        if (i->first.startsWith("req-"))
+        {
             i->first.remove(0, 4);
             fShouldReturnFalse = true;
         }
 
-        if (i->first == "label") {
+        if (i->first == "label")
+        {
             rv.label = i->second;
             fShouldReturnFalse = false;
         }
-        if (i->first == "message") {
+        if (i->first == "message")
+        {
             rv.message = i->second;
             fShouldReturnFalse = false;
-        } else if (i->first == "amount") {
-            if (!i->second.isEmpty()) {
-                if (!BitcoinUnits::parse(BitcoinUnits::BWK, i->second, &rv.amount)) {
+        }
+        else if (i->first == "amount")
+        {
+            if (!i->second.isEmpty())
+            {
+                if (!BitcoinUnits::parse(BitcoinUnits::BWK, i->second, &rv.amount))
+                {
                     return false;
                 }
             }
@@ -172,7 +208,8 @@ bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
         if (fShouldReturnFalse)
             return false;
     }
-    if (out) {
+    if (out)
+    {
         *out = rv;
     }
     return true;
@@ -184,7 +221,8 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient* out)
     //
     //    Cannot handle this later, because bulwark:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if (uri.startsWith(URI_SCHEME "://", Qt::CaseInsensitive)) {
+    if (uri.startsWith(URI_SCHEME "://", Qt::CaseInsensitive))
+    {
         uri.replace(0, std::strlen(URI_SCHEME) + 3, URI_SCHEME ":");
     }
     QUrl uriInstance(uri);
@@ -196,18 +234,21 @@ QString formatBitcoinURI(const SendCoinsRecipient& info)
     QString ret = QString(URI_SCHEME ":%1").arg(info.address);
     int paramCount = 0;
 
-    if (info.amount) {
+    if (info.amount)
+    {
         ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BWK, info.amount, false, BitcoinUnits::separatorNever));
         paramCount++;
     }
 
-    if (!info.label.isEmpty()) {
+    if (!info.label.isEmpty())
+    {
         QString lbl(QUrl::toPercentEncoding(info.label));
         ret += QString("%1label=%2").arg(paramCount == 0 ? "?" : "&").arg(lbl);
         paramCount++;
     }
 
-    if (!info.message.isEmpty()) {
+    if (!info.message.isEmpty())
+    {
         QString msg(QUrl::toPercentEncoding(info.message));
         ret += QString("%1message=%2").arg(paramCount == 0 ? "?" : "&").arg(msg);
         paramCount++;
@@ -226,13 +267,10 @@ bool isDust(const QString& address, const CAmount& amount)
 
 QString HtmlEscape(const QString& str, bool fMultiLine)
 {
-#if QT_VERSION < 0x050000
-    QString escaped = Qt::escape(str);
-#else
     QString escaped = str.toHtmlEscaped();
-#endif
     escaped = escaped.replace(" ", "&nbsp;");
-    if (fMultiLine) {
+    if (fMultiLine)
+    {
         escaped = escaped.replace("\n", "<br>\n");
     }
     return escaped;
@@ -249,7 +287,8 @@ void copyEntryData(QAbstractItemView* view, int column, int role)
         return;
     QModelIndexList selection = view->selectionModel()->selectedRows(column);
 
-    if (!selection.isEmpty()) {
+    if (!selection.isEmpty())
+    {
         // Copy first item
         setClipboard(selection.at(0).data(role).toString());
     }
@@ -257,15 +296,16 @@ void copyEntryData(QAbstractItemView* view, int column, int role)
 
 QString getEntryData(QAbstractItemView *view, int column, int role)
 {
-	if (!view || !view->selectionModel())
-		return QString();
-	QModelIndexList selection = view->selectionModel()->selectedRows(column);
+    if (!view || !view->selectionModel())
+        return QString();
+    QModelIndexList selection = view->selectionModel()->selectedRows(column);
 
-	if (!selection.isEmpty()) {
-		// Return first item
-		return (selection.at(0).data(role).toString());
-	}
-	return QString();
+    if (!selection.isEmpty())
+    {
+        // Return first item
+        return (selection.at(0).data(role).toString());
+    }
+    return QString();
 }
 
 QString getSaveFileName(QWidget* parent, const QString& caption, const QString& dir, const QString& filter, QString* selectedSuffixOut)
@@ -274,12 +314,10 @@ QString getSaveFileName(QWidget* parent, const QString& caption, const QString& 
     QString myDir;
     if (dir.isEmpty()) // Default to user documents location
     {
-#if QT_VERSION < 0x050000
-        myDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
-#else
         myDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#endif
-    } else {
+    }
+    else
+    {
         myDir = dir;
     }
     /* Directly convert path to native OS path separators */
@@ -288,14 +326,17 @@ QString getSaveFileName(QWidget* parent, const QString& caption, const QString& 
     /* Extract first suffix from filter pattern "Description (*.foo)" or "Description (*.foo *.bar ...) */
     QRegExp filter_re(".* \\(\\*\\.(.*)[ \\)]");
     QString selectedSuffix;
-    if (filter_re.exactMatch(selectedFilter)) {
+    if (filter_re.exactMatch(selectedFilter))
+    {
         selectedSuffix = filter_re.cap(1);
     }
 
     /* Add suffix if needed */
     QFileInfo info(result);
-    if (!result.isEmpty()) {
-        if (info.suffix().isEmpty() && !selectedSuffix.isEmpty()) {
+    if (!result.isEmpty())
+    {
+        if (info.suffix().isEmpty() && !selectedSuffix.isEmpty())
+        {
             /* No suffix specified, add selected suffix */
             if (!result.endsWith("."))
                 result.append(".");
@@ -304,7 +345,8 @@ QString getSaveFileName(QWidget* parent, const QString& caption, const QString& 
     }
 
     /* Return selected suffix if asked to */
-    if (selectedSuffixOut) {
+    if (selectedSuffixOut)
+    {
         *selectedSuffixOut = selectedSuffix;
     }
     return result;
@@ -316,22 +358,22 @@ QString getOpenFileName(QWidget* parent, const QString& caption, const QString& 
     QString myDir;
     if (dir.isEmpty()) // Default to user documents location
     {
-#if QT_VERSION < 0x050000
-        myDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
-#else
         myDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#endif
-    } else {
+    }
+    else
+    {
         myDir = dir;
     }
     /* Directly convert path to native OS path separators */
     QString result = QDir::toNativeSeparators(QFileDialog::getOpenFileName(parent, caption, myDir, filter, &selectedFilter));
 
-    if (selectedSuffixOut) {
+    if (selectedSuffixOut)
+    {
         /* Extract first suffix from filter pattern "Description (*.foo)" or "Description (*.foo *.bar ...) */
         QRegExp filter_re(".* \\(\\*\\.(.*)[ \\)]");
         QString selectedSuffix;
-        if (filter_re.exactMatch(selectedFilter)) {
+        if (filter_re.exactMatch(selectedFilter))
+        {
             selectedSuffix = filter_re.cap(1);
         }
         *selectedSuffixOut = selectedSuffix;
@@ -341,9 +383,12 @@ QString getOpenFileName(QWidget* parent, const QString& caption, const QString& 
 
 Qt::ConnectionType blockingGUIThreadConnection()
 {
-    if (QThread::currentThread() != qApp->thread()) {
+    if (QThread::currentThread() != qApp->thread())
+    {
         return Qt::BlockingQueuedConnection;
-    } else {
+    }
+    else
+    {
         return Qt::DirectConnection;
     }
 }
@@ -412,11 +457,13 @@ void SubstituteFonts(const QString& language)
 // is 10.9 or higher at runtime, substitute the correct font. This needs to
 // happen before the QApplication is created.
 #if defined(MAC_OS_X_VERSION_MAX_ALLOWED) && MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_8
-    if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_8) {
+    if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_8)
+    {
         if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_9)
             /* On a 10.9 - 10.9.x system */
             QFont::insertSubstitution(".Lucida Grande UI", "Lucida Grande");
-        else {
+        else
+        {
             /* 10.10 or later system */
             if (language == "zh_CN" || language == "zh_TW" || language == "zh_HK") // traditional or simplified Chinese
                 QFont::insertSubstitution(".Helvetica Neue DeskInterface", "Heiti SC");
@@ -431,16 +478,18 @@ void SubstituteFonts(const QString& language)
 }
 
 ToolTipToRichTextFilter::ToolTipToRichTextFilter(int size_threshold, QObject* parent) : QObject(parent),
-                                                                                        size_threshold(size_threshold)
+    size_threshold(size_threshold)
 {
 }
 
 bool ToolTipToRichTextFilter::eventFilter(QObject* obj, QEvent* evt)
 {
-    if (evt->type() == QEvent::ToolTipChange) {
+    if (evt->type() == QEvent::ToolTipChange)
+    {
         QWidget* widget = static_cast<QWidget*>(obj);
         QString tooltip = widget->toolTip();
-        if (tooltip.size() > size_threshold && !tooltip.startsWith("<qt")) {
+        if (tooltip.size() > size_threshold && !tooltip.startsWith("<qt"))
+        {
             // Escape the current message as HTML and replace \n by <br> if it's not rich text
             if (!Qt::mightBeRichText(tooltip))
                 tooltip = HtmlEscape(tooltip, true);
@@ -471,11 +520,7 @@ void TableViewLastColumnResizingFixer::disconnectViewHeadersSignals()
 // Refactored here for readability.
 void TableViewLastColumnResizingFixer::setViewHeaderResizeMode(int logicalIndex, QHeaderView::ResizeMode resizeMode)
 {
-#if QT_VERSION < 0x050000
-    tableView->horizontalHeader()->setResizeMode(logicalIndex, resizeMode);
-#else
     tableView->horizontalHeader()->setSectionResizeMode(logicalIndex, resizeMode);
-#endif
 }
 
 void TableViewLastColumnResizingFixer::resizeColumn(int nColumnIndex, int width)
@@ -487,7 +532,8 @@ void TableViewLastColumnResizingFixer::resizeColumn(int nColumnIndex, int width)
 int TableViewLastColumnResizingFixer::getColumnsWidth()
 {
     int nColumnsWidthSum = 0;
-    for (int i = 0; i < columnCount; i++) {
+    for (int i = 0; i < columnCount; i++)
+    {
         nColumnsWidthSum += tableView->horizontalHeader()->sectionSize(i);
     }
     return nColumnsWidthSum;
@@ -498,7 +544,8 @@ int TableViewLastColumnResizingFixer::getAvailableWidthForColumn(int column)
     int nResult = lastColumnMinimumWidth;
     int nTableWidth = tableView->horizontalHeader()->width();
 
-    if (nTableWidth > 0) {
+    if (nTableWidth > 0)
+    {
         int nOtherColsWidth = getColumnsWidth() - tableView->horizontalHeader()->sectionSize(column);
         nResult = std::max(nResult, nTableWidth - nOtherColsWidth);
     }
@@ -515,7 +562,8 @@ void TableViewLastColumnResizingFixer::adjustTableColumnsWidth()
 
     int nTableWidth = tableView->horizontalHeader()->width();
     int nColsWidth = getColumnsWidth();
-    if (nColsWidth > nTableWidth) {
+    if (nColsWidth > nTableWidth)
+    {
         resizeColumn(secondToLastColumnIndex, getAvailableWidthForColumn(secondToLastColumnIndex));
     }
 }
@@ -533,7 +581,8 @@ void TableViewLastColumnResizingFixer::on_sectionResized(int logicalIndex, int o
 {
     adjustTableColumnsWidth();
     int remainingWidth = getAvailableWidthForColumn(logicalIndex);
-    if (newSize > remainingWidth) {
+    if (newSize > remainingWidth)
+    {
         resizeColumn(logicalIndex, remainingWidth);
     }
 }
@@ -542,7 +591,8 @@ void TableViewLastColumnResizingFixer::on_sectionResized(int logicalIndex, int o
 // as the "Stretch" resize mode does not allow for interactive resizing.
 void TableViewLastColumnResizingFixer::on_geometriesChanged()
 {
-    if ((getColumnsWidth() - this->tableView->horizontalHeader()->width()) != 0) {
+    if ((getColumnsWidth() - this->tableView->horizontalHeader()->width()) != 0)
+    {
         disconnectViewHeadersSignals();
         resizeColumn(secondToLastColumnIndex, getAvailableWidthForColumn(secondToLastColumnIndex));
         connectViewHeadersSignals();
@@ -554,8 +604,8 @@ void TableViewLastColumnResizingFixer::on_geometriesChanged()
  * the resize modes of the last 2 columns of the table and
  */
 TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* table, int lastColMinimumWidth, int allColsMinimumWidth) : tableView(table),
-                                                                                                                                          lastColumnMinimumWidth(lastColMinimumWidth),
-                                                                                                                                          allColumnsMinimumWidth(allColsMinimumWidth)
+    lastColumnMinimumWidth(lastColMinimumWidth),
+    allColumnsMinimumWidth(allColsMinimumWidth)
 {
     columnCount = tableView->horizontalHeader()->count();
     lastColumnIndex = columnCount - 1;
@@ -570,7 +620,7 @@ TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* t
  * @param[in] seconds   Number of seconds to convert to a DHMS string
  */
 DHMSTableWidgetItem::DHMSTableWidgetItem(const int64_t seconds) : QTableWidgetItem(),
-                                                                  value(seconds)
+    value(seconds)
 {
     this->setText(QString::fromStdString(DurationToDHMS(seconds)));
 }
@@ -609,16 +659,18 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     // If the shortcut exists already, remove it for updating
     boost::filesystem::remove(StartupShortcutPath());
 
-    if (fAutoStart) {
+    if (fAutoStart)
+    {
         CoInitialize(NULL);
 
         // Get a pointer to the IShellLink interface.
         IShellLink* psl = NULL;
         HRESULT hres = CoCreateInstance(CLSID_ShellLink, NULL,
-            CLSCTX_INPROC_SERVER, IID_IShellLink,
-            reinterpret_cast<void**>(&psl));
+                                        CLSCTX_INPROC_SERVER, IID_IShellLink,
+                                        reinterpret_cast<void**>(&psl));
 
-        if (SUCCEEDED(hres)) {
+        if (SUCCEEDED(hres))
+        {
             // Get the current executable path
             TCHAR pszExePath[MAX_PATH];
             GetModuleFileName(NULL, pszExePath, sizeof(pszExePath));
@@ -636,8 +688,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
             // saving the shortcut in persistent storage.
             IPersistFile* ppf = NULL;
             hres = psl->QueryInterface(IID_IPersistFile,
-                reinterpret_cast<void**>(&ppf));
-            if (SUCCEEDED(hres)) {
+                                       reinterpret_cast<void**>(&ppf));
+            if (SUCCEEDED(hres))
+            {
                 WCHAR pwsz[MAX_PATH];
                 // Ensure that the string is ANSI.
                 MultiByteToWideChar(CP_ACP, 0, StartupShortcutPath().string().c_str(), -1, pwsz, MAX_PATH);
@@ -684,10 +737,11 @@ bool GetStartOnSystemStartup()
         return false;
     // Scan through file for "Hidden=true":
     std::string line;
-    while (!optionFile.eof()) {
+    while (!optionFile.eof())
+    {
         getline(optionFile, line);
         if (line.find("Hidden") != std::string::npos &&
-            line.find("true") != std::string::npos)
+                line.find("true") != std::string::npos)
             return false;
     }
     optionFile.close();
@@ -699,7 +753,8 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 {
     if (!fAutoStart)
         boost::filesystem::remove(GetAutostartFilePath());
-    else {
+    else
+    {
         char pszExePath[MAX_PATH + 1];
         memset(pszExePath, 0, sizeof(pszExePath));
         if (readlink("/proc/self/exe", pszExePath, sizeof(pszExePath) - 1) == -1)
@@ -734,17 +789,20 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
 {
     // loop through the list of startup items and try to find the bulwark app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
-    for (int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
+    for (int i = 0; i < CFArrayGetCount(listSnapshot); i++)
+    {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
         UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
         CFURLRef currentItemURL = NULL;
         LSSharedFileListItemResolve(item, resolutionFlags, &currentItemURL, NULL);
-        if (currentItemURL && CFEqual(currentItemURL, findUrl)) {
+        if (currentItemURL && CFEqual(currentItemURL, findUrl))
+        {
             // found
             CFRelease(currentItemURL);
             return item;
         }
-        if (currentItemURL) {
+        if (currentItemURL)
+        {
             CFRelease(currentItemURL);
         }
     }
@@ -765,10 +823,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
-    if (fAutoStart && !foundItem) {
+    if (fAutoStart && !foundItem)
+    {
         // add bulwark app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
-    } else if (!fAutoStart && foundItem) {
+    }
+    else if (!fAutoStart && foundItem)
+    {
         // remove item
         LSSharedFileListItemRemove(loginItems, foundItem);
     }
@@ -780,7 +841,10 @@ bool GetStartOnSystemStartup()
 {
     return false;
 }
-bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
+bool SetStartOnSystemStartup(bool fAutoStart)
+{
+    return false;
+}
 
 #endif
 
@@ -797,7 +861,8 @@ void restoreWindowGeometry(const QString& strSetting, const QSize& defaultSize, 
     QPoint pos = settings.value(strSetting + "Pos").toPoint();
     QSize size = settings.value(strSetting + "Size", defaultSize).toSize();
 
-    if (!pos.x() && !pos.y()) {
+    if (!pos.x() && !pos.y())
+    {
         QRect screen = QApplication::desktop()->screenGeometry();
         pos.setX((screen.width() - size.width()) / 2);
         pos.setY((screen.height() - size.height()) / 2);
@@ -824,24 +889,31 @@ QString loadStyleSheet()
     QString cssName;
     QString theme = settings.value("theme", "").toString();
 
-    if (isExternal(theme)) {
+    if (isExternal(theme))
+    {
         // External CSS
         settings.setValue("fCSSexternal", true);
         boost::filesystem::path pathAddr = GetDataDir() / "themes/";
         cssName = pathAddr.string().c_str() + theme + "/css/theme.css";
-    } else {
+    }
+    else
+    {
         // Build-in CSS
         settings.setValue("fCSSexternal", false);
-        if (!theme.isEmpty()) {
+        if (!theme.isEmpty())
+        {
             cssName = QString(":/css/") + theme;
-        } else {
+        }
+        else
+        {
             cssName = QString(":/css/default");
             settings.setValue("theme", "default");
         }
     }
 
     QFile qFile(cssName);
-    if (qFile.open(QFile::ReadOnly)) {
+    if (qFile.open(QFile::ReadOnly))
+    {
         styleSheet = QLatin1String(qFile.readAll());
     }
 
@@ -902,14 +974,17 @@ QString formatServicesStr(quint64 mask)
     QStringList strList;
 
     // Just scan the last 8 bits for now.
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 8; i++)
+    {
         uint64_t check = 1 << i;
-        if (mask & check) {
-            switch (check) {
-	    case NODE_BLOOM:
-	    case NODE_BLOOM_WITHOUT_MN:
-		    strList.append(QObject::tr("BLOOM"));
-		    break;
+        if (mask & check)
+        {
+            switch (check)
+            {
+            case NODE_BLOOM:
+            case NODE_BLOOM_WITHOUT_MN:
+                strList.append(QObject::tr("BLOOM"));
+                break;
             case NODE_NETWORK:
                 strList.append(QObject::tr("NETWORK"));
                 break;
