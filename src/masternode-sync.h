@@ -28,9 +28,8 @@ extern CMasternodeSync masternodeSync;
 // CMasternodeSync : Sync masternode assets in stages
 //
 
-class CMasternodeSync
-{
-public:
+class CMasternodeSync {
+  public:
     std::map<uint256, int> mapSeenSyncMNB;
     std::map<uint256, int> mapSeenSyncMNW;
     std::map<uint256, int> mapSeenSyncBudget;
@@ -74,8 +73,7 @@ public:
     void Process();
     bool IsSynced();
     bool IsBlockchainSynced();
-    bool IsMasternodeListSynced()
-    {
+    bool IsMasternodeListSynced() {
         return RequestedMasternodeAssets > MASTERNODE_SYNC_LIST;
     }
     void ClearFulfilledRequest();

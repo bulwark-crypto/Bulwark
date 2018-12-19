@@ -28,18 +28,16 @@ QT_END_NAMESPACE
 /** Widget showing the transaction list for a wallet, including a filter row.
     Using the filter row, the user can view or export a subset of the transactions.
   */
-class TransactionView : public QWidget
-{
+class TransactionView : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit TransactionView(QWidget* parent = 0);
 
     void setModel(WalletModel* model);
 
     // Date ranges for filter
-    enum DateEnum
-    {
+    enum DateEnum {
         All,
         Today,
         ThisWeek,
@@ -49,8 +47,7 @@ public:
         Range
     };
 
-    enum ColumnWidths
-    {
+    enum ColumnWidths {
         STATUS_COLUMN_WIDTH = 23,
         WATCHONLY_COLUMN_WIDTH = 23,
         DATE_COLUMN_WIDTH = 120,
@@ -59,7 +56,7 @@ public:
         MINIMUM_COLUMN_WIDTH = 23
     };
 
-private:
+  private:
     WalletModel* model;
     TransactionFilterProxy* transactionProxyModel;
     QTableView* transactionView;
@@ -84,7 +81,7 @@ private:
 
     bool eventFilter(QObject* obj, QEvent* event);
 
-private slots:
+  private slots:
     void contextualMenu(const QPoint&);
     void dateRangeChanged();
     void showDetails();
@@ -96,7 +93,7 @@ private slots:
     void openThirdPartyTxUrl(QString url);
     void updateWatchOnlyColumn(bool fHaveWatchOnly);
 
-signals:
+  signals:
     void doubleClicked(const QModelIndex&);
 
     /**  Fired when a message should be reported to the user */
@@ -105,7 +102,7 @@ signals:
     /** Send computed sum back to wallet-view */
     void trxAmount(QString amount);
 
-public slots:
+  public slots:
     void chooseDate(int idx);
     void chooseType(int idx);
     void chooseWatchonly(int idx);

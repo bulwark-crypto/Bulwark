@@ -17,20 +17,17 @@ class CWallet;
 class uint256;
 
 /** General change type (added, updated, removed). */
-enum ChangeType
-{
+enum ChangeType {
     CT_NEW,
     CT_UPDATED,
     CT_DELETED
 };
 
 /** Signals for UI communication. */
-class CClientUIInterface
-{
-public:
+class CClientUIInterface {
+  public:
     /** Flags for CClientUIInterface::ThreadSafeMessageBox */
-    enum MessageBoxFlags
-    {
+    enum MessageBoxFlags {
         ICON_INFORMATION = 0,
         ICON_WARNING = (1U << 0),
         ICON_ERROR = (1U << 1),
@@ -114,8 +111,7 @@ extern CClientUIInterface uiInterface;
  * Translation function: Call Translate signal on UI interface, which returns a boost::optional result.
  * If no translation slot is registered, nothing is returned, and simply return the input.
  */
-inline std::string _(const char* psz)
-{
+inline std::string _(const char* psz) {
     boost::optional<std::string> rv = uiInterface.Translate(psz);
     return rv ? (*rv) : psz;
 }

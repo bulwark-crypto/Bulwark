@@ -14,8 +14,7 @@
 //
 // Bootup the Masternode, look for a 5000 Bulwark input and register on the network
 //
-void CActiveMasternode::ManageStatus()
-{
+void CActiveMasternode::ManageStatus() {
     std::string errorMessage;
 
     if (!fMasterNode) return;
@@ -23,8 +22,7 @@ void CActiveMasternode::ManageStatus()
     if (fDebug) LogPrintf("CActiveMasternode::ManageStatus() - Begin\n");
 
     //need correct blocks to send ping
-    if (Params().NetworkID() != CBaseChainParams::REGTEST && !masternodeSync.IsBlockchainSynced())
-    {
+    if (Params().NetworkID() != CBaseChainParams::REGTEST && !masternodeSync.IsBlockchainSynced()) {
         status = ACTIVE_MASTERNODE_SYNC_IN_PROCESS;
         LogPrintf("CActiveMasternode::ManageStatus() - %s\n", GetStatus());
         return;
@@ -32,63 +30,50 @@ void CActiveMasternode::ManageStatus()
 
     if (status == ACTIVE_MASTERNODE_SYNC_IN_PROCESS) status = ACTIVE_MASTERNODE_INITIAL;
 
-    if (status == ACTIVE_MASTERNODE_INITIAL)
-    {
+    if (status == ACTIVE_MASTERNODE_INITIAL) {
         CMasternode* pmn;
         pmn = mnodeman.Find(pubKeyMasternode);
-        if (pmn != NULL)
-        {
+        if (pmn != NULL) {
             pmn->Check();
             if (pmn->IsEnabled() && pmn->protocolVersion >= ActiveProtocol())
                 EnableHotColdMasterNode(pmn->vin, pmn->addr);
         }
     }
 
-    if (status != ACTIVE_MASTERNODE_STARTED)
-    {
+    if (status != ACTIVE_MASTERNODE_STARTED) {
         // Set defaults
         status = ACTIVE_MASTERNODE_NOT_CAPABLE;
         notCapableReason = "";
 
-        if (pwalletMain->IsLocked())
-        {
+        if (pwalletMain->IsLocked()) {
             notCapableReason = "Wallet is locked.";
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
         }
 
-        if (pwalletMain->GetBalance() == 0)
-        {
+        if (pwalletMain->GetBalance() == 0) {
             notCapableReason = "Hot node, waiting for remote activation.";
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
         }
 
-        if (strMasterNodeAddr.empty())
-        {
-            if (!GetLocal(service))
-            {
+        if (strMasterNodeAddr.empty()) {
+            if (!GetLocal(service)) {
                 notCapableReason = "Can't detect external address. Please use the masternodeaddr configuration option.";
                 LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
                 return;
             }
-        }
-        else
-        {
+        } else {
             service = CService(strMasterNodeAddr);
         }
 
-        if (Params().NetworkID() == CBaseChainParams::MAIN)
-        {
-            if (service.GetPort() != 52543)
-            {
+        if (Params().NetworkID() == CBaseChainParams::MAIN) {
+            if (service.GetPort() != 52543) {
                 notCapableReason = strprintf("Invalid port: %u - only 52543 is supported on mainnet.", service.GetPort());
                 LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
                 return;
             }
-        }
-        else if (service.GetPort() == 52543)
-        {
+        } else if (service.GetPort() == 52543) {
             notCapableReason = strprintf("Invalid port: %u - 52543 is only supported on mainnet.", service.GetPort());
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
@@ -97,8 +82,7 @@ void CActiveMasternode::ManageStatus()
         LogPrintf("CActiveMasternode::ManageStatus() - Checking inbound connection to '%s'\n", service.ToString());
 
         CNode* pnode = ConnectNode((CAddress)service, NULL, false);
-        if (!pnode)
-        {
+        if (!pnode) {
             notCapableReason = "Could not connect to " + service.ToString();
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
@@ -109,10 +93,8 @@ void CActiveMasternode::ManageStatus()
         CPubKey pubKeyCollateralAddress;
         CKey keyCollateralAddress;
 
-        if (GetMasterNodeVin(vin, pubKeyCollateralAddress, keyCollateralAddress))
-        {
-            if (GetInputAge(vin) < MASTERNODE_MIN_CONFIRMATIONS)
-            {
+        if (GetMasterNodeVin(vin, pubKeyCollateralAddress, keyCollateralAddress)) {
+            if (GetInputAge(vin) < MASTERNODE_MIN_CONFIRMATIONS) {
                 status = ACTIVE_MASTERNODE_INPUT_TOO_NEW;
                 notCapableReason = strprintf("%s - %d confirmations", GetStatus(), GetInputAge(vin));
                 LogPrintf("CActiveMasternode::ManageStatus() - %s\n", notCapableReason);
@@ -126,15 +108,13 @@ void CActiveMasternode::ManageStatus()
             CPubKey pubKeyMasternode;
             CKey keyMasternode;
 
-            if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyMasternode, pubKeyMasternode))
-            {
+            if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyMasternode, pubKeyMasternode)) {
                 notCapableReason = "Error upon calling SetKey: " + errorMessage;
                 LogPrintf("Register::ManageStatus() - %s\n", notCapableReason);
                 return;
             }
 
-            if (!Register(vin, service, keyCollateralAddress, pubKeyCollateralAddress, keyMasternode, pubKeyMasternode, errorMessage))
-            {
+            if (!Register(vin, service, keyCollateralAddress, pubKeyCollateralAddress, keyMasternode, pubKeyMasternode, errorMessage)) {
                 notCapableReason = "Error on Register: " + errorMessage;
                 LogPrintf("Register::ManageStatus() - %s\n", notCapableReason);
                 return;
@@ -144,9 +124,7 @@ void CActiveMasternode::ManageStatus()
             status = ACTIVE_MASTERNODE_STARTED;
 
             return;
-        }
-        else
-        {
+        } else {
             notCapableReason = "Could not find suitable coins!";
             LogPrintf("CActiveMasternode::ManageStatus() - %s\n", notCapableReason);
             return;
@@ -154,16 +132,13 @@ void CActiveMasternode::ManageStatus()
     }
 
     //send to all peers
-    if (!SendMasternodePing(errorMessage))
-    {
+    if (!SendMasternodePing(errorMessage)) {
         LogPrintf("CActiveMasternode::ManageStatus() - Error on Ping: %s\n", errorMessage);
     }
 }
 
-std::string CActiveMasternode::GetStatus()
-{
-    switch (status)
-    {
+std::string CActiveMasternode::GetStatus() {
+    switch (status) {
     case ACTIVE_MASTERNODE_INITIAL:
         return "Node just started, not yet activated";
     case ACTIVE_MASTERNODE_SYNC_IN_PROCESS:
@@ -179,10 +154,8 @@ std::string CActiveMasternode::GetStatus()
     }
 }
 
-bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
-{
-    if (status != ACTIVE_MASTERNODE_STARTED)
-    {
+bool CActiveMasternode::SendMasternodePing(std::string& errorMessage) {
+    if (status != ACTIVE_MASTERNODE_STARTED) {
         errorMessage = "Masternode is not in a running status";
         return false;
     }
@@ -190,8 +163,7 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
     CPubKey pubKeyMasternode;
     CKey keyMasternode;
 
-    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyMasternode, pubKeyMasternode))
-    {
+    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyMasternode, pubKeyMasternode)) {
         errorMessage = strprintf("Error upon calling SetKey: %s\n", errorMessage);
         return false;
     }
@@ -199,18 +171,15 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
     LogPrintf("CActiveMasternode::SendMasternodePing() - Relay Masternode Ping vin = %s\n", vin.ToString());
 
     CMasternodePing mnp(vin);
-    if (!mnp.Sign(keyMasternode, pubKeyMasternode))
-    {
+    if (!mnp.Sign(keyMasternode, pubKeyMasternode)) {
         errorMessage = "Couldn't sign Masternode Ping";
         return false;
     }
 
     // Update lastPing for our masternode in Masternode list
     CMasternode* pmn = mnodeman.Find(vin);
-    if (pmn != NULL)
-    {
-        if (pmn->IsPingedWithin(MASTERNODE_PING_SECONDS, mnp.sigTime))
-        {
+    if (pmn != NULL) {
+        if (pmn->IsPingedWithin(MASTERNODE_PING_SECONDS, mnp.sigTime)) {
             errorMessage = "Too early to send Masternode Ping";
             return false;
         }
@@ -238,22 +207,19 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
 
         std::string strMessage = service.ToString() + std::to_string(masterNodeSignatureTime) + std::to_string(false);
 
-        if (!obfuScationSigner.SignMessage(strMessage, retErrorMessage, vchMasterNodeSignature, keyMasternode))
-        {
+        if (!obfuScationSigner.SignMessage(strMessage, retErrorMessage, vchMasterNodeSignature, keyMasternode)) {
             errorMessage = "dseep sign message failed: " + retErrorMessage;
             return false;
         }
 
-        if (!obfuScationSigner.VerifyMessage(pubKeyMasternode, vchMasterNodeSignature, strMessage, retErrorMessage))
-        {
+        if (!obfuScationSigner.VerifyMessage(pubKeyMasternode, vchMasterNodeSignature, strMessage, retErrorMessage)) {
             errorMessage = "dseep verify message failed: " + retErrorMessage;
             return false;
         }
 
         LogPrint("masternode", "dseep - relaying from active mn, %s \n", vin.ToString().c_str());
         LOCK(cs_vNodes);
-        BOOST_FOREACH(CNode* pnode, vNodes)
-        {
+        BOOST_FOREACH(CNode* pnode, vNodes) {
             pnode->PushMessage("dseep", vin, vchMasterNodeSignature, masterNodeSignatureTime, false);
         }
 
@@ -262,9 +228,7 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
          */
 
         return true;
-    }
-    else
-    {
+    } else {
         // Seems like we are trying to send a ping while the Masternode is not registered in the network
         errorMessage = "Obfuscation Masternode List doesn't include our Masternode, shutting down Masternode pinging service! " + vin.ToString();
         status = ACTIVE_MASTERNODE_NOT_CAPABLE;
@@ -273,8 +237,7 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
     }
 }
 
-bool CActiveMasternode::Register(std::string strService, std::string strKeyMasternode, std::string strTxHash, std::string strOutputIndex, std::string& errorMessage)
-{
+bool CActiveMasternode::Register(std::string strService, std::string strKeyMasternode, std::string strTxHash, std::string strOutputIndex, std::string& errorMessage) {
     CTxIn vin;
     CPubKey pubKeyCollateralAddress;
     CKey keyCollateralAddress;
@@ -282,39 +245,32 @@ bool CActiveMasternode::Register(std::string strService, std::string strKeyMaste
     CKey keyMasternode;
 
     //need correct blocks to send ping
-    if (!masternodeSync.IsBlockchainSynced())
-    {
+    if (!masternodeSync.IsBlockchainSynced()) {
         errorMessage = GetStatus();
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
     }
 
-    if (!obfuScationSigner.SetKey(strKeyMasternode, errorMessage, keyMasternode, pubKeyMasternode))
-    {
+    if (!obfuScationSigner.SetKey(strKeyMasternode, errorMessage, keyMasternode, pubKeyMasternode)) {
         errorMessage = strprintf("Can't find keys for masternode %s - %s", strService, errorMessage);
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
     }
 
-    if (!GetMasterNodeVin(vin, pubKeyCollateralAddress, keyCollateralAddress, strTxHash, strOutputIndex))
-    {
+    if (!GetMasterNodeVin(vin, pubKeyCollateralAddress, keyCollateralAddress, strTxHash, strOutputIndex)) {
         errorMessage = strprintf("Could not allocate vin %s:%s for masternode %s", strTxHash, strOutputIndex, strService);
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
     }
 
     CService service = CService(strService);
-    if (Params().NetworkID() == CBaseChainParams::MAIN)
-    {
-        if (service.GetPort() != 52543)
-        {
+    if (Params().NetworkID() == CBaseChainParams::MAIN) {
+        if (service.GetPort() != 52543) {
             errorMessage = strprintf("Invalid port %u for masternode %s - only 52543 is supported on mainnet.", service.GetPort(), strService);
             LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
             return false;
         }
-    }
-    else if (service.GetPort() == 52543)
-    {
+    } else if (service.GetPort() == 52543) {
         errorMessage = strprintf("Invalid port %u for masternode %s - 52543 is only supported on mainnet.", service.GetPort(), strService);
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
@@ -325,12 +281,10 @@ bool CActiveMasternode::Register(std::string strService, std::string strKeyMaste
     return Register(vin, CService(strService), keyCollateralAddress, pubKeyCollateralAddress, keyMasternode, pubKeyMasternode, errorMessage);
 }
 
-bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateralAddress, CPubKey pubKeyCollateralAddress, CKey keyMasternode, CPubKey pubKeyMasternode, std::string& errorMessage)
-{
+bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateralAddress, CPubKey pubKeyCollateralAddress, CKey keyMasternode, CPubKey pubKeyMasternode, std::string& errorMessage) {
     CMasternodeBroadcast mnb;
     CMasternodePing mnp(vin);
-    if (!mnp.Sign(keyMasternode, pubKeyMasternode))
-    {
+    if (!mnp.Sign(keyMasternode, pubKeyMasternode)) {
         errorMessage = strprintf("Failed to sign ping, vin: %s", vin.ToString());
         LogPrintf("CActiveMasternode::Register() -  %s\n", errorMessage);
         return false;
@@ -340,8 +294,7 @@ bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateral
     LogPrintf("CActiveMasternode::Register() - Adding to Masternode list\n    service: %s\n    vin: %s\n", service.ToString(), vin.ToString());
     mnb = CMasternodeBroadcast(service, vin, pubKeyCollateralAddress, pubKeyMasternode, PROTOCOL_VERSION);
     mnb.lastPing = mnp;
-    if (!mnb.Sign(keyCollateralAddress))
-    {
+    if (!mnb.Sign(keyCollateralAddress)) {
         errorMessage = strprintf("Failed to sign broadcast, vin: %s", vin.ToString());
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
@@ -350,13 +303,10 @@ bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateral
     masternodeSync.AddedMasternodeList(mnb.GetHash());
 
     CMasternode* pmn = mnodeman.Find(vin);
-    if (pmn == NULL)
-    {
+    if (pmn == NULL) {
         CMasternode mn(mnb);
         mnodeman.Add(mn);
-    }
-    else
-    {
+    } else {
         pmn->UpdateFromNewBroadcast(mnb);
     }
 
@@ -382,23 +332,20 @@ bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateral
 
     std::string strMessage = service.ToString() + std::to_string(masterNodeSignatureTime) + vchPubKey + vchPubKey2 + std::to_string(PROTOCOL_VERSION) + donationAddress + std::to_string(donationPercantage);
 
-    if (!obfuScationSigner.SignMessage(strMessage, retErrorMessage, vchMasterNodeSignature, keyCollateralAddress))
-    {
+    if (!obfuScationSigner.SignMessage(strMessage, retErrorMessage, vchMasterNodeSignature, keyCollateralAddress)) {
         errorMessage = "dsee sign message failed: " + retErrorMessage;
         LogPrintf("CActiveMasternode::Register() - Error: %s\n", errorMessage.c_str());
         return false;
     }
 
-    if (!obfuScationSigner.VerifyMessage(pubKeyCollateralAddress, vchMasterNodeSignature, strMessage, retErrorMessage))
-    {
+    if (!obfuScationSigner.VerifyMessage(pubKeyCollateralAddress, vchMasterNodeSignature, strMessage, retErrorMessage)) {
         errorMessage = "dsee verify message failed: " + retErrorMessage;
         LogPrintf("CActiveMasternode::Register() - Error: %s\n", errorMessage.c_str());
         return false;
     }
 
     LOCK(cs_vNodes);
-    BOOST_FOREACH(CNode* pnode, vNodes)
-    {
+    BOOST_FOREACH(CNode* pnode, vNodes) {
         pnode->PushMessage("dsee", vin, service, vchMasterNodeSignature, masterNodeSignatureTime, pubKeyCollateralAddress, pubKeyMasternode, -1, -1, masterNodeSignatureTime, PROTOCOL_VERSION, donationAddress, donationPercantage);
     }
 
@@ -409,13 +356,11 @@ bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateral
     return true;
 }
 
-bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey)
-{
+bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey) {
     return GetMasterNodeVin(vin, pubkey, secretKey, "", "");
 }
 
-bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex)
-{
+bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex) {
     // Find possible candidates
     TRY_LOCK(pwalletMain->cs_wallet, fWallet);
     if (!fWallet) return false;
@@ -424,46 +369,34 @@ bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secr
     COutput* selectedOutput;
 
     // Find the vin
-    if (!strTxHash.empty())
-    {
+    if (!strTxHash.empty()) {
         // Let's find it
         uint256 txHash(strTxHash);
         int outputIndex;
-        try
-        {
+        try {
             outputIndex = std::stoi(strOutputIndex.c_str());
-        }
-        catch (const std::exception& e)
-        {
+        } catch (const std::exception& e) {
             LogPrintf("%s: %s on strOutputIndex\n", __func__, e.what());
             return false;
         }
 
         bool found = false;
-        BOOST_FOREACH(COutput& out, possibleCoins)
-        {
-            if (out.tx->GetHash() == txHash && out.i == outputIndex)
-            {
+        BOOST_FOREACH(COutput& out, possibleCoins) {
+            if (out.tx->GetHash() == txHash && out.i == outputIndex) {
                 selectedOutput = &out;
                 found = true;
                 break;
             }
         }
-        if (!found)
-        {
+        if (!found) {
             LogPrintf("CActiveMasternode::GetMasterNodeVin - Could not locate valid vin\n");
             return false;
         }
-    }
-    else
-    {
+    } else {
         // No output specified,  Select the first one
-        if (possibleCoins.size() > 0)
-        {
+        if (possibleCoins.size() > 0) {
             selectedOutput = &possibleCoins[0];
-        }
-        else
-        {
+        } else {
             LogPrintf("CActiveMasternode::GetMasterNodeVin - Could not locate specified vin from possible list\n");
             return false;
         }
@@ -475,8 +408,7 @@ bool CActiveMasternode::GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secr
 
 
 // Extract Masternode vin information from output
-bool CActiveMasternode::GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubkey, CKey& secretKey)
-{
+bool CActiveMasternode::GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubkey, CKey& secretKey) {
     CScript pubScript;
 
     vin = CTxIn(out.tx->GetHash(), out.i);
@@ -487,14 +419,12 @@ bool CActiveMasternode::GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubke
     CBitcoinAddress address2(address1);
 
     CKeyID keyID;
-    if (!address2.GetKeyID(keyID))
-    {
+    if (!address2.GetKeyID(keyID)) {
         LogPrintf("CActiveMasternode::GetMasterNodeVin - Address does not refer to a key\n");
         return false;
     }
 
-    if (!pwalletMain->GetKey(keyID, secretKey))
-    {
+    if (!pwalletMain->GetKey(keyID, secretKey)) {
         LogPrintf("CActiveMasternode::GetMasterNodeVin - Private key for address is not known\n");
         return false;
     }
@@ -504,18 +434,15 @@ bool CActiveMasternode::GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubke
 }
 
 // get all possible outputs for running Masternode
-vector<COutput> CActiveMasternode::SelectCoinsMasternode()
-{
+vector<COutput> CActiveMasternode::SelectCoinsMasternode() {
     vector<COutput> vCoins;
     vector<COutput> filteredCoins;
     vector<COutPoint> confLockedCoins;
 
     // Temporary unlock MN coins from masternode.conf
-    if (GetBoolArg("-mnconflock", true))
-    {
+    if (GetBoolArg("-mnconflock", true)) {
         uint256 mnTxHash;
-        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries())
-        {
+        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
             mnTxHash.SetHex(mne.getTxHash());
 
             int nIndex;
@@ -532,19 +459,15 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
     pwalletMain->AvailableCoins(vCoins);
 
     // Lock MN coins from masternode.conf back if they where temporary unlocked
-    if (!confLockedCoins.empty())
-    {
-        BOOST_FOREACH(COutPoint outpoint, confLockedCoins)
-        {
+    if (!confLockedCoins.empty()) {
+        BOOST_FOREACH(COutPoint outpoint, confLockedCoins) {
             pwalletMain->LockCoin(outpoint);
         }
     }
 
     // Filter
-    BOOST_FOREACH(const COutput& out, vCoins)
-    {
-        if (out.tx->vout[out.i].nValue == 5000 * COIN)   //exactly
-        {
+    BOOST_FOREACH(const COutput& out, vCoins) {
+        if (out.tx->vout[out.i].nValue == 5000 * COIN) { //exactly
             filteredCoins.push_back(out);
         }
     }
@@ -552,8 +475,7 @@ vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 }
 
 // when starting a Masternode, this can enable to run as a hot wallet with no funds
-bool CActiveMasternode::EnableHotColdMasterNode(CTxIn& newVin, CService& newService)
-{
+bool CActiveMasternode::EnableHotColdMasterNode(CTxIn& newVin, CService& newService) {
     if (!fMasterNode) return false;
 
     status = ACTIVE_MASTERNODE_STARTED;

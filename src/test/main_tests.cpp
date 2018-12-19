@@ -12,11 +12,9 @@
 
 BOOST_AUTO_TEST_SUITE(main_tests)
 
-BOOST_AUTO_TEST_CASE(subsidy_limit_test)
-{
+BOOST_AUTO_TEST_CASE(subsidy_limit_test) {
     CAmount nSum = 0;
-    for (int nHeight = 0; nHeight < 14000000; nHeight += 1000)
-    {
+    for (int nHeight = 0; nHeight < 14000000; nHeight += 1000) {
         /* @TODO fix subsidity, add nBits */
         CAmount nSubsidy = GetBlockValue(nHeight);
         BOOST_CHECK(nSubsidy <= 50 * COIN);

@@ -16,11 +16,9 @@ using namespace boost::assign;
 /**
  * Main network
  */
-class CBaseMainParams : public CBaseChainParams
-{
-public:
-    CBaseMainParams()
-    {
+class CBaseMainParams : public CBaseChainParams {
+  public:
+    CBaseMainParams() {
         networkID = CBaseChainParams::MAIN;
         nRPCPort = 52541;
     }
@@ -30,11 +28,9 @@ static CBaseMainParams mainParams;
 /**
  * Testnet (v3)
  */
-class CBaseTestNetParams : public CBaseMainParams
-{
-public:
-    CBaseTestNetParams()
-    {
+class CBaseTestNetParams : public CBaseMainParams {
+  public:
+    CBaseTestNetParams() {
         networkID = CBaseChainParams::TESTNET;
         nRPCPort = 42132;
         strDataDir = "testnet4";
@@ -45,11 +41,9 @@ static CBaseTestNetParams testNetParams;
 /*
  * Regression test
  */
-class CBaseRegTestParams : public CBaseTestNetParams
-{
-public:
-    CBaseRegTestParams()
-    {
+class CBaseRegTestParams : public CBaseTestNetParams {
+  public:
+    CBaseRegTestParams() {
         networkID = CBaseChainParams::REGTEST;
         strDataDir = "regtest";
     }
@@ -59,11 +53,9 @@ static CBaseRegTestParams regTestParams;
 /*
  * Unit test
  */
-class CBaseUnitTestParams : public CBaseMainParams
-{
-public:
-    CBaseUnitTestParams()
-    {
+class CBaseUnitTestParams : public CBaseMainParams {
+  public:
+    CBaseUnitTestParams() {
         networkID = CBaseChainParams::UNITTEST;
         strDataDir = "unittest";
     }
@@ -72,16 +64,13 @@ static CBaseUnitTestParams unitTestParams;
 
 static CBaseChainParams* pCurrentBaseParams = 0;
 
-const CBaseChainParams& BaseParams()
-{
+const CBaseChainParams& BaseParams() {
     assert(pCurrentBaseParams);
     return *pCurrentBaseParams;
 }
 
-void SelectBaseParams(CBaseChainParams::Network network)
-{
-    switch (network)
-    {
+void SelectBaseParams(CBaseChainParams::Network network) {
+    switch (network) {
     case CBaseChainParams::MAIN:
         pCurrentBaseParams = &mainParams;
         break;
@@ -100,8 +89,7 @@ void SelectBaseParams(CBaseChainParams::Network network)
     }
 }
 
-CBaseChainParams::Network NetworkIdFromCommandLine()
-{
+CBaseChainParams::Network NetworkIdFromCommandLine() {
     bool fRegTest = GetBoolArg("-regtest", false);
     bool fTestNet = GetBoolArg("-testnet", false);
 
@@ -114,8 +102,7 @@ CBaseChainParams::Network NetworkIdFromCommandLine()
     return CBaseChainParams::MAIN;
 }
 
-bool SelectBaseParamsFromCommandLine()
-{
+bool SelectBaseParamsFromCommandLine() {
     CBaseChainParams::Network network = NetworkIdFromCommandLine();
     if (network == CBaseChainParams::MAX_NETWORK_TYPES)
         return false;
@@ -124,7 +111,6 @@ bool SelectBaseParamsFromCommandLine()
     return true;
 }
 
-bool AreBaseParamsConfigured()
-{
+bool AreBaseParamsConfigured() {
     return pCurrentBaseParams != NULL;
 }

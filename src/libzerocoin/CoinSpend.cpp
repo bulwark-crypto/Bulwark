@@ -12,20 +12,17 @@
 // Copyright (c) 2017 The PIVX developers
 #include "CoinSpend.h"
 #include <iostream>
-namespace libzerocoin
-{
+namespace libzerocoin {
 CoinSpend::CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint32_t checksum, const AccumulatorWitness& witness, const uint256& ptxHash) : accChecksum(checksum),
     ptxHash(ptxHash),
     coinSerialNumber((coin.getSerialNumber())),
     accumulatorPoK(&p->accumulatorParams),
     serialNumberSoK(p),
-    commitmentPoK(&p->serialNumberSoKCommitmentGroup, &p->accumulatorParams.accumulatorPoKCommitmentGroup)
-{
+    commitmentPoK(&p->serialNumberSoKCommitmentGroup, &p->accumulatorParams.accumulatorPoKCommitmentGroup) {
     denomination = coin.getPublicCoin().getDenomination();
     // Sanity check: let's verify that the Witness is valid with respect to
     // the coin and Accumulator provided.
-    if (!(witness.VerifyWitness(a, coin.getPublicCoin())))
-    {
+    if (!(witness.VerifyWitness(a, coin.getPublicCoin()))) {
         throw std::runtime_error("Accumulator witness does not verify");
     }
 
@@ -54,27 +51,23 @@ CoinSpend::CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulat
     this->serialNumberSoK = SerialNumberSignatureOfKnowledge(p, coin, fullCommitmentToCoinUnderSerialParams, signatureHash());
 }
 
-bool CoinSpend::Verify(const Accumulator& a) const
-{
+bool CoinSpend::Verify(const Accumulator& a) const {
     // Verify both of the sub-proofs using the given meta-data
     return (a.getDenomination() == this->denomination) && commitmentPoK.Verify(serialCommitmentToCoinValue, accCommitmentToCoinValue) && accumulatorPoK.Verify(a, accCommitmentToCoinValue) && serialNumberSoK.Verify(coinSerialNumber, serialCommitmentToCoinValue, signatureHash());
 }
 
-const uint256 CoinSpend::signatureHash() const
-{
+const uint256 CoinSpend::signatureHash() const {
     CHashWriter h(0, 0);
     h << serialCommitmentToCoinValue << accCommitmentToCoinValue << commitmentPoK << accumulatorPoK << ptxHash
       << coinSerialNumber << accChecksum << denomination;
     return h.GetHash();
 }
 
-bool CoinSpend::HasValidSerial(ZerocoinParams* params) const
-{
+bool CoinSpend::HasValidSerial(ZerocoinParams* params) const {
     return coinSerialNumber > 0 && coinSerialNumber < params->coinCommitmentGroup.groupOrder;
 }
 
-CBigNum CoinSpend::CalculateValidSerial(ZerocoinParams* params)
-{
+CBigNum CoinSpend::CalculateValidSerial(ZerocoinParams* params) {
     CBigNum bnSerial = coinSerialNumber;
     bnSerial = bnSerial.mul_mod(CBigNum(1),params->coinCommitmentGroup.groupOrder);
     return bnSerial;

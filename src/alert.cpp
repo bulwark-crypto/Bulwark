@@ -27,8 +27,7 @@ using namespace std;
 map<uint256, CAlert> mapAlerts;
 CCriticalSection cs_mapAlerts;
 
-void CUnsignedAlert::SetNull()
-{
+void CUnsignedAlert::SetNull() {
     nVersion = 1;
     nRelayUntil = 0;
     nExpiration = 0;
@@ -45,14 +44,12 @@ void CUnsignedAlert::SetNull()
     strReserved.clear();
 }
 
-std::string CUnsignedAlert::ToString() const
-{
+std::string CUnsignedAlert::ToString() const {
     std::string strSetCancel;
     for (auto& n: setCancel)
         strSetCancel += strprintf("%d ", n);
     std::string strSetSubVer;
-    BOOST_FOREACH(std::string str, setSubVer)
-    {
+    BOOST_FOREACH(std::string str, setSubVer) {
         strSetSubVer += "\"" + str + "\" ";
     }
     return strprintf(
@@ -84,62 +81,52 @@ std::string CUnsignedAlert::ToString() const
                strStatusBar);
 }
 
-void CAlert::SetNull()
-{
+void CAlert::SetNull() {
     CUnsignedAlert::SetNull();
     vchMsg.clear();
     vchSig.clear();
 }
 
-bool CAlert::IsNull() const
-{
+bool CAlert::IsNull() const {
     return (nExpiration == 0);
 }
 
-uint256 CAlert::GetHash() const
-{
+uint256 CAlert::GetHash() const {
     return Hash(this->vchMsg.begin(), this->vchMsg.end());
 }
 
-bool CAlert::IsInEffect() const
-{
+bool CAlert::IsInEffect() const {
     return (GetAdjustedTime() < nExpiration);
 }
 
-bool CAlert::Cancels(const CAlert& alert) const
-{
+bool CAlert::Cancels(const CAlert& alert) const {
     if (!IsInEffect())
         return false; // this was a no-op before 31403
     return (alert.nID <= nCancel || setCancel.count(alert.nID));
 }
 
-bool CAlert::AppliesTo(int nVersion, std::string strSubVerIn) const
-{
+bool CAlert::AppliesTo(int nVersion, std::string strSubVerIn) const {
     // TODO: rework for client-version-embedded-in-strSubVer ?
     return (IsInEffect() &&
             nMinVer <= nVersion && nVersion <= nMaxVer &&
             (setSubVer.empty() || setSubVer.count(strSubVerIn)));
 }
 
-bool CAlert::AppliesToMe() const
-{
+bool CAlert::AppliesToMe() const {
     return AppliesTo(PROTOCOL_VERSION, FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, std::vector<std::string>()));
 }
 
-bool CAlert::RelayTo(CNode* pnode) const
-{
+bool CAlert::RelayTo(CNode* pnode) const {
     if (!IsInEffect())
         return false;
     // don't relay to nodes which haven't sent their version message
     if (pnode->nVersion == 0)
         return false;
     // returns true if wasn't already contained in the set
-    if (pnode->setKnown.insert(GetHash()).second)
-    {
+    if (pnode->setKnown.insert(GetHash()).second) {
         if (AppliesTo(pnode->nVersion, pnode->strSubVer) ||
                 AppliesToMe() ||
-                GetAdjustedTime() < nRelayUntil)
-        {
+                GetAdjustedTime() < nRelayUntil) {
             pnode->PushMessage("alert", *this);
             return true;
         }
@@ -147,8 +134,7 @@ bool CAlert::RelayTo(CNode* pnode) const
     return false;
 }
 
-bool CAlert::CheckSignature() const
-{
+bool CAlert::CheckSignature() const {
     CPubKey key(Params().AlertKey());
     if (!key.Verify(Hash(vchMsg.begin(), vchMsg.end()), vchSig))
         return error("CAlert::CheckSignature() : verify signature failed");
@@ -159,8 +145,7 @@ bool CAlert::CheckSignature() const
     return true;
 }
 
-CAlert CAlert::getAlertByHash(const uint256& hash)
-{
+CAlert CAlert::getAlertByHash(const uint256& hash) {
     CAlert retval;
     {
         LOCK(cs_mapAlerts);
@@ -171,8 +156,7 @@ CAlert CAlert::getAlertByHash(const uint256& hash)
     return retval;
 }
 
-bool CAlert::ProcessAlert(bool fThread)
-{
+bool CAlert::ProcessAlert(bool fThread) {
     if (!CheckSignature())
         return false;
     if (!IsInEffect())
@@ -186,8 +170,7 @@ bool CAlert::ProcessAlert(bool fThread)
     // send an "everything is OK, don't panic" version that
     // cannot be overridden):
     int maxInt = std::numeric_limits<int>::max();
-    if (nID == maxInt)
-    {
+    if (nID == maxInt) {
         if (!(
                     nExpiration == maxInt &&
                     nCancel == (maxInt - 1) &&
@@ -202,31 +185,24 @@ bool CAlert::ProcessAlert(bool fThread)
     {
         LOCK(cs_mapAlerts);
         // Cancel previous alerts
-        for (map<uint256, CAlert>::iterator mi = mapAlerts.begin(); mi != mapAlerts.end();)
-        {
+        for (map<uint256, CAlert>::iterator mi = mapAlerts.begin(); mi != mapAlerts.end();) {
             const CAlert& alert = (*mi).second;
-            if (Cancels(alert))
-            {
+            if (Cancels(alert)) {
                 LogPrint("alert", "cancelling alert %d\n", alert.nID);
                 uiInterface.NotifyAlertChanged((*mi).first, CT_DELETED);
                 mapAlerts.erase(mi++);
-            }
-            else if (!alert.IsInEffect())
-            {
+            } else if (!alert.IsInEffect()) {
                 LogPrint("alert", "expiring alert %d\n", alert.nID);
                 uiInterface.NotifyAlertChanged((*mi).first, CT_DELETED);
                 mapAlerts.erase(mi++);
-            }
-            else
+            } else
                 mi++;
         }
 
         // Check if this alert has been cancelled
-        BOOST_FOREACH(PAIRTYPE(const uint256, CAlert) & item, mapAlerts)
-        {
+        BOOST_FOREACH(PAIRTYPE(const uint256, CAlert) & item, mapAlerts) {
             const CAlert& alert = item.second;
-            if (alert.Cancels(*this))
-            {
+            if (alert.Cancels(*this)) {
                 LogPrint("alert", "alert already cancelled by %d\n", alert.nID);
                 return false;
             }
@@ -235,8 +211,7 @@ bool CAlert::ProcessAlert(bool fThread)
         // Add to mapAlerts
         mapAlerts.insert(make_pair(GetHash(), *this));
         // Notify UI and -alertnotify if it applies to me
-        if (AppliesToMe())
-        {
+        if (AppliesToMe()) {
             uiInterface.NotifyAlertChanged(GetHash(), CT_NEW);
             Notify(strStatusBar, fThread);
         }
@@ -246,8 +221,7 @@ bool CAlert::ProcessAlert(bool fThread)
     return true;
 }
 
-void CAlert::Notify(const std::string& strMessage, bool fThread)
-{
+void CAlert::Notify(const std::string& strMessage, bool fThread) {
     std::string strCmd = GetArg("-alertnotify", "");
     if (strCmd.empty()) return;
 

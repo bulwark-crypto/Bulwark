@@ -11,8 +11,7 @@
 #include <endian.h>
 #endif
 
-uint32_t static inline ReadLE32(const unsigned char* ptr)
-{
+uint32_t static inline ReadLE32(const unsigned char* ptr) {
 #if HAVE_DECL_LE32TOH == 1
     return le32toh(*((uint32_t*)ptr));
 #elif !defined(WORDS_BIGENDIAN)
@@ -22,8 +21,7 @@ uint32_t static inline ReadLE32(const unsigned char* ptr)
 #endif
 }
 
-uint64_t static inline ReadLE64(const unsigned char* ptr)
-{
+uint64_t static inline ReadLE64(const unsigned char* ptr) {
 #if HAVE_DECL_LE64TOH == 1
     return le64toh(*((uint64_t*)ptr));
 #elif !defined(WORDS_BIGENDIAN)
@@ -34,8 +32,7 @@ uint64_t static inline ReadLE64(const unsigned char* ptr)
 #endif
 }
 
-void static inline WriteLE32(unsigned char* ptr, uint32_t x)
-{
+void static inline WriteLE32(unsigned char* ptr, uint32_t x) {
 #if HAVE_DECL_HTOLE32 == 1
     *((uint32_t*)ptr) = htole32(x);
 #elif !defined(WORDS_BIGENDIAN)
@@ -48,8 +45,7 @@ void static inline WriteLE32(unsigned char* ptr, uint32_t x)
 #endif
 }
 
-void static inline WriteLE64(unsigned char* ptr, uint64_t x)
-{
+void static inline WriteLE64(unsigned char* ptr, uint64_t x) {
 #if HAVE_DECL_HTOLE64 == 1
     *((uint64_t*)ptr) = htole64(x);
 #elif !defined(WORDS_BIGENDIAN)
@@ -66,8 +62,7 @@ void static inline WriteLE64(unsigned char* ptr, uint64_t x)
 #endif
 }
 
-uint32_t static inline ReadBE32(const unsigned char* ptr)
-{
+uint32_t static inline ReadBE32(const unsigned char* ptr) {
 #if HAVE_DECL_BE32TOH == 1
     return be32toh(*((uint32_t*)ptr));
 #else
@@ -75,8 +70,7 @@ uint32_t static inline ReadBE32(const unsigned char* ptr)
 #endif
 }
 
-uint64_t static inline ReadBE64(const unsigned char* ptr)
-{
+uint64_t static inline ReadBE64(const unsigned char* ptr) {
 #if HAVE_DECL_BE64TOH == 1
     return be64toh(*((uint64_t*)ptr));
 #else
@@ -85,8 +79,7 @@ uint64_t static inline ReadBE64(const unsigned char* ptr)
 #endif
 }
 
-void static inline WriteBE32(unsigned char* ptr, uint32_t x)
-{
+void static inline WriteBE32(unsigned char* ptr, uint32_t x) {
 #if HAVE_DECL_HTOBE32 == 1
     *((uint32_t*)ptr) = htobe32(x);
 #else
@@ -97,8 +90,7 @@ void static inline WriteBE32(unsigned char* ptr, uint32_t x)
 #endif
 }
 
-void static inline WriteBE64(unsigned char* ptr, uint64_t x)
-{
+void static inline WriteBE64(unsigned char* ptr, uint64_t x) {
 #if HAVE_DECL_HTOBE64 == 1
     *((uint64_t*)ptr) = htobe64(x);
 #else

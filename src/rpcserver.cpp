@@ -52,17 +52,14 @@ static std::vector<boost::shared_ptr<ip::tcp::acceptor> > rpc_acceptors;
 
 void RPCTypeCheck(const UniValue& params,
                   const list<UniValue::VType>& typesExpected,
-                  bool fAllowNull)
-{
+                  bool fAllowNull) {
     unsigned int i = 0;
-    BOOST_FOREACH(UniValue::VType t, typesExpected)
-    {
+    BOOST_FOREACH(UniValue::VType t, typesExpected) {
         if (params.size() <= i)
             break;
 
         const UniValue& v = params[i];
-        if (!((v.type() == t) || (fAllowNull && (v.isNull()))))
-        {
+        if (!((v.type() == t) || (fAllowNull && (v.isNull())))) {
             string err = strprintf("Expected type %s, got %s",
                                    uvTypeName(t), uvTypeName(v.type()));
             throw JSONRPCError(RPC_TYPE_ERROR, err);
@@ -73,16 +70,13 @@ void RPCTypeCheck(const UniValue& params,
 
 void RPCTypeCheckObj(const UniValue& o,
                      const map<string, UniValue::VType>& typesExpected,
-                     bool fAllowNull)
-{
-    BOOST_FOREACH(const PAIRTYPE(string, UniValue::VType)& t, typesExpected)
-    {
+                     bool fAllowNull) {
+    BOOST_FOREACH(const PAIRTYPE(string, UniValue::VType)& t, typesExpected) {
         const UniValue& v = find_value(o, t.first);
         if (!fAllowNull && v.isNull())
             throw JSONRPCError(RPC_TYPE_ERROR, strprintf("Missing %s", t.first));
 
-        if (!((v.type() == t.second) || (fAllowNull && (v.isNull()))))
-        {
+        if (!((v.type() == t.second) || (fAllowNull && (v.isNull())))) {
             string err = strprintf("Expected type %s for %s, got %s",
                                    uvTypeName(t.second), t.first, uvTypeName(v.type()));
             throw JSONRPCError(RPC_TYPE_ERROR, err);
@@ -90,13 +84,11 @@ void RPCTypeCheckObj(const UniValue& o,
     }
 }
 
-static inline int64_t roundint64(double d)
-{
+static inline int64_t roundint64(double d) {
     return (int64_t)(d > 0 ? d + 0.5 : d - 0.5);
 }
 
-CAmount AmountFromValue(const UniValue& value)
-{
+CAmount AmountFromValue(const UniValue& value) {
     double dAmount = value.get_real();
     if (dAmount <= 0.0 || dAmount > 21000000.0)
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount");
@@ -106,8 +98,7 @@ CAmount AmountFromValue(const UniValue& value)
     return nAmount;
 }
 
-UniValue ValueFromAmount(const CAmount& amount)
-{
+UniValue ValueFromAmount(const CAmount& amount) {
     bool sign = amount < 0;
     int64_t n_abs = (sign ? -amount : amount);
     int64_t quotient = n_abs / COIN;
@@ -116,8 +107,7 @@ UniValue ValueFromAmount(const CAmount& amount)
                     strprintf("%s%d.%08d", sign ? "-" : "", quotient, remainder));
 }
 
-uint256 ParseHashV(const UniValue& v, string strName)
-{
+uint256 ParseHashV(const UniValue& v, string strName) {
     string strHex;
     if (v.isStr())
         strHex = v.get_str();
@@ -127,12 +117,10 @@ uint256 ParseHashV(const UniValue& v, string strName)
     result.SetHex(strHex);
     return result;
 }
-uint256 ParseHashO(const UniValue& o, string strKey)
-{
+uint256 ParseHashO(const UniValue& o, string strKey) {
     return ParseHashV(find_value(o, strKey), strKey);
 }
-vector<unsigned char> ParseHexV(const UniValue& v, string strName)
-{
+vector<unsigned char> ParseHexV(const UniValue& v, string strName) {
     string strHex;
     if (v.isStr())
         strHex = v.get_str();
@@ -140,13 +128,11 @@ vector<unsigned char> ParseHexV(const UniValue& v, string strName)
         throw JSONRPCError(RPC_INVALID_PARAMETER, strName + " must be hexadecimal string (not '" + strHex + "')");
     return ParseHex(strHex);
 }
-vector<unsigned char> ParseHexO(const UniValue& o, string strKey)
-{
+vector<unsigned char> ParseHexO(const UniValue& o, string strKey) {
     return ParseHexV(find_value(o, strKey), strKey);
 }
 
-int ParseInt(const UniValue& o, string strKey)
-{
+int ParseInt(const UniValue& o, string strKey) {
     const UniValue& v = find_value(o, strKey);
     if (v.isNum())
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, " + strKey + "is not an int");
@@ -154,8 +140,7 @@ int ParseInt(const UniValue& o, string strKey)
     return v.get_int();
 }
 
-bool ParseBool(const UniValue& o, string strKey)
-{
+bool ParseBool(const UniValue& o, string strKey) {
     const UniValue& v = find_value(o, strKey);
     if (v.isBool())
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, " + strKey + "is not a bool");
@@ -168,8 +153,7 @@ bool ParseBool(const UniValue& o, string strKey)
  * Note: This interface may still be subject to change.
  */
 
-string CRPCTable::help(string strCommand) const
-{
+string CRPCTable::help(string strCommand) const {
     string strRet;
     string category;
     set<rpcfn_type> setDone;
@@ -179,8 +163,7 @@ string CRPCTable::help(string strCommand) const
         vCommands.push_back(make_pair(mi->second->category + mi->first, mi->second));
     sort(vCommands.begin(), vCommands.end());
 
-    BOOST_FOREACH(const PAIRTYPE(string, const CRPCCommand*) & command, vCommands)
-    {
+    BOOST_FOREACH(const PAIRTYPE(string, const CRPCCommand*) & command, vCommands) {
         const CRPCCommand* pcmd = command.second;
         string strMethod = pcmd->name;
         // We already filter duplicates, but these deprecated screw up the sort order
@@ -193,24 +176,19 @@ string CRPCTable::help(string strCommand) const
             continue;
 #endif
 
-        try
-        {
+        try {
             UniValue params;
             rpcfn_type pfn = pcmd->actor;
             if (setDone.insert(pfn).second)
                 (*pfn)(params, true);
-        }
-        catch (std::exception& e)
-        {
+        } catch (std::exception& e) {
             // Help text is returned in an exception
             string strHelp = string(e.what());
-            if (strCommand == "")
-            {
+            if (strCommand == "") {
                 if (strHelp.find('\n') != string::npos)
                     strHelp = strHelp.substr(0, strHelp.find('\n'));
 
-                if (category != pcmd->category)
-                {
+                if (category != pcmd->category) {
                     if (!category.empty())
                         strRet += "\n";
                     category = pcmd->category;
@@ -228,8 +206,7 @@ string CRPCTable::help(string strCommand) const
     return strRet;
 }
 
-UniValue help(const UniValue& params, bool fHelp)
-{
+UniValue help(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "help ( \"command\" )\n"
@@ -247,8 +224,7 @@ UniValue help(const UniValue& params, bool fHelp)
 }
 
 
-UniValue stop(const UniValue& params, bool fHelp)
-{
+UniValue stop(const UniValue& params, bool fHelp) {
     // Accept the deprecated and ignored 'detach' boolean argument
     if (fHelp || params.size() > 1)
         throw runtime_error(
@@ -263,8 +239,7 @@ UniValue stop(const UniValue& params, bool fHelp)
 /**
  * Call Table
  */
-static const CRPCCommand vRPCCommands[] =
-{
+static const CRPCCommand vRPCCommands[] = {
     //  category              name                      actor (function)         okSafeMode threadSafe reqWallet
     //  --------------------- ------------------------  -----------------------  ---------- ---------- ---------
     /* Overall control/query calls */
@@ -435,11 +410,9 @@ static const CRPCCommand vRPCCommands[] =
 #endif // ENABLE_WALLET
 };
 
-CRPCTable::CRPCTable()
-{
+CRPCTable::CRPCTable() {
     unsigned int vcidx;
-    for (vcidx = 0; vcidx < (sizeof(vRPCCommands) / sizeof(vRPCCommands[0])); vcidx++)
-    {
+    for (vcidx = 0; vcidx < (sizeof(vRPCCommands) / sizeof(vRPCCommands[0])); vcidx++) {
         const CRPCCommand* pcmd;
 
         pcmd = &vRPCCommands[vcidx];
@@ -447,8 +420,7 @@ CRPCTable::CRPCTable()
     }
 }
 
-const CRPCCommand* CRPCTable::operator[](string name) const
-{
+const CRPCCommand* CRPCTable::operator[](string name) const {
     map<string, const CRPCCommand*>::const_iterator it = mapCommands.find(name);
     if (it == mapCommands.end())
         return NULL;
@@ -456,8 +428,7 @@ const CRPCCommand* CRPCTable::operator[](string name) const
 }
 
 
-bool HTTPAuthorized(map<string, string>& mapHeaders)
-{
+bool HTTPAuthorized(map<string, string>& mapHeaders) {
     string strAuth = mapHeaders["authorization"];
     if (strAuth.substr(0, 6) != "Basic ")
         return false;
@@ -467,8 +438,7 @@ bool HTTPAuthorized(map<string, string>& mapHeaders)
     return TimingResistantEqual(strUserPass, strRPCUserColonPass);
 }
 
-void ErrorReply(std::ostream& stream, const UniValue& objError, const UniValue& id)
-{
+void ErrorReply(std::ostream& stream, const UniValue& objError, const UniValue& id) {
     // Send error reply from json-rpc error object
     int nStatus = HTTP_INTERNAL_SERVER_ERROR;
     int code = find_value(objError, "code").get_int();
@@ -480,31 +450,25 @@ void ErrorReply(std::ostream& stream, const UniValue& objError, const UniValue& 
     stream << HTTPReply(nStatus, strReply, false) << std::flush;
 }
 
-CNetAddr BoostAsioToCNetAddr(boost::asio::ip::address address)
-{
+CNetAddr BoostAsioToCNetAddr(boost::asio::ip::address address) {
     CNetAddr netaddr;
     // Make sure that IPv4-compatible and IPv4-mapped IPv6 addresses are treated as IPv4 addresses
     if (address.is_v6() && (address.to_v6().is_v4_compatible() || address.to_v6().is_v4_mapped()))
         address = address.to_v6().to_v4();
 
-    if (address.is_v4())
-    {
+    if (address.is_v4()) {
         boost::asio::ip::address_v4::bytes_type bytes = address.to_v4().to_bytes();
         netaddr.SetRaw(NET_IPV4, &bytes[0]);
-    }
-    else
-    {
+    } else {
         boost::asio::ip::address_v6::bytes_type bytes = address.to_v6().to_bytes();
         netaddr.SetRaw(NET_IPV6, &bytes[0]);
     }
     return netaddr;
 }
 
-bool ClientAllowed(const boost::asio::ip::address& address)
-{
+bool ClientAllowed(const boost::asio::ip::address& address) {
     CNetAddr netaddr = BoostAsioToCNetAddr(address);
-    BOOST_FOREACH(const CSubNet& subnet, rpc_allow_subnets)
-    {
+    BOOST_FOREACH(const CSubNet& subnet, rpc_allow_subnets) {
         if (subnet.Match(netaddr))
             return true;
     }
@@ -512,37 +476,32 @@ bool ClientAllowed(const boost::asio::ip::address& address)
 }
 
 template <typename Protocol>
-class AcceptedConnectionImpl : public AcceptedConnection
-{
-public:
+class AcceptedConnectionImpl : public AcceptedConnection {
+  public:
     AcceptedConnectionImpl(
         asio::io_service& io_service,
         ssl::context& context,
         bool fUseSSL) : sslStream(io_service, context),
         _d(sslStream, fUseSSL),
-        _stream(_d)
-    {
+        _stream(_d) {
     }
 
-    virtual std::iostream& stream()
-    {
+    virtual std::iostream& stream() {
         return _stream;
     }
 
-    virtual std::string peer_address_to_string() const
-    {
+    virtual std::string peer_address_to_string() const {
         return peer.address().to_string();
     }
 
-    virtual void close()
-    {
+    virtual void close() {
         _stream.close();
     }
 
     typename Protocol::endpoint peer;
     asio::ssl::stream<typename Protocol::socket> sslStream;
 
-private:
+  private:
     SSLIOStreamDevice<Protocol> _d;
     iostreams::stream<SSLIOStreamDevice<Protocol> > _stream;
 };
@@ -563,8 +522,7 @@ static void RPCAcceptHandler(boost::shared_ptr<basic_socket_acceptor<Protocol, S
 template <typename Protocol, typename SocketAcceptorService>
 static void RPCListen(boost::shared_ptr<basic_socket_acceptor<Protocol, SocketAcceptorService> > acceptor,
                       ssl::context& context,
-                      const bool fUseSSL)
-{
+                      const bool fUseSSL) {
     // Accept connection
     boost::shared_ptr<AcceptedConnectionImpl<Protocol> > conn(new AcceptedConnectionImpl<Protocol>(acceptor->get_io_service(), context, fUseSSL));
 
@@ -588,57 +546,47 @@ static void RPCAcceptHandler(boost::shared_ptr<basic_socket_acceptor<Protocol, S
                              ssl::context& context,
                              const bool fUseSSL,
                              boost::shared_ptr<AcceptedConnection> conn,
-                             const boost::system::error_code& error)
-{
+                             const boost::system::error_code& error) {
     // Immediately start accepting new connections, except when we're cancelled or our socket is closed.
     if (error != asio::error::operation_aborted && acceptor->is_open())
         RPCListen(acceptor, context, fUseSSL);
 
     AcceptedConnectionImpl<ip::tcp>* tcp_conn = dynamic_cast<AcceptedConnectionImpl<ip::tcp>*>(conn.get());
 
-    if (error)
-    {
+    if (error) {
         // TODO: Actually handle errors
         LogPrintf("%s: Error: %s\n", __func__, error.message());
     }
     // Restrict callers by IP.  It is important to
     // do this before starting client thread, to filter out
     // certain DoS and misbehaving clients.
-    else if (tcp_conn && !ClientAllowed(tcp_conn->peer.address()))
-    {
+    else if (tcp_conn && !ClientAllowed(tcp_conn->peer.address())) {
         // Only send a 403 if we're not using SSL to prevent a DoS during the SSL handshake.
         if (!fUseSSL)
             conn->stream() << HTTPError(HTTP_FORBIDDEN, false) << std::flush;
         conn->close();
-    }
-    else
-    {
+    } else {
         ServiceConnection(conn.get());
         conn->close();
     }
 }
 
-static ip::tcp::endpoint ParseEndpoint(const std::string& strEndpoint, int defaultPort)
-{
+static ip::tcp::endpoint ParseEndpoint(const std::string& strEndpoint, int defaultPort) {
     std::string addr;
     int port = defaultPort;
     SplitHostPort(strEndpoint, port, addr);
     return ip::tcp::endpoint(asio::ip::address::from_string(addr), port);
 }
 
-void StartRPCThreads()
-{
+void StartRPCThreads() {
     rpc_allow_subnets.clear();
     rpc_allow_subnets.push_back(CSubNet("127.0.0.0/8")); // always allow IPv4 local subnet
     rpc_allow_subnets.push_back(CSubNet("::1"));         // always allow IPv6 localhost
-    if (mapMultiArgs.count("-rpcallowip"))
-    {
+    if (mapMultiArgs.count("-rpcallowip")) {
         const vector<string>& vAllow = mapMultiArgs["-rpcallowip"];
-        BOOST_FOREACH(string strAllow, vAllow)
-        {
+        BOOST_FOREACH(string strAllow, vAllow) {
             CSubNet subnet(strAllow);
-            if (!subnet.IsValid())
-            {
+            if (!subnet.IsValid()) {
                 uiInterface.ThreadSafeMessageBox(
                     strprintf("Invalid -rpcallowip subnet specification: %s. Valid are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24).", strAllow),
                     "", CClientUIInterface::MSG_ERROR);
@@ -649,26 +597,21 @@ void StartRPCThreads()
         }
     }
     std::string strAllowed;
-    BOOST_FOREACH(const CSubNet& subnet, rpc_allow_subnets)
-    {
+    BOOST_FOREACH(const CSubNet& subnet, rpc_allow_subnets) {
         strAllowed += subnet.ToString() + " ";
     }
     LogPrint("rpc", "Allowing RPC connections from: %s\n", strAllowed);
 
-    if (mapArgs["-rpcpassword"] == "")
-    {
+    if (mapArgs["-rpcpassword"] == "") {
         LogPrintf("No rpcpassword set - using random cookie authentication\n");
-        if (!GenerateAuthCookie(&strRPCUserColonPass))
-        {
+        if (!GenerateAuthCookie(&strRPCUserColonPass)) {
             uiInterface.ThreadSafeMessageBox(
                 _("Error: A fatal internal error occured, see debug.log for details"), // Same message as AbortNode
                 "", CClientUIInterface::MSG_ERROR);
             StartShutdown();
             return;
         }
-    }
-    else
-    {
+    } else {
         strRPCUserColonPass = mapArgs["-rpcuser"] + ":" + mapArgs["-rpcpassword"];
     }
 
@@ -678,8 +621,7 @@ void StartRPCThreads()
 
     const bool fUseSSL = GetBoolArg("-rpcssl", false);
 
-    if (fUseSSL)
-    {
+    if (fUseSSL) {
         rpc_ssl_context->set_options(ssl::context::no_sslv2 | ssl::context::no_sslv3);
 
         filesystem::path pathCertFile(GetArg("-rpcsslcertificatechainfile", "server.cert"));
@@ -703,25 +645,17 @@ void StartRPCThreads()
     std::vector<ip::tcp::endpoint> vEndpoints;
     bool bBindAny = false;
     int defaultPort = GetArg("-rpcport", BaseParams().RPCPort());
-    if (!mapArgs.count("-rpcallowip")) // Default to loopback if not allowing external IPs
-    {
+    if (!mapArgs.count("-rpcallowip")) { // Default to loopback if not allowing external IPs
         vEndpoints.push_back(ip::tcp::endpoint(asio::ip::address_v6::loopback(), defaultPort));
         vEndpoints.push_back(ip::tcp::endpoint(asio::ip::address_v4::loopback(), defaultPort));
-        if (mapArgs.count("-rpcbind"))
-        {
+        if (mapArgs.count("-rpcbind")) {
             LogPrintf("WARNING: option -rpcbind was ignored because -rpcallowip was not specified, refusing to allow everyone to connect\n");
         }
-    }
-    else if (mapArgs.count("-rpcbind"))   // Specific bind address
-    {
-        BOOST_FOREACH(const std::string& addr, mapMultiArgs["-rpcbind"])
-        {
-            try
-            {
+    } else if (mapArgs.count("-rpcbind")) { // Specific bind address
+        BOOST_FOREACH(const std::string& addr, mapMultiArgs["-rpcbind"]) {
+            try {
                 vEndpoints.push_back(ParseEndpoint(addr, defaultPort));
-            }
-            catch (const boost::system::system_error&)
-            {
+            } catch (const boost::system::system_error&) {
                 uiInterface.ThreadSafeMessageBox(
                     strprintf(_("Could not parse -rpcbind value %s as network address"), addr),
                     "", CClientUIInterface::MSG_ERROR);
@@ -729,9 +663,7 @@ void StartRPCThreads()
                 return;
             }
         }
-    }
-    else     // No specific bind address specified, bind to any
-    {
+    } else { // No specific bind address specified, bind to any
         vEndpoints.push_back(ip::tcp::endpoint(asio::ip::address_v6::any(), defaultPort));
         vEndpoints.push_back(ip::tcp::endpoint(asio::ip::address_v4::any(), defaultPort));
         // Prefer making the socket dual IPv6/IPv4 instead of binding
@@ -742,10 +674,8 @@ void StartRPCThreads()
     bool fListening = false;
     std::string strerr;
     std::string straddress;
-    BOOST_FOREACH(const ip::tcp::endpoint& endpoint, vEndpoints)
-    {
-        try
-        {
+    BOOST_FOREACH(const ip::tcp::endpoint& endpoint, vEndpoints) {
+        try {
             asio::ip::address bindAddress = endpoint.address();
             straddress = bindAddress.to_string();
             LogPrintf("Binding RPC on address %s port %i (IPv4+IPv6 bind any: %i)\n", straddress, endpoint.port(), bBindAny);
@@ -771,16 +701,13 @@ void StartRPCThreads()
             // If dual IPv6/IPv4 bind successful, skip binding to IPv4 separately
             if (bBindAny && bindAddress == asio::ip::address_v6::any() && !v6_only_error)
                 break;
-        }
-        catch (boost::system::system_error& e)
-        {
+        } catch (boost::system::system_error& e) {
             LogPrintf("ERROR: Binding RPC on address %s port %i failed: %s\n", straddress, endpoint.port(), e.what());
             strerr = strprintf(_("An error occurred while setting up the RPC address %s port %u for listening: %s"), straddress, endpoint.port(), e.what());
         }
     }
 
-    if (!fListening)
-    {
+    if (!fListening) {
         uiInterface.ThreadSafeMessageBox(strerr, "", CClientUIInterface::MSG_ERROR);
         StartShutdown();
         return;
@@ -792,10 +719,8 @@ void StartRPCThreads()
     fRPCRunning = true;
 }
 
-void StartDummyRPCThread()
-{
-    if (rpc_io_service == NULL)
-    {
+void StartDummyRPCThread() {
+    if (rpc_io_service == NULL) {
         rpc_io_service = new asio::io_service();
         /* Create dummy "work" to keep the thread from exiting when no timeouts active,
          * see http://www.boost.org/doc/libs/1_51_0/doc/html/boost_asio/reference/io_service.html#boost_asio.reference.io_service.stopping_the_io_service_from_running_out_of_work */
@@ -806,8 +731,7 @@ void StartDummyRPCThread()
     }
 }
 
-void StopRPCThreads()
-{
+void StopRPCThreads() {
     if (rpc_io_service == NULL) return;
     // Set this to false first, so that longpolling loops will exit when woken up
     fRPCRunning = false;
@@ -816,15 +740,13 @@ void StopRPCThreads()
     // This is not done automatically by ->stop(), and in some cases the destructor of
     // asio::io_service can hang if this is skipped.
     boost::system::error_code ec;
-    BOOST_FOREACH(const boost::shared_ptr<ip::tcp::acceptor>& acceptor, rpc_acceptors)
-    {
+    BOOST_FOREACH(const boost::shared_ptr<ip::tcp::acceptor>& acceptor, rpc_acceptors) {
         acceptor->cancel(ec);
         if (ec)
             LogPrintf("%s: Warning: %s when cancelling acceptor", __func__, ec.message());
     }
     rpc_acceptors.clear();
-    BOOST_FOREACH(const PAIRTYPE(std::string, boost::shared_ptr<deadline_timer>) & timer, deadlineTimers)
-    {
+    BOOST_FOREACH(const PAIRTYPE(std::string, boost::shared_ptr<deadline_timer>) & timer, deadlineTimers) {
         timer.second->cancel(ec);
         if (ec)
             LogPrintf("%s: Warning: %s when cancelling timer", __func__, ec.message());
@@ -847,44 +769,37 @@ void StopRPCThreads()
     rpc_io_service = NULL;
 }
 
-bool IsRPCRunning()
-{
+bool IsRPCRunning() {
     return fRPCRunning;
 }
 
-void SetRPCWarmupStatus(const std::string& newStatus)
-{
+void SetRPCWarmupStatus(const std::string& newStatus) {
     LOCK(cs_rpcWarmup);
     rpcWarmupStatus = newStatus;
 }
 
-void SetRPCWarmupFinished()
-{
+void SetRPCWarmupFinished() {
     LOCK(cs_rpcWarmup);
     assert(fRPCInWarmup);
     fRPCInWarmup = false;
 }
 
-bool RPCIsInWarmup(std::string* outStatus)
-{
+bool RPCIsInWarmup(std::string* outStatus) {
     LOCK(cs_rpcWarmup);
     if (outStatus)
         *outStatus = rpcWarmupStatus;
     return fRPCInWarmup;
 }
 
-void RPCRunHandler(const boost::system::error_code& err, boost::function<void(void)> func)
-{
+void RPCRunHandler(const boost::system::error_code& err, boost::function<void(void)> func) {
     if (!err)
         func();
 }
 
-void RPCRunLater(const std::string& name, boost::function<void(void)> func, int64_t nSeconds)
-{
+void RPCRunLater(const std::string& name, boost::function<void(void)> func, int64_t nSeconds) {
     assert(rpc_io_service != NULL);
 
-    if (deadlineTimers.count(name) == 0)
-    {
+    if (deadlineTimers.count(name) == 0) {
         deadlineTimers.insert(make_pair(name,
                                         boost::shared_ptr<deadline_timer>(new deadline_timer(*rpc_io_service))));
     }
@@ -892,22 +807,19 @@ void RPCRunLater(const std::string& name, boost::function<void(void)> func, int6
     deadlineTimers[name]->async_wait(boost::bind(RPCRunHandler, _1, func));
 }
 
-class JSONRequest
-{
-public:
+class JSONRequest {
+  public:
     UniValue id;
     string strMethod;
     UniValue params;
 
-    JSONRequest()
-    {
+    JSONRequest() {
         id = NullUniValue;
     }
     void parse(const UniValue& valRequest);
 };
 
-void JSONRequest::parse(const UniValue& valRequest)
-{
+void JSONRequest::parse(const UniValue& valRequest) {
     // Parse request
     if (!valRequest.isObject())
         throw JSONRPCError(RPC_INVALID_REQUEST, "Invalid Request object");
@@ -937,24 +849,18 @@ void JSONRequest::parse(const UniValue& valRequest)
 }
 
 
-static UniValue JSONRPCExecOne(const UniValue& req)
-{
+static UniValue JSONRPCExecOne(const UniValue& req) {
     UniValue rpc_result(UniValue::VOBJ);
 
     JSONRequest jreq;
-    try
-    {
+    try {
         jreq.parse(req);
 
         UniValue result = tableRPC.execute(jreq.strMethod, jreq.params);
         rpc_result = JSONRPCReplyObj(result, NullUniValue, jreq.id);
-    }
-    catch (const UniValue& objError)
-    {
+    } catch (const UniValue& objError) {
         rpc_result = JSONRPCReplyObj(NullUniValue, objError, jreq.id);
-    }
-    catch (std::exception& e)
-    {
+    } catch (std::exception& e) {
         rpc_result = JSONRPCReplyObj(NullUniValue,
                                      JSONRPCError(RPC_PARSE_ERROR, e.what()), jreq.id);
     }
@@ -962,8 +868,7 @@ static UniValue JSONRPCExecOne(const UniValue& req)
     return rpc_result;
 }
 
-static string JSONRPCExecBatch(const UniValue& vReq)
-{
+static string JSONRPCExecBatch(const UniValue& vReq) {
     UniValue ret(UniValue::VARR);
     for (unsigned int reqIdx = 0; reqIdx < vReq.size(); reqIdx++)
         ret.push_back(JSONRPCExecOne(vReq[reqIdx]));
@@ -974,17 +879,14 @@ static string JSONRPCExecBatch(const UniValue& vReq)
 static bool HTTPReq_JSONRPC(AcceptedConnection* conn,
                             string& strRequest,
                             map<string, string>& mapHeaders,
-                            bool fRun)
-{
+                            bool fRun) {
     // Check authorization
-    if (mapHeaders.count("authorization") == 0)
-    {
+    if (mapHeaders.count("authorization") == 0) {
         conn->stream() << HTTPError(HTTP_UNAUTHORIZED, false) << std::flush;
         return false;
     }
 
-    if (!HTTPAuthorized(mapHeaders))
-    {
+    if (!HTTPAuthorized(mapHeaders)) {
         LogPrintf("ThreadRPCServer incorrect password attempt from %s\n", conn->peer_address_to_string());
         /* Deter brute-forcing
            If this results in a DoS the user really
@@ -996,8 +898,7 @@ static bool HTTPReq_JSONRPC(AcceptedConnection* conn,
     }
 
     JSONRequest jreq;
-    try
-    {
+    try {
         // Parse request
         UniValue valRequest;
         if (!valRequest.read(strRequest))
@@ -1013,8 +914,7 @@ static bool HTTPReq_JSONRPC(AcceptedConnection* conn,
         string strReply;
 
         // singleton request
-        if (valRequest.isObject())
-        {
+        if (valRequest.isObject()) {
             jreq.parse(valRequest);
 
             UniValue result = tableRPC.execute(jreq.strMethod, jreq.params);
@@ -1023,32 +923,25 @@ static bool HTTPReq_JSONRPC(AcceptedConnection* conn,
             strReply = JSONRPCReply(result, NullUniValue, jreq.id);
 
             // array of requests
-        }
-        else if (valRequest.isArray())
+        } else if (valRequest.isArray())
             strReply = JSONRPCExecBatch(valRequest.get_array());
         else
             throw JSONRPCError(RPC_PARSE_ERROR, "Top-level object parse error");
 
         conn->stream() << HTTPReplyHeader(HTTP_OK, fRun, strReply.size()) << strReply << std::flush;
-    }
-    catch (const UniValue& objError)
-    {
+    } catch (const UniValue& objError) {
         ErrorReply(conn->stream(), objError, jreq.id);
         return false;
-    }
-    catch (std::exception& e)
-    {
+    } catch (std::exception& e) {
         ErrorReply(conn->stream(), JSONRPCError(RPC_PARSE_ERROR, e.what()), jreq.id);
         return false;
     }
     return true;
 }
 
-void ServiceConnection(AcceptedConnection* conn)
-{
+void ServiceConnection(AcceptedConnection* conn) {
     bool fRun = true;
-    while (fRun && !ShutdownRequested())
-    {
+    while (fRun && !ShutdownRequested()) {
         int nProto = 0;
         map<string, string> mapHeaders;
         string strRequest, strMethod, strURI;
@@ -1065,29 +958,23 @@ void ServiceConnection(AcceptedConnection* conn)
             fRun = false;
 
         // Process via JSON-RPC API
-        if (strURI == "/")
-        {
+        if (strURI == "/") {
             if (!HTTPReq_JSONRPC(conn, strRequest, mapHeaders, fRun))
                 break;
 
             // Process via HTTP REST API
-        }
-        else if (strURI.substr(0, 6) == "/rest/" && GetBoolArg("-rest", false))
-        {
+        } else if (strURI.substr(0, 6) == "/rest/" && GetBoolArg("-rest", false)) {
             if (!HTTPReq_REST(conn, strURI, mapHeaders, fRun))
                 break;
 
-        }
-        else
-        {
+        } else {
             conn->stream() << HTTPError(HTTP_NOT_FOUND, false) << std::flush;
             break;
         }
     }
 }
 
-UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params) const
-{
+UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params) const {
     // Find method
     const CRPCCommand* pcmd = tableRPC[strMethod];
     if (!pcmd)
@@ -1103,34 +990,26 @@ UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params
             !pcmd->okSafeMode)
         throw JSONRPCError(RPC_FORBIDDEN_BY_SAFE_MODE, string("Safe mode: ") + strWarning);
 
-    try
-    {
+    try {
         // Execute
         UniValue result;
         {
             if (pcmd->threadSafe)
                 result = pcmd->actor(params, false);
 #ifdef ENABLE_WALLET
-            else if (!pwalletMain)
-            {
+            else if (!pwalletMain) {
                 LOCK(cs_main);
                 result = pcmd->actor(params, false);
-            }
-            else
-            {
-                while (true)
-                {
+            } else {
+                while (true) {
                     TRY_LOCK(cs_main, lockMain);
-                    if (!lockMain)
-                    {
+                    if (!lockMain) {
                         MilliSleep(50);
                         continue;
                     }
-                    while (true)
-                    {
+                    while (true) {
                         TRY_LOCK(pwalletMain->cs_wallet, lockWallet);
-                        if (!lockMain)
-                        {
+                        if (!lockMain) {
                             MilliSleep(50);
                             continue;
                         }
@@ -1141,23 +1020,19 @@ UniValue CRPCTable::execute(const std::string &strMethod, const UniValue &params
                 }
             }
 #else  // ENABLE_WALLET
-            else
-            {
+            else {
                 LOCK(cs_main);
                 result = pcmd->actor(params, false);
             }
 #endif // !ENABLE_WALLET
         }
         return result;
-    }
-    catch (std::exception& e)
-    {
+    } catch (std::exception& e) {
         throw JSONRPCError(RPC_MISC_ERROR, e.what());
     }
 }
 
-std::vector<std::string> CRPCTable::listCommands() const
-{
+std::vector<std::string> CRPCTable::listCommands() const {
     std::vector<std::string> commandList;
     typedef std::map<std::string, const CRPCCommand*> commandMap;
 
@@ -1167,13 +1042,11 @@ std::vector<std::string> CRPCTable::listCommands() const
     return commandList;
 }
 
-std::string HelpExampleCli(string methodname, string args)
-{
+std::string HelpExampleCli(string methodname, string args) {
     return "> bulwark-cli " + methodname + " " + args + "\n";
 }
 
-std::string HelpExampleRpc(string methodname, string args)
-{
+std::string HelpExampleRpc(string methodname, string args) {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
            methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:51473/\n";

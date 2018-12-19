@@ -4,34 +4,28 @@
 
 #include "primitives/zerocoin.h"
 
-void CZerocoinSpendReceipt::AddSpend(const CZerocoinSpend& spend)
-{
+void CZerocoinSpendReceipt::AddSpend(const CZerocoinSpend& spend) {
     vSpends.emplace_back(spend);
 }
 
-std::vector<CZerocoinSpend> CZerocoinSpendReceipt::GetSpends()
-{
+std::vector<CZerocoinSpend> CZerocoinSpendReceipt::GetSpends() {
     return vSpends;
 }
 
-void CZerocoinSpendReceipt::SetStatus(std::string strStatus, int nStatus, int nNeededSpends)
-{
+void CZerocoinSpendReceipt::SetStatus(std::string strStatus, int nStatus, int nNeededSpends) {
     strStatusMessage = strStatus;
     this->nStatus = nStatus;
     this->nNeededSpends = nNeededSpends;
 }
 
-std::string CZerocoinSpendReceipt::GetStatusMessage()
-{
+std::string CZerocoinSpendReceipt::GetStatusMessage() {
     return strStatusMessage;
 }
 
-int CZerocoinSpendReceipt::GetStatus()
-{
+int CZerocoinSpendReceipt::GetStatus() {
     return nStatus;
 }
 
-int CZerocoinSpendReceipt::GetNeededSpends()
-{
+int CZerocoinSpendReceipt::GetNeededSpends() {
     return nNeededSpends;
 }

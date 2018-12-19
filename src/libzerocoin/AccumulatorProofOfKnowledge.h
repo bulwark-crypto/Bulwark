@@ -18,15 +18,13 @@
 #include "Accumulator.h"
 #include "Commitment.h"
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 
 /**
  * A prove that a value insde the commitment commitmentToCoin is in an accumulator a.
  */
-class AccumulatorProofOfKnowledge
-{
-public:
+class AccumulatorProofOfKnowledge {
+  public:
     AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p);
 
     /** Generates a proof that a commitment to a coin c was accumulated
@@ -41,8 +39,7 @@ public:
     bool Verify(const Accumulator& a,const CBigNum& valueOfCommitmentToCoin) const;
 
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(C_e);
         READWRITE(C_u);
         READWRITE(C_r);
@@ -65,7 +62,7 @@ public:
         READWRITE(s_gamma);
         READWRITE(s_psi);
     }
-private:
+  private:
     const AccumulatorAndProofParams* params;
 
     /* Return values for proof */

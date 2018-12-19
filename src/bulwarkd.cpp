@@ -37,17 +37,14 @@
 
 static bool fDaemon;
 
-void DetectShutdownThread(boost::thread_group* threadGroup)
-{
+void DetectShutdownThread(boost::thread_group* threadGroup) {
     bool fShutdown = ShutdownRequested();
     // Tell the main threads to shutdown.
-    while (!fShutdown)
-    {
+    while (!fShutdown) {
         MilliSleep(200);
         fShutdown = ShutdownRequested();
     }
-    if (threadGroup)
-    {
+    if (threadGroup) {
         threadGroup->interrupt_all();
         threadGroup->join_all();
     }
@@ -57,8 +54,7 @@ void DetectShutdownThread(boost::thread_group* threadGroup)
 //
 // Start
 //
-bool AppInit(int argc, char* argv[])
-{
+bool AppInit(int argc, char* argv[]) {
     boost::thread_group threadGroup;
     boost::thread* detectShutdownThread = NULL;
 
@@ -71,16 +67,12 @@ bool AppInit(int argc, char* argv[])
     ParseParameters(argc, argv);
 
     // Process help and version before taking care about datadir
-    if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version"))
-    {
+    if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
         std::string strUsage = _("Bulwark Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
 
-        if (mapArgs.count("-version"))
-        {
+        if (mapArgs.count("-version")) {
             strUsage += LicenseInfo();
-        }
-        else
-        {
+        } else {
             strUsage += "\n" + _("Usage:") + "\n" +
                         "  bulwarkd [options]                     " + _("Start Bulwark Core Daemon") + "\n";
 
@@ -91,33 +83,26 @@ bool AppInit(int argc, char* argv[])
         return false;
     }
 
-    try
-    {
-        if (!boost::filesystem::is_directory(GetDataDir(false)))
-        {
+    try {
+        if (!boost::filesystem::is_directory(GetDataDir(false))) {
             fprintf(stderr, "Error: Specified data directory \"%s\" does not exist.\n", mapArgs["-datadir"].c_str());
             return false;
         }
-        try
-        {
+        try {
             ReadConfigFile(mapArgs, mapMultiArgs);
-        }
-        catch (std::exception& e)
-        {
+        } catch (std::exception& e) {
             fprintf(stderr, "Error reading configuration file: %s\n", e.what());
             return false;
         }
         // Check for -testnet or -regtest parameter (Params() calls are only valid after this clause)
-        if (!SelectParamsFromCommandLine())
-        {
+        if (!SelectParamsFromCommandLine()) {
             fprintf(stderr, "Error: Invalid combination of -regtest and -testnet.\n");
             return false;
         }
 
         // parse masternode.conf
         std::string strErr;
-        if (!masternodeConfig.read(strErr))
-        {
+        if (!masternodeConfig.read(strErr)) {
             fprintf(stderr, "Error reading masternode configuration file: %s\n", strErr.c_str());
             return false;
         }
@@ -128,26 +113,22 @@ bool AppInit(int argc, char* argv[])
             if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "bulwark:"))
                 fCommandLine = true;
 
-        if (fCommandLine)
-        {
+        if (fCommandLine) {
             fprintf(stderr, "Error: There is no RPC client functionality in bulwarkd anymore. Use the bulwark-cli utility instead.\n");
             exit(1);
         }
 #ifndef WIN32
         fDaemon = GetBoolArg("-daemon", false);
-        if (fDaemon)
-        {
+        if (fDaemon) {
             fprintf(stdout, "Bulwark server starting\n");
 
             // Daemonize
             pid_t pid = fork();
-            if (pid < 0)
-            {
+            if (pid < 0) {
                 fprintf(stderr, "Error: fork() returned %d errno %d\n", pid, errno);
                 return false;
             }
-            if (pid > 0) // Parent process, pid is child process id
-            {
+            if (pid > 0) { // Parent process, pid is child process id
                 return true;
             }
             // Child process falls through to rest of initialization
@@ -161,18 +142,13 @@ bool AppInit(int argc, char* argv[])
 
         detectShutdownThread = new boost::thread(boost::bind(&DetectShutdownThread, &threadGroup));
         fRet = AppInit2(threadGroup);
-    }
-    catch (std::exception& e)
-    {
+    } catch (std::exception& e) {
         PrintExceptionContinue(&e, "AppInit()");
-    }
-    catch (...)
-    {
+    } catch (...) {
         PrintExceptionContinue(NULL, "AppInit()");
     }
 
-    if (!fRet)
-    {
+    if (!fRet) {
         if (detectShutdownThread)
             detectShutdownThread->interrupt();
 
@@ -182,8 +158,7 @@ bool AppInit(int argc, char* argv[])
         // thread-blocking-waiting-for-another-thread-during-startup case
     }
 
-    if (detectShutdownThread)
-    {
+    if (detectShutdownThread) {
         detectShutdownThread->join();
         delete detectShutdownThread;
         detectShutdownThread = NULL;
@@ -193,8 +168,7 @@ bool AppInit(int argc, char* argv[])
     return fRet;
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     SetupEnvironment();
 
     // Connect bulwarkd signal handlers

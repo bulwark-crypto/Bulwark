@@ -17,15 +17,14 @@ QT_END_NAMESPACE
 
 /** Widget for entering bitcoin amounts.
   */
-class BitcoinAmountField : public QWidget
-{
+class BitcoinAmountField : public QWidget {
     Q_OBJECT
 
     // ugly hack: for some unknown reason CAmount (instead of qint64) does not work here as expected
     // discussion: https://github.com/bitcoin/bitcoin/pull/5117
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
-public:
+  public:
     explicit BitcoinAmountField(QWidget* parent = 0);
 
     CAmount value(bool* value = 0) const;
@@ -56,18 +55,18 @@ public:
     */
     QWidget* setupTabChain(QWidget* prev);
 
-signals:
+  signals:
     void valueChanged();
 
-protected:
+  protected:
     /** Intercept focus-in event and ',' key presses */
     bool eventFilter(QObject* object, QEvent* event);
 
-private:
+  private:
     AmountSpinBox* amount;
     QValueComboBox* unit;
 
-private slots:
+  private slots:
     void unitChanged(int idx);
 };
 

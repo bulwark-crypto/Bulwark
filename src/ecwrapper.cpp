@@ -12,15 +12,13 @@
 
 #include "bignum.h"
 
-namespace
-{
+namespace {
 /**
  * Perform ECDSA key recovery (see SEC1 4.1.6) for curves over (mod p)-fields
  * recid selects which key is recovered
  * if check is non-zero, additional checks are performed
  */
-int ECDSA_SIG_recover_key_GFp(EC_KEY* eckey, ECDSA_SIG* ecsig, const unsigned char* msg, int msglen, int recid, int check)
-{
+int ECDSA_SIG_recover_key_GFp(EC_KEY* eckey, ECDSA_SIG* ecsig, const unsigned char* msg, int msglen, int recid, int check) {
     if (!eckey) return 0;
 
     int ret = 0;
@@ -46,137 +44,112 @@ int ECDSA_SIG_recover_key_GFp(EC_KEY* eckey, ECDSA_SIG* ecsig, const unsigned ch
 #endif
 
     const EC_GROUP* group = EC_KEY_get0_group(eckey);
-    if ((ctx = BN_CTX_new()) == NULL)
-    {
+    if ((ctx = BN_CTX_new()) == NULL) {
         ret = -1;
         goto err;
     }
     BN_CTX_start(ctx);
     order = BN_CTX_get(ctx);
-    if (!EC_GROUP_get_order(group, order, ctx))
-    {
+    if (!EC_GROUP_get_order(group, order, ctx)) {
         ret = -2;
         goto err;
     }
     x = BN_CTX_get(ctx);
-    if (!BN_copy(x, order))
-    {
+    if (!BN_copy(x, order)) {
         ret = -1;
         goto err;
     }
-    if (!BN_mul_word(x, i))
-    {
+    if (!BN_mul_word(x, i)) {
         ret = -1;
         goto err;
     }
 #if OPENSSL_VERSION_NUMER >= 0x10100000L
-    if (!BN_add(x, x, sig_r))
-    {
+    if (!BN_add(x, x, sig_r)) {
 #else
-    if (!BN_add(x, x, ecsig->r))
-    {
+    if (!BN_add(x, x, ecsig->r)) {
 #endif
         ret = -1;
         goto err;
     }
     field = BN_CTX_get(ctx);
-    if (!EC_GROUP_get_curve_GFp(group, field, NULL, NULL, ctx))
-    {
+    if (!EC_GROUP_get_curve_GFp(group, field, NULL, NULL, ctx)) {
         ret = -2;
         goto err;
     }
-    if (BN_cmp(x, field) >= 0)
-    {
+    if (BN_cmp(x, field) >= 0) {
         ret = 0;
         goto err;
     }
-    if ((R = EC_POINT_new(group)) == NULL)
-    {
+    if ((R = EC_POINT_new(group)) == NULL) {
         ret = -2;
         goto err;
     }
-    if (!EC_POINT_set_compressed_coordinates_GFp(group, R, x, recid % 2, ctx))
-    {
+    if (!EC_POINT_set_compressed_coordinates_GFp(group, R, x, recid % 2, ctx)) {
         ret = 0;
         goto err;
     }
-    if (check)
-    {
-        if ((O = EC_POINT_new(group)) == NULL)
-        {
+    if (check) {
+        if ((O = EC_POINT_new(group)) == NULL) {
             ret = -2;
             goto err;
         }
-        if (!EC_POINT_mul(group, O, NULL, R, order, ctx))
-        {
+        if (!EC_POINT_mul(group, O, NULL, R, order, ctx)) {
             ret = -2;
             goto err;
         }
-        if (!EC_POINT_is_at_infinity(group, O))
-        {
+        if (!EC_POINT_is_at_infinity(group, O)) {
             ret = 0;
             goto err;
         }
     }
-    if ((Q = EC_POINT_new(group)) == NULL)
-    {
+    if ((Q = EC_POINT_new(group)) == NULL) {
         ret = -2;
         goto err;
     }
     n = EC_GROUP_get_degree(group);
     e = BN_CTX_get(ctx);
-    if (!BN_bin2bn(msg, msglen, e))
-    {
+    if (!BN_bin2bn(msg, msglen, e)) {
         ret = -1;
         goto err;
     }
     if (8 * msglen > n) BN_rshift(e, e, 8 - (n & 7));
     zero = BN_CTX_get(ctx);
-    if (!BN_zero(zero))
-    {
+    if (!BN_zero(zero)) {
         ret = -1;
         goto err;
     }
-    if (!BN_mod_sub(e, zero, e, order, ctx))
-    {
+    if (!BN_mod_sub(e, zero, e, order, ctx)) {
         ret = -1;
         goto err;
     }
     rr = BN_CTX_get(ctx);
 #if OPENSSL_VERSION_NUMBER >= 0x10100000L
-    if (!BN_mod_inverse(rr, sig_r, order, ctx))
-    {
+    if (!BN_mod_inverse(rr, sig_r, order, ctx)) {
 #else
-    if (!BN_mod_inverse(rr, ecsig->r, order, ctx))
-    {
+    if (!BN_mod_inverse(rr, ecsig->r, order, ctx)) {
 #endif
         ret = -1;
         goto err;
     }
     sor = BN_CTX_get(ctx);
 #if OPENSSL_VERSION_NUMBER >= 0x10100000L
-    if (!BN_mod_mul(sor, sig_r, rr, order, ctx))
-    {
+    if (!BN_mod_mul(sor, sig_r, rr, order, ctx)) {
 #else
-    if (!BN_mod_mul(sor, ecsig->s, rr, order, ctx))
-    {
+    if (!BN_mod_mul(sor, ecsig->s, rr, order, ctx)) {
 #endif
         ret = -1;
         goto err;
     }
     eor = BN_CTX_get(ctx);
-    if (!BN_mod_mul(eor, e, rr, order, ctx))
-    {
+    if (!BN_mod_mul(eor, e, rr, order, ctx)) {
         ret = -1;
         goto err;
     }
-    if (!EC_POINT_mul(group, Q, eor, R, sor, ctx))
-    {
+    if (!EC_POINT_mul(group, Q, eor, R, sor, ctx)) {
         ret = -2;
         goto err;
     }
-    if (!EC_KEY_set_public_key(eckey, Q))
-    {
+    if (!EC_KEY_set_public_key(eckey, Q)) {
         ret = -2;
         goto err;
     }
@@ -184,8 +157,7 @@ int ECDSA_SIG_recover_key_GFp(EC_KEY* eckey, ECDSA_SIG* ecsig, const unsigned ch
     ret = 1;
 
 err:
-    if (ctx)
-    {
+    if (ctx) {
         BN_CTX_end(ctx);
         BN_CTX_free(ctx);
     }
@@ -197,19 +169,16 @@ err:
 
 } // anon namespace
 
-CECKey::CECKey()
-{
+CECKey::CECKey() {
     pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
     assert(pkey != NULL);
 }
 
-CECKey::~CECKey()
-{
+CECKey::~CECKey() {
     EC_KEY_free(pkey);
 }
 
-void CECKey::GetPubKey(std::vector<unsigned char>& pubkey, bool fCompressed)
-{
+void CECKey::GetPubKey(std::vector<unsigned char>& pubkey, bool fCompressed) {
     EC_KEY_set_conv_form(pkey, fCompressed ? POINT_CONVERSION_COMPRESSED : POINT_CONVERSION_UNCOMPRESSED);
     int nSize = i2o_ECPublicKey(pkey, NULL);
     assert(nSize);
@@ -221,13 +190,11 @@ void CECKey::GetPubKey(std::vector<unsigned char>& pubkey, bool fCompressed)
     assert(nSize == nSize2);
 }
 
-bool CECKey::SetPubKey(const unsigned char* pubkey, size_t size)
-{
+bool CECKey::SetPubKey(const unsigned char* pubkey, size_t size) {
     return o2i_ECPublicKey(&pkey, &pubkey, size) != NULL;
 }
 
-bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSig)
-{
+bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSig) {
     if (vchSig.empty())
         return false;
 
@@ -236,8 +203,7 @@ bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSi
     ECDSA_SIG* norm_sig = ECDSA_SIG_new();
     const unsigned char* sigptr = &vchSig[0];
     assert(norm_sig);
-    if (d2i_ECDSA_SIG(&norm_sig, &sigptr, vchSig.size()) == NULL)
-    {
+    if (d2i_ECDSA_SIG(&norm_sig, &sigptr, vchSig.size()) == NULL) {
         /* As of OpenSSL 1.0.0p d2i_ECDSA_SIG frees and nulls the pointer on
          * error. But OpenSSL's own use of this function redundantly frees the
          * result. As ECDSA_SIG_free(NULL) is a no-op, and in the absence of a
@@ -258,8 +224,7 @@ bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSi
     return ret;
 }
 
-bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
-{
+bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec) {
     if (rec < 0 || rec >= 3)
         return false;
     ECDSA_SIG* sig = ECDSA_SIG_new();
@@ -268,8 +233,7 @@ bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
     BIGNUM *sig_s = NULL;
     if (!(sig_r = BN_bin2bn(&p64[0],  32, nullptr)) ||
             !(sig_s = BN_bin2bn(&p64[32], 32, nullptr)) ||
-            !ECDSA_SIG_set0(sig, sig_r, sig_s))
-    {
+            !ECDSA_SIG_set0(sig, sig_r, sig_s)) {
         BN_free(sig_r);
         BN_free(sig_s);
         return false;
@@ -283,8 +247,7 @@ bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
     return ret;
 }
 
-bool CECKey::TweakPublic(const unsigned char vchTweak[32])
-{
+bool CECKey::TweakPublic(const unsigned char vchTweak[32]) {
     bool ret = true;
     BN_CTX* ctx = BN_CTX_new();
     BN_CTX_start(ctx);
@@ -308,8 +271,7 @@ bool CECKey::TweakPublic(const unsigned char vchTweak[32])
     return ret;
 }
 
-bool CECKey::SanityCheck()
-{
+bool CECKey::SanityCheck() {
     EC_KEY* pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
     if (pkey == NULL)
         return false;

@@ -16,12 +16,10 @@
 #include "bignum.h"
 #include "ZerocoinDefines.h"
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 
-class IntegerGroupParams
-{
-public:
+class IntegerGroupParams {
+  public:
     /** @brief Integer group class, default constructor
     *
     * Allocates an empty (uninitialized) set of parameters.
@@ -58,8 +56,7 @@ public:
     CBigNum groupOrder;
 
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(initialized);
         READWRITE(g);
         READWRITE(h);
@@ -68,9 +65,8 @@ public:
     }
 };
 
-class AccumulatorAndProofParams
-{
-public:
+class AccumulatorAndProofParams {
+  public:
     /** @brief Construct a set of Zerocoin parameters from a modulus "N".
     * @param N                A trusted RSA modulus
     * @param securityLevel    A security level expressed in symmetric bits (default 80)
@@ -143,8 +139,7 @@ public:
      */
     uint32_t k_dprime;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(initialized);
         READWRITE(accumulatorModulus);
         READWRITE(accumulatorBase);
@@ -157,9 +152,8 @@ public:
     }
 };
 
-class ZerocoinParams
-{
-public:
+class ZerocoinParams {
+  public:
     /** @brief Construct a set of Zerocoin parameters from a modulus "N".
     * @param N                A trusted RSA modulus
     * @param securityLevel    A security level expressed in symmetric bits (default 80)
@@ -210,8 +204,7 @@ public:
     uint32_t zkp_hash_len;
 
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(initialized);
         READWRITE(accumulatorParams);
         READWRITE(coinCommitmentGroup);

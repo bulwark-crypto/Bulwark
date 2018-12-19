@@ -25,16 +25,14 @@
 // A 512-bit security parameter for the statistical ZK PoK.
 #define COMMITMENT_EQUALITY_SECMARGIN       512
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 
 /**
  * A commitment, complete with contents and opening randomness.
  * These should remain secret. Publish only the commitment value.
  */
-class Commitment
-{
-public:
+class Commitment {
+  public:
     /**Generates a Pedersen commitment to the given value.
      *
      * @param p the group parameters for the coin
@@ -44,14 +42,13 @@ public:
     const CBigNum& getCommitmentValue() const;
     const CBigNum& getRandomness() const;
     const CBigNum& getContents() const;
-private:
+  private:
     const IntegerGroupParams *params;
     CBigNum commitmentValue;
     CBigNum randomness;
     const CBigNum contents;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(commitmentValue);
         READWRITE(randomness);
         READWRITE(contents);
@@ -61,9 +58,8 @@ private:
 /**
  * Proof that two commitments open to the same value.
  */
-class CommitmentProofOfKnowledge
-{
-public:
+class CommitmentProofOfKnowledge {
+  public:
     CommitmentProofOfKnowledge(const IntegerGroupParams* ap, const IntegerGroupParams* bp);
     /** Generates a proof that two commitments, a and b, open to the same value.
      *
@@ -76,8 +72,7 @@ public:
     //FIXME: is it best practice that this is here?
     template<typename Stream>
     CommitmentProofOfKnowledge(const IntegerGroupParams* aParams,
-                               const IntegerGroupParams* bParams, Stream& strm): ap(aParams), bp(bParams)
-    {
+                               const IntegerGroupParams* bParams, Stream& strm): ap(aParams), bp(bParams) {
         strm >> *this;
     }
 
@@ -98,14 +93,13 @@ public:
      */
     bool Verify(const CBigNum& A, const CBigNum& B) const;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(S1);
         READWRITE(S2);
         READWRITE(S3);
         READWRITE(challenge);
     }
-private:
+  private:
     const IntegerGroupParams *ap, *bp;
 
     CBigNum S1, S2, S3, challenge;

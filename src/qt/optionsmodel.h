@@ -19,15 +19,13 @@ QT_END_NAMESPACE
    This can be changed to a tree once the settings become sufficiently
    complex.
  */
-class OptionsModel : public QAbstractListModel
-{
+class OptionsModel : public QAbstractListModel {
     Q_OBJECT
 
-public:
+  public:
     explicit OptionsModel(QObject* parent = 0);
 
-    enum OptionID
-    {
+    enum OptionID {
         StartAtStartup,      // bool
         MinimizeToTray,      // bool
         MapPortUPnP,         // bool
@@ -63,29 +61,23 @@ public:
     void setDisplayUnit(const QVariant& value);
 
     /* Explicit getters */
-    bool getMinimizeToTray()
-    {
+    bool getMinimizeToTray() {
         return fMinimizeToTray;
     }
-    bool getMinimizeOnClose()
-    {
+    bool getMinimizeOnClose() {
         return fMinimizeOnClose;
     }
-    int getDisplayUnit()
-    {
+    int getDisplayUnit() {
         return nDisplayUnit;
     }
-    QString getThirdPartyTxUrls()
-    {
+    QString getThirdPartyTxUrls() {
         return strThirdPartyTxUrls;
     }
     bool getProxySettings(QNetworkProxy& proxy) const;
-    bool getCoinControlFeatures()
-    {
+    bool getCoinControlFeatures() {
         return fCoinControlFeatures;
     }
-    const QString& getOverriddenByCommandLine()
-    {
+    const QString& getOverriddenByCommandLine() {
         return strOverriddenByCommandLine;
     }
 
@@ -94,7 +86,7 @@ public:
     bool isRestartRequired();
     bool resetSettings;
 
-private:
+  private:
     /* Qt-only settings */
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
@@ -109,7 +101,7 @@ private:
     /// Add option to list of GUI options overridden through command line/config file
     void addOverriddenOption(const std::string& option);
 
-signals:
+  signals:
     void displayUnitChanged(int unit);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);

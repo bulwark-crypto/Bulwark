@@ -47,25 +47,22 @@
 /** Bulwark unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class BitcoinUnits : public QAbstractListModel
-{
+class BitcoinUnits : public QAbstractListModel {
     Q_OBJECT
 
-public:
+  public:
     explicit BitcoinUnits(QObject* parent);
 
     /** Bulwark units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
-    enum Unit
-    {
+    enum Unit {
         BWK,
         mBWK,
         uBWK
     };
 
-    enum SeparatorStyle
-    {
+    enum SeparatorStyle {
         separatorNever,
         separatorStandard,
         separatorAlways
@@ -107,8 +104,7 @@ public:
     //! @name AbstractListModel implementation
     //! List model for unit drop-down selection box.
     ///@{
-    enum RoleIndex
-    {
+    enum RoleIndex {
         /** Unit identifier */
         UnitRole = Qt::UserRole
     };
@@ -116,8 +112,7 @@ public:
     QVariant data(const QModelIndex& index, int role) const;
     ///@}
 
-    static QString removeSpaces(QString text)
-    {
+    static QString removeSpaces(QString text) {
         text.remove(' ');
         text.remove(QChar(THIN_SP_CP));
 #if (THIN_SP_CP != REAL_THIN_SP_CP)
@@ -129,7 +124,7 @@ public:
     //! Return maximum number of base units (Satoshis)
     static CAmount maxMoney();
 
-private:
+  private:
     QList<BitcoinUnits::Unit> unitlist;
 };
 typedef BitcoinUnits::Unit BitcoinUnit;

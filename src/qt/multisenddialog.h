@@ -3,28 +3,26 @@
 
 #include <QDialog>
 
-namespace Ui
-{
+namespace Ui {
 class MultiSendDialog;
 }
 
 class WalletModel;
-class MultiSendDialog : public QDialog
-{
+class MultiSendDialog : public QDialog {
     Q_OBJECT
     void updateStatus();
     void updateCheckBoxes();
 
-private:
+  private:
     Ui::MultiSendDialog* ui;
     WalletModel* model;
 
-public:
+  public:
     explicit MultiSendDialog(QWidget* parent = 0);
     ~MultiSendDialog();
     void setModel(WalletModel* model);
 
-private slots:
+  private slots:
     void addAddress(std::string address, bool onLoad);
     void deleteFrame();
     void on_activateButton_clicked();

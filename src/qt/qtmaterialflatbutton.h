@@ -7,8 +7,7 @@
 
 class QtMaterialFlatButtonPrivate;
 
-class QtMaterialFlatButton : public QPushButton
-{
+class QtMaterialFlatButton : public QPushButton {
     Q_OBJECT
 
     Q_PROPERTY(QColor foregroundColor WRITE setForegroundColor READ foregroundColor)
@@ -18,7 +17,7 @@ class QtMaterialFlatButton : public QPushButton
     Q_PROPERTY(QColor disabledBackgroundColor WRITE setDisabledBackgroundColor READ disabledBackgroundColor)
     Q_PROPERTY(qreal fontSize WRITE setFontSize READ fontSize)
 
-public:
+  public:
     explicit QtMaterialFlatButton(QWidget *parent = 0, Material::ButtonPreset preset = Material::FlatPreset);
     explicit QtMaterialFlatButton(const QString &text, QWidget *parent = 0, Material::ButtonPreset preset = Material::FlatPreset);
     QtMaterialFlatButton(const QString &text, Material::Role role, QWidget *parent = 0, Material::ButtonPreset preset = Material::FlatPreset);
@@ -83,9 +82,8 @@ public:
 
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
-protected:
-    enum
-    {
+  protected:
+    enum {
         IconPadding = 12
     };
 
@@ -105,7 +103,7 @@ protected:
 
     const QScopedPointer<QtMaterialFlatButtonPrivate> d_ptr;
 
-private:
+  private:
     Q_DISABLE_COPY(QtMaterialFlatButton)
     Q_DECLARE_PRIVATE(QtMaterialFlatButton)
 };

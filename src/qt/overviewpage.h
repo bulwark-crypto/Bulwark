@@ -14,8 +14,7 @@ class TransactionFilterProxy;
 class TxViewDelegate;
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class OverviewPage;
 }
 
@@ -24,11 +23,10 @@ class QModelIndex;
 QT_END_NAMESPACE
 
 /** Overview ("home") page widget */
-class OverviewPage : public QWidget
-{
+class OverviewPage : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit OverviewPage(QWidget* parent = 0);
     ~OverviewPage();
 
@@ -36,15 +34,15 @@ public:
     void setWalletModel(WalletModel* walletModel);
     void showOutOfSyncWarning(bool fShow);
 
-public slots:
+  public slots:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
                     const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 
-signals:
+  signals:
     void transactionClicked(const QModelIndex& index);
 
-private:
+  private:
     QTimer* timer;
     Ui::OverviewPage* ui;
     ClientModel* clientModel;
@@ -64,7 +62,7 @@ private:
     TxViewDelegate* txdelegate;
     TransactionFilterProxy* filter;
 
-private slots:
+  private slots:
     void updateDisplayUnit();
     void handleTransactionClicked(const QModelIndex& index);
     void updateAlerts(const QString& warnings);

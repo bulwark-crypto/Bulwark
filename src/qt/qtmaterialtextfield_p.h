@@ -8,12 +8,11 @@ class QtMaterialTextField;
 class QtMaterialTextFieldStateMachine;
 class QtMaterialTextFieldLabel;
 
-class QtMaterialTextFieldPrivate
-{
+class QtMaterialTextFieldPrivate {
     Q_DISABLE_COPY(QtMaterialTextFieldPrivate)
     Q_DECLARE_PUBLIC(QtMaterialTextField)
 
-public:
+  public:
     QtMaterialTextFieldPrivate(QtMaterialTextField *q);
     virtual ~QtMaterialTextFieldPrivate();
 

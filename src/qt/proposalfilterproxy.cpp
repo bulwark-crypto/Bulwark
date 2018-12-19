@@ -22,12 +22,10 @@ ProposalFilterProxy::ProposalFilterProxy(QObject *parent) :
     minPercentage(-100),
     minYesVotes(0),
     minNoVotes(0),
-    minAbstainVotes(0)
-{
+    minAbstainVotes(0) {
 }
 
-bool ProposalFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
-{
+bool ProposalFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     int proposalStartDate = index.data(ProposalTableModel::StartDateRole).toInt();
@@ -55,67 +53,56 @@ bool ProposalFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &sou
     return true;
 }
 
-void ProposalFilterProxy::setProposalStart(const CAmount& minimum)
-{
+void ProposalFilterProxy::setProposalStart(const CAmount& minimum) {
     this->startDate = minimum;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setProposalEnd(const CAmount& minimum)
-{
+void ProposalFilterProxy::setProposalEnd(const CAmount& minimum) {
     this->endDate = minimum;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setTotalPaymentCount(const int &count)
-{
+void ProposalFilterProxy::setTotalPaymentCount(const int &count) {
     this->totalPaymentCount = count;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setRemainingPaymentCount(const int &count)
-{
+void ProposalFilterProxy::setRemainingPaymentCount(const int &count) {
     this->remainingPaymentCount = count;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setProposal(const QString &proposal)
-{
+void ProposalFilterProxy::setProposal(const QString &proposal) {
     this->proposalName = proposal;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setMinAmount(const CAmount& minimum)
-{
+void ProposalFilterProxy::setMinAmount(const CAmount& minimum) {
     this->minAmount = minimum;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setMinPercentage(const CAmount& minimum)
-{
+void ProposalFilterProxy::setMinPercentage(const CAmount& minimum) {
     this->minPercentage = minimum;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setMinYesVotes(const CAmount& minimum)
-{
+void ProposalFilterProxy::setMinYesVotes(const CAmount& minimum) {
     this->minYesVotes = minimum;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setMinNoVotes(const CAmount& minimum)
-{
+void ProposalFilterProxy::setMinNoVotes(const CAmount& minimum) {
     this->minNoVotes = minimum;
     invalidateFilter();
 }
 
-void ProposalFilterProxy::setMinAbstainVotes(const CAmount& minimum)
-{
+void ProposalFilterProxy::setMinAbstainVotes(const CAmount& minimum) {
     this->minAbstainVotes = minimum;
     invalidateFilter();
 }
 
-int ProposalFilterProxy::rowCount(const QModelIndex &parent) const
-{
+int ProposalFilterProxy::rowCount(const QModelIndex &parent) const {
     return QSortFilterProxyModel::rowCount(parent);
 }

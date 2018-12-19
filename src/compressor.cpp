@@ -9,71 +9,57 @@
 #include "pubkey.h"
 #include "script/standard.h"
 
-bool CScriptCompressor::IsToKeyID(CKeyID& hash) const
-{
-    if (script.size() == 25 && script[0] == OP_DUP && script[1] == OP_HASH160 && script[2] == 20 && script[23] == OP_EQUALVERIFY && script[24] == OP_CHECKSIG)
-    {
+bool CScriptCompressor::IsToKeyID(CKeyID& hash) const {
+    if (script.size() == 25 && script[0] == OP_DUP && script[1] == OP_HASH160 && script[2] == 20 && script[23] == OP_EQUALVERIFY && script[24] == OP_CHECKSIG) {
         memcpy(&hash, &script[3], 20);
         return true;
     }
     return false;
 }
 
-bool CScriptCompressor::IsToScriptID(CScriptID& hash) const
-{
-    if (script.size() == 23 && script[0] == OP_HASH160 && script[1] == 20 && script[22] == OP_EQUAL)
-    {
+bool CScriptCompressor::IsToScriptID(CScriptID& hash) const {
+    if (script.size() == 23 && script[0] == OP_HASH160 && script[1] == 20 && script[22] == OP_EQUAL) {
         memcpy(&hash, &script[2], 20);
         return true;
     }
     return false;
 }
 
-bool CScriptCompressor::IsToPubKey(CPubKey& pubkey) const
-{
-    if (script.size() == 35 && script[0] == 33 && script[34] == OP_CHECKSIG && (script[1] == 0x02 || script[1] == 0x03))
-    {
+bool CScriptCompressor::IsToPubKey(CPubKey& pubkey) const {
+    if (script.size() == 35 && script[0] == 33 && script[34] == OP_CHECKSIG && (script[1] == 0x02 || script[1] == 0x03)) {
         pubkey.Set(&script[1], &script[34]);
         return true;
     }
-    if (script.size() == 67 && script[0] == 65 && script[66] == OP_CHECKSIG && script[1] == 0x04)
-    {
+    if (script.size() == 67 && script[0] == 65 && script[66] == OP_CHECKSIG && script[1] == 0x04) {
         pubkey.Set(&script[1], &script[66]);
         return pubkey.IsFullyValid(); // if not fully valid, a case that would not be compressible
     }
     return false;
 }
 
-bool CScriptCompressor::Compress(std::vector<unsigned char>& out) const
-{
+bool CScriptCompressor::Compress(std::vector<unsigned char>& out) const {
     CKeyID keyID;
-    if (IsToKeyID(keyID))
-    {
+    if (IsToKeyID(keyID)) {
         out.resize(21);
         out[0] = 0x00;
         memcpy(&out[1], &keyID, 20);
         return true;
     }
     CScriptID scriptID;
-    if (IsToScriptID(scriptID))
-    {
+    if (IsToScriptID(scriptID)) {
         out.resize(21);
         out[0] = 0x01;
         memcpy(&out[1], &scriptID, 20);
         return true;
     }
     CPubKey pubkey;
-    if (IsToPubKey(pubkey))
-    {
+    if (IsToPubKey(pubkey)) {
         out.resize(33);
         memcpy(&out[1], &pubkey[1], 32);
-        if (pubkey[0] == 0x02 || pubkey[0] == 0x03)
-        {
+        if (pubkey[0] == 0x02 || pubkey[0] == 0x03) {
             out[0] = pubkey[0];
             return true;
-        }
-        else if (pubkey[0] == 0x04)
-        {
+        } else if (pubkey[0] == 0x04) {
             out[0] = 0x04 | (pubkey[64] & 0x01);
             return true;
         }
@@ -81,8 +67,7 @@ bool CScriptCompressor::Compress(std::vector<unsigned char>& out) const
     return false;
 }
 
-unsigned int CScriptCompressor::GetSpecialSize(unsigned int nSize) const
-{
+unsigned int CScriptCompressor::GetSpecialSize(unsigned int nSize) const {
     if (nSize == 0 || nSize == 1)
         return 20;
     if (nSize == 2 || nSize == 3 || nSize == 4 || nSize == 5)
@@ -90,10 +75,8 @@ unsigned int CScriptCompressor::GetSpecialSize(unsigned int nSize) const
     return 0;
 }
 
-bool CScriptCompressor::Decompress(unsigned int nSize, const std::vector<unsigned char>& in)
-{
-    switch (nSize)
-    {
+bool CScriptCompressor::Decompress(unsigned int nSize, const std::vector<unsigned char>& in) {
+    switch (nSize) {
     case 0x00:
         script.resize(25);
         script[0] = OP_DUP;
@@ -145,31 +128,25 @@ bool CScriptCompressor::Decompress(unsigned int nSize, const std::vector<unsigne
 // * if e==9, we only know the resulting number is not zero, so output 1 + 10*(n - 1) + 9
 // (this is decodable, as d is in [1-9] and e is in [0-9])
 
-uint64_t CTxOutCompressor::CompressAmount(uint64_t n)
-{
+uint64_t CTxOutCompressor::CompressAmount(uint64_t n) {
     if (n == 0)
         return 0;
     int e = 0;
-    while (((n % 10) == 0) && e < 9)
-    {
+    while (((n % 10) == 0) && e < 9) {
         n /= 10;
         e++;
     }
-    if (e < 9)
-    {
+    if (e < 9) {
         int d = (n % 10);
         assert(d >= 1 && d <= 9);
         n /= 10;
         return 1 + (n * 9 + d - 1) * 10 + e;
-    }
-    else
-    {
+    } else {
         return 1 + (n - 1) * 10 + 9;
     }
 }
 
-uint64_t CTxOutCompressor::DecompressAmount(uint64_t x)
-{
+uint64_t CTxOutCompressor::DecompressAmount(uint64_t x) {
     // x = 0  OR  x = 1+10*(9*n + d - 1) + e  OR  x = 1+10*(n - 1) + 9
     if (x == 0)
         return 0;
@@ -178,20 +155,16 @@ uint64_t CTxOutCompressor::DecompressAmount(uint64_t x)
     int e = x % 10;
     x /= 10;
     uint64_t n = 0;
-    if (e < 9)
-    {
+    if (e < 9) {
         // x = 9*n + d - 1
         int d = (x % 9) + 1;
         x /= 9;
         // x = n
         n = x * 10 + d;
-    }
-    else
-    {
+    } else {
         n = x + 1;
     }
-    while (e)
-    {
+    while (e) {
         n *= 10;
         e--;
     }

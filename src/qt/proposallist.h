@@ -31,17 +31,15 @@ QT_END_NAMESPACE
 
 #define PROPOSALLIST_UPDATE_SECONDS 30
 
-class ProposalList : public QWidget
-{
+class ProposalList : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit ProposalList(QWidget *parent = 0);
 
     void setModel();
 
-    enum DateEnum
-    {
+    enum DateEnum {
         All,
         Today,
         ThisWeek,
@@ -65,7 +63,7 @@ public:
         MINIMUM_COLUMN_WIDTH = 23
     };
 
-private:
+  private:
     ProposalTableModel *proposalTableModel;
     ProposalFilterProxy *proposalProxyModel;
     QTableView *proposalList;
@@ -103,7 +101,7 @@ private:
 
     virtual void resizeEvent(QResizeEvent* event);
 
-private Q_SLOTS:
+  private Q_SLOTS:
     void createProposal();
     void proposalType(int type);
     void contextualMenu(const QPoint &);
@@ -113,10 +111,10 @@ private Q_SLOTS:
     void copyProposalUrl();
     void invalidateAlignedLayout();
 
-Q_SIGNALS:
+  Q_SIGNALS:
     void doubleClicked(const QModelIndex&);
 
-public Q_SLOTS:
+  public Q_SLOTS:
     void refreshProposals(bool force = false);
     void changedProposal(const QString &proposal);
     void chooseStartDate(const QString &startDate);

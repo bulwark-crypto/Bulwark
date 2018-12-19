@@ -17,8 +17,7 @@
 #include <QFileOpenEvent>
 #include <QTemporaryFile>
 
-X509 *parse_b64der_cert(const char* cert_data)
-{
+X509 *parse_b64der_cert(const char* cert_data) {
     std::vector<unsigned char> data = DecodeBase64(cert_data);
     assert(data.size() > 0);
     const unsigned char* dptr = &data[0];
@@ -31,8 +30,7 @@ X509 *parse_b64der_cert(const char* cert_data)
 // Test payment request handling
 //
 
-static SendCoinsRecipient handleRequest(PaymentServer* server, std::vector<unsigned char>& data)
-{
+static SendCoinsRecipient handleRequest(PaymentServer* server, std::vector<unsigned char>& data) {
     RecipientCatcher sigCatcher;
     QObject::connect(server, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                      &sigCatcher, SLOT(getRecipient(SendCoinsRecipient)));
@@ -59,8 +57,7 @@ static SendCoinsRecipient handleRequest(PaymentServer* server, std::vector<unsig
     return sigCatcher.recipient;
 }
 
-void PaymentServerTests::paymentServerTests()
-{
+void PaymentServerTests::paymentServerTests() {
     SelectParams(CBaseChainParams::MAIN);
     OptionsModel optionsModel;
     PaymentServer* server = new PaymentServer(NULL, false);
@@ -123,7 +120,6 @@ void PaymentServerTests::paymentServerTests()
     delete server;
 }
 
-void RecipientCatcher::getRecipient(SendCoinsRecipient r)
-{
+void RecipientCatcher::getRecipient(SendCoinsRecipient r) {
     recipient = r;
 }

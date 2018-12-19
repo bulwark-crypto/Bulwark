@@ -19,8 +19,7 @@
 
 typedef unsigned char MessageStartChars[MESSAGE_START_SIZE];
 
-struct CDNSSeedData
-{
+struct CDNSSeedData {
     std::string name, host;
     CDNSSeedData(const std::string& strName, const std::string& strHost) : name(strName), host(strHost) {}
 };
@@ -32,11 +31,9 @@ struct CDNSSeedData
  * a regression test mode which is intended for private networks only. It has
  * minimal difficulty to ensure that blocks can be found instantly.
  */
-class CChainParams
-{
-public:
-    enum Base58Type
-    {
+class CChainParams {
+  public:
+    enum Base58Type {
         PUBKEY_ADDRESS,
         SCRIPT_ADDRESS,
         SECRET_KEY,     // BIP16
@@ -47,235 +44,184 @@ public:
         MAX_BASE58_TYPES
     };
 
-    const uint256& HashGenesisBlock() const
-    {
+    const uint256& HashGenesisBlock() const {
         return hashGenesisBlock;
     }
-    const MessageStartChars& MessageStart() const
-    {
+    const MessageStartChars& MessageStart() const {
         return pchMessageStart;
     }
-    const std::vector<unsigned char>& AlertKey() const
-    {
+    const std::vector<unsigned char>& AlertKey() const {
         return vAlertPubKey;
     }
-    int GetDefaultPort() const
-    {
+    int GetDefaultPort() const {
         return nDefaultPort;
     }
-    const uint256& ProofOfWorkLimit() const
-    {
+    const uint256& ProofOfWorkLimit() const {
         return bnProofOfWorkLimit;
     }
     /** Used to check majorities for block version upgrade */
-    int MaxReorganizationDepth() const
-    {
+    int MaxReorganizationDepth() const {
         return nMaxReorganizationDepth;
     }
-    int EnforceBlockUpgradeMajority() const
-    {
+    int EnforceBlockUpgradeMajority() const {
         return nEnforceBlockUpgradeMajority;
     }
-    int RejectBlockOutdatedMajority() const
-    {
+    int RejectBlockOutdatedMajority() const {
         return nRejectBlockOutdatedMajority;
     }
-    int ToCheckBlockUpgradeMajority() const
-    {
+    int ToCheckBlockUpgradeMajority() const {
         return nToCheckBlockUpgradeMajority;
     }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
-    int DefaultMinerThreads() const
-    {
+    int DefaultMinerThreads() const {
         return nMinerThreads;
     }
-    const CBlock& GenesisBlock() const
-    {
+    const CBlock& GenesisBlock() const {
         return genesis;
     }
     /** Make miner wait to have peers to avoid wasting work */
-    bool MiningRequiresPeers() const
-    {
+    bool MiningRequiresPeers() const {
         return fMiningRequiresPeers;
     }
     /** Headers first syncing is disabled */
-    bool HeadersFirstSyncingActive() const
-    {
+    bool HeadersFirstSyncingActive() const {
         return fHeadersFirstSyncingActive;
     };
     /** Default value for -checkmempool and -checkblockindex argument */
-    bool DefaultConsistencyChecks() const
-    {
+    bool DefaultConsistencyChecks() const {
         return fDefaultConsistencyChecks;
     }
     /** Allow mining of a min-difficulty block */
-    bool AllowMinDifficultyBlocks() const
-    {
+    bool AllowMinDifficultyBlocks() const {
         return fAllowMinDifficultyBlocks;
     }
     /** Skip proof-of-work check: allow mining of any difficulty block */
-    bool SkipProofOfWorkCheck() const
-    {
+    bool SkipProofOfWorkCheck() const {
         return fSkipProofOfWorkCheck;
     }
     /** Make standard checks */
-    bool RequireStandard() const
-    {
+    bool RequireStandard() const {
         return fRequireStandard;
     }
-    int64_t TargetTimespan() const
-    {
+    int64_t TargetTimespan() const {
         return nTargetTimespan;
     }
-    int64_t TargetSpacing() const
-    {
+    int64_t TargetSpacing() const {
         return nTargetSpacing;
     }
-    int64_t TargetSpacingSlowLaunch() const
-    {
+    int64_t TargetSpacingSlowLaunch() const {
         return nTargetSpacingSlowLaunch;
     }
-    int64_t Interval() const
-    {
+    int64_t Interval() const {
         return nTargetTimespan / nTargetSpacing;
     }
-    int LAST_POW_BLOCK_OLD() const
-    {
+    int LAST_POW_BLOCK_OLD() const {
         return nLastPOWBlockOld;
     }
-    int LAST_SEESAW_BLOCK() const
-    {
+    int LAST_SEESAW_BLOCK() const {
         return nLastSeeSawBlock;
     }
     /** Slow Start, Ramp up linearly to block **/
-    int RAMP_TO_BLOCK() const
-    {
+    int RAMP_TO_BLOCK() const {
         return nRampToBlock;
     }
-    int COINBASE_MATURITY() const
-    {
+    int COINBASE_MATURITY() const {
         return nMaturity;
     }
-    CAmount MaxMoneyOut() const
-    {
+    CAmount MaxMoneyOut() const {
         return nMaxMoneyOut;
     }
 
     /** The masternode count that we will allow the see-saw reward payments to be off by */
-    int MasternodeCountDrift() const
-    {
+    int MasternodeCountDrift() const {
         return nMasternodeCountDrift;
     }
     /** Make miner stop after a block is found. In RPC, don't return until nGenProcLimit blocks are generated */
-    bool MineBlocksOnDemand() const
-    {
+    bool MineBlocksOnDemand() const {
         return fMineBlocksOnDemand;
     }
     /** In the future use NetworkIDString() for RPC fields */
-    bool TestnetToBeDeprecatedFieldRPC() const
-    {
+    bool TestnetToBeDeprecatedFieldRPC() const {
         return fTestnetToBeDeprecatedFieldRPC;
     }
     /** Return the BIP70 network string (main, test or regtest) */
-    std::string NetworkIDString() const
-    {
+    std::string NetworkIDString() const {
         return strNetworkID;
     }
-    const std::vector<CDNSSeedData>& DNSSeeds() const
-    {
+    const std::vector<CDNSSeedData>& DNSSeeds() const {
         return vSeeds;
     }
-    const std::vector<unsigned char>& Base58Prefix(Base58Type type) const
-    {
+    const std::vector<unsigned char>& Base58Prefix(Base58Type type) const {
         return base58Prefixes[type];
     }
-    const std::vector<CAddress>& FixedSeeds() const
-    {
+    const std::vector<CAddress>& FixedSeeds() const {
         return vFixedSeeds;
     }
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
-    int PoolMaxTransactions() const
-    {
+    int PoolMaxTransactions() const {
         return nPoolMaxTransactions;
     }
-    std::string SporkKey() const
-    {
+    std::string SporkKey() const {
         return strSporkKey;
     }
-    std::string ObfuscationPoolDummyAddress() const
-    {
+    std::string ObfuscationPoolDummyAddress() const {
         return strObfuscationPoolDummyAddress;
     }
-    int64_t StartMasternodePayments() const
-    {
+    int64_t StartMasternodePayments() const {
         return nStartMasternodePayments;
     }
-    int64_t Budget_Fee_Confirmations() const
-    {
+    int64_t Budget_Fee_Confirmations() const {
         return nBudget_Fee_Confirmations;
     }
-    CBaseChainParams::Network NetworkID() const
-    {
+    CBaseChainParams::Network NetworkID() const {
         return networkID;
     }
 
     /** Zerocoin **/
-    std::string Zerocoin_Modulus() const
-    {
+    std::string Zerocoin_Modulus() const {
         return zerocoinModulus;
     }
     libzerocoin::ZerocoinParams* Zerocoin_Params() const;
-    int Zerocoin_MaxSpendsPerTransaction() const
-    {
+    int Zerocoin_MaxSpendsPerTransaction() const {
         return nMaxZerocoinSpendsPerTransaction;
     }
-    CAmount Zerocoin_MintFee() const
-    {
+    CAmount Zerocoin_MintFee() const {
         return nMinZerocoinMintFee;
     }
-    int Zerocoin_MintRequiredConfirmations() const
-    {
+    int Zerocoin_MintRequiredConfirmations() const {
         return nMintRequiredConfirmations;
     }
-    int Zerocoin_RequiredAccumulation() const
-    {
+    int Zerocoin_RequiredAccumulation() const {
         return nRequiredAccumulation;
     }
-    int Zerocoin_DefaultSpendSecurity() const
-    {
+    int Zerocoin_DefaultSpendSecurity() const {
         return nDefaultSecurityLevel;
     }
-    int Zerocoin_HeaderVersion() const
-    {
+    int Zerocoin_HeaderVersion() const {
         return nZerocoinHeaderVersion;
     }
 
     /** Height or Time Based Activations **/
-    int ModifierUpgradeBlock() const
-    {
+    int ModifierUpgradeBlock() const {
         return nModifierUpdateBlock;
     }
-    int LAST_POW_BLOCK() const
-    {
+    int LAST_POW_BLOCK() const {
         return nLastPOWBlock;
     }
 
     /** Staking Requirements */
-    int Stake_MinProtocol() const
-    {
+    int Stake_MinProtocol() const {
         return nStakeMinStartProtocol;
     }
-    int Stake_MinConfirmations() const
-    {
+    int Stake_MinConfirmations() const {
         return nStakeMinConfirmations;
     }
-    CAmount Stake_MinAmount() const
-    {
+    CAmount Stake_MinAmount() const {
         return nStakeMinAmount;
     }
 
-protected:
+  protected:
     CChainParams() {}
 
     uint256 hashGenesisBlock;
@@ -339,9 +285,8 @@ protected:
  * values after finalization.
  */
 
-class CModifiableParams
-{
-public:
+class CModifiableParams {
+  public:
     //! Published setters to allow changing values in unit test cases
     virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) = 0;
     virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) = 0;

@@ -8,8 +8,7 @@
 #else
 #define UNUSED
 #endif
-static const char UNUSED *bulwark_strings[] =
-{
+static const char UNUSED *bulwark_strings[] = {
     QT_TRANSLATE_NOOP("bulwark-core", " mints deleted\n"),
     QT_TRANSLATE_NOOP("bulwark-core", " mints updated, "),
     QT_TRANSLATE_NOOP("bulwark-core", " unconfirmed transactions removed\n"),

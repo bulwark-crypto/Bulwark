@@ -35,8 +35,7 @@ class uint160;
 class uint256;
 
 /** Error statuses for the wallet database */
-enum DBErrors
-{
+enum DBErrors {
     DB_LOAD_OK,
     DB_CORRUPT,
     DB_NONCRITICAL_ERROR,
@@ -45,19 +44,16 @@ enum DBErrors
     DB_NEED_REWRITE
 };
 
-class CKeyMetadata
-{
-public:
+class CKeyMetadata {
+  public:
     static const int CURRENT_VERSION = 1;
     int nVersion;
     int64_t nCreateTime; // 0 means unknown
 
-    CKeyMetadata()
-    {
+    CKeyMetadata() {
         SetNull();
     }
-    CKeyMetadata(int64_t nCreateTime_)
-    {
+    CKeyMetadata(int64_t nCreateTime_) {
         nVersion = CKeyMetadata::CURRENT_VERSION;
         nCreateTime = nCreateTime_;
     }
@@ -65,26 +61,22 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(this->nVersion);
         nVersion = this->nVersion;
         READWRITE(nCreateTime);
     }
 
-    void SetNull()
-    {
+    void SetNull() {
         nVersion = CKeyMetadata::CURRENT_VERSION;
         nCreateTime = 0;
     }
 };
 
 /** Access to the wallet database (wallet.dat) */
-class CWalletDB : public CDB
-{
-public:
-    CWalletDB(const std::string& strFilename, const char* pszMode = "r+") : CDB(strFilename, pszMode)
-    {
+class CWalletDB : public CDB {
+  public:
+    CWalletDB(const std::string& strFilename, const char* pszMode = "r+") : CDB(strFilename, pszMode) {
     }
 
     bool WriteName(const std::string& strAddress, const std::string& strName);
@@ -163,7 +155,7 @@ public:
     bool EraseZerocoinSpendSerialEntry(const CBigNum& serialEntry);
     bool ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial);
 
-private:
+  private:
     CWalletDB(const CWalletDB&);
     void operator=(const CWalletDB&);
 

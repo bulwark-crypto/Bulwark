@@ -49,8 +49,7 @@ ProposalList::ProposalList(QWidget *parent) :
     proposalTableModel(0),
     proposalProxyModel(0),
     proposalList(0),
-    columnResizingFixer(0)
-{
+    columnResizingFixer(0) {
     proposalTableModel = new ProposalTableModel(this);
     QSettings settings;
 
@@ -130,7 +129,7 @@ ProposalList::ProposalList(QWidget *parent) :
     proposalTypeCombo->addItem("All Proposals", 0);
     proposalTypeCombo->addItem("Budget Projection", 1);
 
-    headLayout = new QHBoxLayout(); 
+    headLayout = new QHBoxLayout();
     headLayout->setContentsMargins(0, 0, 0, 10);
     headLayout->addWidget(createButton);
     headLayout->addStretch(1);
@@ -260,17 +259,14 @@ ProposalList::ProposalList(QWidget *parent) :
     setLayout(vlayout);
 }
 
-void ProposalList::createProposal()
-{
+void ProposalList::createProposal() {
     ProposalDialog dlg(ProposalDialog::PrepareProposal, this);
-    if (QDialog::Accepted == dlg.exec())
-    {
+    if (QDialog::Accepted == dlg.exec()) {
         refreshProposals(true);
     }
 }
 
-void ProposalList::proposalType(int type)
-{
+void ProposalList::proposalType(int type) {
     proposalTableModel->setProposalType(type);
     refreshProposals(true);
 }
@@ -293,16 +289,14 @@ void ProposalList::refreshProposals(bool force) {
     secondsLabel->setText(tr("List will be updated in 0 second(s)"));
 }
 
-void ProposalList::changedAmount(const QString &minAmount)
-{
+void ProposalList::changedAmount(const QString &minAmount) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setMinAmount(minAmount.toInt());
 }
 
-void ProposalList::changedPercentage(const QString &minPercentage)
-{
+void ProposalList::changedPercentage(const QString &minPercentage) {
     if(!proposalProxyModel)
         return;
 
@@ -311,68 +305,59 @@ void ProposalList::changedPercentage(const QString &minPercentage)
     proposalProxyModel->setMinPercentage(value);
 }
 
-void ProposalList::changedProposal(const QString &proposal)
-{
+void ProposalList::changedProposal(const QString &proposal) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setProposal(proposal);
 }
 
-void ProposalList::changedYesVotes(const QString &minYesVotes)
-{
+void ProposalList::changedYesVotes(const QString &minYesVotes) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setMinYesVotes(minYesVotes.toInt());
 }
 
-void ProposalList::chooseStartDate(const QString &startDate)
-{
+void ProposalList::chooseStartDate(const QString &startDate) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setMinYesVotes(startDate.toInt());
 }
 
-void ProposalList::chooseEndDate(const QString &endDate)
-{
+void ProposalList::chooseEndDate(const QString &endDate) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setMinYesVotes(endDate.toInt());
 }
 
-void ProposalList::changedTotalPaymentCount(const QString &totalPaymentCount)
-{
+void ProposalList::changedTotalPaymentCount(const QString &totalPaymentCount) {
     if (!proposalProxyModel) return;
     proposalProxyModel->setTotalPaymentCount(totalPaymentCount.toInt());
 }
 
-void ProposalList::changedRemainingPaymentCount(const QString &remainingPaymentCount)
-{
+void ProposalList::changedRemainingPaymentCount(const QString &remainingPaymentCount) {
     if (!proposalProxyModel) return;
     proposalProxyModel->setRemainingPaymentCount(remainingPaymentCount.toInt());
 }
 
-void ProposalList::changedNoVotes(const QString &minNoVotes)
-{
+void ProposalList::changedNoVotes(const QString &minNoVotes) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setMinNoVotes(minNoVotes.toInt());
 }
 
-void ProposalList::changedAbstainVotes(const QString &minAbstainVotes)
-{
+void ProposalList::changedAbstainVotes(const QString &minAbstainVotes) {
     if(!proposalProxyModel)
         return;
 
     proposalProxyModel->setMinAbstainVotes(minAbstainVotes.toInt());
 }
 
-void ProposalList::contextualMenu(const QPoint &point)
-{
+void ProposalList::contextualMenu(const QPoint &point) {
     QModelIndex index = proposalList->indexAt(point);
     QModelIndexList selection = proposalList->selectionModel()->selectedRows(0);
     if (selection.empty())
@@ -382,23 +367,19 @@ void ProposalList::contextualMenu(const QPoint &point)
         contextMenu->exec(QCursor::pos());
 }
 
-void ProposalList::voteYes()
-{
+void ProposalList::voteYes() {
     vote_click_handler("yes");
 }
 
-void ProposalList::voteNo()
-{
+void ProposalList::voteNo() {
     vote_click_handler("no");
 }
 
-void ProposalList::voteAbstain()
-{
+void ProposalList::voteAbstain() {
     vote_click_handler("abstain");
 }
 
-void ProposalList::vote_click_handler(const std::string voteString)
-{
+void ProposalList::vote_click_handler(const std::string voteString) {
     if(!proposalList->selectionModel())
         return;
 
@@ -409,9 +390,9 @@ void ProposalList::vote_click_handler(const std::string voteString)
     QString proposalName = selection.at(0).data(ProposalTableModel::ProposalRole).toString();
 
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm vote"),
-        tr("Are you sure you want to vote <strong>%1</strong> on the proposal <strong>%2</strong>?").arg(QString::fromStdString(voteString), proposalName),
-        QMessageBox::Yes | QMessageBox::Cancel,
-        QMessageBox::Cancel);
+                                         tr("Are you sure you want to vote <strong>%1</strong> on the proposal <strong>%2</strong>?").arg(QString::fromStdString(voteString), proposalName),
+                                         QMessageBox::Yes | QMessageBox::Cancel,
+                                         QMessageBox::Cancel);
 
     if(retval != QMessageBox::Yes) return;
 
@@ -427,52 +408,51 @@ void ProposalList::vote_click_handler(const std::string voteString)
     if (strVote == "no") nVote = VOTE_NO;
 
     for (const auto& mne : masternodeConfig.getEntries()) {
-            std::string errorMessage;
-            std::vector<unsigned char> vchMasterNodeSignature;
-            std::string strMasterNodeSignMessage;
+        std::string errorMessage;
+        std::vector<unsigned char> vchMasterNodeSignature;
+        std::string strMasterNodeSignMessage;
 
-            CPubKey pubKeyCollateralAddress;
-            CKey keyCollateralAddress;
-            CPubKey pubKeyMasternode;
-            CKey keyMasternode;
+        CPubKey pubKeyCollateralAddress;
+        CKey keyCollateralAddress;
+        CPubKey pubKeyMasternode;
+        CKey keyMasternode;
 
-            UniValue statusObj(UniValue::VOBJ);
+        UniValue statusObj(UniValue::VOBJ);
 
-            if (!obfuScationSigner.SetKey(mne.getPrivKey(), errorMessage, keyMasternode, pubKeyMasternode)) {
-                failed++;
-                continue;
-            }
+        if (!obfuScationSigner.SetKey(mne.getPrivKey(), errorMessage, keyMasternode, pubKeyMasternode)) {
+            failed++;
+            continue;
+        }
 
-            CMasternode* pmn = mnodeman.Find(pubKeyMasternode);
-            if (pmn == NULL) {
-                failed++;
-                continue;
-            }
+        CMasternode* pmn = mnodeman.Find(pubKeyMasternode);
+        if (pmn == NULL) {
+            failed++;
+            continue;
+        }
 
-            CBudgetVote vote(pmn->vin, hash, nVote);
-            if (!vote.Sign(keyMasternode, pubKeyMasternode)) {
-                failed++;
-                continue;
-            }
+        CBudgetVote vote(pmn->vin, hash, nVote);
+        if (!vote.Sign(keyMasternode, pubKeyMasternode)) {
+            failed++;
+            continue;
+        }
 
-            std::string strError = "";
-            if (budget.UpdateProposal(vote, NULL, strError)) {
-                budget.mapSeenMasternodeBudgetVotes.insert(make_pair(vote.GetHash(), vote));
-                vote.Relay();
-                success++;
-            } else {
-                failed++;
-            }
+        std::string strError = "";
+        if (budget.UpdateProposal(vote, NULL, strError)) {
+            budget.mapSeenMasternodeBudgetVotes.insert(make_pair(vote.GetHash(), vote));
+            vote.Relay();
+            success++;
+        } else {
+            failed++;
+        }
     }
 
     QMessageBox::information(this, tr("Voting"),
-        tr("You voted %1 %2 time(s) successfully and failed %3 time(s) on %4").arg(QString::fromStdString(voteString), QString::number(success), QString::number(failed), proposalName));
+                             tr("You voted %1 %2 time(s) successfully and failed %3 time(s) on %4").arg(QString::fromStdString(voteString), QString::number(success), QString::number(failed), proposalName));
 
     refreshProposals(true);
 }
 
-void ProposalList::copyProposalUrl()
-{
+void ProposalList::copyProposalUrl() {
     if(!proposalList || !proposalList->selectionModel())
         return;
 
@@ -482,8 +462,7 @@ void ProposalList::copyProposalUrl()
     Msgbox.exec();
 }
 
-void ProposalList::resizeEvent(QResizeEvent* event)
-{
+void ProposalList::resizeEvent(QResizeEvent* event) {
     QWidget::resizeEvent(event);
     columnResizingFixer->stretchColumnWidth(ProposalTableModel::Proposal);
 }

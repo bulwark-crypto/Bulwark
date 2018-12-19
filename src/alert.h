@@ -27,9 +27,8 @@ extern CCriticalSection cs_mapAlerts;
  * not read the entire buffer if the alert is for a newer version, but older
  * versions can still relay the original data.
  */
-class CUnsignedAlert
-{
-public:
+class CUnsignedAlert {
+  public:
     int nVersion;
     int64_t nRelayUntil; // when newer nodes stop relaying to newer nodes
     int64_t nExpiration;
@@ -49,8 +48,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(this->nVersion);
         nVersion = this->nVersion;
         READWRITE(nRelayUntil);
@@ -74,22 +72,19 @@ public:
 };
 
 /** An alert is a combination of a serialized CUnsignedAlert and a signature. */
-class CAlert : public CUnsignedAlert
-{
-public:
+class CAlert : public CUnsignedAlert {
+  public:
     std::vector<unsigned char> vchMsg;
     std::vector<unsigned char> vchSig;
 
-    CAlert()
-    {
+    CAlert() {
         SetNull();
     }
 
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(vchMsg);
         READWRITE(vchSig);
     }

@@ -10,16 +10,13 @@
  */
 
 QtMaterialThemePrivate::QtMaterialThemePrivate(QtMaterialTheme *q)
-    : q_ptr(q)
-{
+    : q_ptr(q) {
 }
 
-QtMaterialThemePrivate::~QtMaterialThemePrivate()
-{
+QtMaterialThemePrivate::~QtMaterialThemePrivate() {
 }
 
-QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const
-{
+QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const {
     QColor color(r, g, b);
     color.setAlphaF(a);
     return color;
@@ -31,8 +28,7 @@ QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const
 
 QtMaterialTheme::QtMaterialTheme(QObject *parent)
     : QObject(parent),
-      d_ptr(new QtMaterialThemePrivate(this))
-{
+      d_ptr(new QtMaterialThemePrivate(this)) {
     setColor("primary1", Material::lightBlueA700);
     setColor("primary2", Material::cyan700);
     setColor("primary3", Material::lightBlack);
@@ -48,35 +44,29 @@ QtMaterialTheme::QtMaterialTheme(QObject *parent)
     setColor("disabled3", Material::grey300);
 }
 
-QtMaterialTheme::~QtMaterialTheme()
-{
+QtMaterialTheme::~QtMaterialTheme() {
 }
 
-QColor QtMaterialTheme::getColor(const QString &key) const
-{
+QColor QtMaterialTheme::getColor(const QString &key) const {
     Q_D(const QtMaterialTheme);
 
-    if (!d->colors.contains(key))
-    {
+    if (!d->colors.contains(key)) {
         qWarning() << "A theme color matching the key '" << key << "' could not be found.";
         return QColor();
     }
     return d->colors.value(key);
 }
 
-void QtMaterialTheme::setColor(const QString &key, const QColor &color)
-{
+void QtMaterialTheme::setColor(const QString &key, const QColor &color) {
     Q_D(QtMaterialTheme);
 
     d->colors.insert(key, color);
 }
 
-void QtMaterialTheme::setColor(const QString &key, Material::Color color)
-{
+void QtMaterialTheme::setColor(const QString &key, Material::Color color) {
     Q_D(QtMaterialTheme);
 
-    static const QColor palette[] =
-    {
+    static const QColor palette[] = {
         QColor("#ffebee"), QColor("#ffcdd2"), QColor("#ef9a9a"), QColor("#e57373"),
         QColor("#ef5350"), QColor("#f44336"), QColor("#e53935"), QColor("#d32f2f"),
         QColor("#c62828"), QColor("#b71c1c"), QColor("#ff8a80"), QColor("#ff5252"),
@@ -155,7 +145,6 @@ void QtMaterialTheme::setColor(const QString &key, Material::Color color)
     d->colors.insert(key, palette[color]);
 }
 
-QIcon QtMaterialTheme::icon(QString category, QString icon)
-{
+QIcon QtMaterialTheme::icon(QString category, QString icon) {
     return QIcon(":/icons/icons/" % category % "/svg/production/ic_" % icon % "_24px.svg");
 }

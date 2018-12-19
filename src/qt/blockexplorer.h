@@ -7,8 +7,7 @@
 #include "uint256.h"
 #undef loop
 
-namespace Ui
-{
+namespace Ui {
 class BlockExplorer;
 }
 
@@ -22,25 +21,24 @@ const CBlockIndex* getexplorerBlockIndex(int64_t);
 CTxOut getPrevOut(const COutPoint& out);
 void getNextIn(const COutPoint* Out, uint256* Hash, unsigned int n);
 
-class BlockExplorer : public QMainWindow
-{
+class BlockExplorer : public QMainWindow {
     Q_OBJECT
 
-public:
+  public:
     explicit BlockExplorer(QWidget* parent = 0);
     ~BlockExplorer();
 
-protected:
+  protected:
     void keyPressEvent(QKeyEvent* event);
     void showEvent(QShowEvent*);
 
-private Q_SLOTS:
+  private Q_SLOTS:
     void onSearch();
     void goTo(const QString& query);
     void back();
     void forward();
 
-private:
+  private:
     Ui::BlockExplorer* ui;
     bool m_NeverShown;
     int m_HistoryIndex;

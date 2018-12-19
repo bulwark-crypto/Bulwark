@@ -18,8 +18,7 @@
 
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class OutPutsPage;
 }
 
@@ -28,29 +27,30 @@ QT_END_NAMESPACE
 
 /** Widget that shows a list of sending or receiving addresses.
   */
-class OutPutsPage : public QDialog
-{
+class OutPutsPage : public QDialog {
     Q_OBJECT
 
-public:
+  public:
 
     explicit OutPutsPage(QWidget* parent);
     ~OutPutsPage();
-	QString  getmasternodeoutputs();
-    const QString& getReturnValue() const { return returnValue; }
+    QString  getmasternodeoutputs();
+    const QString& getReturnValue() const {
+        return returnValue;
+    }
 
-public slots:
+  public slots:
 
-private:
+  private:
     Ui::OutPutsPage* ui;
     QMenu* contextMenu;
-	QString key;
+    QString key;
     QString returnValue;
 
-private slots:
+  private slots:
     /** Copy address of currently selected address entry to clipboard */
 
-signals:
+  signals:
     void getOutPuts(QString addr);
 };
 

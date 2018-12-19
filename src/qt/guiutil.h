@@ -32,8 +32,7 @@ QT_END_NAMESPACE
 
 /** Utility functions used by the Bulwark Qt UI.
  */
-namespace GUIUtil
-{
+namespace GUIUtil {
 // Create human-readable string from date
 QString dateTimeStr(const QDateTime& datetime);
 QString dateTimeStr(qint64 nTime);
@@ -126,17 +125,16 @@ void SubstituteFonts(const QString& language);
       representation if needed. This assures that Qt can word-wrap long tooltip messages.
       Tooltips longer than the provided size threshold (in characters) are wrapped.
      */
-class ToolTipToRichTextFilter : public QObject
-{
+class ToolTipToRichTextFilter : public QObject {
     Q_OBJECT
 
-public:
+  public:
     explicit ToolTipToRichTextFilter(int size_threshold, QObject* parent = 0);
 
-protected:
+  protected:
     bool eventFilter(QObject* obj, QEvent* evt);
 
-private:
+  private:
     int size_threshold;
 };
 
@@ -150,15 +148,14 @@ private:
      * This helper object takes care of this issue.
      *
      */
-class TableViewLastColumnResizingFixer : public QObject
-{
+class TableViewLastColumnResizingFixer : public QObject {
     Q_OBJECT
 
-public:
+  public:
     TableViewLastColumnResizingFixer(QTableView* table, int lastColMinimumWidth, int allColsMinimumWidth);
     void stretchColumnWidth(int column);
 
-private:
+  private:
     QTableView* tableView;
     int lastColumnMinimumWidth;
     int allColumnsMinimumWidth;
@@ -174,7 +171,7 @@ private:
     void setViewHeaderResizeMode(int logicalIndex, QHeaderView::ResizeMode resizeMode);
     void resizeColumn(int nColumnIndex, int width);
 
-private slots:
+  private slots:
     void on_sectionResized(int logicalIndex, int oldSize, int newSize);
     void on_geometriesChanged();
 };
@@ -183,13 +180,12 @@ private slots:
      * Extension to QTableWidgetItem that facilitates proper ordering for "DHMS"
      * strings (primarily used in the masternode's "active" listing).
      */
-class DHMSTableWidgetItem : public QTableWidgetItem
-{
-public:
+class DHMSTableWidgetItem : public QTableWidgetItem {
+  public:
     DHMSTableWidgetItem(const int64_t seconds);
     virtual bool operator<(QTableWidgetItem const& item) const;
 
-private:
+  private:
     // Private backing value for DHMS string, used for sorting.
     int64_t value;
 };
@@ -227,14 +223,13 @@ QString formatPingTime(double dPingTime);
 QString formatTimeOffset(int64_t nTimeOffset);
 
 #if defined(Q_OS_MAC)
-    class ProgressBar : public QProgressBar
-    {
-        bool event(QEvent *e) {
-            return (e->type() != QEvent::StyleAnimationUpdate) ? QProgressBar::event(e) : false;
-        }
-    };
+class ProgressBar : public QProgressBar {
+    bool event(QEvent *e) {
+        return (e->type() != QEvent::StyleAnimationUpdate) ? QProgressBar::event(e) : false;
+    }
+};
 #else
-    typedef QProgressBar ProgressBar;
+typedef QProgressBar ProgressBar;
 #endif
 
 } // namespace GUIUtil

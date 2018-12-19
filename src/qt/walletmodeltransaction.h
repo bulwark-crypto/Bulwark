@@ -16,9 +16,8 @@ class CWallet;
 class CWalletTx;
 
 /** Data model for a walletmodel transaction. */
-class WalletModelTransaction
-{
-public:
+class WalletModelTransaction {
+  public:
     explicit WalletModelTransaction(const QList<SendCoinsRecipient>& recipients);
     ~WalletModelTransaction();
 
@@ -35,7 +34,7 @@ public:
     void newPossibleKeyChange(CWallet* wallet);
     CReserveKey* getPossibleKeyChange();
 
-private:
+  private:
     const QList<SendCoinsRecipient> recipients;
     CWalletTx* walletTransaction;
     CReserveKey* keyChange;

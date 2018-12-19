@@ -13,8 +13,7 @@ static const bool DEFAULT_CHOOSE_DATADIR = false;
 
 class FreespaceChecker;
 
-namespace Ui
-{
+namespace Ui {
 class Intro;
 }
 
@@ -22,11 +21,10 @@ class Intro;
   Allows the user to choose a data directory,
   in which the wallet and block chain will be stored.
  */
-class Intro : public QDialog
-{
+class Intro : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit Intro(QWidget* parent = 0);
     ~Intro();
 
@@ -46,20 +44,20 @@ public:
      */
     static QString getDefaultDataDirectory();
 
-signals:
+  signals:
     void requestCheck();
     void stopThread();
 
-public slots:
+  public slots:
     void setStatus(int status, const QString& message, quint64 bytesAvailable);
 
-private slots:
+  private slots:
     void on_dataDirectory_textChanged(const QString& arg1);
     void on_ellipsisButton_clicked();
     void on_dataDirDefault_clicked();
     void on_dataDirCustom_clicked();
 
-private:
+  private:
     Ui::Intro* ui;
     QThread* thread;
     QMutex mutex;

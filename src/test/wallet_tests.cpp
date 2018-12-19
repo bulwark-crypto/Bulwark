@@ -28,22 +28,19 @@ BOOST_AUTO_TEST_SUITE(wallet_tests)
 static CWallet wallet;
 static vector<COutput> vCoins;
 
-static void add_coin(const CAmount& nValue, int nAge = 6*24, bool fIsFromMe = false, int nInput=0)
-{
+static void add_coin(const CAmount& nValue, int nAge = 6*24, bool fIsFromMe = false, int nInput=0) {
     static int nextLockTime = 0;
     CMutableTransaction tx;
     tx.nLockTime = nextLockTime++;        // so all transactions get different hashes
     tx.vout.resize(nInput+1);
     tx.vout[nInput].nValue = nValue;
-    if (fIsFromMe)
-    {
+    if (fIsFromMe) {
         // IsFromMe() returns (GetDebit() > 0), and GetDebit() is 0 if vin.empty(),
         // so stop vin being empty, and cache a non-zero Debit to fake out IsFromMe()
         tx.vin.resize(1);
     }
     CWalletTx* wtx = new CWalletTx(&wallet, tx);
-    if (fIsFromMe)
-    {
+    if (fIsFromMe) {
         wtx->fDebitCached = true;
         wtx->nDebitCached = 1;
     }
@@ -51,31 +48,26 @@ static void add_coin(const CAmount& nValue, int nAge = 6*24, bool fIsFromMe = fa
     vCoins.push_back(output);
 }
 
-static void empty_wallet(void)
-{
-    BOOST_FOREACH(COutput output, vCoins)
-    {
+static void empty_wallet(void) {
+    BOOST_FOREACH(COutput output, vCoins) {
         delete output.tx;
     }
     vCoins.clear();
 }
 
-static bool equal_sets(CoinSet a, CoinSet b)
-{
+static bool equal_sets(CoinSet a, CoinSet b) {
     pair<CoinSet::iterator, CoinSet::iterator> ret = mismatch(a.begin(), a.end(), b.begin());
     return ret.first == a.end() && ret.second == b.end();
 }
 
-BOOST_AUTO_TEST_CASE(coin_selection_tests)
-{
+BOOST_AUTO_TEST_CASE(coin_selection_tests) {
     CoinSet setCoinsRet, setCoinsRet2;
     CAmount nValueRet;
 
     LOCK(wallet.cs_wallet);
 
     // test multiple times to allow for differences in the shuffle order
-    for (int i = 0; i < RUN_TESTS; i++)
-    {
+    for (int i = 0; i < RUN_TESTS; i++) {
         empty_wallet();
 
         // with an empty wallet we can't even pay one cent
@@ -276,8 +268,7 @@ BOOST_AUTO_TEST_CASE(coin_selection_tests)
             BOOST_CHECK(!equal_sets(setCoinsRet, setCoinsRet2));
 
             int fails = 0;
-            for (int i = 0; i < RANDOM_REPEATS; i++)
-            {
+            for (int i = 0; i < RANDOM_REPEATS; i++) {
                 // selecting 1 from 100 identical coins depends on the shuffle; this test will fail 1% of the time
                 // run the test RANDOM_REPEATS times and only complain if all of them fail
                 BOOST_CHECK(wallet.SelectCoinsMinConf(COIN, 1, 6, vCoins, setCoinsRet, nValueRet));
@@ -297,8 +288,7 @@ BOOST_AUTO_TEST_CASE(coin_selection_tests)
             add_coin(25*CENT);
 
             fails = 0;
-            for (int i = 0; i < RANDOM_REPEATS; i++)
-            {
+            for (int i = 0; i < RANDOM_REPEATS; i++) {
                 // selecting 1 from 100 identical coins depends on the shuffle; this test will fail 1% of the time
                 // run the test RANDOM_REPEATS times and only complain if all of them fail
                 BOOST_CHECK(wallet.SelectCoinsMinConf(90*CENT, 1, 6, vCoins, setCoinsRet, nValueRet));

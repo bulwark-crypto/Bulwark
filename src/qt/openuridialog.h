@@ -7,27 +7,25 @@
 
 #include <QDialog>
 
-namespace Ui
-{
+namespace Ui {
 class OpenURIDialog;
 }
 
-class OpenURIDialog : public QDialog
-{
+class OpenURIDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit OpenURIDialog(QWidget* parent);
     ~OpenURIDialog();
 
     QString getURI();
 
-private slots:
+  private slots:
     void on_selectFileButton_clicked();
     void on_acceptButton_clicked();
     void on_cancelButton_clicked();
 
-private:
+  private:
     Ui::OpenURIDialog* ui;
 };
 

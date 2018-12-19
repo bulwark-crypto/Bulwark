@@ -7,10 +7,8 @@
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 
-namespace
-{
-inline std::string ValueString(const std::vector<unsigned char>& vch)
-{
+namespace {
+inline std::string ValueString(const std::vector<unsigned char>& vch) {
     if (vch.size() <= 4)
         return strprintf("%d", CScriptNum(vch, false).getint());
     else
@@ -20,10 +18,8 @@ inline std::string ValueString(const std::vector<unsigned char>& vch)
 
 using namespace std;
 
-const char* GetOpName(opcodetype opcode)
-{
-    switch (opcode)
-    {
+const char* GetOpName(opcodetype opcode) {
+    switch (opcode) {
     // push value
     case OP_0                      :
         return "0";
@@ -281,20 +277,17 @@ const char* GetOpName(opcodetype opcode)
     }
 }
 
-unsigned int CScript::GetSigOpCount(bool fAccurate) const
-{
+unsigned int CScript::GetSigOpCount(bool fAccurate) const {
     unsigned int n = 0;
     const_iterator pc = begin();
     opcodetype lastOpcode = OP_INVALIDOPCODE;
-    while (pc < end())
-    {
+    while (pc < end()) {
         opcodetype opcode;
         if (!GetOp(pc, opcode))
             break;
         if (opcode == OP_CHECKSIG || opcode == OP_CHECKSIGVERIFY)
             n++;
-        else if (opcode == OP_CHECKMULTISIG || opcode == OP_CHECKMULTISIGVERIFY)
-        {
+        else if (opcode == OP_CHECKMULTISIG || opcode == OP_CHECKMULTISIGVERIFY) {
             if (fAccurate && lastOpcode >= OP_1 && lastOpcode <= OP_16)
                 n += DecodeOP_N(lastOpcode);
             else
@@ -305,8 +298,7 @@ unsigned int CScript::GetSigOpCount(bool fAccurate) const
     return n;
 }
 
-unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const
-{
+unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const {
     if (!IsPayToScriptHash())
         return GetSigOpCount(true);
 
@@ -315,8 +307,7 @@ unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const
     // pushes onto the stack:
     const_iterator pc = scriptSig.begin();
     vector<unsigned char> data;
-    while (pc < scriptSig.end())
-    {
+    while (pc < scriptSig.end()) {
         opcodetype opcode;
         if (!scriptSig.GetOp(pc, opcode, data))
             return 0;
@@ -329,16 +320,14 @@ unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const
     return subscript.GetSigOpCount(true);
 }
 
-bool CScript::IsNormalPaymentScript() const
-{
+bool CScript::IsNormalPaymentScript() const {
     if(this->size() != 25) return false;
 
     std::string str;
     opcodetype opcode;
     const_iterator pc = begin();
     int i = 0;
-    while (pc < end())
-    {
+    while (pc < end()) {
         GetOp(pc, opcode);
 
         if(     i == 0 && opcode != OP_DUP) return false;
@@ -353,8 +342,7 @@ bool CScript::IsNormalPaymentScript() const
     return true;
 }
 
-bool CScript::IsPayToScriptHash() const
-{
+bool CScript::IsPayToScriptHash() const {
     // Extra-fast test for pay-to-script-hash CScripts:
     return (this->size() == 23 &&
             this->at(0) == OP_HASH160 &&
@@ -362,23 +350,19 @@ bool CScript::IsPayToScriptHash() const
             this->at(22) == OP_EQUAL);
 }
 
-bool CScript::IsZerocoinMint() const
-{
+bool CScript::IsZerocoinMint() const {
     //fast test for Zerocoin Mint CScripts
     return (this->size() > 0 &&
             this->at(0) == OP_ZEROCOINMINT);
 }
 
-bool CScript::IsZerocoinSpend() const
-{
+bool CScript::IsZerocoinSpend() const {
     return (this->size() > 0 &&
             this->at(0) == OP_ZEROCOINSPEND);
 }
 
-bool CScript::IsPushOnly(const_iterator pc) const
-{
-    while (pc < end())
-    {
+bool CScript::IsPushOnly(const_iterator pc) const {
+    while (pc < end()) {
         opcodetype opcode;
         if (!GetOp(pc, opcode))
             return false;
@@ -392,35 +376,27 @@ bool CScript::IsPushOnly(const_iterator pc) const
     return true;
 }
 
-bool CScript::IsPushOnly() const
-{
+bool CScript::IsPushOnly() const {
     return this->IsPushOnly(begin());
 }
 
-std::string CScript::ToString() const
-{
+std::string CScript::ToString() const {
     std::string str;
     opcodetype opcode;
     std::vector<unsigned char> vch;
     const_iterator pc = begin();
-    while (pc < end())
-    {
+    while (pc < end()) {
         if (!str.empty())
             str += " ";
-        if (!GetOp(pc, opcode, vch))
-        {
+        if (!GetOp(pc, opcode, vch)) {
             str += "[error]";
             return str;
         }
-        if (0 <= opcode && opcode <= OP_PUSHDATA4)
-        {
+        if (0 <= opcode && opcode <= OP_PUSHDATA4) {
             str += ValueString(vch);
-        }
-        else
-        {
+        } else {
             str += GetOpName(opcode);
-            if (opcode == OP_ZEROCOINSPEND)
-            {
+            if (opcode == OP_ZEROCOINSPEND) {
                 //Zerocoinspend has no further op codes.
                 break;
             }

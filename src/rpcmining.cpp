@@ -36,8 +36,7 @@ using namespace std;
 // Allocated in InitRPCMining, free'd in ShutdownRPCMining
 static CReserveKey* pMiningKey = NULL;
 
-void InitRPCMining()
-{
+void InitRPCMining() {
     if (!pwalletMain)
         return;
 
@@ -45,8 +44,7 @@ void InitRPCMining()
     pMiningKey = new CReserveKey(pwalletMain);
 }
 
-void ShutdownRPCMining()
-{
+void ShutdownRPCMining() {
     if (!pMiningKey)
         return;
 
@@ -54,11 +52,9 @@ void ShutdownRPCMining()
     pMiningKey = NULL;
 }
 #else
-void InitRPCMining()
-{
+void InitRPCMining() {
 }
-void ShutdownRPCMining()
-{
+void ShutdownRPCMining() {
 }
 #endif
 
@@ -67,8 +63,7 @@ void ShutdownRPCMining()
  * or from the last difficulty change if 'lookup' is nonpositive.
  * If 'height' is nonnegative, compute the estimate at the time when a given block was found.
  */
-UniValue GetNetworkHashPS(int lookup, int height)
-{
+UniValue GetNetworkHashPS(int lookup, int height) {
     CBlockIndex *pb = chainActive.Tip();
 
     if (height >= 0 && height < chainActive.Height())
@@ -88,8 +83,7 @@ UniValue GetNetworkHashPS(int lookup, int height)
     CBlockIndex* pb0 = pb;
     int64_t minTime = pb0->GetBlockTime();
     int64_t maxTime = minTime;
-    for (int i = 0; i < lookup; i++)
-    {
+    for (int i = 0; i < lookup; i++) {
         pb0 = pb0->pprev;
         int64_t time = pb0->GetBlockTime();
         minTime = std::min(time, minTime);
@@ -106,8 +100,7 @@ UniValue GetNetworkHashPS(int lookup, int height)
     return (int64_t)(workDiff.getdouble() / timeDiff);
 }
 
-UniValue getnetworkhashps(const UniValue& params, bool fHelp)
-{
+UniValue getnetworkhashps(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() > 2)
         throw runtime_error(
             "getnetworkhashps ( blocks height )\n"
@@ -126,8 +119,7 @@ UniValue getnetworkhashps(const UniValue& params, bool fHelp)
 }
 
 #ifdef ENABLE_WALLET
-UniValue getgenerate(const UniValue& params, bool fHelp)
-{
+UniValue getgenerate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getgenerate\n"
@@ -143,8 +135,7 @@ UniValue getgenerate(const UniValue& params, bool fHelp)
 }
 
 
-UniValue setgenerate(const UniValue& params, bool fHelp)
-{
+UniValue setgenerate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "setgenerate generate ( genproclimit )\n"
@@ -172,16 +163,14 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
         fGenerate = params[0].get_bool();
 
     int nGenProcLimit = -1;
-    if (params.size() > 1)
-    {
+    if (params.size() > 1) {
         nGenProcLimit = params[1].get_int();
         if (nGenProcLimit == 0)
             fGenerate = false;
     }
 
     // -regtest mode: don't return until nGenProcLimit blocks are generated
-    if (fGenerate && Params().MineBlocksOnDemand())
-    {
+    if (fGenerate && Params().MineBlocksOnDemand()) {
         int nHeightStart = 0;
         int nHeightEnd = 0;
         int nHeight = 0;
@@ -197,8 +186,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
         }
         unsigned int nExtraNonce = 0;
         UniValue blockHashes(UniValue::VARR);
-        while (nHeight < nHeightEnd)
-        {
+        while (nHeight < nHeightEnd) {
             unique_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey, pwalletMain, false));
             if (!pblocktemplate.get())
                 throw JSONRPCError(RPC_INTERNAL_ERROR, "Wallet keypool empty");
@@ -207,8 +195,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
                 LOCK(cs_main);
                 IncrementExtraNonce(pblock, chainActive.Tip(), nExtraNonce);
             }
-            while (!CheckProofOfWork(pblock->GetHash(), pblock->nBits))
-            {
+            while (!CheckProofOfWork(pblock->GetHash(), pblock->nBits)) {
                 // Yes, there is a chance every nonce could fail to satisfy the -regtest
                 // target -- 1 in 2^(2^32). That ain't gonna happen.
                 ++pblock->nNonce;
@@ -220,9 +207,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
             blockHashes.push_back(pblock->GetHash().GetHex());
         }
         return blockHashes;
-    }
-    else   // Not -regtest: start generate thread, return immediately
-    {
+    } else { // Not -regtest: start generate thread, return immediately
         mapArgs["-gen"] = (fGenerate ? "1" : "0");
         mapArgs["-genproclimit"] = itostr(nGenProcLimit);
         GenerateBitcoins(fGenerate, pwalletMain, nGenProcLimit);
@@ -231,8 +216,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue gethashespersec(const UniValue& params, bool fHelp)
-{
+UniValue gethashespersec(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "gethashespersec\n"
@@ -250,8 +234,7 @@ UniValue gethashespersec(const UniValue& params, bool fHelp)
 #endif
 
 
-UniValue getmininginfo(const UniValue& params, bool fHelp)
-{
+UniValue getmininginfo(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getmininginfo\n"
@@ -293,8 +276,7 @@ UniValue getmininginfo(const UniValue& params, bool fHelp)
 
 
 // NOTE: Unlike wallet RPC (which use BTC values), mining RPCs follow GBT (BIP 22) in using satoshi amounts
-UniValue prioritisetransaction(const UniValue& params, bool fHelp)
-{
+UniValue prioritisetransaction(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 3)
         throw runtime_error(
             "prioritisetransaction <txid> <priority delta> <fee delta>\n"
@@ -322,16 +304,14 @@ UniValue prioritisetransaction(const UniValue& params, bool fHelp)
 
 
 // NOTE: Assumes a conclusive result; if result is inconclusive, it must be handled by caller
-static UniValue BIP22ValidationResult(const CValidationState& state)
-{
+static UniValue BIP22ValidationResult(const CValidationState& state) {
     if (state.IsValid())
         return NullUniValue;
 
     std::string strRejectReason = state.GetRejectReason();
     if (state.IsError())
         throw JSONRPCError(RPC_VERIFY_ERROR, strRejectReason);
-    if (state.IsInvalid())
-    {
+    if (state.IsInvalid()) {
         if (strRejectReason.empty())
             return "rejected";
         return strRejectReason;
@@ -340,8 +320,7 @@ static UniValue BIP22ValidationResult(const CValidationState& state)
     return "valid?";
 }
 
-UniValue getblocktemplate(const UniValue& params, bool fHelp)
-{
+UniValue getblocktemplate(const UniValue& params, bool fHelp) {
     int lastPoWBlock = IsSporkActive(SPORK_19_POW_ROLLBACK) ? Params().LAST_POW_BLOCK_OLD() : Params().LAST_POW_BLOCK();
 
     if (fHelp || params.size() > 1)
@@ -415,22 +394,18 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
 
     std::string strMode = "template";
     UniValue lpval = NullUniValue;
-    if (params.size() > 0)
-    {
+    if (params.size() > 0) {
         const UniValue& oparam = params[0].get_obj();
         const UniValue& modeval = find_value(oparam, "mode");
         if (modeval.isStr())
             strMode = modeval.get_str();
-        else if (modeval.isNull())
-        {
+        else if (modeval.isNull()) {
             /* Do nothing */
-        }
-        else
+        } else
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
         lpval = find_value(oparam, "longpollid");
 
-        if (strMode == "proposal")
-        {
+        if (strMode == "proposal") {
             const UniValue& dataval = find_value(oparam, "data");
             if (!dataval.isStr())
                 throw JSONRPCError(RPC_TYPE_ERROR, "Missing data String key for proposal");
@@ -441,8 +416,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
 
             uint256 hash = block.GetHash();
             BlockMap::iterator mi = mapBlockIndex.find(hash);
-            if (mi != mapBlockIndex.end())
-            {
+            if (mi != mapBlockIndex.end()) {
                 CBlockIndex* pindex = mi->second;
                 if (pindex->IsValid(BLOCK_VALID_SCRIPTS))
                     return "duplicate";
@@ -472,23 +446,19 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
 
     static unsigned int nTransactionsUpdatedLast;
 
-    if (!lpval.isNull())
-    {
+    if (!lpval.isNull()) {
         // Wait to respond until either the best block changes, OR a minute has passed and there are more transactions
         uint256 hashWatchedChain;
         boost::system_time checktxtime;
         unsigned int nTransactionsUpdatedLastLP;
 
-        if (lpval.isStr())
-        {
+        if (lpval.isStr()) {
             // Format: <hashBestChain><nTransactionsUpdatedLast>
             std::string lpstr = lpval.get_str();
 
             hashWatchedChain.SetHex(lpstr.substr(0, 64));
             nTransactionsUpdatedLastLP = atoi64(lpstr.substr(64));
-        }
-        else
-        {
+        } else {
             // NOTE: Spec does not specify behaviour for non-string longpollid, but this makes testing easier
             hashWatchedChain = chainActive.Tip()->GetBlockHash();
             nTransactionsUpdatedLastLP = nTransactionsUpdatedLast;
@@ -504,10 +474,8 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
             checktxtime = boost::get_system_time() + boost::posix_time::minutes(1);
 
             boost::unique_lock<boost::mutex> lock(csBestBlock);
-            while (chainActive.Tip()->GetBlockHash() == hashWatchedChain && IsRPCRunning())
-            {
-                if (!cvBlockChange.timed_wait(lock, checktxtime))
-                {
+            while (chainActive.Tip()->GetBlockHash() == hashWatchedChain && IsRPCRunning()) {
+                if (!cvBlockChange.timed_wait(lock, checktxtime)) {
                     // Timeout: Check transactions for update
                     if (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLastLP)
                         break;
@@ -531,8 +499,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     static int64_t nStart;
     static CBlockTemplate* pblocktemplate;
     if (pindexPrev != chainActive.Tip() ||
-            (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 5))
-    {
+            (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 5)) {
         // Clear pindexPrev so future calls make a new block, despite any failures from here on
         pindexPrev = NULL;
 
@@ -542,8 +509,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
         nStart = GetTime();
 
         // Create new block
-        if (pblocktemplate)
-        {
+        if (pblocktemplate) {
             delete pblocktemplate;
             pblocktemplate = NULL;
         }
@@ -570,8 +536,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     UniValue transactions(UniValue::VARR);
     map<uint256, int64_t> setTxIndex;
     int i = 0;
-    BOOST_FOREACH(CTransaction& tx, pblock->vtx)
-    {
+    BOOST_FOREACH(CTransaction& tx, pblock->vtx) {
         uint256 txHash = tx.GetHash();
         setTxIndex[txHash] = i++;
 
@@ -585,8 +550,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
         entry.push_back(Pair("hash", txHash.GetHex()));
 
         UniValue deps(UniValue::VARR);
-        BOOST_FOREACH(const CTxIn& in, tx.vin)
-        {
+        BOOST_FOREACH(const CTxIn& in, tx.vin) {
             if (setTxIndex.count(in.prevout.hash))
                 deps.push_back(setTxIndex[in.prevout.hash]);
         }
@@ -602,10 +566,8 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     UniValue coinbasetxn(UniValue::VARR);
     map<uint256, int64_t> setTxIndex1;
     int j = 0;
-    BOOST_FOREACH(CTransaction& tx, pblock->vtx)  //Incase if multi coinbase
-    {
-        if(tx.IsCoinBase())
-        {
+    BOOST_FOREACH(CTransaction& tx, pblock->vtx) { //Incase if multi coinbase
+        if(tx.IsCoinBase()) {
             uint256 txHash = tx.GetHash();
             setTxIndex1[txHash] = j++;
 
@@ -619,8 +581,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
             entry.push_back(Pair("hash", txHash.GetHex()));
 
             UniValue deps(UniValue::VARR);
-            BOOST_FOREACH(const CTxIn& in, tx.vin)
-            {
+            BOOST_FOREACH(const CTxIn& in, tx.vin) {
                 if (setTxIndex.count(in.prevout.hash))
                     deps.push_back(setTxIndex[in.prevout.hash]);
             }
@@ -640,8 +601,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     uint256 hashTarget = uint256().SetCompact(pblock->nBits);
 
     static UniValue aMutable(UniValue::VARR);
-    if (aMutable.empty())
-    {
+    if (aMutable.empty()) {
         aMutable.push_back("time");
         aMutable.push_back("transactions");
         aMutable.push_back("prevblock");
@@ -670,16 +630,13 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     result.push_back(Pair("votes", aVotes));
 
 
-    if (pblock->payee != CScript())
-    {
+    if (pblock->payee != CScript()) {
         CTxDestination address1;
         ExtractDestination(pblock->payee, address1);
         CBitcoinAddress address2(address1);
         result.push_back(Pair("payee", address2.ToString().c_str()));
         result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
-    }
-    else
-    {
+    } else {
         result.push_back(Pair("payee", ""));
         result.push_back(Pair("payee_amount", ""));
     }
@@ -690,18 +647,16 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     return result;
 }
 
-class submitblock_StateCatcher : public CValidationInterface
-{
-public:
+class submitblock_StateCatcher : public CValidationInterface {
+  public:
     uint256 hash;
     bool found;
     CValidationState state;
 
     submitblock_StateCatcher(const uint256& hashIn) : hash(hashIn), found(false), state() {};
 
-protected:
-    virtual void BlockChecked(const CBlock& block, const CValidationState& stateIn)
-    {
+  protected:
+    virtual void BlockChecked(const CBlock& block, const CValidationState& stateIn) {
         if (block.GetHash() != hash)
             return;
         found = true;
@@ -709,8 +664,7 @@ protected:
     };
 };
 
-UniValue submitblock(const UniValue& params, bool fHelp)
-{
+UniValue submitblock(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "submitblock \"hexdata\" ( \"jsonparametersobject\" )\n"
@@ -737,8 +691,7 @@ UniValue submitblock(const UniValue& params, bool fHelp)
     {
         LOCK(cs_main);
         BlockMap::iterator mi = mapBlockIndex.find(hash);
-        if (mi != mapBlockIndex.end())
-        {
+        if (mi != mapBlockIndex.end()) {
             CBlockIndex* pindex = mi->second;
             if (pindex->IsValid(BLOCK_VALID_SCRIPTS))
                 return "duplicate";
@@ -754,14 +707,12 @@ UniValue submitblock(const UniValue& params, bool fHelp)
     RegisterValidationInterface(&sc);
     bool fAccepted = ProcessNewBlock(state, NULL, &block);
     UnregisterValidationInterface(&sc);
-    if (fBlockPresent)
-    {
+    if (fBlockPresent) {
         if (fAccepted && !sc.found)
             return "duplicate-inconclusive";
         return "duplicate";
     }
-    if (fAccepted)
-    {
+    if (fAccepted) {
         if (!sc.found)
             return "inconclusive";
         state = sc.state;
@@ -769,8 +720,7 @@ UniValue submitblock(const UniValue& params, bool fHelp)
     return BIP22ValidationResult(state);
 }
 
-UniValue estimatefee(const UniValue& params, bool fHelp)
-{
+UniValue estimatefee(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "estimatefee nblocks\n"
@@ -800,8 +750,7 @@ UniValue estimatefee(const UniValue& params, bool fHelp)
     return ValueFromAmount(feeRate.GetFeePerK());
 }
 
-UniValue estimatepriority(const UniValue& params, bool fHelp)
-{
+UniValue estimatepriority(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "estimatepriority nblocks\n"

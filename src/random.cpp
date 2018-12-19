@@ -22,8 +22,7 @@
 #include <openssl/err.h>
 #include <openssl/rand.h>
 
-static inline int64_t GetPerformanceCounter()
-{
+static inline int64_t GetPerformanceCounter() {
     int64_t nCounter = 0;
 #ifdef WIN32
     QueryPerformanceCounter((LARGE_INTEGER*)&nCounter);
@@ -35,16 +34,14 @@ static inline int64_t GetPerformanceCounter()
     return nCounter;
 }
 
-void RandAddSeed()
-{
+void RandAddSeed() {
     // Seed with CPU performance counter
     int64_t nCounter = GetPerformanceCounter();
     RAND_add(&nCounter, sizeof(nCounter), 1.5);
     OPENSSL_cleanse((void*)&nCounter, sizeof(nCounter));
 }
 
-void RandAddSeedPerfmon()
-{
+void RandAddSeedPerfmon() {
     RandAddSeed();
 
     // This can take up to 2 seconds, so only do it every 10 minutes
@@ -60,8 +57,7 @@ void RandAddSeedPerfmon()
     long ret = 0;
     unsigned long nSize = 0;
     const size_t nMaxSize = 10000000; // Bail out at more than 10MB of performance data
-    while (true)
-    {
+    while (true) {
         nSize = vData.size();
         ret = RegQueryValueExA(HKEY_PERFORMANCE_DATA, "Global", NULL, NULL, begin_ptr(vData), &nSize);
         if (ret != ERROR_MORE_DATA || vData.size() >= nMaxSize)
@@ -69,17 +65,13 @@ void RandAddSeedPerfmon()
         vData.resize(std::max((vData.size() * 3) / 2, nMaxSize)); // Grow size of buffer exponentially
     }
     RegCloseKey(HKEY_PERFORMANCE_DATA);
-    if (ret == ERROR_SUCCESS)
-    {
+    if (ret == ERROR_SUCCESS) {
         RAND_add(begin_ptr(vData), nSize, nSize / 100.0);
         OPENSSL_cleanse(begin_ptr(vData), nSize);
         LogPrint("rand", "%s: %lu bytes\n", __func__, nSize);
-    }
-    else
-    {
+    } else {
         static bool warned = false; // Warn only once
-        if (!warned)
-        {
+        if (!warned) {
             LogPrintf("%s: Warning: RegQueryValueExA(HKEY_PERFORMANCE_DATA) failed with code %i\n", __func__, ret);
             warned = true;
         }
@@ -87,17 +79,14 @@ void RandAddSeedPerfmon()
 #endif
 }
 
-void GetRandBytes(unsigned char* buf, int num)
-{
-    if (RAND_bytes(buf, num) != 1)
-    {
+void GetRandBytes(unsigned char* buf, int num) {
+    if (RAND_bytes(buf, num) != 1) {
         LogPrintf("%s: OpenSSL RAND_bytes() failed with error: %s\n", __func__, ERR_error_string(ERR_get_error(), NULL));
         assert(false);
     }
 }
 
-uint64_t GetRand(uint64_t nMax)
-{
+uint64_t GetRand(uint64_t nMax) {
     if (nMax == 0)
         return 0;
 
@@ -105,21 +94,17 @@ uint64_t GetRand(uint64_t nMax)
     // to give every possible output value an equal possibility
     uint64_t nRange = (std::numeric_limits<uint64_t>::max() / nMax) * nMax;
     uint64_t nRand = 0;
-    do
-    {
+    do {
         GetRandBytes((unsigned char*)&nRand, sizeof(nRand));
-    }
-    while (nRand >= nRange);
+    } while (nRand >= nRange);
     return (nRand % nMax);
 }
 
-int GetRandInt(int nMax)
-{
+int GetRandInt(int nMax) {
     return GetRand(nMax);
 }
 
-uint256 GetRandHash()
-{
+uint256 GetRandHash() {
     uint256 hash;
     GetRandBytes((unsigned char*)&hash, sizeof(hash));
     return hash;
@@ -127,27 +112,19 @@ uint256 GetRandHash()
 
 uint32_t insecure_rand_Rz = 11;
 uint32_t insecure_rand_Rw = 11;
-void seed_insecure_rand(bool fDeterministic)
-{
+void seed_insecure_rand(bool fDeterministic) {
     // The seed values have some unlikely fixed points which we avoid.
-    if (fDeterministic)
-    {
+    if (fDeterministic) {
         insecure_rand_Rz = insecure_rand_Rw = 11;
-    }
-    else
-    {
+    } else {
         uint32_t tmp;
-        do
-        {
+        do {
             GetRandBytes((unsigned char*)&tmp, 4);
-        }
-        while (tmp == 0 || tmp == 0x9068ffffU);
+        } while (tmp == 0 || tmp == 0x9068ffffU);
         insecure_rand_Rz = tmp;
-        do
-        {
+        do {
             GetRandBytes((unsigned char*)&tmp, 4);
-        }
-        while (tmp == 0 || tmp == 0x464fffffU);
+        } while (tmp == 0 || tmp == 0x464fffffU);
         insecure_rand_Rw = tmp;
     }
 }

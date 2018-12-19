@@ -24,17 +24,15 @@
  */
 
 /** A reference to a CKey: the Hash160 of its serialized public key */
-class CKeyID : public uint160
-{
-public:
+class CKeyID : public uint160 {
+  public:
     CKeyID() : uint160(0) {}
     CKeyID(const uint160& in) : uint160(in) {}
 };
 
 /** An encapsulated public key. */
-class CPubKey
-{
-private:
+class CPubKey {
+  private:
     /**
      * Just store the serialized data.
      * Its length can very cheaply be computed from the first byte.
@@ -42,8 +40,7 @@ private:
     unsigned char vch[65];
 
     //! Compute the length of a pubkey with a given first byte.
-    unsigned int static GetLen(unsigned char chHeader)
-    {
+    unsigned int static GetLen(unsigned char chHeader) {
         if (chHeader == 2 || chHeader == 3)
             return 33;
         if (chHeader == 4 || chHeader == 6 || chHeader == 7)
@@ -52,22 +49,19 @@ private:
     }
 
     //! Set this key data to be invalid
-    void Invalidate()
-    {
+    void Invalidate() {
         vch[0] = 0xFF;
     }
 
-public:
+  public:
     //! Construct an invalid public key.
-    CPubKey()
-    {
+    CPubKey() {
         Invalidate();
     }
 
     //! Initialize a public key using begin/end iterators to byte data.
     template <typename T>
-    void Set(const T pbegin, const T pend)
-    {
+    void Set(const T pbegin, const T pend) {
         int len = pend == pbegin ? 0 : GetLen(pbegin[0]);
         if (len && len == (pend - pbegin))
             memcpy(vch, (unsigned char*)&pbegin[0], len);
@@ -77,73 +71,58 @@ public:
 
     //! Construct a public key using begin/end iterators to byte data.
     template <typename T>
-    CPubKey(const T pbegin, const T pend)
-    {
+    CPubKey(const T pbegin, const T pend) {
         Set(pbegin, pend);
     }
 
     //! Construct a public key from a byte vector.
-    CPubKey(const std::vector<unsigned char>& vch)
-    {
+    CPubKey(const std::vector<unsigned char>& vch) {
         Set(vch.begin(), vch.end());
     }
 
     //! Simple read-only vector-like interface to the pubkey data.
-    unsigned int size() const
-    {
+    unsigned int size() const {
         return GetLen(vch[0]);
     }
-    const unsigned char* begin() const
-    {
+    const unsigned char* begin() const {
         return vch;
     }
-    const unsigned char* end() const
-    {
+    const unsigned char* end() const {
         return vch + size();
     }
-    const unsigned char& operator[](unsigned int pos) const
-    {
+    const unsigned char& operator[](unsigned int pos) const {
         return vch[pos];
     }
 
     //! Comparator implementation.
-    friend bool operator==(const CPubKey& a, const CPubKey& b)
-    {
+    friend bool operator==(const CPubKey& a, const CPubKey& b) {
         return a.vch[0] == b.vch[0] &&
                memcmp(a.vch, b.vch, a.size()) == 0;
     }
-    friend bool operator!=(const CPubKey& a, const CPubKey& b)
-    {
+    friend bool operator!=(const CPubKey& a, const CPubKey& b) {
         return !(a == b);
     }
-    friend bool operator<(const CPubKey& a, const CPubKey& b)
-    {
+    friend bool operator<(const CPubKey& a, const CPubKey& b) {
         return a.vch[0] < b.vch[0] ||
                (a.vch[0] == b.vch[0] && memcmp(a.vch, b.vch, a.size()) < 0);
     }
 
     //! Implement serialization, as if this was a byte vector.
-    unsigned int GetSerializeSize(int nType, int nVersion) const
-    {
+    unsigned int GetSerializeSize(int nType, int nVersion) const {
         return size() + 1;
     }
     template <typename Stream>
-    void Serialize(Stream& s, int nType, int nVersion) const
-    {
+    void Serialize(Stream& s, int nType, int nVersion) const {
         unsigned int len = size();
         ::WriteCompactSize(s, len);
         s.write((char*)vch, len);
     }
     template <typename Stream>
-    void Unserialize(Stream& s, int nType, int nVersion)
-    {
+    void Unserialize(Stream& s, int nType, int nVersion) {
         unsigned int len = ::ReadCompactSize(s);
-        if (len <= 65)
-        {
+        if (len <= 65) {
             s.read((char*)vch, len);
-        }
-        else
-        {
+        } else {
             // invalid pubkey, skip available data
             char dummy;
             while (len--)
@@ -153,14 +132,12 @@ public:
     }
 
     //! Get the KeyID of this public key (hash of its serialization)
-    CKeyID GetID() const
-    {
+    CKeyID GetID() const {
         return CKeyID(Hash160(vch, vch + size()));
     }
 
     //! Get the 256-bit hash of this public key.
-    uint256 GetHash() const
-    {
+    uint256 GetHash() const {
         return Hash(vch, vch + size());
     }
 
@@ -169,8 +146,7 @@ public:
      *
      * Note that this is consensus critical as CheckSig() calls it!
      */
-    bool IsValid() const
-    {
+    bool IsValid() const {
         return size() > 0;
     }
 
@@ -178,8 +154,7 @@ public:
     bool IsFullyValid() const;
 
     //! Check whether this is a compressed public key.
-    bool IsCompressed() const
-    {
+    bool IsCompressed() const {
         return size() == 33;
     }
 
@@ -198,28 +173,24 @@ public:
     //! Derive BIP32 child pubkey.
     bool Derive(CPubKey& pubkeyChild, unsigned char ccChild[32], unsigned int nChild, const unsigned char cc[32]) const;
 
-    std::vector<unsigned char> Raw() const
-    {
+    std::vector<unsigned char> Raw() const {
         return std::vector<unsigned char>(vch, vch + size());
     }
 
-    std::string GetHex()
-    {
+    std::string GetHex() {
         std::string my_std_string(reinterpret_cast<const char*>(vch), 65);
         return my_std_string;
     }
 };
 
-struct CExtPubKey
-{
+struct CExtPubKey {
     unsigned char nDepth;
     unsigned char vchFingerprint[4];
     unsigned int nChild;
     unsigned char vchChainCode[32];
     CPubKey pubkey;
 
-    friend bool operator==(const CExtPubKey& a, const CExtPubKey& b)
-    {
+    friend bool operator==(const CExtPubKey& a, const CExtPubKey& b) {
         return a.nDepth == b.nDepth && memcmp(&a.vchFingerprint[0], &b.vchFingerprint[0], 4) == 0 && a.nChild == b.nChild &&
                memcmp(&a.vchChainCode[0], &b.vchChainCode[0], 32) == 0 && a.pubkey == b.pubkey;
     }
