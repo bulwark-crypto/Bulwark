@@ -18,16 +18,14 @@ class CWallet;
 
 /** UI model for the transaction table of a wallet.
  */
-class TransactionTableModel : public QAbstractTableModel
-{
+class TransactionTableModel : public QAbstractTableModel {
     Q_OBJECT
 
-public:
+  public:
     explicit TransactionTableModel(CWallet* wallet, WalletModel* parent = 0);
     ~TransactionTableModel();
 
-    enum ColumnIndex
-    {
+    enum ColumnIndex {
         Status = 0,
         Watchonly = 1,
         Date = 2,
@@ -39,8 +37,7 @@ public:
     /** Roles to get specific information from a transaction row.
         These are independent of column.
     */
-    enum RoleIndex
-    {
+    enum RoleIndex {
         /** Type of transaction */
         TypeRole = Qt::UserRole,
         /** Date and time this transaction was created */
@@ -74,12 +71,11 @@ public:
     QVariant data(const QModelIndex& index, int role) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
-    bool processingQueuedTransactions()
-    {
+    bool processingQueuedTransactions() {
         return fProcessingQueuedTransactions;
     }
 
-private:
+  private:
     CWallet* wallet;
     WalletModel* walletModel;
     QStringList columns;
@@ -101,7 +97,7 @@ private:
     QVariant txWatchonlyDecoration(const TransactionRecord* wtx) const;
     QVariant txAddressDecoration(const TransactionRecord* wtx) const;
 
-public slots:
+  public slots:
     /* New transaction, or transaction changed status */
     void updateTransaction(const QString& hash, int status, bool showTransaction);
     void updateConfirmations();
@@ -109,8 +105,7 @@ public slots:
     /** Updates the column title to "Amount (DisplayUnit)" and emits headerDataChanged() signal for table headers to react. */
     void updateAmountColumnTitle();
     /* Needed to update fProcessingQueuedTransactions through a QueuedConnection */
-    void setProcessingQueuedTransactions(bool value)
-    {
+    void setProcessingQueuedTransactions(bool value) {
         fProcessingQueuedTransactions = value;
     }
 

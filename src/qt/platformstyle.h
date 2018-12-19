@@ -10,32 +10,26 @@
 #include <QString>
 
 /* Coin network-specific GUI style information */
-class PlatformStyle
-{
-public:
+class PlatformStyle {
+  public:
     /** Get style associated with provided platform name, or 0 if not known */
     static const PlatformStyle* instantiate(const QString& platformId);
 
-    const QString& getName() const
-    {
+    const QString& getName() const {
         return name;
     }
 
-    bool getImagesOnButtons() const
-    {
+    bool getImagesOnButtons() const {
         return imagesOnButtons;
     }
-    bool getUseExtraSpacing() const
-    {
+    bool getUseExtraSpacing() const {
         return useExtraSpacing;
     }
 
-    QColor TextColor() const
-    {
+    QColor TextColor() const {
         return textColor;
     }
-    QColor SingleColor() const
-    {
+    QColor SingleColor() const {
         return singleColor;
     }
 
@@ -54,7 +48,7 @@ public:
     /** Colorize an icon (given object) with the text color */
     QIcon TextColorIcon(const QIcon& icon) const;
 
-private:
+  private:
     PlatformStyle(const QString& name, bool imagesOnButtons, bool colorizeIcons, bool useExtraSpacing);
 
     QString name;

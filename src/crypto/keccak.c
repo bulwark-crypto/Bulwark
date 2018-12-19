@@ -133,8 +133,7 @@ extern "C" {
 
 #if SPH_KECCAK_64
 
-static const sph_u64 RC[] =
-{
+static const sph_u64 RC[] = {
     SPH_C64(0x0000000000000001), SPH_C64(0x0000000000008082),
     SPH_C64(0x800000000000808A), SPH_C64(0x8000000080008000),
     SPH_C64(0x000000000000808B), SPH_C64(0x0000000080000001),
@@ -367,11 +366,9 @@ static const sph_u64 RC[] =
 
 #else
 
-static const struct
-{
+static const struct {
     sph_u32 high, low;
-} RC[] =
-{
+} RC[] = {
 #if SPH_KECCAK_INTERLEAVE
     { SPH_C32(0x00000000), SPH_C32(0x00000001) },
     { SPH_C32(0x00000089), SPH_C32(0x00000000) },
@@ -1526,8 +1523,7 @@ static const struct
 #endif
 
 static void
-keccak_init(sph_keccak_context *kc, unsigned out_size)
-{
+keccak_init(sph_keccak_context *kc, unsigned out_size) {
     int i;
 
 #if SPH_KECCAK_64
@@ -1569,8 +1565,7 @@ keccak_init(sph_keccak_context *kc, unsigned out_size)
 }
 
 static void
-keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
-{
+keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim) {
     unsigned char *buf;
     size_t ptr;
     DECL_STATE
@@ -1578,16 +1573,14 @@ keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
     buf = kc->buf;
     ptr = kc->ptr;
 
-    if (len < (lim - ptr))
-    {
+    if (len < (lim - ptr)) {
         memcpy(buf + ptr, data, len);
         kc->ptr = ptr + len;
         return;
     }
 
     READ_STATE(kc);
-    while (len > 0)
-    {
+    while (len > 0) {
         size_t clen;
 
         clen = (lim - ptr);
@@ -1597,8 +1590,7 @@ keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
         ptr += clen;
         data = (const unsigned char *)data + clen;
         len -= clen;
-        if (ptr == lim)
-        {
+        if (ptr == lim) {
             INPUT_BUF(lim);
             KECCAK_F_1600;
             ptr = 0;
@@ -1714,113 +1706,97 @@ DEFCLOSE(64, 72)
 
 /* see sph_keccak.h */
 void
-sph_keccak224_init(void *cc)
-{
+sph_keccak224_init(void *cc) {
     keccak_init(cc, 224);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak224(void *cc, const void *data, size_t len)
-{
+sph_keccak224(void *cc, const void *data, size_t len) {
     keccak_core(cc, data, len, 144);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak224_close(void *cc, void *dst)
-{
+sph_keccak224_close(void *cc, void *dst) {
     sph_keccak224_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak224_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_keccak224_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     keccak_close28(cc, ub, n, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak256_init(void *cc)
-{
+sph_keccak256_init(void *cc) {
     keccak_init(cc, 256);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak256(void *cc, const void *data, size_t len)
-{
+sph_keccak256(void *cc, const void *data, size_t len) {
     keccak_core(cc, data, len, 136);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak256_close(void *cc, void *dst)
-{
+sph_keccak256_close(void *cc, void *dst) {
     sph_keccak256_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak256_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_keccak256_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     keccak_close32(cc, ub, n, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak384_init(void *cc)
-{
+sph_keccak384_init(void *cc) {
     keccak_init(cc, 384);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak384(void *cc, const void *data, size_t len)
-{
+sph_keccak384(void *cc, const void *data, size_t len) {
     keccak_core(cc, data, len, 104);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak384_close(void *cc, void *dst)
-{
+sph_keccak384_close(void *cc, void *dst) {
     sph_keccak384_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak384_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_keccak384_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     keccak_close48(cc, ub, n, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak512_init(void *cc)
-{
+sph_keccak512_init(void *cc) {
     keccak_init(cc, 512);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak512(void *cc, const void *data, size_t len)
-{
+sph_keccak512(void *cc, const void *data, size_t len) {
     keccak_core(cc, data, len, 72);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak512_close(void *cc, void *dst)
-{
+sph_keccak512_close(void *cc, void *dst) {
     sph_keccak512_addbits_and_close(cc, 0, 0, dst);
 }
 
 /* see sph_keccak.h */
 void
-sph_keccak512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_keccak512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     keccak_close64(cc, ub, n, dst);
 }
 

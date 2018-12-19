@@ -20,11 +20,10 @@ QT_BEGIN_NAMESPACE
 class QStackedWidget;
 QT_END_NAMESPACE
 
-class WalletFrame : public QFrame
-{
+class WalletFrame : public QFrame {
     Q_OBJECT
 
-public:
+  public:
     explicit WalletFrame(BitcoinGUI* _gui = 0);
     ~WalletFrame();
 
@@ -39,7 +38,7 @@ public:
 
     void showOutOfSyncWarning(bool fShow);
 
-private:
+  private:
     QStackedWidget* walletStack;
     BitcoinGUI* gui;
     ClientModel* clientModel;
@@ -49,7 +48,7 @@ private:
 
     WalletView* currentWalletView();
 
-public slots:
+  public slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */

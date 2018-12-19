@@ -20,8 +20,7 @@
 BOOST_AUTO_TEST_SUITE(crypto_tests)
 
 template<typename Hasher, typename In, typename Out>
-void TestVector(const Hasher &h, const In &in, const Out &out)
-{
+void TestVector(const Hasher &h, const In &in, const Out &out) {
     Out hash;
     BOOST_CHECK(out.size() == h.OUTPUT_SIZE);
     hash.resize(out.size());
@@ -30,18 +29,15 @@ void TestVector(const Hasher &h, const In &in, const Out &out)
         Hasher(h).Write((unsigned char*)&in[0], in.size()).Finalize(&hash[0]);
         BOOST_CHECK(hash == out);
     }
-    for (int i=0; i<32; i++)
-    {
+    for (int i=0; i<32; i++) {
         // Test that writing the string broken up in random pieces works.
         Hasher hasher(h);
         size_t pos = 0;
-        while (pos < in.size())
-        {
+        while (pos < in.size()) {
             size_t len = insecure_rand() % ((in.size() - pos + 1) / 2 + 1);
             hasher.Write((unsigned char*)&in[pos], len);
             pos += len;
-            if (pos > 0 && pos + 2 * out.size() > in.size() && pos < in.size())
-            {
+            if (pos > 0 && pos + 2 * out.size() > in.size() && pos < in.size()) {
                 // Test that writing the rest at once to a copy of a hasher works.
                 Hasher(hasher).Write((unsigned char*)&in[pos], in.size() - pos).Finalize(&hash[0]);
                 BOOST_CHECK(hash == out);
@@ -52,40 +48,32 @@ void TestVector(const Hasher &h, const In &in, const Out &out)
     }
 }
 
-void TestSHA1(const std::string &in, const std::string &hexout)
-{
+void TestSHA1(const std::string &in, const std::string &hexout) {
     TestVector(CSHA1(), in, ParseHex(hexout));
 }
-void TestSHA256(const std::string &in, const std::string &hexout)
-{
+void TestSHA256(const std::string &in, const std::string &hexout) {
     TestVector(CSHA256(), in, ParseHex(hexout));
 }
-void TestSHA512(const std::string &in, const std::string &hexout)
-{
+void TestSHA512(const std::string &in, const std::string &hexout) {
     TestVector(CSHA512(), in, ParseHex(hexout));
 }
-void TestRIPEMD160(const std::string &in, const std::string &hexout)
-{
+void TestRIPEMD160(const std::string &in, const std::string &hexout) {
     TestVector(CRIPEMD160(), in, ParseHex(hexout));
 }
 
-void TestHMACSHA256(const std::string &hexkey, const std::string &hexin, const std::string &hexout)
-{
+void TestHMACSHA256(const std::string &hexkey, const std::string &hexin, const std::string &hexout) {
     std::vector<unsigned char> key = ParseHex(hexkey);
     TestVector(CHMAC_SHA256(&key[0], key.size()), ParseHex(hexin), ParseHex(hexout));
 }
 
-void TestHMACSHA512(const std::string &hexkey, const std::string &hexin, const std::string &hexout)
-{
+void TestHMACSHA512(const std::string &hexkey, const std::string &hexin, const std::string &hexout) {
     std::vector<unsigned char> key = ParseHex(hexkey);
     TestVector(CHMAC_SHA512(&key[0], key.size()), ParseHex(hexin), ParseHex(hexout));
 }
 
-std::string LongTestString(void)
-{
+std::string LongTestString(void) {
     std::string ret;
-    for (int i=0; i<200000; i++)
-    {
+    for (int i=0; i<200000; i++) {
         ret += (unsigned char)(i);
         ret += (unsigned char)(i >> 4);
         ret += (unsigned char)(i >> 8);
@@ -97,8 +85,7 @@ std::string LongTestString(void)
 
 const std::string test1 = LongTestString();
 
-BOOST_AUTO_TEST_CASE(ripemd160_testvectors)
-{
+BOOST_AUTO_TEST_CASE(ripemd160_testvectors) {
     TestRIPEMD160("", "9c1185a5c5e9fc54612808977ee8f548b2258d31");
     TestRIPEMD160("abc", "8eb208f7e05d987a9b044a8e98c6b087f15a0bfc");
     TestRIPEMD160("message digest", "5d0689ef49d2fae572b881b123a85ffa21595f36");
@@ -114,8 +101,7 @@ BOOST_AUTO_TEST_CASE(ripemd160_testvectors)
     TestRIPEMD160(test1, "464243587bd146ea835cdf57bdae582f25ec45f1");
 }
 
-BOOST_AUTO_TEST_CASE(sha1_testvectors)
-{
+BOOST_AUTO_TEST_CASE(sha1_testvectors) {
     TestSHA1("", "da39a3ee5e6b4b0d3255bfef95601890afd80709");
     TestSHA1("abc", "a9993e364706816aba3e25717850c26c9cd0d89d");
     TestSHA1("message digest", "c12252ceda8be8994d5fa0290a47231c1d16aae3");
@@ -131,8 +117,7 @@ BOOST_AUTO_TEST_CASE(sha1_testvectors)
     TestSHA1(test1, "b7755760681cbfd971451668f32af5774f4656b5");
 }
 
-BOOST_AUTO_TEST_CASE(sha256_testvectors)
-{
+BOOST_AUTO_TEST_CASE(sha256_testvectors) {
     TestSHA256("", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
     TestSHA256("abc", "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
     TestSHA256("message digest",
@@ -154,8 +139,7 @@ BOOST_AUTO_TEST_CASE(sha256_testvectors)
     TestSHA256(test1, "a316d55510b49662420f49d145d42fb83f31ef8dc016aa4e32df049991a91e26");
 }
 
-BOOST_AUTO_TEST_CASE(sha512_testvectors)
-{
+BOOST_AUTO_TEST_CASE(sha512_testvectors) {
     TestSHA512("",
                "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce"
                "47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e");
@@ -192,8 +176,7 @@ BOOST_AUTO_TEST_CASE(sha512_testvectors)
                "37de8c3ef5459d76a52cedc02dc499a3c9ed9dedbfb3281afd9653b8a112fafc");
 }
 
-BOOST_AUTO_TEST_CASE(hmac_sha256_testvectors)
-{
+BOOST_AUTO_TEST_CASE(hmac_sha256_testvectors) {
     // test cases 1, 2, 3, 4, 6 and 7 of RFC 4231
     TestHMACSHA256("0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
                    "4869205468657265",
@@ -230,8 +213,7 @@ BOOST_AUTO_TEST_CASE(hmac_sha256_testvectors)
                    "9b09ffa71b942fcb27635fbcd5b0e944bfdc63644f0713938a7f51535c3a35e2");
 }
 
-BOOST_AUTO_TEST_CASE(hmac_sha512_testvectors)
-{
+BOOST_AUTO_TEST_CASE(hmac_sha512_testvectors) {
     // test cases 1, 2, 3, 4, 6 and 7 of RFC 4231
     TestHMACSHA512("0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
                    "4869205468657265",
@@ -274,14 +256,12 @@ BOOST_AUTO_TEST_CASE(hmac_sha512_testvectors)
                    "b6022cac3c4982b10d5eeb55c3e4de15134676fb6de0446065c97440fa8c6a58");
 }
 
-void TestRFC6979(const std::string& hexkey, const std::string& hexmsg, const std::vector<std::string>& hexout)
-{
+void TestRFC6979(const std::string& hexkey, const std::string& hexmsg, const std::vector<std::string>& hexout) {
     std::vector<unsigned char> key = ParseHex(hexkey);
     std::vector<unsigned char> msg = ParseHex(hexmsg);
     RFC6979_HMAC_SHA256 rng(&key[0], key.size(), &msg[0], msg.size());
 
-    for (unsigned int i = 0; i < hexout.size(); i++)
-    {
+    for (unsigned int i = 0; i < hexout.size(); i++) {
         std::vector<unsigned char> out = ParseHex(hexout[i]);
         std::vector<unsigned char> gen;
         gen.resize(out.size());
@@ -290,8 +270,7 @@ void TestRFC6979(const std::string& hexkey, const std::string& hexmsg, const std
     }
 }
 
-BOOST_AUTO_TEST_CASE(rfc6979_hmac_sha256)
-{
+BOOST_AUTO_TEST_CASE(rfc6979_hmac_sha256) {
     TestRFC6979(
         "0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f00",
         "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",

@@ -17,9 +17,8 @@ class CKeyID;
 class CScript;
 
 /** A reference to a CScript: the Hash160 of its serialization (see script.h) */
-class CScriptID : public uint160
-{
-public:
+class CScriptID : public uint160 {
+  public:
     CScriptID() : uint160() {}
     CScriptID(const CScript& in);
     CScriptID(const uint160& in) : uint160(in) {}
@@ -54,8 +53,7 @@ static const unsigned int STANDARD_SCRIPT_VERIFY_FLAGS = MANDATORY_SCRIPT_VERIFY
 /** For convenience, standard but not mandatory verify flags. */
 static const unsigned int STANDARD_NOT_MANDATORY_VERIFY_FLAGS = STANDARD_SCRIPT_VERIFY_FLAGS & ~MANDATORY_SCRIPT_VERIFY_FLAGS;
 
-enum txnouttype
-{
+enum txnouttype {
     TX_NONSTANDARD,
     // 'standard' transaction types:
     TX_PUBKEY,
@@ -66,15 +64,12 @@ enum txnouttype
     TX_ZEROCOINMINT,
 };
 
-class CNoDestination
-{
-public:
-    friend bool operator==(const CNoDestination &a, const CNoDestination &b)
-    {
+class CNoDestination {
+  public:
+    friend bool operator==(const CNoDestination &a, const CNoDestination &b) {
         return true;
     }
-    friend bool operator<(const CNoDestination &a, const CNoDestination &b)
-    {
+    friend bool operator<(const CNoDestination &a, const CNoDestination &b) {
         return true;
     }
 };

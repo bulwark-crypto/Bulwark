@@ -13,25 +13,21 @@ BOOST_AUTO_TEST_SUITE(allocator_tests)
 // Dummy memory page locker for platform independent tests
 static const void *last_lock_addr, *last_unlock_addr;
 static size_t last_lock_len, last_unlock_len;
-class TestLocker
-{
-public:
-    bool Lock(const void *addr, size_t len)
-    {
+class TestLocker {
+  public:
+    bool Lock(const void *addr, size_t len) {
         last_lock_addr = addr;
         last_lock_len = len;
         return true;
     }
-    bool Unlock(const void *addr, size_t len)
-    {
+    bool Unlock(const void *addr, size_t len) {
         last_unlock_addr = addr;
         last_unlock_len = len;
         return true;
     }
 };
 
-BOOST_AUTO_TEST_CASE(test_LockedPageManagerBase)
-{
+BOOST_AUTO_TEST_CASE(test_LockedPageManagerBase) {
     const size_t test_page_size = 4096;
     LockedPageManagerBase<TestLocker> lpm(test_page_size);
     size_t addr;
@@ -40,22 +36,19 @@ BOOST_AUTO_TEST_CASE(test_LockedPageManagerBase)
 
     /* Try large number of small objects */
     addr = 0;
-    for(int i=0; i<1000; ++i)
-    {
+    for(int i=0; i<1000; ++i) {
         lpm.LockRange(reinterpret_cast<void*>(addr), 33);
         addr += 33;
     }
     /* Try small number of page-sized objects, straddling two pages */
     addr = test_page_size*100 + 53;
-    for(int i=0; i<100; ++i)
-    {
+    for(int i=0; i<100; ++i) {
         lpm.LockRange(reinterpret_cast<void*>(addr), test_page_size);
         addr += test_page_size;
     }
     /* Try small number of page-sized objects aligned to exactly one page */
     addr = test_page_size*300;
-    for(int i=0; i<100; ++i)
-    {
+    for(int i=0; i<100; ++i) {
         lpm.LockRange(reinterpret_cast<void*>(addr), test_page_size);
         addr += test_page_size;
     }
@@ -75,20 +68,17 @@ BOOST_AUTO_TEST_CASE(test_LockedPageManagerBase)
 
     /* And unlock again */
     addr = 0;
-    for(int i=0; i<1000; ++i)
-    {
+    for(int i=0; i<1000; ++i) {
         lpm.UnlockRange(reinterpret_cast<void*>(addr), 33);
         addr += 33;
     }
     addr = test_page_size*100 + 53;
-    for(int i=0; i<100; ++i)
-    {
+    for(int i=0; i<100; ++i) {
         lpm.UnlockRange(reinterpret_cast<void*>(addr), test_page_size);
         addr += test_page_size;
     }
     addr = test_page_size*300;
-    for(int i=0; i<100; ++i)
-    {
+    for(int i=0; i<100; ++i) {
         lpm.UnlockRange(reinterpret_cast<void*>(addr), test_page_size);
         addr += test_page_size;
     }
@@ -100,15 +90,13 @@ BOOST_AUTO_TEST_CASE(test_LockedPageManagerBase)
 
     /* A few and unlocks of size zero (should have no effect) */
     addr = 0;
-    for(int i=0; i<1000; ++i)
-    {
+    for(int i=0; i<1000; ++i) {
         lpm.LockRange(reinterpret_cast<void*>(addr), 0);
         addr += 1;
     }
     BOOST_CHECK(lpm.GetLockedPageCount() == 0);
     addr = 0;
-    for(int i=0; i<1000; ++i)
-    {
+    for(int i=0; i<1000; ++i) {
         lpm.UnlockRange(reinterpret_cast<void*>(addr), 0);
         addr += 1;
     }

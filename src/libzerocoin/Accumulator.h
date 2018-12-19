@@ -16,15 +16,13 @@
 
 #include "Coin.h"
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 /**
  * \brief Implementation of the RSA-based accumulator.
  **/
 
-class Accumulator
-{
-public:
+class Accumulator {
+  public:
 
     /**
      * @brief      Construct an Accumulator from a stream.
@@ -33,14 +31,12 @@ public:
      * @throw      Zerocoin exception in case of invalid parameters
      **/
     template<typename Stream>
-    Accumulator(const AccumulatorAndProofParams* p, Stream& strm): params(p)
-    {
+    Accumulator(const AccumulatorAndProofParams* p, Stream& strm): params(p) {
         strm >> *this;
     }
 
     template<typename Stream>
-    Accumulator(const ZerocoinParams* p, Stream& strm)
-    {
+    Accumulator(const ZerocoinParams* p, Stream& strm) {
         strm >> *this;
         this->params = &(p->accumulatorParams);
     }
@@ -95,12 +91,11 @@ public:
     Accumulator& operator =(Accumulator rhs);
     bool operator==(const Accumulator rhs) const;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(value);
         READWRITE(denomination);
     }
-private:
+  private:
     const AccumulatorAndProofParams* params;
     CBigNum value;
     CoinDenomination denomination;
@@ -109,12 +104,10 @@ private:
 /**A witness that a PublicCoin is in the accumulation of a set of coins
  *
  */
-class AccumulatorWitness
-{
-public:
+class AccumulatorWitness {
+  public:
     template<typename Stream>
-    AccumulatorWitness(const ZerocoinParams* p, Stream& strm)
-    {
+    AccumulatorWitness(const ZerocoinParams* p, Stream& strm) {
         strm >> *this;
     }
 
@@ -159,7 +152,7 @@ public:
     AccumulatorWitness& operator +=(const PublicCoin& rhs);
 
     AccumulatorWitness& operator =(AccumulatorWitness rhs);
-private:
+  private:
     Accumulator witness;
     PublicCoin element; // was const but changed to use setting in assignment
 };

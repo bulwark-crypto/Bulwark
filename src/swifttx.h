@@ -64,9 +64,8 @@ void CleanTransactionLocksList();
 
 int64_t GetAverageVoteTime();
 
-class CConsensusVote
-{
-public:
+class CConsensusVote {
+  public:
     CTxIn vinMasternode;
     uint256 txHash;
     int nBlockHeight;
@@ -80,8 +79,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(txHash);
         READWRITE(vinMasternode);
         READWRITE(vchMasterNodeSignature);
@@ -89,9 +87,8 @@ public:
     }
 };
 
-class CTransactionLock
-{
-public:
+class CTransactionLock {
+  public:
     int nBlockHeight;
     uint256 txHash;
     std::vector<CConsensusVote> vecConsensusVotes;
@@ -102,8 +99,7 @@ public:
     int CountSignatures();
     void AddSignature(CConsensusVote& cv);
 
-    uint256 GetHash()
-    {
+    uint256 GetHash() {
         return txHash;
     }
 };

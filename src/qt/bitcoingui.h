@@ -44,11 +44,10 @@ QT_END_NAMESPACE
   Bitcoin GUI main class. This class represents the main window of the Bitcoin UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class BitcoinGUI : public QMainWindow
-{
+class BitcoinGUI : public QMainWindow {
     Q_OBJECT
 
-public:
+  public:
     static const QString DEFAULT_WALLET;
 
     explicit BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent = 0);
@@ -71,14 +70,14 @@ public:
     bool enableWallet;
     bool fMultiSend = false;
 
-protected:
+  protected:
     void changeEvent(QEvent* e);
     void closeEvent(QCloseEvent* event);
     void dragEnterEvent(QDragEnterEvent* event);
     void dropEvent(QDropEvent* event);
     bool eventFilter(QObject* object, QEvent* event);
 
-private:
+  private:
     ClientModel* clientModel;
     WalletFrame* walletFrame;
 
@@ -160,13 +159,13 @@ private:
     /** Disconnect core signals from GUI client */
     void unsubscribeFromCoreSignals();
 
-signals:
+  signals:
     /** Signal raised when a URI was entered or dragged to the GUI */
     void receivedURI(const QString& uri);
     /** Restart handling */
     void requestedRestart(QStringList args);
 
-public slots:
+  public slots:
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
@@ -200,9 +199,9 @@ public slots:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address);
 #endif // ENABLE_WALLET
 
-private:
+  private:
 
-private slots:
+  private slots:
 #ifdef ENABLE_WALLET
     /** Switch to overview (home) page */
     void gotoOverviewPage();
@@ -263,20 +262,19 @@ private slots:
     void showProgress(const QString& title, int nProgress);
 };
 
-class UnitDisplayStatusBarControl : public QLabel
-{
+class UnitDisplayStatusBarControl : public QLabel {
     Q_OBJECT
 
-public:
+  public:
     explicit UnitDisplayStatusBarControl();
     /** Lets the control know about the Options Model (and its signals) */
     void setOptionsModel(OptionsModel* optionsModel);
 
-protected:
+  protected:
     /** So that it responds to left-button clicks */
     void mousePressEvent(QMouseEvent* event);
 
-private:
+  private:
     OptionsModel* optionsModel;
     QMenu* menu;
 
@@ -285,7 +283,7 @@ private:
     /** Creates context menu, its actions, and wires up all the relevant signals for mouse events. */
     void createContextMenu();
 
-private slots:
+  private slots:
     /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
     void updateDisplayUnit(int newUnits);
     /** Tells underlying optionsModel to update its current display unit. */

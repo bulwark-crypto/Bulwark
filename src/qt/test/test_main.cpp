@@ -37,8 +37,7 @@ Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin);
 extern void noui_connect();
 
 // This is all you need to run all the tests
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     SetupEnvironment();
     bool fInvalid = false;
 

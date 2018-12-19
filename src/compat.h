@@ -90,8 +90,7 @@ typedef u_int SOCKET;
 
 size_t strnlen_int(const char* start, size_t max_len);
 
-bool static inline IsSelectableSocket(SOCKET s)
-{
+bool static inline IsSelectableSocket(SOCKET s) {
 #ifdef WIN32
     return true;
 #else

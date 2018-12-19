@@ -13,8 +13,7 @@
 
 BOOST_AUTO_TEST_SUITE(getarg_tests)
 
-static void ResetArgs(const std::string& strArg)
-{
+static void ResetArgs(const std::string& strArg) {
     std::vector<std::string> vecArg;
     if (strArg.size())
         boost::split(vecArg, strArg, boost::is_space(), boost::token_compress_on);
@@ -24,16 +23,14 @@ static void ResetArgs(const std::string& strArg)
 
     // Convert to char*:
     std::vector<const char*> vecChar;
-    BOOST_FOREACH(std::string& s, vecArg)
-    {
+    BOOST_FOREACH(std::string& s, vecArg) {
         vecChar.push_back(s.c_str());
     }
 
     ParseParameters(vecChar.size(), &vecChar[0]);
 }
 
-BOOST_AUTO_TEST_CASE(boolarg)
-{
+BOOST_AUTO_TEST_CASE(boolarg) {
     ResetArgs("-foo");
     BOOST_CHECK(GetBoolArg("-foo", false));
     BOOST_CHECK(GetBoolArg("-foo", true));
@@ -84,8 +81,7 @@ BOOST_AUTO_TEST_CASE(boolarg)
 
 }
 
-BOOST_AUTO_TEST_CASE(stringarg)
-{
+BOOST_AUTO_TEST_CASE(stringarg) {
     ResetArgs("");
     BOOST_CHECK_EQUAL(GetArg("-foo", ""), "");
     BOOST_CHECK_EQUAL(GetArg("-foo", "eleven"), "eleven");
@@ -108,8 +104,7 @@ BOOST_AUTO_TEST_CASE(stringarg)
 
 }
 
-BOOST_AUTO_TEST_CASE(intarg)
-{
+BOOST_AUTO_TEST_CASE(intarg) {
     ResetArgs("");
     BOOST_CHECK_EQUAL(GetArg("-foo", 11), 11);
     BOOST_CHECK_EQUAL(GetArg("-foo", 0), 0);
@@ -127,8 +122,7 @@ BOOST_AUTO_TEST_CASE(intarg)
     BOOST_CHECK_EQUAL(GetArg("-bar", 11), 0);
 }
 
-BOOST_AUTO_TEST_CASE(doublebulwark)
-{
+BOOST_AUTO_TEST_CASE(doublebulwark) {
     ResetArgs("--foo");
     BOOST_CHECK_EQUAL(GetBoolArg("-foo", false), true);
 
@@ -137,8 +131,7 @@ BOOST_AUTO_TEST_CASE(doublebulwark)
     BOOST_CHECK_EQUAL(GetArg("-bar", 0), 1);
 }
 
-BOOST_AUTO_TEST_CASE(boolargno)
-{
+BOOST_AUTO_TEST_CASE(boolargno) {
     ResetArgs("-nofoo");
     BOOST_CHECK(!GetBoolArg("-foo", true));
     BOOST_CHECK(!GetBoolArg("-foo", false));

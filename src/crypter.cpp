@@ -14,8 +14,7 @@
 #include <string>
 #include <vector>
 
-bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::vector<unsigned char>& chSalt, const unsigned int nRounds, const unsigned int nDerivationMethod)
-{
+bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::vector<unsigned char>& chSalt, const unsigned int nRounds, const unsigned int nDerivationMethod) {
     if (nRounds < 1 || chSalt.size() != WALLET_CRYPTO_SALT_SIZE)
         return false;
 
@@ -24,8 +23,7 @@ bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::v
         i = EVP_BytesToKey(EVP_aes_256_cbc(), EVP_sha512(), &chSalt[0],
                            (unsigned char*)&strKeyData[0], strKeyData.size(), nRounds, chKey, chIV);
 
-    if (i != (int)WALLET_CRYPTO_KEY_SIZE)
-    {
+    if (i != (int)WALLET_CRYPTO_KEY_SIZE) {
         OPENSSL_cleanse(chKey, sizeof(chKey));
         OPENSSL_cleanse(chIV, sizeof(chIV));
         return false;
@@ -35,8 +33,7 @@ bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::v
     return true;
 }
 
-bool CCrypter::SetKey(const CKeyingMaterial& chNewKey, const std::vector<unsigned char>& chNewIV)
-{
+bool CCrypter::SetKey(const CKeyingMaterial& chNewKey, const std::vector<unsigned char>& chNewIV) {
     if (chNewKey.size() != WALLET_CRYPTO_KEY_SIZE || chNewIV.size() != WALLET_CRYPTO_KEY_SIZE)
         return false;
 
@@ -47,8 +44,7 @@ bool CCrypter::SetKey(const CKeyingMaterial& chNewKey, const std::vector<unsigne
     return true;
 }
 
-bool CCrypter::Encrypt(const CKeyingMaterial& vchPlaintext, std::vector<unsigned char>& vchCiphertext)
-{
+bool CCrypter::Encrypt(const CKeyingMaterial& vchPlaintext, std::vector<unsigned char>& vchCiphertext) {
     if (!fKeySet)
         return false;
 
@@ -72,8 +68,7 @@ bool CCrypter::Encrypt(const CKeyingMaterial& vchPlaintext, std::vector<unsigned
     return true;
 }
 
-bool CCrypter::Decrypt(const std::vector<unsigned char>& vchCiphertext, CKeyingMaterial& vchPlaintext)
-{
+bool CCrypter::Decrypt(const std::vector<unsigned char>& vchCiphertext, CKeyingMaterial& vchPlaintext) {
     if (!fKeySet)
         return false;
 
@@ -98,8 +93,7 @@ bool CCrypter::Decrypt(const std::vector<unsigned char>& vchCiphertext, CKeyingM
 }
 
 
-bool EncryptSecret(const CKeyingMaterial& vMasterKey, const CKeyingMaterial& vchPlaintext, const uint256& nIV, std::vector<unsigned char>& vchCiphertext)
-{
+bool EncryptSecret(const CKeyingMaterial& vMasterKey, const CKeyingMaterial& vchPlaintext, const uint256& nIV, std::vector<unsigned char>& vchCiphertext) {
     CCrypter cKeyCrypter;
     std::vector<unsigned char> chIV(WALLET_CRYPTO_KEY_SIZE);
     memcpy(&chIV[0], &nIV, WALLET_CRYPTO_KEY_SIZE);
@@ -110,8 +104,7 @@ bool EncryptSecret(const CKeyingMaterial& vMasterKey, const CKeyingMaterial& vch
 
 
 // General secure AES 256 CBC encryption routine
-bool EncryptAES256(const SecureString& sKey, const SecureString& sPlaintext, const std::string& sIV, std::string& sCiphertext)
-{
+bool EncryptAES256(const SecureString& sKey, const SecureString& sPlaintext, const std::string& sIV, std::string& sCiphertext) {
     // max ciphertext len for a n bytes of plaintext is
     // n + AES_BLOCK_SIZE - 1 bytes
     int nLen = sPlaintext.size();
@@ -119,8 +112,7 @@ bool EncryptAES256(const SecureString& sKey, const SecureString& sPlaintext, con
     int nFLen = 0;
 
     // Verify key sizes
-    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE)
-    {
+    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE) {
         LogPrintf("crypter EncryptAES256 - Invalid key or block size: Key: %d sIV:%d\n", sKey.size(), sIV.size());
         return false;
     }
@@ -144,8 +136,7 @@ bool EncryptAES256(const SecureString& sKey, const SecureString& sPlaintext, con
 }
 
 
-bool DecryptSecret(const CKeyingMaterial& vMasterKey, const std::vector<unsigned char>& vchCiphertext, const uint256& nIV, CKeyingMaterial& vchPlaintext)
-{
+bool DecryptSecret(const CKeyingMaterial& vMasterKey, const std::vector<unsigned char>& vchCiphertext, const uint256& nIV, CKeyingMaterial& vchPlaintext) {
     CCrypter cKeyCrypter;
     std::vector<unsigned char> chIV(WALLET_CRYPTO_KEY_SIZE);
     memcpy(&chIV[0], &nIV, WALLET_CRYPTO_KEY_SIZE);
@@ -154,15 +145,13 @@ bool DecryptSecret(const CKeyingMaterial& vMasterKey, const std::vector<unsigned
     return cKeyCrypter.Decrypt(vchCiphertext, *((CKeyingMaterial*)&vchPlaintext));
 }
 
-bool DecryptAES256(const SecureString& sKey, const std::string& sCiphertext, const std::string& sIV, SecureString& sPlaintext)
-{
+bool DecryptAES256(const SecureString& sKey, const std::string& sCiphertext, const std::string& sIV, SecureString& sPlaintext) {
     // plaintext will always be equal to or lesser than length of ciphertext
     int nLen = sCiphertext.size();
     int nPLen = nLen, nFLen = 0;
 
     // Verify key sizes
-    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE)
-    {
+    if (sKey.size() != 32 || sIV.size() != AES_BLOCK_SIZE) {
         LogPrintf("crypter DecryptAES256 - Invalid key or block size\n");
         return false;
     }
@@ -184,8 +173,7 @@ bool DecryptAES256(const SecureString& sKey, const std::string& sCiphertext, con
 }
 
 
-bool CCryptoKeyStore::SetCrypted()
-{
+bool CCryptoKeyStore::SetCrypted() {
     LOCK(cs_KeyStore);
     if (fUseCrypto)
         return true;
@@ -195,8 +183,7 @@ bool CCryptoKeyStore::SetCrypted()
     return true;
 }
 
-bool CCryptoKeyStore::Lock()
-{
+bool CCryptoKeyStore::Lock() {
     if (!SetCrypted())
         return false;
 
@@ -209,8 +196,7 @@ bool CCryptoKeyStore::Lock()
     return true;
 }
 
-bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
-{
+bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn) {
     {
         LOCK(cs_KeyStore);
         if (!SetCrypted())
@@ -219,25 +205,21 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
         bool keyPass = false;
         bool keyFail = false;
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.begin();
-        for (; mi != mapCryptedKeys.end(); ++mi)
-        {
+        for (; mi != mapCryptedKeys.end(); ++mi) {
             const CPubKey& vchPubKey = (*mi).second.first;
             const std::vector<unsigned char>& vchCryptedSecret = (*mi).second.second;
             CKeyingMaterial vchSecret;
-            if (!DecryptSecret(vMasterKeyIn, vchCryptedSecret, vchPubKey.GetHash(), vchSecret))
-            {
+            if (!DecryptSecret(vMasterKeyIn, vchCryptedSecret, vchPubKey.GetHash(), vchSecret)) {
                 keyFail = true;
                 break;
             }
-            if (vchSecret.size() != 32)
-            {
+            if (vchSecret.size() != 32) {
                 keyFail = true;
                 break;
             }
             CKey key;
             key.Set(vchSecret.begin(), vchSecret.end(), vchPubKey.IsCompressed());
-            if (key.GetPubKey() != vchPubKey)
-            {
+            if (key.GetPubKey() != vchPubKey) {
                 keyFail = true;
                 break;
             }
@@ -245,8 +227,7 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
             if (fDecryptionThoroughlyChecked)
                 break;
         }
-        if (keyPass && keyFail)
-        {
+        if (keyPass && keyFail) {
             LogPrintf("The wallet is probably corrupted: Some keys decrypt but not all.");
             assert(false);
         }
@@ -259,8 +240,7 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
     return true;
 }
 
-bool CCryptoKeyStore::AddKeyPubKey(const CKey& key, const CPubKey& pubkey)
-{
+bool CCryptoKeyStore::AddKeyPubKey(const CKey& key, const CPubKey& pubkey) {
     {
         LOCK(cs_KeyStore);
         if (!IsCrypted())
@@ -281,8 +261,7 @@ bool CCryptoKeyStore::AddKeyPubKey(const CKey& key, const CPubKey& pubkey)
 }
 
 
-bool CCryptoKeyStore::AddCryptedKey(const CPubKey& vchPubKey, const std::vector<unsigned char>& vchCryptedSecret)
-{
+bool CCryptoKeyStore::AddCryptedKey(const CPubKey& vchPubKey, const std::vector<unsigned char>& vchCryptedSecret) {
     {
         LOCK(cs_KeyStore);
         if (!SetCrypted())
@@ -293,16 +272,14 @@ bool CCryptoKeyStore::AddCryptedKey(const CPubKey& vchPubKey, const std::vector<
     return true;
 }
 
-bool CCryptoKeyStore::GetKey(const CKeyID& address, CKey& keyOut) const
-{
+bool CCryptoKeyStore::GetKey(const CKeyID& address, CKey& keyOut) const {
     {
         LOCK(cs_KeyStore);
         if (!IsCrypted())
             return CBasicKeyStore::GetKey(address, keyOut);
 
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.find(address);
-        if (mi != mapCryptedKeys.end())
-        {
+        if (mi != mapCryptedKeys.end()) {
             const CPubKey& vchPubKey = (*mi).second.first;
             const std::vector<unsigned char>& vchCryptedSecret = (*mi).second.second;
             CKeyingMaterial vchSecret;
@@ -317,16 +294,14 @@ bool CCryptoKeyStore::GetKey(const CKeyID& address, CKey& keyOut) const
     return false;
 }
 
-bool CCryptoKeyStore::GetPubKey(const CKeyID& address, CPubKey& vchPubKeyOut) const
-{
+bool CCryptoKeyStore::GetPubKey(const CKeyID& address, CPubKey& vchPubKeyOut) const {
     {
         LOCK(cs_KeyStore);
         if (!IsCrypted())
             return CKeyStore::GetPubKey(address, vchPubKeyOut);
 
         CryptedKeyMap::const_iterator mi = mapCryptedKeys.find(address);
-        if (mi != mapCryptedKeys.end())
-        {
+        if (mi != mapCryptedKeys.end()) {
             vchPubKeyOut = (*mi).second.first;
             return true;
         }
@@ -334,16 +309,14 @@ bool CCryptoKeyStore::GetPubKey(const CKeyID& address, CPubKey& vchPubKeyOut) co
     return false;
 }
 
-bool CCryptoKeyStore::EncryptKeys(CKeyingMaterial& vMasterKeyIn)
-{
+bool CCryptoKeyStore::EncryptKeys(CKeyingMaterial& vMasterKeyIn) {
     {
         LOCK(cs_KeyStore);
         if (!mapCryptedKeys.empty() || IsCrypted())
             return false;
 
         fUseCrypto = true;
-        BOOST_FOREACH(KeyMap::value_type& mKey, mapKeys)
-        {
+        BOOST_FOREACH(KeyMap::value_type& mKey, mapKeys) {
             const CKey& key = mKey.second;
             CPubKey vchPubKey = key.GetPubKey();
             CKeyingMaterial vchSecret(key.begin(), key.end());

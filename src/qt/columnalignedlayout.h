@@ -9,15 +9,16 @@
 
 class QHeaderView;
 
-class ColumnAlignedLayout : public QHBoxLayout
-{
+class ColumnAlignedLayout : public QHBoxLayout {
     Q_OBJECT
-public:
+  public:
     ColumnAlignedLayout();
     explicit ColumnAlignedLayout(QWidget *parent);
-    void setTableColumnsToTrack(QHeaderView *view) { headerView = view; }
+    void setTableColumnsToTrack(QHeaderView *view) {
+        headerView = view;
+    }
 
-private:
+  private:
     void setGeometry(const QRect &r);
     QHeaderView *headerView;
 };

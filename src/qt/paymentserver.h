@@ -55,11 +55,10 @@ QT_END_NAMESPACE
 // BIP70 max payment request size in bytes (DoS protection)
 extern const qint64 BIP70_MAX_PAYMENTREQUEST_SIZE;
 
-class PaymentServer : public QObject
-{
+class PaymentServer : public QObject {
     Q_OBJECT
 
-public:
+  public:
     // Parse URIs on command line
     // Returns false on error
     static void ipcParseCommandLine(int argc, char* argv[]);
@@ -91,7 +90,7 @@ public:
     // This is now public, because we use it in paymentservertests.cpp
     static bool readPaymentRequestFromFile(const QString& filename, PaymentRequestPlus& request);
 
-signals:
+  signals:
     // Fired when a valid payment request is received
     void receivedPaymentRequest(SendCoinsRecipient);
 
@@ -101,7 +100,7 @@ signals:
     // Fired when a message should be reported to the user
     void message(const QString& title, const QString& message, unsigned int style);
 
-public slots:
+  public slots:
     // Signal this when the main window's UI is ready
     // to display payment requests to the user
     void uiReady();
@@ -112,18 +111,18 @@ public slots:
     // Handle an incoming URI, URI with local file scheme or file
     void handleURIOrFile(const QString& s);
 
-private slots:
+  private slots:
     void handleURIConnection();
     void netRequestFinished(QNetworkReply*);
     void reportSslErrors(QNetworkReply*, const QList<QSslError>&);
     void handlePaymentACK(const QString& paymentACKMsg);
 
-protected:
+  protected:
     // Constructor registers this on the parent QApplication to
     // receive QEvent::FileOpen and QEvent:Drop events
     bool eventFilter(QObject* object, QEvent* event);
 
-private:
+  private:
     bool processPaymentRequest(PaymentRequestPlus& request, SendCoinsRecipient& recipient);
     void fetchRequest(const QUrl& url);
 

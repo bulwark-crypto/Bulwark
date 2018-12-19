@@ -23,8 +23,7 @@
 #include <QDesktopWidget>
 #include <QPainter>
 
-SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) : QWidget(0, f), curAlignment(0)
-{
+SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) : QWidget(0, f), curAlignment(0) {
     // set reference point, paddings
     int paddingLeft = 14;
     int paddingTop = 470;
@@ -54,8 +53,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.setFont(QFont(font, 28 * fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
     int titleTextWidth = fm.width(titleText);
-    if (titleTextWidth > 160)
-    {
+    if (titleTextWidth > 160) {
         // strange font rendering, Arial probably not found
         fontFactor = 0.75;
     }
@@ -76,8 +74,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 36, copyrightTextBulwark);
 
     // draw additional text if special network
-    if (!titleAddText.isEmpty())
-    {
+    if (!titleAddText.isEmpty()) {
         QFont boldFont = QFont(font, 10 * fontFactor);
         boldFont.setWeight(QFont::Bold);
         pixPaint.setFont(boldFont);
@@ -100,19 +97,16 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     subscribeToCoreSignals();
 }
 
-SplashScreen::~SplashScreen()
-{
+SplashScreen::~SplashScreen() {
     unsubscribeFromCoreSignals();
 }
 
-void SplashScreen::slotFinish(QWidget* mainWin)
-{
+void SplashScreen::slotFinish(QWidget* mainWin) {
     Q_UNUSED(mainWin);
     hide();
 }
 
-static void InitMessage(SplashScreen* splash, const std::string& message)
-{
+static void InitMessage(SplashScreen* splash, const std::string& message) {
     QMetaObject::invokeMethod(splash, "showMessage",
                               Qt::QueuedConnection,
                               Q_ARG(QString, QString::fromStdString(message)),
@@ -120,20 +114,17 @@ static void InitMessage(SplashScreen* splash, const std::string& message)
                               Q_ARG(QColor, QColor(55, 55, 55)));
 }
 
-static void ShowProgress(SplashScreen* splash, const std::string& title, int nProgress)
-{
+static void ShowProgress(SplashScreen* splash, const std::string& title, int nProgress) {
     InitMessage(splash, title + strprintf("%d", nProgress) + "%");
 }
 
 #ifdef ENABLE_WALLET
-static void ConnectWallet(SplashScreen* splash, CWallet* wallet)
-{
+static void ConnectWallet(SplashScreen* splash, CWallet* wallet) {
     wallet->ShowProgress.connect(boost::bind(ShowProgress, splash, _1, _2));
 }
 #endif
 
-void SplashScreen::subscribeToCoreSignals()
-{
+void SplashScreen::subscribeToCoreSignals() {
     // Connect signals to client
     uiInterface.InitMessage.connect(boost::bind(InitMessage, this, _1));
     uiInterface.ShowProgress.connect(boost::bind(ShowProgress, this, _1, _2));
@@ -142,8 +133,7 @@ void SplashScreen::subscribeToCoreSignals()
 #endif
 }
 
-void SplashScreen::unsubscribeFromCoreSignals()
-{
+void SplashScreen::unsubscribeFromCoreSignals() {
     // Disconnect signals from client
     uiInterface.InitMessage.disconnect(boost::bind(InitMessage, this, _1));
     uiInterface.ShowProgress.disconnect(boost::bind(ShowProgress, this, _1, _2));
@@ -153,16 +143,14 @@ void SplashScreen::unsubscribeFromCoreSignals()
 #endif
 }
 
-void SplashScreen::showMessage(const QString& message, int alignment, const QColor& color)
-{
+void SplashScreen::showMessage(const QString& message, int alignment, const QColor& color) {
     curMessage = message;
     curAlignment = alignment;
     curColor = color;
     update();
 }
 
-void SplashScreen::paintEvent(QPaintEvent* event)
-{
+void SplashScreen::paintEvent(QPaintEvent* event) {
     QPainter painter(this);
     painter.drawPixmap(0, 0, pixmap);
     QRect r = rect().adjusted(5, 5, -5, -5);
@@ -170,8 +158,7 @@ void SplashScreen::paintEvent(QPaintEvent* event)
     painter.drawText(r, curAlignment, curMessage);
 }
 
-void SplashScreen::closeEvent(QCloseEvent* event)
-{
+void SplashScreen::closeEvent(QCloseEvent* event) {
     StartShutdown(); // allows an "emergency" shutdown during startup
     event->ignore();
 }

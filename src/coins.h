@@ -71,9 +71,8 @@
  *              * 8c988f1a4a4de2161e0f50aac7f17e7f9555caa4: address uint160
  *  - height = 120891
  */
-class CCoins
-{
-public:
+class CCoins {
+  public:
     //! whether transaction is a coinbase
     bool fCoinBase;
     bool fCoinStake;
@@ -88,8 +87,7 @@ public:
     //! as new tx version will probably only be introduced at certain heights
     int nVersion;
 
-    void FromTx(const CTransaction& tx, int nHeightIn)
-    {
+    void FromTx(const CTransaction& tx, int nHeightIn) {
         fCoinBase = tx.IsCoinBase();
         fCoinStake = tx.IsCoinStake();
         vout = tx.vout;
@@ -99,13 +97,11 @@ public:
     }
 
     //! construct a CCoins from a CTransaction, at a given height
-    CCoins(const CTransaction& tx, int nHeightIn)
-    {
+    CCoins(const CTransaction& tx, int nHeightIn) {
         FromTx(tx, nHeightIn);
     }
 
-    void Clear()
-    {
+    void Clear() {
         fCoinBase = false;
         fCoinStake = false;
         std::vector<CTxOut>().swap(vout);
@@ -117,26 +113,22 @@ public:
     CCoins() : fCoinBase(false), fCoinStake(false), vout(0), nHeight(0), nVersion(0) {}
 
     //!remove spent outputs at the end of vout
-    void Cleanup()
-    {
+    void Cleanup() {
         while (vout.size() > 0 && vout.back().IsNull())
             vout.pop_back();
         if (vout.empty())
             std::vector<CTxOut>().swap(vout);
     }
 
-    void ClearUnspendable()
-    {
-        BOOST_FOREACH(CTxOut& txout, vout)
-        {
+    void ClearUnspendable() {
+        BOOST_FOREACH(CTxOut& txout, vout) {
             if (txout.scriptPubKey.IsUnspendable())
                 txout.SetNull();
         }
         Cleanup();
     }
 
-    void swap(CCoins& to)
-    {
+    void swap(CCoins& to) {
         std::swap(to.fCoinBase, fCoinBase);
         std::swap(to.fCoinStake, fCoinStake);
         to.vout.swap(vout);
@@ -145,8 +137,7 @@ public:
     }
 
     //! equality test
-    friend bool operator==(const CCoins& a, const CCoins& b)
-    {
+    friend bool operator==(const CCoins& a, const CCoins& b) {
         // Empty CCoins objects are always equal.
         if (a.IsPruned() && b.IsPruned())
             return true;
@@ -156,25 +147,21 @@ public:
                a.nVersion == b.nVersion &&
                a.vout == b.vout;
     }
-    friend bool operator!=(const CCoins& a, const CCoins& b)
-    {
+    friend bool operator!=(const CCoins& a, const CCoins& b) {
         return !(a == b);
     }
 
     void CalcMaskSize(unsigned int& nBytes, unsigned int& nNonzeroBytes) const;
 
-    bool IsCoinBase() const
-    {
+    bool IsCoinBase() const {
         return fCoinBase;
     }
 
-    bool IsCoinStake() const
-    {
+    bool IsCoinStake() const {
         return fCoinStake;
     }
 
-    unsigned int GetSerializeSize(int nType, int nVersion) const
-    {
+    unsigned int GetSerializeSize(int nType, int nVersion) const {
         unsigned int nSize = 0;
         unsigned int nMaskSize = 0, nMaskCode = 0;
         CalcMaskSize(nMaskSize, nMaskCode);
@@ -198,8 +185,7 @@ public:
     }
 
     template <typename Stream>
-    void Serialize(Stream& s, int nType, int nVersion) const
-    {
+    void Serialize(Stream& s, int nType, int nVersion) const {
         unsigned int nMaskSize = 0, nMaskCode = 0;
         CalcMaskSize(nMaskSize, nMaskCode);
         bool fFirst = vout.size() > 0 && !vout[0].IsNull();
@@ -211,8 +197,7 @@ public:
         // header code
         ::Serialize(s, VARINT(nCode), nType, nVersion);
         // spentness bitmask
-        for (unsigned int b = 0; b < nMaskSize; b++)
-        {
+        for (unsigned int b = 0; b < nMaskSize; b++) {
             unsigned char chAvail = 0;
             for (unsigned int i = 0; i < 8 && 2 + b * 8 + i < vout.size(); i++)
                 if (!vout[2 + b * 8 + i].IsNull())
@@ -220,8 +205,7 @@ public:
             ::Serialize(s, chAvail, nType, nVersion);
         }
         // txouts themself
-        for (unsigned int i = 0; i < vout.size(); i++)
-        {
+        for (unsigned int i = 0; i < vout.size(); i++) {
             if (!vout[i].IsNull())
                 ::Serialize(s, CTxOutCompressor(REF(vout[i])), nType, nVersion);
         }
@@ -230,8 +214,7 @@ public:
     }
 
     template <typename Stream>
-    void Unserialize(Stream& s, int nType, int nVersion)
-    {
+    void Unserialize(Stream& s, int nType, int nVersion) {
         unsigned int nCode = 0;
         // version
         ::Unserialize(s, VARINT(this->nVersion), nType, nVersion);
@@ -244,12 +227,10 @@ public:
         vAvail[1] = (nCode & 8) != 0; // 1000
         unsigned int nMaskCode = (nCode / 16) + ((nCode & 12) != 0 ? 0 : 1);
         // spentness bitmask
-        while (nMaskCode > 0)
-        {
+        while (nMaskCode > 0) {
             unsigned char chAvail = 0;
             ::Unserialize(s, chAvail, nType, nVersion);
-            for (unsigned int p = 0; p < 8; p++)
-            {
+            for (unsigned int p = 0; p < 8; p++) {
                 bool f = (chAvail & (1 << p)) != 0;
                 vAvail.push_back(f);
             }
@@ -258,8 +239,7 @@ public:
         }
         // txouts themself
         vout.assign(vAvail.size(), CTxOut());
-        for (unsigned int i = 0; i < vAvail.size(); i++)
-        {
+        for (unsigned int i = 0; i < vAvail.size(); i++) {
             if (vAvail[i])
                 ::Unserialize(s, REF(CTxOutCompressor(vout[i])), nType, nVersion);
         }
@@ -275,29 +255,25 @@ public:
     bool Spend(int nPos);
 
     //! check whether a particular output is still available
-    bool IsAvailable(unsigned int nPos) const
-    {
+    bool IsAvailable(unsigned int nPos) const {
         return (nPos < vout.size() && !vout[nPos].IsNull() && !vout[nPos].scriptPubKey.IsZerocoinMint());
     }
 
     //! check whether the entire CCoins is spent
     //! note that only !IsPruned() CCoins can be serialized
-    bool IsPruned() const
-    {
-        BOOST_FOREACH(const CTxOut& out, vout)
-        {
+    bool IsPruned() const {
+        BOOST_FOREACH(const CTxOut& out, vout) {
             if (!out.IsNull()) return false;
         }
         return true;
     }
 };
 
-class CCoinsKeyHasher
-{
-private:
+class CCoinsKeyHasher {
+  private:
     uint256 salt;
 
-public:
+  public:
     CCoinsKeyHasher();
 
     /**
@@ -305,19 +281,16 @@ public:
      * unordered_map will behave unpredictably if the custom hasher returns a
      * uint64_t, resulting in failures when syncing the chain (#4634).
      */
-    size_t operator()(const uint256& key) const
-    {
+    size_t operator()(const uint256& key) const {
         return key.GetHash(salt);
     }
 };
 
-struct CCoinsCacheEntry
-{
+struct CCoinsCacheEntry {
     CCoins coins; // The actual cached data.
     unsigned char flags;
 
-    enum Flags
-    {
+    enum Flags {
         DIRTY = (1 << 0), // This cache entry is potentially different from the version in the parent view.
         FRESH = (1 << 1), // The parent view does not have this entry (or it is pruned).
     };
@@ -327,8 +300,7 @@ struct CCoinsCacheEntry
 
 typedef boost::unordered_map<uint256, CCoinsCacheEntry, CCoinsKeyHasher> CCoinsMap;
 
-struct CCoinsStats
-{
+struct CCoinsStats {
     int nHeight;
     uint256 hashBlock;
     uint64_t nTransactions;
@@ -342,9 +314,8 @@ struct CCoinsStats
 
 
 /** Abstract view on the open txout dataset. */
-class CCoinsView
-{
-public:
+class CCoinsView {
+  public:
     //! Retrieve the CCoins (unspent transaction outputs) for a given txid
     virtual bool GetCoins(const uint256& txid, CCoins& coins) const;
 
@@ -368,12 +339,11 @@ public:
 
 
 /** CCoinsView backed by another CCoinsView */
-class CCoinsViewBacked : public CCoinsView
-{
-protected:
+class CCoinsViewBacked : public CCoinsView {
+  protected:
     CCoinsView* base;
 
-public:
+  public:
     CCoinsViewBacked(CCoinsView* viewIn);
     bool GetCoins(const uint256& txid, CCoins& coins) const;
     bool HaveCoins(const uint256& txid) const;
@@ -386,8 +356,7 @@ public:
 class CCoinsViewCache;
 
 /** Flags for nSequence and nLockTime locks */
-enum
-{
+enum {
     /* Interpret sequence numbers as relative lock-time constraints. */
     LOCKTIME_VERIFY_SEQUENCE = (1 << 0),
 
@@ -404,20 +373,17 @@ static const unsigned int STANDARD_LOCKTIME_VERIFY_FLAGS = LOCKTIME_VERIFY_SEQUE
  *  cleanup code after the modification is finished, and keeping track of
  *  concurrent modifications.
  */
-class CCoinsModifier
-{
-private:
+class CCoinsModifier {
+  private:
     CCoinsViewCache& cache;
     CCoinsMap::iterator it;
     CCoinsModifier(CCoinsViewCache& cache_, CCoinsMap::iterator it_);
 
-public:
-    CCoins* operator->()
-    {
+  public:
+    CCoins* operator->() {
         return &it->second.coins;
     }
-    CCoins& operator*()
-    {
+    CCoins& operator*() {
         return it->second.coins;
     }
     ~CCoinsModifier();
@@ -425,9 +391,8 @@ public:
 };
 
 /** CCoinsView that adds a memory cache for transactions to another CCoinsView */
-class CCoinsViewCache : public CCoinsViewBacked
-{
-protected:
+class CCoinsViewCache : public CCoinsViewBacked {
+  protected:
     /* Whether this cache has an active modifier. */
     bool hasModifier;
 
@@ -438,7 +403,7 @@ protected:
     mutable uint256 hashBlock;
     mutable CCoinsMap cacheCoins;
 
-public:
+  public:
     CCoinsViewCache(CCoinsView* baseIn);
     ~CCoinsViewCache();
 
@@ -493,7 +458,7 @@ public:
 
     friend class CCoinsModifier;
 
-private:
+  private:
     CCoinsMap::iterator FetchCoins(const uint256& txid);
     CCoinsMap::const_iterator FetchCoins(const uint256& txid) const;
 };

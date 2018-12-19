@@ -21,24 +21,21 @@
 
 using namespace std;
 
-string SanitizeString(const string& str)
-{
+string SanitizeString(const string& str) {
     /**
      * safeChars chosen to allow simple messages/URLs/email addresses, but avoid anything
      * even possibly remotely dangerous like & or >
      */
     static string safeChars("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890 .,;_-/:?@()");
     string strResult;
-    for (std::string::size_type i = 0; i < str.size(); i++)
-    {
+    for (std::string::size_type i = 0; i < str.size(); i++) {
         if (safeChars.find(str[i]) != std::string::npos)
             strResult.push_back(str[i]);
     }
     return strResult;
 }
 
-const signed char p_util_hexdigit[256] =
-{
+const signed char p_util_hexdigit[256] = {
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -57,27 +54,22 @@ const signed char p_util_hexdigit[256] =
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
     };
 
-signed char HexDigit(char c)
-{
+signed char HexDigit(char c) {
     return p_util_hexdigit[(unsigned char)c];
 }
 
-bool IsHex(const string& str)
-{
-    for (std::string::const_iterator it(str.begin()); it != str.end(); ++it)
-    {
+bool IsHex(const string& str) {
+    for (std::string::const_iterator it(str.begin()); it != str.end(); ++it) {
         if (HexDigit(*it) < 0)
             return false;
     }
     return (str.size() > 0) && (str.size() % 2 == 0);
 }
 
-vector<unsigned char> ParseHex(const char* psz)
-{
+vector<unsigned char> ParseHex(const char* psz) {
     // convert hex dump to vector
     vector<unsigned char> vch;
-    while (true)
-    {
+    while (true) {
         while (isspace(*psz))
             psz++;
         signed char c = HexDigit(*psz++);
@@ -93,13 +85,11 @@ vector<unsigned char> ParseHex(const char* psz)
     return vch;
 }
 
-vector<unsigned char> ParseHex(const string& str)
-{
+vector<unsigned char> ParseHex(const string& str) {
     return ParseHex(str.c_str());
 }
 
-string EncodeBase64(const unsigned char* pch, size_t len)
-{
+string EncodeBase64(const unsigned char* pch, size_t len) {
     static const char* pbase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     string strRet = "";
@@ -108,11 +98,9 @@ string EncodeBase64(const unsigned char* pch, size_t len)
     int mode = 0, left = 0;
     const unsigned char* pchEnd = pch + len;
 
-    while (pch < pchEnd)
-    {
+    while (pch < pchEnd) {
         int enc = *(pch++);
-        switch (mode)
-        {
+        switch (mode) {
         case 0: // we have no bits
             strRet += pbase64[enc >> 2];
             left = (enc & 3) << 4;
@@ -133,8 +121,7 @@ string EncodeBase64(const unsigned char* pch, size_t len)
         }
     }
 
-    if (mode)
-    {
+    if (mode) {
         strRet += pbase64[left];
         strRet += '=';
         if (mode == 1)
@@ -144,15 +131,12 @@ string EncodeBase64(const unsigned char* pch, size_t len)
     return strRet;
 }
 
-string EncodeBase64(const string& str)
-{
+string EncodeBase64(const string& str) {
     return EncodeBase64((const unsigned char*)str.c_str(), str.size());
 }
 
-vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
-{
-    static const int decode64_table[256] =
-    {
+vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid) {
+    static const int decode64_table[256] = {
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1,
@@ -177,13 +161,11 @@ vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
     int mode = 0;
     int left = 0;
 
-    while (1)
-    {
+    while (1) {
         int dec = decode64_table[(unsigned char)*p];
         if (dec == -1) break;
         p++;
-        switch (mode)
-        {
+        switch (mode) {
         case 0: // we have no bits and get 6
             left = dec;
             mode = 1;
@@ -209,8 +191,7 @@ vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
     }
 
     if (pfInvalid)
-        switch (mode)
-        {
+        switch (mode) {
         case 0: // 4n base64 characters processed: ok
             break;
 
@@ -232,15 +213,13 @@ vector<unsigned char> DecodeBase64(const char* p, bool* pfInvalid)
     return vchRet;
 }
 
-string DecodeBase64(const string& str)
-{
+string DecodeBase64(const string& str) {
     vector<unsigned char> vchRet = DecodeBase64(str.c_str());
     return (vchRet.size() == 0) ? string() : string((const char*)&vchRet[0], vchRet.size());
 }
 
 // Base64 decoding with secure memory allocation
-SecureString DecodeBase64Secure(const SecureString& input)
-{
+SecureString DecodeBase64Secure(const SecureString& input) {
     SecureString output;
 
     // Init openssl BIO with base64 filter and memory input
@@ -251,8 +230,7 @@ SecureString DecodeBase64Secure(const SecureString& input)
     BIO_push(b64, mem);
 
     // Prepare buffer to receive decoded data
-    if (input.size() % 4 != 0)
-    {
+    if (input.size() % 4 != 0) {
         throw runtime_error("Input length should be a multiple of 4");
     }
     size_t nMaxLen = input.size() / 4 * 3; // upper bound, guaranteed divisible by 4
@@ -269,8 +247,7 @@ SecureString DecodeBase64Secure(const SecureString& input)
 }
 
 // Base64 encoding with secure memory allocation
-SecureString EncodeBase64Secure(const SecureString& input)
-{
+SecureString EncodeBase64Secure(const SecureString& input) {
     // Init openssl BIO with base64 filter and memory output
     BIO *b64, *mem;
     b64 = BIO_new(BIO_f_base64());
@@ -295,8 +272,7 @@ SecureString EncodeBase64Secure(const SecureString& input)
     return output;
 }
 
-string EncodeBase32(const unsigned char* pch, size_t len)
-{
+string EncodeBase32(const unsigned char* pch, size_t len) {
     static const char* pbase32 = "abcdefghijklmnopqrstuvwxyz234567";
 
     string strRet = "";
@@ -305,11 +281,9 @@ string EncodeBase32(const unsigned char* pch, size_t len)
     int mode = 0, left = 0;
     const unsigned char* pchEnd = pch + len;
 
-    while (pch < pchEnd)
-    {
+    while (pch < pchEnd) {
         int enc = *(pch++);
-        switch (mode)
-        {
+        switch (mode) {
         case 0: // we have no bits
             strRet += pbase32[enc >> 3];
             left = (enc & 7) << 2;
@@ -344,8 +318,7 @@ string EncodeBase32(const unsigned char* pch, size_t len)
     }
 
     static const int nPadding[5] = {0, 6, 4, 3, 1};
-    if (mode)
-    {
+    if (mode) {
         strRet += pbase32[left];
         for (int n = 0; n < nPadding[mode]; n++)
             strRet += '=';
@@ -354,15 +327,12 @@ string EncodeBase32(const unsigned char* pch, size_t len)
     return strRet;
 }
 
-string EncodeBase32(const string& str)
-{
+string EncodeBase32(const string& str) {
     return EncodeBase32((const unsigned char*)str.c_str(), str.size());
 }
 
-vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
-{
-    static const int decode32_table[256] =
-    {
+vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid) {
+    static const int decode32_table[256] = {
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, -1, -1, -1, -1,
@@ -387,13 +357,11 @@ vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
     int mode = 0;
     int left = 0;
 
-    while (1)
-    {
+    while (1) {
         int dec = decode32_table[(unsigned char)*p];
         if (dec == -1) break;
         p++;
-        switch (mode)
-        {
+        switch (mode) {
         case 0: // we have no bits and get 5
             left = dec;
             mode = 1;
@@ -441,8 +409,7 @@ vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
     }
 
     if (pfInvalid)
-        switch (mode)
-        {
+        switch (mode) {
         case 0: // 8n base32 characters processed: ok
             break;
 
@@ -476,14 +443,12 @@ vector<unsigned char> DecodeBase32(const char* p, bool* pfInvalid)
     return vchRet;
 }
 
-string DecodeBase32(const string& str)
-{
+string DecodeBase32(const string& str) {
     vector<unsigned char> vchRet = DecodeBase32(str.c_str());
     return (vchRet.size() == 0) ? string() : string((const char*)&vchRet[0], vchRet.size());
 }
 
-static bool ParsePrechecks(const std::string& str)
-{
+static bool ParsePrechecks(const std::string& str) {
     if (str.empty()) // No empty string allowed
         return false;
     if (str.size() >= 1 && (isspace(str[0]) || isspace(str[str.size()-1]))) // No padding allowed
@@ -493,8 +458,7 @@ static bool ParsePrechecks(const std::string& str)
     return true;
 }
 
-bool ParseInt32(const std::string& str, int32_t *out)
-{
+bool ParseInt32(const std::string& str, int32_t *out) {
     if (!ParsePrechecks(str))
         return false;
     char *endp = NULL;
@@ -510,8 +474,7 @@ bool ParseInt32(const std::string& str, int32_t *out)
            n <= std::numeric_limits<int32_t>::max();
 }
 
-bool ParseInt64(const std::string& str, int64_t *out)
-{
+bool ParseInt64(const std::string& str, int64_t *out) {
     if (!ParsePrechecks(str))
         return false;
     char *endp = NULL;
@@ -525,8 +488,7 @@ bool ParseInt64(const std::string& str, int64_t *out)
            n <= std::numeric_limits<int64_t>::max();
 }
 
-bool ParseDouble(const std::string& str, double *out)
-{
+bool ParseDouble(const std::string& str, double *out) {
     if (!ParsePrechecks(str))
         return false;
     if (str.size() >= 2 && str[0] == '0' && str[1] == 'x') // No hexadecimal floats allowed
@@ -539,13 +501,11 @@ bool ParseDouble(const std::string& str, double *out)
     return text.eof() && !text.fail();
 }
 
-std::string FormatParagraph(const std::string in, size_t width, size_t indent)
-{
+std::string FormatParagraph(const std::string in, size_t width, size_t indent) {
     std::stringstream out;
     size_t col = 0;
     size_t ptr = 0;
-    while (ptr < in.size())
-    {
+    while (ptr < in.size()) {
         // Find beginning of next word
         ptr = in.find_first_not_of(' ', ptr);
         if (ptr == std::string::npos)
@@ -555,16 +515,13 @@ std::string FormatParagraph(const std::string in, size_t width, size_t indent)
         if (endword == std::string::npos)
             endword = in.size();
         // Add newline and indentation if this wraps over the allowed width
-        if (col > 0)
-        {
-            if ((col + endword - ptr) > width)
-            {
+        if (col > 0) {
+            if ((col + endword - ptr) > width) {
                 out << '\n';
                 for (size_t i = 0; i < indent; ++i)
                     out << ' ';
                 col = 0;
-            }
-            else
+            } else
                 out << ' ';
         }
         // Append word
@@ -575,18 +532,15 @@ std::string FormatParagraph(const std::string in, size_t width, size_t indent)
     return out.str();
 }
 
-std::string i64tostr(int64_t n)
-{
+std::string i64tostr(int64_t n) {
     return strprintf("%d", n);
 }
 
-std::string itostr(int n)
-{
+std::string itostr(int n) {
     return strprintf("%d", n);
 }
 
-int64_t atoi64(const char* psz)
-{
+int64_t atoi64(const char* psz) {
 #ifdef _MSC_VER
     return _atoi64(psz);
 #else
@@ -594,8 +548,7 @@ int64_t atoi64(const char* psz)
 #endif
 }
 
-int64_t atoi64(const std::string& str)
-{
+int64_t atoi64(const std::string& str) {
 #ifdef _MSC_VER
     return _atoi64(str.c_str());
 #else
@@ -603,7 +556,6 @@ int64_t atoi64(const std::string& str)
 #endif
 }
 
-int atoi(const std::string& str)
-{
+int atoi(const std::string& str) {
     return atoi(str.c_str());
 }

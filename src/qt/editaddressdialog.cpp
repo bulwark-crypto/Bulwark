@@ -18,14 +18,12 @@ EditAddressDialog::EditAddressDialog(Mode mode, QWidget* parent) : QDialog(paren
     ui(new Ui::EditAddressDialog),
     mapper(0),
     mode(mode),
-    model(0)
-{
+    model(0) {
     ui->setupUi(this);
 
     GUIUtil::setupAddressWidget(ui->addressEdit, this);
 
-    switch (mode)
-    {
+    switch (mode) {
     case NewReceivingAddress:
         setWindowTitle(tr("New receiving address"));
         ui->addressEdit->setEnabled(false);
@@ -46,13 +44,11 @@ EditAddressDialog::EditAddressDialog(Mode mode, QWidget* parent) : QDialog(paren
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
 }
 
-EditAddressDialog::~EditAddressDialog()
-{
+EditAddressDialog::~EditAddressDialog() {
     delete ui;
 }
 
-void EditAddressDialog::setModel(AddressTableModel* model)
-{
+void EditAddressDialog::setModel(AddressTableModel* model) {
     this->model = model;
     if (!model)
         return;
@@ -62,18 +58,15 @@ void EditAddressDialog::setModel(AddressTableModel* model)
     mapper->addMapping(ui->addressEdit, AddressTableModel::Address);
 }
 
-void EditAddressDialog::loadRow(int row)
-{
+void EditAddressDialog::loadRow(int row) {
     mapper->setCurrentIndex(row);
 }
 
-bool EditAddressDialog::saveCurrentRow()
-{
+bool EditAddressDialog::saveCurrentRow() {
     if (!model)
         return false;
 
-    switch (mode)
-    {
+    switch (mode) {
     case NewReceivingAddress:
     case NewSendingAddress:
         address = model->addRow(
@@ -83,8 +76,7 @@ bool EditAddressDialog::saveCurrentRow()
         break;
     case EditReceivingAddress:
     case EditSendingAddress:
-        if (mapper->submit())
-        {
+        if (mapper->submit()) {
             address = ui->addressEdit->text();
         }
         break;
@@ -92,15 +84,12 @@ bool EditAddressDialog::saveCurrentRow()
     return !address.isEmpty();
 }
 
-void EditAddressDialog::accept()
-{
+void EditAddressDialog::accept() {
     if (!model)
         return;
 
-    if (!saveCurrentRow())
-    {
-        switch (model->getEditStatus())
-        {
+    if (!saveCurrentRow()) {
+        switch (model->getEditStatus()) {
         case AddressTableModel::OK:
             // Failed with unknown reason. Just reject.
             break;
@@ -133,13 +122,11 @@ void EditAddressDialog::accept()
     QDialog::accept();
 }
 
-QString EditAddressDialog::getAddress() const
-{
+QString EditAddressDialog::getAddress() const {
     return address;
 }
 
-void EditAddressDialog::setAddress(const QString& address)
-{
+void EditAddressDialog::setAddress(const QString& address) {
     this->address = address;
     ui->addressEdit->setText(address);
 }

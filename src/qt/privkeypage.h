@@ -18,8 +18,7 @@
 
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class PrivKeyPage;
 }
 
@@ -28,30 +27,31 @@ QT_END_NAMESPACE
 
 /** Widget that shows a list of sending or receiving addresses.
   */
-class PrivKeyPage : public QDialog
-{
+class PrivKeyPage : public QDialog {
     Q_OBJECT
 
-public:
+  public:
 
     explicit PrivKeyPage(QWidget* parent);
     ~PrivKeyPage();
-	QString  createmasternodekey();
-    const QString& getReturnValue() const { return returnValue; }
+    QString  createmasternodekey();
+    const QString& getReturnValue() const {
+        return returnValue;
+    }
 
-public slots:
+  public slots:
 
-private:
+  private:
     Ui::PrivKeyPage* ui;
     QMenu* contextMenu;
-	QString key;
+    QString key;
     QString returnValue;
 
-private slots:
+  private slots:
     /** Copy address of currently selected address entry to clipboard */
     void on_copyAddress_clicked();
 
-signals:
+  signals:
     void getPrivKey(QString addr);
 };
 

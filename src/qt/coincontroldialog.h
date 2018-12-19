@@ -22,16 +22,14 @@ class MultisigDialog;
 class CCoinControl;
 class CTxMemPool;
 
-namespace Ui
-{
+namespace Ui {
 class CoinControlDialog;
 }
 
-class CoinControlDialog : public QDialog
-{
+class CoinControlDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit CoinControlDialog(QWidget* parent = nullptr, bool fMultisigEnabled = false);
     ~CoinControlDialog();
 
@@ -47,7 +45,7 @@ public:
     static CCoinControl* coinControl;
     static int nSplitBlockDummy;
 
-private:
+  private:
     Ui::CoinControlDialog* ui;
     WalletModel* model;
     int sortColumn;
@@ -64,8 +62,7 @@ private:
     void sortView(int, Qt::SortOrder);
     void updateView();
 
-    enum
-    {
+    enum {
         COLUMN_CHECKBOX,
         COLUMN_AMOUNT,
         COLUMN_LABEL,
@@ -82,19 +79,15 @@ private:
     };
 
     // some columns have a hidden column containing the value used for sorting
-    int getMappedColumn(int column, bool fVisibleColumn = true)
-    {
-        if (fVisibleColumn)
-        {
+    int getMappedColumn(int column, bool fVisibleColumn = true) {
+        if (fVisibleColumn) {
             if (column == COLUMN_AMOUNT_INT64)
                 return COLUMN_AMOUNT;
             else if (column == COLUMN_PRIORITY_INT64)
                 return COLUMN_PRIORITY;
             else if (column == COLUMN_DATE_INT64)
                 return COLUMN_DATE;
-        }
-        else
-        {
+        } else {
             if (column == COLUMN_AMOUNT)
                 return COLUMN_AMOUNT_INT64;
             else if (column == COLUMN_PRIORITY)
@@ -106,7 +99,7 @@ private:
         return column;
     }
 
-private slots:
+  private slots:
     void showMenu(const QPoint&);
     void copyAmount();
     void copyLabel();

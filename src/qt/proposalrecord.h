@@ -15,9 +15,8 @@
 
 class CWallet;
 
-class ProposalRecord
-{
-public:
+class ProposalRecord {
+  public:
     ProposalRecord() :
         hash(""),
         start_epoch(0),

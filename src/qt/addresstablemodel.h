@@ -16,28 +16,24 @@ class CWallet;
 /**
    Qt model of the address book in the core. This allows views to access and modify the address book.
  */
-class AddressTableModel : public QAbstractTableModel
-{
+class AddressTableModel : public QAbstractTableModel {
     Q_OBJECT
 
-public:
+  public:
     explicit AddressTableModel(CWallet* wallet, WalletModel* parent = 0);
     ~AddressTableModel();
 
-    enum ColumnIndex
-    {
+    enum ColumnIndex {
         Label = 0,  /**< User specified label */
         Address = 1 /**< Bitcoin address */
     };
 
-    enum RoleIndex
-    {
+    enum RoleIndex {
         TypeRole = Qt::UserRole /**< Type of address (#Send or #Receive) */
     };
 
     /** Return status of edit/insert operation */
-    enum EditStatus
-    {
+    enum EditStatus {
         OK,                    /**< Everything ok */
         NO_CHANGES,            /**< No changes were made during edit operation */
         INVALID_ADDRESS,       /**< Unparseable address */
@@ -76,12 +72,11 @@ public:
      */
     int lookupAddress(const QString& address) const;
 
-    EditStatus getEditStatus() const
-    {
+    EditStatus getEditStatus() const {
         return editStatus;
     }
 
-private:
+  private:
     WalletModel* walletModel;
     CWallet* wallet;
     AddressTablePriv* priv;
@@ -91,7 +86,7 @@ private:
     /** Notify listeners that data changed. */
     void emitDataChanged(int index);
 
-public slots:
+  public slots:
     /* Update address list from core.
      */
     void updateEntry(const QString& address, const QString& label, bool isMine, const QString& purpose, int status);

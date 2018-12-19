@@ -41,8 +41,7 @@ static int column_alignments[] = {
     Qt::AlignRight|Qt::AlignVCenter
 };
 
-ProposalTableModel::ProposalTableModel(QObject *parent) : QAbstractTableModel(parent)
-{
+ProposalTableModel::ProposalTableModel(QObject *parent) : QAbstractTableModel(parent) {
     columns << tr("Proposal") << tr("Amount") << tr("Start Block") << tr("End Block") << tr("Total") << tr("Remaining") << tr("Yes") << tr("No") << tr("Abstain") << tr("Percentage");
 
     networkManager = new QNetworkAccessManager(this);
@@ -55,8 +54,7 @@ ProposalTableModel::ProposalTableModel(QObject *parent) : QAbstractTableModel(pa
 ProposalTableModel::~ProposalTableModel()
 {}
 
-void budgetToST(CBudgetProposal* pbudgetProposal, UniValue& bObj)
-{
+void budgetToST(CBudgetProposal* pbudgetProposal, UniValue& bObj) {
     CTxDestination address;
     ExtractDestination(pbudgetProposal->GetPayee(), address);
 
@@ -82,31 +80,25 @@ void budgetToST(CBudgetProposal* pbudgetProposal, UniValue& bObj)
     bObj.push_back(Pair("fValid", pbudgetProposal->fValid));
 }
 
-void ProposalTableModel::setProposalType(const int &type)
-{
+void ProposalTableModel::setProposalType(const int &type) {
     proposalType = type;
     refreshProposals();
 }
 
-void ProposalTableModel::refreshProposals()
-{
+void ProposalTableModel::refreshProposals() {
     beginResetModel();
     proposalRecords.clear();
 
     int mnCount = mnodeman.CountEnabled();
     std::vector<CBudgetProposal*> bObj;
-    
-    if (proposalType == 0)
-    {
+
+    if (proposalType == 0) {
         bObj = budget.GetAllProposals();
-    }
-    else
-    {
+    } else {
         bObj = budget.GetBudget();
     }
 
-    for (CBudgetProposal* pbudgetProposal : bObj)
-    {
+    for (CBudgetProposal* pbudgetProposal : bObj) {
         UniValue o(UniValue::VOBJ);
         budgetToST(pbudgetProposal, o);
 
@@ -115,18 +107,18 @@ void ProposalTableModel::refreshProposals()
         if (mnCount > 0) percentage = round(pbudgetProposal->GetYeas() * 100 / mnCount);
 
         proposalRecords.append(new ProposalRecord(
-                        QString::fromStdString(pbudgetProposal->GetHash().ToString()),
-                        pbudgetProposal->GetBlockStart(),
-                        pbudgetProposal->GetBlockEnd(),
-                        pbudgetProposal->GetTotalPaymentCount(),
-                        pbudgetProposal->GetRemainingPaymentCount(),
-                        QString::fromStdString(pbudgetProposal->GetURL()),
-                        QString::fromStdString(pbudgetProposal->GetName()),
-                        pbudgetProposal->GetYeas(),
-                        pbudgetProposal->GetNays(),
-                        pbudgetProposal->GetAbstains(),
-                        pbudgetProposal->GetAmount(),
-                        percentage));
+                                   QString::fromStdString(pbudgetProposal->GetHash().ToString()),
+                                   pbudgetProposal->GetBlockStart(),
+                                   pbudgetProposal->GetBlockEnd(),
+                                   pbudgetProposal->GetTotalPaymentCount(),
+                                   pbudgetProposal->GetRemainingPaymentCount(),
+                                   QString::fromStdString(pbudgetProposal->GetURL()),
+                                   QString::fromStdString(pbudgetProposal->GetName()),
+                                   pbudgetProposal->GetYeas(),
+                                   pbudgetProposal->GetNays(),
+                                   pbudgetProposal->GetAbstains(),
+                                   pbudgetProposal->GetAmount(),
+                                   percentage));
     }
     endResetModel();
 }
@@ -134,159 +126,144 @@ void ProposalTableModel::refreshProposals()
 void ProposalTableModel::onResult(QNetworkReply *result)
 {}
 
-int ProposalTableModel::rowCount(const QModelIndex &parent) const
-{
+int ProposalTableModel::rowCount(const QModelIndex &parent) const {
     Q_UNUSED(parent);
     return proposalRecords.size();
 }
 
-int ProposalTableModel::columnCount(const QModelIndex &parent) const
-{
+int ProposalTableModel::columnCount(const QModelIndex &parent) const {
     Q_UNUSED(parent);
     return columns.length();
 }
 
-QVariant ProposalTableModel::data(const QModelIndex &index, int role) const
-{
+QVariant ProposalTableModel::data(const QModelIndex &index, int role) const {
     if (!index.isValid())
         return QVariant();
     ProposalRecord *rec = static_cast<ProposalRecord*>(index.internalPointer());
 
-    switch (role)
-    {
-        case Qt::DisplayRole:
-            switch (index.column())
-            {
-                case Proposal:
-                    return rec->name;
-                case YesVotes:
-                    return rec->yesVotes;
-                case NoVotes:
-                    return rec->noVotes;
-                case AbstainVotes:
-                    return rec->abstainVotes;
-                case StartDate:
-                    return rec->start_epoch;
-                case EndDate:
-                    return rec->end_epoch;
-                case TotalPaymentCount:
-                    return rec->totalPaymentCount;
-                case RemainingPaymentCount:
-                    return rec->remainingPaymentCount;
-                case Percentage:
-                    return QString("%1\%").arg(rec->percentage);
-                case Amount:
-                    return BitcoinUnits::format(BitcoinUnits::BWK, rec->amount);
-            }
-            break;
-        case Qt::EditRole:
-            switch (index.column())
-            {
-                case Proposal:
-                    return rec->name;
-                case StartDate:
-                    return rec->start_epoch;
-                case EndDate:
-                    return rec->end_epoch;
-                case TotalPaymentCount:
-                    return rec->totalPaymentCount;
-                case RemainingPaymentCount:
-                    return rec->remainingPaymentCount;
-                case YesVotes:
-                    return rec->yesVotes;
-                case NoVotes:
-                    return rec->noVotes;
-                case AbstainVotes:
-                    return rec->abstainVotes;
-                case Amount:
-                    return qint64(rec->amount);
-                case Percentage:
-                    return rec->percentage;
-            }
-            break;
-        case Qt::TextAlignmentRole:
-            return column_alignments[index.column()];
-        case Qt::ForegroundRole:
-            if(index.column() == Percentage) {
-                if (rec->percentage < 10) {
-                    return COLOR_NEGATIVE;
-                } else {
-                    return QColor(23, 168, 26);
-                }
-            }
-            return COLOR_BAREADDRESS;
-        case ProposalRole:
+    switch (role) {
+    case Qt::DisplayRole:
+        switch (index.column()) {
+        case Proposal:
             return rec->name;
-        case AmountRole:
-            return qint64(rec->amount);
-        case StartDateRole:
-            return rec->start_epoch;
-        case EndDateRole:
-            return rec->end_epoch;
-        case TotalPaymentCountRole:
-            return rec->totalPaymentCount;
-        case RemainingPaymentCountRole:
-            return rec->remainingPaymentCount;
-        case YesVotesRole:
+        case YesVotes:
             return rec->yesVotes;
-        case NoVotesRole:
+        case NoVotes:
             return rec->noVotes;
-        case AbstainVotesRole:
+        case AbstainVotes:
             return rec->abstainVotes;
-        case PercentageRole:
+        case StartDate:
+            return rec->start_epoch;
+        case EndDate:
+            return rec->end_epoch;
+        case TotalPaymentCount:
+            return rec->totalPaymentCount;
+        case RemainingPaymentCount:
+            return rec->remainingPaymentCount;
+        case Percentage:
+            return QString("%1\%").arg(rec->percentage);
+        case Amount:
+            return BitcoinUnits::format(BitcoinUnits::BWK, rec->amount);
+        }
+        break;
+    case Qt::EditRole:
+        switch (index.column()) {
+        case Proposal:
+            return rec->name;
+        case StartDate:
+            return rec->start_epoch;
+        case EndDate:
+            return rec->end_epoch;
+        case TotalPaymentCount:
+            return rec->totalPaymentCount;
+        case RemainingPaymentCount:
+            return rec->remainingPaymentCount;
+        case YesVotes:
+            return rec->yesVotes;
+        case NoVotes:
+            return rec->noVotes;
+        case AbstainVotes:
+            return rec->abstainVotes;
+        case Amount:
+            return qint64(rec->amount);
+        case Percentage:
             return rec->percentage;
-        case ProposalUrlRole:
-            return rec->url;
-        case ProposalHashRole:
-            return rec->hash;
+        }
+        break;
+    case Qt::TextAlignmentRole:
+        return column_alignments[index.column()];
+    case Qt::ForegroundRole:
+        if(index.column() == Percentage) {
+            if (rec->percentage < 10) {
+                return COLOR_NEGATIVE;
+            } else {
+                return QColor(23, 168, 26);
+            }
+        }
+        return COLOR_BAREADDRESS;
+    case ProposalRole:
+        return rec->name;
+    case AmountRole:
+        return qint64(rec->amount);
+    case StartDateRole:
+        return rec->start_epoch;
+    case EndDateRole:
+        return rec->end_epoch;
+    case TotalPaymentCountRole:
+        return rec->totalPaymentCount;
+    case RemainingPaymentCountRole:
+        return rec->remainingPaymentCount;
+    case YesVotesRole:
+        return rec->yesVotes;
+    case NoVotesRole:
+        return rec->noVotes;
+    case AbstainVotesRole:
+        return rec->abstainVotes;
+    case PercentageRole:
+        return rec->percentage;
+    case ProposalUrlRole:
+        return rec->url;
+    case ProposalHashRole:
+        return rec->hash;
     }
     return QVariant();
 }
 
-QVariant ProposalTableModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (orientation == Qt::Horizontal)
-    {
-        if (role == Qt::DisplayRole)
-        {
+QVariant ProposalTableModel::headerData(int section, Qt::Orientation orientation, int role) const {
+    if (orientation == Qt::Horizontal) {
+        if (role == Qt::DisplayRole) {
             return columns[section];
-        }
-        else if (role == Qt::TextAlignmentRole)
-        {
+        } else if (role == Qt::TextAlignmentRole) {
             return Qt::AlignCenter;
-        }
-        else if (role == Qt::ToolTipRole)
-        {
-            switch (section)
-            {
-                case Proposal:
-                    return tr("Proposal Name");
-                case StartDate:
-                    return tr("Date and time that the proposal starts.");
-                case EndDate:
-                    return tr("Date and time that the proposal ends.");
-                case TotalPaymentCount:
-                    return tr("Total payment count.");
-                case RemainingPaymentCount:
-                    return tr("Remaining payment count.");
-                case YesVotes:
-                    return tr("Obtained yes votes.");
-                case NoVotes:
-                    return tr("Obtained no votes.");
-                case AbstainVotes:
-                    return tr("Obtained abstain votes.");
-                case Amount:
-                    return tr("Proposed amount.");
-                case Percentage:
-                    return tr("Current vote percentage.");
+        } else if (role == Qt::ToolTipRole) {
+            switch (section) {
+            case Proposal:
+                return tr("Proposal Name");
+            case StartDate:
+                return tr("Date and time that the proposal starts.");
+            case EndDate:
+                return tr("Date and time that the proposal ends.");
+            case TotalPaymentCount:
+                return tr("Total payment count.");
+            case RemainingPaymentCount:
+                return tr("Remaining payment count.");
+            case YesVotes:
+                return tr("Obtained yes votes.");
+            case NoVotes:
+                return tr("Obtained no votes.");
+            case AbstainVotes:
+                return tr("Obtained abstain votes.");
+            case Amount:
+                return tr("Proposed amount.");
+            case Percentage:
+                return tr("Current vote percentage.");
             }
         }
     }
     return QVariant();
 }
 
-QModelIndex ProposalTableModel::index(int row, int column, const QModelIndex &parent) const
-{
+QModelIndex ProposalTableModel::index(int row, int column, const QModelIndex &parent) const {
     Q_UNUSED(parent);
     if(row >= 0 && row < proposalRecords.size()) {
         ProposalRecord *rec = proposalRecords[row];

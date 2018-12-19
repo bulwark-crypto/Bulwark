@@ -6,15 +6,14 @@
 
 class QtMaterialTextFieldPrivate;
 
-class QtMaterialTextField : public QLineEdit
-{
+class QtMaterialTextField : public QLineEdit {
     Q_OBJECT
 
     Q_PROPERTY(QColor textColor WRITE setTextColor READ textColor)
     Q_PROPERTY(QColor inkColor WRITE setInkColor READ inkColor)
     Q_PROPERTY(QColor inputLineColor WRITE setInputLineColor READ inputLineColor)
 
-public:
+  public:
     explicit QtMaterialTextField(QWidget *parent = 0);
     ~QtMaterialTextField();
 
@@ -45,7 +44,7 @@ public:
     void setShowInputLine(bool value);
     bool hasInputLine() const;
 
-protected:
+  protected:
     QtMaterialTextField(QtMaterialTextFieldPrivate &d, QWidget *parent = 0);
 
     bool event(QEvent *event) Q_DECL_OVERRIDE;
@@ -53,7 +52,7 @@ protected:
 
     const QScopedPointer<QtMaterialTextFieldPrivate> d_ptr;
 
-private:
+  private:
     Q_DISABLE_COPY(QtMaterialTextField)
     Q_DECLARE_PRIVATE(QtMaterialTextField)
 };

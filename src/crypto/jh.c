@@ -127,8 +127,7 @@ extern "C" {
 
 #if SPH_JH_64
 
-static const sph_u64 C[] =
-{
+static const sph_u64 C[] = {
     C64e(0x72d5dea2df15f867), C64e(0x7b84150ab7231557),
     C64e(0x81abd6904d5a87f6), C64e(0x4e9f4fc5c3d12b40),
     C64e(0xea983ae05c45fa9c), C64e(0x03c5d29966b2999a),
@@ -322,8 +321,7 @@ static const sph_u64 C[] =
 	h7h ^= m3h; \
 	h7l ^= m3l;
 
-static const sph_u64 IV224[] =
-{
+static const sph_u64 IV224[] = {
     C64e(0x2dfedd62f99a98ac), C64e(0xae7cacd619d634e7),
     C64e(0xa4831005bc301216), C64e(0xb86038c6c9661494),
     C64e(0x66d9899f2580706f), C64e(0xce9ea31b1d9b1adc),
@@ -334,8 +332,7 @@ static const sph_u64 IV224[] =
     C64e(0x15960deab5ab2bbf), C64e(0x9611dcf0dd64ea6e)
 };
 
-static const sph_u64 IV256[] =
-{
+static const sph_u64 IV256[] = {
     C64e(0xeb98a3412c20d3eb), C64e(0x92cdbe7b9cb245c1),
     C64e(0x1c93519160d4c7fa), C64e(0x260082d67e508a03),
     C64e(0xa4239e267726b945), C64e(0xe0fb1a48d41a9477),
@@ -346,8 +343,7 @@ static const sph_u64 IV256[] =
     C64e(0x7be4d367702412ea), C64e(0x89e3ab13d31cd769)
 };
 
-static const sph_u64 IV384[] =
-{
+static const sph_u64 IV384[] = {
     C64e(0x481e3bc6d813398a), C64e(0x6d3b5e894ade879b),
     C64e(0x63faea68d480ad2e), C64e(0x332ccb21480f8267),
     C64e(0x98aec84d9082b928), C64e(0xd455ea3041114249),
@@ -358,8 +354,7 @@ static const sph_u64 IV384[] =
     C64e(0xa9b4d3bda475d394), C64e(0x976c3fba9842737f)
 };
 
-static const sph_u64 IV512[] =
-{
+static const sph_u64 IV512[] = {
     C64e(0x6fd14b963e00aa17), C64e(0x636a2e057a15d543),
     C64e(0x8a225e8d0c97ef0b), C64e(0xe9341259f2b3c361),
     C64e(0x891da0c1536f801e), C64e(0x2aa9056bea2b6d80),
@@ -372,8 +367,7 @@ static const sph_u64 IV512[] =
 
 #else
 
-static const sph_u32 C[] =
-{
+static const sph_u32 C[] = {
     C32e(0x72d5dea2), C32e(0xdf15f867), C32e(0x7b84150a),
     C32e(0xb7231557), C32e(0x81abd690), C32e(0x4d5a87f6),
     C32e(0x4e9f4fc5), C32e(0xc3d12b40), C32e(0xea983ae0),
@@ -677,8 +671,7 @@ static const sph_u32 C[] =
 	h71 ^= m31; \
 	h70 ^= m30;
 
-static const sph_u32 IV224[] =
-{
+static const sph_u32 IV224[] = {
     C32e(0x2dfedd62), C32e(0xf99a98ac), C32e(0xae7cacd6), C32e(0x19d634e7),
     C32e(0xa4831005), C32e(0xbc301216), C32e(0xb86038c6), C32e(0xc9661494),
     C32e(0x66d9899f), C32e(0x2580706f), C32e(0xce9ea31b), C32e(0x1d9b1adc),
@@ -689,8 +682,7 @@ static const sph_u32 IV224[] =
     C32e(0x15960dea), C32e(0xb5ab2bbf), C32e(0x9611dcf0), C32e(0xdd64ea6e)
 };
 
-static const sph_u32 IV256[] =
-{
+static const sph_u32 IV256[] = {
     C32e(0xeb98a341), C32e(0x2c20d3eb), C32e(0x92cdbe7b), C32e(0x9cb245c1),
     C32e(0x1c935191), C32e(0x60d4c7fa), C32e(0x260082d6), C32e(0x7e508a03),
     C32e(0xa4239e26), C32e(0x7726b945), C32e(0xe0fb1a48), C32e(0xd41a9477),
@@ -701,8 +693,7 @@ static const sph_u32 IV256[] =
     C32e(0x7be4d367), C32e(0x702412ea), C32e(0x89e3ab13), C32e(0xd31cd769)
 };
 
-static const sph_u32 IV384[] =
-{
+static const sph_u32 IV384[] = {
     C32e(0x481e3bc6), C32e(0xd813398a), C32e(0x6d3b5e89), C32e(0x4ade879b),
     C32e(0x63faea68), C32e(0xd480ad2e), C32e(0x332ccb21), C32e(0x480f8267),
     C32e(0x98aec84d), C32e(0x9082b928), C32e(0xd455ea30), C32e(0x41114249),
@@ -713,8 +704,7 @@ static const sph_u32 IV384[] =
     C32e(0xa9b4d3bd), C32e(0xa475d394), C32e(0x976c3fba), C32e(0x9842737f)
 };
 
-static const sph_u32 IV512[] =
-{
+static const sph_u32 IV512[] = {
     C32e(0x6fd14b96), C32e(0x3e00aa17), C32e(0x636a2e05), C32e(0x7a15d543),
     C32e(0x8a225e8d), C32e(0x0c97ef0b), C32e(0xe9341259), C32e(0xf2b3c361),
     C32e(0x891da0c1), C32e(0x536f801e), C32e(0x2aa9056b), C32e(0xea2b6d80),
@@ -899,8 +889,7 @@ static const sph_u32 IV512[] =
 #endif
 
 static void
-jh_init(sph_jh_context *sc, const void *iv)
-{
+jh_init(sph_jh_context *sc, const void *iv) {
     sc->ptr = 0;
 #if SPH_JH_64
     memcpy(sc->H.wide, iv, sizeof sc->H.wide);
@@ -916,16 +905,14 @@ jh_init(sph_jh_context *sc, const void *iv)
 }
 
 static void
-jh_core(sph_jh_context *sc, const void *data, size_t len)
-{
+jh_core(sph_jh_context *sc, const void *data, size_t len) {
     unsigned char *buf;
     size_t ptr;
     DECL_STATE
 
     buf = sc->buf;
     ptr = sc->ptr;
-    if (len < (sizeof sc->buf) - ptr)
-    {
+    if (len < (sizeof sc->buf) - ptr) {
         memcpy(buf + ptr, data, len);
         ptr += len;
         sc->ptr = ptr;
@@ -933,8 +920,7 @@ jh_core(sph_jh_context *sc, const void *data, size_t len)
     }
 
     READ_STATE(sc);
-    while (len > 0)
-    {
+    while (len > 0) {
         size_t clen;
 
         clen = (sizeof sc->buf) - ptr;
@@ -944,8 +930,7 @@ jh_core(sph_jh_context *sc, const void *data, size_t len)
         ptr += clen;
         data = (const unsigned char *)data + clen;
         len -= clen;
-        if (ptr == sizeof sc->buf)
-        {
+        if (ptr == sizeof sc->buf) {
             INPUT_BUF1;
             E8;
             INPUT_BUF2;
@@ -965,8 +950,7 @@ jh_core(sph_jh_context *sc, const void *data, size_t len)
 
 static void
 jh_close(sph_jh_context *sc, unsigned ub, unsigned n,
-         void *dst, size_t out_size_w32, const void *iv)
-{
+         void *dst, size_t out_size_w32, const void *iv) {
     unsigned z;
     unsigned char buf[128];
     size_t numz, u;
@@ -978,12 +962,9 @@ jh_close(sph_jh_context *sc, unsigned ub, unsigned n,
 
     z = 0x80 >> n;
     buf[0] = ((ub & -z) | z) & 0xFF;
-    if (sc->ptr == 0 && n == 0)
-    {
+    if (sc->ptr == 0 && n == 0) {
         numz = 47;
-    }
-    else
-    {
+    } else {
         numz = 111 - sc->ptr;
     }
     memset(buf + 1, 0, numz);
@@ -1017,113 +998,97 @@ jh_close(sph_jh_context *sc, unsigned ub, unsigned n,
 
 /* see sph_jh.h */
 void
-sph_jh224_init(void *cc)
-{
+sph_jh224_init(void *cc) {
     jh_init(cc, IV224);
 }
 
 /* see sph_jh.h */
 void
-sph_jh224(void *cc, const void *data, size_t len)
-{
+sph_jh224(void *cc, const void *data, size_t len) {
     jh_core(cc, data, len);
 }
 
 /* see sph_jh.h */
 void
-sph_jh224_close(void *cc, void *dst)
-{
+sph_jh224_close(void *cc, void *dst) {
     jh_close(cc, 0, 0, dst, 7, IV224);
 }
 
 /* see sph_jh.h */
 void
-sph_jh224_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_jh224_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     jh_close(cc, ub, n, dst, 7, IV224);
 }
 
 /* see sph_jh.h */
 void
-sph_jh256_init(void *cc)
-{
+sph_jh256_init(void *cc) {
     jh_init(cc, IV256);
 }
 
 /* see sph_jh.h */
 void
-sph_jh256(void *cc, const void *data, size_t len)
-{
+sph_jh256(void *cc, const void *data, size_t len) {
     jh_core(cc, data, len);
 }
 
 /* see sph_jh.h */
 void
-sph_jh256_close(void *cc, void *dst)
-{
+sph_jh256_close(void *cc, void *dst) {
     jh_close(cc, 0, 0, dst, 8, IV256);
 }
 
 /* see sph_jh.h */
 void
-sph_jh256_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_jh256_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     jh_close(cc, ub, n, dst, 8, IV256);
 }
 
 /* see sph_jh.h */
 void
-sph_jh384_init(void *cc)
-{
+sph_jh384_init(void *cc) {
     jh_init(cc, IV384);
 }
 
 /* see sph_jh.h */
 void
-sph_jh384(void *cc, const void *data, size_t len)
-{
+sph_jh384(void *cc, const void *data, size_t len) {
     jh_core(cc, data, len);
 }
 
 /* see sph_jh.h */
 void
-sph_jh384_close(void *cc, void *dst)
-{
+sph_jh384_close(void *cc, void *dst) {
     jh_close(cc, 0, 0, dst, 12, IV384);
 }
 
 /* see sph_jh.h */
 void
-sph_jh384_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_jh384_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     jh_close(cc, ub, n, dst, 12, IV384);
 }
 
 /* see sph_jh.h */
 void
-sph_jh512_init(void *cc)
-{
+sph_jh512_init(void *cc) {
     jh_init(cc, IV512);
 }
 
 /* see sph_jh.h */
 void
-sph_jh512(void *cc, const void *data, size_t len)
-{
+sph_jh512(void *cc, const void *data, size_t len) {
     jh_core(cc, data, len);
 }
 
 /* see sph_jh.h */
 void
-sph_jh512_close(void *cc, void *dst)
-{
+sph_jh512_close(void *cc, void *dst) {
     jh_close(cc, 0, 0, dst, 16, IV512);
 }
 
 /* see sph_jh.h */
 void
-sph_jh512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
-{
+sph_jh512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst) {
     jh_close(cc, ub, n, dst, 16, IV512);
 }
 

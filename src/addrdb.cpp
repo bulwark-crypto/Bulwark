@@ -16,13 +16,11 @@
 #include "util.h"
 
 
-CBanDB::CBanDB()
-{
+CBanDB::CBanDB() {
     pathBanlist = GetDataDir() / "banlist.dat";
 }
 
-bool CBanDB::Write(const banmap_t& banSet)
-{
+bool CBanDB::Write(const banmap_t& banSet) {
     // Generate random temporary filename
     unsigned short randv = 0;
     GetRandBytes((unsigned char*)&randv, sizeof(randv));
@@ -43,12 +41,9 @@ bool CBanDB::Write(const banmap_t& banSet)
         return error("%s: Failed to open file %s", __func__, pathTmp.string());
 
     // Write and commit header, data
-    try
-    {
+    try {
         fileout << ssBanlist;
-    }
-    catch (const std::exception& e)
-    {
+    } catch (const std::exception& e) {
         return error("%s: Serialize or I/O error - %s", __func__, e.what());
     }
     FileCommit(fileout.Get());
@@ -61,8 +56,7 @@ bool CBanDB::Write(const banmap_t& banSet)
     return true;
 }
 
-bool CBanDB::Read(banmap_t& banSet)
-{
+bool CBanDB::Read(banmap_t& banSet) {
     // open input file, and associate with CAutoFile
     FILE *file = fsbridge::fopen(pathBanlist, "rb");
     CAutoFile filein(file, SER_DISK, CLIENT_VERSION);
@@ -80,13 +74,10 @@ bool CBanDB::Read(banmap_t& banSet)
     uint256 hashIn;
 
     // read data and checksum from file
-    try
-    {
+    try {
         filein.read((char *)&vchData[0], dataSize);
         filein >> hashIn;
-    }
-    catch (const std::exception& e)
-    {
+    } catch (const std::exception& e) {
         return error("%s: Deserialize or I/O error - %s", __func__, e.what());
     }
     filein.fclose();
@@ -99,8 +90,7 @@ bool CBanDB::Read(banmap_t& banSet)
         return error("%s: Checksum mismatch, data corrupted", __func__);
 
     unsigned char pchMsgTmp[4];
-    try
-    {
+    try {
         // de-serialize file header (network specific magic number) and ..
         ssBanlist >> FLATDATA(pchMsgTmp);
 
@@ -110,9 +100,7 @@ bool CBanDB::Read(banmap_t& banSet)
 
         // de-serialize ban data
         ssBanlist >> banSet;
-    }
-    catch (const std::exception& e)
-    {
+    } catch (const std::exception& e) {
         return error("%s: Deserialize or I/O error - %s", __func__, e.what());
     }
 

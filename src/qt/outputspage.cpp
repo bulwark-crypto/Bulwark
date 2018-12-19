@@ -30,12 +30,11 @@
 #include <fstream>
 
 OutPutsPage::OutPutsPage(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-                                            ui(new Ui::OutPutsPage)
-{
+    ui(new Ui::OutPutsPage) {
     ui->setupUi(this);
 
-	key = OutPutsPage::getmasternodeoutputs();
-	ui->outPutsWidget->append(key);
+    key = OutPutsPage::getmasternodeoutputs();
+    ui->outPutsWidget->append(key);
 
     // Build context menu
     contextMenu = new QMenu();
@@ -47,16 +46,14 @@ OutPutsPage::OutPutsPage(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenu
 
 
 
-OutPutsPage::~OutPutsPage()
-{
+OutPutsPage::~OutPutsPage() {
     delete ui;
 }
 
 
 
 
-QString OutPutsPage::getmasternodeoutputs ()
-{
+QString OutPutsPage::getmasternodeoutputs () {
     // Find possible candidates
     vector<COutput> possibleCoins = activeMasternode.SelectCoinsMasternode();
 
@@ -67,16 +64,16 @@ QString OutPutsPage::getmasternodeoutputs ()
         obj.push_back(Pair("outputidx", out.i));
         result.push_back(obj);
     }
-	
-        std::string strPrint;
 
-        // Format result reply
-        if (result.isNull())
-            strPrint = "";
-        else if (result.isStr())
-            strPrint = result.get_str();
-        else
-            strPrint = result.write(2);
+    std::string strPrint;
+
+    // Format result reply
+    if (result.isNull())
+        strPrint = "";
+    else if (result.isStr())
+        strPrint = result.get_str();
+    else
+        strPrint = result.write(2);
 
     return QString::fromStdString(strPrint);
 }

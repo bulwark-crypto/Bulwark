@@ -15,8 +15,7 @@
 
 #include <boost/foreach.hpp>
 
-namespace Checkpoints
-{
+namespace Checkpoints {
 /**
      * How many times we expect transactions after the last checkpoint to
      * be slower. This number is a compromise, as it can't be accurate for
@@ -28,8 +27,7 @@ static const double SIGCHECK_VERIFICATION_FACTOR = 5.0;
 
 bool fEnabled = true;
 
-bool CheckBlock(int nHeight, const uint256& hash, bool fMatchesCheckpoint)
-{
+bool CheckBlock(int nHeight, const uint256& hash, bool fMatchesCheckpoint) {
     if (!fEnabled)
         return true;
 
@@ -42,8 +40,7 @@ bool CheckBlock(int nHeight, const uint256& hash, bool fMatchesCheckpoint)
 }
 
 //! Guess how far we are in the verification process at the given block index
-double GuessVerificationProgress(CBlockIndex* pindex, bool fSigchecks)
-{
+double GuessVerificationProgress(CBlockIndex* pindex, bool fSigchecks) {
     if (pindex == NULL)
         return 0.0;
 
@@ -57,16 +54,13 @@ double GuessVerificationProgress(CBlockIndex* pindex, bool fSigchecks)
 
     const CCheckpointData& data = Params().Checkpoints();
 
-    if (pindex->nChainTx <= data.nTransactionsLastCheckpoint)
-    {
+    if (pindex->nChainTx <= data.nTransactionsLastCheckpoint) {
         double nCheapBefore = pindex->nChainTx;
         double nCheapAfter = data.nTransactionsLastCheckpoint - pindex->nChainTx;
         double nExpensiveAfter = (nNow - data.nTimeLastCheckpoint) / 86400.0 * data.fTransactionsPerDay;
         fWorkBefore = nCheapBefore;
         fWorkAfter = nCheapAfter + nExpensiveAfter * fSigcheckVerificationFactor;
-    }
-    else
-    {
+    } else {
         double nCheapBefore = data.nTransactionsLastCheckpoint;
         double nExpensiveBefore = pindex->nChainTx - data.nTransactionsLastCheckpoint;
         double nExpensiveAfter = (nNow - pindex->GetBlockTime()) / 86400.0 * data.fTransactionsPerDay;
@@ -77,8 +71,7 @@ double GuessVerificationProgress(CBlockIndex* pindex, bool fSigchecks)
     return fWorkBefore / (fWorkBefore + fWorkAfter);
 }
 
-int GetTotalBlocksEstimate()
-{
+int GetTotalBlocksEstimate() {
     if (!fEnabled)
         return 0;
 
@@ -87,15 +80,13 @@ int GetTotalBlocksEstimate()
     return checkpoints.rbegin()->first;
 }
 
-CBlockIndex* GetLastCheckpoint()
-{
+CBlockIndex* GetLastCheckpoint() {
     if (!fEnabled)
         return NULL;
 
     const MapCheckpoints& checkpoints = *Params().Checkpoints().mapCheckpoints;
 
-    BOOST_REVERSE_FOREACH (const MapCheckpoints::value_type& i, checkpoints)
-    {
+    BOOST_REVERSE_FOREACH (const MapCheckpoints::value_type& i, checkpoints) {
         const uint256& hash = i.second;
         BlockMap::const_iterator t = mapBlockIndex.find(hash);
         if (t != mapBlockIndex.end())

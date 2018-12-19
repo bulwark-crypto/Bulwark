@@ -8,11 +8,10 @@
 #include "libzerocoin/Coin.h"
 
 //A map with an accumulator for each denomination
-class AccumulatorMap
-{
-private:
+class AccumulatorMap {
+  private:
     std::map<libzerocoin::CoinDenomination, std::unique_ptr<libzerocoin::Accumulator> > mapAccumulators;
-public:
+  public:
     AccumulatorMap();
     bool Load(uint256 nCheckpoint);
     bool Accumulate(libzerocoin::PublicCoin pubCoin, bool fSkipValidation = false);

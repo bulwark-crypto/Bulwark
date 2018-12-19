@@ -18,15 +18,12 @@
 #include "Commitment.h"
 #include "Denominations.h"
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 
 //PublicCoin class
 PublicCoin::PublicCoin(const ZerocoinParams* p):
-    params(p)
-{
-    if (this->params->initialized == false)
-    {
+    params(p) {
+    if (this->params->initialized == false) {
         throw std::runtime_error("Params are not initialized");
     }
     // Assume this will get set by another method later
@@ -34,10 +31,8 @@ PublicCoin::PublicCoin(const ZerocoinParams* p):
 };
 
 PublicCoin::PublicCoin(const ZerocoinParams* p, const CBigNum& coin, const CoinDenomination d):
-    params(p), value(coin)
-{
-    if (this->params->initialized == false)
-    {
+    params(p), value(coin) {
+    if (this->params->initialized == false) {
         throw std::runtime_error("Params are not initialized");
     }
 
@@ -48,18 +43,15 @@ PublicCoin::PublicCoin(const ZerocoinParams* p, const CBigNum& coin, const CoinD
     		denomination = d;
     }
     */
-    if(denomination == 0)
-    {
+    if(denomination == 0) {
         throw std::runtime_error("Denomination does not exist");
     }
 };
 
 //PrivateCoin class
-PrivateCoin::PrivateCoin(const ZerocoinParams* p, const CoinDenomination denomination): params(p), publicCoin(p)
-{
+PrivateCoin::PrivateCoin(const ZerocoinParams* p, const CoinDenomination denomination): params(p), publicCoin(p) {
     // Verify that the parameters are valid
-    if(this->params->initialized == false)
-    {
+    if(this->params->initialized == false) {
         throw std::runtime_error("Params are not initialized");
     }
 
@@ -75,12 +67,10 @@ PrivateCoin::PrivateCoin(const ZerocoinParams* p, const CoinDenomination denomin
 
 }
 
-void PrivateCoin::mintCoin(const CoinDenomination denomination)
-{
+void PrivateCoin::mintCoin(const CoinDenomination denomination) {
     // Repeat this process up to MAX_COINMINT_ATTEMPTS times until
     // we obtain a prime number
-    for(uint32_t attempt = 0; attempt < MAX_COINMINT_ATTEMPTS; attempt++)
-    {
+    for(uint32_t attempt = 0; attempt < MAX_COINMINT_ATTEMPTS; attempt++) {
 
         // Generate a random serial number in the range 0...{q-1} where
         // "q" is the order of the commitment group.
@@ -94,8 +84,7 @@ void PrivateCoin::mintCoin(const CoinDenomination denomination)
         // away and generate a new one.
         if (coin.getCommitmentValue().isPrime(ZEROCOIN_MINT_PRIME_PARAM) &&
                 coin.getCommitmentValue() >= params->accumulatorParams.minCoinValue &&
-                coin.getCommitmentValue() <= params->accumulatorParams.maxCoinValue)
-        {
+                coin.getCommitmentValue() <= params->accumulatorParams.maxCoinValue) {
             // Found a valid coin. Store it.
             this->serialNumber = s;
             this->randomness = coin.getRandomness();
@@ -111,8 +100,7 @@ void PrivateCoin::mintCoin(const CoinDenomination denomination)
     throw std::runtime_error("Unable to mint a new Zerocoin (too many attempts)");
 }
 
-void PrivateCoin::mintCoinFast(const CoinDenomination denomination)
-{
+void PrivateCoin::mintCoinFast(const CoinDenomination denomination) {
 
     // Generate a random serial number in the range 0...{q-1} where
     // "q" is the order of the commitment group.
@@ -127,15 +115,13 @@ void PrivateCoin::mintCoinFast(const CoinDenomination denomination)
 
     // Repeat this process up to MAX_COINMINT_ATTEMPTS times until
     // we obtain a prime number
-    for (uint32_t attempt = 0; attempt < MAX_COINMINT_ATTEMPTS; attempt++)
-    {
+    for (uint32_t attempt = 0; attempt < MAX_COINMINT_ATTEMPTS; attempt++) {
         // First verify that the commitment is a prime number
         // in the appropriate range. If not, we'll throw this coin
         // away and generate a new one.
         if (commitmentValue.isPrime(ZEROCOIN_MINT_PRIME_PARAM) &&
                 commitmentValue >= params->accumulatorParams.minCoinValue &&
-                commitmentValue <= params->accumulatorParams.maxCoinValue)
-        {
+                commitmentValue <= params->accumulatorParams.maxCoinValue) {
             // Found a valid coin. Store it.
             this->serialNumber = s;
             this->randomness = r;

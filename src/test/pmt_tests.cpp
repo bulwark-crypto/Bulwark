@@ -14,12 +14,10 @@
 
 using namespace std;
 
-class CPartialMerkleTreeTester : public CPartialMerkleTree
-{
-public:
+class CPartialMerkleTreeTester : public CPartialMerkleTree {
+  public:
     // flip one bit in one of the hashes - this should break the authentication
-    void Damage()
-    {
+    void Damage() {
         unsigned int n = rand() % vHash.size();
         int bit = rand() % 256;
         uint256 &hash = vHash[n];
@@ -29,18 +27,15 @@ public:
 
 BOOST_AUTO_TEST_SUITE(pmt_tests)
 
-BOOST_AUTO_TEST_CASE(pmt_test1)
-{
+BOOST_AUTO_TEST_CASE(pmt_test1) {
     static const unsigned int nTxCounts[] = {1, 4, 7, 17, 56, 100, 127, 256, 312, 513, 1000, 4095};
 
-    for (int n = 0; n < 12; n++)
-    {
+    for (int n = 0; n < 12; n++) {
         unsigned int nTx = nTxCounts[n];
 
         // build a block with some dummy transactions
         CBlock block;
-        for (unsigned int j=0; j<nTx; j++)
-        {
+        for (unsigned int j=0; j<nTx; j++) {
             CMutableTransaction tx;
             tx.nLockTime = rand(); // actual transaction data doesn't matter; just make the nLockTime's unique
             block.vtx.push_back(CTransaction(tx));
@@ -52,20 +47,17 @@ BOOST_AUTO_TEST_CASE(pmt_test1)
         for (unsigned int j=0; j<nTx; j++)
             vTxid[j] = block.vtx[j].GetHash();
         int nHeight = 1, nTx_ = nTx;
-        while (nTx_ > 1)
-        {
+        while (nTx_ > 1) {
             nTx_ = (nTx_+1)/2;
             nHeight++;
         }
 
         // check with random subsets with inclusion chances 1, 1/2, 1/4, ..., 1/128
-        for (int att = 1; att < 15; att++)
-        {
+        for (int att = 1; att < 15; att++) {
             // build random subset of txid's
             std::vector<bool> vMatch(nTx, false);
             std::vector<uint256> vMatchTxid1;
-            for (unsigned int j=0; j<nTx; j++)
-            {
+            for (unsigned int j=0; j<nTx; j++) {
                 bool fInclude = (rand() & ((1 << (att/2)) - 1)) == 0;
                 vMatch[j] = fInclude;
                 if (fInclude)
@@ -99,8 +91,7 @@ BOOST_AUTO_TEST_CASE(pmt_test1)
             BOOST_CHECK(vMatchTxid1 == vMatchTxid2);
 
             // check that random bit flips break the authentication
-            for (int j=0; j<4; j++)
-            {
+            for (int j=0; j<4; j++) {
                 CPartialMerkleTreeTester pmt3(pmt2);
                 pmt3.Damage();
                 std::vector<uint256> vMatchTxid3;
