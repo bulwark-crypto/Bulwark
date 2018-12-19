@@ -15,8 +15,7 @@
 
 class ClientModel;
 
-namespace Ui
-{
+namespace Ui {
 class RPCConsole;
 }
 
@@ -25,18 +24,16 @@ class QItemSelection;
 QT_END_NAMESPACE
 
 /** Local Bitcoin RPC console. */
-class RPCConsole : public QDialog
-{
+class RPCConsole : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit RPCConsole(QWidget* parent);
     ~RPCConsole();
 
     void setClientModel(ClientModel* model);
 
-    enum MessageClass
-    {
+    enum MessageClass {
         MC_ERROR,
         MC_DEBUG,
         CMD_REQUEST,
@@ -44,10 +41,10 @@ public:
         CMD_ERROR
     };
 
-protected:
+  protected:
     virtual bool eventFilter(QObject* obj, QEvent* event);
 
-private slots:
+  private slots:
     void on_lineEdit_returnPressed();
     void on_tabWidget_currentChanged(int index);
     /** open the debug.log from the current datadir */
@@ -60,7 +57,7 @@ private slots:
     void showEvent(QShowEvent* event);
     void hideEvent(QHideEvent* event);
 
-public slots:
+  public slots:
     void clear();
 
     /** Wallet repair options */
@@ -118,14 +115,14 @@ public slots:
     void unbanSelectedNode();
     void showBackups();
 
-signals:
+  signals:
     // For RPC command executor
     void stopExecutor();
     void cmdRequest(const QString& command);
     /** Get restart command-line parameters and handle restart */
     void handleRestart(QStringList args);
 
-private:
+  private:
     static QString FormatBytes(quint64 bytes);
     void startExecutor();
     void setTrafficGraphRange(int mins);
@@ -134,8 +131,7 @@ private:
     /** show detailed information on ui about selected node */
     void updateNodeDetail(const CNodeCombinedStats* stats);
 
-    enum ColumnWidths
-    {
+    enum ColumnWidths {
         ADDRESS_COLUMN_WIDTH = 170,
         SUBVERSION_COLUMN_WIDTH = 140,
         PING_COLUMN_WIDTH = 80,

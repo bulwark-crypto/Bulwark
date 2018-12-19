@@ -27,17 +27,15 @@
 #include "hash.h"
 
 using namespace std;
-namespace libzerocoin
-{
+namespace libzerocoin {
 
 /**
  * A Signature of knowledge on the hash of metadata attesting that the signer knows the values
  *  necessary to open a commitment which contains a coin(which it self is of course a commitment)
  * with a given serial number.
  */
-class SerialNumberSignatureOfKnowledge
-{
-public:
+class SerialNumberSignatureOfKnowledge {
+  public:
     SerialNumberSignatureOfKnowledge(const ZerocoinParams* p);
     /**
      * Creates a Signature of knowledge object that a commitment to a coin contains a coin with serial number x
@@ -57,13 +55,12 @@ public:
      */
     bool Verify(const CBigNum& coinSerialNumber, const CBigNum& valueOfCommitmentToCoin,const uint256 msghash) const;
     ADD_SERIALIZE_METHODS;
-    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(s_notprime);
         READWRITE(sprime);
         READWRITE(hash);
     }
-private:
+  private:
     const ZerocoinParams* params;
     // challenge hash
     uint256 hash; //TODO For efficiency, should this be a bitset where Templates define params?

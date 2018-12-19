@@ -27,8 +27,7 @@
 #include <qrencode.h>
 #endif
 
-QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0)
-{
+QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0) {
     contextMenu = new QMenu();
     QAction* saveImageAction = new QAction(tr("&Save Image..."), this);
     connect(saveImageAction, SIGNAL(triggered()), this, SLOT(saveImage()));
@@ -38,17 +37,14 @@ QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0)
     contextMenu->addAction(copyImageAction);
 }
 
-QImage QRImageWidget::exportImage()
-{
+QImage QRImageWidget::exportImage() {
     if (!pixmap())
         return QImage();
     return pixmap()->toImage().scaled(EXPORT_IMAGE_SIZE, EXPORT_IMAGE_SIZE);
 }
 
-void QRImageWidget::mousePressEvent(QMouseEvent* event)
-{
-    if (event->button() == Qt::LeftButton && pixmap())
-    {
+void QRImageWidget::mousePressEvent(QMouseEvent* event) {
+    if (event->button() == Qt::LeftButton && pixmap()) {
         event->accept();
         QMimeData* mimeData = new QMimeData;
         mimeData->setImageData(exportImage());
@@ -56,33 +52,27 @@ void QRImageWidget::mousePressEvent(QMouseEvent* event)
         QDrag* drag = new QDrag(this);
         drag->setMimeData(mimeData);
         drag->exec();
-    }
-    else
-    {
+    } else {
         QLabel::mousePressEvent(event);
     }
 }
 
-void QRImageWidget::saveImage()
-{
+void QRImageWidget::saveImage() {
     if (!pixmap())
         return;
     QString fn = GUIUtil::getSaveFileName(this, tr("Save QR Code"), QString(), tr("PNG Image (*.png)"), NULL);
-    if (!fn.isEmpty())
-    {
+    if (!fn.isEmpty()) {
         exportImage().save(fn);
     }
 }
 
-void QRImageWidget::copyImage()
-{
+void QRImageWidget::copyImage() {
     if (!pixmap())
         return;
     QApplication::clipboard()->setImage(exportImage());
 }
 
-void QRImageWidget::contextMenuEvent(QContextMenuEvent* event)
-{
+void QRImageWidget::contextMenuEvent(QContextMenuEvent* event) {
     if (!pixmap())
         return;
     contextMenu->exec(event->globalPos());
@@ -90,8 +80,7 @@ void QRImageWidget::contextMenuEvent(QContextMenuEvent* event)
 
 ReceiveRequestDialog::ReceiveRequestDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
     ui(new Ui::ReceiveRequestDialog),
-    model(0)
-{
+    model(0) {
     ui->setupUi(this);
 
 #ifndef USE_QRCODE
@@ -102,13 +91,11 @@ ReceiveRequestDialog::ReceiveRequestDialog(QWidget* parent) : QDialog(parent, Qt
     connect(ui->btnSaveAs, SIGNAL(clicked()), ui->lblQRCode, SLOT(saveImage()));
 }
 
-ReceiveRequestDialog::~ReceiveRequestDialog()
-{
+ReceiveRequestDialog::~ReceiveRequestDialog() {
     delete ui;
 }
 
-void ReceiveRequestDialog::setModel(OptionsModel* model)
-{
+void ReceiveRequestDialog::setModel(OptionsModel* model) {
     this->model = model;
 
     if (model)
@@ -118,14 +105,12 @@ void ReceiveRequestDialog::setModel(OptionsModel* model)
     update();
 }
 
-void ReceiveRequestDialog::setInfo(const SendCoinsRecipient& info)
-{
+void ReceiveRequestDialog::setInfo(const SendCoinsRecipient& info) {
     this->info = info;
     update();
 }
 
-void ReceiveRequestDialog::update()
-{
+void ReceiveRequestDialog::update() {
     if (!model)
         return;
     QString target = info.label;
@@ -151,28 +136,21 @@ void ReceiveRequestDialog::update()
 
 #ifdef USE_QRCODE
     ui->lblQRCode->setText("");
-    if (!uri.isEmpty())
-    {
+    if (!uri.isEmpty()) {
         // limit URI length
-        if (uri.length() > MAX_URI_LENGTH)
-        {
+        if (uri.length() > MAX_URI_LENGTH) {
             ui->lblQRCode->setText(tr("Resulting URI too long, try to reduce the text for label / message."));
-        }
-        else
-        {
+        } else {
             QRcode* code = QRcode_encodeString(uri.toUtf8().constData(), 0, QR_ECLEVEL_L, QR_MODE_8, 1);
-            if (!code)
-            {
+            if (!code) {
                 ui->lblQRCode->setText(tr("Error encoding URI into QR Code."));
                 return;
             }
             QImage myImage = QImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
             myImage.fill(0xffffff);
             unsigned char* p = code->data;
-            for (int y = 0; y < code->width; y++)
-            {
-                for (int x = 0; x < code->width; x++)
-                {
+            for (int y = 0; y < code->width; y++) {
+                for (int x = 0; x < code->width; x++) {
                     myImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xffffff));
                     p++;
                 }
@@ -186,17 +164,14 @@ void ReceiveRequestDialog::update()
 #endif
 }
 
-void ReceiveRequestDialog::on_btnCopyURI_clicked()
-{
+void ReceiveRequestDialog::on_btnCopyURI_clicked() {
     GUIUtil::setClipboard(GUIUtil::formatBitcoinURI(info));
 }
 
-void ReceiveRequestDialog::on_closeButton_clicked()
-{
+void ReceiveRequestDialog::on_closeButton_clicked() {
     this->close();
 }
 
-void ReceiveRequestDialog::on_btnCopyAddress_clicked()
-{
+void ReceiveRequestDialog::on_btnCopyAddress_clicked() {
     GUIUtil::setClipboard(info.address);
 }

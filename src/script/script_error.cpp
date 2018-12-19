@@ -5,10 +5,8 @@
 
 #include "script_error.h"
 
-const char* ScriptErrorString(const ScriptError serror)
-{
-    switch (serror)
-    {
+const char* ScriptErrorString(const ScriptError serror) {
+    switch (serror) {
     case SCRIPT_ERR_OK:
         return "No error";
     case SCRIPT_ERR_EVAL_FALSE:

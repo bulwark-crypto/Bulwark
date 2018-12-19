@@ -24,21 +24,18 @@
 #include "bignum.h"
 #include "serialize.h"
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 /**
  * The complete proof needed to spend a zerocoin.
  * Composes together a proof that a coin is accumulated
  * and that it has a given serial number.
  */
-class CoinSpend
-{
-public:
+class CoinSpend {
+  public:
     template <typename Stream>
     CoinSpend(const ZerocoinParams* p, Stream& strm) : accumulatorPoK(&p->accumulatorParams),
         serialNumberSoK(p),
-        commitmentPoK(&p->serialNumberSoKCommitmentGroup, &p->accumulatorParams.accumulatorPoKCommitmentGroup)
-    {
+        commitmentPoK(&p->serialNumberSoKCommitmentGroup, &p->accumulatorParams.accumulatorPoKCommitmentGroup) {
         strm >> *this;
     }
     /**
@@ -72,8 +69,7 @@ public:
      *
      * @return the coin's serial number
      */
-    const CBigNum& getCoinSerialNumber() const
-    {
+    const CBigNum& getCoinSerialNumber() const {
         return this->coinSerialNumber;
     }
 
@@ -82,8 +78,7 @@ public:
      *
      * @return the denomination
      */
-    CoinDenomination getDenomination() const
-    {
+    CoinDenomination getDenomination() const {
         return this->denomination;
     }
 
@@ -92,8 +87,7 @@ public:
      *
      * @return the checksum
      */
-    uint32_t getAccumulatorChecksum() const
-    {
+    uint32_t getAccumulatorChecksum() const {
         return this->accChecksum;
     }
 
@@ -102,16 +96,13 @@ public:
      *
      * @return the txout hash
      */
-    uint256 getTxOutHash() const
-    {
+    uint256 getTxOutHash() const {
         return ptxHash;
     }
-    CBigNum getAccCommitment() const
-    {
+    CBigNum getAccCommitment() const {
         return accCommitmentToCoinValue;
     }
-    CBigNum getSerialComm() const
-    {
+    CBigNum getSerialComm() const {
         return serialCommitmentToCoinValue;
     }
 
@@ -121,8 +112,7 @@ public:
 
     ADD_SERIALIZE_METHODS;
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(denomination);
         READWRITE(ptxHash);
         READWRITE(accChecksum);
@@ -134,7 +124,7 @@ public:
         READWRITE(commitmentPoK);
     }
 
-private:
+  private:
     const uint256 signatureHash() const;
     CoinDenomination denomination;
     uint32_t accChecksum;

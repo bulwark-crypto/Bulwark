@@ -19,8 +19,7 @@ BOOST_AUTO_TEST_SUITE(zerocoin_denom_tests)
 
 
 //translation from bwk quantity to zerocoin denomination
-BOOST_AUTO_TEST_CASE(amount_to_denomination_test)
-{
+BOOST_AUTO_TEST_CASE(amount_to_denomination_test) {
     cout << "Running amount_to_denomination_test...\n";
 
     //valid amount (min edge)
@@ -40,8 +39,7 @@ BOOST_AUTO_TEST_CASE(amount_to_denomination_test)
     BOOST_CHECK_MESSAGE(AmountToZerocoinDenomination(amount3) == ZQ_ERROR, "For 1 denomination should be Invalid -> ZQ_ERROR");
 }
 
-BOOST_AUTO_TEST_CASE(denomination_to_value_test)
-{
+BOOST_AUTO_TEST_CASE(denomination_to_value_test) {
     cout << "Running ZerocoinDenominationToValue_test...\n";
 
     int64_t Value = 1 * COIN;
@@ -69,8 +67,7 @@ BOOST_AUTO_TEST_CASE(denomination_to_value_test)
     BOOST_CHECK_MESSAGE(ZerocoinDenominationToAmount(denomination) == Value, "Wrong Value - should be 0");
 }
 
-BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
-{
+BOOST_AUTO_TEST_CASE(zerocoin_spend_test241) {
     const int nMaxNumberOfSpends = 4;
     const bool fMinimizeChange = false;
     const int DenomAmounts[] = {1, 2, 3, 4, 0, 0, 0, 0};
@@ -85,10 +82,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
     // Create a set of Minted coins that fits profile given by DenomAmounts
     // Also setup Map array corresponding to DenomAmount which is the current set of coins available
 
-    for (const auto& denom : zerocoinDenomList)
-    {
-        for (int i = 0; i < DenomAmounts[j]; i++)
-        {
+    for (const auto& denom : zerocoinDenomList) {
+        for (int i = 0; i < DenomAmounts[j]; i++) {
             CAmount currentAmount = ZerocoinDenominationToAmount(denom);
             nTotalAmount += currentAmount;
             CBigNum value;
@@ -121,8 +116,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
     bool fDebug = 0;
 
     // Go through all possible spend between 1 and 241 and see if it's possible or not
-    for (int i = 0; i < CoinsHeld; i++)
-    {
+    for (int i = 0; i < CoinsHeld; i++) {
         std::vector<CZerocoinMint> vSpends = SelectMintsFromList(nValueTarget, nSelectedValue,
                                              nMaxNumberOfSpends,
                                              fMinimizeChange,
@@ -131,27 +125,20 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
                                              mapDenom,
                                              nNeededSpends);
 
-        if (fDebug)
-        {
-            if (vSpends.size() > 0)
-            {
+        if (fDebug) {
+            if (vSpends.size() > 0) {
                 std::cout << "SUCCESS : Coins = " << nValueTarget / COIN << " # spends used = " << vSpends.size()
                           << " # of coins returned = " << nCoinsReturned
                           << " Spend Amount = " << nSelectedValue / COIN << " Held = " << CoinsHeld << "\n";
-            }
-            else
-            {
+            } else {
                 std::cout << "FAILED : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
             }
         }
 
-        if (i < MaxLimit)
-        {
+        if (i < MaxLimit) {
             BOOST_CHECK_MESSAGE(vSpends.size() < 5, "Too many spends");
             BOOST_CHECK_MESSAGE(vSpends.size() > 0, "No spends");
-        }
-        else
-        {
+        } else {
             bool spends_not_ok = ((vSpends.size() >= 4) || (vSpends.size() == 0));
             BOOST_CHECK_MESSAGE(spends_not_ok, "Expected to fail but didn't");
         }
@@ -159,8 +146,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test241)
     }
     //std::cout << "241 Test done!\n";
 }
-BOOST_AUTO_TEST_CASE(zerocoin_spend_test115)
-{
+BOOST_AUTO_TEST_CASE(zerocoin_spend_test115) {
     const int nMaxNumberOfSpends = 4;
     const bool fMinimizeChange = false;
     const int DenomAmounts[] = {0, 1, 1, 2, 0, 0, 0, 0};
@@ -174,10 +160,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test115)
 
     // Create a set of Minted coins that fits profile given by DenomAmounts
     // Also setup Map array corresponding to DenomAmount which is the current set of coins available
-    for (const auto& denom : zerocoinDenomList)
-    {
-        for (int i = 0; i < DenomAmounts[j]; i++)
-        {
+    for (const auto& denom : zerocoinDenomList) {
+        for (int i = 0; i < DenomAmounts[j]; i++) {
             CAmount currentAmount = ZerocoinDenominationToAmount(denom);
             nTotalAmount += currentAmount;
             CBigNum value;
@@ -214,16 +198,12 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test115)
                                          mapDenom,
                                          nNeededSpends);
 
-    if (fDebug)
-    {
-        if (vSpends.size() > 0)
-        {
+    if (fDebug) {
+        if (vSpends.size() > 0) {
             std::cout << "SUCCESS : Coins = " << nValueTarget / COIN << " # spends used = " << vSpends.size()
                       << " # of coins returned = " << nCoinsReturned
                       << " Spend Amount = " << nSelectedValue / COIN << " Held = " << CoinsHeld << "\n";
-        }
-        else
-        {
+        } else {
             std::cout << "FAILED : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
         }
     }
@@ -232,8 +212,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test115)
     BOOST_CHECK_MESSAGE(vSpends.size() > 0, "No spends");
     nValueTarget += OneCoinAmount;
 }
-BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
-{
+BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245) {
     const int nMaxNumberOfSpends = 5;
     // For 36:
     // const int nSpendValue = 36;
@@ -259,10 +238,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
 
     // Create a set of Minted coins that fits profile given by DenomAmounts
     // Also setup Map array corresponding to DenomAmount which is the current set of coins available
-    for (const auto& denom : zerocoinDenomList)
-    {
-        for (int i = 0; i < DenomAmounts[j]; i++)
-        {
+    for (const auto& denom : zerocoinDenomList) {
+        for (int i = 0; i < DenomAmounts[j]; i++) {
             CAmount currentAmount = ZerocoinDenominationToAmount(denom);
             nTotalAmount += currentAmount;
             CBigNum value;
@@ -292,8 +269,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
     int nNeededSpends = 0;  // Number of spends which would be needed if selection failed
 
     // Go through all possible spend between 1 and 241 and see if it's possible or not
-    for (int i = 0; i < CoinsHeld; i++)
-    {
+    for (int i = 0; i < CoinsHeld; i++) {
         std::vector<CZerocoinMint> vSpends = SelectMintsFromList(nValueTarget, nSelectedValue,
                                              nMaxNumberOfSpends,
                                              false,
@@ -302,16 +278,12 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
                                              mapOfDenomsHeld,
                                              nNeededSpends);
 
-        if (fDebug)
-        {
-            if (vSpends.size() > 0)
-            {
+        if (fDebug) {
+            if (vSpends.size() > 0) {
                 std::cout << "SUCCESS : Coins = " << nValueTarget / COIN << " # spends = " << vSpends.size()
                           << " # coins returned = " << nCoinsReturned
                           << " Amount = " << nSelectedValue / COIN << " Held = " << CoinsHeld << " ";
-            }
-            else
-            {
+            } else {
                 std::cout << "UNABLE TO SPEND : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
             }
         }
@@ -329,16 +301,12 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
                                                 nNeededSpends);
 
 
-        if (fDebug)
-        {
-            if (vSpendsAlt.size() > 0)
-            {
+        if (fDebug) {
+            if (vSpendsAlt.size() > 0) {
                 std::cout << "# spends = " << vSpendsAlt.size()
                           << " # coins returned = " << nCoinsReturned
                           << " Amount = " << nSelectedValue / COIN << "\n";
-            }
-            else
-            {
+            } else {
                 std::cout << "UNABLE TO SPEND : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
             }
         }
@@ -352,8 +320,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_245)
 }
 
 
-BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
-{
+BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145) {
     const int nMaxNumberOfSpends = 5;
     // CoinsHeld = 145
     const int DenomAmounts[] = {0, 1, 4, 2, 0, 0, 0, 0};
@@ -367,10 +334,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
 
     // Create a set of Minted coins that fits profile given by DenomAmounts
     // Also setup Map array corresponding to DenomAmount which is the current set of coins available
-    for (const auto& denom : zerocoinDenomList)
-    {
-        for (int i = 0; i < DenomAmounts[j]; i++)
-        {
+    for (const auto& denom : zerocoinDenomList) {
+        for (int i = 0; i < DenomAmounts[j]; i++) {
             CAmount currentAmount = ZerocoinDenominationToAmount(denom);
             nTotalAmount += currentAmount;
             CBigNum value;
@@ -403,8 +368,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
     int nNeededSpends = 0;  // Number of spends which would be needed if selection failed
 
     // Go through all possible spend between 1 and 241 and see if it's possible or not
-    for (int i = 0; i < CoinsHeld; i++)
-    {
+    for (int i = 0; i < CoinsHeld; i++) {
         std::vector<CZerocoinMint> vSpends = SelectMintsFromList(nValueTarget, nSelectedValue,
                                              nMaxNumberOfSpends,
                                              false,
@@ -413,16 +377,12 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
                                              mapOfDenomsHeld,
                                              nNeededSpends);
 
-        if (fDebug)
-        {
-            if (vSpends.size() > 0)
-            {
+        if (fDebug) {
+            if (vSpends.size() > 0) {
                 std::cout << "SUCCESS : Coins = " << nValueTarget / COIN << " # spends = " << vSpends.size()
                           << " # coins returned = " << nCoinsReturned
                           << " Amount = " << nSelectedValue / COIN << " Held = " << CoinsHeld << " ";
-            }
-            else
-            {
+            } else {
                 std::cout << "UNABLE TO SPEND : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
             }
         }
@@ -440,16 +400,12 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
                                                 nNeededSpends);
 
 
-        if (fDebug)
-        {
-            if (vSpendsAlt.size() > 0)
-            {
+        if (fDebug) {
+            if (vSpendsAlt.size() > 0) {
                 std::cout << "# spends = " << vSpendsAlt.size()
                           << " # coins returned = " << nCoinsReturned
                           << " Amount = " << nSelectedValue / COIN << "\n";
-            }
-            else
-            {
+            } else {
                 std::cout << "UNABLE TO SPEND : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
             }
         }
@@ -464,8 +420,7 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test_from_145)
 }
 
 
-BOOST_AUTO_TEST_CASE(zerocoin_spend_test99)
-{
+BOOST_AUTO_TEST_CASE(zerocoin_spend_test99) {
     const int nMaxNumberOfSpends = 4;
     const bool fMinimizeChange = false;
     const int DenomAmounts[] = {0, 1, 4, 2, 1, 0, 0, 0};
@@ -479,10 +434,8 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test99)
 
     // Create a set of Minted coins that fits profile given by DenomAmounts
     // Also setup Map array corresponding to DenomAmount which is the current set of coins available
-    for (const auto& denom : zerocoinDenomList)
-    {
-        for (int i = 0; i < DenomAmounts[j]; i++)
-        {
+    for (const auto& denom : zerocoinDenomList) {
+        for (int i = 0; i < DenomAmounts[j]; i++) {
             CAmount currentAmount = ZerocoinDenominationToAmount(denom);
             nTotalAmount += currentAmount;
             CBigNum value;
@@ -519,16 +472,12 @@ BOOST_AUTO_TEST_CASE(zerocoin_spend_test99)
                                          mapOfDenomsHeld,
                                          nNeededSpends);
 
-    if (fDebug)
-    {
-        if (vSpends.size() > 0)
-        {
+    if (fDebug) {
+        if (vSpends.size() > 0) {
             std::cout << "SUCCESS : Coins = " << nValueTarget / COIN << " # spends used = " << vSpends.size()
                       << " # of coins returned = " << nCoinsReturned
                       << " Spend Amount = " << nSelectedValue / COIN << " Held = " << CoinsHeld << "\n";
-        }
-        else
-        {
+        } else {
             std::cout << "FAILED : Coins = " << nValueTarget / COIN << " Held = " << CoinsHeld << "\n";
         }
     }

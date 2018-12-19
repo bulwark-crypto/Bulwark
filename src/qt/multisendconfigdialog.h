@@ -5,29 +5,27 @@
 #include <utility>
 #include <vector>
 
-namespace Ui
-{
+namespace Ui {
 class MultiSendConfigDialog;
 }
 
 class WalletModel;
-class MultiSendConfigDialog : public QDialog
-{
+class MultiSendConfigDialog : public QDialog {
     Q_OBJECT
     void updateStatus();
 
-private:
+  private:
     Ui::MultiSendConfigDialog* ui;
     WalletModel* model;
     std::string address;
 
-public:
+  public:
     explicit MultiSendConfigDialog(QWidget* parent, std::string addy);
     ~MultiSendConfigDialog();
     void setModel(WalletModel* model);
     void loadEntry(std::pair<std::string,int> entry);
 
-private slots:
+  private slots:
     void deleteFrame();
     void on_activateButton_clicked();
     void on_disableButton_clicked();

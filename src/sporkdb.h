@@ -9,16 +9,15 @@
 #include "leveldbwrapper.h"
 #include "spork.h"
 
-class CSporkDB : public CLevelDBWrapper
-{
-public:
+class CSporkDB : public CLevelDBWrapper {
+  public:
     CSporkDB(size_t nCacheSize, bool fMemory = false, bool fWipe = false);
 
-private:
+  private:
     CSporkDB(const CSporkDB&);
     void operator=(const CSporkDB&);
 
-public:
+  public:
     bool WriteSpork(const int nSporkId, const CSporkMessage& spork);
     bool ReadSpork(const int nSporkId, CSporkMessage& spork);
     bool SporkExists(const int nSporkId);

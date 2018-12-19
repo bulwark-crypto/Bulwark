@@ -13,8 +13,7 @@
 #include <QString>
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex& idx, QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::TransactionDescDialog)
-{
+    ui(new Ui::TransactionDescDialog) {
     ui->setupUi(this);
 
     /* Open CSS when configured */
@@ -24,7 +23,6 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex& idx, QWidget* pa
     ui->detailText->setHtml(desc);
 }
 
-TransactionDescDialog::~TransactionDescDialog()
-{
+TransactionDescDialog::~TransactionDescDialog() {
     delete ui;
 }

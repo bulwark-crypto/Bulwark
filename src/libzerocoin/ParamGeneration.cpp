@@ -18,8 +18,7 @@
 
 using namespace std;
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 
 /// \brief Fill in a set of Zerocoin parameters from a modulus "N".
 /// \param N                A trusted RSA modulus
@@ -40,21 +39,18 @@ namespace libzerocoin
 ///
 
 void
-CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t securityLevel)
-{
+CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t securityLevel) {
     params.initialized = false;
     params.accumulatorParams.initialized = false;
 
     // Verify that |N| is > 1023 bits.
     uint32_t NLen = N.bitSize();
-    if (NLen < 1023)
-    {
+    if (NLen < 1023) {
         throw std::runtime_error("Modulus must be at least 1023 bits");
     }
 
     // Verify that "securityLevel" is at least 80 bits (minimum).
-    if (securityLevel < 80)
-    {
+    if (securityLevel < 80) {
         throw std::runtime_error("Security level must be at least 80 bits.");
     }
 
@@ -97,8 +93,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t security
     // "C" and repeat.
     CBigNum constant(ACCUMULATOR_BASE_CONSTANT);
     params.accumulatorParams.accumulatorBase = CBigNum(1);
-    for (uint32_t count = 0; count < MAX_ACCUMGEN_ATTEMPTS && params.accumulatorParams.accumulatorBase.isOne(); count++)
-    {
+    for (uint32_t count = 0; count < MAX_ACCUMGEN_ATTEMPTS && params.accumulatorParams.accumulatorBase.isOne(); count++) {
         params.accumulatorParams.accumulatorBase = constant.pow_mod(CBigNum(2), params.accumulatorParams.accumulatorModulus);
     }
 
@@ -125,8 +120,7 @@ CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t security
 /// Returns the hash of the value.
 
 uint256
-calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, string label, uint32_t index, uint32_t count)
-{
+calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, string label, uint32_t index, uint32_t count) {
     CHashWriter hasher(0,0);
     uint256     hash;
 
@@ -157,8 +151,7 @@ calculateGeneratorSeed(uint256 seed, uint256 pSeed, uint256 qSeed, string label,
 /// Returns the hash of the value.
 
 uint256
-calculateSeed(CBigNum modulus, string auxString, uint32_t securityLevel, string groupName)
-{
+calculateSeed(CBigNum modulus, string auxString, uint32_t securityLevel, string groupName) {
     CHashWriter hasher(0,0);
     uint256     hash;
 
@@ -176,8 +169,7 @@ calculateSeed(CBigNum modulus, string auxString, uint32_t securityLevel, string 
 }
 
 uint256
-calculateHash(uint256 input)
-{
+calculateHash(uint256 input) {
     CHashWriter hasher(0,0);
 
     // Compute the hash of "input"
@@ -207,36 +199,25 @@ calculateHash(uint256 input)
 
 void
 calculateGroupParamLengths(uint32_t maxPLen, uint32_t securityLevel,
-                           uint32_t *pLen, uint32_t *qLen)
-{
+                           uint32_t *pLen, uint32_t *qLen) {
     *pLen = *qLen = 0;
 
-    if (securityLevel < 80)
-    {
+    if (securityLevel < 80) {
         throw std::runtime_error("Security level must be at least 80 bits.");
-    }
-    else if (securityLevel == 80)
-    {
+    } else if (securityLevel == 80) {
         *qLen = 256;
         *pLen = 1024;
-    }
-    else if (securityLevel <= 112)
-    {
+    } else if (securityLevel <= 112) {
         *qLen = 256;
         *pLen = 2048;
-    }
-    else if (securityLevel <= 128)
-    {
+    } else if (securityLevel <= 128) {
         *qLen = 320;
         *pLen = 3072;
-    }
-    else
-    {
+    } else {
         throw std::runtime_error("Security level not supported.");
     }
 
-    if (*pLen > maxPLen)
-    {
+    if (*pLen > maxPLen) {
         throw std::runtime_error("Modulus size is too small for this security level.");
     }
 }
@@ -254,8 +235,7 @@ calculateGroupParamLengths(uint32_t maxPLen, uint32_t securityLevel,
 /// derive two generators "g", "h".
 
 IntegerGroupParams
-deriveIntegerGroupParams(uint256 seed, uint32_t pLen, uint32_t qLen)
-{
+deriveIntegerGroupParams(uint256 seed, uint32_t pLen, uint32_t qLen) {
     IntegerGroupParams result;
     CBigNum p;
     CBigNum q;
@@ -284,8 +264,7 @@ deriveIntegerGroupParams(uint256 seed, uint32_t pLen, uint32_t qLen)
             ((result.g.pow_mod(CBigNum(100), result.modulus)).isOne()) ||        // g^100 mod modulus != 1
             ((result.h.pow_mod(CBigNum(100), result.modulus)).isOne()) ||        // h^100 mod modulus != 1
             result.g == result.h ||                                 // g != h
-            result.g.isOne())                                       // g != 1
-    {
+            result.g.isOne()) {                                     // g != 1
         // If any of the above tests fail, throw an exception
         throw std::runtime_error("Group parameters are not valid");
     }
@@ -301,8 +280,7 @@ deriveIntegerGroupParams(uint256 seed, uint32_t pLen, uint32_t qLen)
 /// a field "F_p".
 
 IntegerGroupParams
-deriveIntegerGroupFromOrder(CBigNum &groupOrder)
-{
+deriveIntegerGroupFromOrder(CBigNum &groupOrder) {
     IntegerGroupParams result;
 
     // Set the order to "groupOrder"
@@ -310,15 +288,13 @@ deriveIntegerGroupFromOrder(CBigNum &groupOrder)
 
     // Try possible values for "modulus" of the form "groupOrder * 2 * i" where
     // "p" is prime and i is a counter starting at 1.
-    for (uint32_t i = 1; i < NUM_SCHNORRGEN_ATTEMPTS; i++)
-    {
+    for (uint32_t i = 1; i < NUM_SCHNORRGEN_ATTEMPTS; i++) {
         // Set modulus equal to "groupOrder * 2 * i"
         result.modulus = (result.groupOrder * CBigNum(i*2)) + CBigNum(1);
 
         // Test the result for primality
         // TODO: This is a probabilistic routine and thus not the right choice
-        if (result.modulus.isPrime(256))
-        {
+        if (result.modulus.isPrime(256)) {
 
             // Success.
             //
@@ -340,8 +316,7 @@ deriveIntegerGroupFromOrder(CBigNum &groupOrder)
                     ((result.g.pow_mod(CBigNum(100), result.modulus)).isOne()) ||        // g^100 mod modulus != 1
                     ((result.h.pow_mod(CBigNum(100), result.modulus)).isOne()) ||        // h^100 mod modulus != 1
                     result.g == result.h ||                                 // g != h
-                    result.g.isOne())                                       // g != 1
-            {
+                    result.g.isOne()) {                                     // g != 1
                 // If any of the above tests fail, throw an exception
                 throw std::runtime_error("Group parameters are not valid");
             }
@@ -370,11 +345,9 @@ deriveIntegerGroupFromOrder(CBigNum &groupOrder)
 void
 calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
                               CBigNum *resultModulus, CBigNum *resultGroupOrder,
-                              uint256 *resultPseed, uint256 *resultQseed)
-{
+                              uint256 *resultPseed, uint256 *resultQseed) {
     // Verify that the seed length is >= qLen
-    if (qLen > (sizeof(seed)) * 8)
-    {
+    if (qLen > (sizeof(seed)) * 8) {
         // TODO: The use of 256-bit seeds limits us to 256-bit group orders. We should probably change this.
         // throw std::runtime_error("Seed is too short to support the required security level.");
     }
@@ -415,14 +388,12 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
 
     // Now loop until we find a valid prime "p" or we fail due to
     // pgen_counter exceeding ((4*pLen) + old_counter).
-    for ( ; pgen_counter <= ((4*pLen) + old_counter) ; pgen_counter++)
-    {
+    for ( ; pgen_counter <= ((4*pLen) + old_counter) ; pgen_counter++) {
         // If (2 * t * resultGroupOrder * p0 + 1) > 2^{pLen}, then
         // t = ⎡2^{pLen−1} / (2 * resultGroupOrder * p0)⎤.
         powerOfTwo = CBigNum(2).pow(pLen);
         CBigNum prod = (CBigNum(2) * t * (*resultGroupOrder) * p0) + CBigNum(1);
-        if (prod > powerOfTwo)
-        {
+        if (prod > powerOfTwo) {
             // TODO: implement a ceil function
             t = CBigNum(2).pow(pLen-1) / (CBigNum(2) * (*resultGroupOrder) * p0);
         }
@@ -443,8 +414,7 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
         // If GCD(z–1, resultModulus) == 1 AND (z^{p0} mod resultModulus == 1)
         // then we have found our result. Return.
         if ((resultModulus->gcd(z - CBigNum(1))).isOne() &&
-                (z.pow_mod(p0, (*resultModulus))).isOne())
-        {
+                (z.pow_mod(p0, (*resultModulus))).isOne()) {
             // Success! Return the seeds and primes.
             *resultPseed = pseed;
             *resultQseed = qseed;
@@ -474,13 +444,11 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
 /// Uses the algorithm described in FIPS 186-3 Appendix A.2.3.
 
 CBigNum
-calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modulus, CBigNum groupOrder, uint32_t index)
-{
+calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modulus, CBigNum groupOrder, uint32_t index) {
     CBigNum result;
 
     // Verify that 0 <= index < 256
-    if (index > 255)
-    {
+    if (index > 255) {
         throw std::runtime_error("Invalid index for group generation");
     }
 
@@ -488,8 +456,7 @@ calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modu
     CBigNum e = (modulus - CBigNum(1)) / groupOrder;
 
     // Loop until we find a generator
-    for (uint32_t count = 1; count < MAX_GENERATOR_ATTEMPTS; count++)
-    {
+    for (uint32_t count = 1; count < MAX_GENERATOR_ATTEMPTS; count++) {
         // hash = Hash(seed || pSeed || qSeed || “ggen” || index || count
         uint256 hash = calculateGeneratorSeed(seed, pSeed, qSeed, "ggen", index, count);
         CBigNum W(hash);
@@ -498,8 +465,7 @@ calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modu
         result = W.pow_mod(e, modulus);
 
         // If result > 1, we have a generator
-        if (result > 1)
-        {
+        if (result > 1) {
             return result;
         }
     }
@@ -522,17 +488,14 @@ calculateGroupGenerator(uint256 seed, uint256 pSeed, uint256 qSeed, CBigNum modu
 
 CBigNum
 generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
-                    uint32_t *prime_gen_counter)
-{
+                    uint32_t *prime_gen_counter) {
     // Verify that primeBitLen is not too small
-    if (primeBitLen < 2)
-    {
+    if (primeBitLen < 2) {
         throw std::runtime_error("Prime length is too short");
     }
 
     // If primeBitLen < 33 bits, perform the base case.
-    if (primeBitLen < 33)
-    {
+    if (primeBitLen < 33) {
         CBigNum result(0);
 
         // Set prime_seed = in_seed, prime_gen_counter = 0.
@@ -540,8 +503,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
         (*prime_gen_counter) = 0;
 
         // Loop up to "4 * primeBitLen" iterations.
-        while ((*prime_gen_counter) < (4 * primeBitLen))
-        {
+        while ((*prime_gen_counter) < (4 * primeBitLen)) {
 
             // Generate a pseudorandom integer "c" of length primeBitLength bits
             uint32_t iteration_count;
@@ -564,8 +526,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 
             // Perform trial division on this (relatively small) integer to determine if "intc"
             // is prime. If so, return success.
-            if (primalityTestByTrialDivision(intc))
-            {
+            if (primalityTestByTrialDivision(intc)) {
                 // Return "intc" converted back into a CBigNum and "prime_seed". We also updated
                 // the variable "prime_gen_counter" in previous statements.
                 result = intc;
@@ -583,8 +544,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
         // END OF BASE CASE
     }
     // If primeBitLen >= 33 bits, perform the recursive case.
-    else
-    {
+    else {
         // Recurse to find a new random prime of roughly half the size
         uint32_t newLength = ceil((double)primeBitLen / 2.0) + 1;
         CBigNum c0 = generateRandomPrime(newLength, in_seed, out_seed, prime_gen_counter);
@@ -600,13 +560,11 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
         CBigNum t = x / (CBigNum(2) * c0);
 
         // Repeat the following procedure until we find a prime (or time out)
-        for (uint32_t testNum = 0; testNum < MAX_PRIMEGEN_ATTEMPTS; testNum++)
-        {
+        for (uint32_t testNum = 0; testNum < MAX_PRIMEGEN_ATTEMPTS; testNum++) {
 
             // If ((2 * t * c0) + 1 > 2^{primeBitLen}),
             // then t = ⎡2^{primeBitLen} – 1 / (2 * c0)⎤.
-            if ((CBigNum(2) * t * c0) > (CBigNum(2).pow(CBigNum(primeBitLen))))
-            {
+            if ((CBigNum(2) * t * c0) > (CBigNum(2).pow(CBigNum(primeBitLen)))) {
                 t = ((CBigNum(2).pow(CBigNum(primeBitLen))) - CBigNum(1)) / (CBigNum(2) * c0);
             }
 
@@ -628,8 +586,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
             // 3. Check if "c" is prime.
             //    Specifically, verify that gcd((z-1), c) == 1 AND (z^c0 mod c) == 1
             // If so we return "c" as our result.
-            if (c.gcd(z - CBigNum(1)).isOne() && z.pow_mod(c0, c).isOne())
-            {
+            if (c.gcd(z - CBigNum(1)).isOne() && z.pow_mod(c0, c).isOne()) {
                 // Return "c", out_seed and prime_gen_counter
                 // (the latter two of which were already updated)
                 return c;
@@ -646,8 +603,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 }
 
 CBigNum
-generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations)
-{
+generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations) {
     CBigNum      result(0);
     uint32_t    iterations = ceil((double)numBits / (double)HASH_OUTPUT_BITS);
 
@@ -657,8 +613,7 @@ generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations)
 #endif
 
     // Loop "iterations" times filling up the value "result" with random bits
-    for (uint32_t count = 0; count < iterations; count++)
-    {
+    for (uint32_t count = 0; count < iterations; count++) {
         // result += ( H(pseed + count) * 2^{count * p0len} )
         result += CBigNum(calculateHash(seed + count)) * CBigNum(2).pow(count * HASH_OUTPUT_BITS);
     }
@@ -677,8 +632,7 @@ generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations)
 /// Performs trial division to determine whether a uint32_t is prime.
 
 bool
-primalityTestByTrialDivision(uint32_t candidate)
-{
+primalityTestByTrialDivision(uint32_t candidate) {
     // TODO: HACK HACK WRONG WRONG
     CBigNum canBignum(candidate);
 

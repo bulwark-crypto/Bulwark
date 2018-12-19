@@ -27,15 +27,14 @@
 #include <QSortFilterProxyModel>
 
 PrivKeyPage::PrivKeyPage(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-                                            ui(new Ui::PrivKeyPage)
-{
+    ui(new Ui::PrivKeyPage) {
     ui->setupUi(this);
 
 #ifdef Q_OS_MAC // Icons on push buttons are very uncommon on Mac
     ui->copyAddress->setIcon(QIcon());
 #endif
-	key = PrivKeyPage::createmasternodekey();
-	ui->payTo->setText(key);
+    key = PrivKeyPage::createmasternodekey();
+    ui->payTo->setText(key);
 
     // Context menu actions
     QAction* copyAddressAction = new QAction(tr("&Copy Address"), this);
@@ -53,20 +52,17 @@ PrivKeyPage::PrivKeyPage(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenu
 
 
 
-PrivKeyPage::~PrivKeyPage()
-{
+PrivKeyPage::~PrivKeyPage() {
     delete ui;
 }
 
 
-void PrivKeyPage::on_copyAddress_clicked()
-{
-     GUIUtil::setClipboard(ui->payTo->text());
+void PrivKeyPage::on_copyAddress_clicked() {
+    GUIUtil::setClipboard(ui->payTo->text());
 
 }
 
-QString PrivKeyPage::createmasternodekey()
-{
+QString PrivKeyPage::createmasternodekey() {
     CKey secret;
     secret.MakeNewKey(false);
 

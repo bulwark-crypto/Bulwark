@@ -9,12 +9,11 @@ class QtMaterialFlatButton;
 class QtMaterialRippleOverlay;
 class QtMaterialFlatButtonStateMachine;
 
-class QtMaterialFlatButtonPrivate
-{
+class QtMaterialFlatButtonPrivate {
     Q_DISABLE_COPY(QtMaterialFlatButtonPrivate)
     Q_DECLARE_PUBLIC(QtMaterialFlatButton)
 
-public:
+  public:
     QtMaterialFlatButtonPrivate(QtMaterialFlatButton *q);
     virtual ~QtMaterialFlatButtonPrivate();
 

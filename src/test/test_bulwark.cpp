@@ -24,14 +24,12 @@ CWallet* pwalletMain;
 extern bool fPrintToConsole;
 extern void noui_connect();
 
-struct TestingSetup
-{
+struct TestingSetup {
     CCoinsViewDB *pcoinsdbview;
     boost::filesystem::path pathTemp;
     boost::thread_group threadGroup;
 
-    TestingSetup()
-    {
+    TestingSetup() {
         SetupEnvironment();
         fPrintToDebugLog = false; // don't want to write to debug.log file
         fCheckBlockIndex = true;
@@ -58,8 +56,7 @@ struct TestingSetup
             threadGroup.create_thread(&ThreadScriptCheck);
         RegisterNodeSignals(GetNodeSignals());
     }
-    ~TestingSetup()
-    {
+    ~TestingSetup() {
         threadGroup.interrupt_all();
         threadGroup.join_all();
         UnregisterNodeSignals(GetNodeSignals());
@@ -79,17 +76,14 @@ struct TestingSetup
 
 BOOST_GLOBAL_FIXTURE(TestingSetup);
 
-void Shutdown(void* parg)
-{
+void Shutdown(void* parg) {
     exit(0);
 }
 
-void StartShutdown()
-{
+void StartShutdown() {
     exit(0);
 }
 
-bool ShutdownRequested()
-{
+bool ShutdownRequested() {
     return false;
 }

@@ -13,16 +13,14 @@
 class CZerocoinMint;
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class ZBwkControlDialog;
 }
 
-class ZBwkControlDialog : public QDialog
-{
+class ZBwkControlDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit ZBwkControlDialog(QWidget *parent);
     ~ZBwkControlDialog();
 
@@ -32,7 +30,7 @@ public:
     static std::list<CZerocoinMint> listMints;
     static std::vector<CZerocoinMint> GetSelectedMints();
 
-private:
+  private:
     Ui::ZBwkControlDialog *ui;
     WalletModel* model;
     PrivacyDialog* privacyDialog;
@@ -40,8 +38,7 @@ private:
     void updateList();
     void updateLabels();
 
-    enum
-    {
+    enum {
         COLUMN_CHECKBOX,
         COLUMN_DENOMINATION,
         COLUMN_PUBCOIN,
@@ -49,7 +46,7 @@ private:
         COLUMN_ISSPENDABLE
     };
 
-private slots:
+  private slots:
     void updateSelection(QTreeWidgetItem* item, int column);
     void ButtonAllClicked();
 };

@@ -7,15 +7,14 @@
 
 class QtMaterialCheckable;
 
-class QtMaterialCheckableIcon : public QWidget
-{
+class QtMaterialCheckableIcon : public QWidget {
     Q_OBJECT
 
     Q_PROPERTY(QColor color READ color WRITE setColor)
     Q_PROPERTY(qreal iconSize READ iconSize WRITE setIconSize)
     Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
 
-public:
+  public:
     QtMaterialCheckableIcon(const QIcon &icon, QtMaterialCheckable *parent);
     ~QtMaterialCheckableIcon();
 
@@ -33,10 +32,10 @@ public:
     inline void setOpacity(qreal opacity);
     inline qreal opacity() const;
 
-protected:
+  protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
-private:
+  private:
     Q_DISABLE_COPY(QtMaterialCheckableIcon)
 
     QtMaterialCheckable *const m_checkable;
@@ -46,47 +45,39 @@ private:
     qreal                      m_opacity;
 };
 
-inline void QtMaterialCheckableIcon::setIcon(const QIcon &icon)
-{
+inline void QtMaterialCheckableIcon::setIcon(const QIcon &icon) {
     m_icon = icon;
     update();
 }
 
-inline QIcon QtMaterialCheckableIcon::icon() const
-{
+inline QIcon QtMaterialCheckableIcon::icon() const {
     return m_icon;
 }
 
-inline void QtMaterialCheckableIcon::setColor(const QColor &color)
-{
+inline void QtMaterialCheckableIcon::setColor(const QColor &color) {
     m_color = color;
     update();
 }
 
-inline QColor QtMaterialCheckableIcon::color() const
-{
+inline QColor QtMaterialCheckableIcon::color() const {
     return m_color;
 }
 
-inline void QtMaterialCheckableIcon::setIconSize(qreal size)
-{
+inline void QtMaterialCheckableIcon::setIconSize(qreal size) {
     m_iconSize = size;
     update();
 }
 
-inline qreal QtMaterialCheckableIcon::iconSize() const
-{
+inline qreal QtMaterialCheckableIcon::iconSize() const {
     return m_iconSize;
 }
 
-inline void QtMaterialCheckableIcon::setOpacity(qreal opacity)
-{
+inline void QtMaterialCheckableIcon::setOpacity(qreal opacity) {
     m_opacity = opacity;
     update();
 }
 
-inline qreal QtMaterialCheckableIcon::opacity() const
-{
+inline qreal QtMaterialCheckableIcon::opacity() const {
     return m_opacity;
 }
 

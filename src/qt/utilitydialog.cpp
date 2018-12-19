@@ -30,8 +30,7 @@
 
 /** "Help message" or "About" dialog box */
 HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::HelpMessageDialog)
-{
+    ui(new Ui::HelpMessageDialog) {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
 
@@ -45,8 +44,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
     version += " " + tr("(%1-bit)").arg(32);
 #endif
 
-    if (about)
-    {
+    if (about) {
         setWindowTitle(tr("About Bulwark Core"));
 
         /// HTML-format the license message from the core
@@ -66,9 +64,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         ui->aboutMessage->setText(version + "<br><br>" + licenseInfoHTML);
         ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
-    }
-    else
-    {
+    } else {
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
                          "  bulwark-qt [" + tr("command-line options") + "]                     " + "\n";
@@ -99,22 +95,16 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         QTextCharFormat bold;
         bold.setFontWeight(QFont::Bold);
 
-        Q_FOREACH (const QString &line, coreOptions.split("\n"))
-        {
-            if (line.startsWith("  -"))
-            {
+        Q_FOREACH (const QString &line, coreOptions.split("\n")) {
+            if (line.startsWith("  -")) {
                 cursor.currentTable()->appendRows(1);
                 cursor.movePosition(QTextCursor::PreviousCell);
                 cursor.movePosition(QTextCursor::NextRow);
                 cursor.insertText(line.trimmed());
                 cursor.movePosition(QTextCursor::NextCell);
-            }
-            else if (line.startsWith("   "))
-            {
+            } else if (line.startsWith("   ")) {
                 cursor.insertText(line.trimmed()+' ');
-            }
-            else if (line.size() > 0)
-            {
+            } else if (line.size() > 0) {
                 //Title of a group
                 if (cursor.currentTable())
                     cursor.currentTable()->appendRows(1);
@@ -129,20 +119,17 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
     }
 }
 
-HelpMessageDialog::~HelpMessageDialog()
-{
+HelpMessageDialog::~HelpMessageDialog() {
     GUIUtil::saveWindowGeometry("nHelpMessageDialogWindow", this);
     delete ui;
 }
 
-void HelpMessageDialog::printToConsole()
-{
+void HelpMessageDialog::printToConsole() {
     // On other operating systems, the expected action is to print the message to the console.
     fprintf(stdout, "%s\n", qPrintable(text));
 }
 
-void HelpMessageDialog::showOrPrint()
-{
+void HelpMessageDialog::showOrPrint() {
 #if defined(WIN32)
     // On Windows, show a message box, as there is no stderr/stdout in windowed applications
     exec();
@@ -152,15 +139,13 @@ void HelpMessageDialog::showOrPrint()
 #endif
 }
 
-void HelpMessageDialog::on_okButton_accepted()
-{
+void HelpMessageDialog::on_okButton_accepted() {
     close();
 }
 
 
 /** "Shutdown" window */
-ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f)
-{
+ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f) {
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
                           tr("Bulwark Core is shutting down...") + "<br /><br />" +
@@ -168,8 +153,7 @@ ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(par
     setLayout(layout);
 }
 
-void ShutdownWindow::showShutdownWindow(BitcoinGUI* window)
-{
+void ShutdownWindow::showShutdownWindow(BitcoinGUI* window) {
     if (!window)
         return;
 
@@ -186,7 +170,6 @@ void ShutdownWindow::showShutdownWindow(BitcoinGUI* window)
     shutdownWindow->show();
 }
 
-void ShutdownWindow::closeEvent(QCloseEvent* event)
-{
+void ShutdownWindow::closeEvent(QCloseEvent* event) {
     event->ignore();
 }

@@ -30,19 +30,16 @@
 #include <QSettings>
 #include <QStringList>
 
-OptionsModel::OptionsModel(QObject* parent) : QAbstractListModel(parent)
-{
+OptionsModel::OptionsModel(QObject* parent) : QAbstractListModel(parent) {
     Init();
 }
 
-void OptionsModel::addOverriddenOption(const std::string& option)
-{
+void OptionsModel::addOverriddenOption(const std::string& option) {
     strOverriddenByCommandLine += QString::fromStdString(option) + "=" + QString::fromStdString(mapArgs[option]) + " ";
 }
 
 // Writes all missing QSettings with their default values
-void OptionsModel::Init()
-{
+void OptionsModel::Init() {
     resetSettings = false;
     QSettings settings;
 
@@ -157,8 +154,7 @@ void OptionsModel::Init()
     language = settings.value("language").toString();
 }
 
-void OptionsModel::Reset()
-{
+void OptionsModel::Reset() {
     QSettings settings;
 
     // Remove all entries from our QSettings object
@@ -170,19 +166,15 @@ void OptionsModel::Reset()
         GUIUtil::SetStartOnSystemStartup(false);
 }
 
-int OptionsModel::rowCount(const QModelIndex& parent) const
-{
+int OptionsModel::rowCount(const QModelIndex& parent) const {
     return OptionIDRowCount;
 }
 
 // read QSettings values and return them
-QVariant OptionsModel::data(const QModelIndex& index, int role) const
-{
-    if (role == Qt::EditRole)
-    {
+QVariant OptionsModel::data(const QModelIndex& index, int role) const {
+    if (role == Qt::EditRole) {
         QSettings settings;
-        switch (index.row())
-        {
+        switch (index.row()) {
         case StartAtStartup:
             return GUIUtil::GetStartOnSystemStartup();
         case MinimizeToTray:
@@ -199,14 +191,12 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
         // default proxy
         case ProxyUse:
             return settings.value("fUseProxy", false);
-        case ProxyIP:
-        {
+        case ProxyIP: {
             // contains IP at index 0 and port at index 1
             QStringList strlIpPort = settings.value("addrProxy").toString().split(":", QString::SkipEmptyParts);
             return strlIpPort.at(0);
         }
-        case ProxyPort:
-        {
+        case ProxyPort: {
             // contains IP at index 0 and port at index 1
             QStringList strlIpPort = settings.value("addrProxy").toString().split(":", QString::SkipEmptyParts);
             return strlIpPort.at(1);
@@ -252,14 +242,11 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
 }
 
 // write QSettings values
-bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int role)
-{
+bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int role) {
     bool successful = true; /* set to false on parse error */
-    if (role == Qt::EditRole)
-    {
+    if (role == Qt::EditRole) {
         QSettings settings;
-        switch (index.row())
-        {
+        switch (index.row()) {
         case StartAtStartup:
             successful = GUIUtil::SetStartOnSystemStartup(value.toBool());
             break;
@@ -278,19 +265,16 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
 
         // default proxy
         case ProxyUse:
-            if (settings.value("fUseProxy") != value)
-            {
+            if (settings.value("fUseProxy") != value) {
                 settings.setValue("fUseProxy", value.toBool());
                 setRestartRequired(true);
             }
             break;
-        case ProxyIP:
-        {
+        case ProxyIP: {
             // contains current IP at index 0 and current port at index 1
             QStringList strlIpPort = settings.value("addrProxy").toString().split(":", QString::SkipEmptyParts);
             // if that key doesn't exist or has a changed IP
-            if (!settings.contains("addrProxy") || strlIpPort.at(0) != value.toString())
-            {
+            if (!settings.contains("addrProxy") || strlIpPort.at(0) != value.toString()) {
                 // construct new value from new IP and current port
                 QString strNewValue = value.toString() + ":" + strlIpPort.at(1);
                 settings.setValue("addrProxy", strNewValue);
@@ -298,13 +282,11 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             }
         }
         break;
-        case ProxyPort:
-        {
+        case ProxyPort: {
             // contains current IP at index 0 and current port at index 1
             QStringList strlIpPort = settings.value("addrProxy").toString().split(":", QString::SkipEmptyParts);
             // if that key doesn't exist or has a changed port
-            if (!settings.contains("addrProxy") || strlIpPort.at(1) != value.toString())
-            {
+            if (!settings.contains("addrProxy") || strlIpPort.at(1) != value.toString()) {
                 // construct new value from current IP and new port
                 QString strNewValue = strlIpPort.at(0) + ":" + value.toString();
                 settings.setValue("addrProxy", strNewValue);
@@ -314,21 +296,18 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
         break;
 #ifdef ENABLE_WALLET
         case SpendZeroConfChange:
-            if (settings.value("bSpendZeroConfChange") != value)
-            {
+            if (settings.value("bSpendZeroConfChange") != value) {
                 settings.setValue("bSpendZeroConfChange", value);
                 setRestartRequired(true);
             }
             break;
         case ShowOrphans:
-            if (settings.value("fShowOrphans") != value)
-            {
+            if (settings.value("fShowOrphans") != value) {
                 settings.setValue("fShowOrphans", value);
                 setRestartRequired(true);
             }
         case ShowMasternodesTab:
-            if (settings.value("fShowMasternodesTab") != value)
-            {
+            if (settings.value("fShowMasternodesTab") != value) {
                 settings.setValue("fShowMasternodesTab", value);
                 setRestartRequired(true);
             }
@@ -338,30 +317,26 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             setDisplayUnit(value);
             break;
         case ThirdPartyTxUrls:
-            if (strThirdPartyTxUrls != value.toString())
-            {
+            if (strThirdPartyTxUrls != value.toString()) {
                 strThirdPartyTxUrls = value.toString();
                 settings.setValue("strThirdPartyTxUrls", strThirdPartyTxUrls);
                 setRestartRequired(true);
             }
             break;
         case Digits:
-            if (settings.value("digits") != value)
-            {
+            if (settings.value("digits") != value) {
                 settings.setValue("digits", value);
                 setRestartRequired(true);
             }
             break;
         case Theme:
-            if (settings.value("theme") != value)
-            {
+            if (settings.value("theme") != value) {
                 settings.setValue("theme", value);
                 setRestartRequired(true);
             }
             break;
         case Language:
-            if (settings.value("language") != value)
-            {
+            if (settings.value("language") != value) {
                 settings.setValue("language", value);
                 setRestartRequired(true);
             }
@@ -388,22 +363,19 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             emit coinControlFeaturesChanged(fCoinControlFeatures);
             break;
         case DatabaseCache:
-            if (settings.value("nDatabaseCache") != value)
-            {
+            if (settings.value("nDatabaseCache") != value) {
                 settings.setValue("nDatabaseCache", value);
                 setRestartRequired(true);
             }
             break;
         case ThreadsScriptVerif:
-            if (settings.value("nThreadsScriptVerif") != value)
-            {
+            if (settings.value("nThreadsScriptVerif") != value) {
                 settings.setValue("nThreadsScriptVerif", value);
                 setRestartRequired(true);
             }
             break;
         case Listen:
-            if (settings.value("fListen") != value)
-            {
+            if (settings.value("fListen") != value) {
                 settings.setValue("fListen", value);
                 setRestartRequired(true);
             }
@@ -419,10 +391,8 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
 }
 
 /** Updates current unit in memory, settings and emits displayUnitChanged(newUnit) signal */
-void OptionsModel::setDisplayUnit(const QVariant& value)
-{
-    if (!value.isNull())
-    {
+void OptionsModel::setDisplayUnit(const QVariant& value) {
+    if (!value.isNull()) {
         QSettings settings;
         nDisplayUnit = value.toInt();
         settings.setValue("nDisplayUnit", nDisplayUnit);
@@ -430,33 +400,28 @@ void OptionsModel::setDisplayUnit(const QVariant& value)
     }
 }
 
-bool OptionsModel::getProxySettings(QNetworkProxy& proxy) const
-{
+bool OptionsModel::getProxySettings(QNetworkProxy& proxy) const {
     // Directly query current base proxy, because
     // GUI settings can be overridden with -proxy.
     proxyType curProxy;
-    if (GetProxy(NET_IPV4, curProxy))
-    {
+    if (GetProxy(NET_IPV4, curProxy)) {
         proxy.setType(QNetworkProxy::Socks5Proxy);
         proxy.setHostName(QString::fromStdString(curProxy.proxy.ToStringIP()));
         proxy.setPort(curProxy.proxy.GetPort());
 
         return true;
-    }
-    else
+    } else
         proxy.setType(QNetworkProxy::NoProxy);
 
     return false;
 }
 
-void OptionsModel::setRestartRequired(bool fRequired)
-{
+void OptionsModel::setRestartRequired(bool fRequired) {
     QSettings settings;
     return settings.setValue("fRestartRequired", fRequired);
 }
 
-bool OptionsModel::isRestartRequired()
-{
+bool OptionsModel::isRestartRequired() {
     QSettings settings;
     return settings.value("fRestartRequired", false).toBool();
 }

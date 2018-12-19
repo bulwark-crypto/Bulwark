@@ -93,16 +93,14 @@ void ReprocessBlocks(int nBlocks);
 // Keeps track of all of the network spork settings
 //
 
-class CSporkMessage
-{
-public:
+class CSporkMessage {
+  public:
     std::vector<unsigned char> vchSig;
     int nSporkID;
     int64_t nValue;
     int64_t nTimeSigned;
 
-    uint256 GetHash()
-    {
+    uint256 GetHash() {
         uint256 n = Nist5(BEGIN(nSporkID), END(nTimeSigned));
         return n;
     }
@@ -110,8 +108,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(nSporkID);
         READWRITE(nValue);
         READWRITE(nTimeSigned);
@@ -120,15 +117,13 @@ public:
 };
 
 
-class CSporkManager
-{
-private:
+class CSporkManager {
+  private:
     std::vector<unsigned char> vchSig;
     std::string strMasterPrivKey;
 
-public:
-    CSporkManager()
-    {
+  public:
+    CSporkManager() {
     }
 
     std::string GetSporkNameByID(int id);

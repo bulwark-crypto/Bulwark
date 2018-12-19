@@ -33,8 +33,7 @@ extern "C" {
 
 #define BITCOINCONSENSUS_API_VER 0
 
-typedef enum bitcoinconsensus_error_t
-{
+typedef enum bitcoinconsensus_error_t {
     bitcoinconsensus_ERR_OK = 0,
     bitcoinconsensus_ERR_TX_INDEX,
     bitcoinconsensus_ERR_TX_SIZE_MISMATCH,
@@ -42,8 +41,7 @@ typedef enum bitcoinconsensus_error_t
 } bitcoinconsensus_error;
 
 /** Script verification flags */
-enum
-{
+enum {
     bitcoinconsensus_SCRIPT_FLAGS_VERIFY_NONE      = 0,
     bitcoinconsensus_SCRIPT_FLAGS_VERIFY_P2SH      = (1U << 0), // evaluate P2SH (BIP16) subscripts
     bitcoinconsensus_SCRIPT_FLAGS_VERIFY_DERSIG    = (1U << 2), // enforce strict DER (BIP66) compliance

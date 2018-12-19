@@ -5,13 +5,11 @@
 
 class QtMaterialCheckablePrivate;
 
-class QtMaterialCheckable : public QAbstractButton
-{
+class QtMaterialCheckable : public QAbstractButton {
     Q_OBJECT
 
-public:
-    enum LabelPosition
-    {
+  public:
+    enum LabelPosition {
         LabelPositionLeft,
         LabelPositionRight,
     };
@@ -45,7 +43,7 @@ public:
 
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
-protected:
+  protected:
     QtMaterialCheckable(QtMaterialCheckablePrivate &d, QWidget *parent = 0);
 
     bool event(QEvent *event) Q_DECL_OVERRIDE;
@@ -57,7 +55,7 @@ protected:
 
     const QScopedPointer<QtMaterialCheckablePrivate> d_ptr;
 
-private:
+  private:
     Q_DISABLE_COPY(QtMaterialCheckable)
     Q_DECLARE_PRIVATE(QtMaterialCheckable)
 };

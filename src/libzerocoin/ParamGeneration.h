@@ -15,8 +15,7 @@
 
 #include "Params.h"
 
-namespace libzerocoin
-{
+namespace libzerocoin {
 
 void CalculateParams(ZerocoinParams &params, CBigNum N, std::string aux, uint32_t securityLevel);
 void calculateGroupParamLengths(uint32_t maxPLen, uint32_t securityLevel,

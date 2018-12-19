@@ -21,8 +21,7 @@ static const unsigned int MAX_HASH_FUNCS = 50;
  * First two bits of nFlags control how much IsRelevantAndUpdate actually updates
  * The remaining bits are reserved
  */
-enum bloomflags
-{
+enum bloomflags {
     BLOOM_UPDATE_NONE = 0,
     BLOOM_UPDATE_ALL = 1,
     // Only adds outpoints to the filter if the output is a pay-to-pubkey/pay-to-multisig script
@@ -41,9 +40,8 @@ enum bloomflags
  * allowing clients to trade more bandwidth for more privacy by obfuscating which
  * keys are owned by them.
  */
-class CBloomFilter
-{
-private:
+class CBloomFilter {
+  private:
     std::vector<unsigned char> vData;
     bool isFull;
     bool isEmpty;
@@ -53,7 +51,7 @@ private:
 
     unsigned int Hash(unsigned int nHashNum, const std::vector<unsigned char>& vDataToHash) const;
 
-public:
+  public:
     /**
      * Creates a new bloom filter which will provide the given fp rate when filled with the given number of elements
      * Note that if the given parameters will result in a filter outside the bounds of the protocol limits,
@@ -69,8 +67,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(vData);
         READWRITE(nHashFuncs);
         READWRITE(nTweak);

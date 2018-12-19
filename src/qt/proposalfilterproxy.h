@@ -12,11 +12,10 @@
 #include <QDateTime>
 #include <QSortFilterProxyModel>
 
-class ProposalFilterProxy : public QSortFilterProxyModel
-{
+class ProposalFilterProxy : public QSortFilterProxyModel {
     Q_OBJECT
 
-public:
+  public:
     explicit ProposalFilterProxy(QObject *parent = 0);
 
     static const QDateTime MIN_DATE;
@@ -35,10 +34,10 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
 
-protected:
+  protected:
     bool filterAcceptsRow(int source_row, const QModelIndex & source_parent) const;
 
-private:
+  private:
     CAmount startDate;
     CAmount endDate;
     int totalPaymentCount;

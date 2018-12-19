@@ -14,8 +14,7 @@ using namespace std;
 
 BOOST_AUTO_TEST_SUITE(univalue_tests)
 
-BOOST_AUTO_TEST_CASE(univalue_constructor)
-{
+BOOST_AUTO_TEST_CASE(univalue_constructor) {
     UniValue v1;
     BOOST_CHECK(v1.isNull());
 
@@ -62,8 +61,7 @@ BOOST_AUTO_TEST_CASE(univalue_constructor)
     BOOST_CHECK_EQUAL(v9.getValStr(), "zappa");
 }
 
-BOOST_AUTO_TEST_CASE(univalue_typecheck)
-{
+BOOST_AUTO_TEST_CASE(univalue_typecheck) {
     UniValue v1;
     BOOST_CHECK(v1.setNumStr("1"));
     BOOST_CHECK(v1.isNum());
@@ -104,8 +102,7 @@ BOOST_AUTO_TEST_CASE(univalue_typecheck)
     BOOST_CHECK_THROW(vals[1].get_bool(), runtime_error);
 }
 
-BOOST_AUTO_TEST_CASE(univalue_set)
-{
+BOOST_AUTO_TEST_CASE(univalue_set) {
     UniValue v(UniValue::VSTR, "foo");
     v.clear();
     BOOST_CHECK(v.isNull());
@@ -163,8 +160,7 @@ BOOST_AUTO_TEST_CASE(univalue_set)
     BOOST_CHECK(v.isNull());
 }
 
-BOOST_AUTO_TEST_CASE(univalue_array)
-{
+BOOST_AUTO_TEST_CASE(univalue_array) {
     UniValue arr(UniValue::VARR);
 
     UniValue v((int64_t)1023LL);
@@ -201,8 +197,7 @@ BOOST_AUTO_TEST_CASE(univalue_array)
     BOOST_CHECK_EQUAL(arr.size(), 0);
 }
 
-BOOST_AUTO_TEST_CASE(univalue_object)
-{
+BOOST_AUTO_TEST_CASE(univalue_object) {
     UniValue obj(UniValue::VOBJ);
     string strKey, strVal;
     UniValue v;
@@ -287,8 +282,7 @@ BOOST_AUTO_TEST_CASE(univalue_object)
 static const char *json1 =
     "[1.10000000,{\"key1\":\"str\",\"key2\":800,\"key3\":{\"name\":\"martian\"}}]";
 
-BOOST_AUTO_TEST_CASE(univalue_readwrite)
-{
+BOOST_AUTO_TEST_CASE(univalue_readwrite) {
     UniValue v;
     BOOST_CHECK(v.read(json1));
 

@@ -18,23 +18,21 @@
 
 class ProposalModel;
 
-namespace Ui
-{
-    class ProposalDialog;
+namespace Ui {
+class ProposalDialog;
 }
 
 QT_BEGIN_NAMESPACE
 class QDataWidgetMapper;
 QT_END_NAMESPACE
 
-/** 
+/**
  * Dialog for creating a proposal.
  */
-class ProposalDialog : public QDialog
-{
+class ProposalDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     enum Mode {
         PrepareProposal,
         SubmitProposal
@@ -43,12 +41,12 @@ public:
     explicit ProposalDialog(Mode mode, QWidget* parent);
     ~ProposalDialog();
 
-public slots:
+  public slots:
     void checkProposalTX();
     void on_acceptButton_clicked();
     void on_cancelButton_clicked();
 
-private:
+  private:
     Ui::ProposalDialog *ui;
     QDataWidgetMapper *mapper;
     Mode mode;

@@ -32,13 +32,11 @@ using namespace std;
 
 void EnsureWalletIsUnlocked();
 
-std::string static EncodeDumpTime(int64_t nTime)
-{
+std::string static EncodeDumpTime(int64_t nTime) {
     return DateTimeStrFormat("%Y-%m-%dT%H:%M:%SZ", nTime);
 }
 
-int64_t static DecodeDumpTime(const std::string& str)
-{
+int64_t static DecodeDumpTime(const std::string& str) {
     static const boost::posix_time::ptime epoch = boost::posix_time::from_time_t(0);
     static const std::locale loc(std::locale::classic(),
                                  new boost::posix_time::time_input_facet("%Y-%m-%dT%H:%M:%SZ"));
@@ -51,31 +49,23 @@ int64_t static DecodeDumpTime(const std::string& str)
     return (ptime - epoch).total_seconds();
 }
 
-std::string static EncodeDumpString(const std::string& str)
-{
+std::string static EncodeDumpString(const std::string& str) {
     std::stringstream ret;
-    BOOST_FOREACH(unsigned char c, str)
-    {
-        if (c <= 32 || c >= 128 || c == '%')
-        {
+    BOOST_FOREACH(unsigned char c, str) {
+        if (c <= 32 || c >= 128 || c == '%') {
             ret << '%' << HexStr(&c, &c + 1);
-        }
-        else
-        {
+        } else {
             ret << c;
         }
     }
     return ret.str();
 }
 
-std::string DecodeDumpString(const std::string& str)
-{
+std::string DecodeDumpString(const std::string& str) {
     std::stringstream ret;
-    for (unsigned int pos = 0; pos < str.length(); pos++)
-    {
+    for (unsigned int pos = 0; pos < str.length(); pos++) {
         unsigned char c = str[pos];
-        if (c == '%' && pos + 2 < str.length())
-        {
+        if (c == '%' && pos + 2 < str.length()) {
             c = (((str[pos + 1] >> 6) * 9 + ((str[pos + 1] - '0') & 15)) << 4) |
                 ((str[pos + 2] >> 6) * 9 + ((str[pos + 2] - '0') & 15));
             pos += 2;
@@ -85,8 +75,7 @@ std::string DecodeDumpString(const std::string& str)
     return ret.str();
 }
 
-UniValue importprivkey(const UniValue& params, bool fHelp)
-{
+UniValue importprivkey(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
             "importprivkey \"bulwarkprivkey\" ( \"label\" rescan )\n"
@@ -142,8 +131,7 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
         // whenever a key is imported, we need to scan the whole chain
         pwalletMain->nTimeFirstKey = 1; // 0 would be considered 'no value'
 
-        if (fRescan)
-        {
+        if (fRescan) {
             pwalletMain->ScanForWalletTransactions(chainActive.Genesis(), true);
         }
     }
@@ -151,8 +139,7 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue importaddress(const UniValue& params, bool fHelp)
-{
+UniValue importaddress(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
             "importaddress \"address\" ( \"label\" rescan )\n"
@@ -171,17 +158,12 @@ UniValue importaddress(const UniValue& params, bool fHelp)
     CScript script;
 
     CBitcoinAddress address(params[0].get_str());
-    if (address.IsValid())
-    {
+    if (address.IsValid()) {
         script = GetScriptForDestination(address.Get());
-    }
-    else if (IsHex(params[0].get_str()))
-    {
+    } else if (IsHex(params[0].get_str())) {
         std::vector<unsigned char> data(ParseHex(params[0].get_str()));
         script = CScript(data.begin(), data.end());
-    }
-    else
-    {
+    } else {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Bulwark address or script");
     }
 
@@ -211,8 +193,7 @@ UniValue importaddress(const UniValue& params, bool fHelp)
         if (!pwalletMain->AddWatchOnly(script))
             throw JSONRPCError(RPC_WALLET_ERROR, "Error adding address to wallet");
 
-        if (fRescan)
-        {
+        if (fRescan) {
             pwalletMain->ScanForWalletTransactions(chainActive.Genesis(), true);
             pwalletMain->ReacceptWalletTransactions();
         }
@@ -221,8 +202,7 @@ UniValue importaddress(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue importwallet(const UniValue& params, bool fHelp)
-{
+UniValue importwallet(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "importwallet \"filename\"\n"
@@ -250,8 +230,7 @@ UniValue importwallet(const UniValue& params, bool fHelp)
     file.seekg(0, file.beg);
 
     pwalletMain->ShowProgress(_("Importing..."), 0); // show progress dialog in GUI
-    while (file.good())
-    {
+    while (file.good()) {
         pwalletMain->ShowProgress("", std::max(1, std::min(99, (int)(((double)file.tellg() / (double)nFilesize) * 100))));
         std::string line;
         std::getline(file, line);
@@ -269,31 +248,27 @@ UniValue importwallet(const UniValue& params, bool fHelp)
         CPubKey pubkey = key.GetPubKey();
         assert(key.VerifyPubKey(pubkey));
         CKeyID keyid = pubkey.GetID();
-        if (pwalletMain->HaveKey(keyid))
-        {
+        if (pwalletMain->HaveKey(keyid)) {
             LogPrintf("Skipping import of %s (key already present)\n", CBitcoinAddress(keyid).ToString());
             continue;
         }
         int64_t nTime = DecodeDumpTime(vstr[1]);
         std::string strLabel;
         bool fLabel = true;
-        for (unsigned int nStr = 2; nStr < vstr.size(); nStr++)
-        {
+        for (unsigned int nStr = 2; nStr < vstr.size(); nStr++) {
             if (boost::algorithm::starts_with(vstr[nStr], "#"))
                 break;
             if (vstr[nStr] == "change=1")
                 fLabel = false;
             if (vstr[nStr] == "reserve=1")
                 fLabel = false;
-            if (boost::algorithm::starts_with(vstr[nStr], "label="))
-            {
+            if (boost::algorithm::starts_with(vstr[nStr], "label=")) {
                 strLabel = DecodeDumpString(vstr[nStr].substr(6));
                 fLabel = true;
             }
         }
         LogPrintf("Importing %s...\n", CBitcoinAddress(keyid).ToString());
-        if (!pwalletMain->AddKeyPubKey(key, pubkey))
-        {
+        if (!pwalletMain->AddKeyPubKey(key, pubkey)) {
             fGood = false;
             continue;
         }
@@ -322,8 +297,7 @@ UniValue importwallet(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue dumpprivkey(const UniValue& params, bool fHelp)
-{
+UniValue dumpprivkey(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "dumpprivkey \"bulwarkaddress\"\n"
@@ -352,8 +326,7 @@ UniValue dumpprivkey(const UniValue& params, bool fHelp)
 }
 
 
-UniValue dumpwallet(const UniValue& params, bool fHelp)
-{
+UniValue dumpwallet(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "dumpwallet \"filename\"\n"
@@ -377,8 +350,7 @@ UniValue dumpwallet(const UniValue& params, bool fHelp)
 
     // sort time/key pairs
     std::vector<std::pair<int64_t, CKeyID> > vKeyBirth;
-    for (std::map<CKeyID, int64_t>::const_iterator it = mapKeyBirth.begin(); it != mapKeyBirth.end(); it++)
-    {
+    for (std::map<CKeyID, int64_t>::const_iterator it = mapKeyBirth.begin(); it != mapKeyBirth.end(); it++) {
         vKeyBirth.push_back(std::make_pair(it->second, it->first));
     }
     mapKeyBirth.clear();
@@ -390,24 +362,17 @@ UniValue dumpwallet(const UniValue& params, bool fHelp)
     file << strprintf("# * Best block at time of backup was %i (%s),\n", chainActive.Height(), chainActive.Tip()->GetBlockHash().ToString());
     file << strprintf("#   mined on %s\n", EncodeDumpTime(chainActive.Tip()->GetBlockTime()));
     file << "\n";
-    for (std::vector<std::pair<int64_t, CKeyID> >::const_iterator it = vKeyBirth.begin(); it != vKeyBirth.end(); it++)
-    {
+    for (std::vector<std::pair<int64_t, CKeyID> >::const_iterator it = vKeyBirth.begin(); it != vKeyBirth.end(); it++) {
         const CKeyID& keyid = it->second;
         std::string strTime = EncodeDumpTime(it->first);
         std::string strAddr = CBitcoinAddress(keyid).ToString();
         CKey key;
-        if (pwalletMain->GetKey(keyid, key))
-        {
-            if (pwalletMain->mapAddressBook.count(keyid))
-            {
+        if (pwalletMain->GetKey(keyid, key)) {
+            if (pwalletMain->mapAddressBook.count(keyid)) {
                 file << strprintf("%s %s label=%s # addr=%s\n", CBitcoinSecret(key).ToString(), strTime, EncodeDumpString(pwalletMain->mapAddressBook[keyid].name), strAddr);
-            }
-            else if (setKeyPool.count(keyid))
-            {
+            } else if (setKeyPool.count(keyid)) {
                 file << strprintf("%s %s reserve=1 # addr=%s\n", CBitcoinSecret(key).ToString(), strTime, strAddr);
-            }
-            else
-            {
+            } else {
                 file << strprintf("%s %s change=1 # addr=%s\n", CBitcoinSecret(key).ToString(), strTime, strAddr);
             }
         }
@@ -418,8 +383,7 @@ UniValue dumpwallet(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue bip38encrypt(const UniValue& params, bool fHelp)
-{
+UniValue bip38encrypt(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 2)
         throw runtime_error(
             "bip38encrypt \"bulwarkaddress\"\n"
@@ -456,8 +420,7 @@ UniValue bip38encrypt(const UniValue& params, bool fHelp)
     return result;
 }
 
-UniValue bip38decrypt(const UniValue& params, bool fHelp)
-{
+UniValue bip38decrypt(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 2)
         throw runtime_error(
             "bip38decrypt \"bulwarkaddress\"\n"

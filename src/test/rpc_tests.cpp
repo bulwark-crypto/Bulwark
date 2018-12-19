@@ -16,8 +16,7 @@
 using namespace std;
 
 UniValue
-createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL)
-{
+createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL) {
     UniValue result(UniValue::VARR);
     result.push_back(nRequired);
     UniValue addresses(UniValue::VARR);
@@ -27,8 +26,7 @@ createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL)
     return result;
 }
 
-UniValue CallRPC(string args)
-{
+UniValue CallRPC(string args) {
     vector<string> vArgs;
     boost::split(vArgs, args, boost::is_any_of(" \t"));
     string strMethod = vArgs[0];
@@ -36,13 +34,10 @@ UniValue CallRPC(string args)
     UniValue params = RPCConvertValues(strMethod, vArgs);
 
     rpcfn_type method = tableRPC[strMethod]->actor;
-    try
-    {
+    try {
         UniValue result = (*method)(params, false);
         return result;
-    }
-    catch (const UniValue& objError)
-    {
+    } catch (const UniValue& objError) {
         throw runtime_error(find_value(objError, "message").get_str());
     }
 }
@@ -50,8 +45,7 @@ UniValue CallRPC(string args)
 
 BOOST_AUTO_TEST_SUITE(rpc_tests)
 
-BOOST_AUTO_TEST_CASE(rpc_rawparams)
-{
+BOOST_AUTO_TEST_CASE(rpc_rawparams) {
     // Test raw transaction API argument handling
     UniValue r;
 
@@ -91,8 +85,7 @@ BOOST_AUTO_TEST_CASE(rpc_rawparams)
     BOOST_CHECK_THROW(CallRPC(string("sendrawtransaction ")+rawtx+" extra"), runtime_error);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_rawsign)
-{
+BOOST_AUTO_TEST_CASE(rpc_rawsign) {
     UniValue r;
     // input is a 1-of-2 multisig (so is output):
     string prevout =
@@ -110,8 +103,7 @@ BOOST_AUTO_TEST_CASE(rpc_rawsign)
     BOOST_CHECK(find_value(r.get_obj(), "complete").get_bool() == true);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_format_monetary_values)
-{
+BOOST_AUTO_TEST_CASE(rpc_format_monetary_values) {
     BOOST_CHECK(ValueFromAmount(0LL).write() == "0.00000000");
     BOOST_CHECK(ValueFromAmount(1LL).write() == "0.00000001");
     BOOST_CHECK(ValueFromAmount(17622195LL).write() == "0.17622195");
@@ -145,15 +137,13 @@ BOOST_AUTO_TEST_CASE(rpc_format_monetary_values)
     BOOST_CHECK_EQUAL(ValueFromAmount(COIN/100000000).write(), "0.00000001");
 }
 
-static UniValue ValueFromString(const std::string &str)
-{
+static UniValue ValueFromString(const std::string &str) {
     UniValue value;
     BOOST_CHECK(value.setNumStr(str));
     return value;
 }
 
-BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values)
-{
+BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values) {
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.00000001")), 1LL);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.17622195")), 17622195LL);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.5")), 50000000LL);
@@ -164,8 +154,7 @@ BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values)
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("20999999.99999999")), 2099999999999999LL);
 }
 
-BOOST_AUTO_TEST_CASE(json_parse_errors)
-{
+BOOST_AUTO_TEST_CASE(json_parse_errors) {
     // Valid
     BOOST_CHECK_EQUAL(ParseNonRFCJSONValue("1.0").get_real(), 1.0);
     // Valid, with leading or trailing whitespace
@@ -182,8 +171,7 @@ BOOST_AUTO_TEST_CASE(json_parse_errors)
     BOOST_CHECK_THROW(ParseNonRFCJSONValue("3J98t1WpEZ73CNmQviecrnyiWrnqRhWNL"), std::runtime_error);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_boostasiotocnetaddr)
-{
+BOOST_AUTO_TEST_CASE(rpc_boostasiotocnetaddr) {
     // Check IPv4 addresses
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("1.2.3.4")).ToString(), "1.2.3.4");
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("127.0.0.1")).ToString(), "127.0.0.1");

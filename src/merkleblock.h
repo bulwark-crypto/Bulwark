@@ -47,9 +47,8 @@
  *  - byte[]     flag bits, packed per 8 in a byte, least significant bit first (<= 2*N-1 bits)
  * The size constraints follow from this.
  */
-class CPartialMerkleTree
-{
-protected:
+class CPartialMerkleTree {
+  protected:
     /** the total number of transactions in the block */
     unsigned int nTransactions;
 
@@ -63,8 +62,7 @@ protected:
     bool fBad;
 
     /** helper function to efficiently calculate the number of nodes at given height in the merkle tree */
-    unsigned int CalcTreeWidth(int height)
-    {
+    unsigned int CalcTreeWidth(int height) {
         return (nTransactions + (1 << height) - 1) >> height;
     }
 
@@ -80,27 +78,23 @@ protected:
      */
     uint256 TraverseAndExtract(int height, unsigned int pos, unsigned int& nBitsUsed, unsigned int& nHashUsed, std::vector<uint256>& vMatch);
 
-public:
+  public:
     /** serialization implementation */
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(nTransactions);
         READWRITE(vHash);
         std::vector<unsigned char> vBytes;
-        if (ser_action.ForRead())
-        {
+        if (ser_action.ForRead()) {
             READWRITE(vBytes);
             CPartialMerkleTree& us = *(const_cast<CPartialMerkleTree*>(this));
             us.vBits.resize(vBytes.size() * 8);
             for (unsigned int p = 0; p < us.vBits.size(); p++)
                 us.vBits[p] = (vBytes[p / 8] & (1 << (p % 8))) != 0;
             us.fBad = false;
-        }
-        else
-        {
+        } else {
             vBytes.resize((vBits.size() + 7) / 8);
             for (unsigned int p = 0; p < vBits.size(); p++)
                 vBytes[p / 8] |= vBits[p] << (p % 8);
@@ -125,14 +119,13 @@ public:
  * Used to relay blocks as header + vector<merkle branch>
  * to filtered nodes.
  */
-class CMerkleBlock
-{
-public:
+class CMerkleBlock {
+  public:
     /** Public only for unit testing */
     CBlockHeader header;
     CPartialMerkleTree txn;
 
-public:
+  public:
     /** Public only for unit testing and relay testing (not relayed) */
     std::vector<std::pair<unsigned int, uint256> > vMatchedTxn;
 
@@ -146,8 +139,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(header);
         READWRITE(txn);
     }

@@ -9,8 +9,7 @@ ColumnAlignedLayout::ColumnAlignedLayout() : QHBoxLayout() {}
 
 ColumnAlignedLayout::ColumnAlignedLayout(QWidget *parent) : QHBoxLayout(parent) {}
 
-void ColumnAlignedLayout::setGeometry(const QRect &r)
-{
+void ColumnAlignedLayout::setGeometry(const QRect &r) {
     QHBoxLayout::setGeometry(r);
 
     if (!headerView) {

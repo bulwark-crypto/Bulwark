@@ -15,21 +15,18 @@ extern CWallet* pwalletMain;
 BOOST_AUTO_TEST_SUITE(accounting_tests)
 
 static void
-GetResults(CWalletDB& walletdb, std::map<CAmount, CAccountingEntry>& results)
-{
+GetResults(CWalletDB& walletdb, std::map<CAmount, CAccountingEntry>& results) {
     std::list<CAccountingEntry> aes;
 
     results.clear();
     BOOST_CHECK(walletdb.ReorderTransactions(pwalletMain) == DB_LOAD_OK);
     walletdb.ListAccountCreditDebit("", aes);
-    BOOST_FOREACH(CAccountingEntry& ae, aes)
-    {
+    BOOST_FOREACH(CAccountingEntry& ae, aes) {
         results[ae.nOrderPos] = ae;
     }
 }
 
-BOOST_AUTO_TEST_CASE(acc_orderupgrade)
-{
+BOOST_AUTO_TEST_CASE(acc_orderupgrade) {
     CWalletDB walletdb(pwalletMain->strWalletFile);
     std::vector<CWalletTx*> vpwtx;
     CWalletTx wtx;

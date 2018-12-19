@@ -6,12 +6,11 @@
 class QtMaterialStyle;
 class QtMaterialTheme;
 
-class QtMaterialStylePrivate
-{
+class QtMaterialStylePrivate {
     Q_DISABLE_COPY(QtMaterialStylePrivate)
     Q_DECLARE_PUBLIC(QtMaterialStyle)
 
-public:
+  public:
     QtMaterialStylePrivate(QtMaterialStyle *q);
     ~QtMaterialStylePrivate();
 

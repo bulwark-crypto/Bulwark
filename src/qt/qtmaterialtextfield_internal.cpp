@@ -17,8 +17,7 @@ QtMaterialTextFieldStateMachine::QtMaterialTextFieldStateMachine(QtMaterialTextF
       m_label(0),
       m_offsetAnimation(0),
       m_colorAnimation(0),
-      m_progress(0.0)
-{
+      m_progress(0.0) {
     Q_ASSERT(parent);
 
     addState(m_normalState);
@@ -55,33 +54,27 @@ QtMaterialTextFieldStateMachine::QtMaterialTextFieldStateMachine(QtMaterialTextF
     connect(m_textField, SIGNAL(textChanged(QString)), this, SLOT(setupProperties()));
 }
 
-QtMaterialTextFieldStateMachine::~QtMaterialTextFieldStateMachine()
-{
+QtMaterialTextFieldStateMachine::~QtMaterialTextFieldStateMachine() {
 }
 
-void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label)
-{
-    if (m_label)
-    {
+void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label) {
+    if (m_label) {
         delete m_label;
     }
 
-    if (m_offsetAnimation)
-    {
+    if (m_offsetAnimation) {
         removeDefaultAnimation(m_offsetAnimation);
         delete m_offsetAnimation;
     }
 
-    if (m_colorAnimation)
-    {
+    if (m_colorAnimation) {
         removeDefaultAnimation(m_colorAnimation);
         delete m_colorAnimation;
     }
 
     m_label = label;
 
-    if (m_label)
-    {
+    if (m_label) {
         m_offsetAnimation = new QPropertyAnimation(m_label, "offset", this);
         m_offsetAnimation->setDuration(210);
         m_offsetAnimation->setEasingCurve(QEasingCurve::OutCubic);
@@ -95,18 +88,13 @@ void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label)
     setupProperties();
 }
 
-void QtMaterialTextFieldStateMachine::setupProperties()
-{
-    if (m_label)
-    {
+void QtMaterialTextFieldStateMachine::setupProperties() {
+    if (m_label) {
         const int m = m_textField->textMargins().top();
 
-        if (m_textField->text().isEmpty())
-        {
+        if (m_textField->text().isEmpty()) {
             m_normalState->assignProperty(m_label, "offset", QPointF(0, 26));
-        }
-        else
-        {
+        } else {
             m_normalState->assignProperty(m_label, "offset", QPointF(0, 0-m));
         }
 
@@ -114,12 +102,9 @@ void QtMaterialTextFieldStateMachine::setupProperties()
         m_focusedState->assignProperty(m_label, "color", m_textField->inkColor());
         m_normalState->assignProperty(m_label, "color", m_textField->labelColor());
 
-        if (0 != m_label->offset().y() && !m_textField->text().isEmpty())
-        {
+        if (0 != m_label->offset().y() && !m_textField->text().isEmpty()) {
             m_label->setOffset(QPointF(0, 0-m));
-        }
-        else if (!m_textField->hasFocus() && m_label->offset().y() <= 0 && m_textField->text().isEmpty())
-        {
+        } else if (!m_textField->hasFocus() && m_label->offset().y() <= 0 && m_textField->text().isEmpty()) {
             m_label->setOffset(QPointF(0, 26));
         }
     }
@@ -138,8 +123,7 @@ QtMaterialTextFieldLabel::QtMaterialTextFieldLabel(QtMaterialTextField *parent)
       m_scale(1),
       m_posX(0),
       m_posY(26),
-      m_color(parent->labelColor())
-{
+      m_color(parent->labelColor()) {
     Q_ASSERT(parent);
 
     QFont font("Roboto", parent->labelFontSize(), QFont::Medium);
@@ -147,19 +131,16 @@ QtMaterialTextFieldLabel::QtMaterialTextFieldLabel(QtMaterialTextField *parent)
     setFont(font);
 }
 
-QtMaterialTextFieldLabel::~QtMaterialTextFieldLabel()
-{
+QtMaterialTextFieldLabel::~QtMaterialTextFieldLabel() {
 }
 
 /*!
  *  \reimp
  */
-void QtMaterialTextFieldLabel::paintEvent(QPaintEvent *event)
-{
+void QtMaterialTextFieldLabel::paintEvent(QPaintEvent *event) {
     Q_UNUSED(event)
 
-    if (!m_textField->hasLabel())
-    {
+    if (!m_textField->hasLabel()) {
         return;
     }
 

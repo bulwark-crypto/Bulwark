@@ -9,14 +9,13 @@
 #include <stdlib.h>
 
 /** A hasher class for SHA1. */
-class CSHA1
-{
-private:
+class CSHA1 {
+  private:
     uint32_t s[5];
     unsigned char buf[64];
     size_t bytes;
 
-public:
+  public:
     static const size_t OUTPUT_SIZE = 20;
 
     CSHA1();

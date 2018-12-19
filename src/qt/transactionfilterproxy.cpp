@@ -24,12 +24,10 @@ TransactionFilterProxy::TransactionFilterProxy(QObject* parent) : QSortFilterPro
     watchOnlyFilter(WatchOnlyFilter_All),
     minAmount(0),
     limitRows(-1),
-    showInactive(true)
-{
+    showInactive(true) {
 }
 
-bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const
-{
+bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     int type = index.data(TransactionTableModel::TypeRole).toInt();
@@ -58,56 +56,45 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& 
     return true;
 }
 
-void TransactionFilterProxy::setDateRange(const QDateTime& from, const QDateTime& to)
-{
+void TransactionFilterProxy::setDateRange(const QDateTime& from, const QDateTime& to) {
     this->dateFrom = from;
     this->dateTo = to;
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setAddressPrefix(const QString& addrPrefix)
-{
+void TransactionFilterProxy::setAddressPrefix(const QString& addrPrefix) {
     this->addrPrefix = addrPrefix;
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setTypeFilter(quint32 modes)
-{
+void TransactionFilterProxy::setTypeFilter(quint32 modes) {
     this->typeFilter = modes;
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setMinAmount(const CAmount& minimum)
-{
+void TransactionFilterProxy::setMinAmount(const CAmount& minimum) {
     this->minAmount = minimum;
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setWatchOnlyFilter(WatchOnlyFilter filter)
-{
+void TransactionFilterProxy::setWatchOnlyFilter(WatchOnlyFilter filter) {
     this->watchOnlyFilter = filter;
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setLimit(int limit)
-{
+void TransactionFilterProxy::setLimit(int limit) {
     this->limitRows = limit;
 }
 
-void TransactionFilterProxy::setShowInactive(bool showInactive)
-{
+void TransactionFilterProxy::setShowInactive(bool showInactive) {
     this->showInactive = showInactive;
     invalidateFilter();
 }
 
-int TransactionFilterProxy::rowCount(const QModelIndex& parent) const
-{
-    if (limitRows != -1)
-    {
+int TransactionFilterProxy::rowCount(const QModelIndex& parent) const {
+    if (limitRows != -1) {
         return std::min(QSortFilterProxyModel::rowCount(parent), limitRows);
-    }
-    else
-    {
+    } else {
         return QSortFilterProxyModel::rowCount(parent);
     }
 }

@@ -10,12 +10,11 @@ class QSignalTransition;
 class QtMaterialRippleOverlay;
 class QtMaterialCheckableIcon;
 
-class QtMaterialCheckablePrivate
-{
+class QtMaterialCheckablePrivate {
     Q_DISABLE_COPY(QtMaterialCheckablePrivate)
     Q_DECLARE_PUBLIC(QtMaterialCheckable)
 
-public:
+  public:
     QtMaterialCheckablePrivate(QtMaterialCheckable *q);
     virtual ~QtMaterialCheckablePrivate();
 

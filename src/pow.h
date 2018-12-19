@@ -14,8 +14,7 @@ class uint256;
 class arith_uint256;
 
 // Define difficulty retarget algorithms
-enum DiffMode
-{
+enum DiffMode {
     DIFF_DEFAULT = 0, // Default to invalid 0
     DIFF_BTC = 1,     // Retarget every x blocks (Bitcoin style)
     DIFF_KGW = 2,     // Retarget using Kimoto Gravity Well

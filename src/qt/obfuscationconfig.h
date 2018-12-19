@@ -3,31 +3,29 @@
 
 #include <QDialog>
 
-namespace Ui
-{
+namespace Ui {
 class ObfuscationConfig;
 }
 class WalletModel;
 
 /** Multifunctional dialog to ask for passphrases. Used for encryption, unlocking, and changing the passphrase.
  */
-class ObfuscationConfig : public QDialog
-{
+class ObfuscationConfig : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     ObfuscationConfig(QWidget* parent = 0);
     ~ObfuscationConfig();
 
     void setModel(WalletModel* model);
 
 
-private:
+  private:
     Ui::ObfuscationConfig* ui;
     WalletModel* model;
     void configure(bool enabled, int coins, int rounds);
 
-private slots:
+  private slots:
 
     void clickBasic();
     void clickHigh();

@@ -35,11 +35,10 @@ QT_END_NAMESPACE
   It communicates with both the client and the wallet models to give the user an up-to-date view of the
   current core state.
 */
-class WalletView : public QStackedWidget
-{
+class WalletView : public QStackedWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit WalletView(QWidget* parent);
     ~WalletView();
 
@@ -58,7 +57,7 @@ public:
 
     void showOutOfSyncWarning(bool fShow);
 
-private:
+  private:
     ClientModel* clientModel;
     WalletModel* walletModel;
 
@@ -77,7 +76,7 @@ private:
     QProgressDialog* progressDialog;
     QLabel* transactionSum;
 
-public slots:
+  public slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
@@ -138,7 +137,7 @@ public slots:
     /** Update selected BWK amount from transactionview */
     void trxAmount(QString amount);
 
-signals:
+  signals:
     /** Signal that we want to show the main window */
     void showNormalIfMinimized();
     /**  Fired when a message should be reported to the user */

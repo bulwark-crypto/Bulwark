@@ -20,8 +20,7 @@
 using namespace std;
 using namespace boost::assign;
 
-struct SeedSpec6
-{
+struct SeedSpec6 {
     uint8_t addr[16];
     uint16_t port;
 };
@@ -33,15 +32,13 @@ struct SeedSpec6
  */
 
 //! Convert the pnSeeds6 array into usable address objects.
-static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data, unsigned int count)
-{
+static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data, unsigned int count) {
     // It'll only connect to one or two seed nodes because once it connects,
     // it'll get a pile of addresses with newer timestamps.
     // Seed nodes are given a random 'last seen time' of between one and two
     // weeks ago.
     const int64_t nOneWeek = 7 * 24 * 60 * 60;
-    for (unsigned int i = 0; i < count; i++)
-    {
+    for (unsigned int i = 0; i < count; i++) {
         struct in6_addr ip;
         memcpy(&ip, data[i].addr, sizeof(ip));
         CAddress addr(CService(ip, data[i].port));
@@ -71,8 +68,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (173559, uint256("0000000000002b887e1d437a7a41dc628f96f45c1cc63f13e9fb518ca1ae3883"))
     (273433, uint256("65e0e26d76bb5e3fc27fe0fefd9071f5d3a705b2d26ee76b20b9481217425dc2"));
 
-static const Checkpoints::CCheckpointData data =
-{
+static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1538006698,// * UNIX timestamp of last checkpoint block
     537501,    // * total number of transactions between genesis and last checkpoint
@@ -82,8 +78,7 @@ static const Checkpoints::CCheckpointData data =
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x000001a2f1a9a313468d66b81dd2cb199f6f8f5d426198a7c4daa9c3f9498285"));
-static const Checkpoints::CCheckpointData dataTestnet =
-{
+static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1514516171,
     0,
@@ -92,16 +87,14 @@ static const Checkpoints::CCheckpointData dataTestnet =
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
-static const Checkpoints::CCheckpointData dataRegtest =
-{
+static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1454124731,
     0,
     100
 };
 
-libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const
-{
+libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const {
     assert(this);
     static CBigNum bnTrustedModulus(zerocoinModulus);
     static libzerocoin::ZerocoinParams ZCParams = libzerocoin::ZerocoinParams(bnTrustedModulus);
@@ -109,11 +102,9 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const
     return &ZCParams;
 }
 
-class CMainParams : public CChainParams
-{
-public:
-    CMainParams()
-    {
+class CMainParams : public CChainParams {
+  public:
+    CMainParams() {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
         /**
@@ -233,8 +224,7 @@ public:
         nStakeMinAmount = 100 * COIN; // Minimum required staking amount
     }
 
-    const Checkpoints::CCheckpointData& Checkpoints() const
-    {
+    const Checkpoints::CCheckpointData& Checkpoints() const {
         return data;
     }
 };
@@ -243,11 +233,9 @@ static CMainParams mainParams;
 /**
  * Testnet (v3)
  */
-class CTestNetParams : public CMainParams
-{
-public:
-    CTestNetParams()
-    {
+class CTestNetParams : public CMainParams {
+  public:
+    CTestNetParams() {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
         pchMessageStart[0] = 0xb5;
@@ -279,7 +267,7 @@ public:
         genesis.nTime = 1543361611;
         genesis.nNonce = 188623;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();
-        
+
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000c86481af4e8b276d69405991e267646417a08109130eaa019250e376d27"));
         assert(genesis.hashMerkleRoot == uint256("0x77976d6bd593c84063ac3937525bc15e25188d96871b13d4451ffc382999f64f"));
@@ -320,8 +308,7 @@ public:
         nStakeMinConfirmations = 30; // Required number of confirmations
         nStakeMinAmount = 500 * COIN; // Minimum required staking amount
     }
-    const Checkpoints::CCheckpointData& Checkpoints() const
-    {
+    const Checkpoints::CCheckpointData& Checkpoints() const {
         return dataTestnet;
     }
 };
@@ -330,11 +317,9 @@ static CTestNetParams testNetParams;
 /**
  * Regression test
  */
-class CRegTestParams : public CTestNetParams
-{
-public:
-    CRegTestParams()
-    {
+class CRegTestParams : public CTestNetParams {
+  public:
+    CRegTestParams() {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
         strNetworkID = "regtest";
@@ -363,8 +348,7 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
-    const Checkpoints::CCheckpointData& Checkpoints() const
-    {
+    const Checkpoints::CCheckpointData& Checkpoints() const {
         return dataRegtest;
     }
 };
@@ -373,11 +357,9 @@ static CRegTestParams regTestParams;
 /**
  * Unit test
  */
-class CUnitTestParams : public CMainParams, public CModifiableParams
-{
-public:
-    CUnitTestParams()
-    {
+class CUnitTestParams : public CMainParams, public CModifiableParams {
+  public:
+    CUnitTestParams() {
         networkID = CBaseChainParams::UNITTEST;
         strNetworkID = "unittest";
         nDefaultPort = 51478;
@@ -390,35 +372,28 @@ public:
         fMineBlocksOnDemand = true;
     }
 
-    const Checkpoints::CCheckpointData& Checkpoints() const
-    {
+    const Checkpoints::CCheckpointData& Checkpoints() const {
         // UnitTest share the same checkpoints as MAIN
         return data;
     }
 
     //! Published setters to allow changing values in unit test cases
-    virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks)
-    {
+    virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) {
         fDefaultConsistencyChecks = afDefaultConsistencyChecks;
     }
-    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks)
-    {
+    virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) {
         fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks;
     }
-    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck)
-    {
+    virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) {
         fSkipProofOfWorkCheck = afSkipProofOfWorkCheck;
     }
-    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority)
-    {
+    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) {
         nEnforceBlockUpgradeMajority = anEnforceBlockUpgradeMajority;
     }
-    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority)
-    {
+    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) {
         nRejectBlockOutdatedMajority = anRejectBlockOutdatedMajority;
     }
-    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority)
-    {
+    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) {
         nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority;
     }
 };
@@ -427,23 +402,19 @@ static CUnitTestParams unitTestParams;
 
 static CChainParams* pCurrentParams = 0;
 
-CModifiableParams* ModifiableParams()
-{
+CModifiableParams* ModifiableParams() {
     assert(pCurrentParams);
     assert(pCurrentParams == &unitTestParams);
     return (CModifiableParams*)&unitTestParams;
 }
 
-const CChainParams& Params()
-{
+const CChainParams& Params() {
     assert(pCurrentParams);
     return *pCurrentParams;
 }
 
-CChainParams& Params(CBaseChainParams::Network network)
-{
-    switch (network)
-    {
+CChainParams& Params(CBaseChainParams::Network network) {
+    switch (network) {
     case CBaseChainParams::MAIN:
         return mainParams;
     case CBaseChainParams::TESTNET:
@@ -458,14 +429,12 @@ CChainParams& Params(CBaseChainParams::Network network)
     }
 }
 
-void SelectParams(CBaseChainParams::Network network)
-{
+void SelectParams(CBaseChainParams::Network network) {
     SelectBaseParams(network);
     pCurrentParams = &Params(network);
 }
 
-bool SelectParamsFromCommandLine()
-{
+bool SelectParamsFromCommandLine() {
     CBaseChainParams::Network network = NetworkIdFromCommandLine();
     if (network == CBaseChainParams::MAX_NETWORK_TYPES)
         return false;

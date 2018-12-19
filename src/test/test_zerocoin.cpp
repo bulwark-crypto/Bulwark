@@ -13,14 +13,11 @@
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
-struct ZeroSetup
-{
-    ZeroSetup()
-    {
+struct ZeroSetup {
+    ZeroSetup() {
         std::cout << "global setup\n";
     }
-    ~ZeroSetup()
-    {
+    ~ZeroSetup() {
         std::cout << "global teardown\n";
     }
 };

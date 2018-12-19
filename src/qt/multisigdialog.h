@@ -16,25 +16,23 @@
 #include "walletmodel.h"
 #include "coincontroldialog.h"
 
-namespace Ui
-{
+namespace Ui {
 class MultisigDialog;
 }
 
-class MultisigDialog : public QDialog
-{
+class MultisigDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit MultisigDialog(QWidget* parent);
     ~MultisigDialog();
     void setModel(WalletModel* model);
     void updateCoinControl(CAmount nAmount, unsigned int nQuantity);
 
-public slots:
+  public slots:
     void showTab(int index);
 
-private:
+  private:
     Ui::MultisigDialog* ui;
     WalletModel* model;
     CCoinControl* coinControl;
@@ -52,7 +50,7 @@ private:
     bool addMultisig(int m, std::vector<std::string> keys);
     bool isFullyVerified(CMutableTransaction& txToVerify);
 
-private slots:
+  private slots:
     void deleteFrame();
     void pasteText();
     void commitMultisigTx();

@@ -26,8 +26,7 @@ using namespace std;
 using namespace libzerocoin;
 
 void
-PrintWarning()
-{
+PrintWarning() {
     cout << "Zerocoin parameter generation utility" << endl;
     cout << "-------------------------------------" << endl << endl;
     cout << "This utility generates an l-bit modulus N as the product of" << endl;
@@ -42,8 +41,7 @@ PrintWarning()
     cout << "USE THIS UTILITY AT YOUR OWN RISK" << endl << endl;
 }
 
-void usage()
-{
+void usage() {
     printf("Usage:\n");
     printf(" -b <numbits>\n");
     printf(" -o <output file>\n");
@@ -51,18 +49,15 @@ void usage()
     exit (8);
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     static CBigNum resultModulus(0);
     uint32_t numBits = DEFAULT_MODULUS_SIZE;
     ofstream outfile;
     char* outfileName;
     bool writeToFile = false;
 
-    while ((argc > 1) && (argv[1][0] == '-'))
-    {
-        switch (argv[1][1])
-        {
+    while ((argc > 1) && (argv[1][0] == '-')) {
+        switch (argv[1][1]) {
         case 'b':
             numBits = atoi(argv[2]);
             ++argv;
@@ -88,8 +83,7 @@ int main(int argc, char **argv)
         --argc;
     }
 
-    if (numBits < MIN_MODULUS_SIZE)
-    {
+    if (numBits < MIN_MODULUS_SIZE) {
         cout << "Modulus is below minimum length (" << MIN_MODULUS_SIZE << ") bits" << endl;
         return(0);
     }
@@ -118,17 +112,13 @@ int main(int argc, char **argv)
 
     cout << endl << "N = " << endl << resultHex << endl;
 
-    if (writeToFile)
-    {
-        try
-        {
+    if (writeToFile) {
+        try {
             outfile.open (outfileName);
             outfile << resultHex;
             outfile.close();
             cout << endl << "Result has been written to file '" << outfileName << "'." << endl;
-        }
-        catch (std::runtime_error &e)
-        {
+        } catch (std::runtime_error &e) {
             cout << "Unable to write to file:" << e.what() << endl;
         }
     }

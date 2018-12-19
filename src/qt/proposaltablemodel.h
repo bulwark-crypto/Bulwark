@@ -30,11 +30,10 @@
 class ProposalRecord;
 class ProposalTablePriv;
 
-class ProposalTableModel : public QAbstractTableModel
-{
+class ProposalTableModel : public QAbstractTableModel {
     Q_OBJECT
 
-public:
+  public:
     explicit ProposalTableModel( QObject *parent = 0);
     ~ProposalTableModel();
 
@@ -74,7 +73,7 @@ public:
     QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const;
     void setProposalType(const int &type);
 
-private:
+  private:
     QNetworkAccessManager *networkManager;
     QNetworkReply *currentReply;
 
@@ -83,7 +82,7 @@ private:
 
     int proposalType = 0;
 
-public Q_SLOTS:
+  public Q_SLOTS:
     void onResult(QNetworkReply *result);
 };
 

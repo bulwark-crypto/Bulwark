@@ -11,14 +11,13 @@
 #include <stdlib.h>
 
 /** The RFC 6979 PRNG using HMAC-SHA256. */
-class RFC6979_HMAC_SHA256
-{
-private:
+class RFC6979_HMAC_SHA256 {
+  private:
     unsigned char V[CHMAC_SHA256::OUTPUT_SIZE];
     unsigned char K[CHMAC_SHA256::OUTPUT_SIZE];
     bool retry;
 
-public:
+  public:
     /**
      * Construct a new RFC6979 PRNG, using the given key and message.
      * The message is assumed to be already hashed.

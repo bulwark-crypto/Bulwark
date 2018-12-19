@@ -23,16 +23,14 @@ class QDateTime;
 class QTimer;
 QT_END_NAMESPACE
 
-enum BlockSource
-{
+enum BlockSource {
     BLOCK_SOURCE_NONE,
     BLOCK_SOURCE_REINDEX,
     BLOCK_SOURCE_DISK,
     BLOCK_SOURCE_NETWORK
 };
 
-enum NumConnections
-{
+enum NumConnections {
     CONNECTIONS_NONE = 0,
     CONNECTIONS_IN = (1U << 0),
     CONNECTIONS_OUT = (1U << 1),
@@ -40,11 +38,10 @@ enum NumConnections
 };
 
 /** Model for Bulwark network client. */
-class ClientModel : public QObject
-{
+class ClientModel : public QObject {
     Q_OBJECT
 
-public:
+  public:
     explicit ClientModel(OptionsModel* optionsModel, QObject* parent = 0);
     ~ClientModel();
 
@@ -79,7 +76,7 @@ public:
 
     bool getTorInfo(std::string& ip_port) const;
 
-private:
+  private:
     OptionsModel* optionsModel;
     PeerTableModel* peerTableModel;
     BanTableModel *banTableModel;
@@ -97,7 +94,7 @@ private:
     void subscribeToCoreSignals();
     void unsubscribeFromCoreSignals();
 
-signals:
+  signals:
     void numConnectionsChanged(int count);
     void numBlocksChanged(int count);
     void strMasternodesChanged(const QString& strMasternodes);
@@ -110,7 +107,7 @@ signals:
     // Show progress dialog e.g. for verifychain
     void showProgress(const QString& title, int nProgress);
 
-public slots:
+  public slots:
     void updateTimer();
     void updateMnTimer();
     void updateNumConnections(int numConnections);

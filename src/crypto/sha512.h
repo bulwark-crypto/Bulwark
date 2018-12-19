@@ -9,14 +9,13 @@
 #include <stdlib.h>
 
 /** A hasher class for SHA-512. */
-class CSHA512
-{
-private:
+class CSHA512 {
+  private:
     uint64_t s[8];
     unsigned char buf[128];
     size_t bytes;
 
-public:
+  public:
     static const size_t OUTPUT_SIZE = 64;
 
     CSHA512();

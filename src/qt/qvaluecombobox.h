@@ -9,13 +9,12 @@
 #include <QVariant>
 
 /* QComboBox that can be used with QDataWidgetMapper to select ordinal values from a model. */
-class QValueComboBox : public QComboBox
-{
+class QValueComboBox : public QComboBox {
     Q_OBJECT
 
     Q_PROPERTY(QVariant value READ value WRITE setValue NOTIFY valueChanged USER true)
 
-public:
+  public:
     explicit QValueComboBox(QWidget* parent = 0);
 
     QVariant value() const;
@@ -24,13 +23,13 @@ public:
     /** Specify model role to use as ordinal value (defaults to Qt::UserRole) */
     void setRole(int role);
 
-signals:
+  signals:
     void valueChanged();
 
-private:
+  private:
     int role;
 
-private slots:
+  private slots:
     void handleSelectionChanged(int idx);
 };
 

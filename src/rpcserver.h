@@ -24,9 +24,8 @@
 class CBlockIndex;
 class CNetAddr;
 
-class AcceptedConnection
-{
-public:
+class AcceptedConnection {
+  public:
     virtual ~AcceptedConnection() {}
 
     virtual std::iostream& stream() = 0;
@@ -84,9 +83,8 @@ extern CNetAddr BoostAsioToCNetAddr(boost::asio::ip::address address);
 
 typedef UniValue(*rpcfn_type)(const UniValue& params, bool fHelp);
 
-class CRPCCommand
-{
-public:
+class CRPCCommand {
+  public:
     std::string category;
     std::string name;
     rpcfn_type actor;
@@ -98,12 +96,11 @@ public:
 /**
  * Bulwark RPC command dispatcher.
  */
-class CRPCTable
-{
-private:
+class CRPCTable {
+  private:
     std::map<std::string, const CRPCCommand*> mapCommands;
 
-public:
+  public:
     CRPCTable();
     const CRPCCommand* operator[](std::string name) const;
     std::string help(std::string name) const;
