@@ -108,10 +108,6 @@
         <translation>Powtórz nowe hasło</translation>
     </message>
     <message>
-        <source>For anonymization and staking only</source>
-        <translation>Tylko dla anonimizacji i stakingu</translation>
-    </message>
-    <message>
         <source>Encrypt wallet</source>
         <translation>Zakoduj portfel</translation>
     </message>
@@ -148,8 +144,8 @@
         <translation>Czy na pewno chcesz zakodować portfel?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
-        <translation>Ostrzeżenie: Jeżeli zakodujesz portfel i stracisz do niego hasło , UTRACISZ WSZYSTKIE BWK!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
+        <translation>Ostrzeżenie: Jeżeli zakodujesz portfel i stracisz do niego hasło , UTRACISZ WSZYSTKIE Bulwark!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -189,6 +185,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -227,10 +226,6 @@
         <translation>Zakodowany klucz:</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres Bulwark jest w twoim posiadaniu</translation>
-    </message>
-    <message>
         <source>Encrypt Key</source>
         <translation>Kodowanie klucz</translation>
     </message>
@@ -241,10 +236,6 @@
     <message>
         <source>BIP 38 Decrypt</source>
         <translation>BIP 38 Zakoduj</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Resetuj wszystkie zweryfikowane pola tekstowe</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -519,15 +510,15 @@
     </message>
     <message>
         <source>Bulwark Core</source>
-        <translation>Rdzeń bitcoin</translation>
+        <translation>Rdzeń Bulwark</translation>
     </message>
     <message>
         <source>Send coins to a Bulwark address</source>
         <translation>Wyślij monety do adresu Bulwark</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bulwark: URIs)</source>
-        <translation>Zarządaj płatności (generuje kod QR i bulwark:URI)</translation>
+        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
+        <translation>Zarządaj płatności (generuje kod QR i Bulwark:URI)</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -688,10 +679,6 @@ MultiWysyłlka: %1</translation>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Portfel jest 1Zakodowany1 i obecnie 2Odblokowany2</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>Portfel jest 1Zakodowany1 i obecnie 2Odblokowany2 tylko dla anonimizacji i stakingu</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
@@ -913,7 +900,7 @@ MultiWysyłlka: %1</translation>
     <name>HelpMessageDialog</name>
     <message>
         <source>Bulwark Core</source>
-        <translation>Rdzeń bitcoin</translation>
+        <translation>Rdzeń Bulwark</translation>
     </message>
     </context>
 <context>
@@ -928,7 +915,7 @@ MultiWysyłlka: %1</translation>
     </message>
     <message>
         <source>Bulwark Core</source>
-        <translation>Rdzeń bitcoin</translation>
+        <translation>Rdzeń Bulwark</translation>
     </message>
     <message>
         <source>Error</source>
@@ -944,10 +931,6 @@ MultiWysyłlka: %1</translation>
     <message>
         <source>Form</source>
         <translation>Forma</translation>
-    </message>
-    <message>
-        <source>My Masternodes</source>
-        <translation>Moje Masternode</translation>
     </message>
     <message>
         <source>Address</source>
@@ -1101,6 +1084,10 @@ MultiWysyłlka: %1</translation>
         <translation>Podgląd MultiWysyłki</translation>
     </message>
     <message>
+        <source>(no label)</source>
+        <translation>(brak zakładki)</translation>
+    </message>
+    <message>
         <source>The entered address:
 </source>
         <translation>Wprowadzony adres:
@@ -1127,6 +1114,21 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
 </translation>
     </message>
 </context>
+<context>
+    <name>MultisigDialog</name>
+    <message>
+        <source>Status:</source>
+        <translation>Status:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Amount:</source>
+        <translation>Liczba:</translation>
+    </message>
+    </context>
 <context>
     <name>ObfuscationConfig</name>
     <message>
@@ -1217,9 +1219,9 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
+https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation>Brakuje języka bądź nieukończona pełnego tłumaczenia? Pomóż w tłumaczeniu tutaj:
-https://www.transifex.com/bulwark-project/bulwark-project-translations </translation>
+https://www.transifex.com/Bulwark-project/Bulwark-project-translations </translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
@@ -1313,7 +1315,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
         <source>The supplied proxy address is invalid.</source>
         <translation>Podany adres proxy jest nieprawidłowy</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -1341,10 +1343,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
         <translation>Całość:</translation>
     </message>
     <message>
-        <source>Your current total balance</source>
-        <translation>Twój całkowity bilans</translation>
-    </message>
-    <message>
         <source>Current total balance in watch-only addresses</source>
         <translation>Obecny całkowity bilans w adresach tylko do obejrzenia</translation>
     </message>
@@ -1364,7 +1362,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
         <source>out of sync</source>
         <translation>Brak synchronizacji</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>PaymentServer</name>
     <message>
@@ -1424,6 +1422,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
     <message>
         <source>Priority:</source>
         <translation>Priorytet:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TekstZakładka</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -1647,14 +1649,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
         <translation>Usługi</translation>
     </message>
     <message>
-        <source>Starting Height</source>
-        <translation>Wysokość rozpoczęcia</translation>
-    </message>
-    <message>
-        <source>Sync Height</source>
-        <translation>Wysokość synchronizacji</translation>
-    </message>
-    <message>
         <source>Connection Time</source>
         <translation>Czas połączenia</translation>
     </message>
@@ -1742,7 +1736,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
         <source>Unknown</source>
         <translation>Nieznane</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
@@ -1936,7 +1930,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
     <name>SplashScreen</name>
     <message>
         <source>Bulwark Core</source>
-        <translation>Rdzeń bitcoin</translation>
+        <translation>Rdzeń Bulwark</translation>
     </message>
     </context>
 <context>
@@ -2027,7 +2021,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations </transla
     </message>
     </context>
 <context>
-    <name>ZBwkControlDialog</name>
+    <name>zBWKControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

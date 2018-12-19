@@ -3,7 +3,7 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation>Click derecho para editar dirección o etiqueta</translation>
+        <translation>Click derecho para editar la dirección o etiqueta</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -47,7 +47,7 @@
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Escoja la dirección con las cual recibirá las monedas</translation>
+        <translation>Escoja la dirección en la cual recibirá las monedas</translation>
     </message>
     <message>
         <source>Choose</source>
@@ -136,12 +136,12 @@
         <translation>Sirve para desactivar el envío de dinero cuando la cuenta del SO está comprometida. No provee de una seguridad real</translation>
     </message>
     <message>
-        <source>For anonymization and staking only</source>
-        <translation>Desbloquear solo para anonimización y staking</translation>
+        <source>For anonymization, automint, and staking only</source>
+        <translation>Para anonimización y staking solamente</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Escriba la nueva contraseña para la Wallet. &lt;br/&gt;Por favor utilice una contraseña de &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras&lt;/b&gt;</translation>
+        <translation>Escriba la nueva contraseña para el monedero. &lt;br/&gt;Por favor utilice una contraseña de &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -176,16 +176,16 @@
         <translation>Confirme el cifrado del monedero</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus BWKs no sean robados mediante malware de su ordenador.</translation>
+        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
+        <translation>Bulwark se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus Bulwarks no sean robados mediante malware de su ordenador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>¿Está seguro de que desea cifrar su monedero?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
-        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS BWK&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
+        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS Bulwark&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -229,6 +229,17 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    <message>
+        <source>IP/Netmask</source>
+        <translation>IP/Máscara de Red</translation>
+    </message>
+    <message>
+        <source>Banned Until</source>
+        <translation>Suspendido hasta</translation>
+    </message>
+</context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -239,16 +250,16 @@
         <translation>Cifrado BIP 38</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Introduzca la dirección Bulwark que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>Dirección:</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>La dirección Bulwark con la que desee firmar el mensaje</translation>
+        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Introduzca la dirección Bulwark que querría cifrar usando BIP 38. Introduzca una contraseña en el campo central. Haga clic en cifrar para generar la clave privada cifrada.</translation>
+    </message>
+    <message>
+        <source>The Bulwark address to encrypt</source>
+        <translation>La dirección Bulwark a cifrar</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,16 +290,24 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Firme el mensaje para demostrar que eres el propietario de esta dirección Bulwark</translation>
+        <source>Encrypt the private key for this Bulwark address</source>
+        <translation>Cifrar la llave privada para esta dirección Bulwark</translation>
+    </message>
+    <message>
+        <source>Reset all fields</source>
+        <translation>Limpiar todos los campos</translation>
+    </message>
+    <message>
+        <source>The encrypted private key</source>
+        <translation>La llave privada cifrada</translation>
+    </message>
+    <message>
+        <source>Decrypt the entered key using the passphrase</source>
+        <translation>Descifrar la llave ingresada usando la frase de contraseña</translation>
     </message>
     <message>
         <source>Encrypt Key</source>
         <translation>Cifrar Clave</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>Limpiar todos los campos de firma de mensaje</translation>
     </message>
     <message>
         <source>Clear All</source>
@@ -303,20 +322,8 @@
         <translation>Introduzca la clave cifrada privada BIP 38. Introduzca la contraseña en el campo central. Haga clic en descifrar clave para generar la clave privada. Después de que la clave sea descifrada, pulsando en 'Importar dirección' añadirá esta clave privada al monedero.</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>La dirección Bulwark con la que se firmó el mensaje</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección Bulwark especificada</translation>
-    </message>
-    <message>
         <source>Decrypt Key</source>
         <translation>Descifrar Clave</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Limpiar todos los campos de verificación de mensaje</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -395,7 +402,7 @@
     <name>BitcoinGUI</name>
     <message>
         <source>Wallet</source>
-        <translation>Wallet</translation>
+        <translation>Monedero</translation>
     </message>
     <message>
         <source>Node</source>
@@ -407,7 +414,7 @@
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Mostrar visión general de la wallet</translation>
+        <translation>Mostrar visión general del monedero</translation>
     </message>
     <message>
         <source>Send</source>
@@ -424,6 +431,10 @@
     <message>
         <source>Browse transaction history</source>
         <translation>Navegar por el historial de transacciones</translation>
+    </message>
+    <message>
+        <source>Privacy Actions for zBWK</source>
+        <translation>Acciones de privacidad para zBWK</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -455,19 +466,19 @@
     </message>
     <message>
         <source>Encrypt Wallet...</source>
-        <translation>Encriptar wallet...</translation>
+        <translation>Encriptar monedero...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Encriptar las claves privadas que pertenecen a tu wallet</translation>
+        <translation>Encriptar las claves privadas que pertenecen a tu monedero</translation>
     </message>
     <message>
         <source>Backup Wallet...</source>
-        <translation>Copia de seguridad de la wallet...</translation>
+        <translation>Copia de seguridad del monedero...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Copia de seguridad de la wallet a otra ubicación</translation>
+        <translation>Copia de seguridad del monedero a otra ubicación</translation>
     </message>
     <message>
         <source>Change Passphrase...</source>
@@ -475,11 +486,11 @@
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>Cambiar contraseña usada para la encriptación de la wallet</translation>
+        <translation>Cambiar contraseña usada para la encriptación del monedero</translation>
     </message>
     <message>
         <source>Unlock Wallet...</source>
-        <translation>Desbloquear wallet...</translation>
+        <translation>Desbloquear monedero...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -487,7 +498,7 @@
     </message>
     <message>
         <source>Lock Wallet</source>
-        <translation>Bloquear Wallet</translation>
+        <translation>Bloquear monedero</translation>
     </message>
     <message>
         <source>Sign message...</source>
@@ -531,11 +542,11 @@
     </message>
     <message>
         <source>Wallet Repair</source>
-        <translation>Reparación de la wallet</translation>
+        <translation>Reparación del monedero</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
-        <translation>Mostrar opciones de reparación de la wallet</translation>
+        <translation>Mostrar opciones de reparación del monedero</translation>
     </message>
     <message>
         <source>Open configuration file</source>
@@ -566,6 +577,30 @@
         <translation>Mostrar la lista de las direcciones y etiquetas usadas</translation>
     </message>
     <message>
+        <source>Multisignature creation...</source>
+        <translation>Creación multifirmas ...</translation>
+    </message>
+    <message>
+        <source>Create a new multisignature address and add it to this wallet</source>
+        <translation>Crear una nueva dirección multifirma y agregarla a este monedero</translation>
+    </message>
+    <message>
+        <source>Multisignature spending...</source>
+        <translation>Gasto multifirmas...</translation>
+    </message>
+    <message>
+        <source>Spend from a multisignature address</source>
+        <translation>Gastar desde una dirección multifirmas</translation>
+    </message>
+    <message>
+        <source>Multisignature signing...</source>
+        <translation>Firma multifirmas...</translation>
+    </message>
+    <message>
+        <source>Sign with a multisignature address</source>
+        <translation>Firmar con una dirección multifirmas</translation>
+    </message>
+    <message>
         <source>Open URI...</source>
         <translation>Abrir URI...</translation>
     </message>
@@ -575,11 +610,19 @@
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Procesado %n bloque del historial de transacciones.</numerusform><numerusform>Procesados %n bloques del historial de transacciones.</numerusform></translation>
+        <translation><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sincronizando datos adicionales: %p%</translation>
+    </message>
+    <message>
+        <source>%1 behind. Scanning block %2</source>
+        <translation>%1 detrás. Escaneando bloque %2</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
+        <translation>El monedero está &lt;b&gt;cifrado&lt;/b&gt; y actualmente &lt;b&gt;desbloqueado&lt;/b&gt; para anonimato y prueba de participación.</translation>
     </message>
     <message>
         <source>File</source>
@@ -603,14 +646,14 @@
     </message>
     <message>
         <source>Bulwark Core</source>
-        <translation>Núcleo Bulwark</translation>
+        <translation>Bulwark Core</translation>
     </message>
     <message>
         <source>Send coins to a Bulwark address</source>
-        <translation>Enviar coins a una dirección Bulwark</translation>
+        <translation>Enviar monedas a una dirección Bulwark</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bulwark: URIs)</source>
+        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
         <translation>Solicitud de pago (genera un código QR y URIs)</translation>
     </message>
     <message>
@@ -618,24 +661,20 @@
         <translation>Privacidad</translation>
     </message>
     <message>
-        <source>Privacy Action for zBWK and Obfuscation</source>
-        <translation>Privacidad con zBWK y Ofuscación</translation>
-    </message>
-    <message>
         <source>Masternodes</source>
-        <translation>Nodos Maestros</translation>
+        <translation>Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
-        <translation>Explorar nodos maestros</translation>
+        <translation>Explorar masternodes</translation>
     </message>
     <message>
         <source>About Bulwark Core</source>
-        <translation>Sobre el núcleo de Bulwark</translation>
+        <translation>Sobre Bulwark Core</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
-        <translation>Mostrar información sobre el núcleo de Bulwark</translation>
+        <translation>Mostrar información sobre Bulwark Core</translation>
     </message>
     <message>
         <source>Modify configuration options for Bulwark</source>
@@ -655,7 +694,7 @@
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
-        <translation>Encriptar y desencriptar las llaves privadas usando una contraseña</translation>
+        <translation>Encriptar y desencriptar las llaves privadas usando una frase contraseña</translation>
     </message>
     <message>
         <source>MultiSend</source>
@@ -667,15 +706,15 @@
     </message>
     <message>
         <source>Open Wallet Configuration File</source>
-        <translation>Abrir Fichero de Configuración del Monedero</translation>
+        <translation>Abrir fichero del monedero Configuración</translation>
     </message>
     <message>
         <source>Open Masternode Configuration File</source>
-        <translation>Abrir Fichero de Configuración de Nodos Maestros</translation>
+        <translation>Abrir Fichero de Configuración de Masternodes</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
-        <translation>Abrir Fichero de Configuración de Nodos Maestros</translation>
+        <translation>Abrir fichero de Configuración de masternodes</translation>
     </message>
     <message>
         <source>Open a Bulwark: URI or payment request</source>
@@ -683,7 +722,7 @@
     </message>
     <message>
         <source>Blockchain explorer</source>
-        <translation>Explorador de Bloques</translation>
+        <translation>Explorador de Blockchain</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -699,7 +738,7 @@
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n conexión(es) activa a la red Bulwark</numerusform><numerusform>%n conexion(es) activas a la red Bulwark</numerusform></translation>
+        <translation><numerusform>%n conexión(es) activas a la red Bulwark</numerusform><numerusform>%n conexión(es) activas a la red Bulwark</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -721,13 +760,25 @@
         <source>Up to date</source>
         <translation>Actualizado</translation>
     </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n horas</numerusform><numerusform>%n horas</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n días</numerusform><numerusform>%n días</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n semanas</numerusform><numerusform>%n semanas</numerusform></translation>
+    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 y %2</translation>
     </message>
-    <message>
-        <source>%1 behind</source>
-        <translation>%1 detrás</translation>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n años</numerusform><numerusform>%n años</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -780,7 +831,7 @@ Dirección: %4
     <message>
         <source>Staking is active
  MultiSend: %1</source>
-        <translation>La recompensa de participación está activa
+        <translation>Staking está activado
 MultiEnvío: %1</translation>
     </message>
     <message>
@@ -798,12 +849,16 @@ MultiEnvío: %1</translation>
 MultiEnvío: %1</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>El monedero está &lt;b&gt;encriptado&lt;/b&gt; y actualmente &lt;b&gt;desbloqueado&lt;/b&gt;</translation>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>AutoMint está actualmente habilitado y configurado en</translation>
     </message>
     <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization and staking only</source>
-        <translation>El monedero está &lt;b&gt;encriptado&lt;/b&gt; y actualmente &lt;b&gt;desbloqueado&lt;/b&gt; sólo para anonimato y prueba de participación.</translation>
+        <source>AutoMint is disabled</source>
+        <translation>AutoMint está desactivado</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
+        <translation>El monedero está &lt;b&gt;encriptado&lt;/b&gt; y actualmente &lt;b&gt;desbloqueado&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
@@ -814,7 +869,7 @@ MultiEnvío: %1</translation>
     <name>BlockExplorer</name>
     <message>
         <source>Blockchain Explorer</source>
-        <translation>Explorador de Cadena de Bloques</translation>
+        <translation>Explorador del blockchain</translation>
     </message>
     <message>
         <source>Back</source>
@@ -844,8 +899,8 @@ MultiEnvío: %1</translation>
 <context>
     <name>ClientModel</name>
     <message>
-        <source>Total: %1 (OBF compatible: %2 / Enabled: %3)</source>
-        <translation>Total: %1 (Ofuscación compatible: %2 / Activado: %3)</translation>
+        <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
+        <translation>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Desconocido: %5)</translation>
     </message>
     <message>
         <source>Network Alert</source>
@@ -884,7 +939,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Con Comisión:</translation>
+        <translation>Después de Comisión:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -923,6 +978,10 @@ MultiEnvío: %1</translation>
         <translation>Recibido con dirección</translation>
     </message>
     <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
         <source>Date</source>
         <translation>Fecha</translation>
     </message>
@@ -956,11 +1015,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Lock unspent</source>
-        <translation>Bloquear no gastados</translation>
+        <translation>Bloquear no gastado</translation>
     </message>
     <message>
         <source>Unlock unspent</source>
-        <translation>Desbloquear no gastados</translation>
+        <translation>Desbloquear no gastado</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1009,10 +1068,6 @@ MultiEnvío: %1</translation>
     <message>
         <source>medium-high</source>
         <translation>medio-alta</translation>
-    </message>
-    <message>
-        <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>Puede variar +/- %1 duff(s) por entrada.</translation>
     </message>
     <message>
         <source>medium</source>
@@ -1073,6 +1128,10 @@ MultiEnvío: %1</translation>
     <message>
         <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
         <translation>Esta etiqueta se vuelve roja, si algún destinatario recibe una cantidad menor que %1.</translation>
+    </message>
+    <message>
+        <source>Can vary +/- %1 uBulwark per input.</source>
+        <translation>Puede variar +/- %1 uBulwark por entrada.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1173,7 +1232,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Bulwark Core</source>
-        <translation>Núcleo Bulwark</translation>
+        <translation>Bulwark Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
@@ -1248,7 +1307,7 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Bulwark Core</source>
-        <translation>Núcleo Bulwark</translation>
+        <translation>Bulwark Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1274,8 +1333,8 @@ MultiEnvío: %1</translation>
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Mis Nodos Maestros</translation>
+        <source>MASTERNODES</source>
+        <translation>NODO MAESTROS</translation>
     </message>
     <message>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
@@ -1339,19 +1398,19 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Confirm masternode start</source>
-        <translation>Confirmar inicio del nodo maestro</translation>
+        <translation>Confirmar inicio del masternode</translation>
     </message>
     <message>
         <source>Are you sure you want to start masternode %1?</source>
-        <translation>¿Está seguro de que quiere arrancar el nodo maestro %1?</translation>
+        <translation>¿Está seguro de que quiere arrancar el masternode %1?</translation>
     </message>
     <message>
         <source>Confirm all masternodes start</source>
-        <translation>Confirmar el arranque de todos los nodos maestros</translation>
+        <translation>Confirmar el arranque de todos los masternodes</translation>
     </message>
     <message>
         <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>¿Estás seguro de querer arrancar TODOS los nodos maestros?</translation>
+        <translation>¿Estás seguro de querer arrancar TODOS los masternodes?</translation>
     </message>
     <message>
         <source>Command is not available right now</source>
@@ -1363,11 +1422,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Confirm missing masternodes start</source>
-        <translation>Confirmar arranque de nodos maestros no encontrados</translation>
+        <translation>Confirmar arranque de masternodes no encontrados</translation>
     </message>
     <message>
         <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>¿Estás seguro de querer arrancar los nodos maestros NO ENCONTRADOS?</translation>
+        <translation>¿Estás seguro de querer arrancar los masternodes NO ENCONTRADOS?</translation>
     </message>
 </context>
 <context>
@@ -1420,11 +1479,11 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Percentage of stake to send</source>
-        <translation>Porcentaje de capital a enviar</translation>
+        <translation>Porcentaje de stake a enviar</translation>
     </message>
     <message>
         <source>Percentage:</source>
@@ -1432,11 +1491,19 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
     </message>
     <message>
         <source>Address to send portion of stake to</source>
-        <translation>Dirección a enviar porción de la recompensa</translation>
+        <translation>Dirección a enviar porción del stake</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Dirección:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiqueta:</translation>
+    </message>
+    <message>
+        <source>Enter a label for this address to add it to your address book</source>
+        <translation>Introduzca una etiqueta para esta dirección para añadirla a su libreta de direcciones</translation>
     </message>
     <message>
         <source>Delete Address From MultiSend Vector</source>
@@ -1464,11 +1531,15 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
     </message>
     <message>
         <source>Send For Stakes</source>
-        <translation>Enviar Para Participaciones</translation>
+        <translation>Enviar Para Stakes</translation>
     </message>
     <message>
         <source>Send For Masternode Rewards</source>
-        <translation>Enviar Para Recomensas De Nodos Maestros</translation>
+        <translation>Enviar Para Recomensas De masternodes</translation>
+    </message>
+    <message>
+        <source>(no label)</source>
+        <translation>(sin etiqueta)</translation>
     </message>
     <message>
         <source>The entered address:
@@ -1485,12 +1556,18 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     <message>
         <source>The total amount of your MultiSend vector is over 100% of your stake reward
 </source>
-        <translation>La cantidad total de su vector MultiEnvío es superior al 100% de su recompensa
+        <translation>La cantidad total de su vector MultiEnvío es superior al 100% de su recompensa de stake
 </translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Por favor Introduzca 1 - 100 por ciento.</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.
+</source>
+        <translation>Se guardó MultiEnvío en la memoria, pero se produjo un error al guardar las propiedades en la base de datos.
+</translation>
     </message>
     <message>
         <source>MultiSend Vector
@@ -1507,6 +1584,177 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
 </source>
         <translation>No se pudo localizar la dirección
 </translation>
+    </message>
+</context>
+<context>
+    <name>MultisigDialog</name>
+    <message>
+        <source>Multisignature Address Interactions</source>
+        <translation>Interacciones de direcciones multifirmas</translation>
+    </message>
+    <message>
+        <source>Create MultiSignature Address</source>
+        <translation>Crear una dirección multifirma</translation>
+    </message>
+    <message>
+        <source>How many people must sign to verify a transaction</source>
+        <translation>Cuántas personas deben firmar para verificar una transacción</translation>
+    </message>
+    <message>
+        <source>Enter the minimum number of signatures required to sign transactions</source>
+        <translation>Entra el número mínimo de firmas requerido para firmar la transacción</translation>
+    </message>
+    <message>
+        <source>Address Label:</source>
+        <translation>Etiqueta de dirección</translation>
+    </message>
+    <message>
+        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
+        <translation>Agrega otra dirección que pueda firmar para verificar la transacción desde la dirección multifirmas</translation>
+    </message>
+    <message>
+        <source>Add Address / Key</source>
+        <translation>Agrega dirección / Llave</translation>
+    </message>
+    <message>
+        <source>Local addresses or public keys that can sign:</source>
+        <translation>Direcciones locales o llaves publicas que puedan firmar:</translation>
+    </message>
+    <message>
+        <source>Create a new multisig address</source>
+        <translation>Crea una nueva dirección multifirmas</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation>Crear</translation>
+    </message>
+    <message>
+        <source>Status:</source>
+        <translation>Estado:</translation>
+    </message>
+    <message>
+        <source>Use below to quickly import an address by its redeem. Don't forget to add a label before clicking import!
+Keep in mind, the wallet will rescan the blockchain to find transactions containing the new address.
+Please be patient after clicking import.</source>
+        <translation>Use debajo para importar rápidamente una dirección al canjearla. ¡No olvide agregar una etiqueta antes de hacer clic en importar!
+Tenga en cuenta que el monedero volverá a explorar el blockchain para buscar transacciones que contengan la nueva dirección.
+Por favor, tenga paciencia después de hacer clic en importar.</translation>
+    </message>
+    <message>
+        <source>Import Redeem</source>
+        <translation>Importar redimir</translation>
+    </message>
+    <message>
+        <source>Create MultiSignature Tx</source>
+        <translation>Crear transacción multifirmas</translation>
+    </message>
+    <message>
+        <source>Inputs:</source>
+        <translation>Entradas:</translation>
+    </message>
+    <message>
+        <source>Coin Control</source>
+        <translation>Control de moneda</translation>
+    </message>
+    <message>
+        <source>Quantity Selected:</source>
+        <translation>Cantidad Seleccionada:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Amount:</source>
+        <translation>Cantidad:</translation>
+    </message>
+    <message>
+        <source>Add an input to fund the outputs</source>
+        <translation>Agregue una entrada para financiar las salidas</translation>
+    </message>
+    <message>
+        <source>Add a Raw Input</source>
+        <translation>Agregar una entrada sin procesar</translation>
+    </message>
+    <message>
+        <source>Address / Amount:</source>
+        <translation>Dirección / Cantidad:</translation>
+    </message>
+    <message>
+        <source>Add destinations to send Bulwark to</source>
+        <translation>Agregue los destinos para enviar Bulwark</translation>
+    </message>
+    <message>
+        <source>Add Destination</source>
+        <translation>Agregar Destino</translation>
+    </message>
+    <message>
+        <source>Create a transaction object using the given inputs to the given outputs</source>
+        <translation>Crear un objeto de transacción usando las entradas dadas a las salidas dadas</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation>Crear</translation>
+    </message>
+    <message>
+        <source>Sign MultiSignature Tx</source>
+        <translation>Firmar Tx multifirmas</translation>
+    </message>
+    <message>
+        <source>Transaction Hex:</source>
+        <translation>Hexadecimal de transacción:</translation>
+    </message>
+    <message>
+        <source>Sign the transaction from this wallet or from provided private keys</source>
+        <translation>Firma la transacción desde este monedero o desde llaves privadas provistas</translation>
+    </message>
+    <message>
+        <source>Sign</source>
+        <translation>Firmar</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DESACTIVADO hasta que la transacción se haya firmado suficientes veces.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Confirmar</translation>
+    </message>
+    <message>
+        <source>Add private keys to sign the transaction with</source>
+        <translation>Agregar llaves privadas para firmar la transacción</translation>
+    </message>
+    <message>
+        <source>Add Private Key</source>
+        <translation>Agregar llave privada</translation>
+    </message>
+    <message>
+        <source>Sign with only private keys (Not Recommened)</source>
+        <translation>Firmar solo con llaves privadas (No Recomendado)</translation>
+    </message>
+    <message>
+        <source>Invalid Tx Hash.</source>
+        <translation>Hash Tx inválido.</translation>
+    </message>
+    <message>
+        <source>Vout position must be positive.</source>
+        <translation>La posición de Vout debe ser positiva.</translation>
+    </message>
+    <message>
+        <source>Maximum possible addresses reached. (15)</source>
+        <translation>Máxima cantidad de direcciones posibles alcanzadas. (15)</translation>
+    </message>
+    <message>
+        <source>Vout Position: </source>
+        <translation>Posición Vout:</translation>
+    </message>
+    <message>
+        <source>Amount: </source>
+        <translation>Cantidad:</translation>
+    </message>
+    <message>
+        <source>Maximum (15)</source>
+        <translation>Máximo (15)</translation>
     </message>
 </context>
 <context>
@@ -1529,35 +1777,35 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>Please select a privacy level.</source>
-        <translation>Por favor selecciones un nivel de privacidad.</translation>
+        <translation>Por favor seleccione un nivel de privacidad.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 5000 BWK</source>
-        <translation>Use 2 nodos maestros diferentes para mezclar los fondos hasta los 5000 BWK</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
+        <translation>Use 2 masterdodes diferentes para mezclar los fondos hasta los 10000 Bulwark</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 5000 BWK</source>
-        <translation>Use 8 nodos maestros diferentes para mezclar fondos hasta los 5000 BWK</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
+        <translation>Use 8 masternodes diferentes para mezclar fondos hasta los 10000 Bulwark</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
-        <translation>Use 16 nodos maestros diferentes</translation>
+        <translation>Use 16 masternodes diferentes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 BWK to anonymize 5000 BWK</source>
-        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 BWK para anonimizar 5000 BWK</translation>
+        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
+        <translation>Esta opción es la más rápida y costará alrededor de ~0.025 Bulwark para anonimizar 10000 Bulwark</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 BWK to anonymize 5000 BWK</source>
-        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 BWK para anonimizar 5000 BWK.</translation>
+        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
+        <translation>Esta opción es moderadamente rápida y costará cerca de 0.05 Bulwark para anonimizar 10000 Bulwark</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Esta es la opción más lenta pero más segura. Usar el máximo anonimato costará</translation>
     </message>
     <message>
-        <source>0.1 BWK per 5000 BWK you anonymize.</source>
-        <translation>0.1 BWK por 5000 BWK que anonimizas.</translation>
+        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
+        <translation>0.1 Bulwark por 10000 Bulwark que anonimizas.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1655,7 +1903,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Arrancar Bulwark automáticamente después de identificarse en Windows.</translation>
+        <translation>Arrancar Bulwark automáticamente después de identificarse en el sistema.</translation>
     </message>
     <message>
         <source>Start Bulwark on system login</source>
@@ -1663,7 +1911,7 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Mostrar las características de control de monedas individuales, o no</translation>
+        <translation>Mostrar las características de control de monedas, o no</translation>
     </message>
     <message>
         <source>Enable coin control features</source>
@@ -1671,11 +1919,11 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
-        <translation>Mostrar pestaña adicional listando todos sus nodos maestros en la primera sub-pestaña&lt;br/&gt;y todos los nodos maestros de la red en la segunda sub-pestaña.</translation>
+        <translation>Mostrar pestaña adicional listando todos sus masternodes en la primera sub-pestaña&lt;br/&gt;y todos los masternodes de la red en la segunda sub-pestaña.</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
-        <translation>Mostrar la pestaña de Nodos Maestros</translation>
+        <translation>Mostrar la pestaña de masternodes</translation>
     </message>
     <message>
         <source>Spend unconfirmed change</source>
@@ -1691,25 +1939,41 @@ Por favor compruebe la dirección e inténtelo de nuevo.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
+https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation>¿Falta su lenguaje o la traducción está incompleta? Contribuya con las traducciones aquí:
-https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
+https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
     </message>
     <message>
         <source>Map port using UPnP</source>
         <translation>Mapear un puerto utilizando UPnP</translation>
     </message>
     <message>
-        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol</source>
-        <translation>Porcentaje de BWKs entrantes que serán automáticamente convertidos a zBWK a través del Protocolo Zerocoin</translation>
+        <source>Enable automatic minting of Bulwark units to zBWK</source>
+        <translation>Activar el minting automática de unidades Bulwark a zBWK</translation>
+    </message>
+    <message>
+        <source>Enable zBWK Automint</source>
+        <translation>Activar zBWK Automint</translation>
+    </message>
+    <message>
+        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Porcentaje de Bulwark entrantes que serán automáticamente convertidos a zBWK a través del Protocolo Zerocoin (mín: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>Porcentaje de zBWK autogenerados</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
-        <translation>Retrasar la conversión automática a Zerocoin hasta que hayan suficientes BWK disponibles para esta denominación</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
+        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes Bulwark disponibles para este tamaño de billete</translation>
+    </message>
+    <message>
+        <source>Preferred Automint zBWK Denomination</source>
+        <translation>Tamaño de billete zBWK preferido en la creación automática de dinero</translation>
+    </message>
+    <message>
+        <source>Stake split threshold:</source>
+        <translation>Parte limite de stake:</translation>
     </message>
     <message>
         <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
@@ -1776,6 +2040,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Dígitos decimales</translation>
     </message>
     <message>
+        <source>Hide empty balances</source>
+        <translation>Ocultar saldos vazios</translation>
+    </message>
+    <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Direcciones web de terceras partes (p.e. un explorador de bloques) que aparecen en la pestaña de transacciones como objetos contextuales del menú. %s en la dirección web es reemplazada por el identificador de la transacción. Múltiples direcciones web están separadas por una barra vertical (|).</translation>
     </message>
@@ -1804,8 +2072,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Cancelar</translation>
     </message>
     <message>
-        <source>I don't care</source>
-        <translation>No me preocupa</translation>
+        <source>Any</source>
+        <translation>Qualquer</translation>
     </message>
     <message>
         <source>default</source>
@@ -1835,6 +2103,14 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <source>The supplied proxy address is invalid.</source>
         <translation>La dirección proxy indicada es inválida.</translation>
     </message>
+    <message>
+        <source>The supplied proxy port is invalid.</source>
+        <translation>El puerto proxy suministrado no es válido.</translation>
+    </message>
+    <message>
+        <source>The supplied proxy settings are invalid.</source>
+        <translation>La configuración del proxy suministrado no es válida.</translation>
+    </message>
 </context>
 <context>
     <name>OverviewPage</name>
@@ -1843,16 +2119,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>BWK Balances</source>
-        <translation>Balances BWK</translation>
-    </message>
-    <message>
         <source>Available:</source>
         <translation>Disponible:</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
         <translation>Tu balance actualmente disponible</translation>
+    </message>
+    <message>
+        <source>Total Balance, including all unavailable coins.</source>
+        <translation>Balance Total, incluidas todas las monedas no disponibles.</translation>
+    </message>
+    <message>
+        <source>Bulwark Balance</source>
+        <translation>Balance Bulwark</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -1871,8 +2151,44 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Recompensa de participación o de nodo maestro que aún no ha madurado</translation>
     </message>
     <message>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Saldo bloqueado actual en direcciones solo de lectura</translation>
+    </message>
+    <message>
+        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
+        <translation>Su balance Bulwark actual, transacciones no confirmadas e inmaduras incluidas</translation>
+    </message>
+    <message>
+        <source>zBWK Balance</source>
+        <translation>Balance zBWK</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zBWK are spendable.</source>
+        <translation>Maduración: más de 20 confirmaciones y más de 1 acuñación de la misma denominación después de acuñarse.
+Estas zBWK son utilizables.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Sin confirmar: menos de 20 confirmaciones
+Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación después de ser acuñado</translation>
+    </message>
+    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
         <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Bulwark después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+    </message>
+    <message>
+        <source>OVERVIEW</source>
+        <translation>VISIÓN DE CONJUNTO</translation>
+    </message>
+    <message>
+        <source>Combined Balance (including unconfirmed and immature coins)</source>
+        <translation>Balance combinados (incluidas las monedas no confirmadas e inmaduras)</translation>
+    </message>
+    <message>
+        <source>Combined Balance</source>
+        <translation>Balance Combinado</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1880,15 +2196,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Recompensa de participación o de nodo maestro en direcciones de sólo lectura que todavía no han madurado</translation>
+        <translation>Recompensa stake o recompensa de masternodes en direcciones de sólo lectura que todavía no han madurado</translation>
     </message>
     <message>
         <source>Total:</source>
         <translation>Total:</translation>
-    </message>
-    <message>
-        <source>Your current total balance</source>
-        <translation>Su balance total actual</translation>
     </message>
     <message>
         <source>Current total balance in watch-only addresses</source>
@@ -1907,12 +2219,50 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Disponible:</translation>
     </message>
     <message>
+        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Bulwark bloqueado o Masternode colaterales. Estos están excluidos de minting zBWK.</translation>
+    </message>
+    <message>
+        <source>Locked:</source>
+        <translation>Bloqueado:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed:</source>
+        <translation>Sin confirmar:</translation>
+    </message>
+    <message>
+        <source>Your current zBWK balance, unconfirmed and immature zBWK included.</source>
+        <translation>Su balance zBWK actual, zBWK inmaduro e inmaduro incluido.</translation>
+    </message>
+    <message>
         <source>Recent transactions</source>
         <translation>Transacciones recientes</translation>
     </message>
     <message>
         <source>out of sync</source>
         <translation>desincronizado</translation>
+    </message>
+    <message>
+        <source>Current percentage of zBWK.
+If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+</source>
+        <translation>Porcentaje actual de zBWK.
+Si AutoMint está habilitado, este porcentaje se establecerá alrededor del porcentaje de AutoMint configurado (predeterminado = 10%).
+</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently enabled and set to </source>
+        <translation>AutoMint está actualmente habilitado y configurado en</translation>
+    </message>
+    <message>
+        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
+        <translation>Para desactivar AutoMint agrega 'enablezeromint=0' en bulwark.conf.</translation>
+    </message>
+    <message>
+        <source>AutoMint is currently disabled.
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+        <translation>AutoMint está actualmente desactivado.
+Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en bulwark.conf</translation>
     </message>
 </context>
 <context>
@@ -1938,11 +2288,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Dirección de pago inválida %1</translation>
     </message>
     <message>
-        <source>Cannot start bulwark: click-to-pay handler</source>
-        <translation>No se puede iniciar bulwark: módulo click-to-pay</translation>
+        <source>Cannot start Bulwark: click-to-pay handler</source>
+        <translation>No se puede iniciar Bulwark: módulo click-to-pay</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bulwark address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
         <translation>¡El identificador de la dirección no puede ser analizado! Esto puede ser causado por una dirección Bulwark inválida o parámetros del identificador malformados.</translation>
     </message>
     <message>
@@ -2024,16 +2374,48 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 <context>
     <name>PrivacyDialog</name>
     <message>
+        <source>Zerocoin Actions:</source>
+        <translation>Acciones Zerocoin:</translation>
+    </message>
+    <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
         <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Bulwark después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+    </message>
+    <message>
+        <source>Mint Zerocoin</source>
+        <translation>Creación de moneda Zerocoin</translation>
     </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
+        <source>zBWK</source>
+        <translation>zBWK</translation>
+    </message>
+    <message>
+        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
+        <translation>Disponibles para minting son monedas que están confirmadas y no bloqueadas o colateral de Masternode.</translation>
+    </message>
+    <message>
+        <source>Available for Minting:</source>
+        <translation>Disponible para minting:</translation>
+    </message>
+    <message>
+        <source>0.000 000 00 BWK</source>
+        <translation>0.000 000 00 Bulwark</translation>
+    </message>
+    <message>
+        <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
+        <translation>Resetear la base de datos del monedero Zerocoin. Esta opción borra transacciones que no consiguieron salir publicadas en el blockchain.</translation>
+    </message>
+    <message>
         <source>Reset</source>
         <translation>Reiniciar</translation>
+    </message>
+    <message>
+        <source>Coin Control...</source>
+        <translation>Control de Monedas...</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -2041,11 +2423,87 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
+    </message>
+    <message>
+        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
+        <translation>Reescanear el blockchain entero buscando Zerocoin mints y su meta-datos.</translation>
+    </message>
+    <message>
+        <source>ReScan</source>
+        <translation>ReeScanear</translation>
+    </message>
+    <message>
+        <source>Status and/or Mesages from the last Mint Action.</source>
+        <translation>Estado y/o Mensajes de la última acción mint.</translation>
+    </message>
+    <message>
+        <source>PRIVACY</source>
+        <translation>PRIVACIDAD</translation>
+    </message>
+    <message>
+        <source>Enter an amount of BWK to convert to zBWK</source>
+        <translation>Introduzca la cantidad de Bulwark que desea convertir a zBWK</translation>
+    </message>
+    <message>
+        <source>zBWK Control</source>
+        <translation>Control zBWK</translation>
+    </message>
+    <message>
+        <source>zBWK Selected:</source>
+        <translation>zBWK Seleccionados:</translation>
+    </message>
+    <message>
+        <source>Quantity Selected:</source>
+        <translation>Cantidad Seleccionada:</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</source>
+        <translation>Gastar Zerocoin. Sin direcciones "Pagar a:", esto creará pagos a usted mismo.</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin</source>
+        <translation>Gastar Zerocoin</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) zBWK for spending</source>
+        <translation>zBWK disponible (maduro y gastable) para gastar</translation>
+    </message>
+    <message>
+        <source>Available Balance:</source>
+        <translation>Balance disponible:</translation>
+    </message>
+    <message>
+        <source>Available (mature and spendable) zBWK for spending
+
+zBWK are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>zBWK disponible (maduro y gastable) para gastar
+
+zBWK son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la misma denominación después que ellos fueron minted</translation>
+    </message>
+    <message>
+        <source>0 zBWK</source>
+        <translation>0 zBWK</translation>
+    </message>
+    <message>
+        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
+        <translation>Nivel de Seguridad para Transacciones Zerocoin. Cuanto más mejor, pero necesitará más tiempo y recursos.</translation>
+    </message>
+    <message>
+        <source>Security Level:</source>
+        <translation>Nivel de Seguridad:</translation>
+    </message>
+    <message>
+        <source>Security Level 1 - 100 (default: 42)</source>
+        <translation>Nivel de Seguridad 1 - 100 (por defecto: 42)</translation>
     </message>
     <message>
         <source>Pay To:</source>
         <translation>Pagar A:</translation>
+    </message>
+    <message>
+        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>La dirección Bulwark a la que enviar el pago. Si se deja en blanco, crea un pago a usted mismo.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2053,7 +2511,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2061,7 +2519,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Label:</source>
@@ -2076,8 +2534,175 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Cantidad:</translation>
     </message>
     <message>
+        <source>Convert Change to Zerocoin (might cost additional fees)</source>
+        <translation>Convertir el Cambio a Zerocoin (puede costar alguna comisión adicional)</translation>
+    </message>
+    <message>
+        <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
+        <translation>Si está marcado, el monedero intenta minimizar el cambio de vuelta en lugar de minimizar el numero de denominaciones necesarios.</translation>
+    </message>
+    <message>
+        <source>Minimize Change</source>
+        <translation>Minimizar Cambio</translation>
+    </message>
+    <message>
+        <source>Information about the available Zerocoin funds.</source>
+        <translation>Información sobre los fondos Zerocoin disponibles.</translation>
+    </message>
+    <message>
+        <source>Zerocoin Stats:</source>
+        <translation>Estadísticas Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Total Balance including unconfirmed and immature zBWK</source>
+        <translation>Balance total incluyendo zBWK no confirmado e inmaduro</translation>
+    </message>
+    <message>
+        <source>Total Zerocoin  Balance:</source>
+        <translation>Balance total de Zerocoin:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 1:</source>
+        <translation>Denominaciones con valor 1:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1:</source>
+        <translation>Denom. con valor 1:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Sin confirmar: menos de 20 confirmaciones
+Inmaduro: confirmado, pero menos de 1 acuñación de la misma denominación después de ser acuñado</translation>
+    </message>
+    <message>
+        <source>Show the current status of automatic zBWK minting.
+
+To change the status (restart required):
+- enable: add 'enablezeromint=1' to bulwark.conf
+- disable: add 'enablezeromint=0' to bulwark.conf
+
+To change the percentage (no restart required):
+- menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
+
+</source>
+        <translation>Muestra el estado actual de zBWK minting automática.
+
+Para cambiar el estado (reinicio requerido):
+- activar: añade 'enablezeromint = 1' en bulwark.conf
+- desctivar: añade 'enablezeromint = 0' en bulwark.conf
+
+Para cambiar el porcentaje (no se requiere reiniciar):
+- menú Configuración-&gt;Opciones-&gt;Porcentaje de zBWK automint
+</translation>
+    </message>
+    <message>
+        <source>AutoMint Status</source>
+        <translation>Estado de AutoMint</translation>
+    </message>
+    <message>
+        <source>Global Supply:</source>
+        <translation>Suministro Global:</translation>
+    </message>
+    <message>
+        <source>Denom. 1:</source>
+        <translation>Denom. 1:</translation>
+    </message>
+    <message>
+        <source>Denom. 5:</source>
+        <translation>Denom. 5:</translation>
+    </message>
+    <message>
+        <source>Denom. 10:</source>
+        <translation>Denom. 10:</translation>
+    </message>
+    <message>
+        <source>Denom. 50:</source>
+        <translation>Denom. 50:</translation>
+    </message>
+    <message>
+        <source>Denom. 100:</source>
+        <translation>Denom. 100:</translation>
+    </message>
+    <message>
+        <source>Denom. 500:</source>
+        <translation>Denom. 500:</translation>
+    </message>
+    <message>
+        <source>Denom. 1000:</source>
+        <translation>Denom. 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. 5000:</source>
+        <translation>Denom. 5000:</translation>
+    </message>
+    <message>
+        <source>0 x</source>
+        <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5:</source>
+        <translation>Denominación con valor 5:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5:</source>
+        <translation>Denom. con valor 5:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 10:</source>
+        <translation>Denominación con valor 10:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 10:</source>
+        <translation>Denom. con valor 10:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 50:</source>
+        <translation>Denominación con valor 50:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 50:</source>
+        <translation>Denom. con valor 50:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 100:</source>
+        <translation>Denominación con valor 100:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 100:</source>
+        <translation>Denom. con valor 100:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 500:</source>
+        <translation>Denominación con valor 500:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 500:</source>
+        <translation>Denom. con valor 500:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 1000:</source>
+        <translation>Denominación con valor 1000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 1000:</source>
+        <translation>Denom. con valor 1000:</translation>
+    </message>
+    <message>
+        <source>Denominations with value 5000:</source>
+        <translation>Denominación con valor 5000:</translation>
+    </message>
+    <message>
+        <source>Denom. with value 5000:</source>
+        <translation>Denom. con valor 5000:</translation>
+    </message>
+    <message>
         <source>Priority:</source>
         <translation>Prioridad:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>EtiquetaDeTexto</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -2100,6 +2725,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>¡Fondos insuficientes!</translation>
     </message>
     <message>
+        <source>Coins automatically selected</source>
+        <translation>Monedas seleccionadas automáticamente</translation>
+    </message>
+    <message>
         <source>medium</source>
         <translation>media</translation>
     </message>
@@ -2116,12 +2745,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Dirección de cambio personalizada</translation>
     </message>
     <message>
+        <source>Amount After Fee:</source>
+        <translation>Cantidad Después de comisión:</translation>
+    </message>
+    <message>
         <source>Change:</source>
         <translation>Cambio:</translation>
     </message>
     <message>
         <source>out of sync</source>
         <translation>desincronizado</translation>
+    </message>
+    <message>
+        <source>Mint Status: Okay</source>
+        <translation>Estado de Creación de Moneda: Ok</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -2132,10 +2769,261 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Copiar cantidad</translation>
     </message>
     <message>
+        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Ejecutando ResetMintZerocoin: reescaneando el blockchain entero, esto necesitará hasta 30 minutos dependiendo de su hardware.
+Por favor espere...</translation>
+    </message>
+    <message>
+        <source>Spending Zerocoin.
+Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
+Please be patient...</source>
+        <translation>Gastando Zerocoin.
+Esto es computacionalmente intensivo, puede necesitar varios minutos dependiendo del Nivel de Seguridad elegido y el hardware de su máquina.
+Por favor tenga paciencia...</translation>
+    </message>
+    <message>
+        <source>) needed.
+Maximum allowed: </source>
+        <translation>) necesario.
+Máximo permitido:</translation>
+    </message>
+    <message>
+        <source>zBWK Spend #: </source>
+        <translation>Gastar zBWK #: </translation>
+    </message>
+    <message>
+        <source>zBWK Mint</source>
+        <translation>Acuñar zBWK</translation>
+    </message>
+    <message>
+        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;ativado&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
+        <translation>&lt;b&gt;Desativado&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <source> Configured target percentage: &lt;b&gt;</source>
+        <translation>Porcentaje objetivo configurado:</translation>
+    </message>
+    <message>
+        <source>zBWK is currently disabled due to maintenance.</source>
+        <translation>zBWK actualmente está desactivado debido al mantenimiento.</translation>
+    </message>
+    <message>
+        <source>zBWK is currently undergoing maintenance.</source>
+        <translation>zBWK se encuentra actualmente en mantenimiento.</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt; 1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt; 5&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt; 10&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt;50&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt;100&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt;500&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt;1000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
+        <translation>Billetes con valor &lt;b&gt;5000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>AutoMint Status:</source>
+        <translation>Status AutoMint:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;5&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;10&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;50&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;100&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;500&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;1000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
+        <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
+    </message>
+    <message>
+        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
+        <translation>Error: Tu monedero está bloqueado. Por favor, primero introduzca la frase clave del monedero.</translation>
+    </message>
+    <message>
+        <source>Message: Enter an amount &gt; 0.</source>
+        <translation>Mensaje: Introduzca una cantidad &gt; 0.</translation>
+    </message>
+    <message>
+        <source>Minting </source>
+        <translation>Minting</translation>
+    </message>
+    <message>
+        <source>Successfully minted </source>
+        <translation>Minted correctamente</translation>
+    </message>
+    <message>
+        <source> zBWK in </source>
+        <translation>zBWK en</translation>
+    </message>
+    <message>
+        <source> sec. Used denominations:
+</source>
+        <translation>seg. denominación usados:
+</translation>
+    </message>
+    <message>
+        <source>Duration: </source>
+        <translation>Duración:</translation>
+    </message>
+    <message>
+        <source> sec.
+</source>
+        <translation>seg.
+</translation>
+    </message>
+    <message>
+        <source>Starting ResetSpentZerocoin: </source>
+        <translation>Iniciando ResetSpentZerocoin:</translation>
+    </message>
+    <message>
+        <source>No 'Pay To' address provided, creating local payment</source>
+        <translation>No se especificó drección 'Pagar A', por lo que asumimos un pago local</translation>
+    </message>
+    <message>
+        <source>Invalid BWK address</source>
+        <translation>Dirección Bulwark Inválida</translation>
+    </message>
+    <message>
+        <source>Invalid Send Amount</source>
+        <translation>Cantidad a Enviar Inválida</translation>
+    </message>
+    <message>
+        <source>Confirm additional Fees</source>
+        <translation>Confirmar comisiónes adicionales</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>¿Está seguro que desea enviar?&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source> to address </source>
+        <translation>a la dirección</translation>
+    </message>
+    <message>
+        <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
+        <translation>a una dirección local recién generada (no utilizada y, por lo tanto, anónima)&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>with Security Level </source>
+        <translation>con Nivel de Seguridad</translation>
+    </message>
+    <message>
         <source>Confirm send coins</source>
         <translation>Confirmar enviar monedas</translation>
     </message>
-    </context>
+    <message>
+        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
+        <translation>La versión 1 zBWK requiere un nivel de seguridad de 100 para gastar exitosamente.</translation>
+    </message>
+    <message>
+        <source>Failed to spend zBWK</source>
+        <translation>Error al enviar zBWK</translation>
+    </message>
+    <message>
+        <source>Failed to fetch mint associated with serial hash</source>
+        <translation>Error al buscar la asociación del acuñado con el hash serial</translation>
+    </message>
+    <message>
+        <source>Too much inputs (</source>
+        <translation>Demasiadas entradas (</translation>
+    </message>
+    <message>
+        <source>
+Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
+        <translation>
+O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o reduzca la cantidad a gastar.</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin failed with status = </source>
+        <translation>Gastar Zerocoin falló con estado =</translation>
+    </message>
+    <message numerus="yes">
+        <source>PrivacyDialog</source>
+        <comment>Enter an amount of BWK to convert to zBWK</comment>
+        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
+    </message>
+    <message>
+        <source>denomination: </source>
+        <translation>Denominación:</translation>
+    </message>
+    <message>
+        <source>serial: </source>
+        <translation>serial:</translation>
+    </message>
+    <message>
+        <source>Spend is 1 of : </source>
+        <translation>Gasto 1 de :</translation>
+    </message>
+    <message>
+        <source>value out: </source>
+        <translation>valor salida:</translation>
+    </message>
+    <message>
+        <source>address: </source>
+        <translation>dirección:</translation>
+    </message>
+    <message>
+        <source>Sending successful, return code: </source>
+        <translation>Envío correcto, código devuelto: </translation>
+    </message>
+    <message>
+        <source>txid: </source>
+        <translation>txid:</translation>
+    </message>
+    <message>
+        <source>fee: </source>
+        <translation>comisión:</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -2165,6 +3053,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>NETWORK</source>
         <translation>RED</translation>
+    </message>
+    <message>
+        <source>BLOOM</source>
+        <translation>BLOOM</translation>
     </message>
     <message>
         <source>UNKNOWN</source>
@@ -2274,7 +3166,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Block chain</source>
-        <translation>Cadena de bloques</translation>
+        <translation>Blockchain</translation>
     </message>
     <message>
         <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
@@ -2282,7 +3174,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Number of Masternodes</source>
-        <translation>Número de Nodos Maestros</translation>
+        <translation>Número de masternodes</translation>
     </message>
     <message>
         <source>Console</source>
@@ -2314,11 +3206,19 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Peers</source>
-        <translation>Nodos conectados</translation>
+        <translation>Peers</translation>
+    </message>
+    <message>
+        <source>Banned peers</source>
+        <translation>Peers proibidos</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
-        <translation>Seleccione un nodo conectado para ver información detallada.</translation>
+        <translation>Seleccione un peer conectado para ver información detallada.</translation>
+    </message>
+    <message>
+        <source>Whitelisted</source>
+        <translation>En lista blance</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -2335,14 +3235,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Services</source>
         <translation>Servicios</translation>
-    </message>
-    <message>
-        <source>Starting Height</source>
-        <translation>Altura de inicio</translation>
-    </message>
-    <message>
-        <source>Sync Height</source>
-        <translation>Altura de sincronía</translation>
     </message>
     <message>
         <source>Ban Score</source>
@@ -2377,8 +3269,48 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Reparar Monedero</translation>
     </message>
     <message>
+        <source>Delete local Blockchain Folders</source>
+        <translation>Eliminar directorios locales de Blockchain</translation>
+    </message>
+    <message>
         <source>Wallet In Use:</source>
         <translation>Monedero En Uso:</translation>
+    </message>
+    <message>
+        <source>Starting Block</source>
+        <translation>Bloque de empiezo</translation>
+    </message>
+    <message>
+        <source>Synced Headers</source>
+        <translation>Encabezados sincronizados</translation>
+    </message>
+    <message>
+        <source>Synced Blocks</source>
+        <translation>Bloques sincronizados</translation>
+    </message>
+    <message>
+        <source>The duration of a currently outstanding ping.</source>
+        <translation>La duración de un ping actualmente pendiente.</translation>
+    </message>
+    <message>
+        <source>Ping Wait</source>
+        <translation>Espera de Ping</translation>
+    </message>
+    <message>
+        <source>Time Offset</source>
+        <translation>Desplazamiento de tiempo</translation>
+    </message>
+    <message>
+        <source>Custom Backup Path:</source>
+        <translation>Ruta personalizada de la copia de seguridad:</translation>
+    </message>
+    <message>
+        <source>Custom zBWK Backup Path:</source>
+        <translation>Ruta personalizada de la copia de seguridad zBWK:</translation>
+    </message>
+    <message>
+        <source>Custom Backups Threshold:</source>
+        <translation>Límite de copias de seguridad personalizadas:</translation>
     </message>
     <message>
         <source>Salvage wallet</source>
@@ -2390,11 +3322,11 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Rescan blockchain files</source>
-        <translation>Reescanear ficheros de cadena de bloques</translation>
+        <translation>Reescanear ficheros del blockchain</translation>
     </message>
     <message>
         <source>Rescan the block chain for missing wallet transactions.</source>
-        <translation>Reescanear la cadena de bloques buscando transacciones que faltan en el monedero.</translation>
+        <translation>Reescanear el blockchain buscando transacciones que faltan en el monedero.</translation>
     </message>
     <message>
         <source>Recover transactions 1</source>
@@ -2402,7 +3334,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Recover transactions from blockchain (keep meta-data, e.g. account owner).</source>
-        <translation>Recuperar transacciones desde la cadena de bloques (mantener meta-datos, p.e. propietario de la cuenta,etc).</translation>
+        <translation>Recuperar transacciones del blockchain (mantener meta-datos, p.e. propietario de la cuenta,etc).</translation>
     </message>
     <message>
         <source>Recover transactions 2</source>
@@ -2410,7 +3342,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Recover transactions from blockchain (drop meta-data).</source>
-        <translation>Recuperar transacciones desde la cadena de bloques (ignorar meta-datos).</translation>
+        <translation>Recuperar transacciones del blockchain (ignorar meta-datos).</translation>
     </message>
     <message>
         <source>Upgrade wallet format</source>
@@ -2418,7 +3350,15 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Rebuild block chain index from current blk000??.dat files.</source>
-        <translation>Reconstruir el índice de la cadena de bloques desde los archivos blk000??.dat actuales.</translation>
+        <translation>Reconstruir el índice del blockchain desde los archivos blk000??.dat actuales.</translation>
+    </message>
+    <message>
+        <source>-resync:</source>
+        <translation>resincronizando:</translation>
+    </message>
+    <message>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
+        <translation>Eliminar todos los directorios locales del blockchain y sincronizar el monedero desde el principio</translation>
     </message>
     <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
@@ -2449,6 +3389,54 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Bienvenido a la consola RPC de Bulwark.</translation>
     </message>
     <message>
+        <source>Disconnect Node</source>
+        <translation>Desconectar nodo</translation>
+    </message>
+    <message>
+        <source>Ban Node for</source>
+        <translation>Prohibir nodo por </translation>
+    </message>
+    <message>
+        <source>1 hour</source>
+        <translation>1 hora</translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation>1 día</translation>
+    </message>
+    <message>
+        <source>1 week</source>
+        <translation>1 semana</translation>
+    </message>
+    <message>
+        <source>1 year</source>
+        <translation>1 año</translation>
+    </message>
+    <message>
+        <source>Unban Node</source>
+        <translation>  No prohibir nodo</translation>
+    </message>
+    <message>
+        <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Esto eliminará las carpetas de blockchain locales y el monedero sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Esto requiere bastante tiempo y la descarga una gran cantidad de datos.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Your transactions and funds will be visible again after the download has completed.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Sus transacciones y fondos serán visibles nuevamente después de que se haya completado la descarga.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Do you want to continue?.&lt;br /&gt;</source>
+        <translation>¿Desea continuar?.&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Confirm resync Blockchain</source>
+        <translation>Confirmar resincronización del Blockchain</translation>
+    </message>
+    <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
         <translation>Use las teclas arriba y abajo para navegar por la historia, y &lt;b&gt;Ctrl-L&lt;/b&gt; para limpiar la pantalla.</translation>
     </message>
@@ -2473,8 +3461,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>%1 GB</translation>
     </message>
     <message>
+        <source>(node id: %1)</source>
+        <translation>(node id: %1)</translation>
+    </message>
+    <message>
         <source>via %1</source>
-        <translation>via %1</translation>
+        <translation>vía %1</translation>
     </message>
     <message>
         <source>never</source>
@@ -2489,12 +3481,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Salientes</translation>
     </message>
     <message>
-        <source>Unknown</source>
-        <translation>Desconocido</translation>
+        <source>Yes</source>
+        <translation>Sí</translation>
     </message>
     <message>
-        <source>Fetching...</source>
-        <translation>Descargando...</translation>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Desconocido</translation>
     </message>
 </context>
 <context>
@@ -2518,6 +3514,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
         <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. Nota: El mensaje no se envía junto al pago por la red Bulwark.</translation>
+    </message>
+    <message>
+        <source>RECEIVE</source>
+        <translation>RECIBIR</translation>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
@@ -2677,6 +3677,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enviar Monedas</translation>
     </message>
     <message>
+        <source>SEND</source>
+        <translation>ENVIAR</translation>
+    </message>
+    <message>
         <source>Coin Control Features</source>
         <translation>Funciones de Control de Monedas</translation>
     </message>
@@ -2690,7 +3694,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -2718,7 +3722,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Con Comisión:</translation>
+        <translation>Después de Comisión:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -2745,8 +3749,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Tamaño de UTXO:</translation>
     </message>
     <message>
-        <source>0 BWK</source>
-        <translation>0 BWK</translation>
+        <source>0 Bulwark</source>
+        <translation>0 Bulwark</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2770,7 +3774,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>total at least</source>
-        <translation>total por lo menos</translation>
+        <translation>total al menos</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -2785,8 +3789,20 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>(La comisión automática no se ha inicializado todavía. Esto normalmente necesita unos cuantos bloques...)</translation>
     </message>
     <message>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
+    </message>
+    <message>
         <source>Confirmation time:</source>
         <translation>Tiempo de confirmación:</translation>
+    </message>
+    <message>
+        <source>Open Coin Control...</source>
+        <translation>Abrir Control de Monedas...</translation>
+    </message>
+    <message>
+        <source>Coins automatically selected</source>
+        <translation>Monedas seleccionadas automáticamente</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
@@ -2845,8 +3861,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Añadir Destinatario</translation>
     </message>
     <message>
-        <source>SwiftX</source>
-        <translation>SwiftX</translation>
+        <source>Anonymized BWK</source>
+        <translation>Bulwark anonimizados</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2893,24 +3909,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>La herramienta de división de bloques no funciona con varias direcciones. Inténtelo otra vez.</translation>
     </message>
     <message>
-        <source>using</source>
-        <translation>usando</translation>
-    </message>
-    <message>
-        <source>anonymous funds</source>
-        <translation>fondos anónimos</translation>
-    </message>
-    <message>
-        <source>Warning: Invalid Bulwark address</source>
+        <source>Warning: Invalid BWK address</source>
         <translation>Advertencia: Direcciones Bulwark inválidas</translation>
-    </message>
-    <message>
-        <source>any available funds (not recommended)</source>
-        <translation>cualquier fondo disponible (no recomendado)</translation>
-    </message>
-    <message>
-        <source>and SwiftX</source>
-        <translation>y SwiftX</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2936,9 +3936,17 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Una comisión %1 veces más alta que %2 por kB se considera exageradamente alta.</translation>
     </message>
+    <message numerus="yes">
+        <source>Estimated to begin confirmation within %n block(s).</source>
+        <translation><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform></translation>
+    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>La dirección de destino no es válida, por favor compruébelo de nuevo.</translation>
+    </message>
+    <message>
+        <source>using SwiftX</source>
+        <translation>usando o SwiftX</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -2975,6 +3983,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Error: The wallet was unlocked only to anonymize coins.</source>
         <translation>Error: El monedero se desbloqueó sólo para anonimizar monedas.</translation>
+    </message>
+    <message>
+        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <translation>Error: El monedero ya fue desbloqueado para anonimizar monedas. El desbloqueo total se ha cancelado.</translation>
     </message>
     <message>
         <source>Pay only the minimum fee of %1</source>
@@ -3218,7 +4230,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <name>SplashScreen</name>
     <message>
         <source>Bulwark Core</source>
-        <translation>Núcleo Bulwark</translation>
+        <translation>Bulwark Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3250,6 +4262,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
 </context>
 <context>
     <name>TransactionDesc</name>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -3257,18 +4273,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>conflicted</source>
         <translation>conflictivo (bloque huérfano?)</translation>
-    </message>
-    <message>
-        <source>%1/offline (verified via SwiftX)</source>
-        <translation>%1/offline (verificado via SwiftX)</translation>
-    </message>
-    <message>
-        <source>%1/confirmed (verified via SwiftX)</source>
-        <translation>%1/confirmado (verificado via SwiftX)</translation>
-    </message>
-    <message>
-        <source>%1 confirmations (verified via SwiftX)</source>
-        <translation>%1 confirmaciones (verificado via SwiftX)</translation>
     </message>
     <message>
         <source>%1/offline</source>
@@ -3283,24 +4287,36 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>%1 confirmaciones</translation>
     </message>
     <message>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1/offline (verificado via swifttx)</translation>
+    </message>
+    <message>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1/confirmado (verificado via swifttx)</translation>
+    </message>
+    <message>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1 confirmaciones (verificado via swifttx)</translation>
+    </message>
+    <message>
         <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (verificación SwiftX en marcha - %2 de %3 firmas)</translation>
+        <translation>%1/offline (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
         <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmado (verificación SwiftX en marcha - %2 de %3 firmas)</translation>
+        <translation>%1/confirmado (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
         <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmaciones (verificación SwiftX en marcha - %2 de %3 firmas)</translation>
+        <translation>%1 confirmaciones (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
         <source>%1/offline (SwiftX verification failed)</source>
-        <translation>%1/offline (falló la verificación SwiftX)</translation>
+        <translation>%1/offline (falló la verificación SwiftTX)</translation>
     </message>
     <message>
         <source>%1/confirmed (SwiftX verification failed)</source>
-        <translation>%1/confirmado (falló la verificación SwiftX)</translation>
+        <translation>%1/confirmado (falló la verificación SwiftTX)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3309,6 +4325,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, no ha sido correctamente transmitida todavía</translation>
+    </message>
+    <message numerus="yes">
+        <source>, broadcast through %n node(s)</source>
+        <translation><numerusform>, retransmitido a través de %n nodos</numerusform><numerusform>, retransmitido a través de %n nodos</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -3349,6 +4369,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
+    </message>
+    <message numerus="yes">
+        <source>matures in %n more block(s)</source>
+        <translation><numerusform>madura en %n bloques más</numerusform><numerusform>maduracíon en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -3448,6 +4472,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <source>Address</source>
         <translation>Dirección</translation>
     </message>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -3497,6 +4525,14 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Recibido por medio de Ofuscación</translation>
     </message>
     <message>
+        <source>Bulwark Stake</source>
+        <translation>Stake Bulwark</translation>
+    </message>
+    <message>
+        <source>zBWK Stake</source>
+        <translation>Stake zBWK</translation>
+    </message>
+    <message>
         <source>Obfuscation Denominate</source>
         <translation>Ofuscación Denominada</translation>
     </message>
@@ -3510,7 +4546,35 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Obfuscation Create Denominations</source>
-        <translation>Ofuscación Crea Denominaciones</translation>
+        <translation>Ofuscación Crea Billetes</translation>
+    </message>
+    <message>
+        <source>Converted Bulwark to zBWK</source>
+        <translation>Bulwark convertidos a zBWK</translation>
+    </message>
+    <message>
+        <source>Spent zBWK</source>
+        <translation>Gastar zBWK</translation>
+    </message>
+    <message>
+        <source>Received Bulwark from zBWK</source>
+        <translation>Bulwark recibidos desde zBWK </translation>
+    </message>
+    <message>
+        <source>Minted Change as zBWK from zBWK Spend</source>
+        <translation>Cambio de acuñación en zBWK al Gastar zBWK</translation>
+    </message>
+    <message>
+        <source>Converted zBWK to Bulwark</source>
+        <translation>zBWK convertidos a Bulwark</translation>
+    </message>
+    <message>
+        <source>Anonymous (zBWK Transaction)</source>
+        <translation>Anónimo (Transacción zBWK)</translation>
+    </message>
+    <message>
+        <source>Anonymous (zBWK Stake)</source>
+        <translation>Anónimo (Stake zBWK)</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -3523,10 +4587,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Payment to yourself</source>
         <translation>Pago a usted mismo</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Creación de moneda</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -3612,26 +4672,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enviado a</translation>
     </message>
     <message>
-        <source>Obfuscated</source>
-        <translation>Ofuscado</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>La Ofuscación Crea Entradas Colaterales</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>Ofuscación Crea Denominaciones</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>Ofuscación Denominada</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>Pago Colateral de Ofuscación</translation>
-    </message>
-    <message>
         <source>To yourself</source>
         <translation>A usted mismo</translation>
     </message>
@@ -3646,6 +4686,18 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Masternode Reward</source>
         <translation>Recompensa de Nodo Maestro</translation>
+    </message>
+    <message>
+        <source>Zerocoin Mint</source>
+        <translation>Creación de moneda Zerocoin</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend</source>
+        <translation>Gasto de Zerocoin</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend to Self</source>
+        <translation>Pago Zerocoin a tí mismo</translation>
     </message>
     <message>
         <source>Other</source>
@@ -3732,6 +4784,14 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Exportación Correcta</translation>
     </message>
     <message>
+        <source>Received Bulwark from zBWK</source>
+        <translation>Bulwark recibidos desde zBWK</translation>
+    </message>
+    <message>
+        <source>Zerocoin Spend, Change in zBWK</source>
+        <translation>Gastar Zerocoin, Cambio en zBWK</translation>
+    </message>
+    <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>El historial de transacción fue guardado satisfactoriamente a %1.</translation>
     </message>
@@ -3765,12 +4825,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enviar Monedas</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
-        <translation>SwiftX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 BWK.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
+        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 Bulwark.</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
+    <message>
+        <source>HISTORY</source>
+        <translation>HISTÓRIA</translation>
+    </message>
     <message>
         <source>Export</source>
         <translation>Exportar</translation>
@@ -3791,30 +4855,34 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <source>Wallet Data (*.dat)</source>
         <translation>Datos del Monedero (*.dat)</translation>
     </message>
-    <message>
-        <source>Backup Failed</source>
-        <translation>La copia de seguridad Falló</translation>
-    </message>
-    <message>
-        <source>There was an error trying to save the wallet data to %1.</source>
-        <translation>Hubo un error intentando guardar los datos del monedero a %1.</translation>
-    </message>
-    <message>
-        <source>Backup Successful</source>
-        <translation>Copia de Seguridad Satisfactoria</translation>
-    </message>
-    <message>
-        <source>The wallet data was successfully saved to %1.</source>
-        <translation>Los datos del monedero se guardaron correctamente a %1.</translation>
-    </message>
 </context>
 <context>
-    <name>ZBwkControlDialog</name>
+    <name>zBWKControlDialog</name>
+    <message>
+        <source>Select zBWK to Spend</source>
+        <translation>Selecciona zBWK para Gastar</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Cantidad</translation>
+    </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
-    </context>
+    <message>
+        <source>zBWK</source>
+        <translation>zBWK</translation>
+    </message>
+    <message>
+        <source>Select/Deselect All</source>
+        <translation>Seleccionar/Deseleccionar Todos</translation>
+    </message>
+    <message>
+        <source>Is Spendable</source>
+        <translation>Es Gastable</translation>
+    </message>
+</context>
 <context>
     <name>bulwark-core</name>
     <message>
@@ -3824,10 +4892,6 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Permitir conexiones JSON-RPC  desde la fuente especificada. Valido para &lt;ip&gt; sea una única IP (ej: 1.2.3.4), una red/mascara de red (ej: 1.2.3.4/255.255.255.0) o una red/CIDR (ej: 1.2.3.4/24). Esta opción puede ser especificada múltiples veces.</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
-        <translation>Un error ocurrió mientras se ajustaba la dirección RPC %s puerto %u para escucha en: %s</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
@@ -3840,6 +4904,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
         <translation>Escuchar únicamente a la tarjeta de red indicada para conexiones JSON-RPC. Use la notación [host]:puerto para IPv6. Esta opción puede ser especificada varias veces (por defecto: escuchar en todas las tarjetas de red)</translation>
+    </message>
+    <message>
+        <source>Calculated accumulator checkpoint is not what is recorded by block index</source>
+        <translation>El punto de chequeo del acumulador que hemos calculado no coincide con lo guardado en el índice de bloques</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
@@ -3862,20 +4930,28 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Borrar todas las transacciones del monedero y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar toda la funcionalidad especifica Bulwark (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, predeterminado: %u)</translation>
+        <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
+        <translation>Elimina todos registros de las transferencias y el acuñado de Zerocoin que se hayan registrado en la base de datos de Blockchain y vuelva a indexarlos (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Distribuido bajo licencia MIT software license, ver el archivo adjunto COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;</translation>
     </message>
     <message>
-        <source>Enable spork administration functionality with the appropriate private key.</source>
-        <translation>Activar la función de administración de sporks con la llave privada apropiada.</translation>
+        <source>Enable automatic wallet backups triggered after each zBWK minting (0-1, default: %u)</source>
+        <translation>Habilite copias de seguridad automáticas del monedero que se activan después de cada acuñación zBWK (0-1, predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Activar SwiftX, mostrar confirmaciones para transacciones bloqueadas (bool, predeterminado: %s)</translation>
+        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas Bulwark (0-1, predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for zBWK inputs (0-1, default: %u)</source>
+        <translation>Habilitar o deshabilitar la funcionalidad de staking para las entradas zBWK (0-1, predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Enable spork administration functionality with the appropriate private key.</source>
+        <translation>Activar la función de administración de sporks con la llave privada apropiada.</translation>
     </message>
     <message>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
@@ -3884,6 +4960,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Error: La escucha para conexiones entrantes falló (la escucha retorno error %s)</translation>
+    </message>
+    <message>
+        <source>Error: The transaction is larger than the maximum allowed transaction size!</source>
+        <translation>Error: ¡La transacción es más grande que el tamaño máximo de transacción permitido!</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -3902,12 +4982,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Ejecutar comando cuando el mejor bloque cambie (%s en cmd es reemplazado por el block hash)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Comisiones (en BWK/Kb) menores a esta son consideradas gratuitas para la propagación de la transacción (default: %s)</translation>
+        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Comisiones (en BWK/kB) menores a esta son consideradas gratuitas para la propagación de la transacción (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Comisiones (en BWK/Kb) menores a esta son consideradas gratuitas para la creación de la transacción (default: %s)</translation>
+        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Comisiones (en BWK/kB) menores a esta son consideradas gratuitas para la creación de la transacción (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -3918,16 +4998,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Se encontró salidas denominadas sin confirmar, se esperará hasta que se confirmen para continuar.</translation>
     </message>
     <message>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
-        <translation>Cuán exhaustiva es la verificación de bloque de -checkblocks (0-4, predeterminado: %u)</translation>
-    </message>
-    <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation>Si paytxfee no esta definido, incluir suficiente comisión de manera que la transacción se vuelva confirmada en promedio dentro de n bloques (predeterminado: %u)</translation>
     </message>
     <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
         <translation>En este modo -genproclimit controla cuantos bloques son generados inmediatamente.</translation>
+    </message>
+    <message>
+        <source>Insufficient or insufficient confirmed funds, you might need to wait a few minutes and try again.</source>
+        <translation>Fondos insuficientes o fondos confirmados insuficientes, es posible que tenga que esperar unos minutos y volver a intentarlo.</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
@@ -3939,7 +5019,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
-        <translation>Prioridad del registro de transacciones por kB cuando se esta minando bloques (predeterminado: %u)</translation>
+        <translation>Prioridad y comisión del registro de transacciones por kB cuando se esta minando bloques (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
@@ -3951,7 +5031,7 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     </message>
     <message>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
-        <translation>Comisión máxima total para usar en una única transacción de billetera, definirlo muy bajo puede abortar transacciones largas (predeterminado: %s)</translation>
+        <translation>Comisión máxima total para usar en una única transacción de monedero, definirlo muy bajo puede abortar transacciones largas (predeterminado: %s)</translation>
     </message>
     <message>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
@@ -3968,6 +5048,10 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation>Consultar por direcciones de pares vía búsqueda en DNS, si cantidad de direcciones esta bajo (predeterminado: 1 a menos que se utilice -connect)</translation>
+    </message>
+    <message>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <translation>Credenciales aleatorias para cada conexión proxy. Esto habilita el aislamiento del flujos de datos Tor (por defecto: %u)</translation>
     </message>
     <message>
         <source>Require high priority for relaying free or low-fee transactions (default:%u)</source>
@@ -3998,36 +5082,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Soportar filtrado de bloques y transacciones con filtros bloom (por defecto: %u)</translation>
     </message>
     <message>
-        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftX requiere entradas con hasta 6 confirmaciones, es posible que debas esperar unos minutos e intentar nuevamente.</translation>
-    </message>
-    <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation>Este producto incluye software desarrollado por el Proyecto OpenSSL para uso en OpenSSL Toolkit &lt;https://www.openssl.org/&gt; y software de cifrado escrito por Eric Young y software de UPnP escrito por Thomas Bernard.</translation>
-    </message>
-    <message>
-        <source>To use bulwarkd, or the -server option to bulwark-qt, you must set an rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=bulwarkrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
-</source>
-        <translation>Para usar bulwarkd, o la opción -server de bulwark-qt, debes definir un rpcpassword en el archivo de configuración:
-%s
-Es recomendado que uses la siguiente contraseña aleatoria:
-rpcuser=bulwark
-rpcrpcpassword=%s
-(No necesitas recordar esta contraseña)
-El nombre de usuario y contraseña NO DEBEN ser los mismos.
-Si el archivo no existe, crearlo con permisos de solo lectura para el propietario.
-También es recomendado definir alertnotify de manera que seas notificado de problemas;
-por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
-</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
@@ -4038,12 +5094,12 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Imposible localizar suficientes fondos denominados de Ofuscación para esta transacción.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 5000 BWK.</source>
-        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 5000 BWK.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
+        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 10000 Bulwark.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 5000 BWK.</source>
-        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 5000 BWK.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
+        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 10000 Bulwark.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4118,10 +5174,6 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Aceptar peticiones públicas REST (predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Acceptable ciphers (default: %s)</source>
-        <translation>Métodos de cifrado aceptables (predeterminado: %s)</translation>
-    </message>
-    <message>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Agregar un nodo a conectarse y intentar mantener abierta la conexión</translation>
     </message>
@@ -4142,8 +5194,16 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Intentar recuperar claves privadas desde un wallet.dat dañado</translation>
     </message>
     <message>
+        <source>Automatically create Tor hidden service (default: %d)</source>
+        <translation>Crear automáticamente servicio Tor oculto (por defecto: %d)</translation>
+    </message>
+    <message>
         <source>Block creation options:</source>
         <translation>Opciones de creación de bloque:</translation>
+    </message>
+    <message>
+        <source>Calculating missing accumulators...</source>
+        <translation>Calculando acumuladores pendientes...</translation>
     </message>
     <message>
         <source>Can't denominate: no compatible inputs left.</source>
@@ -4159,7 +5219,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
-        <translation>No se puede volver a una versión anterior de la billetera</translation>
+        <translation>No se puede volver a una versión anterior del monedero</translation>
     </message>
     <message>
         <source>Cannot resolve -bind address: '%s'</source>
@@ -4210,16 +5270,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Copyright (C) 2015-%i The Bulwark Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2017-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2017-%i The Bulwark Core Developers</translation>
-    </message>
-    <message>
         <source>Corrupted block database detected</source>
         <translation>Se detectó base de datos de bloques dañado</translation>
-    </message>
-    <message>
-        <source>Could not parse -rpcbind value %s as network address</source>
-        <translation>El valor %s de -rpcbind no pudo ser leído como una dirección de red.</translation>
     </message>
     <message>
         <source>Could not parse masternode.conf</source>
@@ -4228,6 +5280,14 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Debugging/Testing options:</source>
         <translation>Opciones de Depuración/Pruebas:</translation>
+    </message>
+    <message>
+        <source>Delete blockchain folders and resync from scratch</source>
+        <translation>Eliminar directorios de Blockchain y resincronizar desde el principio</translation>
+    </message>
+    <message>
+        <source>Disable OS notifications for incoming transactions (default: %u)</source>
+        <translation>Desactivar notificaciones del sistema para transacciones extrantes (por defecto: %u)</translation>
     </message>
     <message>
         <source>Disable safemode, override a real safe mode event (default: %u)</source>
@@ -4239,7 +5299,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Do not load the wallet and disable wallet RPC calls</source>
-        <translation>No cargar la billetera y desactivar las llamadas RPC de billetera</translation>
+        <translation>No cargar la monedero y desactivar las llamadas RPC del monedero</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>
@@ -4248,6 +5308,18 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Done loading</source>
         <translation>Realizando carga</translation>
+    </message>
+    <message>
+        <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
+        <translation>Habilitar creación automática de Zerocoin (0-1, por defecto: %u)</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Activar inclusión del hash de la transacción (fijada mediante SwiftTX) en &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Activar inclusión de la transacción en bruto (fijada mediante SwiftTX) en &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -4267,7 +5339,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Error initializing wallet database environment %s!</source>
-        <translation>Error al inicializar ambiente %s de base de datos de billetera!</translation>
+        <translation>Error al inicializar ambiente %s de base de datos del monedero!</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -4279,11 +5351,11 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Error al cargar wallet.dat: Billetera dañada</translation>
+        <translation>Error al cargar wallet.dat: Monedero dañado</translation>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Error al cargar wallet.dat: La Billetera requiere una nueva versión del Núcleo Bulwark</translation>
+        <translation>Error al cargar wallet.dat: El monedero requiere una nueva versión del Bulwark Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4319,11 +5391,15 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Error: Billetera bloqueada, imposible crear transacción!</translation>
+        <translation>Error: ¡Monedero bloqueado, imposible crear transacción!</translation>
     </message>
     <message>
         <source>Error: You already have pending entries in the Obfuscation pool</source>
         <translation>Error: Ya tienes entradas pendientes en el pool de Ofuscación</translation>
+    </message>
+    <message>
+        <source>Failed to calculate accumulator checkpoint</source>
+        <translation>Error al calcular el punto de control del acumulador</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
@@ -4402,16 +5478,16 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>La entrada no es válida.</translation>
     </message>
     <message>
+        <source>Insufficient funds</source>
+        <translation>Fondos insuficientes</translation>
+    </message>
+    <message>
         <source>Insufficient funds.</source>
         <translation>Fondos insuficientes.</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Dirección -onion inválida: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Dirección -proxy inválida: '%s'</translation>
+        <source>Invalid -onion address or hostname: '%s'</source>
+        <translation>Dirección o nombre de equipo -onion inválido: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
@@ -4438,6 +5514,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Importe inválido para -reservebalance=&lt;amount&gt;</translation>
     </message>
     <message>
+        <source>Invalid amount</source>
+        <translation>Cantidad incorrecta</translation>
+    </message>
+    <message>
         <source>Invalid masternodeprivkey. Please see documenation.</source>
         <translation>Valor de masternodeprivkey es inválido. Por favor ver la documentación.</translation>
     </message>
@@ -4458,8 +5538,96 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Script inválido detectado.</translation>
     </message>
     <message>
+        <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
+        <translation>Porcentaje de Zerocoin creadas automáticamente (10-100, por defecto: %u)</translation>
+    </message>
+    <message>
+        <source>Reindex the Bulwark and zBWK money supply statistics</source>
+        <translation>Reindexar as estatísticas de fornecimento de dinheiro Bulwark e zBWK</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin database...</source>
+        <translation>Reindexando la base de datos zerocoin...</translation>
+    </message>
+    <message>
+        <source>Reindexing zerocoin failed</source>
+        <translation>La reindexación zerocoin ha fallado</translation>
+    </message>
+    <message>
+        <source>Selected coins value is less than payment target</source>
+        <translation>El valor de las monedas seleccionadas es menor que el monto a pagar</translation>
+    </message>
+    <message>
+        <source>SwiftX options:</source>
+        <translation>Opciones SwiftX:</translation>
+    </message>
+    <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation>Esto es una versión pre-release de prueba - use bajo su propia responsabilidad - ¡No lo utilice para recompensa de participación ni aplicaciones de comercio!</translation>
+    </message>
+    <message>
+        <source> mints deleted
+</source>
+        <translation>creaciones de moneda borradas
+</translation>
+    </message>
+    <message>
+        <source> mints updated, </source>
+        <translation>creaciones de moneda actualizadas,</translation>
+    </message>
+    <message>
+        <source> unconfirmed transactions removed
+</source>
+        <translation>transacciones sin confirmar eliminadas
+</translation>
+    </message>
+    <message>
+        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar toda la funcionalidad especifica Bulwark (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Activar swifttx, mostrar confirmaciones para transacciones bloqueadas (bool, predeterminado: %s)</translation>
+    </message>
+    <message>
+        <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>¡La transacción fue rechazada! Esto puede ocurrir si alguna de sus monedas ya se gastó con anterioridad, por ejemplo, si estuvo usted usando una copia de su monedero wallet.dat y gastó allí monedas pero no las marcó como gastadas aquí.</translation>
+    </message>
+    <message>
+        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
+        <translation>Error: ¡Esta transacción requiere una tasa de al menos %s debido a la cantidad enviada, su complejidad, o el uso de fondos recibidos recientemente!</translation>
+    </message>
+    <message>
+        <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
+        <translation>Error: Se ha especificado un argumento no soportado -checklevel. El Checklevel debe ser siempre 4. </translation>
+    </message>
+    <message>
+        <source>Execute command when the best block changes and its size is over (%s in cmd is replaced by block hash, %d with the block size)</source>
+        <translation>Ejecute el comando cuando el mejor bloque cambie y su tamaño haya terminado (%s en cmd se reemplaza por el hash del bloque, %d con el tamaño de bloque)</translation>
+    </message>
+    <message>
+        <source>Failed to find coin set amongst held coins with less than maxNumber of Spends</source>
+        <translation>No se puede encontrar el conjunto de monedas necesarias entre las monedas disponibles con menos de maxNumber para poder gastarlas</translation>
+    </message>
+    <message>
+        <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
+        <translation>En casos excepcionales, un envío con más de 7 monedas excede el tamaño máximo de transacción permitidas, intente gastar 6 monedas o menos.</translation>
+    </message>
+    <message>
+        <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
+        <translation>Denominación preferida para acuñado automatico de Zerocoin (1/5/10/50/100/500/1000/5000), 0 para ninguna preferencia. predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any automatic zBWK backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
+        <translation>Especifique la ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad zBWK automática. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad. Si también se establece backuppath, se realizarán 4 copias de seguridad</translation>
+    </message>
+    <message>
+        <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
+        <translation>Especifique una ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad de monedero. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad generada.</translation>
+    </message>
+    <message>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftX requiere entradas con al menos 6 confirmaciones, es posible que deba esperar unos minutos e intente de nuevo.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -4468,6 +5636,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Attempt to force blockchain corruption recovery</source>
         <translation>Intentar forzar la recuperación de la cadena de bloques corrupta</translation>
+    </message>
+    <message>
+        <source>CoinSpend: Accumulator witness does not verify</source>
+        <translation>CoinSpend: El testigo del acumulador no verifica</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
@@ -4482,10 +5654,6 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Activar inclusión del hash del bloque en &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Activar inclusión del hash de la transacción (fijada mediante SwiftX) en &lt;address&gt;</translation>
-    </message>
-    <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
         <translation>Activar inclusión del hash de la transacción en &lt;address&gt;</translation>
     </message>
@@ -4494,16 +5662,44 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Activar inclusión del bloque en bruto en &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Activar inclusión de la transacción en bruto (fijada mediante SwiftX) en &lt;address&gt;</translation>
-    </message>
-    <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
         <translation>Activar inclusión de la transacción en bruto en &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable staking functionality (0-1, default: %u)</source>
         <translation>Activar funcionalidad de recompensa por participación (0-1, por defecto: %u)</translation>
+    </message>
+    <message>
+        <source>Error: A fatal internal error occurred, see debug.log for details</source>
+        <translation>Error: Un error interno fatal a ocurrido, ver debug.log para mas detalles</translation>
+    </message>
+    <message>
+        <source>Error: No valid utxo!</source>
+        <translation>Error: ¡utxo no válido!</translation>
+    </message>
+    <message>
+        <source>Failed to create mint</source>
+        <translation>Error al acuñar</translation>
+    </message>
+    <message>
+        <source>Failed to deserialize</source>
+        <translation>Error al deserializar</translation>
+    </message>
+    <message>
+        <source>Failed to find Zerocoins in wallet.dat</source>
+        <translation>Error al encontrar Zerocoins en wallet.dat</translation>
+    </message>
+    <message>
+        <source>Failed to select a zerocoin</source>
+        <translation>Error al seleccionar una zerocoin</translation>
+    </message>
+    <message>
+        <source>Failed to wipe zerocoinDB</source>
+        <translation>Error al borrar zerocoinDB</translation>
+    </message>
+    <message>
+        <source>Failed to write coin serial number into wallet</source>
+        <translation>Error al escribir el número de serie de la moneda en el monedero</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -4554,6 +5750,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Cargando cache de pagos de nodos maestros</translation>
     </message>
     <message>
+        <source>Loading sporks...</source>
+        <translation>Cargando sporks...</translation>
+    </message>
+    <message>
         <source>Loading wallet... (%3.2f %%)</source>
         <translation>Cargando monedero: (%3.2f %%)</translation>
     </message>
@@ -4562,12 +5762,20 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Cargando monedero...</translation>
     </message>
     <message>
+        <source>Location of the auth cookie (default: data dir)</source>
+        <translation>Ubicación de la cookie de autenticación (predeterminado: data dir)</translation>
+    </message>
+    <message>
         <source>Lock is already in place.</source>
         <translation>Bloqueo esta en su lugar.</translation>
     </message>
     <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Bloquear nodos maestros desde el archivo de configuración de nodo maestro (predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
+        <translation>Lookup(): Inválido -dirección proxy o nombre de host '%s'</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -4579,11 +5787,11 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Masternode queue is full.</source>
-        <translation>La cola del Nodo Maestro esta llena.</translation>
+        <translation>La cola del Masternode esta llena.</translation>
     </message>
     <message>
         <source>Masternode:</source>
-        <translation>Nodo maestro:</translation>
+        <translation>Masternode:</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -4594,12 +5802,20 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Máximo buffer de envío por conexión, &lt;n&gt;*1000 bytes (predeterminado: %u)</translation>
     </message>
     <message>
+        <source>Mint did not make it into blockchain</source>
+        <translation>El Acuñado no se realizó en blockchain</translation>
+    </message>
+    <message>
         <source>Missing input transaction information.</source>
         <translation>Información de transacciones de entrada perdidas.</translation>
     </message>
     <message>
         <source>Mixing in progress...</source>
         <translation>Mezcla en progreso...</translation>
+    </message>
+    <message>
+        <source>Need address because change is not exact</source>
+        <translation>Necesita dirección porque el cambio no es exacto</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
@@ -4619,7 +5835,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>No matching denominations found for mixing.</source>
-        <translation>No hay denominaciones emparejadas encontradas para mezclado.</translation>
+        <translation>No hemos encontrado billetes coincidentes para mezclado.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
@@ -4644,6 +5860,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
         <translation>Número de Copias de seguridad automáticas de monedero (predeterminado: 10)</translation>
+    </message>
+    <message>
+        <source>Number of custom location backups to retain (default: %d)</source>
+        <translation>Número de copias de seguridad personalizadas que se deben retener (predeterminado: %d)</translation>
     </message>
     <message>
         <source>Obfuscation is idle.</source>
@@ -4674,6 +5894,14 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Contraseña para conexiones JSON-RPC</translation>
     </message>
     <message>
+        <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
+        <translation>isValid(): Inválido -dirección proxy o nombre de host '%s'</translation>
+    </message>
+    <message>
+        <source>Preparing for resync...</source>
+        <translation>Preparando para resincronizar...</translation>
+    </message>
+    <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Agregar timestamp a la salida de depuración (predeterminado: %u)</translation>
     </message>
@@ -4682,16 +5910,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Mostrar versión y salir</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Opciones RPC SSL: (ver el Bitcoin Wiki para instrucciones de instalación SSL)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>Opciones del servidor RPC:</translation>
-    </message>
-    <message>
-        <source>RPC support for HTTP persistent connections (default: %d)</source>
-        <translation>Soporte RPC para conexiones persistentes HTTP (predeterminado %d)</translation>
     </message>
     <message>
         <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
@@ -4710,6 +5930,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Recibir y mostrar alertas de red P2P (predeterminado: %u)</translation>
     </message>
     <message>
+        <source>Reindex the accumulator database</source>
+        <translation>Reindexar la base de datos del acumulador</translation>
+    </message>
+    <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
         <translation>Transmitir y minar datos de transacciones enviadas (predeterminado: %u)</translation>
     </message>
@@ -4726,6 +5950,14 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Reescaneado...</translation>
     </message>
     <message>
+        <source>ResetMintZerocoin finished: </source>
+        <translation>ResetMintZerocoin finalizado:</translation>
+    </message>
+    <message>
+        <source>ResetSpentZerocoin finished: </source>
+        <translation>ResetSpentZerocoin finalizado:</translation>
+    </message>
+    <message>
         <source>Run a thread to flush wallet periodically (default: %u)</source>
         <translation>Ejecutar un hilo de ejecución para nivelar el monedero periódicamente (predeterminado: %u)</translation>
     </message>
@@ -4736,14 +5968,6 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Enviar transacciones como transacciones cero-comisión si es posible (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Server certificate file (default: %s)</source>
-        <translation>Archivo certificado del servidor (predeterminado: %s)</translation>
-    </message>
-    <message>
-        <source>Server private key (default: %s)</source>
-        <translation>Clave privada del servidor (predeterminado: %s)</translation>
     </message>
     <message>
         <source>Session not complete!</source>
@@ -4774,6 +5998,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Ajustar el tamaño mínimo de bloque en bytes (predeterminado: %u)</translation>
     </message>
     <message>
+        <source>Set the Maximum reorg depth (default: %u)</source>
+        <translation>Establezca la profundidad máxima de reorganización (valor predeterminado: %u)</translation>
+    </message>
+    <message>
         <source>Set the masternode private key</source>
         <translation>Ajustar la clave privada de masternode</translation>
     </message>
@@ -4783,7 +6011,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
-        <translation>Definir la bandera DB_PRIVATE en la db de la billetera del ambiente (predeterminado: %u)</translation>
+        <translation>Definir la bandera DB_PRIVATE en la db de la monedero del ambiente (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
@@ -4827,11 +6055,15 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Specify wallet file (within data directory)</source>
-        <translation>Especifique el archivo monedero (dentro del directorio de datos)</translation>
+        <translation>Especifique el archivo del monedero (dentro del directorio de datos)</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
         <translation>Especifique su propia dirección pública</translation>
+    </message>
+    <message>
+        <source>Spend Valid</source>
+        <translation>Gastar Válido</translation>
     </message>
     <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
@@ -4856,10 +6088,6 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
         <translation>Enviado a masternode, quedando en espera %s</translation>
-    </message>
-    <message>
-        <source>SwiftX options:</source>
-        <translation>Opciones SwiftX:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -4890,6 +6118,26 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Sincronizando con la red... </translation>
     </message>
     <message>
+        <source>Syncing zBWK wallet...</source>
+        <translation>Sincronizando el monedero zBWK...</translation>
+    </message>
+    <message>
+        <source>The coin spend has been used</source>
+        <translation>El gasto de moneda se ha usado</translation>
+    </message>
+    <message>
+        <source>The new spend coin transaction did not verify</source>
+        <translation>La nueva transacción de gasto de moneda no se verificó</translation>
+    </message>
+    <message>
+        <source>The selected mint coin is an invalid coin</source>
+        <translation>La moneda acuñada seleccionada es una moneda no válida</translation>
+    </message>
+    <message>
+        <source>The transaction did not verify</source>
+        <translation>La transacción no se verificó</translation>
+    </message>
+    <message>
         <source>This help message</source>
         <translation>Este mensaje de ayuda</translation>
     </message>
@@ -4908,6 +6156,26 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Limite para desconexión de peers de mal desempeño (predeterminado: %u)</translation>
+    </message>
+    <message>
+        <source>Too many spends needed</source>
+        <translation>Demasiados gastos necesarios</translation>
+    </message>
+    <message>
+        <source>Tor control port password (default: empty)</source>
+        <translation>Contraseña del puerto de control Tor (por defecto: vacío)</translation>
+    </message>
+    <message>
+        <source>Tor control port to use if onion listening enabled (default: %s)</source>
+        <translation>Puerto de control Tor a utilizar si está activada la escucha Onion (por defecto: %s)</translation>
+    </message>
+    <message>
+        <source>Transaction Created</source>
+        <translation>Transacción creada</translation>
+    </message>
+    <message>
+        <source>Transaction Mint Started</source>
+        <translation>Cotação de transação iniciada</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -4942,12 +6210,28 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Transmitiendo la transacción final.</translation>
     </message>
     <message>
+        <source>Try to spend with a higher security level to include more coins</source>
+        <translation>Intenta gastar con un nivel de seguridad más alto para incluir más monedas</translation>
+    </message>
+    <message>
+        <source>Trying to spend an already spent serial #, try again.</source>
+        <translation>Tentando gastar um número de série já gasto, tente novamente.</translation>
+    </message>
+    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Imposible enlazar %s en esta computadora (enlace retorna error %s)</translation>
     </message>
     <message>
+        <source>Unable to find transaction containing mint</source>
+        <translation>No se puede encontrar la transacción que contiene la acuñación</translation>
+    </message>
+    <message>
         <source>Unable to sign spork message, wrong key?</source>
         <translation>Imposible firmar el mensaje spork, ¿llave equivocada?</translation>
+    </message>
+    <message>
+        <source>Unable to start HTTP server. See debug log for details.</source>
+        <translation>No se puede iniciar el servidor HTTP. Ver registro de depuración para más detalles.</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
@@ -4959,11 +6243,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
-        <translation>Actualizar el monedero al formato ultimo</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Usar OpenSSL (https) para conexiones JSON-RPC</translation>
+        <translation>Actualizar el monedero al último formato</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
@@ -4974,12 +6254,20 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Usar UPnP para mapear el puerto de escucha (predeterminado: 1 cuando esta en escucha)</translation>
     </message>
     <message>
+        <source>Use a custom max chain reorganization depth (default: %u)</source>
+        <translation>Utilice una profundidad de reorganización de cadena máxima personalizada (valor predeterminado: %u)</translation>
+    </message>
+    <message>
         <source>Use the test network</source>
         <translation>Usar la red de prueba</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Nombre de usuario para conexiones JSON-RPC</translation>
+    </message>
+    <message>
+        <source>Value is below the smallest available denomination (= 1) of zBWK</source>
+        <translation>El valor está por debajo de la denominación más pequeña disponible (= 1) de zBWK</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -4994,8 +6282,12 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Verificando el monedero...</translation>
     </message>
     <message>
+        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
+        <translation>La versión 1 zBWK requiere un nivel de seguridad de 100 para gastar exitosamente.</translation>
+    </message>
+    <message>
         <source>Wallet %s resides outside data directory %s</source>
-        <translation>La billetera %s esta ubicada fuera del directorio de datos %s</translation>
+        <translation>El monedero %s esta ubicada fuera del directorio de datos %s</translation>
     </message>
     <message>
         <source>Wallet is locked.</source>
@@ -5003,7 +6295,7 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Monedero necesita ser reescrito: reinicie Bulwark Core para completar</translation>
+        <translation>El Monedero necesita ser reescrito: reinicie Bulwark Core para completar</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -5034,6 +6326,10 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Probando...</translation>
     </message>
     <message>
+        <source>You don't have enough Zerocoins in your wallet</source>
+        <translation>No tienes suficientes Zerocoins en tu monedero</translation>
+    </message>
+    <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Usted necesita reconstruir la base de datos usando -reindex para cambiar -txindex</translation>
     </message>
@@ -5054,12 +6350,16 @@ por ejemplo: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Opciones de notificación ZeroMQ:</translation>
     </message>
     <message>
+        <source>Zerocoin options:</source>
+        <translation>Opciones Zerocoin:</translation>
+    </message>
+    <message>
         <source>on startup</source>
         <translation>al inicio</translation>
     </message>
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
-        <translation>wallet.dat esta corrupto, guardado falló</translation>
+        <translation>wallet.dat esta corrupto, fallo al guardar</translation>
     </message>
 </context>
 </TS>
