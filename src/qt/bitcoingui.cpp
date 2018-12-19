@@ -380,7 +380,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle) {
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
 #endif // ENABLE_WALLET
 
-    proposalAction = new QAction(QIcon(":/icons/proposal"), tr("&Proposals"), this);
+    proposalAction = new QAction(QIcon(":/icons/proposal_m"), tr("&Proposals"), this);
     proposalAction->setStatusTip(tr("Browse proposals"));
     proposalAction->setToolTip(proposalAction->statusTip());
     proposalAction->setCheckable(true);
@@ -435,15 +435,15 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle) {
     openInfoAction->setStatusTip(tr("Show diagnostic information"));
     openRPCConsoleAction = new QAction(QIcon(":/icons/debugwindow"), tr("&Debug console"), this);
     openRPCConsoleAction->setStatusTip(tr("Open debugging console"));
-    openNetworkAction = new QAction(QIcon(":/icons/connect_4"), tr("&Network Monitor"), this);
+    openNetworkAction = new QAction(QIcon(":/icons/network"), tr("&Network Monitor"), this);
     openNetworkAction->setStatusTip(tr("Show network monitor"));
-    openPeersAction = new QAction(QIcon(":/icons/connect_4"), tr("&Peers list"), this);
+    openPeersAction = new QAction(QIcon(":/icons/peers"), tr("&Peers list"), this);
     openPeersAction->setStatusTip(tr("Show peers info"));
     openRepairAction = new QAction(QIcon(":/icons/options"), tr("Wallet &Repair"), this);
     openRepairAction->setStatusTip(tr("Show wallet repair options"));
-    openConfEditorAction = new QAction(QIcon(":/icons/edit"), tr("Open Wallet &Configuration File"), this);
+    openConfEditorAction = new QAction(QIcon(":/icons/confeditor"), tr("Open Wallet &Configuration File"), this);
     openConfEditorAction->setStatusTip(tr("Open configuration file"));
-    openMNConfEditorAction = new QAction(QIcon(":/icons/edit"), tr("Open &Masternode Configuration File"), this);
+    openMNConfEditorAction = new QAction(QIcon(":/icons/mnconfeditor"), tr("Open &Masternode Configuration File"), this);
     openMNConfEditorAction->setStatusTip(tr("Open Masternode configuration file"));
     showBackupsAction = new QAction(QIcon(":/icons/browse"), tr("Show Automatic &Backups"), this);
     showBackupsAction->setStatusTip(tr("Show automatically created wallet backups"));
@@ -453,14 +453,14 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle) {
     usedReceivingAddressesAction = new QAction(QIcon(":/icons/address-book"), tr("&Receiving addresses..."), this);
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
-    multisigCreateAction = new QAction(QIcon(":/icons/address-book"), tr("&Multisignature creation..."), this);
+    multisigCreateAction = new QAction(QIcon(":/icons/multisigcreate"), tr("&Multisignature creation..."), this);
     multisigCreateAction->setStatusTip(tr("Create a new multisignature address and add it to this wallet"));
-    multisigSpendAction = new QAction(QIcon(":/icons/send"), tr("&Multisignature spending..."), this);
+    multisigSpendAction = new QAction(QIcon(":/icons/multisigspend"), tr("&Multisignature spending..."), this);
     multisigSpendAction->setStatusTip(tr("Spend from a multisignature address"));
-    multisigSignAction = new QAction(QIcon(":/icons/editpaste"), tr("&Multisignature signing..."), this);
+    multisigSignAction = new QAction(QIcon(":/icons/multisigsign"), tr("&Multisignature signing..."), this);
     multisigSignAction->setStatusTip(tr("Sign with a multisignature address"));
 
-    openAction = new QAction(QIcon(":/icons/open"), tr("Open &URI..."), this);
+    openAction = new QAction(QIcon(":/icons/openuri"), tr("Open &URI..."), this);
     openAction->setStatusTip(tr("Open a Bulwark: URI or payment request"));
 
     openBlockExplorerAction = new QAction(QIcon(":/icons/explorer"), tr("&Blockchain explorer"), this);
