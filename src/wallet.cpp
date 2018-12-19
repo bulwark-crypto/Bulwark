@@ -241,9 +241,8 @@ bool CWallet::Unlock(const SecureString& strWalletPassphrase, bool anonymizeOnly
 
     strWalletPassphraseFinal = strWalletPassphrase;
 
-
     CCrypter crypter;
-    CKeyingMaterial vMasterKey;
+    CKeyingMaterial vMasterKey; 
 
     {
         LOCK(cs_wallet);
