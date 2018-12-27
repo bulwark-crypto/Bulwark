@@ -2616,11 +2616,13 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         // Process splits for staking.  We will cap each vout at the split
         // threshold with the last vout having the remainder.
         if (txNew.vout.size() >= 3) {
-            CAmount r = nCredit;
+            CAmount r = nCredit; // Remainder balance
+            // Loop over vout and set value to split threshold minus fee.
             for (int i = 1; i < txNew.vout.size(); i++) {
-                txNew.vout[i].nValue = thold - nMinFee;
+                txNew.vout[i].nValue = thold;
                 r -= txNew.vout[i].nValue;
             }
+            // If a remainder is found then attach to last vout.
             if (r > 0) {
                 txNew.vout[txNew.vout.size()-1].nValue += r - nMinFee;
             }
