@@ -157,7 +157,7 @@ UniValue masternode(const UniValue& params, bool fHelp) {
             "  start-alias  - Start single masternode by assigned alias configured in masternode.conf\n"
             "  start-<mode> - Start masternodes configured in masternode.conf (<mode>: 'all', 'missing', 'disabled')\n"
             "  status       - Print masternode status information\n"
-            "  list         - Print list of all known masternodes (see masternodelist for more info)\n"
+            "  list         - Print list of all known masternodes (see listmasternodes for more info)\n"
             "  list-conf    - Print masternode.conf in JSON format\n"
             "  winners      - Print list of masternode winners\n");
 
@@ -355,7 +355,7 @@ UniValue masternodeconnect(const UniValue& params, bool fHelp) {
             "1. \"address\"     (string, required) IP or net address to connect to\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("masternodeconnect", "\"192.168.0.6:51472\"") + HelpExampleRpc("masternodeconnect", "\"192.168.0.6:51472\""));
+            HelpExampleCli("masternodeconnect", "\"192.168.0.6:52543\"") + HelpExampleRpc("masternodeconnect", "\"192.168.0.6:52543\""));
 
     std::string strAddress = params[0].get_str();
 
