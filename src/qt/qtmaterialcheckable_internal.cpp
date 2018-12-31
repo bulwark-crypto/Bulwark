@@ -15,24 +15,20 @@ QtMaterialCheckableIcon::QtMaterialCheckableIcon(const QIcon &icon, QtMaterialCh
       m_color(Qt::black),
       m_icon(icon),
       m_iconSize(24),
-      m_opacity(1.0)
-{
+      m_opacity(1.0) {
     Q_ASSERT(parent);
 
     setAttribute(Qt::WA_TransparentForMouseEvents);
 }
 
-QtMaterialCheckableIcon::~QtMaterialCheckableIcon()
-{
+QtMaterialCheckableIcon::~QtMaterialCheckableIcon() {
 }
 
-QSize QtMaterialCheckableIcon::sizeHint() const
-{
+QSize QtMaterialCheckableIcon::sizeHint() const {
     return QSize(m_iconSize, m_iconSize);
 }
 
-void QtMaterialCheckableIcon::paintEvent(QPaintEvent *event)
-{
+void QtMaterialCheckableIcon::paintEvent(QPaintEvent *event) {
     Q_UNUSED(event)
 
     QPainter painter(this);
@@ -41,8 +37,7 @@ void QtMaterialCheckableIcon::paintEvent(QPaintEvent *event)
 
     QPixmap pixmap = icon().pixmap(24, 24);
 
-    if (!pixmap.isNull())
-    {
+    if (!pixmap.isNull()) {
         const qreal p = static_cast<qreal>((height())-m_iconSize)/2;
         const qreal z = m_iconSize/24;
 

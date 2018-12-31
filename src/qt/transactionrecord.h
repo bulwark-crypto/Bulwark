@@ -16,12 +16,10 @@ class CWalletTx;
 
 /** UI model for transaction status. The transaction status is the part of a transaction that will change over time.
  */
-class TransactionStatus
-{
-public:
+class TransactionStatus {
+  public:
     TransactionStatus() : countsForBalance(false), sortKey(""),
-                          matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1)
-    {
+        matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1) {
     }
 
     enum Status {
@@ -68,9 +66,8 @@ public:
 /** UI model for a transaction. A core transaction can be represented by multiple UI transactions if it has
     multiple outputs.
  */
-class TransactionRecord
-{
-public:
+class TransactionRecord {
+  public:
     enum Type {
         Other,
         Generated,
@@ -97,18 +94,15 @@ public:
     /** Number of confirmation recommended for accepting a transaction */
     static const int RecommendedNumConfirmations = 6;
 
-    TransactionRecord() : hash(), time(0), type(Other), address(""), debit(0), credit(0), idx(0)
-    {
+    TransactionRecord() : hash(), time(0), type(Other), address(""), debit(0), credit(0), idx(0) {
     }
 
     TransactionRecord(uint256 hash, qint64 time) : hash(hash), time(time), type(Other), address(""), debit(0),
-                                                   credit(0), idx(0)
-    {
+        credit(0), idx(0) {
     }
 
     TransactionRecord(uint256 hash, qint64 time, Type type, const std::string& address, const CAmount& debit, const CAmount& credit) : hash(hash), time(time), type(type), address(address), debit(debit), credit(credit),
-                                                                                                                                       idx(0)
-    {
+        idx(0) {
     }
 
     /** Decompose CWallet transaction to model transaction records.

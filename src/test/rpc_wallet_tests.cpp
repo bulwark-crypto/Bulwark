@@ -22,8 +22,7 @@ extern CWallet* pwalletMain;
 
 BOOST_AUTO_TEST_SUITE(rpc_wallet_tests)
 
-BOOST_AUTO_TEST_CASE(rpc_addmultisig)
-{
+BOOST_AUTO_TEST_CASE(rpc_addmultisig) {
     LOCK(pwalletMain->cs_wallet);
 
     rpcfn_type addmultisig = tableRPC["addmultisigaddress"]->actor;
@@ -61,8 +60,7 @@ BOOST_AUTO_TEST_CASE(rpc_addmultisig)
     BOOST_CHECK_THROW(addmultisig(createArgs(2, short2.c_str()), false), runtime_error);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_wallet)
-{
+BOOST_AUTO_TEST_CASE(rpc_wallet) {
     // Test RPC calls for various wallet statistics
     UniValue r;
 
@@ -73,7 +71,8 @@ BOOST_AUTO_TEST_CASE(rpc_wallet)
     UniValue retValue;
     string strAccount = "walletDemoAccount";
     string strPurpose = "receive";
-    BOOST_CHECK_NO_THROW({ /*Initialize Wallet with an account */
+    BOOST_CHECK_NO_THROW(  /*Initialize Wallet with an account */
+    {
         CWalletDB walletdb(pwalletMain->strWalletFile);
         CAccount account;
         account.vchPubKey = demoPubkey;

@@ -26,13 +26,12 @@ void DumpMasternodes();
 
 /** Access to the MN database (mncache.dat)
  */
-class CMasternodeDB
-{
-private:
+class CMasternodeDB {
+  private:
     boost::filesystem::path pathMN;
     std::string strMagicMessage;
 
-public:
+  public:
     enum ReadResult {
         Ok,
         FileError,
@@ -48,9 +47,8 @@ public:
     ReadResult Read(CMasternodeMan& mnodemanToLoad, bool fDryRun = false);
 };
 
-class CMasternodeMan
-{
-private:
+class CMasternodeMan {
+  private:
     // critical section to protect the inner data structures
     mutable CCriticalSection cs;
 
@@ -66,7 +64,7 @@ private:
     // which Masternodes we've asked for
     std::map<COutPoint, int64_t> mWeAskedForMasternodeListEntry;
 
-public:
+  public:
     // Keep track of all broadcasts I've seen
     map<uint256, CMasternodeBroadcast> mapSeenMasternodeBroadcast;
     // Keep track of all pings I've seen
@@ -78,8 +76,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         LOCK(cs);
         READWRITE(vMasternodes);
         READWRITE(mAskedUsForMasternodeList);
@@ -129,8 +126,7 @@ public:
     /// Get the current winner for this block
     CMasternode* GetCurrentMasterNode(int mod = 1, int64_t nBlockHeight = 0, int minProtocol = 0);
 
-    std::vector<CMasternode> GetFullMasternodeVector()
-    {
+    std::vector<CMasternode> GetFullMasternodeVector() {
         Check();
         return vMasternodes;
     }
@@ -144,7 +140,9 @@ public:
     void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 
     /// Return the number of (unique) Masternodes
-    int size() { return vMasternodes.size(); }
+    int size() {
+        return vMasternodes.size();
+    }
 
     int stable_size ();
 

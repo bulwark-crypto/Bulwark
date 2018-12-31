@@ -9,16 +9,14 @@
 
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class Bip38ToolDialog;
 }
 
-class Bip38ToolDialog : public QDialog
-{
+class Bip38ToolDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit Bip38ToolDialog(QWidget* parent);
     ~Bip38ToolDialog();
 
@@ -29,14 +27,14 @@ public:
     void showTab_ENC(bool fShow);
     void showTab_DEC(bool fShow);
 
-protected:
+  protected:
     bool eventFilter(QObject* object, QEvent* event);
 
-private:
+  private:
     Ui::Bip38ToolDialog* ui;
     WalletModel* model;
 
-private slots:
+  private slots:
     /* encrypt key */
     void on_addressBookButton_ENC_clicked();
     void on_pasteButton_ENC_clicked();

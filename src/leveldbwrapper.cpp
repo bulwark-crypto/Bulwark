@@ -13,8 +13,7 @@
 #include <leveldb/filter_policy.h>
 #include <memenv.h>
 
-void HandleError(const leveldb::Status& status) throw(leveldb_error)
-{
+void HandleError(const leveldb::Status& status) {
     if (status.ok())
         return;
     LogPrintf("%s\n", status.ToString());
@@ -27,8 +26,7 @@ void HandleError(const leveldb::Status& status) throw(leveldb_error)
     throw leveldb_error("Unknown database error");
 }
 
-static leveldb::Options GetOptions(size_t nCacheSize)
-{
+static leveldb::Options GetOptions(size_t nCacheSize) {
     leveldb::Options options;
     options.block_cache = leveldb::NewLRUCache(nCacheSize / 2);
     options.write_buffer_size = nCacheSize / 4; // up to two write buffers may be held in memory simultaneously
@@ -43,8 +41,7 @@ static leveldb::Options GetOptions(size_t nCacheSize)
     return options;
 }
 
-CLevelDBWrapper::CLevelDBWrapper(const boost::filesystem::path& path, size_t nCacheSize, bool fMemory, bool fWipe)
-{
+CLevelDBWrapper::CLevelDBWrapper(const boost::filesystem::path& path, size_t nCacheSize, bool fMemory, bool fWipe) {
     penv = NULL;
     readoptions.verify_checksums = true;
     iteroptions.verify_checksums = true;
@@ -68,8 +65,7 @@ CLevelDBWrapper::CLevelDBWrapper(const boost::filesystem::path& path, size_t nCa
     LogPrintf("Opened LevelDB successfully\n");
 }
 
-CLevelDBWrapper::~CLevelDBWrapper()
-{
+CLevelDBWrapper::~CLevelDBWrapper() {
     delete pdb;
     pdb = NULL;
     delete options.filter_policy;
@@ -80,8 +76,7 @@ CLevelDBWrapper::~CLevelDBWrapper()
     options.env = NULL;
 }
 
-bool CLevelDBWrapper::WriteBatch(CLevelDBBatch& batch, bool fSync) throw(leveldb_error)
-{
+bool CLevelDBWrapper::WriteBatch(CLevelDBBatch& batch, bool fSync) {
     leveldb::Status status = pdb->Write(fSync ? syncoptions : writeoptions, &batch.batch);
     HandleError(status);
     return true;

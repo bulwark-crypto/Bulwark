@@ -10,8 +10,7 @@ using namespace std;
 
 BOOST_AUTO_TEST_SUITE(timedata_tests)
 
-BOOST_AUTO_TEST_CASE(util_MedianFilter)
-{
+BOOST_AUTO_TEST_CASE(util_MedianFilter) {
     CMedianFilter<int> filter(5, 15);
 
     BOOST_CHECK_EQUAL(filter.median(), 15);

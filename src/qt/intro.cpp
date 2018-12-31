@@ -33,11 +33,10 @@ static const uint64_t BLOCK_CHAIN_SIZE = 1LL * GB_BYTES;
    still entering the path, and that always the most recently entered path is checked as
    soon as the thread becomes available.
 */
-class FreespaceChecker : public QObject
-{
+class FreespaceChecker : public QObject {
     Q_OBJECT
 
-public:
+  public:
     FreespaceChecker(Intro* intro);
 
     enum Status {
@@ -45,25 +44,23 @@ public:
         ST_ERROR
     };
 
-public slots:
+  public slots:
     void check();
 
-signals:
+  signals:
     void reply(int status, const QString& message, quint64 available);
 
-private:
+  private:
     Intro* intro;
 };
 
 #include "intro.moc"
 
-FreespaceChecker::FreespaceChecker(Intro* intro)
-{
+FreespaceChecker::FreespaceChecker(Intro* intro) {
     this->intro = intro;
 }
 
-void FreespaceChecker::check()
-{
+void FreespaceChecker::check() {
     namespace fs = boost::filesystem;
     QString dataDirStr = intro->getPathToCheck();
     fs::path dataDir = GUIUtil::qstringToBoostPath(dataDirStr);
@@ -105,31 +102,27 @@ void FreespaceChecker::check()
 }
 
 
-Intro::Intro(QWidget* parent) : QDialog(parent),
-                                ui(new Ui::Intro),
-                                thread(0),
-                                signalled(false)
-{
+Intro::Intro(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::Intro),
+    thread(0),
+    signalled(false) {
     ui->setupUi(this);
     ui->sizeWarningLabel->setText(ui->sizeWarningLabel->text().arg(BLOCK_CHAIN_SIZE / GB_BYTES));
     startThread();
 }
 
-Intro::~Intro()
-{
+Intro::~Intro() {
     delete ui;
     /* Ensure thread is finished before it is deleted */
     emit stopThread();
     thread->wait();
 }
 
-QString Intro::getDataDirectory()
-{
+QString Intro::getDataDirectory() {
     return ui->dataDirectory->text();
 }
 
-void Intro::setDataDirectory(const QString& dataDir)
-{
+void Intro::setDataDirectory(const QString& dataDir) {
     ui->dataDirectory->setText(dataDir);
     if (dataDir == getDefaultDataDirectory()) {
         ui->dataDirDefault->setChecked(true);
@@ -142,13 +135,11 @@ void Intro::setDataDirectory(const QString& dataDir)
     }
 }
 
-QString Intro::getDefaultDataDirectory()
-{
+QString Intro::getDefaultDataDirectory() {
     return GUIUtil::boostPathToQString(GetDefaultDataDir());
 }
 
-bool Intro::pickDataDirectory()
-{
+bool Intro::pickDataDirectory() {
     namespace fs = boost::filesystem;
     QSettings settings;
     /* If data directory provided on command line, no need to look at settings
@@ -169,7 +160,7 @@ bool Intro::pickDataDirectory()
         while (true) {
             if (!intro.exec()) {
                 /* Cancel clicked */
-		return false;
+                return false;
             }
             dataDir = intro.getDataDirectory();
             try {
@@ -177,7 +168,7 @@ bool Intro::pickDataDirectory()
                 break;
             } catch (fs::filesystem_error& e) {
                 QMessageBox::critical(0, tr("Bulwark Core"),
-                    tr("Error: Specified data directory \"%1\" cannot be created.").arg(dataDir));
+                                      tr("Error: Specified data directory \"%1\" cannot be created.").arg(dataDir));
                 /* fall through, back to choosing screen */
             }
         }
@@ -193,8 +184,7 @@ bool Intro::pickDataDirectory()
     return true;
 }
 
-void Intro::setStatus(int status, const QString& message, quint64 bytesAvailable)
-{
+void Intro::setStatus(int status, const QString& message, quint64 bytesAvailable) {
     switch (status) {
     case FreespaceChecker::ST_OK:
         ui->errorMessage->setText(message);
@@ -222,33 +212,28 @@ void Intro::setStatus(int status, const QString& message, quint64 bytesAvailable
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status != FreespaceChecker::ST_ERROR);
 }
 
-void Intro::on_dataDirectory_textChanged(const QString& dataDirStr)
-{
+void Intro::on_dataDirectory_textChanged(const QString& dataDirStr) {
     /* Disable OK button until check result comes in */
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     checkPath(dataDirStr);
 }
 
-void Intro::on_ellipsisButton_clicked()
-{
+void Intro::on_ellipsisButton_clicked() {
     QString dir = QDir::toNativeSeparators(QFileDialog::getExistingDirectory(0, "Choose data directory", ui->dataDirectory->text()));
     if (!dir.isEmpty())
         ui->dataDirectory->setText(dir);
 }
 
-void Intro::on_dataDirDefault_clicked()
-{
+void Intro::on_dataDirDefault_clicked() {
     setDataDirectory(getDefaultDataDirectory());
 }
 
-void Intro::on_dataDirCustom_clicked()
-{
+void Intro::on_dataDirCustom_clicked() {
     ui->dataDirectory->setEnabled(true);
     ui->ellipsisButton->setEnabled(true);
 }
 
-void Intro::startThread()
-{
+void Intro::startThread() {
     thread = new QThread(this);
     FreespaceChecker* executor = new FreespaceChecker(this);
     executor->moveToThread(thread);
@@ -262,8 +247,7 @@ void Intro::startThread()
     thread->start();
 }
 
-void Intro::checkPath(const QString& dataDir)
-{
+void Intro::checkPath(const QString& dataDir) {
     mutex.lock();
     pathToCheck = dataDir;
     if (!signalled) {
@@ -273,8 +257,7 @@ void Intro::checkPath(const QString& dataDir)
     mutex.unlock();
 }
 
-QString Intro::getPathToCheck()
-{
+QString Intro::getPathToCheck() {
     QString retval;
     mutex.lock();
     retval = pathToCheck;

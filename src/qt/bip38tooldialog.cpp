@@ -23,15 +23,12 @@
 
 #include <QClipboard>
 
-Bip38ToolDialog::Bip38ToolDialog(QWidget* parent) : QDialog(parent),
-                                                    ui(new Ui::Bip38ToolDialog),
-                                                    model(0)
-{
+Bip38ToolDialog::Bip38ToolDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::Bip38ToolDialog),
+    model(0) {
     ui->setupUi(this);
 
-#if QT_VERSION >= 0x040700
     ui->decryptedKeyOut_DEC->setPlaceholderText(tr("Click \"Decrypt Key\" to compute key"));
-#endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_ENC, this);
     ui->addressIn_ENC->installEventFilter(this);
@@ -42,44 +39,37 @@ Bip38ToolDialog::Bip38ToolDialog(QWidget* parent) : QDialog(parent),
     ui->decryptedKeyOut_DEC->installEventFilter(this);
 }
 
-Bip38ToolDialog::~Bip38ToolDialog()
-{
+Bip38ToolDialog::~Bip38ToolDialog() {
     delete ui;
 }
 
-void Bip38ToolDialog::setModel(WalletModel* model)
-{
+void Bip38ToolDialog::setModel(WalletModel* model) {
     this->model = model;
 }
 
-void Bip38ToolDialog::setAddress_ENC(const QString& address)
-{
+void Bip38ToolDialog::setAddress_ENC(const QString& address) {
     ui->addressIn_ENC->setText(address);
     ui->passphraseIn_ENC->setFocus();
 }
 
-void Bip38ToolDialog::setAddress_DEC(const QString& address)
-{
+void Bip38ToolDialog::setAddress_DEC(const QString& address) {
     ui->encryptedKeyIn_DEC->setText(address);
     ui->passphraseIn_DEC->setFocus();
 }
 
-void Bip38ToolDialog::showTab_ENC(bool fShow)
-{
+void Bip38ToolDialog::showTab_ENC(bool fShow) {
     ui->tabWidget->setCurrentIndex(0);
     if (fShow)
         this->show();
 }
 
-void Bip38ToolDialog::showTab_DEC(bool fShow)
-{
+void Bip38ToolDialog::showTab_DEC(bool fShow) {
     ui->tabWidget->setCurrentIndex(1);
     if (fShow)
         this->show();
 }
 
-void Bip38ToolDialog::on_addressBookButton_ENC_clicked()
-{
+void Bip38ToolDialog::on_addressBookButton_ENC_clicked() {
     if (model && model->getAddressTableModel()) {
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
         dlg.setModel(model->getAddressTableModel());
@@ -89,15 +79,13 @@ void Bip38ToolDialog::on_addressBookButton_ENC_clicked()
     }
 }
 
-void Bip38ToolDialog::on_pasteButton_ENC_clicked()
-{
+void Bip38ToolDialog::on_pasteButton_ENC_clicked() {
     setAddress_ENC(QApplication::clipboard()->text());
 }
 
 QString specialChar = "\"@!#$%&'()*+,-./:;<=>?`{|}~^_[]\\";
 QString validChar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" + specialChar;
-bool isValidPassphrase(QString strPassphrase, QString& strInvalid)
-{
+bool isValidPassphrase(QString strPassphrase, QString& strInvalid) {
     for (int i = 0; i < strPassphrase.size(); i++) {
         if (!validChar.contains(strPassphrase[i], Qt::CaseSensitive)) {
             if (QString("\"'").contains(strPassphrase[i]))
@@ -111,8 +99,7 @@ bool isValidPassphrase(QString strPassphrase, QString& strInvalid)
     return true;
 }
 
-void Bip38ToolDialog::on_encryptKeyButton_ENC_clicked()
-{
+void Bip38ToolDialog::on_encryptKeyButton_ENC_clicked() {
     if (!model)
         return;
 
@@ -157,13 +144,11 @@ void Bip38ToolDialog::on_encryptKeyButton_ENC_clicked()
     ui->encryptedKeyOut_ENC->setText(QString::fromStdString(encryptedKey));
 }
 
-void Bip38ToolDialog::on_copyKeyButton_ENC_clicked()
-{
+void Bip38ToolDialog::on_copyKeyButton_ENC_clicked() {
     GUIUtil::setClipboard(ui->encryptedKeyOut_ENC->text());
 }
 
-void Bip38ToolDialog::on_clearButton_ENC_clicked()
-{
+void Bip38ToolDialog::on_clearButton_ENC_clicked() {
     ui->addressIn_ENC->clear();
     ui->passphraseIn_ENC->clear();
     ui->encryptedKeyOut_ENC->clear();
@@ -173,8 +158,7 @@ void Bip38ToolDialog::on_clearButton_ENC_clicked()
 }
 
 CKey key;
-void Bip38ToolDialog::on_decryptKeyButton_DEC_clicked()
-{
+void Bip38ToolDialog::on_decryptKeyButton_DEC_clicked() {
     string strPassphrase = ui->passphraseIn_DEC->text().toStdString();
     string strKey = ui->encryptedKeyIn_DEC->text().toStdString();
 
@@ -194,8 +178,7 @@ void Bip38ToolDialog::on_decryptKeyButton_DEC_clicked()
     ui->addressOut_DEC->setText(QString::fromStdString(address.ToString()));
 }
 
-void Bip38ToolDialog::on_importAddressButton_DEC_clicked()
-{
+void Bip38ToolDialog::on_importAddressButton_DEC_clicked() {
     WalletModel::UnlockContext ctx(model->requestUnlock(true));
     if (!ctx.isValid()) {
         ui->statusLabel_DEC->setStyleSheet("QLabel { color: red; }");
@@ -244,8 +227,7 @@ void Bip38ToolDialog::on_importAddressButton_DEC_clicked()
     ui->statusLabel_DEC->setText(tr("Successfully Added Private Key To Wallet"));
 }
 
-void Bip38ToolDialog::on_clearButton_DEC_clicked()
-{
+void Bip38ToolDialog::on_clearButton_DEC_clicked() {
     ui->encryptedKeyIn_DEC->clear();
     ui->decryptedKeyOut_DEC->clear();
     ui->passphraseIn_DEC->clear();
@@ -254,8 +236,7 @@ void Bip38ToolDialog::on_clearButton_DEC_clicked()
     ui->encryptedKeyIn_DEC->setFocus();
 }
 
-bool Bip38ToolDialog::eventFilter(QObject* object, QEvent* event)
-{
+bool Bip38ToolDialog::eventFilter(QObject* object, QEvent* event) {
     if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::FocusIn) {
         if (ui->tabWidget->currentIndex() == 0) {
             /* Clear status message on focus change */

@@ -16,8 +16,7 @@
 
 #include <math.h>
 
-unsigned int static DarkGravityWave(const CBlockIndex* pindexLast) 
-{
+unsigned int static DarkGravityWave(const CBlockIndex* pindexLast) {
     /* current difficulty formula, bulwark - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex* BlockLastSolved = pindexLast;
     const CBlockIndex* BlockReading = pindexLast;
@@ -41,15 +40,15 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 
     if (pindexLast->nHeight >= nLastPOWBlock) {
         uint256 bnTargetLimit = (~uint256(0) >> 24);
-        
-        // For first 20 blocks return limit to avoid high 
+
+        // For first 20 blocks return limit to avoid high
         // difficulty from TH/s PoW.
         if (pindexLast->nHeight <= (nLastPOWBlock + 20)) {
             bnTargetLimit = (~uint256(0) >> 12);
             return bnTargetLimit.GetCompact();
         }
-        
-        int64_t nTargetSpacing = 90;
+
+        int64_t nTargetSpacing = Params().TargetSpacing(); // mainnet vs testnet
         int64_t nTargetTimespan = 60 * 30; //1800
 
         int64_t nActualSpacing = 0;
@@ -63,8 +62,8 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         // ppcoin: retarget with exponential moving toward target spacing
         uint256 bnNew;
         bnNew.SetCompact(pindexLast->nBits);
-
         int64_t nInterval = nTargetTimespan / nTargetSpacing;
+
         bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
         bnNew /= ((nInterval + 1) * nTargetSpacing);
 
@@ -119,16 +118,14 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         bnNew = Params().ProofOfWorkLimit();
     }
 
-    return bnNew.GetCompact();	
-}
-	
-unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
-{
-	return DarkGravityWave(pindexLast);
+    return bnNew.GetCompact();
 }
 
-bool CheckProofOfWork(uint256 hash, unsigned int nBits)
-{
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock) {
+    return DarkGravityWave(pindexLast);
+}
+
+bool CheckProofOfWork(uint256 hash, unsigned int nBits) {
     bool fNegative;
     bool fOverflow;
     uint256 bnTarget;
@@ -149,8 +146,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
     return true;
 }
 
-uint256 GetBlockProof(const CBlockIndex& block)
-{
+uint256 GetBlockProof(const CBlockIndex& block) {
     uint256 bnTarget;
     bool fNegative;
     bool fOverflow;

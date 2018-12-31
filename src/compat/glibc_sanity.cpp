@@ -35,7 +35,8 @@ bool sanity_test_memcpy()
 
     memcpy_int(memcpy_verify, memcpy_test, sizeof(memcpy_test));
 
-    for (unsigned int i = 0; i != T; ++i) {
+    for (unsigned int i = 0; i != T; ++i)
+    {
         if (memcpy_verify[i] != i)
             return false;
     }

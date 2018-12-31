@@ -16,75 +16,68 @@ class CSubNet;
 class CAddrMan;
 class CDataStream;
 
-typedef enum BanReason
-{
-	BanReasonUnknown = 0,
-	BanReasonNodeMisbehaving = 1,
-	BanReasonManuallyAdded = 2
+typedef enum BanReason {
+    BanReasonUnknown = 0,
+    BanReasonNodeMisbehaving = 1,
+    BanReasonManuallyAdded = 2
 } BanReason;
 
-class CBanEntry
-{
-public:
-	static const int CURRENT_VERSION = 1;
-	int nVersion;
-	int64_t nCreateTime;
-	int64_t nBanUntil;
-	uint8_t banReason;
+class CBanEntry {
+  public:
+    static const int CURRENT_VERSION = 1;
+    int nVersion;
+    int64_t nCreateTime;
+    int64_t nBanUntil;
+    uint8_t banReason;
 
-	CBanEntry()
-	{
-		SetNull();
-	}
+    CBanEntry() {
+        SetNull();
+    }
 
-	CBanEntry(int64_t nCreateTimeIn)
-	{
-		SetNull();
-		nCreateTime = nCreateTimeIn;
-	}
+    CBanEntry(int64_t nCreateTimeIn) {
+        SetNull();
+        nCreateTime = nCreateTimeIn;
+    }
 
-	ADD_SERIALIZE_METHODS;
+    ADD_SERIALIZE_METHODS;
 
-	template <typename Stream, typename Operation>
-	inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-		READWRITE(this->nVersion);
-		READWRITE(nCreateTime);
-		READWRITE(nBanUntil);
-		READWRITE(banReason);
-	}
+    template <typename Stream, typename Operation>
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+        READWRITE(this->nVersion);
+        READWRITE(nCreateTime);
+        READWRITE(nBanUntil);
+        READWRITE(banReason);
+    }
 
-	void SetNull()
-	{
-		nVersion = CBanEntry::CURRENT_VERSION;
-		nCreateTime = 0;
-		nBanUntil = 0;
-		banReason = BanReasonUnknown;
-	}
+    void SetNull() {
+        nVersion = CBanEntry::CURRENT_VERSION;
+        nCreateTime = 0;
+        nBanUntil = 0;
+        banReason = BanReasonUnknown;
+    }
 
-	std::string banReasonToString()
-	{
-		switch (banReason) {
-		case BanReasonNodeMisbehaving:
-			return "node misbehaving";
-		case BanReasonManuallyAdded:
-			return "manually added";
-		default:
-			return "unknown";
-		}
-	}
+    std::string banReasonToString() {
+        switch (banReason) {
+        case BanReasonNodeMisbehaving:
+            return "node misbehaving";
+        case BanReasonManuallyAdded:
+            return "manually added";
+        default:
+            return "unknown";
+        }
+    }
 };
 
 typedef std::map<CSubNet, CBanEntry> banmap_t;
 
 /** Access to the banlist database (banlist.dat) */
-class CBanDB
-{
-private:
-	fs::path pathBanlist;
-public:
-	CBanDB();
-	bool Write(const banmap_t& banSet);
-	bool Read(banmap_t& banSet);
+class CBanDB {
+  private:
+    fs::path pathBanlist;
+  public:
+    CBanDB();
+    bool Write(const banmap_t& banSet);
+    bool Read(banmap_t& banSet);
 };
 
 #endif // BITCOIN_ADDRDB_H

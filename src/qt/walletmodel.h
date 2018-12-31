@@ -35,9 +35,8 @@ QT_BEGIN_NAMESPACE
 class QTimer;
 QT_END_NAMESPACE
 
-class SendCoinsRecipient
-{
-public:
+class SendCoinsRecipient {
+  public:
     explicit SendCoinsRecipient() : amount(0), nVersion(SendCoinsRecipient::CURRENT_VERSION) {}
     explicit SendCoinsRecipient(const QString& addr, const QString& label, const CAmount& amount, const QString& message) : address(addr), label(label), amount(amount), message(message), nVersion(SendCoinsRecipient::CURRENT_VERSION) {}
 
@@ -65,8 +64,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         std::string sAddress = address.toStdString();
         std::string sLabel = label.toStdString();
         std::string sMessage = message.toStdString();
@@ -96,16 +94,14 @@ public:
 };
 
 /** Interface to Bitcoin wallet from Qt view code. */
-class WalletModel : public QObject
-{
+class WalletModel : public QObject {
     Q_OBJECT
 
-public:
+  public:
     explicit WalletModel(CWallet* wallet, OptionsModel* optionsModel, QObject* parent = 0);
     ~WalletModel();
 
-    enum StatusCode // Returned by sendCoins
-    {
+    enum StatusCode { // Returned by sendCoins
         OK,
         InvalidAmount,
         InvalidAddress,
@@ -174,23 +170,25 @@ public:
     bool backupWallet(const QString& filename);
 
     // RAI object for unlocking wallet, returned by requestUnlock()
-    class UnlockContext
-    {
-    public:
+    class UnlockContext {
+      public:
         UnlockContext(bool valid, bool relock);
         ~UnlockContext();
 
-        bool isValid() const { return valid; }
+        bool isValid() const {
+            return valid;
+        }
 
         // Copy operator and constructor transfer the context
-        UnlockContext(const UnlockContext& obj) { CopyFrom(obj); }
-        UnlockContext& operator=(const UnlockContext& rhs)
-        {
+        UnlockContext(const UnlockContext& obj) {
+            CopyFrom(obj);
+        }
+        UnlockContext& operator=(const UnlockContext& rhs) {
             CopyFrom(rhs);
             return *this;
         }
 
-    private:
+      private:
         bool valid;
         mutable bool relock; // mutable, as it can be set to false by copying
 
@@ -215,7 +213,7 @@ public:
     void loadReceiveRequests(std::vector<std::string>& vReceiveRequests);
     bool saveReceiveRequest(const std::string& sAddress, const int64_t nId, const std::string& sRequest);
 
-private:
+  private:
     CWallet* wallet;
     bool fHaveWatchOnly;
     bool fHaveMultiSig;
@@ -250,10 +248,10 @@ private:
     void unsubscribeFromCoreSignals();
     void checkBalanceChanged();
 
-signals:
+  signals:
     // Signal that balance in wallet changed
-    void balanceChanged(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
-                        const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance, 
+    void balanceChanged(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
+                        const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                         const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 
     // Encryption status of wallet changed
@@ -278,7 +276,7 @@ signals:
 
     // MultiSig address added
     void notifyMultiSigChanged(bool fHaveMultiSig);
-public slots:
+  public slots:
     /* Wallet status might have changed */
     void updateStatus();
     /* New transaction, or transaction changed status */

@@ -29,16 +29,15 @@
 #include <QVBoxLayout>
 
 /** "Help message" or "About" dialog box */
-HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent),
-                                                                    ui(new Ui::HelpMessageDialog)
-{
+HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::HelpMessageDialog) {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
 
     QString version = tr("Bulwark core") + " " + tr("version") + " " + QString::fromStdString(FormatFullVersion());
-/* On x86 add a bit specifier to the version so that users can distinguish between
-     * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
-     */
+    /* On x86 add a bit specifier to the version so that users can distinguish between
+         * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
+         */
 #if defined(__x86_64__)
     version += " " + tr("(%1-bit)").arg(64);
 #elif defined(__i386__)
@@ -97,8 +96,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         bold.setFontWeight(QFont::Bold);
 
         Q_FOREACH (const QString &line, coreOptions.split("\n")) {
-            if (line.startsWith("  -"))
-            {
+            if (line.startsWith("  -")) {
                 cursor.currentTable()->appendRows(1);
                 cursor.movePosition(QTextCursor::PreviousCell);
                 cursor.movePosition(QTextCursor::NextRow);
@@ -121,20 +119,17 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
     }
 }
 
-HelpMessageDialog::~HelpMessageDialog()
-{
+HelpMessageDialog::~HelpMessageDialog() {
     GUIUtil::saveWindowGeometry("nHelpMessageDialogWindow", this);
     delete ui;
 }
 
-void HelpMessageDialog::printToConsole()
-{
+void HelpMessageDialog::printToConsole() {
     // On other operating systems, the expected action is to print the message to the console.
     fprintf(stdout, "%s\n", qPrintable(text));
 }
 
-void HelpMessageDialog::showOrPrint()
-{
+void HelpMessageDialog::showOrPrint() {
 #if defined(WIN32)
     // On Windows, show a message box, as there is no stderr/stdout in windowed applications
     exec();
@@ -144,24 +139,21 @@ void HelpMessageDialog::showOrPrint()
 #endif
 }
 
-void HelpMessageDialog::on_okButton_accepted()
-{
+void HelpMessageDialog::on_okButton_accepted() {
     close();
 }
 
 
 /** "Shutdown" window */
-ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f)
-{
+ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f) {
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
-        tr("Bulwark Core is shutting down...") + "<br /><br />" +
-        tr("Do not shut down the computer until this window disappears.")));
+                          tr("Bulwark Core is shutting down...") + "<br /><br />" +
+                          tr("Do not shut down the computer until this window disappears.")));
     setLayout(layout);
 }
 
-void ShutdownWindow::showShutdownWindow(BitcoinGUI* window)
-{
+void ShutdownWindow::showShutdownWindow(BitcoinGUI* window) {
     if (!window)
         return;
 
@@ -178,7 +170,6 @@ void ShutdownWindow::showShutdownWindow(BitcoinGUI* window)
     shutdownWindow->show();
 }
 
-void ShutdownWindow::closeEvent(QCloseEvent* event)
-{
+void ShutdownWindow::closeEvent(QCloseEvent* event) {
     event->ignore();
 }

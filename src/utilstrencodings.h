@@ -69,11 +69,11 @@ bool ParseDouble(const std::string& str, double *out);
 
 
 template <typename T>
-std::string HexStr(const T itbegin, const T itend, bool fSpaces = false)
-{
+std::string HexStr(const T itbegin, const T itend, bool fSpaces = false) {
     std::string rv;
     static const char hexmap[16] = {'0', '1', '2', '3', '4', '5', '6', '7',
-        '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+                                    '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+                                   };
     rv.reserve((itend - itbegin) * 3);
     for (T it = itbegin; it < itend; ++it) {
         unsigned char val = (unsigned char)(*it);
@@ -87,14 +87,12 @@ std::string HexStr(const T itbegin, const T itend, bool fSpaces = false)
 }
 
 template <typename T>
-inline std::string HexStr(const T& vch, bool fSpaces = false)
-{
+inline std::string HexStr(const T& vch, bool fSpaces = false) {
     return HexStr(vch.begin(), vch.end(), fSpaces);
 }
 
 /** Reverse the endianess of a string */
-inline std::string ReverseEndianString(std::string in)
-{
+inline std::string ReverseEndianString(std::string in) {
     std::string out = "";
     unsigned int s = in.size();
     for (unsigned int i = 0; i < s; i += 2) {
@@ -116,8 +114,7 @@ std::string FormatParagraph(const std::string in, size_t width = 79, size_t inde
  * of first argument.
  */
 template <typename T>
-bool TimingResistantEqual(const T& a, const T& b)
-{
+bool TimingResistantEqual(const T& a, const T& b) {
     if (b.size() == 0) return a.size() == 0;
     size_t accumulator = a.size() ^ b.size();
     for (size_t i = 0; i < a.size(); i++)

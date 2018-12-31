@@ -13,8 +13,7 @@ QtMaterialRipple::QtMaterialRipple(const QPoint &center, QObject *parent)
       m_opacityAnimation(animate("opacity")),
       m_radius(0),
       m_opacity(0),
-      m_center(center)
-{
+      m_center(center) {
     init();
 }
 
@@ -27,17 +26,14 @@ QtMaterialRipple::QtMaterialRipple(const QPoint &center,
       m_opacityAnimation(animate("opacity")),
       m_radius(0),
       m_opacity(0),
-      m_center(center)
-{
+      m_center(center) {
     init();
 }
 
-QtMaterialRipple::~QtMaterialRipple()
-{
+QtMaterialRipple::~QtMaterialRipple() {
 }
 
-void QtMaterialRipple::setRadius(qreal radius)
-{
+void QtMaterialRipple::setRadius(qreal radius) {
     Q_ASSERT(m_overlay);
 
     if (m_radius == radius) {
@@ -47,8 +43,7 @@ void QtMaterialRipple::setRadius(qreal radius)
     m_overlay->update();
 }
 
-void QtMaterialRipple::setOpacity(qreal opacity)
-{
+void QtMaterialRipple::setOpacity(qreal opacity) {
     Q_ASSERT(m_overlay);
 
     if (m_opacity == opacity) {
@@ -58,8 +53,7 @@ void QtMaterialRipple::setOpacity(qreal opacity)
     m_overlay->update();
 }
 
-void QtMaterialRipple::setColor(const QColor &color)
-{
+void QtMaterialRipple::setColor(const QColor &color) {
     if (m_brush.color() == color) {
         return;
     }
@@ -70,8 +64,7 @@ void QtMaterialRipple::setColor(const QColor &color)
     }
 }
 
-void QtMaterialRipple::setBrush(const QBrush &brush)
-{
+void QtMaterialRipple::setBrush(const QBrush &brush) {
     m_brush = brush;
 
     if (m_overlay) {
@@ -79,8 +72,7 @@ void QtMaterialRipple::setBrush(const QBrush &brush)
     }
 }
 
-void QtMaterialRipple::destroy()
-{
+void QtMaterialRipple::destroy() {
     Q_ASSERT(m_overlay);
 
     m_overlay->removeRipple(this);
@@ -90,9 +82,8 @@ void QtMaterialRipple::destroy()
  *  \internal
  */
 QPropertyAnimation *QtMaterialRipple::animate(const QByteArray &property,
-                                              const QEasingCurve &easing,
-                                              int duration)
-{
+        const QEasingCurve &easing,
+        int duration) {
     QPropertyAnimation *animation = new QPropertyAnimation;
     animation->setTargetObject(this);
     animation->setPropertyName(property);
@@ -105,8 +96,7 @@ QPropertyAnimation *QtMaterialRipple::animate(const QByteArray &property,
 /*!
  *  \internal
  */
-void QtMaterialRipple::init()
-{
+void QtMaterialRipple::init() {
     setOpacityStartValue(0.5);
     setOpacityEndValue(0);
     setRadiusStartValue(0);

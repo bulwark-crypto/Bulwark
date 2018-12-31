@@ -24,9 +24,8 @@
 class CBlockIndex;
 class CNetAddr;
 
-class AcceptedConnection
-{
-public:
+class AcceptedConnection {
+  public:
     virtual ~AcceptedConnection() {}
 
     virtual std::iostream& stream() = 0;
@@ -71,7 +70,7 @@ void RPCTypeCheck(const UniValue& params,
  * Use like: RPCTypeCheckObj(object, boost::assign::map_list_of("name", str_type)("value", int_type));
  */
 void RPCTypeCheckObj(const UniValue& o,
-                  const std::map<std::string, UniValue::VType>& typesExpected, bool fAllowNull=false);
+                     const std::map<std::string, UniValue::VType>& typesExpected, bool fAllowNull=false);
 
 /**
  * Run func nSeconds from now. Uses boost deadline timers.
@@ -84,9 +83,8 @@ extern CNetAddr BoostAsioToCNetAddr(boost::asio::ip::address address);
 
 typedef UniValue(*rpcfn_type)(const UniValue& params, bool fHelp);
 
-class CRPCCommand
-{
-public:
+class CRPCCommand {
+  public:
     std::string category;
     std::string name;
     rpcfn_type actor;
@@ -98,12 +96,11 @@ public:
 /**
  * Bulwark RPC command dispatcher.
  */
-class CRPCTable
-{
-private:
+class CRPCTable {
+  private:
     std::map<std::string, const CRPCCommand*> mapCommands;
 
-public:
+  public:
     CRPCTable();
     const CRPCCommand* operator[](std::string name) const;
     std::string help(std::string name) const;
@@ -298,8 +295,8 @@ extern UniValue getstakingstatus(const UniValue& params, bool fHelp);
 
 // in rest.cpp
 extern bool HTTPReq_REST(AcceptedConnection* conn,
-    std::string& strURI,
-    std::map<std::string, std::string>& mapHeaders,
-    bool fRun);
+                         std::string& strURI,
+                         std::map<std::string, std::string>& mapHeaders,
+                         bool fRun);
 
 #endif // BITCOIN_RPCSERVER_H

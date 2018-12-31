@@ -17,14 +17,18 @@
 class CTransaction;
 
 /** An outpoint - a combination of a transaction hash and an index n into its vout */
-class COutPoint
-{
-public:
+class COutPoint {
+  public:
     uint256 hash;
     uint32_t n;
 
-    COutPoint() { SetNull(); }
-    COutPoint(uint256 hashIn, uint32_t nIn) { hash = hashIn; n = nIn; }
+    COutPoint() {
+        SetNull();
+    }
+    COutPoint(uint256 hashIn, uint32_t nIn) {
+        hash = hashIn;
+        n = nIn;
+    }
 
     ADD_SERIALIZE_METHODS;
 
@@ -33,22 +37,24 @@ public:
         READWRITE(FLATDATA(*this));
     }
 
-    void SetNull() { hash.SetNull(); n = (uint32_t) -1; }
-    bool IsNull() const { return (hash.IsNull() && n == (uint32_t) -1); }
+    void SetNull() {
+        hash.SetNull();
+        n = (uint32_t) -1;
+    }
+    bool IsNull() const {
+        return (hash.IsNull() && n == (uint32_t) -1);
+    }
     bool IsMasternodeReward(const CTransaction* tx) const;
 
-    friend bool operator<(const COutPoint& a, const COutPoint& b)
-    {
+    friend bool operator<(const COutPoint& a, const COutPoint& b) {
         return (a.hash < b.hash || (a.hash == b.hash && a.n < b.n));
     }
 
-    friend bool operator==(const COutPoint& a, const COutPoint& b)
-    {
+    friend bool operator==(const COutPoint& a, const COutPoint& b) {
         return (a.hash == b.hash && a.n == b.n);
     }
 
-    friend bool operator!=(const COutPoint& a, const COutPoint& b)
-    {
+    friend bool operator!=(const COutPoint& a, const COutPoint& b) {
         return !(a == b);
     }
 
@@ -63,16 +69,14 @@ public:
  * transaction's output that it claims and a signature that matches the
  * output's public key.
  */
-class CTxIn
-{
-public:
+class CTxIn {
+  public:
     COutPoint prevout;
     CScript scriptSig;
     uint32_t nSequence;
     CScript prevPubKey;
 
-    CTxIn()
-    {
+    CTxIn() {
         nSequence = std::numeric_limits<unsigned int>::max();
     }
 
@@ -88,20 +92,17 @@ public:
         READWRITE(nSequence);
     }
 
-    bool IsFinal() const
-    {
+    bool IsFinal() const {
         return (nSequence == std::numeric_limits<uint32_t>::max());
     }
 
-    friend bool operator==(const CTxIn& a, const CTxIn& b)
-    {
+    friend bool operator==(const CTxIn& a, const CTxIn& b) {
         return (a.prevout   == b.prevout &&
                 a.scriptSig == b.scriptSig &&
                 a.nSequence == b.nSequence);
     }
 
-    friend bool operator!=(const CTxIn& a, const CTxIn& b)
-    {
+    friend bool operator!=(const CTxIn& a, const CTxIn& b) {
         return !(a == b);
     }
 
@@ -111,15 +112,13 @@ public:
 /** An output of a transaction.  It contains the public key that the next input
  * must be able to sign with to claim it.
  */
-class CTxOut
-{
-public:
+class CTxOut {
+  public:
     CAmount nValue;
     CScript scriptPubKey;
     int nRounds;
 
-    CTxOut()
-    {
+    CTxOut() {
         SetNull();
     }
 
@@ -133,33 +132,28 @@ public:
         READWRITE(scriptPubKey);
     }
 
-    void SetNull()
-    {
+    void SetNull() {
         nValue = -1;
         scriptPubKey.clear();
         nRounds = -10; // an initial value, should be no way to get this by calculations
     }
 
-    bool IsNull() const
-    {
+    bool IsNull() const {
         return (nValue == -1);
     }
 
-    void SetEmpty()
-    {
+    void SetEmpty() {
         nValue = 0;
         scriptPubKey.clear();
     }
 
-    bool IsEmpty() const
-    {
+    bool IsEmpty() const {
         return (nValue == 0 && scriptPubKey.empty());
     }
 
     uint256 GetHash() const;
 
-    bool IsDust(CFeeRate minRelayTxFee) const
-    {
+    bool IsDust(CFeeRate minRelayTxFee) const {
         // "Dust" is defined in terms of CTransaction::minRelayTxFee, which has units ubwk-per-kilobyte.
         // If you'd pay more than 1/3 in fees to spend something, then we consider it dust.
         // A typical txout is 34 bytes big, and will need a CTxIn of at least 148 bytes to spend
@@ -171,20 +165,17 @@ public:
         return (nValue < 3*minRelayTxFee.GetFee(nSize));
     }
 
-    bool IsZerocoinMint() const
-    {
+    bool IsZerocoinMint() const {
         return !scriptPubKey.empty() && scriptPubKey.IsZerocoinMint();
     }
 
-    friend bool operator==(const CTxOut& a, const CTxOut& b)
-    {
+    friend bool operator==(const CTxOut& a, const CTxOut& b) {
         return (a.nValue       == b.nValue &&
                 a.scriptPubKey == b.scriptPubKey &&
                 a.nRounds      == b.nRounds);
     }
 
-    friend bool operator!=(const CTxOut& a, const CTxOut& b)
-    {
+    friend bool operator!=(const CTxOut& a, const CTxOut& b) {
         return !(a == b);
     }
 
@@ -196,14 +187,13 @@ struct CMutableTransaction;
 /** The basic transaction that is broadcasted on the network and contained in
  * blocks.  A transaction can contain multiple inputs and outputs.
  */
-class CTransaction
-{
-private:
+class CTransaction {
+  private:
     /** Memory only. */
     const uint256 hash;
     void UpdateHash() const;
 
-public:
+  public:
     static const int32_t CURRENT_VERSION=1;
 
     // The local variables are made const to prevent unintended modification
@@ -257,13 +247,11 @@ public:
     // Compute modified tx size for priority calculation (optionally given tx size)
     unsigned int CalculateModifiedSize(unsigned int nTxSize=0) const;
 
-    bool IsZerocoinSpend() const
-    {
+    bool IsZerocoinSpend() const {
         return (vin.size() > 0 && vin[0].prevout.IsNull() && vin[0].scriptSig[0] == OP_ZEROCOINSPEND);
     }
 
-    bool IsZerocoinMint() const
-    {
+    bool IsZerocoinMint() const {
         for(const CTxOut& txout : vout) {
             if (txout.scriptPubKey.IsZerocoinMint())
                 return true;
@@ -271,8 +259,7 @@ public:
         return false;
     }
 
-    bool ContainsZerocoins() const
-    {
+    bool ContainsZerocoins() const {
         return IsZerocoinSpend() || IsZerocoinMint();
     }
 
@@ -283,24 +270,20 @@ public:
     bool UsesUTXO(const COutPoint out);
     std::list<COutPoint> GetOutPoints() const;
 
-    bool IsCoinBase() const
-    {
+    bool IsCoinBase() const {
         return (vin.size() == 1 && vin[0].prevout.IsNull() && !ContainsZerocoins());
     }
 
-    bool IsCoinStake() const
-    {
+    bool IsCoinStake() const {
         // ppcoin: the coin stake transaction is marked with the first output empty
         return (vin.size() > 0 && (!vin[0].prevout.IsNull()) && vout.size() >= 2 && vout[0].IsEmpty());
     }
 
-    friend bool operator==(const CTransaction& a, const CTransaction& b)
-    {
+    friend bool operator==(const CTransaction& a, const CTransaction& b) {
         return a.hash == b.hash;
     }
 
-    friend bool operator!=(const CTransaction& a, const CTransaction& b)
-    {
+    friend bool operator!=(const CTransaction& a, const CTransaction& b) {
         return a.hash != b.hash;
     }
 
@@ -310,8 +293,7 @@ public:
 };
 
 /** A mutable version of CTransaction. */
-struct CMutableTransaction
-{
+struct CMutableTransaction {
     int32_t nVersion;
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
@@ -338,13 +320,11 @@ struct CMutableTransaction
 
     std::string ToString() const;
 
-    friend bool operator==(const CMutableTransaction& a, const CMutableTransaction& b)
-    {
+    friend bool operator==(const CMutableTransaction& a, const CMutableTransaction& b) {
         return a.GetHash() == b.GetHash();
     }
 
-    friend bool operator!=(const CMutableTransaction& a, const CMutableTransaction& b)
-    {
+    friend bool operator!=(const CMutableTransaction& a, const CMutableTransaction& b) {
         return !(a == b);
     }
 

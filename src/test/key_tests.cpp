@@ -31,8 +31,7 @@ static const string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");
 
 
 #ifdef KEY_TESTS_DUMPINFO
-void dumpKeyInfo(uint256 privkey)
-{
+void dumpKeyInfo(uint256 privkey) {
     CKey key;
     key.resize(32);
     memcpy(&secret[0], &privkey, 32);
@@ -41,8 +40,7 @@ void dumpKeyInfo(uint256 privkey)
     memcpy(&sec[0], &secret[0], 32);
     printf("  * secret (hex): %s\n", HexStr(sec).c_str());
 
-    for (int nCompressed=0; nCompressed<2; nCompressed++)
-    {
+    for (int nCompressed=0; nCompressed<2; nCompressed++) {
         bool fCompressed = nCompressed == 1;
         printf("  * %s:\n", fCompressed ? "compressed" : "uncompressed");
         CBitcoinSecret bsecret;
@@ -60,8 +58,7 @@ void dumpKeyInfo(uint256 privkey)
 
 BOOST_AUTO_TEST_SUITE(key_tests)
 
-BOOST_AUTO_TEST_CASE(key_test1)
-{
+BOOST_AUTO_TEST_CASE(key_test1) {
     CBitcoinSecret bsecret1, bsecret2, bsecret1C, bsecret2C, baddress1;
     BOOST_CHECK( bsecret1.SetString (strSecret1));
     BOOST_CHECK( bsecret2.SetString (strSecret2));
@@ -108,8 +105,7 @@ BOOST_AUTO_TEST_CASE(key_test1)
     BOOST_CHECK(addr1C.Get() == CTxDestination(pubkey1C.GetID()));
     BOOST_CHECK(addr2C.Get() == CTxDestination(pubkey2C.GetID()));
 
-    for (int n=0; n<16; n++)
-    {
+    for (int n=0; n<16; n++) {
         string strMsg = strprintf("Very secret message %i: 11", n);
         uint256 hashMsg = Hash(strMsg.begin(), strMsg.end());
 

@@ -23,8 +23,7 @@ using namespace std;
 using namespace boost;
 using namespace boost::asio;
 
-std::string HelpMessageCli()
-{
+std::string HelpMessageCli() {
     string strUsage;
     strUsage += HelpMessageGroup(_("Options:"));
     strUsage += HelpMessageOpt("-?", _("This help message"));
@@ -32,7 +31,7 @@ std::string HelpMessageCli()
     strUsage += HelpMessageOpt("-datadir=<dir>", _("Specify data directory"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
     strUsage += HelpMessageOpt("-regtest", _("Enter regression test mode, which uses a special chain in which blocks can be "
-                                             "solved instantly. This is intended for regression testing tools and app development."));
+                               "solved instantly. This is intended for regression testing tools and app development."));
     strUsage += HelpMessageOpt("-rpcconnect=<ip>", strprintf(_("Send commands to node running on <ip> (default: %s)"), "127.0.0.1"));
     strUsage += HelpMessageOpt("-rpcport=<port>", strprintf(_("Connect to JSON-RPC on <port> (default: %u or testnet: %u)"), 52543, 42132));
     strUsage += HelpMessageOpt("-rpcwait", _("Wait for RPC server to start"));
@@ -54,16 +53,13 @@ std::string HelpMessageCli()
 // Exception thrown on connection error.  This error is used to determine
 // when to wait if -rpcwait is given.
 //
-class CConnectionFailed : public std::runtime_error
-{
-public:
-    explicit inline CConnectionFailed(const std::string& msg) : std::runtime_error(msg)
-    {
+class CConnectionFailed : public std::runtime_error {
+  public:
+    explicit inline CConnectionFailed(const std::string& msg) : std::runtime_error(msg) {
     }
 };
 
-static bool AppInitRPC(int argc, char* argv[])
-{
+static bool AppInitRPC(int argc, char* argv[]) {
     //
     // Parameters
     //
@@ -100,8 +96,7 @@ static bool AppInitRPC(int argc, char* argv[])
     return true;
 }
 
-UniValue CallRPC(const string& strMethod, const UniValue& params)
-{
+UniValue CallRPC(const string& strMethod, const UniValue& params) {
     // Connect to localhost
     bool fUseSSL = GetBoolArg("-rpcssl", false);
     asio::io_service io_service;
@@ -121,9 +116,9 @@ UniValue CallRPC(const string& strMethod, const UniValue& params)
         // Try fall back to cookie-based authentication if no password is provided
         if (!GetAuthCookie(&strRPCUserColonPass)) {
             throw runtime_error(strprintf(
-                _("You must set rpcpassword=<password> in the configuration file:\n%s\n"
-                  "If the file does not exist, create it with owner-readable-only file permissions."),
-                    GetConfigFile().string().c_str()));
+                                    _("You must set rpcpassword=<password> in the configuration file:\n%s\n"
+                                      "If the file does not exist, create it with owner-readable-only file permissions."),
+                                    GetConfigFile().string().c_str()));
 
         }
     } else {
@@ -166,8 +161,7 @@ UniValue CallRPC(const string& strMethod, const UniValue& params)
     return reply;
 }
 
-int CommandLineRPC(int argc, char* argv[])
-{
+int CommandLineRPC(int argc, char* argv[]) {
     string strPrint;
     int nRet = 0;
     try {
@@ -237,8 +231,7 @@ int CommandLineRPC(int argc, char* argv[])
     return nRet;
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     SetupEnvironment();
 
     try {

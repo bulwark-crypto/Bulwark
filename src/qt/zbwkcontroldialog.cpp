@@ -14,10 +14,9 @@ std::list<std::string> ZBwkControlDialog::listSelectedMints;
 std::list<CZerocoinMint> ZBwkControlDialog::listMints;
 
 ZBwkControlDialog::ZBwkControlDialog(QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
     ui(new Ui::ZBwkControlDialog),
-    model(0)
-{
+    model(0) {
     ui->setupUi(this);
     listMints.clear();
     privacyDialog = (PrivacyDialog*)parent;
@@ -29,20 +28,17 @@ ZBwkControlDialog::ZBwkControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZBwkControlDialog::~ZBwkControlDialog()
-{
+ZBwkControlDialog::~ZBwkControlDialog() {
     delete ui;
 }
 
-void ZBwkControlDialog::setModel(WalletModel *model)
-{
+void ZBwkControlDialog::setModel(WalletModel *model) {
     this->model = model;
     updateList();
 }
 
 //Update the tree widget
-void ZBwkControlDialog::updateList()
-{
+void ZBwkControlDialog::updateList() {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
     ui->treeWidget->clear();
@@ -133,10 +129,9 @@ void ZBwkControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZBwkControlDialog::updateSelection(QTreeWidgetItem* item, int column)
-{
+void ZBwkControlDialog::updateSelection(QTreeWidgetItem* item, int column) {
     // only want updates from non top level items that are available to spend
-    if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
+    if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()) {
 
         // see if this mint is already selected in the selection list
         std::string strPubcoin = item->text(COLUMN_PUBCOIN).toStdString();
@@ -156,8 +151,7 @@ void ZBwkControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZBwkControlDialog::updateLabels()
-{
+void ZBwkControlDialog::updateLabels() {
     int64_t nAmount = 0;
     for (const CZerocoinMint mint : listMints) {
         if (count(listSelectedMints.begin(), listSelectedMints.end(), mint.GetValue().GetHex())) {
@@ -173,8 +167,7 @@ void ZBwkControlDialog::updateLabels()
     privacyDialog->setZBwkControlLabels(nAmount, listSelectedMints.size());
 }
 
-std::vector<CZerocoinMint> ZBwkControlDialog::GetSelectedMints()
-{
+std::vector<CZerocoinMint> ZBwkControlDialog::GetSelectedMints() {
     std::vector<CZerocoinMint> listReturn;
     for (const CZerocoinMint mint : listMints) {
         if (count(listSelectedMints.begin(), listSelectedMints.end(), mint.GetValue().GetHex())) {
@@ -186,8 +179,7 @@ std::vector<CZerocoinMint> ZBwkControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZBwkControlDialog::ButtonAllClicked()
-{
+void ZBwkControlDialog::ButtonAllClicked() {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;
     for(int i = 0; i < ui->treeWidget->topLevelItemCount(); i++) {

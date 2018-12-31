@@ -32,12 +32,11 @@
 #include <QMessageBox>
 #include <QTimer>
 
-OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(parent),
-                                                                   ui(new Ui::OptionsDialog),
-                                                                   model(0),
-                                                                   mapper(0),
-                                                                   fProxyIpValid(true)
-{
+OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::OptionsDialog),
+    model(0),
+    mapper(0),
+    fProxyIpValid(true) {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nOptionsDialogWindow", this->size(), this);
 
@@ -47,7 +46,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->threadsScriptVerif->setMinimum(-(int)boost::thread::hardware_concurrency());
     ui->threadsScriptVerif->setMaximum(MAX_SCRIPTCHECK_THREADS);
 
-/* Network elements init */
+    /* Network elements init */
 #ifndef USE_UPNP
     ui->mapPortUpnp->setEnabled(false);
 #endif
@@ -61,7 +60,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
 
     ui->proxyIp->installEventFilter(this);
 
-/* Window elements init */
+    /* Window elements init */
 #ifdef Q_OS_MAC
     /* remove Window tab on Mac */
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWindow));
@@ -112,27 +111,15 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
         QLocale locale(langStr);
 
         /** check if the locale name consists of 2 parts (language_country) */
-        if (langStr.contains("_")) {
-#if QT_VERSION >= 0x040800
+        if(langStr.contains("_")) {
             /** display language strings as "native language - native country (locale name)", e.g. "Deutsch - Deutschland (de)" */
             ui->lang->addItem(locale.nativeLanguageName() + QString(" - ") + locale.nativeCountryName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
-#else
-            /** display language strings as "language - country (locale name)", e.g. "German - Germany (de)" */
-            ui->lang->addItem(QLocale::languageToString(locale.language()) + QString(" - ") + QLocale::countryToString(locale.country()) + QString(" (") + langStr + QString(")"), QVariant(langStr));
-#endif
         } else {
-#if QT_VERSION >= 0x040800
             /** display language strings as "native language (locale name)", e.g. "Deutsch (de)" */
             ui->lang->addItem(locale.nativeLanguageName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
-#else
-            /** display language strings as "language (locale name)", e.g. "German (de)" */
-            ui->lang->addItem(QLocale::languageToString(locale.language()) + QString(" (") + langStr + QString(")"), QVariant(langStr));
-#endif
         }
     }
-#if QT_VERSION >= 0x040700
     ui->thirdPartyTxUrls->setPlaceholderText("https://example.com/tx/%s");
-#endif
 
     ui->unit->setModel(new BitcoinUnits(this));
 
@@ -145,14 +132,12 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     connect(this, SIGNAL(proxyIpChecks(QValidatedLineEdit*, int)), this, SLOT(doProxyIpChecks(QValidatedLineEdit*, int)));
 }
 
-OptionsDialog::~OptionsDialog()
-{
+OptionsDialog::~OptionsDialog() {
     GUIUtil::saveWindowGeometry("nOptionsDialogWindow", this);
     delete ui;
 }
 
-void OptionsDialog::setModel(OptionsModel* model)
-{
+void OptionsDialog::setModel(OptionsModel* model) {
     this->model = model;
 
     if (model) {
@@ -177,7 +162,7 @@ void OptionsDialog::setModel(OptionsModel* model)
     connect(ui->threadsScriptVerif, SIGNAL(valueChanged(int)), this, SLOT(showRestartWarning()));
     /* Wallet */
     connect(ui->spendZeroConfChange, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
-	connect(ui->showOrphans, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
+    connect(ui->showOrphans, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     /* Network */
     connect(ui->allowIncoming, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     connect(ui->connectSocks, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
@@ -189,8 +174,7 @@ void OptionsDialog::setModel(OptionsModel* model)
     connect(ui->showMasternodesTab, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
 }
 
-void OptionsDialog::setMapper()
-{
+void OptionsDialog::setMapper() {
     /* Main */
     mapper->addMapping(ui->bitcoinAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
@@ -202,7 +186,7 @@ void OptionsDialog::setMapper()
 
     /* Wallet */
     mapper->addMapping(ui->spendZeroConfChange, OptionsModel::SpendZeroConfChange);
-	mapper->addMapping(ui->showOrphans, OptionsModel::ShowOrphans);
+    mapper->addMapping(ui->showOrphans, OptionsModel::ShowOrphans);
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
 
     /* Network */
@@ -231,30 +215,26 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
 }
 
-void OptionsDialog::enableOkButton()
-{
+void OptionsDialog::enableOkButton() {
     /* prevent enabling of the OK button when data modified, if there is an invalid proxy address present */
     if (fProxyIpValid)
         setOkButtonState(true);
 }
 
-void OptionsDialog::disableOkButton()
-{
+void OptionsDialog::disableOkButton() {
     setOkButtonState(false);
 }
 
-void OptionsDialog::setOkButtonState(bool fState)
-{
+void OptionsDialog::setOkButtonState(bool fState) {
     ui->okButton->setEnabled(fState);
 }
 
-void OptionsDialog::on_resetButton_clicked()
-{
+void OptionsDialog::on_resetButton_clicked() {
     if (model) {
         // confirmation dialog
         QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
-            tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
-            QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+                                                tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
+                                                QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
 
         if (btnRetVal == QMessageBox::Cancel)
             return;
@@ -265,21 +245,18 @@ void OptionsDialog::on_resetButton_clicked()
     }
 }
 
-void OptionsDialog::on_okButton_clicked()
-{
+void OptionsDialog::on_okButton_clicked() {
     mapper->submit();
     obfuScationPool.cachedNumBlocks = std::numeric_limits<int>::max();
     pwalletMain->MarkDirty();
     accept();
 }
 
-void OptionsDialog::on_cancelButton_clicked()
-{
+void OptionsDialog::on_cancelButton_clicked() {
     reject();
 }
 
-void OptionsDialog::showRestartWarning(bool fPersistent)
-{
+void OptionsDialog::showRestartWarning(bool fPersistent) {
     ui->statusLabel->setStyleSheet("QLabel { color: red; }");
 
     if (fPersistent) {
@@ -292,13 +269,11 @@ void OptionsDialog::showRestartWarning(bool fPersistent)
     }
 }
 
-void OptionsDialog::clearStatusLabel()
-{
+void OptionsDialog::clearStatusLabel() {
     ui->statusLabel->clear();
 }
 
-void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort)
-{
+void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort) {
     Q_UNUSED(nProxyPort);
 
     const std::string strAddrProxy = pUiProxyIp->text().toStdString();
@@ -316,8 +291,7 @@ void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPo
     }
 }
 
-bool OptionsDialog::eventFilter(QObject* object, QEvent* event)
-{
+bool OptionsDialog::eventFilter(QObject* object, QEvent* event) {
     if (event->type() == QEvent::FocusOut) {
         if (object == ui->proxyIp) {
             emit proxyIpChecks(ui->proxyIp, ui->proxyPort->text().toInt());

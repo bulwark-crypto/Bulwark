@@ -30,8 +30,7 @@ QtMaterialFlatButtonStateMachine::QtMaterialFlatButtonStateMachine(QtMaterialFla
       m_haloOpacity(0),
       m_haloSize(0.8),
       m_haloScaleFactor(1),
-      m_wasChecked(false)
-{
+      m_wasChecked(false) {
     Q_ASSERT(parent);
 
     parent->installEventFilter(this);
@@ -41,7 +40,7 @@ QtMaterialFlatButtonStateMachine::QtMaterialFlatButtonStateMachine(QtMaterialFla
     setInitialState(m_topLevelState);
 
     m_checkableState->setInitialState(parent->isChecked() ? m_checkedState
-                                                          : m_uncheckedState);
+                                      : m_uncheckedState);
     QtMaterialStateTransition *transition;
     QPropertyAnimation *animation;
 
@@ -105,48 +104,40 @@ QtMaterialFlatButtonStateMachine::QtMaterialFlatButtonStateMachine(QtMaterialFla
     m_haloAnimation->setLoopCount(-1);
 }
 
-QtMaterialFlatButtonStateMachine::~QtMaterialFlatButtonStateMachine()
-{
+QtMaterialFlatButtonStateMachine::~QtMaterialFlatButtonStateMachine() {
 }
 
-void QtMaterialFlatButtonStateMachine::setOverlayOpacity(qreal opacity)
-{
+void QtMaterialFlatButtonStateMachine::setOverlayOpacity(qreal opacity) {
     m_overlayOpacity = opacity;
     m_button->update();
 }
 
-void QtMaterialFlatButtonStateMachine::setCheckedOverlayProgress(qreal progress)
-{
+void QtMaterialFlatButtonStateMachine::setCheckedOverlayProgress(qreal progress) {
     m_checkedOverlayProgress = progress;
     m_button->update();
 }
 
-void QtMaterialFlatButtonStateMachine::setHaloOpacity(qreal opacity)
-{
+void QtMaterialFlatButtonStateMachine::setHaloOpacity(qreal opacity) {
     m_haloOpacity = opacity;
     m_button->update();
 }
 
-void QtMaterialFlatButtonStateMachine::setHaloSize(qreal size)
-{
+void QtMaterialFlatButtonStateMachine::setHaloSize(qreal size) {
     m_haloSize = size;
     m_button->update();
 }
 
-void QtMaterialFlatButtonStateMachine::setHaloScaleFactor(qreal factor)
-{
+void QtMaterialFlatButtonStateMachine::setHaloScaleFactor(qreal factor) {
     m_haloScaleFactor = factor;
     m_button->update();
 }
 
-void QtMaterialFlatButtonStateMachine::startAnimations()
-{
+void QtMaterialFlatButtonStateMachine::startAnimations() {
     m_haloAnimation->start();
     start();
 }
 
-void QtMaterialFlatButtonStateMachine::setupProperties()
-{
+void QtMaterialFlatButtonStateMachine::setupProperties() {
     QColor overlayColor;
 
     if (Qt::TransparentMode == m_button->backgroundMode()) {
@@ -173,8 +164,7 @@ void QtMaterialFlatButtonStateMachine::setupProperties()
     m_button->update();
 }
 
-void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
-{
+void QtMaterialFlatButtonStateMachine::updateCheckedStatus() {
     const bool checked = m_button->isChecked();
     if (m_wasChecked != checked) {
         m_wasChecked = checked;
@@ -187,8 +177,7 @@ void QtMaterialFlatButtonStateMachine::updateCheckedStatus()
 }
 
 bool QtMaterialFlatButtonStateMachine::eventFilter(QObject *watched,
-                                                   QEvent  *event)
-{
+        QEvent  *event) {
     if (QEvent::FocusIn == event->type()) {
         QFocusEvent *focusEvent = static_cast<QFocusEvent *>(event);
         if (focusEvent && Qt::MouseFocusReason == focusEvent->reason()) {
@@ -200,17 +189,15 @@ bool QtMaterialFlatButtonStateMachine::eventFilter(QObject *watched,
 }
 
 void QtMaterialFlatButtonStateMachine::addTransition(QObject *object,
-                                                     QEvent::Type eventType,
-                                                     QState *fromState,
-                                                     QState *toState)
-{
+        QEvent::Type eventType,
+        QState *fromState,
+        QState *toState) {
     addTransition(new QEventTransition(object, eventType), fromState, toState);
 }
 
 void QtMaterialFlatButtonStateMachine::addTransition(QAbstractTransition *transition,
-                                                     QState *fromState,
-                                                     QState *toState)
-{
+        QState *fromState,
+        QState *toState) {
     transition->setTargetState(toState);
 
     QPropertyAnimation *animation;

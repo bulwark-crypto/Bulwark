@@ -40,13 +40,12 @@ const size_t POST_READ_SIZE = 256 * 1024;
 
 /**
  * HTTP protocol
- * 
+ *
  * This ain't Apache.  We're just using HTTP header for the length field
  * and to be compatible with other JSON-RPC implementations.
  */
 
-string HTTPPost(const string& strMsg, const map<string, string>& mapRequestHeaders)
-{
+string HTTPPost(const string& strMsg, const map<string, string>& mapRequestHeaders) {
     ostringstream s;
     s << "POST / HTTP/1.1\r\n"
       << "User-Agent: bulwark-json-rpc/" << FormatFullVersion() << "\r\n"
@@ -55,21 +54,20 @@ string HTTPPost(const string& strMsg, const map<string, string>& mapRequestHeade
       << "Content-Length: " << strMsg.size() << "\r\n"
       << "Connection: close\r\n"
       << "Accept: application/json\r\n";
-    BOOST_FOREACH (const PAIRTYPE(string, string) & item, mapRequestHeaders)
+    BOOST_FOREACH(const PAIRTYPE(string, string) & item, mapRequestHeaders) {
         s << item.first << ": " << item.second << "\r\n";
+    }
     s << "\r\n"
       << strMsg;
 
     return s.str();
 }
 
-static string rfc1123Time()
-{
+static string rfc1123Time() {
     return DateTimeStrFormat("%a, %d %b %Y %H:%M:%S +0000", GetTime());
 }
 
-static const char* httpStatusDescription(int nStatus)
-{
+static const char* httpStatusDescription(int nStatus) {
     switch (nStatus) {
     case HTTP_OK:
         return "OK";
@@ -86,8 +84,7 @@ static const char* httpStatusDescription(int nStatus)
     }
 }
 
-string HTTPError(int nStatus, bool keepalive, bool headersOnly)
-{
+string HTTPError(int nStatus, bool keepalive, bool headersOnly) {
     if (nStatus == HTTP_UNAUTHORIZED)
         return strprintf("HTTP/1.0 401 Authorization Required\r\n"
                          "Date: %s\r\n"
@@ -105,33 +102,31 @@ string HTTPError(int nStatus, bool keepalive, bool headersOnly)
                          "</HEAD>\r\n"
                          "<BODY><H1>401 Unauthorized.</H1></BODY>\r\n"
                          "</HTML>\r\n",
-            rfc1123Time(), FormatFullVersion());
+                         rfc1123Time(), FormatFullVersion());
 
     return HTTPReply(nStatus, httpStatusDescription(nStatus), keepalive,
-        headersOnly, "text/plain");
+                     headersOnly, "text/plain");
 }
 
-string HTTPReplyHeader(int nStatus, bool keepalive, size_t contentLength, const char* contentType)
-{
+string HTTPReplyHeader(int nStatus, bool keepalive, size_t contentLength, const char* contentType) {
     return strprintf(
-        "HTTP/1.1 %d %s\r\n"
-        "Date: %s\r\n"
-        "Connection: %s\r\n"
-        "Content-Length: %u\r\n"
-        "Content-Type: %s\r\n"
-        "Server: bulwark-json-rpc/%s\r\n"
-        "\r\n",
-        nStatus,
-        httpStatusDescription(nStatus),
-        rfc1123Time(),
-        keepalive ? "keep-alive" : "close",
-        contentLength,
-        contentType,
-        FormatFullVersion());
+               "HTTP/1.1 %d %s\r\n"
+               "Date: %s\r\n"
+               "Connection: %s\r\n"
+               "Content-Length: %u\r\n"
+               "Content-Type: %s\r\n"
+               "Server: bulwark-json-rpc/%s\r\n"
+               "\r\n",
+               nStatus,
+               httpStatusDescription(nStatus),
+               rfc1123Time(),
+               keepalive ? "keep-alive" : "close",
+               contentLength,
+               contentType,
+               FormatFullVersion());
 }
 
-string HTTPReply(int nStatus, const string& strMsg, bool keepalive, bool headersOnly, const char* contentType)
-{
+string HTTPReply(int nStatus, const string& strMsg, bool keepalive, bool headersOnly, const char* contentType) {
     if (headersOnly) {
         return HTTPReplyHeader(nStatus, keepalive, 0, contentType);
     } else {
@@ -139,8 +134,7 @@ string HTTPReply(int nStatus, const string& strMsg, bool keepalive, bool headers
     }
 }
 
-bool ReadHTTPRequestLine(std::basic_istream<char>& stream, int& proto, string& http_method, string& http_uri)
-{
+bool ReadHTTPRequestLine(std::basic_istream<char>& stream, int& proto, string& http_method, string& http_uri) {
     string str;
     getline(stream, str);
 
@@ -173,8 +167,7 @@ bool ReadHTTPRequestLine(std::basic_istream<char>& stream, int& proto, string& h
     return true;
 }
 
-int ReadHTTPStatus(std::basic_istream<char>& stream, int& proto)
-{
+int ReadHTTPStatus(std::basic_istream<char>& stream, int& proto) {
     string str;
     getline(stream, str);
     //LogPrintf("ReadHTTPStatus - getline string: %s\n",str.c_str());
@@ -189,8 +182,7 @@ int ReadHTTPStatus(std::basic_istream<char>& stream, int& proto)
     return atoi(vWords[1].c_str());
 }
 
-int ReadHTTPHeaders(std::basic_istream<char>& stream, map<string, string>& mapHeadersRet)
-{
+int ReadHTTPHeaders(std::basic_istream<char>& stream, map<string, string>& mapHeadersRet) {
     int nLen = 0;
     while (true) {
         string str;
@@ -213,8 +205,7 @@ int ReadHTTPHeaders(std::basic_istream<char>& stream, map<string, string>& mapHe
 }
 
 
-int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHeadersRet, string& strMessageRet, int nProto, size_t max_size)
-{
+int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHeadersRet, string& strMessageRet, int nProto, size_t max_size) {
     mapHeadersRet.clear();
     strMessageRet = "";
 
@@ -254,14 +245,13 @@ int ReadHTTPMessage(std::basic_istream<char>& stream, map<string, string>& mapHe
  * JSON-RPC protocol.  Bulwark speaks version 1.0 for maximum compatibility,
  * but uses JSON-RPC 1.1/2.0 standards for parts of the 1.0 standard that were
  * unspecified (HTTP errors and contents of 'error').
- * 
+ *
  * 1.0 spec: http://json-rpc.org/wiki/specification
  * 1.2 spec: http://jsonrpc.org/historical/json-rpc-over-http.html
  * http://www.codeproject.com/KB/recipes/JSON_Spirit.aspx
  */
 
-string JSONRPCRequest(const string& strMethod, const UniValue& params, const UniValue& id)
-{
+string JSONRPCRequest(const string& strMethod, const UniValue& params, const UniValue& id) {
     UniValue request(UniValue::VOBJ);
     request.push_back(Pair("method", strMethod));
     request.push_back(Pair("params", params));
@@ -269,8 +259,7 @@ string JSONRPCRequest(const string& strMethod, const UniValue& params, const Uni
     return request.write() + "\n";
 }
 
-UniValue JSONRPCReplyObj(const UniValue& result, const UniValue& error, const UniValue& id)
-{
+UniValue JSONRPCReplyObj(const UniValue& result, const UniValue& error, const UniValue& id) {
     UniValue reply(UniValue::VOBJ);
     if (!error.isNull())
         reply.push_back(Pair("result", NullUniValue));
@@ -281,14 +270,12 @@ UniValue JSONRPCReplyObj(const UniValue& result, const UniValue& error, const Un
     return reply;
 }
 
-string JSONRPCReply(const UniValue& result, const UniValue& error, const UniValue& id)
-{
+string JSONRPCReply(const UniValue& result, const UniValue& error, const UniValue& id) {
     UniValue reply = JSONRPCReplyObj(result, error, id);
     return reply.write() + "\n";
 }
 
-UniValue JSONRPCError(int code, const string& message)
-{
+UniValue JSONRPCError(int code, const string& message) {
     UniValue error(UniValue::VOBJ);
     error.push_back(Pair("code", code));
     error.push_back(Pair("message", message));
@@ -302,15 +289,13 @@ static const std::string COOKIEAUTH_USER = "__cookie__";
 /** Default name for auth cookie file */
 static const std::string COOKIEAUTH_FILE = ".cookie";
 
-boost::filesystem::path GetAuthCookieFile()
-{
+boost::filesystem::path GetAuthCookieFile() {
     boost::filesystem::path path(GetArg("-rpccookiefile", COOKIEAUTH_FILE));
     if (!path.is_complete()) path = GetDataDir() / path;
     return path;
 }
 
-bool GenerateAuthCookie(std::string *cookie_out)
-{
+bool GenerateAuthCookie(std::string *cookie_out) {
     unsigned char rand_pwd[32];
     GetRandBytes(rand_pwd, 32);
     std::string cookie = COOKIEAUTH_USER + ":" + EncodeBase64(&rand_pwd[0],32);
@@ -334,8 +319,7 @@ bool GenerateAuthCookie(std::string *cookie_out)
     return true;
 }
 
-bool GetAuthCookie(std::string *cookie_out)
-{
+bool GetAuthCookie(std::string *cookie_out) {
     std::ifstream file;
     std::string cookie;
     boost::filesystem::path filepath = GetAuthCookieFile();
@@ -350,8 +334,7 @@ bool GetAuthCookie(std::string *cookie_out)
     return true;
 }
 
-void DeleteAuthCookie()
-{
+void DeleteAuthCookie() {
     try {
         boost::filesystem::remove(GetAuthCookieFile());
     } catch (const boost::filesystem::filesystem_error& e) {

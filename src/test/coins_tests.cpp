@@ -11,16 +11,13 @@
 
 #include <boost/test/unit_test.hpp>
 
-namespace
-{
-class CCoinsViewTest : public CCoinsView
-{
+namespace {
+class CCoinsViewTest : public CCoinsView {
     uint256 hashBestBlock_;
     std::map<uint256, CCoins> map_;
 
-public:
-    bool GetCoins(const uint256& txid, CCoins& coins) const
-    {
+  public:
+    bool GetCoins(const uint256& txid, CCoins& coins) const {
         std::map<uint256, CCoins>::const_iterator it = map_.find(txid);
         if (it == map_.end()) {
             return false;
@@ -33,16 +30,16 @@ public:
         return true;
     }
 
-    bool HaveCoins(const uint256& txid) const
-    {
+    bool HaveCoins(const uint256& txid) const {
         CCoins coins;
         return GetCoins(txid, coins);
     }
 
-    uint256 GetBestBlock() const { return hashBestBlock_; }
+    uint256 GetBestBlock() const {
+        return hashBestBlock_;
+    }
 
-    bool BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock)
-    {
+    bool BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock) {
         for (CCoinsMap::iterator it = mapCoins.begin(); it != mapCoins.end(); ) {
             map_[it->first] = it->second.coins;
             if (it->second.coins.IsPruned() && insecure_rand() % 3 == 0) {
@@ -56,7 +53,9 @@ public:
         return true;
     }
 
-    bool GetStats(CCoinsStats& stats) const { return false; }
+    bool GetStats(CCoinsStats& stats) const {
+        return false;
+    }
 };
 }
 
@@ -73,8 +72,7 @@ static const unsigned int NUM_SIMULATION_ITERATIONS = 40000;
 //
 // During the process, booleans are kept to make sure that the randomized
 // operation hits all branches.
-BOOST_AUTO_TEST_CASE(coins_cache_simulation_test)
-{
+BOOST_AUTO_TEST_CASE(coins_cache_simulation_test) {
     // Various coverage trackers.
     bool removed_all_caches = false;
     bool reached_4_caches = false;

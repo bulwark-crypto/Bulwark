@@ -24,24 +24,20 @@ static int64_t nTimeOffset = 0;
  *  - Median of other nodes clocks
  *  - The user (asking the user to fix the system clock if the first two disagree)
  */
-int64_t GetTimeOffset()
-{
+int64_t GetTimeOffset() {
     LOCK(cs_nTimeOffset);
     return nTimeOffset;
 }
 
-int64_t GetAdjustedTime()
-{
+int64_t GetAdjustedTime() {
     return GetTime() + GetTimeOffset();
 }
 
-static int64_t abs64(int64_t n)
-{
+static int64_t abs64(int64_t n) {
     return (n >= 0 ? n : -n);
 }
 
-void AddTimeData(const CNetAddr& ip, int64_t nTime)
-{
+void AddTimeData(const CNetAddr& ip, int64_t nTime) {
     int64_t nOffsetSample = nTime - GetTime();
 
     LOCK(cs_nTimeOffset);
@@ -85,9 +81,10 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
             if (!fDone) {
                 // If nobody has a time different than ours but within 5 minutes of ours, give a warning
                 bool fMatch = false;
-                BOOST_FOREACH (int64_t nOffset, vSorted)
+                BOOST_FOREACH(int64_t nOffset, vSorted) {
                     if (nOffset != 0 && abs64(nOffset) < 5 * 60)
                         fMatch = true;
+                }
 
                 if (!fMatch) {
                     fDone = true;
@@ -99,8 +96,9 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
             }
         }
         if (fDebug) {
-            BOOST_FOREACH (int64_t n, vSorted)
+            BOOST_FOREACH(int64_t n, vSorted) {
                 LogPrintf("%+d  ", n);
+            }
             LogPrintf("|  ");
         }
         LogPrintf("nTimeOffset = %+d  (%+d minutes)\n", nTimeOffset, nTimeOffset / 60);

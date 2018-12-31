@@ -32,16 +32,14 @@ using namespace std;
 
 void EnsureWalletIsUnlocked();
 
-std::string static EncodeDumpTime(int64_t nTime)
-{
+std::string static EncodeDumpTime(int64_t nTime) {
     return DateTimeStrFormat("%Y-%m-%dT%H:%M:%SZ", nTime);
 }
 
-int64_t static DecodeDumpTime(const std::string& str)
-{
+int64_t static DecodeDumpTime(const std::string& str) {
     static const boost::posix_time::ptime epoch = boost::posix_time::from_time_t(0);
     static const std::locale loc(std::locale::classic(),
-        new boost::posix_time::time_input_facet("%Y-%m-%dT%H:%M:%SZ"));
+                                 new boost::posix_time::time_input_facet("%Y-%m-%dT%H:%M:%SZ"));
     std::istringstream iss(str);
     iss.imbue(loc);
     boost::posix_time::ptime ptime(boost::date_time::not_a_date_time);
@@ -51,10 +49,9 @@ int64_t static DecodeDumpTime(const std::string& str)
     return (ptime - epoch).total_seconds();
 }
 
-std::string static EncodeDumpString(const std::string& str)
-{
+std::string static EncodeDumpString(const std::string& str) {
     std::stringstream ret;
-    BOOST_FOREACH (unsigned char c, str) {
+    BOOST_FOREACH(unsigned char c, str) {
         if (c <= 32 || c >= 128 || c == '%') {
             ret << '%' << HexStr(&c, &c + 1);
         } else {
@@ -64,8 +61,7 @@ std::string static EncodeDumpString(const std::string& str)
     return ret.str();
 }
 
-std::string DecodeDumpString(const std::string& str)
-{
+std::string DecodeDumpString(const std::string& str) {
     std::stringstream ret;
     for (unsigned int pos = 0; pos < str.length(); pos++) {
         unsigned char c = str[pos];
@@ -79,8 +75,7 @@ std::string DecodeDumpString(const std::string& str)
     return ret.str();
 }
 
-UniValue importprivkey(const UniValue& params, bool fHelp)
-{
+UniValue importprivkey(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
             "importprivkey \"bulwarkprivkey\" ( \"label\" rescan )\n"
@@ -144,8 +139,7 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue importaddress(const UniValue& params, bool fHelp)
-{
+UniValue importaddress(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
             "importaddress \"address\" ( \"label\" rescan )\n"
@@ -208,8 +202,7 @@ UniValue importaddress(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue importwallet(const UniValue& params, bool fHelp)
-{
+UniValue importwallet(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "importwallet \"filename\"\n"
@@ -304,8 +297,7 @@ UniValue importwallet(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue dumpprivkey(const UniValue& params, bool fHelp)
-{
+UniValue dumpprivkey(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "dumpprivkey \"bulwarkaddress\"\n"
@@ -334,8 +326,7 @@ UniValue dumpprivkey(const UniValue& params, bool fHelp)
 }
 
 
-UniValue dumpwallet(const UniValue& params, bool fHelp)
-{
+UniValue dumpwallet(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "dumpwallet \"filename\"\n"
@@ -392,8 +383,7 @@ UniValue dumpwallet(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue bip38encrypt(const UniValue& params, bool fHelp)
-{
+UniValue bip38encrypt(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 2)
         throw runtime_error(
             "bip38encrypt \"bulwarkaddress\"\n"
@@ -430,8 +420,7 @@ UniValue bip38encrypt(const UniValue& params, bool fHelp)
     return result;
 }
 
-UniValue bip38decrypt(const UniValue& params, bool fHelp)
-{
+UniValue bip38decrypt(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 2)
         throw runtime_error(
             "bip38decrypt \"bulwarkaddress\"\n"

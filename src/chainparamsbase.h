@@ -12,9 +12,8 @@
  * CBaseChainParams defines the base parameters (shared between bulwark-cli and bulwarkd)
  * of a given instance of the Bulwark system.
  */
-class CBaseChainParams
-{
-public:
+class CBaseChainParams {
+  public:
     enum Network {
         MAIN,
         TESTNET,
@@ -24,10 +23,14 @@ public:
         MAX_NETWORK_TYPES
     };
 
-    const std::string& DataDir() const { return strDataDir; }
-    int RPCPort() const { return nRPCPort; }
+    const std::string& DataDir() const {
+        return strDataDir;
+    }
+    int RPCPort() const {
+        return nRPCPort;
+    }
 
-protected:
+  protected:
     CBaseChainParams() {}
 
     int nRPCPort;

@@ -16,8 +16,7 @@
 using namespace std;
 
 UniValue
-createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL)
-{
+createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL) {
     UniValue result(UniValue::VARR);
     result.push_back(nRequired);
     UniValue addresses(UniValue::VARR);
@@ -27,8 +26,7 @@ createArgs(int nRequired, const char* address1=NULL, const char* address2=NULL)
     return result;
 }
 
-UniValue CallRPC(string args)
-{
+UniValue CallRPC(string args) {
     vector<string> vArgs;
     boost::split(vArgs, args, boost::is_any_of(" \t"));
     string strMethod = vArgs[0];
@@ -39,8 +37,7 @@ UniValue CallRPC(string args)
     try {
         UniValue result = (*method)(params, false);
         return result;
-    }
-    catch (const UniValue& objError) {
+    } catch (const UniValue& objError) {
         throw runtime_error(find_value(objError, "message").get_str());
     }
 }
@@ -48,8 +45,7 @@ UniValue CallRPC(string args)
 
 BOOST_AUTO_TEST_SUITE(rpc_tests)
 
-BOOST_AUTO_TEST_CASE(rpc_rawparams)
-{
+BOOST_AUTO_TEST_CASE(rpc_rawparams) {
     // Test raw transaction API argument handling
     UniValue r;
 
@@ -89,16 +85,15 @@ BOOST_AUTO_TEST_CASE(rpc_rawparams)
     BOOST_CHECK_THROW(CallRPC(string("sendrawtransaction ")+rawtx+" extra"), runtime_error);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_rawsign)
-{
+BOOST_AUTO_TEST_CASE(rpc_rawsign) {
     UniValue r;
     // input is a 1-of-2 multisig (so is output):
     string prevout =
-      "[{\"txid\":\"b4cc287e58f87cdae59417329f710f3ecd75a4ee1d2872b7248f50977c8493f3\","
-      "\"vout\":1,\"scriptPubKey\":\"a914b10c9df5f7edf436c697f02f1efdba4cf399615187\","
-      "\"redeemScript\":\"512103debedc17b3df2badbcdd86d5feb4562b86fe182e5998abd8bcd4f122c6155b1b21027e940bb73ab8732bfdf7f9216ecefca5b94d6df834e77e108f68e66f126044c052ae\"}]";
+        "[{\"txid\":\"b4cc287e58f87cdae59417329f710f3ecd75a4ee1d2872b7248f50977c8493f3\","
+        "\"vout\":1,\"scriptPubKey\":\"a914b10c9df5f7edf436c697f02f1efdba4cf399615187\","
+        "\"redeemScript\":\"512103debedc17b3df2badbcdd86d5feb4562b86fe182e5998abd8bcd4f122c6155b1b21027e940bb73ab8732bfdf7f9216ecefca5b94d6df834e77e108f68e66f126044c052ae\"}]";
     r = CallRPC(string("createrawtransaction ")+prevout+" "+
-      "{\"3HqAe9LtNBjnsfM4CyYaWTnvCaUYT7v4oZ\":11}");
+                "{\"3HqAe9LtNBjnsfM4CyYaWTnvCaUYT7v4oZ\":11}");
     string notsigned = r.get_str();
     string privkey1 = "\"KzsXybp9jX64P5ekX1KUxRQ79Jht9uzW7LorgwE65i5rWACL6LQe\"";
     string privkey2 = "\"Kyhdf5LuKTRx4ge69ybABsiUAWjVRK4XGxAKk2FQLp2HjGMy87Z4\"";
@@ -108,8 +103,7 @@ BOOST_AUTO_TEST_CASE(rpc_rawsign)
     BOOST_CHECK(find_value(r.get_obj(), "complete").get_bool() == true);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_format_monetary_values)
-{
+BOOST_AUTO_TEST_CASE(rpc_format_monetary_values) {
     BOOST_CHECK(ValueFromAmount(0LL).write() == "0.00000000");
     BOOST_CHECK(ValueFromAmount(1LL).write() == "0.00000001");
     BOOST_CHECK(ValueFromAmount(17622195LL).write() == "0.17622195");
@@ -143,15 +137,13 @@ BOOST_AUTO_TEST_CASE(rpc_format_monetary_values)
     BOOST_CHECK_EQUAL(ValueFromAmount(COIN/100000000).write(), "0.00000001");
 }
 
-static UniValue ValueFromString(const std::string &str)
-{
+static UniValue ValueFromString(const std::string &str) {
     UniValue value;
     BOOST_CHECK(value.setNumStr(str));
     return value;
 }
 
-BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values)
-{
+BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values) {
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.00000001")), 1LL);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.17622195")), 17622195LL);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.5")), 50000000LL);
@@ -162,8 +154,7 @@ BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values)
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("20999999.99999999")), 2099999999999999LL);
 }
 
-BOOST_AUTO_TEST_CASE(json_parse_errors)
-{
+BOOST_AUTO_TEST_CASE(json_parse_errors) {
     // Valid
     BOOST_CHECK_EQUAL(ParseNonRFCJSONValue("1.0").get_real(), 1.0);
     // Valid, with leading or trailing whitespace
@@ -180,15 +171,14 @@ BOOST_AUTO_TEST_CASE(json_parse_errors)
     BOOST_CHECK_THROW(ParseNonRFCJSONValue("3J98t1WpEZ73CNmQviecrnyiWrnqRhWNL"), std::runtime_error);
 }
 
-BOOST_AUTO_TEST_CASE(rpc_boostasiotocnetaddr)
-{
+BOOST_AUTO_TEST_CASE(rpc_boostasiotocnetaddr) {
     // Check IPv4 addresses
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("1.2.3.4")).ToString(), "1.2.3.4");
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("127.0.0.1")).ToString(), "127.0.0.1");
     // Check IPv6 addresses
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("::1")).ToString(), "::1");
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("123:4567:89ab:cdef:123:4567:89ab:cdef")).ToString(),
-                                         "123:4567:89ab:cdef:123:4567:89ab:cdef");
+                      "123:4567:89ab:cdef:123:4567:89ab:cdef");
     // v4 compatible must be interpreted as IPv4
     BOOST_CHECK_EQUAL(BoostAsioToCNetAddr(boost::asio::ip::address::from_string("::0:127.0.0.1")).ToString(), "127.0.0.1");
     // v4 mapped must be interpreted as IPv4

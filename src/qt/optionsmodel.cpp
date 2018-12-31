@@ -30,19 +30,16 @@
 #include <QSettings>
 #include <QStringList>
 
-OptionsModel::OptionsModel(QObject* parent) : QAbstractListModel(parent)
-{
+OptionsModel::OptionsModel(QObject* parent) : QAbstractListModel(parent) {
     Init();
 }
 
-void OptionsModel::addOverriddenOption(const std::string& option)
-{
+void OptionsModel::addOverriddenOption(const std::string& option) {
     strOverriddenByCommandLine += QString::fromStdString(option) + "=" + QString::fromStdString(mapArgs[option]) + " ";
 }
 
 // Writes all missing QSettings with their default values
-void OptionsModel::Init()
-{
+void OptionsModel::Init() {
     resetSettings = false;
     QSettings settings;
 
@@ -109,9 +106,9 @@ void OptionsModel::Init()
         settings.setValue("bSpendZeroConfChange", false);
     if (!SoftSetBoolArg("-spendzeroconfchange", settings.value("bSpendZeroConfChange").toBool()))
         addOverriddenOption("-spendzeroconfchange");
-	if (!settings.contains("fShowOrphans"))
-		settings.setValue("fShowOrphans", false);
-	fShowOrphans = settings.value("fShowOrphans").toBool();
+    if (!settings.contains("fShowOrphans"))
+        settings.setValue("fShowOrphans", false);
+    fShowOrphans = settings.value("fShowOrphans").toBool();
 #endif
 
     // Network
@@ -157,8 +154,7 @@ void OptionsModel::Init()
     language = settings.value("language").toString();
 }
 
-void OptionsModel::Reset()
-{
+void OptionsModel::Reset() {
     QSettings settings;
 
     // Remove all entries from our QSettings object
@@ -170,14 +166,12 @@ void OptionsModel::Reset()
         GUIUtil::SetStartOnSystemStartup(false);
 }
 
-int OptionsModel::rowCount(const QModelIndex& parent) const
-{
+int OptionsModel::rowCount(const QModelIndex& parent) const {
     return OptionIDRowCount;
 }
 
 // read QSettings values and return them
-QVariant OptionsModel::data(const QModelIndex& index, int role) const
-{
+QVariant OptionsModel::data(const QModelIndex& index, int role) const {
     if (role == Qt::EditRole) {
         QSettings settings;
         switch (index.row()) {
@@ -213,8 +207,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("bSpendZeroConfChange");
         case ShowMasternodesTab:
             return settings.value("fShowMasternodesTab");
-		case ShowOrphans:
-			return settings.value("fShowOrphans");
+        case ShowOrphans:
+            return settings.value("fShowOrphans");
 #endif
         case DisplayUnit:
             return nDisplayUnit;
@@ -248,8 +242,7 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
 }
 
 // write QSettings values
-bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int role)
-{
+bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int role) {
     bool successful = true; /* set to false on parse error */
     if (role == Qt::EditRole) {
         QSettings settings;
@@ -287,7 +280,8 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 settings.setValue("addrProxy", strNewValue);
                 setRestartRequired(true);
             }
-        } break;
+        }
+        break;
         case ProxyPort: {
             // contains current IP at index 0 and current port at index 1
             QStringList strlIpPort = settings.value("addrProxy").toString().split(":", QString::SkipEmptyParts);
@@ -298,7 +292,8 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 settings.setValue("addrProxy", strNewValue);
                 setRestartRequired(true);
             }
-        } break;
+        }
+        break;
 #ifdef ENABLE_WALLET
         case SpendZeroConfChange:
             if (settings.value("bSpendZeroConfChange") != value) {
@@ -306,11 +301,11 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
                 setRestartRequired(true);
             }
             break;
-		case ShowOrphans:
-			if (settings.value("fShowOrphans") != value) {
-				settings.setValue("fShowOrphans", value);
-				setRestartRequired(true);
-			}
+        case ShowOrphans:
+            if (settings.value("fShowOrphans") != value) {
+                settings.setValue("fShowOrphans", value);
+                setRestartRequired(true);
+            }
         case ShowMasternodesTab:
             if (settings.value("fShowMasternodesTab") != value) {
                 settings.setValue("fShowMasternodesTab", value);
@@ -396,8 +391,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
 }
 
 /** Updates current unit in memory, settings and emits displayUnitChanged(newUnit) signal */
-void OptionsModel::setDisplayUnit(const QVariant& value)
-{
+void OptionsModel::setDisplayUnit(const QVariant& value) {
     if (!value.isNull()) {
         QSettings settings;
         nDisplayUnit = value.toInt();
@@ -406,8 +400,7 @@ void OptionsModel::setDisplayUnit(const QVariant& value)
     }
 }
 
-bool OptionsModel::getProxySettings(QNetworkProxy& proxy) const
-{
+bool OptionsModel::getProxySettings(QNetworkProxy& proxy) const {
     // Directly query current base proxy, because
     // GUI settings can be overridden with -proxy.
     proxyType curProxy;
@@ -423,14 +416,12 @@ bool OptionsModel::getProxySettings(QNetworkProxy& proxy) const
     return false;
 }
 
-void OptionsModel::setRestartRequired(bool fRequired)
-{
+void OptionsModel::setRestartRequired(bool fRequired) {
     QSettings settings;
     return settings.setValue("fRestartRequired", fRequired);
 }
 
-bool OptionsModel::isRestartRequired()
-{
+bool OptionsModel::isRestartRequired() {
     QSettings settings;
     return settings.value("fRestartRequired", false).toBool();
 }

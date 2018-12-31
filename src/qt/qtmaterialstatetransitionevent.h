@@ -28,12 +28,10 @@ enum QtMaterialStateTransitionType {
     MaxTransitionType = 65535
 };
 
-struct QtMaterialStateTransitionEvent : public QEvent
-{
+struct QtMaterialStateTransitionEvent : public QEvent {
     QtMaterialStateTransitionEvent(QtMaterialStateTransitionType type)
         : QEvent(QEvent::Type(QEvent::User + 1)),
-          type(type)
-    {
+          type(type) {
     }
 
     QtMaterialStateTransitionType type;

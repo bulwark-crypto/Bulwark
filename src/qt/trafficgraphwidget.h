@@ -15,24 +15,23 @@ class QPaintEvent;
 class QTimer;
 QT_END_NAMESPACE
 
-class TrafficGraphWidget : public QWidget
-{
+class TrafficGraphWidget : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit TrafficGraphWidget(QWidget* parent = 0);
     void setClientModel(ClientModel* model);
     int getGraphRangeMins() const;
 
-protected:
+  protected:
     void paintEvent(QPaintEvent*);
 
-public slots:
+  public slots:
     void updateRates();
     void setGraphRangeMins(int mins);
     void clear();
 
-private:
+  private:
     void paintPath(QPainterPath& path, QQueue<float>& samples);
 
     QTimer* timer;

@@ -18,10 +18,9 @@ using namespace std;
 
 typedef vector<unsigned char> valtype;
 
-unsigned int HaveKeys(const vector<valtype>& pubkeys, const CKeyStore& keystore)
-{
+unsigned int HaveKeys(const vector<valtype>& pubkeys, const CKeyStore& keystore) {
     unsigned int nResult = 0;
-    BOOST_FOREACH (const valtype& pubkey, pubkeys) {
+    BOOST_FOREACH(const valtype& pubkey, pubkeys) {
         CKeyID keyID = CPubKey(pubkey).GetID();
         if(keystore.HaveKey(keyID))
             ++nResult;
@@ -29,14 +28,12 @@ unsigned int HaveKeys(const vector<valtype>& pubkeys, const CKeyStore& keystore)
     return nResult;
 }
 
-isminetype IsMine(const CKeyStore& keystore, const CTxDestination& dest)
-{
+isminetype IsMine(const CKeyStore& keystore, const CTxDestination& dest) {
     CScript script = GetScriptForDestination(dest);
     return IsMine(keystore, script);
 }
 
-isminetype IsMine(const CKeyStore& keystore, const CScript& scriptPubKey)
-{
+isminetype IsMine(const CKeyStore& keystore, const CScript& scriptPubKey) {
     if(keystore.HaveWatchOnly(scriptPubKey))
         return ISMINE_WATCH_ONLY;
     if(keystore.HaveMultiSig(scriptPubKey))

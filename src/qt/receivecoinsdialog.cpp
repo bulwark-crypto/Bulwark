@@ -21,10 +21,9 @@
 #include <QScrollBar>
 #include <QTextDocument>
 
-ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent),
-                                                          ui(new Ui::ReceiveCoinsDialog),
-                                                          model(0)
-{
+ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::ReceiveCoinsDialog),
+    model(0) {
     ui->setupUi(this);
 
 #ifdef Q_OS_MAC // Icons on push buttons are very uncommon on Mac
@@ -54,8 +53,7 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent),
     connect(ui->clearButton, SIGNAL(clicked()), this, SLOT(clear()));
 }
 
-void ReceiveCoinsDialog::setModel(WalletModel* model)
-{
+void ReceiveCoinsDialog::setModel(WalletModel* model) {
     this->model = model;
 
     if (model && model->getOptionsModel()) {
@@ -75,20 +73,18 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
         tableView->setColumnWidth(RecentRequestsTableModel::Label, LABEL_COLUMN_WIDTH);
 
         connect(tableView->selectionModel(),
-            SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this,
-            SLOT(recentRequestsView_selectionChanged(QItemSelection, QItemSelection)));
+                SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this,
+                SLOT(recentRequestsView_selectionChanged(QItemSelection, QItemSelection)));
         // Last 2 columns are set by the columnResizingFixer, when the table geometry is ready.
         columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(tableView, AMOUNT_MINIMUM_COLUMN_WIDTH, DATE_COLUMN_WIDTH);
     }
 }
 
-ReceiveCoinsDialog::~ReceiveCoinsDialog()
-{
+ReceiveCoinsDialog::~ReceiveCoinsDialog() {
     delete ui;
 }
 
-void ReceiveCoinsDialog::clear()
-{
+void ReceiveCoinsDialog::clear() {
     ui->reqAmount->clear();
     ui->reqLabel->setText("");
     ui->reqMessage->setText("");
@@ -96,25 +92,21 @@ void ReceiveCoinsDialog::clear()
     updateDisplayUnit();
 }
 
-void ReceiveCoinsDialog::reject()
-{
+void ReceiveCoinsDialog::reject() {
     clear();
 }
 
-void ReceiveCoinsDialog::accept()
-{
+void ReceiveCoinsDialog::accept() {
     clear();
 }
 
-void ReceiveCoinsDialog::updateDisplayUnit()
-{
+void ReceiveCoinsDialog::updateDisplayUnit() {
     if (model && model->getOptionsModel()) {
         ui->reqAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     }
 }
 
-void ReceiveCoinsDialog::on_receiveButton_clicked()
-{
+void ReceiveCoinsDialog::on_receiveButton_clicked() {
     if (!model || !model->getOptionsModel() || !model->getAddressTableModel() || !model->getRecentRequestsTableModel())
         return;
 
@@ -126,8 +118,7 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
         dlg.setModel(model->getAddressTableModel());
         if (dlg.exec()) {
             address = dlg.getReturnValue();
-            if (label.isEmpty()) /* If no label provided, use the previously used label */
-            {
+            if (label.isEmpty()) { /* If no label provided, use the previously used label */
                 label = model->getAddressTableModel()->labelForAddress(address);
             }
         } else {
@@ -138,7 +129,7 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
         address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "");
     }
     SendCoinsRecipient info(address, label,
-        ui->reqAmount->value(), ui->reqMessage->text());
+                            ui->reqAmount->value(), ui->reqMessage->text());
     ReceiveRequestDialog* dialog = new ReceiveRequestDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setModel(model->getOptionsModel());
@@ -150,8 +141,7 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
     model->getRecentRequestsTableModel()->addNewRequest(info);
 }
 
-void ReceiveCoinsDialog::on_recentRequestsView_doubleClicked(const QModelIndex& index)
-{
+void ReceiveCoinsDialog::on_recentRequestsView_doubleClicked(const QModelIndex& index) {
     const RecentRequestsTableModel* submodel = model->getRecentRequestsTableModel();
     ReceiveRequestDialog* dialog = new ReceiveRequestDialog(this);
     dialog->setModel(model->getOptionsModel());
@@ -160,16 +150,14 @@ void ReceiveCoinsDialog::on_recentRequestsView_doubleClicked(const QModelIndex& 
     dialog->show();
 }
 
-void ReceiveCoinsDialog::recentRequestsView_selectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
-{
+void ReceiveCoinsDialog::recentRequestsView_selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) {
     // Enable Show/Remove buttons only if anything is selected.
     bool enable = !ui->recentRequestsView->selectionModel()->selectedRows().isEmpty();
     ui->showRequestButton->setEnabled(enable);
     ui->removeRequestButton->setEnabled(enable);
 }
 
-void ReceiveCoinsDialog::on_showRequestButton_clicked()
-{
+void ReceiveCoinsDialog::on_showRequestButton_clicked() {
     if (!model || !model->getRecentRequestsTableModel() || !ui->recentRequestsView->selectionModel())
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
@@ -179,8 +167,7 @@ void ReceiveCoinsDialog::on_showRequestButton_clicked()
     }
 }
 
-void ReceiveCoinsDialog::on_removeRequestButton_clicked()
-{
+void ReceiveCoinsDialog::on_removeRequestButton_clicked() {
     if (!model || !model->getRecentRequestsTableModel() || !ui->recentRequestsView->selectionModel())
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
@@ -193,14 +180,12 @@ void ReceiveCoinsDialog::on_removeRequestButton_clicked()
 
 // We override the virtual resizeEvent of the QWidget to adjust tables column
 // sizes as the tables width is proportional to the dialogs width.
-void ReceiveCoinsDialog::resizeEvent(QResizeEvent* event)
-{
+void ReceiveCoinsDialog::resizeEvent(QResizeEvent* event) {
     QWidget::resizeEvent(event);
     columnResizingFixer->stretchColumnWidth(RecentRequestsTableModel::Message);
 }
 
-void ReceiveCoinsDialog::keyPressEvent(QKeyEvent* event)
-{
+void ReceiveCoinsDialog::keyPressEvent(QKeyEvent* event) {
     if (event->key() == Qt::Key_Return) {
         // press return -> submit form
         if (ui->reqLabel->hasFocus() || ui->reqAmount->hasFocus() || ui->reqMessage->hasFocus()) {
@@ -214,8 +199,7 @@ void ReceiveCoinsDialog::keyPressEvent(QKeyEvent* event)
 }
 
 // copy column of selected row to clipboard
-void ReceiveCoinsDialog::copyColumnToClipboard(int column)
-{
+void ReceiveCoinsDialog::copyColumnToClipboard(int column) {
     if (!model || !model->getRecentRequestsTableModel() || !ui->recentRequestsView->selectionModel())
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
@@ -227,8 +211,7 @@ void ReceiveCoinsDialog::copyColumnToClipboard(int column)
 }
 
 // context menu
-void ReceiveCoinsDialog::showMenu(const QPoint& point)
-{
+void ReceiveCoinsDialog::showMenu(const QPoint& point) {
     if (!model || !model->getRecentRequestsTableModel() || !ui->recentRequestsView->selectionModel())
         return;
     QModelIndexList selection = ui->recentRequestsView->selectionModel()->selectedRows();
@@ -238,19 +221,16 @@ void ReceiveCoinsDialog::showMenu(const QPoint& point)
 }
 
 // context menu action: copy label
-void ReceiveCoinsDialog::copyLabel()
-{
+void ReceiveCoinsDialog::copyLabel() {
     copyColumnToClipboard(RecentRequestsTableModel::Label);
 }
 
 // context menu action: copy message
-void ReceiveCoinsDialog::copyMessage()
-{
+void ReceiveCoinsDialog::copyMessage() {
     copyColumnToClipboard(RecentRequestsTableModel::Message);
 }
 
 // context menu action: copy amount
-void ReceiveCoinsDialog::copyAmount()
-{
+void ReceiveCoinsDialog::copyAmount() {
     copyColumnToClipboard(RecentRequestsTableModel::Amount);
 }

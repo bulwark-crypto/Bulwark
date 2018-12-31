@@ -12,9 +12,8 @@
 #include "masternodeman.h"
 
 
-class CObfuScationRelay
-{
-public:
+class CObfuScationRelay {
+  public:
     CTxIn vinMasternode;
     vector<unsigned char> vchSig;
     vector<unsigned char> vchSig2;
@@ -29,8 +28,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(vinMasternode);
         READWRITE(vchSig);
         READWRITE(vchSig2);

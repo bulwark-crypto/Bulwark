@@ -13,8 +13,7 @@ using namespace std;
 
 BOOST_AUTO_TEST_SUITE(serialize_tests)
 
-BOOST_AUTO_TEST_CASE(varints)
-{
+BOOST_AUTO_TEST_CASE(varints) {
     // encode
 
     CDataStream ss(SER_DISK, 0);
@@ -45,18 +44,15 @@ BOOST_AUTO_TEST_CASE(varints)
     }
 }
 
-BOOST_AUTO_TEST_CASE(compactsize)
-{
+BOOST_AUTO_TEST_CASE(compactsize) {
     CDataStream ss(SER_DISK, 0);
     vector<char>::size_type i, j;
 
-    for (i = 1; i <= MAX_SIZE; i *= 2)
-    {
+    for (i = 1; i <= MAX_SIZE; i *= 2) {
         WriteCompactSize(ss, i-1);
         WriteCompactSize(ss, i);
     }
-    for (i = 1; i <= MAX_SIZE; i *= 2)
-    {
+    for (i = 1; i <= MAX_SIZE; i *= 2) {
         j = ReadCompactSize(ss);
         BOOST_CHECK_MESSAGE((i-1) == j, "decoded:" << j << " expected:" << (i-1));
         j = ReadCompactSize(ss);
@@ -64,20 +60,18 @@ BOOST_AUTO_TEST_CASE(compactsize)
     }
 }
 
-static bool isCanonicalException(const std::ios_base::failure& ex)
-{
+static bool isCanonicalException(const std::ios_base::failure& ex) {
     std::ios_base::failure expectedException("non-canonical ReadCompactSize()");
 
     // The string returned by what() can be different for different platforms.
     // Instead of directly comparing the ex.what() with an expected string,
-    // create an instance of exception to see if ex.what() matches 
-    // the expected explanatory string returned by the exception instance. 
+    // create an instance of exception to see if ex.what() matches
+    // the expected explanatory string returned by the exception instance.
     return strcmp(expectedException.what(), ex.what()) == 0;
 }
 
 
-BOOST_AUTO_TEST_CASE(noncanonical)
-{
+BOOST_AUTO_TEST_CASE(noncanonical) {
     // Write some non-canonical CompactSize encodings, and
     // make sure an exception is thrown when read back.
     CDataStream ss(SER_DISK, 0);
@@ -113,8 +107,7 @@ BOOST_AUTO_TEST_CASE(noncanonical)
     BOOST_CHECK_EXCEPTION(ReadCompactSize(ss), std::ios_base::failure, isCanonicalException);
 }
 
-BOOST_AUTO_TEST_CASE(insert_delete)
-{
+BOOST_AUTO_TEST_CASE(insert_delete) {
     // Test inserting/deleting bytes.
     CDataStream ss(SER_DISK, 0);
     BOOST_CHECK_EQUAL(ss.size(), 0);

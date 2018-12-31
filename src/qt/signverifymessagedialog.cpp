@@ -22,15 +22,12 @@
 
 #include <QClipboard>
 
-SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget* parent) : QDialog(parent),
-                                                                    ui(new Ui::SignVerifyMessageDialog),
-                                                                    model(0)
-{
+SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::SignVerifyMessageDialog),
+    model(0) {
     ui->setupUi(this);
 
-#if QT_VERSION >= 0x040700
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
-#endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);
     GUIUtil::setupAddressWidget(ui->addressIn_VM, this);
@@ -46,44 +43,37 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget* parent) : QDialog(pare
     ui->signatureIn_VM->setFont(GUIUtil::bitcoinAddressFont());
 }
 
-SignVerifyMessageDialog::~SignVerifyMessageDialog()
-{
+SignVerifyMessageDialog::~SignVerifyMessageDialog() {
     delete ui;
 }
 
-void SignVerifyMessageDialog::setModel(WalletModel* model)
-{
+void SignVerifyMessageDialog::setModel(WalletModel* model) {
     this->model = model;
 }
 
-void SignVerifyMessageDialog::setAddress_SM(const QString& address)
-{
+void SignVerifyMessageDialog::setAddress_SM(const QString& address) {
     ui->addressIn_SM->setText(address);
     ui->messageIn_SM->setFocus();
 }
 
-void SignVerifyMessageDialog::setAddress_VM(const QString& address)
-{
+void SignVerifyMessageDialog::setAddress_VM(const QString& address) {
     ui->addressIn_VM->setText(address);
     ui->messageIn_VM->setFocus();
 }
 
-void SignVerifyMessageDialog::showTab_SM(bool fShow)
-{
+void SignVerifyMessageDialog::showTab_SM(bool fShow) {
     ui->tabWidget->setCurrentIndex(0);
     if (fShow)
         this->show();
 }
 
-void SignVerifyMessageDialog::showTab_VM(bool fShow)
-{
+void SignVerifyMessageDialog::showTab_VM(bool fShow) {
     ui->tabWidget->setCurrentIndex(1);
     if (fShow)
         this->show();
 }
 
-void SignVerifyMessageDialog::on_addressBookButton_SM_clicked()
-{
+void SignVerifyMessageDialog::on_addressBookButton_SM_clicked() {
     if (model && model->getAddressTableModel()) {
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
         dlg.setModel(model->getAddressTableModel());
@@ -93,13 +83,11 @@ void SignVerifyMessageDialog::on_addressBookButton_SM_clicked()
     }
 }
 
-void SignVerifyMessageDialog::on_pasteButton_SM_clicked()
-{
+void SignVerifyMessageDialog::on_pasteButton_SM_clicked() {
     setAddress_SM(QApplication::clipboard()->text());
 }
 
-void SignVerifyMessageDialog::on_signMessageButton_SM_clicked()
-{
+void SignVerifyMessageDialog::on_signMessageButton_SM_clicked() {
     if (!model)
         return;
 
@@ -151,13 +139,11 @@ void SignVerifyMessageDialog::on_signMessageButton_SM_clicked()
     ui->signatureOut_SM->setText(QString::fromStdString(EncodeBase64(&vchSig[0], vchSig.size())));
 }
 
-void SignVerifyMessageDialog::on_copySignatureButton_SM_clicked()
-{
+void SignVerifyMessageDialog::on_copySignatureButton_SM_clicked() {
     GUIUtil::setClipboard(ui->signatureOut_SM->text());
 }
 
-void SignVerifyMessageDialog::on_clearButton_SM_clicked()
-{
+void SignVerifyMessageDialog::on_clearButton_SM_clicked() {
     ui->addressIn_SM->clear();
     ui->messageIn_SM->clear();
     ui->signatureOut_SM->clear();
@@ -166,8 +152,7 @@ void SignVerifyMessageDialog::on_clearButton_SM_clicked()
     ui->addressIn_SM->setFocus();
 }
 
-void SignVerifyMessageDialog::on_addressBookButton_VM_clicked()
-{
+void SignVerifyMessageDialog::on_addressBookButton_VM_clicked() {
     if (model && model->getAddressTableModel()) {
         AddressBookPage dlg(AddressBookPage::ForSelection, AddressBookPage::SendingTab, this);
         dlg.setModel(model->getAddressTableModel());
@@ -177,8 +162,7 @@ void SignVerifyMessageDialog::on_addressBookButton_VM_clicked()
     }
 }
 
-void SignVerifyMessageDialog::on_verifyMessageButton_VM_clicked()
-{
+void SignVerifyMessageDialog::on_verifyMessageButton_VM_clicked() {
     CBitcoinAddress addr(ui->addressIn_VM->text().toStdString());
     if (!addr.IsValid()) {
         ui->statusLabel_VM->setStyleSheet("QLabel { color: red; }");
@@ -225,8 +209,7 @@ void SignVerifyMessageDialog::on_verifyMessageButton_VM_clicked()
     ui->statusLabel_VM->setText(QString("<nobr>") + tr("Message verified.") + QString("</nobr>"));
 }
 
-void SignVerifyMessageDialog::on_clearButton_VM_clicked()
-{
+void SignVerifyMessageDialog::on_clearButton_VM_clicked() {
     ui->addressIn_VM->clear();
     ui->signatureIn_VM->clear();
     ui->messageIn_VM->clear();
@@ -235,8 +218,7 @@ void SignVerifyMessageDialog::on_clearButton_VM_clicked()
     ui->addressIn_VM->setFocus();
 }
 
-bool SignVerifyMessageDialog::eventFilter(QObject* object, QEvent* event)
-{
+bool SignVerifyMessageDialog::eventFilter(QObject* object, QEvent* event) {
     if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::FocusIn) {
         if (ui->tabWidget->currentIndex() == 0) {
             /* Clear status message on focus change */

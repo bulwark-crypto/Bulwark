@@ -19,11 +19,10 @@ QT_END_NAMESPACE
    This can be changed to a tree once the settings become sufficiently
    complex.
  */
-class OptionsModel : public QAbstractListModel
-{
+class OptionsModel : public QAbstractListModel {
     Q_OBJECT
 
-public:
+  public:
     explicit OptionsModel(QObject* parent = 0);
 
     enum OptionID {
@@ -43,7 +42,7 @@ public:
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
-		ShowOrphans,         // bool
+        ShowOrphans,         // bool
         ZeromintPercentage,  // int
         ZeromintPrefDenom,   // int
         AnonymizeBulwarkAmount, //int
@@ -62,27 +61,39 @@ public:
     void setDisplayUnit(const QVariant& value);
 
     /* Explicit getters */
-    bool getMinimizeToTray() { return fMinimizeToTray; }
-    bool getMinimizeOnClose() { return fMinimizeOnClose; }
-    int getDisplayUnit() { return nDisplayUnit; }
-    QString getThirdPartyTxUrls() { return strThirdPartyTxUrls; }
+    bool getMinimizeToTray() {
+        return fMinimizeToTray;
+    }
+    bool getMinimizeOnClose() {
+        return fMinimizeOnClose;
+    }
+    int getDisplayUnit() {
+        return nDisplayUnit;
+    }
+    QString getThirdPartyTxUrls() {
+        return strThirdPartyTxUrls;
+    }
     bool getProxySettings(QNetworkProxy& proxy) const;
-    bool getCoinControlFeatures() { return fCoinControlFeatures; }
-    const QString& getOverriddenByCommandLine() { return strOverriddenByCommandLine; }
+    bool getCoinControlFeatures() {
+        return fCoinControlFeatures;
+    }
+    const QString& getOverriddenByCommandLine() {
+        return strOverriddenByCommandLine;
+    }
 
     /* Restart flag helper */
     void setRestartRequired(bool fRequired);
     bool isRestartRequired();
     bool resetSettings;
 
-private:
+  private:
     /* Qt-only settings */
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
     QString language;
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
-	bool fShowOrphans;
+    bool fShowOrphans;
     bool fCoinControlFeatures;
     /* settings that were overriden by command-line */
     QString strOverriddenByCommandLine;
@@ -90,7 +101,7 @@ private:
     /// Add option to list of GUI options overridden through command line/config file
     void addOverriddenOption(const std::string& option);
 
-signals:
+  signals:
     void displayUnitChanged(int unit);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);

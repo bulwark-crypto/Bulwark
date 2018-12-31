@@ -20,8 +20,7 @@
 #include <fstream>
 using namespace std;
 
-void budgetToJSON(CBudgetProposal* pbudgetProposal, UniValue& bObj)
-{
+void budgetToJSON(CBudgetProposal* pbudgetProposal, UniValue& bObj) {
     CTxDestination address1;
     ExtractDestination(pbudgetProposal->GetPayee(), address1);
     CBitcoinAddress address2(address1);
@@ -51,14 +50,13 @@ void budgetToJSON(CBudgetProposal* pbudgetProposal, UniValue& bObj)
 
 // This command is retained for backwards compatibility, but is depreciated.
 // Future removal of this command is planned to keep things clean.
-UniValue mnbudget(const UniValue& params, bool fHelp)
-{
+UniValue mnbudget(const UniValue& params, bool fHelp) {
     string strCommand;
     if (params.size() >= 1)
         strCommand = params[0].get_str();
 
     if (fHelp ||
-        (strCommand != "vote-alias" && strCommand != "vote-many" && strCommand != "prepare" && strCommand != "submit" && strCommand != "vote" && strCommand != "getvotes" && strCommand != "getinfo" && strCommand != "show" && strCommand != "projection" && strCommand != "check" && strCommand != "nextblock"))
+            (strCommand != "vote-alias" && strCommand != "vote-many" && strCommand != "prepare" && strCommand != "submit" && strCommand != "vote" && strCommand != "getvotes" && strCommand != "getinfo" && strCommand != "show" && strCommand != "projection" && strCommand != "check" && strCommand != "nextblock"))
         throw runtime_error(
             "mnbudget \"command\"... ( \"passphrase\" )\n"
             "\nVote or show current budgets\n"
@@ -152,8 +150,7 @@ UniValue mnbudget(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue preparebudget(const UniValue& params, bool fHelp)
-{
+UniValue preparebudget(const UniValue& params, bool fHelp) {
     int nBlockMin = 0;
     CBlockIndex* pindexPrev = chainActive.Tip();
 
@@ -245,8 +242,7 @@ UniValue preparebudget(const UniValue& params, bool fHelp)
     return wtx.GetHash().ToString();
 }
 
-UniValue submitbudget(const UniValue& params, bool fHelp)
-{
+UniValue submitbudget(const UniValue& params, bool fHelp) {
     int nBlockMin = 0;
     CBlockIndex* pindexPrev = chainActive.Tip();
 
@@ -336,8 +332,7 @@ UniValue submitbudget(const UniValue& params, bool fHelp)
     throw runtime_error("Invalid proposal, see debug.log for details.");
 }
 
-UniValue mnbudgetvote(const UniValue& params, bool fHelp)
-{
+UniValue mnbudgetvote(const UniValue& params, bool fHelp) {
     std::string strCommand;
     if (params.size() >= 1) {
         strCommand = params[0].get_str();
@@ -349,7 +344,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
     }
 
     if (fHelp || (params.size() == 3 && (strCommand != "local" && strCommand != "many")) || (params.size() == 4 && strCommand != "alias") ||
-        params.size() > 4 || params.size() < 3)
+            params.size() > 4 || params.size() < 3)
         throw runtime_error(
             "mnbudgetvote \"local|many|alias\" \"votehash\" \"yes|no\" ( \"alias\" )\n"
             "\nVote on a budget proposal\n"
@@ -453,7 +448,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
     }
 
     if (strCommand == "many") {
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
             std::string errorMessage;
             std::vector<unsigned char> vchMasterNodeSignature;
             std::string strMasterNodeSignMessage;
@@ -539,7 +534,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
 
             UniValue statusObj(UniValue::VOBJ);
 
-            if(!obfuScationSigner.SetKey(mne.getPrivKey(), errorMessage, keyMasternode, pubKeyMasternode)){
+            if(!obfuScationSigner.SetKey(mne.getPrivKey(), errorMessage, keyMasternode, pubKeyMasternode)) {
                 failed++;
                 statusObj.push_back(Pair("node", mne.getAlias()));
                 statusObj.push_back(Pair("result", "failed"));
@@ -549,8 +544,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
             }
 
             CMasternode* pmn = mnodeman.Find(pubKeyMasternode);
-            if(pmn == NULL)
-            {
+            if(pmn == NULL) {
                 failed++;
                 statusObj.push_back(Pair("node", mne.getAlias()));
                 statusObj.push_back(Pair("result", "failed"));
@@ -560,7 +554,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
             }
 
             CBudgetVote vote(pmn->vin, hash, nVote);
-            if(!vote.Sign(keyMasternode, pubKeyMasternode)){
+            if(!vote.Sign(keyMasternode, pubKeyMasternode)) {
                 failed++;
                 statusObj.push_back(Pair("node", mne.getAlias()));
                 statusObj.push_back(Pair("result", "failed"));
@@ -597,8 +591,7 @@ UniValue mnbudgetvote(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue getbudgetvotes(const UniValue& params, bool fHelp)
-{
+UniValue getbudgetvotes(const UniValue& params, bool fHelp) {
     if (params.size() != 1)
         throw runtime_error(
             "getbudgetvotes \"proposal-name\"\n"
@@ -646,8 +639,7 @@ UniValue getbudgetvotes(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getnextsuperblock(const UniValue& params, bool fHelp)
-{
+UniValue getnextsuperblock(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getnextsuperblock\n"
@@ -665,8 +657,7 @@ UniValue getnextsuperblock(const UniValue& params, bool fHelp)
     return nNext;
 }
 
-UniValue getbudgetprojection(const UniValue& params, bool fHelp)
-{
+UniValue getbudgetprojection(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getbudgetprojection\n"
@@ -707,7 +698,7 @@ UniValue getbudgetprojection(const UniValue& params, bool fHelp)
     CAmount nTotalAllotted = 0;
 
     std::vector<CBudgetProposal*> winningProps = budget.GetBudget();
-    BOOST_FOREACH (CBudgetProposal* pbudgetProposal, winningProps) {
+    BOOST_FOREACH(CBudgetProposal* pbudgetProposal, winningProps) {
         nTotalAllotted += pbudgetProposal->GetAllotted();
 
         CTxDestination address1;
@@ -725,8 +716,7 @@ UniValue getbudgetprojection(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getbudgetinfo(const UniValue& params, bool fHelp)
-{
+UniValue getbudgetinfo(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getbudgetinfo ( \"proposal\" )\n"
@@ -777,7 +767,7 @@ UniValue getbudgetinfo(const UniValue& params, bool fHelp)
     }
 
     std::vector<CBudgetProposal*> winningProps = budget.GetAllProposals();
-    BOOST_FOREACH (CBudgetProposal* pbudgetProposal, winningProps) {
+    BOOST_FOREACH(CBudgetProposal* pbudgetProposal, winningProps) {
         if (strShow == "valid" && !pbudgetProposal->fValid) continue;
 
         UniValue bObj(UniValue::VOBJ);
@@ -789,8 +779,7 @@ UniValue getbudgetinfo(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue mnbudgetrawvote(const UniValue& params, bool fHelp)
-{
+UniValue mnbudgetrawvote(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 6)
         throw runtime_error(
             "mnbudgetrawvote \"masternode-tx-hash\" masternode-tx-index \"proposal-hash\" yes|no time \"vote-sig\"\n"
@@ -852,14 +841,13 @@ UniValue mnbudgetrawvote(const UniValue& params, bool fHelp)
     }
 }
 
-UniValue mnfinalbudget(const UniValue& params, bool fHelp)
-{
+UniValue mnfinalbudget(const UniValue& params, bool fHelp) {
     string strCommand;
     if (params.size() >= 1)
         strCommand = params[0].get_str();
 
     if (fHelp ||
-        (strCommand != "suggest" && strCommand != "vote-many" && strCommand != "vote" && strCommand != "show" && strCommand != "getvotes"))
+            (strCommand != "suggest" && strCommand != "vote-many" && strCommand != "vote" && strCommand != "show" && strCommand != "getvotes"))
         throw runtime_error(
             "mnfinalbudget \"command\"... ( \"passphrase\" )\n"
             "Vote or show current budgets\n"
@@ -881,7 +869,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
 
         UniValue resultsObj(UniValue::VOBJ);
 
-        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+        BOOST_FOREACH(CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
             std::string errorMessage;
             std::vector<unsigned char> vchMasterNodeSignature;
             std::string strMasterNodeSignMessage;
@@ -979,7 +967,11 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
         UniValue resultObj(UniValue::VOBJ);
 
         std::vector<CFinalizedBudget*> winningFbs = budget.GetFinalizedBudgets();
-        BOOST_FOREACH (CFinalizedBudget* finalizedBudget, winningFbs) {
+        BOOST_FOREACH(CFinalizedBudget* finalizedBudget, winningFbs) {
+            // Ignore old finalized budgets to avoid displaying misleading error
+            // messages about missing proposals.  Include the previous final budget cycle.
+            if (finalizedBudget->GetBlockStart() < (chainActive.Tip()->nHeight - GetBudgetPaymentCycleBlocks())) continue;
+
             UniValue bObj(UniValue::VOBJ);
             bObj.push_back(Pair("FeeTX", finalizedBudget->nFeeTXHash.ToString()));
             bObj.push_back(Pair("Hash", finalizedBudget->GetHash().ToString()));
@@ -1030,8 +1022,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue checkbudgets(const UniValue& params, bool fHelp)
-{
+UniValue checkbudgets(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "checkbudgets\n"

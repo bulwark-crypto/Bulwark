@@ -95,13 +95,11 @@ TINYFORMAT_FOREACH_ARGNUM(MAKE_ERROR_AND_LOG_FUNC)
  * Zero-arg versions of logging and error, these are not covered by
  * TINYFORMAT_FOREACH_ARGNUM
  */
-static inline int LogPrint(const char* category, const char* format)
-{
+static inline int LogPrint(const char* category, const char* format) {
     if (!LogAcceptCategory(category)) return 0;
     return LogPrintStr(format);
 }
-static inline bool error(const char* format)
-{
+static inline bool error(const char* format) {
     LogPrintStr(std::string("ERROR: ") + format + "\n");
     return false;
 }
@@ -130,8 +128,7 @@ boost::filesystem::path GetTempPath();
 void ShrinkDebugFile();
 void runCommand(std::string strCommand);
 
-inline bool IsSwitchChar(char c)
-{
+inline bool IsSwitchChar(char c) {
 #ifdef WIN32
     return c == '-' || c == '/';
 #else
@@ -214,8 +211,7 @@ void RenameThread(const char* name);
  *    threadGroup.create_thread(boost::bind(&LoopForever<boost::function<void()> >, "nothing", f, milliseconds));
  */
 template <typename Callable>
-void LoopForever(const char* name, Callable func, int64_t msecs)
-{
+void LoopForever(const char* name, Callable func, int64_t msecs) {
     std::string s = strprintf("bulwark-%s", name);
     RenameThread(s.c_str());
     LogPrintf("%s thread start\n", name);
@@ -240,8 +236,7 @@ void LoopForever(const char* name, Callable func, int64_t msecs)
  * .. and a wrapper that just calls func once
  */
 template <typename Callable>
-void TraceThread(const char* name, Callable func)
-{
+void TraceThread(const char* name, Callable func) {
     std::string s = strprintf("bulwark-%s", name);
     RenameThread(s.c_str());
     try {

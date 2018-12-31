@@ -15,8 +15,7 @@
 
 class ClientModel;
 
-namespace Ui
-{
+namespace Ui {
 class RPCConsole;
 }
 
@@ -25,11 +24,10 @@ class QItemSelection;
 QT_END_NAMESPACE
 
 /** Local Bitcoin RPC console. */
-class RPCConsole : public QDialog
-{
+class RPCConsole : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit RPCConsole(QWidget* parent);
     ~RPCConsole();
 
@@ -43,10 +41,10 @@ public:
         CMD_ERROR
     };
 
-protected:
+  protected:
     virtual bool eventFilter(QObject* obj, QEvent* event);
 
-private slots:
+  private slots:
     void on_lineEdit_returnPressed();
     void on_tabWidget_currentChanged(int index);
     /** open the debug.log from the current datadir */
@@ -59,7 +57,7 @@ private slots:
     void showEvent(QShowEvent* event);
     void hideEvent(QHideEvent* event);
 
-public slots:
+  public slots:
     void clear();
 
     /** Wallet repair options */
@@ -101,30 +99,30 @@ public slots:
     void peerSelected(const QItemSelection& selected, const QItemSelection& deselected);
     /** Handle updated peer information */
     void peerLayoutChanged();
-	/** Show custom context menu on Peers tab */
-	void showPeersTableContextMenu(const QPoint& point);
-	/** Show custom context menu on Bans tab */
-	void showBanTableContextMenu(const QPoint& point);
-	/** Hides ban table if no bans are present */
-	void showOrHideBanTableIfRequired();
-	/** clear the selected node */
-	void clearSelectedNode();
+    /** Show custom context menu on Peers tab */
+    void showPeersTableContextMenu(const QPoint& point);
+    /** Show custom context menu on Bans tab */
+    void showBanTableContextMenu(const QPoint& point);
+    /** Hides ban table if no bans are present */
+    void showOrHideBanTableIfRequired();
+    /** clear the selected node */
+    void clearSelectedNode();
     /** Show folder with wallet backups in default browser */
-	void disconnectSelectedNode();
-	/** Ban a selected node on the Peers tab */
-	void banSelectedNode(int bantime);
-	/** Unban a selected node on the Bans tab */
-	void unbanSelectedNode();
+    void disconnectSelectedNode();
+    /** Ban a selected node on the Peers tab */
+    void banSelectedNode(int bantime);
+    /** Unban a selected node on the Bans tab */
+    void unbanSelectedNode();
     void showBackups();
 
-signals:
+  signals:
     // For RPC command executor
     void stopExecutor();
     void cmdRequest(const QString& command);
     /** Get restart command-line parameters and handle restart */
     void handleRestart(QStringList args);
 
-private:
+  private:
     static QString FormatBytes(quint64 bytes);
     void startExecutor();
     void setTrafficGraphRange(int mins);
@@ -137,8 +135,8 @@ private:
         ADDRESS_COLUMN_WIDTH = 170,
         SUBVERSION_COLUMN_WIDTH = 140,
         PING_COLUMN_WIDTH = 80,
-		BANSUBNET_COLUMN_WIDTH = 200,
-		BANTIME_COLUMN_WIDTH = 250
+        BANSUBNET_COLUMN_WIDTH = 200,
+        BANTIME_COLUMN_WIDTH = 250
     };
 
     Ui::RPCConsole* ui;
@@ -147,8 +145,8 @@ private:
     int historyPtr;
     NodeId cachedNodeid;
     QCompleter *autoCompleter;
-	QMenu *peersTableContextMenu;
-	QMenu *banTableContextMenu;
+    QMenu *peersTableContextMenu;
+    QMenu *banTableContextMenu;
 };
 
 #endif // BITCOIN_QT_RPCCONSOLE_H

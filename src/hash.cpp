@@ -9,13 +9,11 @@
 #include "crypto/hmac_sha512.h"
 #include "pubkey.h"
 
-inline uint32_t ROTL32(uint32_t x, int8_t r)
-{
+inline uint32_t ROTL32(uint32_t x, int8_t r) {
     return (x << r) | (x >> (32 - r));
 }
 
-unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char>& vDataToHash)
-{
+unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char>& vDataToHash) {
     // The following is MurmurHash3 (x86_32), see http://code.google.com/p/smhasher/source/browse/trunk/MurmurHash3.cpp
     uint32_t h1 = nHashSeed;
     if (vDataToHash.size() > 0) {
@@ -72,8 +70,7 @@ unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char
     return h1;
 }
 
-void BIP32Hash(const unsigned char chainCode[32], unsigned int nChild, unsigned char header, const unsigned char data[32], unsigned char output[64])
-{
+void BIP32Hash(const unsigned char chainCode[32], unsigned int nChild, unsigned char header, const unsigned char data[32], unsigned char output[64]) {
     unsigned char num[4];
     num[0] = (nChild >> 24) & 0xFF;
     num[1] = (nChild >> 16) & 0xFF;
@@ -82,7 +79,6 @@ void BIP32Hash(const unsigned char chainCode[32], unsigned int nChild, unsigned 
     CHMAC_SHA512(chainCode, 32).Write(&header, 1).Write(data, 32).Write(num, 4).Finalize(output);
 }
 
-void scrypt_hash(const char* pass, unsigned int pLen, const char* salt, unsigned int sLen, char* output, unsigned int N, unsigned int r, unsigned int p, unsigned int dkLen)
-{
+void scrypt_hash(const char* pass, unsigned int pLen, const char* salt, unsigned int sLen, char* output, unsigned int N, unsigned int r, unsigned int p, unsigned int dkLen) {
     scrypt(pass, pLen, salt, sLen, output, N, r, p, dkLen);
 }

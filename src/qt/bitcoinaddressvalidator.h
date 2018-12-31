@@ -10,11 +10,10 @@
 /** Base58 entry widget validator, checks for valid characters and
  * removes some whitespace.
  */
-class BitcoinAddressEntryValidator : public QValidator
-{
+class BitcoinAddressEntryValidator : public QValidator {
     Q_OBJECT
 
-public:
+  public:
     explicit BitcoinAddressEntryValidator(QObject* parent);
 
     State validate(QString& input, int& pos) const;
@@ -22,11 +21,10 @@ public:
 
 /** Bitcoin address widget validator, checks for a valid bitcoin address.
  */
-class BitcoinAddressCheckValidator : public QValidator
-{
+class BitcoinAddressCheckValidator : public QValidator {
     Q_OBJECT
 
-public:
+  public:
     explicit BitcoinAddressCheckValidator(QObject* parent);
 
     State validate(QString& input, int& pos) const;

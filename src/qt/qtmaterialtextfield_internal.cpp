@@ -17,8 +17,7 @@ QtMaterialTextFieldStateMachine::QtMaterialTextFieldStateMachine(QtMaterialTextF
       m_label(0),
       m_offsetAnimation(0),
       m_colorAnimation(0),
-      m_progress(0.0)
-{
+      m_progress(0.0) {
     Q_ASSERT(parent);
 
     addState(m_normalState);
@@ -55,12 +54,10 @@ QtMaterialTextFieldStateMachine::QtMaterialTextFieldStateMachine(QtMaterialTextF
     connect(m_textField, SIGNAL(textChanged(QString)), this, SLOT(setupProperties()));
 }
 
-QtMaterialTextFieldStateMachine::~QtMaterialTextFieldStateMachine()
-{
+QtMaterialTextFieldStateMachine::~QtMaterialTextFieldStateMachine() {
 }
 
-void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label)
-{
+void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label) {
     if (m_label) {
         delete m_label;
     }
@@ -77,8 +74,7 @@ void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label)
 
     m_label = label;
 
-    if (m_label)
-    {
+    if (m_label) {
         m_offsetAnimation = new QPropertyAnimation(m_label, "offset", this);
         m_offsetAnimation->setDuration(210);
         m_offsetAnimation->setEasingCurve(QEasingCurve::OutCubic);
@@ -92,10 +88,8 @@ void QtMaterialTextFieldStateMachine::setLabel(QtMaterialTextFieldLabel *label)
     setupProperties();
 }
 
-void QtMaterialTextFieldStateMachine::setupProperties()
-{
-    if (m_label)
-    {
+void QtMaterialTextFieldStateMachine::setupProperties() {
+    if (m_label) {
         const int m = m_textField->textMargins().top();
 
         if (m_textField->text().isEmpty()) {
@@ -129,8 +123,7 @@ QtMaterialTextFieldLabel::QtMaterialTextFieldLabel(QtMaterialTextField *parent)
       m_scale(1),
       m_posX(0),
       m_posY(26),
-      m_color(parent->labelColor())
-{
+      m_color(parent->labelColor()) {
     Q_ASSERT(parent);
 
     QFont font("Roboto", parent->labelFontSize(), QFont::Medium);
@@ -138,15 +131,13 @@ QtMaterialTextFieldLabel::QtMaterialTextFieldLabel(QtMaterialTextField *parent)
     setFont(font);
 }
 
-QtMaterialTextFieldLabel::~QtMaterialTextFieldLabel()
-{
+QtMaterialTextFieldLabel::~QtMaterialTextFieldLabel() {
 }
 
 /*!
  *  \reimp
  */
-void QtMaterialTextFieldLabel::paintEvent(QPaintEvent *event)
-{
+void QtMaterialTextFieldLabel::paintEvent(QPaintEvent *event) {
     Q_UNUSED(event)
 
     if (!m_textField->hasLabel()) {
