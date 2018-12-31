@@ -44,8 +44,8 @@ Bulwark offers both SwiftTX and Obfuscation to enable speedy transactions with a
 
 | Subsidy | Block           | Budget | Circulation    | Note          |
 |---------|-----------------|--------|----------------|---------------|
-| 37.500  | 182701-200000   | 0%     | SeeSaw         | Year 1        |
-| 37.500  | 200001-259200   | 0%     | 35/65          | Year 1        |
+| 37.500  | 182701-199999   | 0%     | SeeSaw         | Year 1        |
+| 37.500  | 200000-259200   | 0%     | 35/65          | Year 1        |
 | 31.250  | 259201-345600   | 0%     | 35/65          | Year 1        |
 | 25.000  | 345601-432000   | 10%    | 30/60          | Year 2        |
 | 21.875  | 432001-518400   | 10%    | 30/60          | Year 2        |
