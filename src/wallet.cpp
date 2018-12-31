@@ -241,9 +241,8 @@ bool CWallet::Unlock(const SecureString& strWalletPassphrase, bool anonymizeOnly
 
     strWalletPassphraseFinal = strWalletPassphrase;
 
-
     CCrypter crypter;
-    CKeyingMaterial vMasterKey;
+    CKeyingMaterial vMasterKey; 
 
     {
         LOCK(cs_wallet);
@@ -2512,6 +2511,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 
     CAmount nCredit = 0;
     CScript scriptPubKeyKernel;
+    CAmount thold = nStakeSplitThreshold * COIN;
 
     //prevent staking a time that won't be accepted
     if (GetAdjustedTime() <= chainActive.Tip()->nTime)
@@ -2587,8 +2587,12 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             uint64_t nTotalSize = pcoin.first->vout[pcoin.second].nValue + GetBlockValue(pIndex0->nHeight);
 
             //presstab HyperStake - if MultiSend is set to send in coinstake we will add our outputs here (values asigned further down)
-            if (nTotalSize / 2 > nStakeSplitThreshold * COIN)
-                txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
+            // Split should happen equally as long as the remainder does not equal less than the threshold.
+            if ((nTotalSize / 2) > thold) {
+                for (int i = 0; i < (nTotalSize / thold); i++) {
+                    txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
+                }
+            }
 
             if (fDebug && GetBoolArg("-printcoinstake", false))
                 LogPrintf("CreateCoinStake : added kernel type=%d\n", whichType);
@@ -2609,10 +2613,21 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 
     CAmount nMinFee = 0;
     while (true) {
-        // Set output amount
-        if (txNew.vout.size() == 3) {
-            txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
-            txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
+        // Process splits for staking.  We will cap each vout at the split
+        // threshold with the last vout having the remainder.
+        if (txNew.vout.size() >= 3) {
+            CAmount r = nCredit; // Remainder balance
+            // Loop over vout and set value to split threshold minus fee.
+            for (int i = 1; i < txNew.vout.size(); i++) {
+                txNew.vout[i].nValue = thold;
+                r -= txNew.vout[i].nValue;
+            }
+            // If a remainder is found then attach to last vout.
+            if (r > 0) {
+                txNew.vout[txNew.vout.size()-1].nValue += r - nMinFee;
+            }
+            //txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
+            //txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
         } else
             txNew.vout[1].nValue = nCredit - nMinFee;
 

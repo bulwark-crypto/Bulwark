@@ -10,6 +10,12 @@ Bulwark offers both SwiftTX and Obfuscation to enable speedy transactions with a
 
 __Note: The `master` branch may contain development that is in progress, it is recommended to use the latest tagged version or a binary release.__
 
+## Table of Contents
+- [Specifications](#specifications)
+- [PoS Staking Requirements](#pos-staking-requirements)
+- [PoS Block Rewards](#pos-block-rewards)
+
+<a name="specifications"></a>
 ## Specifications
 
 | Specification         | Descriptor                              |
@@ -25,44 +31,43 @@ __Note: The `master` branch may contain development that is in progress, it is r
 | Confirmation          | 6 Blocks (~9 Minutes)                   |
 | Circulation (1 Year)  | 14,505,720 BWK                          |
 | Circulation (5 Years) | 27,668,220 BWK                          |
+| Governance Funds (Max)| 1,388,250 BWK                          |
 | PoW Period            | nHeight ≤ 182,700                       |
 | PoS Period            | nHeight ≥ 182,701                       |
 | Protocol Support      | IPV4, IPV6, TOR, I2P                    |
 | PoS                   | SeeSaw & Split Rewards                  |
 
-## PoW Block Reward
+<a name="pos-staking-requirements"></a>
+## PoS Staking Requirements
 
-| Subsidy  | Block         | PoW  | MN  | Circulation |
-|----------|---------------|------|-----|-------------|
-| 489720   | 1             | 100% | NA  | 489200      |
-| ~25(avg) | 2-960         | 100% | NA  | 513225      |
-| 50.000   | 961-28800     | 80%  | 20% | 1905225     |
-| 50.000   | 28801-57600   | 75%  | 25% | 3345225     |
-| 50.000   | 57601-86400   | 66%  | 33% | 4785225     |
-| 43.750   | 86401-172800  | 50%  | 50% | 8565225     |
-| 37.500   | 172801-182700 | 50%  | 50% | 8936475     |
+| Requirement   | Details              |
+|---------------|----------------------|
+| Confirmations | 475 Blocks           |
+| Amount        | 100 BWK (Per Input)  |
+| Wallet        | Unlocked for Staking |
 
+<a name="pos-block-rewards"></a>
 ## PoS Block Rewards
 
-| Subsidy | Block           | Budget | Circulation    | Note          |
+| Subsidy | Block           | Budget | Reward Split   | Note          |
 |---------|-----------------|--------|----------------|---------------|
-| 37.500  | 182701-200000   | 0%     | SeeSaw         | Year 1        |
-| 37.500  | 200001-259200   | 0%     | 35/65          | Year 1        |
+| 37.500  | 182701-199999   | 0%     | SeeSaw         | Year 1        |
+| 37.500  | 200000-259200   | 0%     | 35/65          | Year 1        |
 | 31.250  | 259201-345600   | 0%     | 35/65          | Year 1        |
-| 25.000  | 345601-432000   | 10%    | 30/60          | Year 2        |
-| 21.875  | 432001-518400   | 10%    | 30/60          | Year 2        |
-| 18.750  | 518401-604800   | 10%    | 30/60          | Year 2        |
-| 15.625  | 604801-691200   | 10%    | 30/60          | Year 2        |
-| 12.50   | 691201-777600   | 10%    | 30/60          | Year 3        |
-| 10.938  | 777601-864000   | 10%    | 30/60          | Year 3        |
-| 9.3750  | 864001-950400   | 10%    | 30/60          | Year 3        |
-| 7.8120  | 950401-1036800  | 10%    | 30/60          | Year 3        |
-| 6.2500  | 1036801-1123200 | 10%    | 30/60          | Year 4        |
-| 5.4690  | 1123201-1209600 | 10%    | 30/60          | Year 4        |
-| 4.6880  | 1209601-1296000 | 10%    | 30/60          | Year 4        |
-| 3.9060  | 1296000-1382400 | 10%    | 30/60          | Year 4        |
-| 3.1250  | 1382401-1468800 | 10%    | 30/60          | Year 5        |
-| 2.7340  | 1468801-1555200 | 10%    | 30/60          | Year 5        |
-| 2.3440  | 1555201-1641600 | 10%    | 30/60          | Year 5        |
-| 1.9530  | 1641601-1728000 | 10%    | 30/60          | Year 5        |
-| 1.6250  | 1728000+        | 10%    | 30/60          | In Perpetuity |
+| 25.000  | 345601-432000   | 10%    | 35/65          | Year 2        |
+| 21.875  | 432001-518400   | 10%    | 35/65          | Year 2        |
+| 18.750  | 518401-604800   | 10%    | 35/65          | Year 2        |
+| 15.625  | 604801-691200   | 10%    | 35/65          | Year 2        |
+| 12.50   | 691201-777600   | 10%    | 35/65          | Year 3        |
+| 10.938  | 777601-864000   | 10%    | 35/65          | Year 3        |
+| 9.3750  | 864001-950400   | 10%    | 35/65          | Year 3        |
+| 7.8120  | 950401-1036800  | 10%    | 35/65          | Year 3        |
+| 6.2500  | 1036801-1123200 | 10%    | 35/65          | Year 4        |
+| 5.4690  | 1123201-1209600 | 10%    | 35/65          | Year 4        |
+| 4.6880  | 1209601-1296000 | 10%    | 35/65          | Year 4        |
+| 3.9060  | 1296000-1382400 | 10%    | 35/65          | Year 4        |
+| 3.1250  | 1382401-1468800 | 10%    | 35/65          | Year 5        |
+| 2.7340  | 1468801-1555200 | 10%    | 35/65          | Year 5        |
+| 2.3440  | 1555201-1641600 | 10%    | 35/65          | Year 5        |
+| 1.9530  | 1641601-1728000 | 10%    | 35/65          | Year 5        |
+| 1.6250  | 1728000+        | 10%    | 35/65          | In Perpetuity |

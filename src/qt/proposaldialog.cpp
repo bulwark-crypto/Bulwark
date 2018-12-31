@@ -28,7 +28,7 @@
 #include <QString>
 #include <QTimer>
 
-ProposalDialog::ProposalDialog(Mode mode, QWidget* parent) : QDialog(parent), ui(new Ui::ProposalDialog), mapper(0), mode(mode), counter(0) {
+ProposalDialog::ProposalDialog(Mode mode, QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint), ui(new Ui::ProposalDialog), mapper(0), mode(mode), counter(0) {
     ui->setupUi(this);
 
     switch (mode) {
