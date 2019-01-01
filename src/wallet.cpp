@@ -2589,13 +2589,14 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             //presstab HyperStake - if MultiSend is set to send in coinstake we will add our outputs here (values asigned further down)
             // Split should happen equally as long as the remainder does not equal less than the threshold.
             if ((nTotalSize / 2) > thold) {
+                LogPrintf("CreateCoinStake : split threshold=%d breached=%d\n", thold, (nTotalSize / 2));
                 for (int i = 0; i < (nTotalSize / thold); i++) {
+                    LogPrintf("CreateCoinStake : adding split threshold tx=%d\n", i);
                     txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
                 }
             }
 
-            if (fDebug && GetBoolArg("-printcoinstake", false))
-                LogPrintf("CreateCoinStake : added kernel type=%d\n", whichType);
+            if (fDebug && GetBoolArg("-printcoinstake", false)) LogPrintf("CreateCoinStake : added kernel type=%d\n", whichType);
             fKernelFound = true;
             break;
         }
@@ -2621,10 +2622,12 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             for (int i = 1; i < txNew.vout.size(); i++) {
                 txNew.vout[i].nValue = thold;
                 r -= txNew.vout[i].nValue;
+                LogPrintf("CreateCoinStake : setting split tx=%d value=%s\n", i, FormatMoney(txNew.vout[i].nValue).c_str());
             }
             // If a remainder is found then attach to last vout.
             if (r > 0) {
                 txNew.vout[txNew.vout.size()-1].nValue += r - nMinFee;
+                LogPrintf("CreateCoinStake : adding remainder to final split tx=%d value=%s\n", (txNew.vout.size()-1), FormatMoney(txNew.vout[txNew.vout.size()-1].nValue).c_str());
             }
             //txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
             //txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
