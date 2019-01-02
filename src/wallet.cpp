@@ -2589,8 +2589,9 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             //presstab HyperStake - if MultiSend is set to send in coinstake we will add our outputs here (values asigned further down)
             // Split should happen equally as long as the remainder does not equal less than the threshold.
             if ((nTotalSize / 2) > thold) {
-                LogPrintf("CreateCoinStake : split threshold=%d breached=%d\n", thold, (nTotalSize / 2));
-                for (int i = 0; i < (nTotalSize / thold); i++) {
+                LogPrintf("CreateCoinStake : split=%d threshold=%d breached=%d\n", nTotalSize, thold, (nTotalSize / 2));
+                // Start 1 off to account for stake transaction already added above.
+                for (int i = 1; i < (nTotalSize / thold); i++) {
                     LogPrintf("CreateCoinStake : adding split threshold tx=%d\n", i);
                     txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
                 }
@@ -2617,6 +2618,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         // Process splits for staking.  We will cap each vout at the split
         // threshold with the last vout having the remainder.
         if (txNew.vout.size() >= 3) {
+            LogPrintf("CreateCoinStake : txNew.vout=%d\n", txNew.vout.size());
             CAmount r = nCredit; // Remainder balance
             // Loop over vout and set value to split threshold minus fee.
             for (int i = 1; i < txNew.vout.size(); i++) {
