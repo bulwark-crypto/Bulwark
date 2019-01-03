@@ -11,11 +11,16 @@ QT_TS = \
   qt/locale/bulwark_en.ts \
   qt/locale/bulwark_en_US.ts \
   qt/locale/bulwark_es.ts \
+  qt/locale/bulwark_es_ES.ts \
   qt/locale/bulwark_fi.ts \
   qt/locale/bulwark_fr_FR.ts \
+  qt/locale/bulwark_hi_IN.ts \
+  qt/locale/bulwark_hr.ts \
+  qt/locale/bulwark_hr_HR.ts \
   qt/locale/bulwark_it.ts \
   qt/locale/bulwark_ja.ts \
   qt/locale/bulwark_ko_KR.ts \
+  qt/locale/bulwark_lt_LT.ts \
   qt/locale/bulwark_nl.ts \
   qt/locale/bulwark_pl.ts \
   qt/locale/bulwark_pt.ts \
@@ -26,6 +31,7 @@ QT_TS = \
   qt/locale/bulwark_sv.ts \
   qt/locale/bulwark_tr.ts \
   qt/locale/bulwark_uk.ts \
+  qt/locale/bulwark_vi.ts \
   qt/locale/bulwark_zh_CN.ts \
   qt/locale/bulwark_zh_TW.ts
 
