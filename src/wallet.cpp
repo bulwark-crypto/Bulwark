@@ -1739,18 +1739,30 @@ bool CWallet::MintableCoins() {
     AvailableCoins(vCoins, true);
 
     // On spork activation update the staking requirements.
+    CAmount nMinAmount = 0.0;
+    int nMinDepth = 6;
     unsigned int nMinStakeAge = nStakeMinAge;
     if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS)) {
+        nMinAmount = Params().Stake_MinAmount();
+        nMinDepth = Params().Stake_MinConfirmations();
         nMinStakeAge = nStakeMinAgeConsensus;
     }
 
-    for (const COutput& out : vCoins) {
+    for (const COutput& out : vCoins) { 
         int64_t nTxTime = out.tx->GetTxTime();
         if (out.tx->IsZerocoinSpend()) {
             if (!out.tx->IsInMainChain())
                 continue;
             nTxTime = mapBlockIndex.at(out.tx->hashBlock)->GetBlockTime();
         }
+
+        // Make sure minimum depth has been matched.
+        if (out.tx->GetDepthInMainChain(false) <= nMinDepth)
+            continue;
+        
+        // Make sure minimum amount is met for staking.
+        if (out.Value() <= nMinAmount)
+            continue;
 
         if (GetAdjustedTime() - nTxTime > nMinStakeAge)
             return true;
