@@ -40,7 +40,7 @@ addons:
     - zlib1g-dev
 env:
   global:
-  - BULWARK_VERSION=2.0.0.0
+  - BULWARK_VERSION=2.1.0.0
   - CCACHE_COMPRESS=1
   - CCACHE_SIZE=500M
   - CCACHE_TEMPDIR=/tmp/.ccache-temp
