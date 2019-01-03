@@ -93,7 +93,11 @@
         <source>Exporting Failed</source>
         <translation>Vienti epäonnistui</translation>
     </message>
-    </context>
+    <message>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Tapahtui virhe osoitelistan tallennuksessa %1. Yritä uudestaan.</translation>
+    </message>
+</context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -132,10 +136,6 @@
         <translation>Ottaa pois käytöstä tavallisen sendmoneyn kun käyttöjärjestelmä on kompromisoitu. Ei tarjoa todellista turvaa.</translation>
     </message>
     <message>
-        <source>For anonymization and staking only</source>
-        <translation>Vain anonymisointiin ja panostukseen</translation>
-    </message>
-    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Syötä uusi salausavain lompakkoon &lt;br/&gt; Käytä salausavaimena &lt;b&gt;yli kymmentä satunnaista merkkiä&lt;/b&gt;, tai &lt;b&gt; kahdeksaa tai useampaa sanaa&lt;/b&gt;.</translation>
     </message>
@@ -172,16 +172,16 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella BWKien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
+        <translation>Bulwark sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella Bulwarkien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Oletko varma että tahdot salata lompakkosi?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki BWKisi&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki Bulwarkisi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -225,6 +225,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -235,17 +238,8 @@
         <translation>BIP 38 Salaus</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Syötä Bulwark osoite, jonnka tahtoisit salata käyttäen BIP 38.
-Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityisavaimen.</translation>
-    </message>
-    <message>
         <source>Address:</source>
         <translation>Osoite:</translation>
-    </message>
-    <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -276,16 +270,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Bulwark osoitteen</translation>
-    </message>
-    <message>
         <source>Encrypt Key</source>
         <translation>Salaus Avain</translation>
-    </message>
-    <message>
-        <source>Reset all sign message fields</source>
-        <translation>Tyhjennä kaikki allekirjoita viesti kentät</translation>
     </message>
     <message>
         <source>Clear All</source>
@@ -300,20 +286,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Syötä BIP 38 salattu yksityisavain. Syötä salausavain laatikkoon. Paina Avaa Salaus tuottaaksesi yksityisavaimen. Kun avain on dekryptattu, painamalla "Import osoite" lisää tämän yksityisavaimen lompakkoon.</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark osoite, jolla viesti allekirjoitettiin</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Bulwark osoitteella.</translation>
-    </message>
-    <message>
         <source>Decrypt Key</source>
         <translation>Salauksen avaus Avain</translation>
-    </message>
-    <message>
-        <source>Reset all verify message fields</source>
-        <translation>Tyhjennä kaikki vahvista viesti kentät</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -599,8 +573,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lähetä kolikkoja Bulwark osoitteeseen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bulwark: URIs)</source>
-        <translation>Pyydä maksuja (Generoi QR koodeja ja bulwark: URIja)</translation>
+        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
+        <translation>Pyydä maksuja (Generoi QR koodeja ja Bulwark: URIja)</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -701,10 +675,6 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
     <message>
         <source>%1 and %2</source>
         <translation>%1 ja %2</translation>
-    </message>
-    <message>
-        <source>%1 behind</source>
-        <translation>%1 takana</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -811,6 +781,10 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
     <message>
         <source>Amount</source>
         <translation>Määrä</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tyyppi</translation>
     </message>
     <message>
         <source>Date</source>
@@ -1079,6 +1053,10 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lähetä Masternode palkkioihin</translation>
     </message>
     <message>
+        <source>(no label)</source>
+        <translation>(ei nimikettä)</translation>
+    </message>
+    <message>
         <source>The entered address:
 </source>
         <translation>Syötetty osoite:</translation>
@@ -1113,6 +1091,21 @@ Please check the address and try again.</source>
     </message>
 </context>
 <context>
+    <name>MultisigDialog</name>
+    <message>
+        <source>Status:</source>
+        <translation>Tila:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Amount:</source>
+        <translation>Määrä:</translation>
+    </message>
+    </context>
+<context>
     <name>ObfuscationConfig</name>
     <message>
         <source>Configure Obfuscation</source>
@@ -1135,32 +1128,32 @@ Please check the address and try again.</source>
         <translation>Valitse yksityisyyden taso.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 5000 BWK</source>
-        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 5000 Bulwark</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
+        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 Bulwark</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 5000 BWK</source>
-        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 5000 Bulwark</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
+        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 Bulwark</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Käytä 16 erillistä masternodea</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 BWK to anonymize 5000 BWK</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 BWK anonymoidaksesi 5000 Bulwark</translation>
+        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 Bulwark anonymoidaksesi 10000 Bulwark</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 BWK to anonymize 5000 BWK</source>
-        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Bulwark anonymoidaksesi 5000 Bulwark</translation>
+        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
+        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Bulwark anonymoidaksesi 10000 Bulwark</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Tämä on hitain ja turvallisin vaihtoehto. Täydesti anonymisoiminen ei maksa mitään.</translation>
     </message>
     <message>
-        <source>0.1 BWK per 5000 BWK you anonymize.</source>
-        <translation>0.1 per 5000 Bulwark, jotka anonymisoit.</translation>
+        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
+        <translation>0.1 per 10000 Bulwark, jotka anonymisoit.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1215,50 +1208,6 @@ Please check the address and try again.</source>
     <message>
         <source>Start Bulwark on system login</source>
         <translation>Aloita Bulwark järjestelmän kirjautumisessa</translation>
-    </message>
-    <message>
-        <source>Amount of Bulwark to keep anonymized</source>
-        <translation>Bulwark määrä joka pidetään anonymisoituna</translation>
-    </message>
-    <message>
-        <source>Enable coin control features</source>
-        <translation>Ota käyttöön coin kontrolli palvelut</translation>
-    </message>
-    <message>
-        <source>Show Masternodes Tab</source>
-        <translation>Näytä Masternode välilehti</translation>
-    </message>
-    <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Käytä vahvistamaton vaihtoraha</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation>Verkko</translation>
-    </message>
-    <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>Käyttöliittymän kielen voi säätää täällä. Tämä asetus tulee voimaan uudelleenkäynnistettyäsi lompakon.</translation>
-    </message>
-    <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Bulwark verkkoon SOCKS5 proxyn kautta</translation>
-    </message>
-    <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
-    </message>
-    <message>
-        <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
-        <translation>Proxyn IP osoite  (esim. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation>Portti:</translation>
-    </message>
-    <message>
-        <source>Port of the proxy (e.g. 9050)</source>
-        <translation>Proxyn portti (esim. 9050)</translation>
     </message>
     <message>
         <source>Enable coin control features</source>
@@ -1384,7 +1333,7 @@ Please check the address and try again.</source>
         <source>The supplied proxy address is invalid.</source>
         <translation>Tarjottu proxy osoite on virheellinen.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -1418,10 +1367,6 @@ Please check the address and try again.</source>
     <message>
         <source>Total:</source>
         <translation>Määrä:</translation>
-    </message>
-    <message>
-        <source>Your current total balance</source>
-        <translation>Sinun nykyinen kokonaissaldo</translation>
     </message>
     <message>
         <source>Spendable:</source>
@@ -1487,6 +1432,10 @@ Please check the address and try again.</source>
     <message>
         <source>Priority:</source>
         <translation>Tärkeys:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TekstiNimike</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -1717,10 +1666,6 @@ Please check the address and try again.</source>
         <source>Unknown</source>
         <translation>Tuntematon</translation>
     </message>
-    <message>
-        <source>Fetching...</source>
-        <translation>Haetaan...</translation>
-    </message>
 </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -1914,18 +1859,6 @@ Please check the address and try again.</source>
         <translation>Tavut:</translation>
     </message>
     <message>
-        <source>Insufficient funds!</source>
-        <translation>Puutteelliset varat!</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Määrä:</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Tavut:</translation>
-    </message>
-    <message>
         <source>Amount:</source>
         <translation>Määrä:</translation>
     </message>
@@ -1954,8 +1887,8 @@ Please check the address and try again.</source>
         <translation>Muutos:</translation>
     </message>
     <message>
-        <source>0 BWK</source>
-        <translation>0 BWK</translation>
+        <source>0 Bulwark</source>
+        <translation>0 Bulwark</translation>
     </message>
     <message>
         <source>Choose...</source>
@@ -2014,10 +1947,6 @@ Please check the address and try again.</source>
         <translation>Lisää Vastaanottaja</translation>
     </message>
     <message>
-        <source>SwiftX</source>
-        <translation>SwiftX</translation>
-    </message>
-    <message>
         <source>Balance:</source>
         <translation>Saldo:</translation>
     </message>
@@ -2034,11 +1963,7 @@ Please check the address and try again.</source>
         <translation>Kopioi taksa</translation>
     </message>
     <message>
-        <source>using</source>
-        <translation>käyttää</translation>
-    </message>
-    <message>
-        <source>Warning: Invalid Bulwark address</source>
+        <source>Warning: Invalid BWK address</source>
         <translation>Varoitus: Virheellinen Bulwark osoite</translation>
     </message>
     <message>
@@ -2072,6 +1997,10 @@ Please check the address and try again.</source>
     <message>
         <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
         <translation>Virhe: Lompakko avattiin vain kolikoiden anonymisointiin. Avaus peruutettu.</translation>
+    </message>
+    <message>
+        <source>Pay only the minimum fee of %1</source>
+        <translation>Maksa vain %1 minimi taksa</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2185,14 +2114,6 @@ Please check the address and try again.</source>
     <message>
         <source>The Bulwark address the message was signed with</source>
         <translation>Bulwark osoite, jolla viesti allekirjoitettiin</translation>
-    </message>
-    <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Bulwark osoitteella.</translation>
-    </message>
-    <message>
-        <source>Sign Message</source>
-        <translation>Allekirjoita Viesti</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
@@ -2402,10 +2323,6 @@ Please check the address and try again.</source>
         <translation>Maksut itsellesi</translation>
     </message>
     <message>
-        <source>Minted</source>
-        <translation>Luotu</translation>
-    </message>
-    <message>
         <source>Mined</source>
         <translation>Mainattu</translation>
     </message>
@@ -2544,6 +2461,10 @@ Please check the address and try again.</source>
         <source>Exporting Successful</source>
         <translation>Vienti onnistui</translation>
     </message>
+    <message>
+        <source>The transaction history was successfully saved to %1.</source>
+        <translation>Rahansiirto historia onnistuneesti tallennettu %1</translation>
+    </message>
     </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
@@ -2588,17 +2509,9 @@ Please check the address and try again.</source>
         <source>Wallet Data (*.dat)</source>
         <translation>Lompakko Data (*.dat)</translation>
     </message>
-    <message>
-        <source>Backup Failed</source>
-        <translation>Varmuuskopiointi epäonnistui</translation>
-    </message>
-    <message>
-        <source>Backup Successful</source>
-        <translation>Varmuuskopiointi onnistui</translation>
-    </message>
-    </context>
+</context>
 <context>
-    <name>ZBwkControlDialog</name>
+    <name>zBWKControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
@@ -2606,62 +2519,6 @@ Please check the address and try again.</source>
     </context>
 <context>
     <name>bulwark-core</name>
-    <message>
-        <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
-        <translation>Varoitus: Verkko ei näytä olevan samaa mieltä! Jotkin mainaajat saattavat kokea ongelmia.</translation>
-    </message>
-    <message>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Varoitus: virhe yrittäessä lukea wallet.dat tiedostoa! Kaikki avaimet luettu onnistuneesti, mutta rahansiirto- tai yhteystietokirjat saattavat puuttua tai olla virheellisiä.</translation>
-    </message>
-    <message>
-        <source>Connect through SOCKS5 proxy</source>
-        <translation>Yhdistä SOCKS5 proxyn kautta</translation>
-    </message>
-    <message>
-        <source>Connection options:</source>
-        <translation>Yhteys vaihtoehdot:</translation>
-    </message>
-    <message>
-        <source>Corrupted block database detected</source>
-        <translation>Korruptoitunut lohko tietokannassa havaittu</translation>
-    </message>
-    <message>
-        <source>Do you want to rebuild the block database now?</source>
-        <translation>Haluatko rakentaa uudelleen lohkotietokannan?</translation>
-    </message>
-    <message>
-        <source>Done loading</source>
-        <translation>Lataus valmis</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Virhe Masternodeen yhdistyksessä</translation>
-    </message>
-    <message>
-        <source>Error initializing block database</source>
-        <translation>Virhe aloittaessa lohko tietokantaa</translation>
-    </message>
-    <message>
-        <source>Error loading block database</source>
-        <translation>Virhe ladattaessa lohko tietokantaa</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko korruptoitunut</translation>
-    </message>
-    <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version Bulwark Coresta</translation>
-    </message>
-    <message>
-        <source>Error reading from database, shutting down.</source>
-        <translation>Virhe lukiessa tietokantaa, sammutetaan.</translation>
-    </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Varoitus: Verkko ei näytä olevan samaa mieltä! Jotkin mainaajat saattavat kokea ongelmia.</translation>

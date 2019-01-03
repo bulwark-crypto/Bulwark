@@ -311,18 +311,18 @@ QString TransactionTableModel::lookupAddress(const std::string& address, bool to
 QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const {
     switch (wtx->type) {
     case TransactionRecord::RecvWithAddress:
-        return tr("Received with");
+        return tr("Received With");
     case TransactionRecord::MNReward:
         return tr("Masternode Reward");
     case TransactionRecord::RecvFromOther:
-        return tr("Received from");
+        return tr("Received From");
     case TransactionRecord::RecvWithObfuscation:
-        return tr("Received via Obfuscation");
+        return tr("Received Via Obfuscation");
     case TransactionRecord::SendToAddress:
     case TransactionRecord::SendToOther:
-        return tr("Sent to");
+        return tr("Sent To");
     case TransactionRecord::SendToSelf:
-        return tr("Payment to yourself");
+        return tr("Payment To Yourself");
     case TransactionRecord::StakeMint:
         return tr("Minted");
     case TransactionRecord::Generated:
@@ -338,15 +338,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const 
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted BWK to zBWK");
+        return tr("Converted BWK To zBWK");
     case TransactionRecord::ZerocoinSpend:
         return tr("Spent zBWK");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received BWK from zBWK");
+        return tr("Received BWK From zBWK");
     case TransactionRecord::ZerocoinSpend_Change_zBWK:
-        return tr("Minted Change as zBWK from zBWK Spend");
+        return tr("Minted Change As zBWK From zBWK Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zBWK to BWK");
+        return tr("Converted zBWK To BWK");
 
     default:
         return QString();
@@ -357,6 +357,7 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord* wtx
     switch (wtx->type) {
     case TransactionRecord::Generated:
     case TransactionRecord::StakeMint:
+        return QIcon(":/icons/stakemint");
     case TransactionRecord::MNReward:
         return QIcon(":/icons/masternodes");
     case TransactionRecord::RecvWithObfuscation:

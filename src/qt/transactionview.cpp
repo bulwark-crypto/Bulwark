@@ -66,10 +66,10 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
 #endif
     dateWidget->addItem(tr("All"), All);
     dateWidget->addItem(tr("Today"), Today);
-    dateWidget->addItem(tr("This week"), ThisWeek);
-    dateWidget->addItem(tr("This month"), ThisMonth);
-    dateWidget->addItem(tr("Last month"), LastMonth);
-    dateWidget->addItem(tr("This year"), ThisYear);
+    dateWidget->addItem(tr("This Week"), ThisWeek);
+    dateWidget->addItem(tr("This Month"), ThisMonth);
+    dateWidget->addItem(tr("Last Month"), LastMonth);
+    dateWidget->addItem(tr("This Year"), ThisYear);
     dateWidget->addItem(tr("Range..."), Range);
     dateWidget->setCurrentIndex(settings.value("transactionDate").toInt());
     hlayout->addWidget(dateWidget);
@@ -83,8 +83,8 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
 
     typeWidget->addItem(tr("All"), TransactionFilterProxy::ALL_TYPES);
     typeWidget->addItem(tr("Most Common"), TransactionFilterProxy::COMMON_TYPES);
-    typeWidget->addItem(tr("Received with"), TransactionFilterProxy::TYPE(TransactionRecord::RecvWithAddress) | TransactionFilterProxy::TYPE(TransactionRecord::RecvFromOther));
-    typeWidget->addItem(tr("Sent to"), TransactionFilterProxy::TYPE(TransactionRecord::SendToAddress) | TransactionFilterProxy::TYPE(TransactionRecord::SendToOther));
+    typeWidget->addItem(tr("Received With"), TransactionFilterProxy::TYPE(TransactionRecord::RecvWithAddress) | TransactionFilterProxy::TYPE(TransactionRecord::RecvFromOther));
+    typeWidget->addItem(tr("Sent To"), TransactionFilterProxy::TYPE(TransactionRecord::SendToAddress) | TransactionFilterProxy::TYPE(TransactionRecord::SendToOther));
 
     /* Obsolete Obfuscation entries. Remove once the corresponding TYPES are removed:
      *
@@ -95,15 +95,15 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
         typeWidget->addItem(tr("Obfuscation Collateral Payment"), TransactionFilterProxy::TYPE(TransactionRecord::ObfuscationCollateralPayment));
      */
 
-    typeWidget->addItem(tr("To yourself"), TransactionFilterProxy::TYPE(TransactionRecord::SendToSelf));
+    typeWidget->addItem(tr("To Yourself"), TransactionFilterProxy::TYPE(TransactionRecord::SendToSelf));
     typeWidget->addItem(tr("Mined"), TransactionFilterProxy::TYPE(TransactionRecord::Generated));
     typeWidget->addItem(tr("Minted"), TransactionFilterProxy::TYPE(TransactionRecord::StakeMint));
     typeWidget->addItem(tr("Masternode Reward"), TransactionFilterProxy::TYPE(TransactionRecord::MNReward));
-    typeWidget->addItem(tr("Received BWK from zBWK"), TransactionFilterProxy::TYPE(TransactionRecord::RecvFromZerocoinSpend));
+    typeWidget->addItem(tr("Received BWK From zBWK"), TransactionFilterProxy::TYPE(TransactionRecord::RecvFromZerocoinSpend));
     typeWidget->addItem(tr("Zerocoin Mint"), TransactionFilterProxy::TYPE(TransactionRecord::ZerocoinMint));
     typeWidget->addItem(tr("Zerocoin Spend"), TransactionFilterProxy::TYPE(TransactionRecord::ZerocoinSpend));
-    typeWidget->addItem(tr("Zerocoin Spend, Change in zBWK"), TransactionFilterProxy::TYPE(TransactionRecord::ZerocoinSpend_Change_zBWK));
-    typeWidget->addItem(tr("Zerocoin Spend to Self"), TransactionFilterProxy::TYPE(TransactionRecord::ZerocoinSpend_FromMe));
+    typeWidget->addItem(tr("Zerocoin Spend, Change In zBWK"), TransactionFilterProxy::TYPE(TransactionRecord::ZerocoinSpend_Change_zBWK));
+    typeWidget->addItem(tr("Zerocoin Spend To Self"), TransactionFilterProxy::TYPE(TransactionRecord::ZerocoinSpend_FromMe));
     typeWidget->addItem(tr("Other"), TransactionFilterProxy::TYPE(TransactionRecord::Other));
     typeWidget->setCurrentIndex(settings.value("transactionType").toInt());
 
@@ -149,12 +149,12 @@ TransactionView::TransactionView(QWidget* parent) : QWidget(parent), model(0), t
     transactionView = view;
 
     // Actions
-    QAction* copyAddressAction = new QAction(tr("Copy address"), this);
-    QAction* copyLabelAction = new QAction(tr("Copy label"), this);
-    QAction* copyAmountAction = new QAction(tr("Copy amount"), this);
-    QAction* copyTxIDAction = new QAction(tr("Copy transaction ID"), this);
-    QAction* editLabelAction = new QAction(tr("Edit label"), this);
-    QAction* showDetailsAction = new QAction(tr("Show transaction details"), this);
+    QAction* copyAddressAction = new QAction(tr("Copy Address"), this);
+    QAction* copyLabelAction = new QAction(tr("Copy Label"), this);
+    QAction* copyAmountAction = new QAction(tr("Copy Amount"), this);
+    QAction* copyTxIDAction = new QAction(tr("Copy Transaction ID"), this);
+    QAction* editLabelAction = new QAction(tr("Edit Label"), this);
+    QAction* showDetailsAction = new QAction(tr("Show Transaction Details"), this);
 
     contextMenu = new QMenu();
     contextMenu->addAction(copyAddressAction);

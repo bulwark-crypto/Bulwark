@@ -1739,18 +1739,30 @@ bool CWallet::MintableCoins() {
     AvailableCoins(vCoins, true);
 
     // On spork activation update the staking requirements.
+    CAmount nMinAmount = 0.0;
+    int nMinDepth = 6;
     unsigned int nMinStakeAge = nStakeMinAge;
     if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS)) {
+        nMinAmount = Params().Stake_MinAmount();
+        nMinDepth = Params().Stake_MinConfirmations();
         nMinStakeAge = nStakeMinAgeConsensus;
     }
 
-    for (const COutput& out : vCoins) {
+    for (const COutput& out : vCoins) { 
         int64_t nTxTime = out.tx->GetTxTime();
         if (out.tx->IsZerocoinSpend()) {
             if (!out.tx->IsInMainChain())
                 continue;
             nTxTime = mapBlockIndex.at(out.tx->hashBlock)->GetBlockTime();
         }
+
+        // Make sure minimum depth has been matched.
+        if (out.tx->GetDepthInMainChain(false) <= nMinDepth)
+            continue;
+        
+        // Make sure minimum amount is met for staking.
+        if (out.Value() <= nMinAmount)
+            continue;
 
         if (GetAdjustedTime() - nTxTime > nMinStakeAge)
             return true;
@@ -2589,13 +2601,15 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             //presstab HyperStake - if MultiSend is set to send in coinstake we will add our outputs here (values asigned further down)
             // Split should happen equally as long as the remainder does not equal less than the threshold.
             if ((nTotalSize / 2) > thold) {
-                for (int i = 0; i < (nTotalSize / thold); i++) {
+                LogPrintf("CreateCoinStake : split=%d threshold=%d breached=%d\n", nTotalSize, thold, (nTotalSize / 2));
+                // Start 1 off to account for stake transaction already added above.
+                for (int i = 1; i < (nTotalSize / thold); i++) {
+                    LogPrintf("CreateCoinStake : adding split threshold tx=%d\n", i);
                     txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); //split stake
                 }
             }
 
-            if (fDebug && GetBoolArg("-printcoinstake", false))
-                LogPrintf("CreateCoinStake : added kernel type=%d\n", whichType);
+            if (fDebug && GetBoolArg("-printcoinstake", false)) LogPrintf("CreateCoinStake : added kernel type=%d\n", whichType);
             fKernelFound = true;
             break;
         }
@@ -2616,15 +2630,18 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         // Process splits for staking.  We will cap each vout at the split
         // threshold with the last vout having the remainder.
         if (txNew.vout.size() >= 3) {
+            LogPrintf("CreateCoinStake : txNew.vout=%d\n", txNew.vout.size());
             CAmount r = nCredit; // Remainder balance
             // Loop over vout and set value to split threshold minus fee.
             for (int i = 1; i < txNew.vout.size(); i++) {
                 txNew.vout[i].nValue = thold;
                 r -= txNew.vout[i].nValue;
+                LogPrintf("CreateCoinStake : setting split tx=%d value=%s\n", i, FormatMoney(txNew.vout[i].nValue).c_str());
             }
             // If a remainder is found then attach to last vout.
             if (r > 0) {
                 txNew.vout[txNew.vout.size()-1].nValue += r - nMinFee;
+                LogPrintf("CreateCoinStake : adding remainder to final split tx=%d value=%s\n", (txNew.vout.size()-1), FormatMoney(txNew.vout[txNew.vout.size()-1].nValue).c_str());
             }
             //txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
             //txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
