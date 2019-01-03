@@ -12,15 +12,13 @@
 
 #include "bignum.h"
 
-namespace
-{
+namespace {
 /**
  * Perform ECDSA key recovery (see SEC1 4.1.6) for curves over (mod p)-fields
  * recid selects which key is recovered
  * if check is non-zero, additional checks are performed
  */
-int ECDSA_SIG_recover_key_GFp(EC_KEY* eckey, ECDSA_SIG* ecsig, const unsigned char* msg, int msglen, int recid, int check)
-{
+int ECDSA_SIG_recover_key_GFp(EC_KEY* eckey, ECDSA_SIG* ecsig, const unsigned char* msg, int msglen, int recid, int check) {
     if (!eckey) return 0;
 
     int ret = 0;
@@ -171,19 +169,16 @@ err:
 
 } // anon namespace
 
-CECKey::CECKey()
-{
+CECKey::CECKey() {
     pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
     assert(pkey != NULL);
 }
 
-CECKey::~CECKey()
-{
+CECKey::~CECKey() {
     EC_KEY_free(pkey);
 }
 
-void CECKey::GetPubKey(std::vector<unsigned char>& pubkey, bool fCompressed)
-{
+void CECKey::GetPubKey(std::vector<unsigned char>& pubkey, bool fCompressed) {
     EC_KEY_set_conv_form(pkey, fCompressed ? POINT_CONVERSION_COMPRESSED : POINT_CONVERSION_UNCOMPRESSED);
     int nSize = i2o_ECPublicKey(pkey, NULL);
     assert(nSize);
@@ -195,13 +190,11 @@ void CECKey::GetPubKey(std::vector<unsigned char>& pubkey, bool fCompressed)
     assert(nSize == nSize2);
 }
 
-bool CECKey::SetPubKey(const unsigned char* pubkey, size_t size)
-{
+bool CECKey::SetPubKey(const unsigned char* pubkey, size_t size) {
     return o2i_ECPublicKey(&pkey, &pubkey, size) != NULL;
 }
 
-bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSig)
-{
+bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSig) {
     if (vchSig.empty())
         return false;
 
@@ -231,8 +224,7 @@ bool CECKey::Verify(const uint256& hash, const std::vector<unsigned char>& vchSi
     return ret;
 }
 
-bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
-{
+bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec) {
     if (rec < 0 || rec >= 3)
         return false;
     ECDSA_SIG* sig = ECDSA_SIG_new();
@@ -240,12 +232,12 @@ bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
     BIGNUM *sig_r = NULL;
     BIGNUM *sig_s = NULL;
     if (!(sig_r = BN_bin2bn(&p64[0],  32, nullptr)) ||
-        !(sig_s = BN_bin2bn(&p64[32], 32, nullptr)) ||
-        !ECDSA_SIG_set0(sig, sig_r, sig_s)) {
-            BN_free(sig_r);
-            BN_free(sig_s);
-            return false;
-        }
+            !(sig_s = BN_bin2bn(&p64[32], 32, nullptr)) ||
+            !ECDSA_SIG_set0(sig, sig_r, sig_s)) {
+        BN_free(sig_r);
+        BN_free(sig_s);
+        return false;
+    }
 #else
     BN_bin2bn(&p64[0], 32, sig->r);
     BN_bin2bn(&p64[32], 32, sig->s);
@@ -255,8 +247,7 @@ bool CECKey::Recover(const uint256& hash, const unsigned char* p64, int rec)
     return ret;
 }
 
-bool CECKey::TweakPublic(const unsigned char vchTweak[32])
-{
+bool CECKey::TweakPublic(const unsigned char vchTweak[32]) {
     bool ret = true;
     BN_CTX* ctx = BN_CTX_new();
     BN_CTX_start(ctx);
@@ -280,8 +271,7 @@ bool CECKey::TweakPublic(const unsigned char vchTweak[32])
     return ret;
 }
 
-bool CECKey::SanityCheck()
-{
+bool CECKey::SanityCheck() {
     EC_KEY* pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
     if (pkey == NULL)
         return false;

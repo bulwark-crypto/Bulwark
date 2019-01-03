@@ -10,8 +10,7 @@
 class AddressTableModel;
 class OptionsModel;
 
-namespace Ui
-{
+namespace Ui {
 class AddressBookPage;
 }
 
@@ -25,11 +24,10 @@ QT_END_NAMESPACE
 
 /** Widget that shows a list of sending or receiving addresses.
   */
-class AddressBookPage : public QDialog
-{
+class AddressBookPage : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     enum Tabs {
         SendingTab = 0,
         ReceivingTab = 1
@@ -44,12 +42,14 @@ public:
     ~AddressBookPage();
 
     void setModel(AddressTableModel* model);
-    const QString& getReturnValue() const { return returnValue; }
+    const QString& getReturnValue() const {
+        return returnValue;
+    }
 
-public slots:
+  public slots:
     void done(int retval);
 
-private:
+  private:
     Ui::AddressBookPage* ui;
     AddressTableModel* model;
     Mode mode;
@@ -60,7 +60,7 @@ private:
     QAction* deleteAction; // to be able to explicitly disable it
     QString newAddressToSelect;
 
-private slots:
+  private slots:
     /** Delete currently selected address entry */
     void on_deleteAddress_clicked();
     /** Create a new address for receiving coins and / or add a new address book entry */
@@ -81,7 +81,7 @@ private slots:
     /** New entry/entries were added to address table */
     void selectNewAddress(const QModelIndex& parent, int begin, int /*end*/);
 
-signals:
+  signals:
     void sendCoins(QString addr);
 };
 

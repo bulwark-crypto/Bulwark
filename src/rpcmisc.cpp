@@ -45,8 +45,7 @@ using namespace std;
  *
  * Or alternatively, create a specific query method for the information.
  **/
-UniValue getinfo(const UniValue& params, bool fHelp)
-{
+UniValue getinfo(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getinfo\n"
@@ -134,8 +133,7 @@ UniValue getinfo(const UniValue& params, bool fHelp)
     return obj;
 }
 
-UniValue mnsync(const UniValue& params, bool fHelp)
-{
+UniValue mnsync(const UniValue& params, bool fHelp) {
     std::string strMode;
     if (params.size() == 1)
         strMode = params[0].get_str();
@@ -205,15 +203,16 @@ UniValue mnsync(const UniValue& params, bool fHelp)
 }
 
 #ifdef ENABLE_WALLET
-class DescribeAddressVisitor : public boost::static_visitor<UniValue>
-{
-private:
+class DescribeAddressVisitor : public boost::static_visitor<UniValue> {
+  private:
     isminetype mine;
 
-public:
+  public:
     DescribeAddressVisitor(isminetype mineIn) : mine(mineIn) {}
 
-    UniValue operator()(const CNoDestination &dest) const { return UniValue(UniValue::VOBJ); }
+    UniValue operator()(const CNoDestination &dest) const {
+        return UniValue(UniValue::VOBJ);
+    }
 
     UniValue operator()(const CKeyID &keyID) const {
         UniValue obj(UniValue::VOBJ);
@@ -240,8 +239,9 @@ public:
             obj.push_back(Pair("script", GetTxnOutputType(whichType)));
             obj.push_back(Pair("hex", HexStr(subscript.begin(), subscript.end())));
             UniValue a(UniValue::VARR);
-            BOOST_FOREACH (const CTxDestination& addr, addresses)
+            BOOST_FOREACH(const CTxDestination& addr, addresses) {
                 a.push_back(CBitcoinAddress(addr).ToString());
+            }
             obj.push_back(Pair("addresses", a));
             if (whichType == TX_MULTISIG)
                 obj.push_back(Pair("sigsrequired", nRequired));
@@ -254,8 +254,7 @@ public:
 /*
     Used for updating/reading spork settings on the network
 */
-UniValue spork(const UniValue& params, bool fHelp)
-{
+UniValue spork(const UniValue& params, bool fHelp) {
     if (params.size() == 1 && params[0].get_str() == "show") {
         UniValue ret(UniValue::VOBJ);
         for (int nSporkID = SPORK_START; nSporkID <= SPORK_END; nSporkID++) {
@@ -295,8 +294,7 @@ UniValue spork(const UniValue& params, bool fHelp)
         HelpRequiringPassphrase());
 }
 
-UniValue validateaddress(const UniValue& params, bool fHelp)
-{
+UniValue validateaddress(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "validateaddress \"bulwarkaddress\"\n"
@@ -343,8 +341,7 @@ UniValue validateaddress(const UniValue& params, bool fHelp)
 /**
  * Used by addmultisigaddress / createmultisig:
  */
-CScript _createmultisig_redeemScript(const UniValue& params)
-{
+CScript _createmultisig_redeemScript(const UniValue& params) {
     int nRequired = params[0].get_int();
     const UniValue& keys = params[1].get_array();
 
@@ -355,7 +352,7 @@ CScript _createmultisig_redeemScript(const UniValue& params)
         throw runtime_error(
             strprintf("not enough keys supplied "
                       "(got %u keys, but need at least %d to redeem)",
-                keys.size(), nRequired));
+                      keys.size(), nRequired));
     if (keys.size() > 16)
         throw runtime_error("Number of addresses involved in the multisignature address creation > 16\nReduce the number");
     std::vector<CPubKey> pubkeys;
@@ -383,13 +380,13 @@ CScript _createmultisig_redeemScript(const UniValue& params)
         else
 #endif
             if (IsHex(ks)) {
-            CPubKey vchPubKey(ParseHex(ks));
-            if (!vchPubKey.IsFullyValid())
+                CPubKey vchPubKey(ParseHex(ks));
+                if (!vchPubKey.IsFullyValid())
+                    throw runtime_error(" Invalid public key: " + ks);
+                pubkeys[i] = vchPubKey;
+            } else {
                 throw runtime_error(" Invalid public key: " + ks);
-            pubkeys[i] = vchPubKey;
-        } else {
-            throw runtime_error(" Invalid public key: " + ks);
-        }
+            }
     }
     CScript result = GetScriptForMultisig(nRequired, pubkeys);
 
@@ -400,8 +397,7 @@ CScript _createmultisig_redeemScript(const UniValue& params)
     return result;
 }
 
-UniValue createmultisig(const UniValue& params, bool fHelp)
-{
+UniValue createmultisig(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() < 2 || params.size() > 2) {
         string msg = "createmultisig nrequired [\"key\",...]\n"
                      "\nCreates a multi-signature address with n signature of m keys required.\n"
@@ -440,8 +436,7 @@ UniValue createmultisig(const UniValue& params, bool fHelp)
     return result;
 }
 
-UniValue verifymessage(const UniValue& params, bool fHelp)
-{
+UniValue verifymessage(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 3)
         throw runtime_error(
             "verifymessage \"bulwarkaddress\" \"signature\" \"message\"\n"
@@ -488,8 +483,7 @@ UniValue verifymessage(const UniValue& params, bool fHelp)
     return (pubkey.GetID() == keyID);
 }
 
-UniValue setmocktime(const UniValue& params, bool fHelp)
-{
+UniValue setmocktime(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "setmocktime timestamp\n"
@@ -508,8 +502,7 @@ UniValue setmocktime(const UniValue& params, bool fHelp)
 }
 
 #ifdef ENABLE_WALLET
-UniValue getstakingstatus(const UniValue& params, bool fHelp)
-{
+UniValue getstakingstatus(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getstakingstatus\n"

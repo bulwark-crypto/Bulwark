@@ -15,13 +15,13 @@
 #include <list>
 #include <map>
 std::vector<CZerocoinMint> SelectMintsFromList(const CAmount nValueTarget, CAmount& nSelectedValue,
-                                               int nMaxNumberOfSpends,
-                                               bool fMinimizeChange,
-                                               int& nCoinsReturned,
-                                               const std::list<CZerocoinMint>& listMints,
-                                               const std::map<libzerocoin::CoinDenomination, CAmount> mapDenomsHeld,
-                                               int& nNeededSpends
-                                               );
+        int nMaxNumberOfSpends,
+        bool fMinimizeChange,
+        int& nCoinsReturned,
+        const std::list<CZerocoinMint>& listMints,
+        const std::map<libzerocoin::CoinDenomination, CAmount> mapDenomsHeld,
+        int& nNeededSpends
+                                              );
 
 int calculateChange(
     int nMaxNumberOfSpends,

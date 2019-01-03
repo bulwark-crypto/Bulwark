@@ -14,8 +14,7 @@
 
 BOOST_AUTO_TEST_SUITE(skiplist_tests)
 
-BOOST_AUTO_TEST_CASE(skiplist_test)
-{
+BOOST_AUTO_TEST_CASE(skiplist_test) {
     std::vector<CBlockIndex> vIndex(SKIPLIST_LENGTH);
 
     for (int i=0; i<SKIPLIST_LENGTH; i++) {
@@ -43,8 +42,7 @@ BOOST_AUTO_TEST_CASE(skiplist_test)
     }
 }
 
-BOOST_AUTO_TEST_CASE(getlocator_test)
-{
+BOOST_AUTO_TEST_CASE(getlocator_test) {
     // Build a main chain 100000 blocks long.
     std::vector<uint256> vHashMain(100000);
     std::vector<CBlockIndex> vBlocksMain(100000);

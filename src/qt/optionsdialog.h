@@ -14,27 +14,25 @@ QT_BEGIN_NAMESPACE
 class QDataWidgetMapper;
 QT_END_NAMESPACE
 
-namespace Ui
-{
+namespace Ui {
 class OptionsDialog;
 }
 
 /** Preferences dialog. */
-class OptionsDialog : public QDialog
-{
+class OptionsDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit OptionsDialog(QWidget* parent, bool enableWallet);
     ~OptionsDialog();
 
     void setModel(OptionsModel* model);
     void setMapper();
 
-protected:
+  protected:
     bool eventFilter(QObject* object, QEvent* event);
 
-private slots:
+  private slots:
     /* enable OK button */
     void enableOkButton();
     /* disable OK button */
@@ -49,10 +47,10 @@ private slots:
     void clearStatusLabel();
     void doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort);
 
-signals:
+  signals:
     void proxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort);
 
-private:
+  private:
     Ui::OptionsDialog* ui;
     OptionsModel* model;
     QDataWidgetMapper* mapper;

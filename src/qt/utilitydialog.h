@@ -11,42 +11,39 @@
 class BitcoinGUI;
 class ClientModel;
 
-namespace Ui
-{
+namespace Ui {
 class HelpMessageDialog;
 }
 
 /** "Help message" dialog box */
-class HelpMessageDialog : public QDialog
-{
+class HelpMessageDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit HelpMessageDialog(QWidget* parent, bool about);
     ~HelpMessageDialog();
 
     void printToConsole();
     void showOrPrint();
 
-private:
+  private:
     Ui::HelpMessageDialog* ui;
     QString text;
 
-private slots:
+  private slots:
     void on_okButton_accepted();
 };
 
 
 /** "Shutdown" window */
-class ShutdownWindow : public QWidget
-{
+class ShutdownWindow : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     ShutdownWindow(QWidget* parent = 0, Qt::WindowFlags f = 0);
     static void showShutdownWindow(BitcoinGUI* window);
 
-protected:
+  protected:
     void closeEvent(QCloseEvent* event);
 };
 

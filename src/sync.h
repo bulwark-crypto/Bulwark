@@ -47,21 +47,17 @@ LEAVE_CRITICAL_SECTION(mutex); // no RAII
  * annotations to a subset of the mutex API.
  */
 template <typename PARENT>
-class LOCKABLE AnnotatedMixin : public PARENT
-{
-public:
-    void lock() EXCLUSIVE_LOCK_FUNCTION()
-    {
+class LOCKABLE AnnotatedMixin : public PARENT {
+  public:
+    void lock() EXCLUSIVE_LOCK_FUNCTION() {
         PARENT::lock();
     }
 
-    void unlock() UNLOCK_FUNCTION()
-    {
+    void unlock() UNLOCK_FUNCTION() {
         PARENT::unlock();
     }
 
-    bool try_lock() EXCLUSIVE_TRYLOCK_FUNCTION(true)
-    {
+    bool try_lock() EXCLUSIVE_TRYLOCK_FUNCTION(true) {
         return PARENT::try_lock();
     }
 };
@@ -84,9 +80,8 @@ void static inline DeleteLock(void* cs) {}
  * Wrapped boost mutex: supports recursive locking, but no waiting
  * TODO: We should move away from using the recursive lock by default.
  */
-class CCriticalSection : public AnnotatedMixin<boost::recursive_mutex>
-{
-public:
+class CCriticalSection : public AnnotatedMixin<boost::recursive_mutex> {
+  public:
     ~CCriticalSection() {
         DeleteLock((void*)this);
     }
@@ -105,13 +100,11 @@ void PrintLockContention(const char* pszName, const char* pszFile, int nLine);
 
 /** Wrapper around boost::unique_lock<Mutex> */
 template <typename Mutex>
-class SCOPED_LOCKABLE CMutexLock
-{
-private:
+class SCOPED_LOCKABLE CMutexLock {
+  private:
     boost::unique_lock<Mutex> lock;
 
-    void Enter(const char* pszName, const char* pszFile, int nLine)
-    {
+    void Enter(const char* pszName, const char* pszFile, int nLine) {
         EnterCritical(pszName, pszFile, nLine, (void*)(lock.mutex()));
 #ifdef DEBUG_LOCKCONTENTION
         if (!lock.try_lock()) {
@@ -123,8 +116,7 @@ private:
 #endif
     }
 
-    bool TryEnter(const char* pszName, const char* pszFile, int nLine)
-    {
+    bool TryEnter(const char* pszName, const char* pszFile, int nLine) {
         EnterCritical(pszName, pszFile, nLine, (void*)(lock.mutex()), true);
         lock.try_lock();
         if (!lock.owns_lock())
@@ -132,17 +124,15 @@ private:
         return lock.owns_lock();
     }
 
-public:
-    CMutexLock(Mutex& mutexIn, const char* pszName, const char* pszFile, int nLine, bool fTry = false) EXCLUSIVE_LOCK_FUNCTION(mutexIn) : lock(mutexIn, boost::defer_lock)
-    {
+  public:
+    CMutexLock(Mutex& mutexIn, const char* pszName, const char* pszFile, int nLine, bool fTry = false) EXCLUSIVE_LOCK_FUNCTION(mutexIn) : lock(mutexIn, boost::defer_lock) {
         if (fTry)
             TryEnter(pszName, pszFile, nLine);
         else
             Enter(pszName, pszFile, nLine);
     }
 
-    CMutexLock(Mutex* pmutexIn, const char* pszName, const char* pszFile, int nLine, bool fTry = false) EXCLUSIVE_LOCK_FUNCTION(pmutexIn)
-    {
+    CMutexLock(Mutex* pmutexIn, const char* pszName, const char* pszFile, int nLine, bool fTry = false) EXCLUSIVE_LOCK_FUNCTION(pmutexIn) {
         if (!pmutexIn) return;
 
         lock = boost::unique_lock<Mutex>(*pmutexIn, boost::defer_lock);
@@ -152,14 +142,12 @@ public:
             Enter(pszName, pszFile, nLine);
     }
 
-    ~CMutexLock() UNLOCK_FUNCTION()
-    {
+    ~CMutexLock() UNLOCK_FUNCTION() {
         if (lock.owns_lock())
             LeaveCritical();
     }
 
-    operator bool()
-    {
+    operator bool() {
         return lock.owns_lock();
     }
 };
@@ -182,18 +170,16 @@ typedef CMutexLock<CCriticalSection> CCriticalBlock;
         LeaveCritical();           \
     }
 
-class CSemaphore
-{
-private:
+class CSemaphore {
+  private:
     boost::condition_variable condition;
     boost::mutex mutex;
     int value;
 
-public:
+  public:
     CSemaphore(int init) : value(init) {}
 
-    void wait()
-    {
+    void wait() {
         boost::unique_lock<boost::mutex> lock(mutex);
         while (value < 1) {
             condition.wait(lock);
@@ -201,8 +187,7 @@ public:
         value--;
     }
 
-    bool try_wait()
-    {
+    bool try_wait() {
         boost::unique_lock<boost::mutex> lock(mutex);
         if (value < 1)
             return false;
@@ -210,8 +195,7 @@ public:
         return true;
     }
 
-    void post()
-    {
+    void post() {
         {
             boost::unique_lock<boost::mutex> lock(mutex);
             value++;
@@ -221,38 +205,33 @@ public:
 };
 
 /** RAII-style semaphore lock */
-class CSemaphoreGrant
-{
-private:
+class CSemaphoreGrant {
+  private:
     CSemaphore* sem;
     bool fHaveGrant;
 
-public:
-    void Acquire()
-    {
+  public:
+    void Acquire() {
         if (fHaveGrant)
             return;
         sem->wait();
         fHaveGrant = true;
     }
 
-    void Release()
-    {
+    void Release() {
         if (!fHaveGrant)
             return;
         sem->post();
         fHaveGrant = false;
     }
 
-    bool TryAcquire()
-    {
+    bool TryAcquire() {
         if (!fHaveGrant && sem->try_wait())
             fHaveGrant = true;
         return fHaveGrant;
     }
 
-    void MoveTo(CSemaphoreGrant& grant)
-    {
+    void MoveTo(CSemaphoreGrant& grant) {
         grant.Release();
         grant.sem = sem;
         grant.fHaveGrant = fHaveGrant;
@@ -262,21 +241,18 @@ public:
 
     CSemaphoreGrant() : sem(NULL), fHaveGrant(false) {}
 
-    CSemaphoreGrant(CSemaphore& sema, bool fTry = false) : sem(&sema), fHaveGrant(false)
-    {
+    CSemaphoreGrant(CSemaphore& sema, bool fTry = false) : sem(&sema), fHaveGrant(false) {
         if (fTry)
             TryAcquire();
         else
             Acquire();
     }
 
-    ~CSemaphoreGrant()
-    {
+    ~CSemaphoreGrant() {
         Release();
     }
 
-    operator bool()
-    {
+    operator bool() {
         return fHaveGrant;
     }
 };

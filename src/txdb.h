@@ -27,12 +27,11 @@ static const int64_t nMaxDbCache = sizeof(void*) > 4 ? 4096 : 1024;
 static const int64_t nMinDbCache = 4;
 
 /** CCoinsView backed by the LevelDB coin database (chainstate/) */
-class CCoinsViewDB : public CCoinsView
-{
-protected:
+class CCoinsViewDB : public CCoinsView {
+  protected:
     CLevelDBWrapper db;
 
-public:
+  public:
     CCoinsViewDB(size_t nCacheSize, bool fMemory = false, bool fWipe = false);
 
     bool GetCoins(const uint256& txid, CCoins& coins) const;
@@ -43,16 +42,15 @@ public:
 };
 
 /** Access to the block database (blocks/index/) */
-class CBlockTreeDB : public CLevelDBWrapper
-{
-public:
+class CBlockTreeDB : public CLevelDBWrapper {
+  public:
     CBlockTreeDB(size_t nCacheSize, bool fMemory = false, bool fWipe = false);
 
-private:
+  private:
     CBlockTreeDB(const CBlockTreeDB&);
     void operator=(const CBlockTreeDB&);
 
-public:
+  public:
     bool WriteBlockIndex(const CDiskBlockIndex& blockindex);
     bool ReadBlockFileInfo(int nFile, CBlockFileInfo& fileinfo);
     bool WriteBlockFileInfo(int nFile, const CBlockFileInfo& fileinfo);
@@ -69,16 +67,15 @@ public:
     bool LoadBlockIndexGuts();
 };
 
-class CZerocoinDB : public CLevelDBWrapper
-{
-public:
+class CZerocoinDB : public CLevelDBWrapper {
+  public:
     CZerocoinDB(size_t nCacheSize, bool fMemory = false, bool fWipe = false);
 
-private:
+  private:
     CZerocoinDB(const CZerocoinDB&);
     void operator=(const CZerocoinDB&);
 
-public:
+  public:
     bool WriteCoinMint(const libzerocoin::PublicCoin& pubCoin, const uint256& txHash);
     bool ReadCoinMint(const CBigNum& bnPubcoin, uint256& txHash);
     bool WriteCoinSpend(const CBigNum& bnSerial, const uint256& txHash);

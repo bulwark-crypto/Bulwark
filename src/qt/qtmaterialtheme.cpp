@@ -10,16 +10,13 @@
  */
 
 QtMaterialThemePrivate::QtMaterialThemePrivate(QtMaterialTheme *q)
-    : q_ptr(q)
-{
+    : q_ptr(q) {
 }
 
-QtMaterialThemePrivate::~QtMaterialThemePrivate()
-{
+QtMaterialThemePrivate::~QtMaterialThemePrivate() {
 }
 
-QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const
-{
+QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const {
     QColor color(r, g, b);
     color.setAlphaF(a);
     return color;
@@ -31,8 +28,7 @@ QColor QtMaterialThemePrivate::rgba(int r, int g, int b, qreal a) const
 
 QtMaterialTheme::QtMaterialTheme(QObject *parent)
     : QObject(parent),
-      d_ptr(new QtMaterialThemePrivate(this))
-{
+      d_ptr(new QtMaterialThemePrivate(this)) {
     setColor("primary1", Material::lightBlueA700);
     setColor("primary2", Material::cyan700);
     setColor("primary3", Material::lightBlack);
@@ -48,12 +44,10 @@ QtMaterialTheme::QtMaterialTheme(QObject *parent)
     setColor("disabled3", Material::grey300);
 }
 
-QtMaterialTheme::~QtMaterialTheme()
-{
+QtMaterialTheme::~QtMaterialTheme() {
 }
 
-QColor QtMaterialTheme::getColor(const QString &key) const
-{
+QColor QtMaterialTheme::getColor(const QString &key) const {
     Q_D(const QtMaterialTheme);
 
     if (!d->colors.contains(key)) {
@@ -63,15 +57,13 @@ QColor QtMaterialTheme::getColor(const QString &key) const
     return d->colors.value(key);
 }
 
-void QtMaterialTheme::setColor(const QString &key, const QColor &color)
-{
+void QtMaterialTheme::setColor(const QString &key, const QColor &color) {
     Q_D(QtMaterialTheme);
 
     d->colors.insert(key, color);
 }
 
-void QtMaterialTheme::setColor(const QString &key, Material::Color color)
-{
+void QtMaterialTheme::setColor(const QString &key, Material::Color color) {
     Q_D(QtMaterialTheme);
 
     static const QColor palette[] = {
@@ -153,7 +145,6 @@ void QtMaterialTheme::setColor(const QString &key, Material::Color color)
     d->colors.insert(key, palette[color]);
 }
 
-QIcon QtMaterialTheme::icon(QString category, QString icon)
-{
+QIcon QtMaterialTheme::icon(QString category, QString icon) {
     return QIcon(":/icons/icons/" % category % "/svg/production/ic_" % icon % "_24px.svg");
 }

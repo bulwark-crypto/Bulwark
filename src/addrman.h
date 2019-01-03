@@ -17,12 +17,11 @@
 #include <stdint.h>
 #include <vector>
 
-/** 
- * Extended statistics about a CAddress 
+/**
+ * Extended statistics about a CAddress
  */
-class CAddrInfo : public CAddress
-{
-private:
+class CAddrInfo : public CAddress {
+  private:
     //! where knowledge about this address first came from
     CNetAddr source;
 
@@ -46,20 +45,18 @@ private:
 
     friend class CAddrMan;
 
-public:
+  public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(*(CAddress*)this);
         READWRITE(source);
         READWRITE(nLastSuccess);
         READWRITE(nAttempts);
     }
 
-    void Init()
-    {
+    void Init() {
         nLastSuccess = 0;
         nLastTry = 0;
         nAttempts = 0;
@@ -68,13 +65,11 @@ public:
         nRandomPos = -1;
     }
 
-    CAddrInfo(const CAddress& addrIn, const CNetAddr& addrSource) : CAddress(addrIn), source(addrSource)
-    {
+    CAddrInfo(const CAddress& addrIn, const CNetAddr& addrSource) : CAddress(addrIn), source(addrSource) {
         Init();
     }
 
-    CAddrInfo() : CAddress(), source()
-    {
+    CAddrInfo() : CAddress(), source() {
         Init();
     }
 
@@ -85,8 +80,7 @@ public:
     int GetNewBucket(const uint256& nKey, const CNetAddr& src) const;
 
     //! Calculate in which "new" bucket this entry belongs, using its default source
-    int GetNewBucket(const uint256& nKey) const
-    {
+    int GetNewBucket(const uint256& nKey) const {
         return GetNewBucket(nKey, source);
     }
 
@@ -162,12 +156,11 @@ public:
 //! the maximum number of nodes to return in a getaddr call
 #define ADDRMAN_GETADDR_MAX 2500
 
-/** 
- * Stochastical (IP) address manager 
+/**
+ * Stochastical (IP) address manager
  */
-class CAddrMan
-{
-private:
+class CAddrMan {
+  private:
     //! critical section to protect the inner data structures
     mutable CCriticalSection cs;
 
@@ -198,7 +191,7 @@ private:
     //! list of "new" buckets
     int vvNew[ADDRMAN_NEW_BUCKET_COUNT][ADDRMAN_BUCKET_SIZE];
 
-protected:
+  protected:
     //! Find an entry.
     CAddrInfo* Find(const CNetAddr& addr, int* pnId = NULL);
 
@@ -242,7 +235,7 @@ protected:
     //! Mark an entry as currently-connected-to.
     void Connected_(const CService& addr, int64_t nTime);
 
-public:
+  public:
     /**
      * serialized format:
      * * version byte (currently 1)
@@ -273,8 +266,7 @@ public:
      * very little in common.
      */
     template <typename Stream>
-    void Serialize(Stream& s, int nType, int nVersionDummy) const
-    {
+    void Serialize(Stream& s, int nType, int nVersionDummy) const {
         LOCK(cs);
 
         unsigned char nVersion = 1;
@@ -323,8 +315,7 @@ public:
     }
 
     template <typename Stream>
-    void Unserialize(Stream& s, int nType, int nVersionDummy)
-    {
+    void Unserialize(Stream& s, int nType, int nVersionDummy) {
         LOCK(cs);
 
         Clear();
@@ -420,13 +411,11 @@ public:
         Check();
     }
 
-    unsigned int GetSerializeSize(int nType, int nVersion) const
-    {
+    unsigned int GetSerializeSize(int nType, int nVersion) const {
         return (CSizeComputer(nType, nVersion) << *this).size();
     }
 
-    void Clear()
-    {
+    void Clear() {
         std::vector<int>().swap(vRandom);
         nKey = GetRandHash();
         for (size_t bucket = 0; bucket < ADDRMAN_NEW_BUCKET_COUNT; bucket++) {
@@ -445,25 +434,21 @@ public:
         nNew = 0;
     }
 
-    CAddrMan()
-    {
+    CAddrMan() {
         Clear();
     }
 
-    ~CAddrMan()
-    {
+    ~CAddrMan() {
         nKey = uint256();
     }
 
     //! Return the number of (unique) addresses in all tables.
-    int size()
-    {
+    int size() {
         return vRandom.size();
     }
 
     //! Consistency check
-    void Check()
-    {
+    void Check() {
 #ifdef DEBUG_ADDRMAN
         {
             LOCK(cs);
@@ -475,8 +460,7 @@ public:
     }
 
     //! Add a single address.
-    bool Add(const CAddress& addr, const CNetAddr& source, int64_t nTimePenalty = 0)
-    {
+    bool Add(const CAddress& addr, const CNetAddr& source, int64_t nTimePenalty = 0) {
         bool fRet = false;
         {
             LOCK(cs);
@@ -490,8 +474,7 @@ public:
     }
 
     //! Add multiple addresses.
-    bool Add(const std::vector<CAddress>& vAddr, const CNetAddr& source, int64_t nTimePenalty = 0)
-    {
+    bool Add(const std::vector<CAddress>& vAddr, const CNetAddr& source, int64_t nTimePenalty = 0) {
         int nAdd = 0;
         {
             LOCK(cs);
@@ -506,8 +489,7 @@ public:
     }
 
     //! Mark an entry as accessible.
-    void Good(const CService& addr, int64_t nTime = GetAdjustedTime())
-    {
+    void Good(const CService& addr, int64_t nTime = GetAdjustedTime()) {
         {
             LOCK(cs);
             Check();
@@ -517,8 +499,7 @@ public:
     }
 
     //! Mark an entry as connection attempted to.
-    void Attempt(const CService& addr, int64_t nTime = GetAdjustedTime())
-    {
+    void Attempt(const CService& addr, int64_t nTime = GetAdjustedTime()) {
         {
             LOCK(cs);
             Check();
@@ -531,8 +512,7 @@ public:
      * Choose an address to connect to.
      * nUnkBias determines how much "new" entries are favored over "tried" ones (0-100).
      */
-    CAddress Select()
-    {
+    CAddress Select() {
         CAddress addrRet;
         {
             LOCK(cs);
@@ -544,8 +524,7 @@ public:
     }
 
     //! Return a bunch of addresses, selected at random.
-    std::vector<CAddress> GetAddr()
-    {
+    std::vector<CAddress> GetAddr() {
         Check();
         std::vector<CAddress> vAddr;
         {
@@ -557,8 +536,7 @@ public:
     }
 
     //! Mark an entry as currently-connected-to.
-    void Connected(const CService& addr, int64_t nTime = GetAdjustedTime())
-    {
+    void Connected(const CService& addr, int64_t nTime = GetAdjustedTime()) {
         {
             LOCK(cs);
             Check();

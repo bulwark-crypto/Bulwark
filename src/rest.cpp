@@ -35,9 +35,8 @@ static const struct {
     {RF_JSON, "json"},
 };
 
-class RestErr
-{
-public:
+class RestErr {
+  public:
     enum HTTPStatusCode status;
     string message;
 };
@@ -45,16 +44,14 @@ public:
 extern void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry);
 extern UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool txDetails = false);
 
-static RestErr RESTERR(enum HTTPStatusCode status, string message)
-{
+static RestErr RESTERR(enum HTTPStatusCode status, string message) {
     RestErr re;
     re.status = status;
     re.message = message;
     return re;
 }
 
-static enum RetFormat ParseDataFormat(vector<string>& params, const string strReq)
-{
+static enum RetFormat ParseDataFormat(vector<string>& params, const string strReq) {
     boost::split(params, strReq, boost::is_any_of("."));
     if (params.size() > 1) {
         for (unsigned int i = 0; i < ARRAYLEN(rf_names); i++)
@@ -65,8 +62,7 @@ static enum RetFormat ParseDataFormat(vector<string>& params, const string strRe
     return rf_names[0].rf;
 }
 
-static string AvailableDataFormatsString()
-{
+static string AvailableDataFormatsString() {
     string formats = "";
     for (unsigned int i = 0; i < ARRAYLEN(rf_names); i++)
         if (strlen(rf_names[i].name) > 0) {
@@ -81,8 +77,7 @@ static string AvailableDataFormatsString()
     return formats;
 }
 
-static bool ParseHashStr(const string& strReq, uint256& v)
-{
+static bool ParseHashStr(const string& strReq, uint256& v) {
     if (!IsHex(strReq) || (strReq.size() != 64))
         return false;
 
@@ -91,11 +86,10 @@ static bool ParseHashStr(const string& strReq, uint256& v)
 }
 
 static bool rest_block(AcceptedConnection* conn,
-    string& strReq,
-    map<string, string>& mapHeaders,
-    bool fRun,
-    bool showTxDetails)
-{
+                       string& strReq,
+                       map<string, string>& mapHeaders,
+                       bool fRun,
+                       bool showTxDetails) {
     vector<string> params;
     enum RetFormat rf = ParseDataFormat(params, strReq);
 
@@ -149,26 +143,23 @@ static bool rest_block(AcceptedConnection* conn,
 }
 
 static bool rest_block_extended(AcceptedConnection* conn,
-    string& strReq,
-    map<string, string>& mapHeaders,
-    bool fRun)
-{
+                                string& strReq,
+                                map<string, string>& mapHeaders,
+                                bool fRun) {
     return rest_block(conn, strReq, mapHeaders, fRun, true);
 }
 
 static bool rest_block_notxdetails(AcceptedConnection* conn,
-    string& strReq,
-    map<string, string>& mapHeaders,
-    bool fRun)
-{
+                                   string& strReq,
+                                   map<string, string>& mapHeaders,
+                                   bool fRun) {
     return rest_block(conn, strReq, mapHeaders, fRun, false);
 }
 
 static bool rest_tx(AcceptedConnection* conn,
-    string& strReq,
-    map<string, string>& mapHeaders,
-    bool fRun)
-{
+                    string& strReq,
+                    map<string, string>& mapHeaders,
+                    bool fRun) {
     vector<string> params;
     enum RetFormat rf = ParseDataFormat(params, strReq);
 
@@ -218,9 +209,9 @@ static bool rest_tx(AcceptedConnection* conn,
 static const struct {
     const char* prefix;
     bool (*handler)(AcceptedConnection* conn,
-        string& strURI,
-        map<string, string>& mapHeaders,
-        bool fRun);
+                    string& strURI,
+                    map<string, string>& mapHeaders,
+                    bool fRun);
 } uri_prefixes[] = {
     {"/rest/tx/", rest_tx},
     {"/rest/block/notxdetails/", rest_block_notxdetails},
@@ -228,10 +219,9 @@ static const struct {
 };
 
 bool HTTPReq_REST(AcceptedConnection* conn,
-    string& strURI,
-    map<string, string>& mapHeaders,
-    bool fRun)
-{
+                  string& strURI,
+                  map<string, string>& mapHeaders,
+                  bool fRun) {
     try {
         std::string statusmessage;
         if (RPCIsInWarmup(&statusmessage))

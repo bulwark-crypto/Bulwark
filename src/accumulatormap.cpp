@@ -13,8 +13,7 @@ using namespace libzerocoin;
 using namespace std;
 
 //Construct accumulators for all denominations
-AccumulatorMap::AccumulatorMap()
-{
+AccumulatorMap::AccumulatorMap() {
     for (auto& denom : zerocoinDenomList) {
         unique_ptr<Accumulator> uptr(new Accumulator(Params().Zerocoin_Params(), denom));
         mapAccumulators.insert(make_pair(denom, std::move(uptr)));
@@ -22,8 +21,7 @@ AccumulatorMap::AccumulatorMap()
 }
 
 //Reset each accumulator to its default state
-void AccumulatorMap::Reset()
-{
+void AccumulatorMap::Reset() {
     mapAccumulators.clear();
     for (auto& denom : zerocoinDenomList) {
         unique_ptr<Accumulator> uptr(new Accumulator(Params().Zerocoin_Params(), denom));
@@ -32,8 +30,7 @@ void AccumulatorMap::Reset()
 }
 
 //Load a checkpoint containing 32bit checksums of accumulator values.
-bool AccumulatorMap::Load(uint256 nCheckpoint)
-{
+bool AccumulatorMap::Load(uint256 nCheckpoint) {
     for (auto& denom : zerocoinDenomList) {
         uint32_t nChecksum = ParseChecksum(nCheckpoint, denom);
 
@@ -49,8 +46,7 @@ bool AccumulatorMap::Load(uint256 nCheckpoint)
 }
 
 //Add a zerocoin to the accumulator of its denomination.
-bool AccumulatorMap::Accumulate(PublicCoin pubCoin, bool fSkipValidation)
-{
+bool AccumulatorMap::Accumulate(PublicCoin pubCoin, bool fSkipValidation) {
     CoinDenomination denom = pubCoin.getDenomination();
     if (denom == CoinDenomination::ZQ_ERROR)
         return false;
@@ -63,16 +59,14 @@ bool AccumulatorMap::Accumulate(PublicCoin pubCoin, bool fSkipValidation)
 }
 
 //Get the value of a specific accumulator
-CBigNum AccumulatorMap::GetValue(CoinDenomination denom)
-{
+CBigNum AccumulatorMap::GetValue(CoinDenomination denom) {
     if (denom == CoinDenomination::ZQ_ERROR)
         return CBigNum(0);
     return mapAccumulators.at(denom)->getValue();
 }
 
 //Calculate a 32bit checksum of each accumulator value. Concatenate checksums into uint256
-uint256 AccumulatorMap::GetCheckpoint()
-{
+uint256 AccumulatorMap::GetCheckpoint() {
     uint256 nCheckpoint;
 
     //Prevent possible overflows from future changes to the list and forgetting to update this code

@@ -11,11 +11,16 @@ QT_TS = \
   qt/locale/bulwark_en.ts \
   qt/locale/bulwark_en_US.ts \
   qt/locale/bulwark_es.ts \
+  qt/locale/bulwark_es_ES.ts \
   qt/locale/bulwark_fi.ts \
   qt/locale/bulwark_fr_FR.ts \
+  qt/locale/bulwark_hi_IN.ts \
+  qt/locale/bulwark_hr.ts \
+  qt/locale/bulwark_hr_HR.ts \
   qt/locale/bulwark_it.ts \
   qt/locale/bulwark_ja.ts \
   qt/locale/bulwark_ko_KR.ts \
+  qt/locale/bulwark_lt_LT.ts \
   qt/locale/bulwark_nl.ts \
   qt/locale/bulwark_pl.ts \
   qt/locale/bulwark_pt.ts \
@@ -26,11 +31,15 @@ QT_TS = \
   qt/locale/bulwark_sv.ts \
   qt/locale/bulwark_tr.ts \
   qt/locale/bulwark_uk.ts \
+  qt/locale/bulwark_vi.ts \
   qt/locale/bulwark_zh_CN.ts \
   qt/locale/bulwark_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
+  qt/forms/privkeypage.ui \
+  qt/forms/outputspage.ui \
+  qt/forms/configuremasternodepage.ui \
   qt/forms/askpassphrasedialog.ui \
   qt/forms/bip38tooldialog.ui \
   qt/forms/coincontroldialog.ui \
@@ -48,6 +57,7 @@ QT_FORMS_UI = \
   qt/forms/overviewpage.ui \
   qt/forms/receivecoinsdialog.ui \
   qt/forms/privacydialog.ui \
+  qt/forms/proposaldialog.ui \
   qt/forms/receiverequestdialog.ui \
   qt/forms/rpcconsole.ui \
   qt/forms/sendcoinsdialog.ui \
@@ -58,6 +68,9 @@ QT_FORMS_UI = \
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
+  qt/moc_privkeypage.cpp \
+  qt/moc_outputspage.cpp \
+  qt/moc_configuremasternodepage.cpp \
   qt/moc_addresstablemodel.cpp \
   qt/moc_askpassphrasedialog.cpp \
   qt/moc_bantablemodel.cpp \
@@ -88,6 +101,11 @@ QT_MOC_CPP = \
   qt/moc_overviewpage.cpp \
   qt/moc_peertablemodel.cpp \
   qt/moc_paymentserver.cpp \
+  qt/moc_columnalignedlayout.cpp \
+  qt/moc_proposaldialog.cpp \
+  qt/moc_proposalfilterproxy.cpp \
+  qt/moc_proposaltablemodel.cpp \
+  qt/moc_proposallist.cpp \
   qt/moc_qtmaterialflatbutton.cpp \
   qt/moc_qtmaterialflatbutton_internal.cpp \
   qt/moc_qvalidatedlineedit.cpp \
@@ -177,6 +195,12 @@ BITCOIN_QT_H = \
   qt/overviewpage.h \
   qt/paymentrequestplus.h \
   qt/paymentserver.h \
+  qt/columnalignedlayout.h \
+  qt/proposaldialog.h \
+  qt/proposalfilterproxy.h \
+  qt/proposallist.h \
+  qt/proposalrecord.h \
+  qt/proposaltablemodel.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
   qt/qtmaterialflatbutton.h \
@@ -194,6 +218,9 @@ BITCOIN_QT_H = \
   qt/rpcconsole.h \
   qt/sendcoinsdialog.h \
   qt/sendcoinsentry.h \
+  qt/privkeypage.h \
+  qt/outputspage.h \
+  qt/configuremasternodepage.h \
   qt/signverifymessagedialog.h \
   qt/splashscreen.h \
   qt/trafficgraphwidget.h \
@@ -271,7 +298,9 @@ RES_ICONS = \
   qt/res/icons/lock_closed.png \
   qt/res/icons/lock_open.png \
   qt/res/icons/masternodes.png \
+  qt/res/icons/onion.png \
   qt/res/icons/overview.png \
+  qt/res/icons/proposal.png \
   qt/res/icons/qrcode.png \
   qt/res/icons/quit.png \
   qt/res/icons/receive.png \
@@ -315,6 +344,7 @@ BITCOIN_QT_CPP = \
   qt/optionsmodel.cpp \
   qt/peertablemodel.cpp \
   qt/platformstyle.cpp \
+  qt/proposaldialog.cpp \
   qt/qtmaterialflatbutton.cpp \
   qt/qtmaterialflatbutton_internal.cpp \
   qt/qvalidatedlineedit.cpp \
@@ -338,6 +368,9 @@ BITCOIN_QT_CPP = \
 if ENABLE_WALLET
 BITCOIN_QT_CPP += \
   qt/addressbookpage.cpp \
+  qt/privkeypage.cpp \
+  qt/outputspage.cpp \
+  qt/configuremasternodepage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
   qt/bip38tooldialog.cpp \
@@ -354,6 +387,12 @@ BITCOIN_QT_CPP += \
   qt/overviewpage.cpp \
   qt/paymentrequestplus.cpp \
   qt/paymentserver.cpp \
+  qt/columnalignedlayout.cpp \
+  qt/proposaldialog.cpp \
+  qt/proposalfilterproxy.cpp \
+  qt/proposallist.cpp \
+  qt/proposalrecord.cpp \
+  qt/proposaltablemodel.cpp \
   qt/receivecoinsdialog.cpp \
   qt/privacydialog.cpp \
   qt/receiverequestdialog.cpp \

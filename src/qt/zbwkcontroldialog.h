@@ -17,11 +17,10 @@ namespace Ui {
 class ZBwkControlDialog;
 }
 
-class ZBwkControlDialog : public QDialog
-{
+class ZBwkControlDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit ZBwkControlDialog(QWidget *parent);
     ~ZBwkControlDialog();
 
@@ -31,7 +30,7 @@ public:
     static std::list<CZerocoinMint> listMints;
     static std::vector<CZerocoinMint> GetSelectedMints();
 
-private:
+  private:
     Ui::ZBwkControlDialog *ui;
     WalletModel* model;
     PrivacyDialog* privacyDialog;
@@ -47,7 +46,7 @@ private:
         COLUMN_ISSPENDABLE
     };
 
-private slots:
+  private slots:
     void updateSelection(QTreeWidgetItem* item, int column);
     void ButtonAllClicked();
 };

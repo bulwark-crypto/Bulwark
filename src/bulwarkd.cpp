@@ -37,8 +37,7 @@
 
 static bool fDaemon;
 
-void DetectShutdownThread(boost::thread_group* threadGroup)
-{
+void DetectShutdownThread(boost::thread_group* threadGroup) {
     bool fShutdown = ShutdownRequested();
     // Tell the main threads to shutdown.
     while (!fShutdown) {
@@ -55,8 +54,7 @@ void DetectShutdownThread(boost::thread_group* threadGroup)
 //
 // Start
 //
-bool AppInit(int argc, char* argv[])
-{
+bool AppInit(int argc, char* argv[]) {
     boost::thread_group threadGroup;
     boost::thread* detectShutdownThread = NULL;
 
@@ -130,8 +128,7 @@ bool AppInit(int argc, char* argv[])
                 fprintf(stderr, "Error: fork() returned %d errno %d\n", pid, errno);
                 return false;
             }
-            if (pid > 0) // Parent process, pid is child process id
-            {
+            if (pid > 0) { // Parent process, pid is child process id
                 return true;
             }
             // Child process falls through to rest of initialization
@@ -171,8 +168,7 @@ bool AppInit(int argc, char* argv[])
     return fRet;
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     SetupEnvironment();
 
     // Connect bulwarkd signal handlers

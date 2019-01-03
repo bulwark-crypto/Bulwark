@@ -11,11 +11,10 @@
 #include <QSortFilterProxyModel>
 
 /** Filter the transaction list according to pre-specified rules. */
-class TransactionFilterProxy : public QSortFilterProxyModel
-{
+class TransactionFilterProxy : public QSortFilterProxyModel {
     Q_OBJECT
 
-public:
+  public:
     explicit TransactionFilterProxy(QObject* parent = 0);
 
     /** Earliest date that can be represented (far in the past) */
@@ -24,10 +23,12 @@ public:
     static const QDateTime MAX_DATE;
     /** Type filter bit field (all types) */
     static const quint32 ALL_TYPES = 0xFFFFFFFF;
-    /** Type filter bit field (all types but Obfuscation-SPAM ... enum 0-13 are common) */
-    static const quint32 COMMON_TYPES = 0x000003FFF;
+    /** Type filter bit field (all types but Obfuscation-SPAM ... enum 0-14 are common) */
+    static const quint32 COMMON_TYPES = 0x0005FFFF;
 
-    static quint32 TYPE(int type) { return 1 << type; }
+    static quint32 TYPE(int type) {
+        return 1 << type;
+    }
 
     enum WatchOnlyFilter {
         WatchOnlyFilter_All,
@@ -52,10 +53,10 @@ public:
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
-protected:
+  protected:
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
 
-private:
+  private:
     QDateTime dateFrom;
     QDateTime dateTo;
     QString addrPrefix;

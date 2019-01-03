@@ -9,7 +9,8 @@
 
 #include <stdint.h>
 
-typedef struct {
+typedef struct
+{
     /* X = sum(i=0..9, elem[i]*2^26) mod n */
     uint32_t n[10];
 #ifdef VERIFY

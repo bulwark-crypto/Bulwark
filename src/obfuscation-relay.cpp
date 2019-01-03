@@ -5,8 +5,7 @@
 
 #include "obfuscation-relay.h"
 
-CObfuScationRelay::CObfuScationRelay()
-{
+CObfuScationRelay::CObfuScationRelay() {
     vinMasternode = CTxIn();
     nBlockHeight = 0;
     nRelayType = 0;
@@ -14,8 +13,7 @@ CObfuScationRelay::CObfuScationRelay()
     out = CTxOut();
 }
 
-CObfuScationRelay::CObfuScationRelay(CTxIn& vinMasternodeIn, vector<unsigned char>& vchSigIn, int nBlockHeightIn, int nRelayTypeIn, CTxIn& in2, CTxOut& out2)
-{
+CObfuScationRelay::CObfuScationRelay(CTxIn& vinMasternodeIn, vector<unsigned char>& vchSigIn, int nBlockHeightIn, int nRelayTypeIn, CTxIn& in2, CTxOut& out2) {
     vinMasternode = vinMasternodeIn;
     vchSig = vchSigIn;
     nBlockHeight = nBlockHeightIn;
@@ -24,8 +22,7 @@ CObfuScationRelay::CObfuScationRelay(CTxIn& vinMasternodeIn, vector<unsigned cha
     out = out2;
 }
 
-std::string CObfuScationRelay::ToString()
-{
+std::string CObfuScationRelay::ToString() {
     std::ostringstream info;
 
     info << "vin: " << vinMasternode.ToString() << " nBlockHeight: " << (int)nBlockHeight << " nRelayType: " << (int)nRelayType << " in " << in.ToString() << " out " << out.ToString();
@@ -33,8 +30,7 @@ std::string CObfuScationRelay::ToString()
     return info.str();
 }
 
-bool CObfuScationRelay::Sign(std::string strSharedKey)
-{
+bool CObfuScationRelay::Sign(std::string strSharedKey) {
     std::string strMessage = in.ToString() + out.ToString();
 
     CKey key2;
@@ -59,8 +55,7 @@ bool CObfuScationRelay::Sign(std::string strSharedKey)
     return true;
 }
 
-bool CObfuScationRelay::VerifyMessage(std::string strSharedKey)
-{
+bool CObfuScationRelay::VerifyMessage(std::string strSharedKey) {
     std::string strMessage = in.ToString() + out.ToString();
 
     CKey key2;
@@ -80,8 +75,7 @@ bool CObfuScationRelay::VerifyMessage(std::string strSharedKey)
     return true;
 }
 
-void CObfuScationRelay::Relay()
-{
+void CObfuScationRelay::Relay() {
     int nCount = std::min(mnodeman.CountEnabled(ActiveProtocol()), 20);
     int nRank1 = (rand() % nCount) + 1;
     int nRank2 = (rand() % nCount) + 1;
@@ -97,8 +91,7 @@ void CObfuScationRelay::Relay()
     RelayThroughNode(nRank2);
 }
 
-void CObfuScationRelay::RelayThroughNode(int nRank)
-{
+void CObfuScationRelay::RelayThroughNode(int nRank) {
     CMasternode* pmn = mnodeman.GetMasternodeByRank(nRank, nBlockHeight, ActiveProtocol());
 
     if (pmn != NULL) {

@@ -17,8 +17,7 @@ struct ZeroSetup {
     ZeroSetup() {
         std::cout << "global setup\n";
     }
-    ~ZeroSetup()
-    {
+    ~ZeroSetup() {
         std::cout << "global teardown\n";
     }
 };

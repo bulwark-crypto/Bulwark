@@ -17,12 +17,11 @@ class CScript;
 class CScriptID;
 
 /** A virtual base class for key stores */
-class CKeyStore
-{
-protected:
+class CKeyStore {
+  protected:
     mutable CCriticalSection cs_KeyStore;
 
-public:
+  public:
     virtual ~CKeyStore() {}
 
     //! Add a key to the store.
@@ -59,18 +58,16 @@ typedef std::set<CScript> WatchOnlySet;
 typedef std::set<CScript> MultiSigScriptSet;
 
 /** Basic key store, that keeps keys in an address->secret map */
-class CBasicKeyStore : public CKeyStore
-{
-protected:
+class CBasicKeyStore : public CKeyStore {
+  protected:
     KeyMap mapKeys;
     ScriptMap mapScripts;
     WatchOnlySet setWatchOnly;
     MultiSigScriptSet setMultiSig;
 
-public:
+  public:
     bool AddKeyPubKey(const CKey& key, const CPubKey& pubkey);
-    bool HaveKey(const CKeyID& address) const
-    {
+    bool HaveKey(const CKeyID& address) const {
         bool result;
         {
             LOCK(cs_KeyStore);
@@ -78,8 +75,7 @@ public:
         }
         return result;
     }
-    void GetKeys(std::set<CKeyID>& setAddress) const
-    {
+    void GetKeys(std::set<CKeyID>& setAddress) const {
         setAddress.clear();
         {
             LOCK(cs_KeyStore);
@@ -90,8 +86,7 @@ public:
             }
         }
     }
-    bool GetKey(const CKeyID& address, CKey& keyOut) const
-    {
+    bool GetKey(const CKeyID& address, CKey& keyOut) const {
         {
             LOCK(cs_KeyStore);
             KeyMap::const_iterator mi = mapKeys.find(address);

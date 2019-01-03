@@ -9,20 +9,19 @@
 
 class QtMaterialTheme;
 
-class QtMaterialStyle : public QCommonStyle
-{
+class QtMaterialStyle : public QCommonStyle {
     Q_OBJECT
 
-public:
+  public:
     inline static QtMaterialStyle &instance();
 
     void setTheme(QtMaterialTheme *theme);
     QColor themeColor(const QString &key) const;
 
-protected:
+  protected:
     const QScopedPointer<QtMaterialStylePrivate> d_ptr;
 
-private:
+  private:
     Q_DECLARE_PRIVATE(QtMaterialStyle)
 
     QtMaterialStyle();
@@ -31,8 +30,7 @@ private:
     void operator=(QtMaterialStyle const &);
 };
 
-inline QtMaterialStyle &QtMaterialStyle::instance()
-{
+inline QtMaterialStyle &QtMaterialStyle::instance() {
     static QtMaterialStyle instance;
     return instance;
 }

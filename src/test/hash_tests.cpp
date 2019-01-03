@@ -13,8 +13,7 @@ using namespace std;
 
 BOOST_AUTO_TEST_SUITE(hash_tests)
 
-BOOST_AUTO_TEST_CASE(murmurhash3)
-{
+BOOST_AUTO_TEST_CASE(murmurhash3) {
 
 #define T(expected, seed, data) BOOST_CHECK_EQUAL(MurmurHash3(seed, ParseHex(data)), expected)
 

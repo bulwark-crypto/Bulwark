@@ -14,9 +14,8 @@
 
 using namespace std;
 
-class CPartialMerkleTreeTester : public CPartialMerkleTree
-{
-public:
+class CPartialMerkleTreeTester : public CPartialMerkleTree {
+  public:
     // flip one bit in one of the hashes - this should break the authentication
     void Damage() {
         unsigned int n = rand() % vHash.size();
@@ -28,8 +27,7 @@ public:
 
 BOOST_AUTO_TEST_SUITE(pmt_tests)
 
-BOOST_AUTO_TEST_CASE(pmt_test1)
-{
+BOOST_AUTO_TEST_CASE(pmt_test1) {
     static const unsigned int nTxCounts[] = {1, 4, 7, 17, 56, 100, 127, 256, 312, 513, 1000, 4095};
 
     for (int n = 0; n < 12; n++) {

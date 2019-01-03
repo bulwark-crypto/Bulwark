@@ -101,8 +101,7 @@
 #ifndef TINYFORMAT_H_INCLUDED
 #define TINYFORMAT_H_INCLUDED
 
-namespace tinyformat
-{
+namespace tinyformat {
 }
 //------------------------------------------------------------------------------
 // Config section.  Customize to your liking!
@@ -149,15 +148,13 @@ namespace tfm = tinyformat;
 #define TINYFORMAT_OLD_LIBSTDCPLUSPLUS_WORKAROUND
 #endif
 
-namespace tinyformat
-{
+namespace tinyformat {
 //------------------------------------------------------------------------------
-namespace detail
-{
+namespace detail {
 // Test whether type T1 is convertible to type T2
 template <typename T1, typename T2>
 struct is_convertible {
-private:
+  private:
     // two types of different size
     struct fail {
         char dummy[2];
@@ -170,7 +167,7 @@ private:
     static succeed tryConvert(const T2&);
     static const T1& makeT1();
 
-public:
+  public:
 #ifdef _MSC_VER
 // Disable spurious loss of precision warnings in tryConvert(makeT1())
 #pragma warning(push)
@@ -212,14 +209,15 @@ struct is_wchar<wchar_t[n]> {
 // should never be called.
 template <typename T, typename fmtT, bool convertible = is_convertible<T, fmtT>::value>
 struct formatValueAsType {
-    static void invoke(std::ostream& /*out*/, const T& /*value*/) { assert(0); }
+    static void invoke(std::ostream& /*out*/, const T& /*value*/) {
+        assert(0);
+    }
 };
 // Specialized version for types that can actually be converted to fmtT, as
 // indicated by the "convertible" template parameter.
 template <typename T, typename fmtT>
 struct formatValueAsType<T, fmtT, true> {
-    static void invoke(std::ostream& out, const T& value)
-    {
+    static void invoke(std::ostream& out, const T& value) {
         out << static_cast<fmtT>(value);
     }
 };
@@ -227,12 +225,13 @@ struct formatValueAsType<T, fmtT, true> {
 #ifdef TINYFORMAT_OLD_LIBSTDCPLUSPLUS_WORKAROUND
 template <typename T, bool convertible = is_convertible<T, int>::value>
 struct formatZeroIntegerWorkaround {
-    static bool invoke(std::ostream& /**/, const T& /**/) { return false; }
+    static bool invoke(std::ostream& /**/, const T& /**/) {
+        return false;
+    }
 };
 template <typename T>
 struct formatZeroIntegerWorkaround<T, true> {
-    static bool invoke(std::ostream& out, const T& value)
-    {
+    static bool invoke(std::ostream& out, const T& value) {
         if (static_cast<int>(value) == 0 && out.flags() & std::ios::showpos) {
             out << "+0";
             return true;
@@ -246,8 +245,7 @@ struct formatZeroIntegerWorkaround<T, true> {
 // throws an error.
 template <typename T, bool convertible = is_convertible<T, int>::value>
 struct convertToInt {
-    static int invoke(const T& /*value*/)
-    {
+    static int invoke(const T& /*value*/) {
         TINYFORMAT_ERROR("tinyformat: Cannot convert from argument type to "
                          "integer for use as variable width or precision");
         return 0;
@@ -256,7 +254,9 @@ struct convertToInt {
 // Specialization for convertToInt when conversion is possible
 template <typename T>
 struct convertToInt<T, true> {
-    static int invoke(const T& value) { return static_cast<int>(value); }
+    static int invoke(const T& value) {
+        return static_cast<int>(value);
+    }
 };
 
 } // namespace detail
@@ -277,8 +277,7 @@ struct convertToInt<T, true> {
 // operator<< to format the type T, with special cases for the %c and %p
 // conversions.
 template <typename T>
-inline void formatValue(std::ostream& out, const char* /*fmtBegin*/, const char* fmtEnd, const T& value)
-{
+inline void formatValue(std::ostream& out, const char* /*fmtBegin*/, const char* fmtEnd, const T& value) {
 #ifndef TINYFORMAT_ALLOW_WCHAR_STRINGS
     // Since we don't support printing of wchar_t using "%ls", make it fail at
     // compile time in preference to printing as a void* at runtime.
@@ -450,13 +449,11 @@ cog.outl('#define TINYFORMAT_FOREACH_ARGNUM(m) \\\n    ' +
 //[[[end]]]
 
 
-namespace detail
-{
+namespace detail {
 // Class holding current position in format string and an output stream into
 // which arguments are formatted.
-class FormatIterator
-{
-public:
+class FormatIterator {
+  public:
     // Flags for features not representable with standard stream state
     enum ExtraFormatFlags {
         Flag_None = 0,
@@ -478,13 +475,11 @@ public:
           m_origWidth(out.width()),
           m_origPrecision(out.precision()),
           m_origFlags(out.flags()),
-          m_origFill(out.fill())
-    {
+          m_origFill(out.fill()) {
     }
 
     // Print remaining part of format string.
-    void finish()
-    {
+    void finish() {
         // It would be nice if we could do this from the destructor, but we
         // can't if TINFORMAT_ERROR is used to throw an exception!
         m_fmt = printFormatStringLiteral(m_out, m_fmt);
@@ -492,8 +487,7 @@ public:
             TINYFORMAT_ERROR("tinyformat: Too many conversion specifiers in format string");
     }
 
-    ~FormatIterator()
-    {
+    ~FormatIterator() {
         // Restore stream state
         m_out.width(m_origWidth);
         m_out.precision(m_origPrecision);
@@ -504,11 +498,10 @@ public:
     template <typename T>
     void accept(const T& value);
 
-private:
+  private:
     // Parse and return an integer from the string c, as atoi()
     // On return, c is set to one past the end of the integer.
-    static int parseIntAndAdvance(const char*& c)
-    {
+    static int parseIntAndAdvance(const char*& c) {
         int i = 0;
         for (; *c >= '0' && *c <= '9'; ++c)
             i = 10 * i + (*c - '0');
@@ -519,8 +512,7 @@ private:
     // stream.  Return true if formatting proceeded (generic version always
     // returns false)
     template <typename T>
-    static bool formatCStringTruncate(std::ostream& /*out*/, const T& /*value*/, std::streamsize /*truncLen*/)
-    {
+    static bool formatCStringTruncate(std::ostream& /*out*/, const T& /*value*/, std::streamsize /*truncLen*/) {
         return false;
     }
 #define TINYFORMAT_DEFINE_FORMAT_C_STRING_TRUNCATE(type)              \
@@ -547,8 +539,7 @@ private:
     // output.  The position of the first % character of the next
     // nontrivial format spec is returned, or the end of string.
     static const char* printFormatStringLiteral(std::ostream& out,
-        const char* fmt)
-    {
+            const char* fmt) {
         const char* c = fmt;
         for (; true; ++c) {
             switch (*c) {
@@ -567,10 +558,10 @@ private:
     }
 
     static const char* streamStateFromFormat(std::ostream& out,
-        unsigned int& extraFlags,
-        const char* fmtStart,
-        int variableWidth,
-        int variablePrecision);
+            unsigned int& extraFlags,
+            const char* fmtStart,
+            int variableWidth,
+            int variablePrecision);
 
     // Private copy & assign: Kill gcc warnings with -Weffc++
     FormatIterator(const FormatIterator&);
@@ -596,9 +587,8 @@ private:
 // Accept a value for formatting into the internal stream.
 template <typename T>
 TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
-    void
-    FormatIterator::accept(const T& value)
-{
+void
+FormatIterator::accept(const T& value) {
     // Parse the format string
     const char* fmtEnd = 0;
     if (m_extraFlags == Flag_None && !m_wantWidth && !m_wantPrecision) {
@@ -623,7 +613,7 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
         // If we get here, we've set both the variable precision and width as
         // required and we need to rerun the stream state setup to insert these.
         fmtEnd = streamStateFromFormat(m_out, m_extraFlags, m_fmt,
-            m_variableWidth, m_variablePrecision);
+                                       m_variableWidth, m_variablePrecision);
     }
 
     // Format the value into the stream.
@@ -653,7 +643,7 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
                     result[i] = ' ';
         }
         if ((m_extraFlags & Flag_TruncateToPrecision) &&
-            (int)result.size() > (int)m_out.precision())
+                (int)result.size() > (int)m_out.precision())
             m_out.write(result.c_str(), m_out.precision());
         else
             m_out << result;
@@ -672,11 +662,10 @@ TINYFORMAT_NOINLINE // < greatly reduces bloat in optimized builds
 // state are returned in the extraFlags parameter which is a bitwise
 // combination of values from the ExtraFormatFlags enum.
 inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
-    unsigned int& extraFlags,
-    const char* fmtStart,
-    int variableWidth,
-    int variablePrecision)
-{
+        unsigned int& extraFlags,
+        const char* fmtStart,
+        int variableWidth,
+        int variablePrecision) {
     if (*fmtStart != '%') {
         TINYFORMAT_ERROR("tinyformat: Not enough conversion specifiers in format string");
         return fmtStart;
@@ -759,16 +748,22 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         precisionSet = true;
     }
     // 4) Ignore any C99 length modifier
-    while (*c == 'l' || *c == 'h' || *c == 'L' ||
-           *c == 'j' || *c == 'z' || *c == 't')
+    while (*c == 'l' || *c == 'h' || *c == 'L' || *c == 'j' || *c == 'z' || *c == 't') {
         ++c;
+    }
     // 5) We're up to the conversion specifier character.
     // Set stream flags based on conversion specifier (thanks to the
     // boost::format class for forging the way here).
     bool intConversion = false;
     switch (*c) {
     case 'u':
+        out.setf(std::ios::dec, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'd':
+        out.setf(std::ios::dec, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'i':
         out.setf(std::ios::dec, std::ios::basefield);
         intConversion = true;
@@ -779,30 +774,48 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
         break;
     case 'X':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::hex, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'x':
+        out.setf(std::ios::hex, std::ios::basefield);
+        intConversion = true;
+        break;
     case 'p':
         out.setf(std::ios::hex, std::ios::basefield);
         intConversion = true;
         break;
     case 'E':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::scientific, std::ios::floatfield);
+        out.setf(std::ios::dec, std::ios::basefield);
+        break;
     case 'e':
         out.setf(std::ios::scientific, std::ios::floatfield);
         out.setf(std::ios::dec, std::ios::basefield);
         break;
     case 'F':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::fixed, std::ios::floatfield);
+        break;
     case 'f':
         out.setf(std::ios::fixed, std::ios::floatfield);
         break;
     case 'G':
         out.setf(std::ios::uppercase);
+        out.setf(std::ios::dec, std::ios::basefield);
+        // As in boost::format, let stream decide float format.
+        out.flags(out.flags() & ~std::ios::floatfield);
+        break;
     case 'g':
         out.setf(std::ios::dec, std::ios::basefield);
         // As in boost::format, let stream decide float format.
         out.flags(out.flags() & ~std::ios::floatfield);
         break;
     case 'a':
+        TINYFORMAT_ERROR("tinyformat: the %a and %A conversion specs "
+                         "are not supported");
+        break;
     case 'A':
         TINYFORMAT_ERROR("tinyformat: the %a and %A conversion specs "
                          "are not supported");
@@ -847,24 +860,21 @@ inline const char* FormatIterator::streamStateFromFormat(std::ostream& out,
 #ifdef TINYFORMAT_USE_VARIADIC_TEMPLATES
 
 template <typename T1>
-void format(FormatIterator& fmtIter, const T1& value1)
-{
+void format(FormatIterator& fmtIter, const T1& value1) {
     fmtIter.accept(value1);
     fmtIter.finish();
 }
 
 // General version for C++11
 template <typename T1, typename... Args>
-void format(FormatIterator& fmtIter, const T1& value1, const Args&... args)
-{
+void format(FormatIterator& fmtIter, const T1& value1, const Args&... args) {
     fmtIter.accept(value1);
     format(fmtIter, args...);
 }
 
 #else
 
-inline void format(FormatIterator& fmtIter)
-{
+inline void format(FormatIterator& fmtIter) {
     fmtIter.finish();
 }
 
@@ -892,31 +902,27 @@ TINYFORMAT_FOREACH_ARGNUM(TINYFORMAT_MAKE_FORMAT_DETAIL)
 
 // C++11 - the simple case
 template <typename T1, typename... Args>
-void format(std::ostream& out, const char* fmt, const T1& v1, const Args&... args)
-{
+void format(std::ostream& out, const char* fmt, const T1& v1, const Args&... args) {
     detail::FormatIterator fmtIter(out, fmt);
     format(fmtIter, v1, args...);
 }
 
 template <typename T1, typename... Args>
-std::string format(const char* fmt, const T1& v1, const Args&... args)
-{
+std::string format(const char* fmt, const T1& v1, const Args&... args) {
     std::ostringstream oss;
     format(oss, fmt, v1, args...);
     return oss.str();
 }
 
 template <typename T1, typename... Args>
-std::string format(const std::string& fmt, const T1& v1, const Args&... args)
-{
+std::string format(const std::string& fmt, const T1& v1, const Args&... args) {
     std::ostringstream oss;
     format(oss, fmt.c_str(), v1, args...);
     return oss.str();
 }
 
 template <typename T1, typename... Args>
-void printf(const char* fmt, const T1& v1, const Args&... args)
-{
+void printf(const char* fmt, const T1& v1, const Args&... args) {
     format(std::cout, fmt, v1, args...);
 }
 

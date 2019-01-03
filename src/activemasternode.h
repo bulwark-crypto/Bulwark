@@ -21,9 +21,8 @@
 #define ACTIVE_MASTERNODE_STARTED 4
 
 // Responsible for activating the Masternode and pinging the network
-class CActiveMasternode
-{
-private:
+class CActiveMasternode {
+  private:
     // critical section to protect the inner data structures
     mutable CCriticalSection cs;
 
@@ -37,7 +36,7 @@ private:
     bool GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex);
     bool GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubkey, CKey& secretKey);
 
-public:
+  public:
     // Initialized by init.cpp
     // Keys for the main Masternode
     CPubKey pubKeyMasternode;
@@ -49,8 +48,7 @@ public:
     int status;
     std::string notCapableReason;
 
-    CActiveMasternode()
-    {
+    CActiveMasternode() {
         status = ACTIVE_MASTERNODE_INITIAL;
     }
 

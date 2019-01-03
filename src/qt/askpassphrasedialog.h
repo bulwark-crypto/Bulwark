@@ -9,18 +9,16 @@
 
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class AskPassphraseDialog;
 }
 
 /** Multifunctional dialog to ask for passphrases. Used for encryption, unlocking, and changing the passphrase.
  */
-class AskPassphraseDialog : public QDialog
-{
+class AskPassphraseDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     enum Mode {
         Encrypt,         /**< Ask passphrase twice and encrypt */
         UnlockAnonymize, /**< Ask passphrase and unlock only for anonymization */
@@ -33,18 +31,18 @@ public:
     ~AskPassphraseDialog();
 
 
-private:
+  private:
     Ui::AskPassphraseDialog* ui;
     Mode mode;
     WalletModel* model;
     bool fCapsLock;
 
-private slots:
+  private slots:
     void textChanged();
-	void on_acceptButton_clicked();
-	void on_cancelButton_clicked();
+    void on_acceptButton_clicked();
+    void on_cancelButton_clicked();
 
-protected:
+  protected:
     bool event(QEvent* event);
     bool eventFilter(QObject* object, QEvent* event);
 };

@@ -154,94 +154,6 @@
                        </widget>
                       </item>
                       <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_4">
-                        <item>
-                         <widget class="QtMaterialFlatButton" name="pushButtonMintzBWK" native="true">
-                          <property name="minimumSize">
-                           <size>
-                            <width>131</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="toolTip">
-                           <string>Enter an amount of BWK to convert to zBWK</string>
-                          </property>
-                          <property name="text" stdset="0">
-                           <string>Mint Zerocoin</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLineEdit" name="labelMintAmountValue">
-                          <property name="minimumSize">
-                           <size>
-                            <width>60</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="text">
-                           <string>0</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="labelzBWK_2">
-                          <property name="text">
-                           <string>zBWK</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="labelzBWKAmountText">
-                          <property name="toolTip">
-                           <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
-                          </property>
-                          <property name="text">
-                           <string>Mintable:</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QLabel" name="labelzBWKAmountValue">
-                          <property name="font">
-                           <font>
-                            <weight>75</weight>
-                            <bold>true</bold>
-                           </font>
-                          </property>
-                          <property name="toolTip">
-                           <string>Enter an amount of BWK to convert to zBWK</string>
-                          </property>
-                          <property name="text">
-                           <string>0.000 000 00 BWK</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <spacer name="horizontalSpacer_2">
-                          <property name="orientation">
-                           <enum>Qt::Horizontal</enum>
-                          </property>
-                          <property name="sizeHint" stdset="0">
-                           <size>
-                            <width>40</width>
-                            <height>20</height>
-                           </size>
-                          </property>
-                         </spacer>
-                        </item>
-                       </layout>
-                      </item>
-                      <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_5">
                         <item>
                          <widget class="QtMaterialFlatButton" name="pushButtonCoinControl" native="true">
@@ -390,6 +302,94 @@
                         </item>
                         <item>
                          <spacer name="horizontalSpacer_3">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_4">
+                        <item>
+                         <widget class="QtMaterialFlatButton" name="pushButtonMintzBWK" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>131</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="toolTip">
+                           <string>Enter an amount of BWK to convert to zBWK</string>
+                          </property>
+                          <property name="text" stdset="0">
+                           <string>Mint Zerocoin</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="labelMintAmountValue">
+                          <property name="minimumSize">
+                           <size>
+                            <width>60</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="labelzBWK_2">
+                          <property name="text">
+                           <string>zBWK</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="labelzBWKAmountText">
+                          <property name="toolTip">
+                           <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
+                          </property>
+                          <property name="text">
+                           <string>Mintable:</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="labelzBWKAmountValue">
+                          <property name="font">
+                           <font>
+                            <weight>75</weight>
+                            <bold>true</bold>
+                           </font>
+                          </property>
+                          <property name="toolTip">
+                           <string>Enter an amount of BWK to convert to zBWK</string>
+                          </property>
+                          <property name="text">
+                           <string>0.000 000 00 BWK</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_2">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>

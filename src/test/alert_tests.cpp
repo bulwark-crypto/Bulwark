@@ -78,26 +78,21 @@
 }
 #endif
 
-struct ReadAlerts
-{
-    ReadAlerts()
-    {
+struct ReadAlerts {
+    ReadAlerts() {
         std::vector<unsigned char> vch(alert_tests::alertTests, alert_tests::alertTests + sizeof(alert_tests::alertTests));
         CDataStream stream(vch, SER_DISK, CLIENT_VERSION);
         try {
-            while (!stream.eof())
-            {
+            while (!stream.eof()) {
                 CAlert alert;
                 stream >> alert;
                 alerts.push_back(alert);
             }
-        }
-        catch (std::exception) { }
+        } catch (std::exception) { }
     }
     ~ReadAlerts() { }
 
-    static std::vector<std::string> read_lines(boost::filesystem::path filepath)
-    {
+    static std::vector<std::string> read_lines(boost::filesystem::path filepath) {
         std::vector<std::string> result;
 
         std::ifstream f(filepath.string().c_str());
@@ -114,12 +109,10 @@ struct ReadAlerts
 BOOST_FIXTURE_TEST_SUITE(Alert_tests, ReadAlerts)
 
 
-BOOST_AUTO_TEST_CASE(AlertApplies)
-{
+BOOST_AUTO_TEST_CASE(AlertApplies) {
     SetMockTime(11);
 
-    BOOST_FOREACH(const CAlert& alert, alerts)
-    {
+    BOOST_FOREACH(const CAlert& alert, alerts) {
         BOOST_CHECK(alert.CheckSignature());
     }
 
@@ -154,8 +147,7 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
 }
 
 
-BOOST_AUTO_TEST_CASE(AlertNotify)
-{
+BOOST_AUTO_TEST_CASE(AlertNotify) {
     SetMockTime(11);
 
     boost::filesystem::path temp = GetTempPath() / "alertnotify.txt";
@@ -163,8 +155,9 @@ BOOST_AUTO_TEST_CASE(AlertNotify)
 
     mapArgs["-alertnotify"] = std::string("echo %s >> ") + temp.string();
 
-    BOOST_FOREACH(CAlert alert, alerts)
+    BOOST_FOREACH(CAlert alert, alerts) {
         alert.ProcessAlert(false);
+    }
 
     std::vector<std::string> r = read_lines(temp);
     BOOST_CHECK_EQUAL(r.size(), 4u);

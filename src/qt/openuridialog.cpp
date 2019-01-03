@@ -14,27 +14,21 @@
 
 #include <QUrl>
 
-OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent),
-                                                ui(new Ui::OpenURIDialog)
-{
+OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::OpenURIDialog) {
     ui->setupUi(this);
-#if QT_VERSION >= 0x040700
     ui->uriEdit->setPlaceholderText("bulwark:");
-#endif
 }
 
-OpenURIDialog::~OpenURIDialog()
-{
+OpenURIDialog::~OpenURIDialog() {
     delete ui;
 }
 
-QString OpenURIDialog::getURI()
-{
+QString OpenURIDialog::getURI() {
     return ui->uriEdit->text();
 }
 
-void OpenURIDialog::on_acceptButton_clicked()
-{
+void OpenURIDialog::on_acceptButton_clicked() {
     SendCoinsRecipient rcp;
     if (GUIUtil::parseBitcoinURI(getURI(), &rcp)) {
         /* Only accept value URIs */
@@ -45,11 +39,10 @@ void OpenURIDialog::on_acceptButton_clicked()
 }
 
 void OpenURIDialog::on_cancelButton_clicked() {
-	this->close();
+    this->close();
 }
 
-void OpenURIDialog::on_selectFileButton_clicked()
-{
+void OpenURIDialog::on_selectFileButton_clicked() {
     QString filename = GUIUtil::getOpenFileName(this, tr("Select payment request file to open"), "", "", NULL);
     if (filename.isEmpty())
         return;

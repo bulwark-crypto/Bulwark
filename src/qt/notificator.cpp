@@ -34,13 +34,13 @@ const int FREEDESKTOP_NOTIFICATION_ICON_SIZE = 128;
 #endif
 
 Notificator::Notificator(const QString& programName, QSystemTrayIcon* trayicon, QWidget* parent) : QObject(parent),
-                                                                                                   parent(parent),
-                                                                                                   programName(programName),
-                                                                                                   mode(None),
-                                                                                                   trayIcon(trayicon)
+    parent(parent),
+    programName(programName),
+    mode(None),
+    trayIcon(trayicon)
 #ifdef USE_DBUS
-                                                                                                   ,
-                                                                                                   interface(0)
+    ,
+    interface(0)
 #endif
 {
     if (trayicon && trayicon->supportsMessages()) {
@@ -48,7 +48,7 @@ Notificator::Notificator(const QString& programName, QSystemTrayIcon* trayicon, 
     }
 #ifdef USE_DBUS
     interface = new QDBusInterface("org.freedesktop.Notifications",
-        "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
+                                       "/org/freedesktop/Notifications", "org.freedesktop.Notifications");
     if (interface->isValid()) {
         mode = Freedesktop;
     }
@@ -76,8 +76,7 @@ Notificator::Notificator(const QString& programName, QSystemTrayIcon* trayicon, 
 #endif
 }
 
-Notificator::~Notificator()
-{
+Notificator::~Notificator() {
 #ifdef USE_DBUS
     delete interface;
 #endif
@@ -86,9 +85,8 @@ Notificator::~Notificator()
 #ifdef USE_DBUS
 
 // Loosely based on http://www.qtcentre.org/archive/index.php/t-25879.html
-class FreedesktopImage
-{
-public:
+class FreedesktopImage {
+  public:
     FreedesktopImage() {}
     FreedesktopImage(const QImage& img);
 
@@ -97,7 +95,7 @@ public:
     // Image to variant that can be marshalled over DBus
     static QVariant toVariant(const QImage& img);
 
-private:
+  private:
     int width, height, stride;
     bool hasAlpha;
     int channels;
@@ -116,12 +114,11 @@ const int BYTES_PER_PIXEL = 4;
 const int BITS_PER_SAMPLE = 8;
 
 FreedesktopImage::FreedesktopImage(const QImage& img) : width(img.width()),
-                                                        height(img.height()),
-                                                        stride(img.width() * BYTES_PER_PIXEL),
-                                                        hasAlpha(true),
-                                                        channels(CHANNELS),
-                                                        bitsPerSample(BITS_PER_SAMPLE)
-{
+    height(img.height()),
+    stride(img.width() * BYTES_PER_PIXEL),
+    hasAlpha(true),
+    channels(CHANNELS),
+    bitsPerSample(BITS_PER_SAMPLE) {
     // Convert 00xAARRGGBB to RGBA bytewise (endian-independent) format
     QImage tmp = img.convertToFormat(QImage::Format_ARGB32);
     const uint32_t* data = reinterpret_cast<const uint32_t*>(tmp.bits());
@@ -137,35 +134,30 @@ FreedesktopImage::FreedesktopImage(const QImage& img) : width(img.width()),
     }
 }
 
-QDBusArgument& operator<<(QDBusArgument& a, const FreedesktopImage& i)
-{
+QDBusArgument& operator<<(QDBusArgument& a, const FreedesktopImage& i) {
     a.beginStructure();
     a << i.width << i.height << i.stride << i.hasAlpha << i.bitsPerSample << i.channels << i.image;
     a.endStructure();
     return a;
 }
 
-const QDBusArgument& operator>>(const QDBusArgument& a, FreedesktopImage& i)
-{
+const QDBusArgument& operator>>(const QDBusArgument& a, FreedesktopImage& i) {
     a.beginStructure();
     a >> i.width >> i.height >> i.stride >> i.hasAlpha >> i.bitsPerSample >> i.channels >> i.image;
     a.endStructure();
     return a;
 }
 
-int FreedesktopImage::metaType()
-{
+int FreedesktopImage::metaType() {
     return qDBusRegisterMetaType<FreedesktopImage>();
 }
 
-QVariant FreedesktopImage::toVariant(const QImage& img)
-{
+QVariant FreedesktopImage::toVariant(const QImage& img) {
     FreedesktopImage fimg(img);
     return QVariant(FreedesktopImage::metaType(), &fimg);
 }
 
-void Notificator::notifyDBus(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout)
-{
+void Notificator::notifyDBus(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout) {
     Q_UNUSED(cls);
     // Arguments for DBus call:
     QList<QVariant> args;
@@ -224,12 +216,10 @@ void Notificator::notifyDBus(Class cls, const QString& title, const QString& tex
 }
 #endif
 
-void Notificator::notifySystray(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout)
-{
+void Notificator::notifySystray(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout) {
     Q_UNUSED(icon);
     QSystemTrayIcon::MessageIcon sicon = QSystemTrayIcon::NoIcon;
-    switch (cls) // Set icon based on class
-    {
+    switch (cls) { // Set icon based on class
     case Information:
         sicon = QSystemTrayIcon::Information;
         break;
@@ -245,8 +235,7 @@ void Notificator::notifySystray(Class cls, const QString& title, const QString& 
 
 // Based on Qt's tray icon implementation
 #ifdef Q_OS_MAC
-void Notificator::notifyGrowl(Class cls, const QString& title, const QString& text, const QIcon& icon)
-{
+void Notificator::notifyGrowl(Class cls, const QString& title, const QString& text, const QIcon& icon) {
     const QString script(
         "tell application \"%5\"\n"
         "  set the allNotificationsList to {\"Notification\"}\n"                                                                   // -- Make a list of all the notification types (all)
@@ -294,16 +283,14 @@ void Notificator::notifyGrowl(Class cls, const QString& title, const QString& te
     MacNotificationHandler::instance()->sendAppleScript(script.arg(notificationApp, quotedTitle, quotedText, notificationIcon, growlApp));
 }
 
-void Notificator::notifyMacUserNotificationCenter(Class cls, const QString& title, const QString& text, const QIcon& icon)
-{
+void Notificator::notifyMacUserNotificationCenter(Class cls, const QString& title, const QString& text, const QIcon& icon) {
     // icon is not supported by the user notification center yet. OSX will use the app icon.
     MacNotificationHandler::instance()->showNotification(title, text);
 }
 
 #endif
 
-void Notificator::notify(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout)
-{
+void Notificator::notify(Class cls, const QString& title, const QString& text, const QIcon& icon, int millisTimeout) {
     switch (mode) {
 #ifdef USE_DBUS
     case Freedesktop:

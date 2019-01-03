@@ -39,12 +39,11 @@ enum Network {
 };
 
 /** IP address (IPv6, or IPv4 using mapped IPv6 range (::FFFF:0:0/96)) */
-class CNetAddr
-{
-protected:
+class CNetAddr {
+  protected:
     unsigned char ip[16]; // in network byte order
 
-public:
+  public:
     CNetAddr();
     CNetAddr(const struct in_addr& ipv4Addr);
     explicit CNetAddr(const char* pszIp, bool fAllowLookup = false);
@@ -98,17 +97,15 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(FLATDATA(ip));
     }
 
     friend class CSubNet;
 };
 
-class CSubNet
-{
-protected:
+class CSubNet {
+  protected:
     /// Network (base) address
     CNetAddr network;
     /// Netmask, in network byte order
@@ -116,10 +113,10 @@ protected:
     /// Is this value valid? (only used to signal parse errors)
     bool valid;
 
-public:
+  public:
     CSubNet();
     explicit CSubNet(const std::string& strSubnet, bool fAllowLookup = false);
-	explicit CSubNet(const CNetAddr &addr);
+    explicit CSubNet(const CNetAddr &addr);
 
     bool Match(const CNetAddr& addr) const;
 
@@ -127,26 +124,25 @@ public:
     bool IsValid() const;
 
     friend bool operator==(const CSubNet& a, const CSubNet& b);
-	friend bool operator!=(const CSubNet& a, const CSubNet& b);
+    friend bool operator!=(const CSubNet& a, const CSubNet& b);
     friend bool operator<(const CSubNet& a, const CSubNet& b);
 
-	ADD_SERIALIZE_METHODS;
+    ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-	inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
-	READWRITE(network);
-	READWRITE(FLATDATA(netmask));
-	READWRITE(valid);
-	}
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+        READWRITE(network);
+        READWRITE(FLATDATA(netmask));
+        READWRITE(valid);
+    }
 };
 
 /** A combination of a network address (CNetAddr) and a (TCP) port */
-class CService : public CNetAddr
-{
-protected:
+class CService : public CNetAddr {
+  protected:
     unsigned short port; // host order
 
-public:
+  public:
     CService();
     CService(const CNetAddr& ip, unsigned short port);
     CService(const struct in_addr& ipv4Addr, unsigned short port);
@@ -174,8 +170,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(FLATDATA(ip));
         unsigned short portN = htons(port);
         READWRITE(portN);
@@ -184,13 +179,14 @@ public:
     }
 };
 
-class proxyType
-{
-public:
+class proxyType {
+  public:
     proxyType(): randomize_credentials(false) {}
     proxyType(const CService &proxy, bool randomize_credentials=false): proxy(proxy), randomize_credentials(randomize_credentials) {}
 
-    bool IsValid() const { return proxy.IsValid(); }
+    bool IsValid() const {
+        return proxy.IsValid();
+    }
 
     CService proxy;
     bool randomize_credentials;

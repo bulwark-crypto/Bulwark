@@ -13,8 +13,7 @@
 
 class OptionsModel;
 
-namespace Ui
-{
+namespace Ui {
 class ReceiveRequestDialog;
 }
 
@@ -25,44 +24,42 @@ QT_END_NAMESPACE
 /* Label widget for QR code. This image can be dragged, dropped, copied and saved
  * to disk.
  */
-class QRImageWidget : public QLabel
-{
+class QRImageWidget : public QLabel {
     Q_OBJECT
 
-public:
+  public:
     explicit QRImageWidget(QWidget* parent = 0);
     QImage exportImage();
 
-public slots:
+  public slots:
     void saveImage();
     void copyImage();
 
-protected:
+  protected:
     virtual void mousePressEvent(QMouseEvent* event);
     virtual void contextMenuEvent(QContextMenuEvent* event);
 
-private:
+  private:
     QMenu* contextMenu;
 };
 
-class ReceiveRequestDialog : public QDialog
-{
+class ReceiveRequestDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     explicit ReceiveRequestDialog(QWidget* parent = 0);
     ~ReceiveRequestDialog();
 
     void setModel(OptionsModel* model);
     void setInfo(const SendCoinsRecipient& info);
 
-private slots:
+  private slots:
     void on_btnCopyURI_clicked();
     void on_btnCopyAddress_clicked();
-	void on_closeButton_clicked();
+    void on_closeButton_clicked();
     void update();
 
-private:
+  private:
     Ui::ReceiveRequestDialog* ui;
     OptionsModel* model;
     SendCoinsRecipient info;

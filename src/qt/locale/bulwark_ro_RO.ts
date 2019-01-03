@@ -61,6 +61,9 @@
     <name>AskPassphraseDialog</name>
     </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>Bip38ToolDialog</name>
     </context>
 <context>
@@ -92,6 +95,9 @@
     </context>
 <context>
     <name>MultiSendDialog</name>
+    </context>
+<context>
+    <name>MultisigDialog</name>
     </context>
 <context>
     <name>ObfuscationConfig</name>
@@ -183,7 +189,7 @@
     </message>
     </context>
 <context>
-    <name>ZBwkControlDialog</name>
+    <name>zBWKControlDialog</name>
     </context>
 <context>
     <name>bulwark-core</name>

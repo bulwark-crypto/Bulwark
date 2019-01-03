@@ -38,17 +38,16 @@ enum NumConnections {
 };
 
 /** Model for Bulwark network client. */
-class ClientModel : public QObject
-{
+class ClientModel : public QObject {
     Q_OBJECT
 
-public:
+  public:
     explicit ClientModel(OptionsModel* optionsModel, QObject* parent = 0);
     ~ClientModel();
 
     OptionsModel* getOptionsModel();
     PeerTableModel* getPeerTableModel();
-	BanTableModel *getBanTableModel();
+    BanTableModel *getBanTableModel();
 
     //! Return number of connections, default is in- and outbound (total)
     int getNumConnections(unsigned int flags = CONNECTIONS_ALL) const;
@@ -75,10 +74,12 @@ public:
     QString clientName() const;
     QString formatClientStartupTime() const;
 
-private:
+    bool getTorInfo(std::string& ip_port) const;
+
+  private:
     OptionsModel* optionsModel;
     PeerTableModel* peerTableModel;
-	BanTableModel *banTableModel;
+    BanTableModel *banTableModel;
 
     int cachedNumBlocks;
     QString cachedMasternodeCountString;
@@ -93,7 +94,7 @@ private:
     void subscribeToCoreSignals();
     void unsubscribeFromCoreSignals();
 
-signals:
+  signals:
     void numConnectionsChanged(int count);
     void numBlocksChanged(int count);
     void strMasternodesChanged(const QString& strMasternodes);
@@ -106,12 +107,12 @@ signals:
     // Show progress dialog e.g. for verifychain
     void showProgress(const QString& title, int nProgress);
 
-public slots:
+  public slots:
     void updateTimer();
     void updateMnTimer();
     void updateNumConnections(int numConnections);
     void updateAlert(const QString& hash, int status);
-	void updateBanlist();
+    void updateBanlist();
 };
 
 #endif // BITCOIN_QT_CLIENTMODEL_H

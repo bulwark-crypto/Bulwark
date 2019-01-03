@@ -17,26 +17,23 @@
 
 /* Return positive answer if transaction should be shown in list.
  */
-bool TransactionRecord::showTransaction(const CWalletTx& wtx)
-{
+bool TransactionRecord::showTransaction(const CWalletTx& wtx) {
     if (wtx.IsCoinBase()) {
         // Ensures we show generated coins / mined transactions at depth 1
         if (!wtx.IsInMainChain()) {
             return false;
         }
         return true;
+    } else {
+        QSettings settings;
+        return (!settings.value("fShowOrphans").toBool() || wtx.GetDepthInMainChain() >= 0);
     }
-	else {
-		QSettings settings;
-		return (!settings.value("fShowOrphans").toBool() || wtx.GetDepthInMainChain() >= 0);
-	}
 }
 
 /*
  * Decompose CWallet transaction to model transaction records.
  */
-QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* wallet, const CWalletTx& wtx)
-{
+QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* wallet, const CWalletTx& wtx) {
     QList<TransactionRecord> parts;
     int64_t nTime = wtx.GetComputedTxTime();
     CAmount nCredit = wtx.GetCredit(ISMINE_ALL);
@@ -110,8 +107,13 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             isminetype mine = wallet->IsMine(txout);
             if (mine) {
                 TransactionRecord sub(hash, nTime);
-                sub.type = (fSpendFromMe ? TransactionRecord::ZerocoinSpend_FromMe : TransactionRecord::RecvFromZerocoinSpend);
-                sub.debit = txout.nValue;
+                sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
+                if (fSpendFromMe) {
+                    sub.type = TransactionRecord::ZerocoinSpend_FromMe;
+                } else {
+                    sub.type = TransactionRecord::RecvFromZerocoinSpend;
+                    sub.credit = txout.nValue;
+                }
                 sub.address = mapValue["recvzerocoinspend"];
                 if (strAddress != "")
                     sub.address = strAddress;
@@ -126,6 +128,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
 
             // zerocoin spend that was sent to someone else
             TransactionRecord sub(hash, nTime);
+            sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
             sub.debit = -txout.nValue;
             sub.type = TransactionRecord::ZerocoinSpend;
             sub.address = mapValue["zerocoinspend"];
@@ -138,7 +141,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         //
         // Credit
         //
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout) {
+        BOOST_FOREACH(const CTxOut& txout, wtx.vout) {
             isminetype mine = wallet->IsMine(txout);
             if (mine) {
                 TransactionRecord sub(hash, nTime);
@@ -168,7 +171,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         int nFromMe = 0;
         bool involvesWatchAddress = false;
         isminetype fAllFromMe = ISMINE_SPENDABLE;
-        BOOST_FOREACH (const CTxIn& txin, wtx.vin) {
+        BOOST_FOREACH(const CTxIn& txin, wtx.vin) {
             if (wallet->IsMine(txin)) {
                 fAllFromMeDenom = fAllFromMeDenom && wallet->IsDenominated(txin);
                 nFromMe++;
@@ -181,7 +184,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         isminetype fAllToMe = ISMINE_SPENDABLE;
         bool fAllToMeDenom = true;
         int nToMe = 0;
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout) {
+        BOOST_FOREACH(const CTxOut& txout, wtx.vout) {
             if (wallet->IsMine(txout)) {
                 fAllToMeDenom = fAllToMeDenom && wallet->IsDenominatedAmount(txout.nValue);
                 nToMe++;
@@ -254,7 +257,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                     // Sent to Bulwark Address
                     sub.type = TransactionRecord::SendToAddress;
                     sub.address = CBitcoinAddress(address).ToString();
-                } else if (txout.IsZerocoinMint()){
+                } else if (txout.IsZerocoinMint()) {
                     sub.type = TransactionRecord::ZerocoinMint;
                     sub.address = mapValue["zerocoinmint"];
                 } else {
@@ -289,8 +292,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     return parts;
 }
 
-void TransactionRecord::updateStatus(const CWalletTx& wtx)
-{
+void TransactionRecord::updateStatus(const CWalletTx& wtx) {
     AssertLockHeld(cs_main);
     // Determine transaction status
 
@@ -302,10 +304,10 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
 
     // Sort order, unrecorded transactions sort to the top
     status.sortKey = strprintf("%010d-%01d-%010u-%03d",
-        (pindex ? pindex->nHeight : std::numeric_limits<int>::max()),
-        (wtx.IsCoinBase() ? 1 : 0),
-        wtx.nTimeReceived,
-        idx);
+                               (pindex ? pindex->nHeight : std::numeric_limits<int>::max()),
+                               (wtx.IsCoinBase() ? 1 : 0),
+                               wtx.nTimeReceived,
+                               idx);
     status.countsForBalance = wtx.IsTrusted() && !(wtx.GetBlocksToMaturity() > 0);
     status.depth = wtx.GetDepthInMainChain();
     status.cur_num_blocks = chainActive.Height();
@@ -337,6 +339,16 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
         } else {
             status.status = TransactionStatus::Confirmed;
         }
+    } else if (type == TransactionRecord::ZerocoinMint) {
+        if (status.depth < 0) {
+            status.status = TransactionStatus::Conflicted;
+        } else if (status.depth == 0) {
+            status.status = TransactionStatus::Unconfirmed;
+        } else if (status.depth < Params().Zerocoin_MintRequiredConfirmations()) {
+            status.status = TransactionStatus::Confirming;
+        } else {
+            status.status = TransactionStatus::Confirmed;
+        }
     } else {
         if (status.depth < 0) {
             status.status = TransactionStatus::Conflicted;
@@ -352,18 +364,15 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
     }
 }
 
-bool TransactionRecord::statusUpdateNeeded()
-{
+bool TransactionRecord::statusUpdateNeeded() {
     AssertLockHeld(cs_main);
     return status.cur_num_blocks != chainActive.Height() || status.cur_num_ix_locks != nCompleteTXLocks;
 }
 
-QString TransactionRecord::getTxID() const
-{
+QString TransactionRecord::getTxID() const {
     return QString::fromStdString(hash.ToString());
 }
 
-int TransactionRecord::getOutputIndex() const
-{
+int TransactionRecord::getOutputIndex() const {
     return idx;
 }

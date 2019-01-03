@@ -176,16 +176,16 @@
         <translation>Confirm wallet encryption</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKs from being stolen by malware infecting your computer.</translation>
+        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
+        <translation>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -610,8 +610,8 @@
         <translation>Send coins to a Bulwark address</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bulwark: URIs)</source>
-        <translation>Request payments (generates QR codes and bulwark: URIs)</translation>
+        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
+        <translation>Request payments (generates QR codes and Bulwark: URIs)</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -1544,32 +1544,32 @@ Please check the address and try again.</translation>
         <translation>Please select a privacy level.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 5000 BWK</source>
-        <translation>Use 2 separate masternodes to mix funds up to 5000 BWK</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
+        <translation>Use 2 separate masternodes to mix funds up to 10000 Bulwark</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 5000 BWK</source>
-        <translation>Use 8 separate masternodes to mix funds up to 5000 BWK</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
+        <translation>Use 8 separate masternodes to mix funds up to 10000 Bulwark</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Use 16 separate masternodes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 BWK to anonymize 5000 BWK</source>
-        <translation>This option is the quickest and will cost about ~0.025 BWK to anonymize 5000 BWK</translation>
+        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
+        <translation>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 BWK to anonymize 5000 BWK</source>
-        <translation>This option is moderately fast and will cost about 0.05 BWK to anonymize 5000 BWK</translation>
+        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
+        <translation>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>This is the slowest and most secure option. Using maximum anonymity will cost</translation>
     </message>
     <message>
-        <source>0.1 BWK per 5000 BWK you anonymize.</source>
-        <translation>0.1 BWK per 5000 BWK you anonymize.</translation>
+        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
+        <translation>0.1 Bulwark per 10000 Bulwark you anonymize.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1719,9 +1719,9 @@ Please check the address and try again.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/bulwark-project/bulwark-project-translations</source>
+https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/bulwark-project/bulwark-project-translations</translation>
+https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
     </message>
     <message>
         <source>Map port using UPnP</source>
@@ -1927,8 +1927,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Obfuscation Balance:</translation>
     </message>
     <message>
-        <source>0 BWK / 0 Rounds</source>
-        <translation>0 BWK / 0 Rounds</translation>
+        <source>0 Bulwark / 0 Rounds</source>
+        <translation>0 Bulwark / 0 Rounds</translation>
     </message>
     <message>
         <source>Enabled/Disabled</source>
@@ -2092,12 +2092,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Invalid payment address %1</translation>
     </message>
     <message>
-        <source>Cannot start bulwark: click-to-pay handler</source>
-        <translation>Cannot start bulwark: click-to-pay handler</translation>
+        <source>Cannot start Bulwark: click-to-pay handler</source>
+        <translation>Cannot start Bulwark: click-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Bulwark address or malformed URI parameters.</source>
-        <translation>URI cannot be parsed! This can be caused by an invalid Bulwark address or malformed URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
+        <translation>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2792,8 +2792,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>UTXO Size:</translation>
     </message>
     <message>
-        <source>0 BWK</source>
-        <translation>0 BWK</translation>
+        <source>0 Bulwark</source>
+        <translation>0 Bulwark</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2896,8 +2896,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Add Recipient</translation>
     </message>
     <message>
-        <source>SwiftX</source>
-        <translation>SwiftX</translation>
+        <source>SwiftTX</source>
+        <translation>SwiftTX</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2952,16 +2952,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>anonymous funds</translation>
     </message>
     <message>
-        <source>Warning: Invalid Bulwark address</source>
-        <translation>Warning: Invalid Bulwark address</translation>
+        <source>Warning: Invalid BWK address</source>
+        <translation>Warning: Invalid BWK address</translation>
     </message>
     <message>
         <source>any available funds (not recommended)</source>
         <translation>any available funds (not recommended)</translation>
     </message>
     <message>
-        <source>and SwiftX</source>
-        <translation>and SwiftX</translation>
+        <source>and SwiftTX</source>
+        <translation>and SwiftTX</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3322,16 +3322,16 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>conflicted</translation>
     </message>
     <message>
-        <source>%1/offline (verified via SwiftX)</source>
-        <translation>%1/offline (verified via SwiftX)</translation>
+        <source>%1/offline (verified via swifttx)</source>
+        <translation>%1/offline (verified via swifttx)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via SwiftX)</source>
-        <translation>%1/confirmed (verified via SwiftX)</translation>
+        <source>%1/confirmed (verified via swifttx)</source>
+        <translation>%1/confirmed (verified via swifttx)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via SwiftX)</source>
-        <translation>%1 confirmations (verified via SwiftX)</translation>
+        <source>%1 confirmations (verified via swifttx)</source>
+        <translation>%1 confirmations (verified via swifttx)</translation>
     </message>
     <message>
         <source>%1/offline</source>
@@ -3346,24 +3346,24 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>%1 confirmations</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</translation>
+        <source>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</translation>
+        <source>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</translation>
     </message>
     <message>
-        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</translation>
+        <source>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</translation>
     </message>
     <message>
-        <source>%1/offline (SwiftX verification failed)</source>
-        <translation>%1/offline (SwiftX verification failed)</translation>
+        <source>%1/offline (SwiftTX verification failed)</source>
+        <translation>%1/offline (SwiftTX verification failed)</translation>
     </message>
     <message>
-        <source>%1/confirmed (SwiftX verification failed)</source>
-        <translation>%1/confirmed (SwiftX verification failed)</translation>
+        <source>%1/confirmed (SwiftTX verification failed)</source>
+        <translation>%1/confirmed (SwiftTX verification failed)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3840,8 +3840,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Send Coins</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
-        <translation>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
+        <translation>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</translation>
     </message>
 </context>
 <context>
@@ -3930,8 +3930,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftX, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3942,8 +3942,8 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Enable spork administration functionality with the appropriate private key.</translation>
     </message>
     <message>
-        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</translation>
+        <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</translation>
     </message>
     <message>
         <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
@@ -3974,12 +3974,12 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</translation>
+        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
+        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4074,18 +4074,18 @@ https://www.transifex.com/bulwark-project/bulwark-project-translations</translat
         <translation>Support filtering of blocks and transaction with bloom filters (default: %u)</translation>
     </message>
     <message>
-        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
+        <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
     </message>
     <message>
-        <source>To use bulwarkd, or the -server option to bulwark-qt, you must set an rpcpassword in the configuration file:
+        <source>To use Bulwarkd, or the -server option to Bulwark-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bulwarkrpc
+rpcuser=Bulwarkrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -4093,10 +4093,10 @@ If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
 for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
 </source>
-        <translation>To use bulwarkd, or the -server option to bulwark-qt, you must set an rpcpassword in the configuration file:
+        <translation>To use Bulwarkd, or the -server option to Bulwark-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=bulwarkrpc
+rpcuser=Bulwarkrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -4114,12 +4114,12 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Unable to locate enough Obfuscation denominated funds for this transaction.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 5000 BWK.</source>
-        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 5000 BWK.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
+        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 5000 BWK.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 5000 BWK.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4284,10 +4284,6 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
     <message>
         <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
         <translation>Copyright (C) 2015-%i The Bulwark Core Developers</translation>
-    </message>
-    <message>
-        <source>Copyright (C) 2017-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2017-%i The Bulwark Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4558,8 +4554,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enable publish hash block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4570,8 +4566,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enable publish raw block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
-        <translation>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4582,8 +4578,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enable staking functionality (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Keep N BWK anonymized (default: %u)</source>
-        <translation>Keep N BWK anonymized (default: %u)</translation>
+        <source>Keep N Bulwark anonymized (default: %u)</source>
+        <translation>Keep N Bulwark anonymized (default: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -4942,8 +4938,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Submitted to masternode, waiting in queue %s</translation>
     </message>
     <message>
-        <source>SwiftX options:</source>
-        <translation>SwiftX options:</translation>
+        <source>SwiftTX options:</source>
+        <translation>SwiftTX options:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>

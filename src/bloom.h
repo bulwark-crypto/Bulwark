@@ -32,17 +32,16 @@ enum bloomflags {
 /**
  * BloomFilter is a probabilistic filter which SPV clients provide
  * so that we can filter the transactions we sends them.
- * 
+ *
  * This allows for significantly more efficient transaction and block downloads.
- * 
+ *
  * Because bloom filters are probabilistic, an SPV node can increase the false-
- * positive rate, making us send them transactions which aren't actually theirs, 
+ * positive rate, making us send them transactions which aren't actually theirs,
  * allowing clients to trade more bandwidth for more privacy by obfuscating which
  * keys are owned by them.
  */
-class CBloomFilter
-{
-private:
+class CBloomFilter {
+  private:
     std::vector<unsigned char> vData;
     bool isFull;
     bool isEmpty;
@@ -52,7 +51,7 @@ private:
 
     unsigned int Hash(unsigned int nHashNum, const std::vector<unsigned char>& vDataToHash) const;
 
-public:
+  public:
     /**
      * Creates a new bloom filter which will provide the given fp rate when filled with the given number of elements
      * Note that if the given parameters will result in a filter outside the bounds of the protocol limits,
@@ -68,8 +67,7 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
         READWRITE(vData);
         READWRITE(nHashFuncs);
         READWRITE(nTweak);

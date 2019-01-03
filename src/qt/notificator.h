@@ -21,11 +21,10 @@ class QDBusInterface;
 QT_END_NAMESPACE
 
 /** Cross-platform desktop notification client. */
-class Notificator : public QObject
-{
+class Notificator : public QObject {
     Q_OBJECT
 
-public:
+  public:
     /** Create a new notificator.
        @note Ownership of trayIcon is not transferred to this object.
     */
@@ -39,7 +38,7 @@ public:
         Critical     /**< An error occurred */
     };
 
-public slots:
+  public slots:
     /** Show notification message.
        @param[in] cls    general message class
        @param[in] title  title shown with message
@@ -50,7 +49,7 @@ public slots:
      */
     void notify(Class cls, const QString& title, const QString& text, const QIcon& icon = QIcon(), int millisTimeout = 10000);
 
-private:
+  private:
     QWidget* parent;
     enum Mode {
         None,                  /**< Ignore informational notifications, and show a modal pop-up dialog for Critical notifications. */

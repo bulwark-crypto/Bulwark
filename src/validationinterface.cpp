@@ -7,8 +7,7 @@
 
 static CMainSignals g_signals;
 
-CMainSignals& GetMainSignals()
-{
+CMainSignals& GetMainSignals() {
     return g_signals;
 }
 

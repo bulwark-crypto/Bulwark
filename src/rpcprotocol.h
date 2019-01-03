@@ -81,35 +81,29 @@ enum RPCErrorCode {
  * IOStream device that speaks SSL but can also speak non-SSL
  */
 template <typename Protocol>
-class SSLIOStreamDevice : public boost::iostreams::device<boost::iostreams::bidirectional>
-{
-public:
-    SSLIOStreamDevice(boost::asio::ssl::stream<typename Protocol::socket>& streamIn, bool fUseSSLIn) : stream(streamIn)
-    {
+class SSLIOStreamDevice : public boost::iostreams::device<boost::iostreams::bidirectional> {
+  public:
+    SSLIOStreamDevice(boost::asio::ssl::stream<typename Protocol::socket>& streamIn, bool fUseSSLIn) : stream(streamIn) {
         fUseSSL = fUseSSLIn;
         fNeedHandshake = fUseSSLIn;
     }
 
-    void handshake(boost::asio::ssl::stream_base::handshake_type role)
-    {
+    void handshake(boost::asio::ssl::stream_base::handshake_type role) {
         if (!fNeedHandshake) return;
         fNeedHandshake = false;
         stream.handshake(role);
     }
-    std::streamsize read(char* s, std::streamsize n)
-    {
+    std::streamsize read(char* s, std::streamsize n) {
         handshake(boost::asio::ssl::stream_base::server); // HTTPS servers read first
         if (fUseSSL) return stream.read_some(boost::asio::buffer(s, n));
         return stream.next_layer().read_some(boost::asio::buffer(s, n));
     }
-    std::streamsize write(const char* s, std::streamsize n)
-    {
+    std::streamsize write(const char* s, std::streamsize n) {
         handshake(boost::asio::ssl::stream_base::client); // HTTPS clients write first
         if (fUseSSL) return boost::asio::write(stream, boost::asio::buffer(s, n));
         return boost::asio::write(stream.next_layer(), boost::asio::buffer(s, n));
     }
-    bool connect(const std::string& server, const std::string& port)
-    {
+    bool connect(const std::string& server, const std::string& port) {
         using namespace boost::asio::ip;
         tcp::resolver resolver(stream.get_io_service());
         tcp::resolver::iterator endpoint_iterator;
@@ -139,7 +133,7 @@ public:
         return true;
     }
 
-private:
+  private:
     bool fNeedHandshake;
     bool fUseSSL;
     boost::asio::ssl::stream<typename Protocol::socket>& stream;

@@ -19,8 +19,7 @@
 class OptionsModel;
 class WalletModel;
 
-namespace Ui
-{
+namespace Ui {
 class PrivacyDialog;
 }
 
@@ -29,11 +28,10 @@ class QModelIndex;
 QT_END_NAMESPACE
 
 /** Dialog for requesting payment of bitcoins */
-class PrivacyDialog : public QDialog
-{
+class PrivacyDialog : public QDialog {
     Q_OBJECT
 
-public:
+  public:
     enum ColumnWidths {
         DATE_COLUMN_WIDTH = 130,
         LABEL_COLUMN_WIDTH = 120,
@@ -48,14 +46,14 @@ public:
     void showOutOfSyncWarning(bool fShow);
     void setZBwkControlLabels(int64_t nAmount, int nQuantity);
 
-public slots:
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
+  public slots:
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
                     const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
-protected:
+  protected:
     virtual void keyPressEvent(QKeyEvent* event);
 
-private:
+  private:
     Ui::PrivacyDialog* ui;
     QTimer* timer;
     GUIUtil::TableViewLastColumnResizingFixer* columnResizingFixer;
@@ -70,7 +68,7 @@ private:
     CAmount currentWatchOnlyBalance;
     CAmount currentWatchUnconfBalance;
     CAmount currentWatchImmatureBalance;
-    
+
     int nSecurityLevel = 0;
     bool fMinimizeChange = false;
 
@@ -78,7 +76,7 @@ private:
     bool updateLabel(const QString& address);
     void sendzBWK();
 
-private slots:
+  private slots:
     void on_payTo_textChanged(const QString& address);
     void on_addressBookButton_clicked();
 //    void coinControlFeatureChanged(bool);
@@ -97,8 +95,6 @@ private slots:
 //    void coinControlClipboardChange();
 
     void on_pushButtonMintzBWK_clicked();
-    void on_pushButtonMintReset_clicked();
-    void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzBWK_clicked();
     void on_pushButtonZBWKControl_clicked();
     void on_pasteButton_clicked();

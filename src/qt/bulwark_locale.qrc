@@ -8,11 +8,16 @@
         <file alias="en">locale/bulwark_en.qm</file>
         <file alias="en_US">locale/bulwark_en_US.qm</file>
         <file alias="es">locale/bulwark_es.qm</file>
+        <file alias="es_ES">locale/bulwark_es_ES.qm</file>
         <file alias="fi">locale/bulwark_fi.qm</file>
         <file alias="fr_FR">locale/bulwark_fr_FR.qm</file>
+        <file alias="hi_IN">locale/bulwark_hi_IN.qm</file>
+        <file alias="hr">locale/bulwark_hr.qm</file>
+        <file alias="hr_HR">locale/bulwark_hr_HR.qm</file>
         <file alias="it">locale/bulwark_it.qm</file>
         <file alias="ja">locale/bulwark_ja.qm</file>
         <file alias="ko_KR">locale/bulwark_ko_KR.qm</file>
+        <file alias="lt_LT">locale/bulwark_lt_LT.qm</file>
         <file alias="nl">locale/bulwark_nl.qm</file>
         <file alias="pl">locale/bulwark_pl.qm</file>
         <file alias="pt">locale/bulwark_pt.qm</file>
@@ -23,6 +28,7 @@
         <file alias="sv">locale/bulwark_sv.qm</file>
         <file alias="tr">locale/bulwark_tr.qm</file>
         <file alias="uk">locale/bulwark_uk.qm</file>
+        <file alias="vi">locale/bulwark_vi.qm</file>
         <file alias="zh_CN">locale/bulwark_zh_CN.qm</file>
         <file alias="zh_TW">locale/bulwark_zh_TW.qm</file>
     </qresource>

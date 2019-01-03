@@ -17,21 +17,19 @@
 #define YMARGIN 10
 
 TrafficGraphWidget::TrafficGraphWidget(QWidget* parent) : QWidget(parent),
-                                                          timer(0),
-                                                          fMax(0.0f),
-                                                          nMins(0),
-                                                          vSamplesIn(),
-                                                          vSamplesOut(),
-                                                          nLastBytesIn(0),
-                                                          nLastBytesOut(0),
-                                                          clientModel(0)
-{
+    timer(0),
+    fMax(0.0f),
+    nMins(0),
+    vSamplesIn(),
+    vSamplesOut(),
+    nLastBytesIn(0),
+    nLastBytesOut(0),
+    clientModel(0) {
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), SLOT(updateRates()));
 }
 
-void TrafficGraphWidget::setClientModel(ClientModel* model)
-{
+void TrafficGraphWidget::setClientModel(ClientModel* model) {
     clientModel = model;
     if (model) {
         nLastBytesIn = model->getTotalBytesRecv();
@@ -39,13 +37,11 @@ void TrafficGraphWidget::setClientModel(ClientModel* model)
     }
 }
 
-int TrafficGraphWidget::getGraphRangeMins() const
-{
+int TrafficGraphWidget::getGraphRangeMins() const {
     return nMins;
 }
 
-void TrafficGraphWidget::paintPath(QPainterPath& path, QQueue<float>& samples)
-{
+void TrafficGraphWidget::paintPath(QPainterPath& path, QQueue<float>& samples) {
     int h = height() - YMARGIN * 2, w = width() - XMARGIN * 2;
     int sampleCount = samples.size(), x = XMARGIN + w, y;
     if (sampleCount > 0) {
@@ -59,8 +55,7 @@ void TrafficGraphWidget::paintPath(QPainterPath& path, QQueue<float>& samples)
     }
 }
 
-void TrafficGraphWidget::paintEvent(QPaintEvent*)
-{
+void TrafficGraphWidget::paintEvent(QPaintEvent*) {
     QPainter painter(this);
     painter.fillRect(rect(), Qt::black);
 
@@ -117,8 +112,7 @@ void TrafficGraphWidget::paintEvent(QPaintEvent*)
     }
 }
 
-void TrafficGraphWidget::updateRates()
-{
+void TrafficGraphWidget::updateRates() {
     if (!clientModel) return;
 
     quint64 bytesIn = clientModel->getTotalBytesRecv(),
@@ -148,8 +142,7 @@ void TrafficGraphWidget::updateRates()
     update();
 }
 
-void TrafficGraphWidget::setGraphRangeMins(int mins)
-{
+void TrafficGraphWidget::setGraphRangeMins(int mins) {
     nMins = mins;
     int msecsPerSample = nMins * 60 * 1000 / DESIRED_SAMPLES;
     timer->stop();
@@ -158,8 +151,7 @@ void TrafficGraphWidget::setGraphRangeMins(int mins)
     clear();
 }
 
-void TrafficGraphWidget::clear()
-{
+void TrafficGraphWidget::clear() {
     timer->stop();
 
     vSamplesOut.clear();

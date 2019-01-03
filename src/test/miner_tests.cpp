@@ -49,8 +49,7 @@ struct {
 };
 
 // NOTE: These tests rely on CreateNewBlock doing its own self-validation!
-BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
-{
+BOOST_AUTO_TEST_CASE(CreateNewBlock_validity) {
     CScript scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     CBlockTemplate *pblocktemplate;
     CMutableTransaction tx,tx2;
@@ -66,8 +65,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     // We can't make transactions until we have inputs
     // Therefore, load 100 blocks :)
     std::vector<CTransaction*>txFirst;
-    for (unsigned int i = 0; i < sizeof(blockinfo)/sizeof(*blockinfo); ++i)
-    {
+    for (unsigned int i = 0; i < sizeof(blockinfo)/sizeof(*blockinfo); ++i) {
         CBlock *pblock = &pblocktemplate->block; // pointer for convenience
         pblock->nVersion = 1;
         pblock->nTime = chainActive.Tip()->GetMedianTimePast()+1;
@@ -100,8 +98,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     tx.vin[0].prevout.n = 0;
     tx.vout.resize(1);
     tx.vout[0].nValue = 5000000000LL;
-    for (unsigned int i = 0; i < 1001; ++i)
-    {
+    for (unsigned int i = 0; i < 1001; ++i) {
         tx.vout[0].nValue -= 1000000;
         hash = tx.GetHash();
         mempool.addUnchecked(hash, CTxMemPoolEntry(tx, 11, GetTime(), 111.0, 11));
@@ -120,8 +117,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     tx.vin[0].scriptSig << OP_1;
     tx.vin[0].prevout.hash = txFirst[0]->GetHash();
     tx.vout[0].nValue = 5000000000LL;
-    for (unsigned int i = 0; i < 128; ++i)
-    {
+    for (unsigned int i = 0; i < 128; ++i) {
         tx.vout[0].nValue -= 10000000;
         hash = tx.GetHash();
         mempool.addUnchecked(hash, CTxMemPoolEntry(tx, 11, GetTime(), 111.0, 11));
@@ -258,8 +254,9 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     SetMockTime(0);
     mempool.clear();
 
-    BOOST_FOREACH(CTransaction *tx, txFirst)
+    BOOST_FOREACH(CTransaction *tx, txFirst) {
         delete tx;
+    }
 
     Checkpoints::fEnabled = true;
 }
