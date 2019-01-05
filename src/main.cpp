@@ -4192,12 +4192,33 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
             if (block.vtx[i].IsCoinStake())
                 return state.DoS(100, error("CheckBlock() : more than one coinstake"));
 
-        // If consensus level checks are in place then make sure
-        // the min. value is provided in tx.
-        if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS)
-                && block.GetBlockTime() >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS)
-                && block.vtx[1].vout[1].nValue < Params().Stake_MinAmount()) {
-            return state.DoS(100, error("CheckBlock() : under min. stake value"));
+        // If consensus level checks are in place.
+        if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS) && block.GetBlockTime() >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS)) {
+            // Check for minimum value.
+            if (block.vtx[1].vout[1].nValue < Params().Stake_MinAmount())
+                return state.DoS(100, error("CheckBlock() : stake under min. stake value"));
+
+            // Check for coin age.
+            // First try finding the previous transaction in database.
+            CTransaction txPrev;
+            uint256 hashBlockPrev;
+            if (!GetTransaction(block.vtx[1].vin[0].prevout.hash, txPrev, hashBlockPrev, true))
+                return state.DoS(100, error("CheckBlock() : stake failed to find vin transaction"));
+            // Find block in map.
+            CBlockIndex* pindex = NULL;
+            BlockMap::iterator it = mapBlockIndex.find(hashBlockPrev);
+            if (it != mapBlockIndex.end())
+                pindex = it->second;
+            else
+                return state.DoS(100, error("CheckBlock() :  stake failed to find block index"));
+            // Check block time vs stake age requirement.
+            if (pindex->GetBlockHeader().nTime + nStakeMinAge > GetAdjustedTime())
+                return state.DoS(100, error("CheckBlock() : stake under min. stake age"));
+            
+            // Check that the prev. stake block has required confirmations by height.
+            LogPrintf("CheckBlock() : height=%d stake_tx_height=%d required_confirmations=%d got=%d\n", chainActive.Tip()->nHeight, pindex->nHeight, Params().Stake_MinConfirmations(), chainActive.Tip()->nHeight - pindex->nHeight);
+            if (chainActive.Tip()->nHeight - pindex->nHeight < Params().Stake_MinConfirmations())
+                return state.DoS(100, error("CheckBlock() : stake under min. required confirmations"));
         }
     }
 
