@@ -903,6 +903,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight) {
         nSubsidy = 4.688 * COIN;
     } else if (nHeight <= 1382400 && nHeight > 1296000) {
         nSubsidy = 3.906 * COIN;
+        
         // POS Year 4
     } else if (nHeight <= 1468800 && nHeight > 1382400) {
         nSubsidy = 3.125 * COIN;
