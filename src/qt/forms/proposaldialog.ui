@@ -32,7 +32,7 @@
       <item>
         <widget class="QLabel" name="infoLabel">
           <property name="text">
-            <string>Please fill out the form below to create a budget proposal.  Before beginning make sure your wallet is unlocked to pay the budget proposal fee of 50 BWK.  After the proposal is submitted you will be shown the transaction hash field and will need to wait for confirmations on the transaction before being able to submit the proposal for voting.  The screen will update to help guide you, it is never recommended to close the dialog, it will close once completed automatically.</string>
+            <string>Please fill out the form below to create a budget proposal.  Before beginning make sure your wallet is unlocked to pay the budget proposal fee of 5 BWK.  After the proposal is submitted you will be shown the transaction hash field and will need to wait for confirmations on the transaction before being able to submit the proposal for voting.  The screen will update to help guide you, it is never recommended to close the dialog, it will close once completed automatically.</string>
           </property>
         </widget>
       </item>
