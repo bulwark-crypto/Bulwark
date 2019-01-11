@@ -502,7 +502,9 @@ int main(int argc, char* argv[]) {
 
     BitcoinApplication app(argc, argv);
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+#if QT_VERSION >= 0x050600
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
 #ifdef Q_OS_MAC
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
