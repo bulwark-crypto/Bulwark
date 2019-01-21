@@ -1385,7 +1385,7 @@ bool AppInit2(boost::thread_group& threadGroup) {
                     break;
                 }
             } catch (std::exception& e) {
-                if (fDebug) LogPrintf("%s\n", e.what());
+                LogPrint("init", "%s\n", e.what());
                 strLoadError = _("Error opening block database");
                 fVerifyingBlocks = false;
                 break;

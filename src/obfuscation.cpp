@@ -987,7 +987,7 @@ bool CObfuscationPool::IsCollateralValid(const CTransaction& txCollateral) {
         LOCK(cs_main);
         CValidationState state;
         if (!AcceptableInputs(mempool, state, txCollateral, true, NULL)) {
-            if (fDebug) LogPrintf("CObfuscationPool::IsCollateralValid - didn't pass IsAcceptable\n");
+            LogPrint("obfuscation", "CObfuscationPool::IsCollateralValid - didn't pass IsAcceptable\n");
             return false;
         }
     }

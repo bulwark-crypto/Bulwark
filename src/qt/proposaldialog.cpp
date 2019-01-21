@@ -133,7 +133,6 @@ void ProposalDialog::prepareProposal() {
     }
 
     if (!strError.empty()) {
-        std::cout << strError << std::endl;
         QMessageBox::critical(this, "Prepare Proposal Error", QString::fromStdString(strError));
         return;
     }

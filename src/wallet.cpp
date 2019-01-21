@@ -1789,7 +1789,6 @@ bool CWallet::SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int
 
     // try to find nondenom first to prevent unneeded spending of mixed coins
     for (unsigned int tryDenom = 0; tryDenom < 2; tryDenom++) {
-        if (fDebug) LogPrint("selectcoins", "tryDenom: %d\n", tryDenom);
         vValue.clear();
         nTotalLower = 0;
         BOOST_FOREACH(const COutput& output, vCoins) {
@@ -1798,7 +1797,6 @@ bool CWallet::SelectCoinsMinConf(const CAmount& nTargetValue, int nConfMine, int
 
             const CWalletTx* pcoin = output.tx;
 
-            //            if (fDebug) LogPrint("selectcoins", "value %s confirms %d\n", FormatMoney(pcoin->vout[output.i].nValue), output.nDepth);
             if (output.nDepth < (pcoin->IsFromMe(ISMINE_ALL) ? nConfMine : nConfTheirs))
                 continue;
 
@@ -3080,7 +3078,7 @@ void CWallet::ReserveKeyFromKeyPool(int64_t& nIndex, CKeyPool& keypool) {
         if (!HaveKey(keypool.vchPubKey.GetID()))
             throw runtime_error("ReserveKeyFromKeyPool() : unknown key in key pool");
         assert(keypool.vchPubKey.IsValid());
-        if (fDebug) LogPrintf("keypool reserve %d\n", nIndex);
+        LogPrint("wallet", "keypool reserve %d\n", nIndex);
     }
 }
 
@@ -3090,7 +3088,7 @@ void CWallet::KeepKey(int64_t nIndex) {
         CWalletDB walletdb(strWalletFile);
         walletdb.ErasePool(nIndex);
     }
-    if (fDebug) LogPrintf("keypool keep %d\n", nIndex);
+    LogPrint("wallet", "keypool keep %d\n", nIndex);
 }
 
 void CWallet::ReturnKey(int64_t nIndex) {
