@@ -662,11 +662,11 @@
     </message>
     <message>
         <source>About Bulwark Core</source>
-        <translation>Pıvx core Hakkında</translation>
+        <translation>Bulwark Core Hakkında</translation>
     </message>
     <message>
         <source>Show information about Bulwark Core</source>
-        <translation>Pıvx Core hakkında bilgi göster</translation>
+        <translation>Bulwark Core hakkında bilgi göster</translation>
     </message>
     <message>
         <source>Modify configuration options for Bulwark</source>
