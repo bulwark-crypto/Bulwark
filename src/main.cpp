@@ -4212,7 +4212,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
             else
                 return state.DoS(100, error("CheckBlock() :  stake failed to find block index"));
             // Check block time vs stake age requirement.
-            if (pindex->GetBlockHeader().nTime + nStakeMinAge > GetAdjustedTime())
+            if (pindex->GetBlockHeader().nTime + nStakeMinAgeConsensus > GetAdjustedTime())
                 return state.DoS(100, error("CheckBlock() : stake under min. stake age"));
             
             // Check that the prev. stake block has required confirmations by height.
