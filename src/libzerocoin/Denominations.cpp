@@ -6,7 +6,7 @@
  * @copyright  Copyright 2017 PIVX Developers
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2018 The Bulwark Core Developers
+// Copyright (c) 2019 The Bulwark Core Developers
 
 #include "Denominations.h"
 #include "amount.h"
