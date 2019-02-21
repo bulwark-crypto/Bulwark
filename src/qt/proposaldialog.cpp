@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 The Bulwark Developers
+// Copyright (c) 2017-2019 The Bulwark Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -133,7 +133,6 @@ void ProposalDialog::prepareProposal() {
     }
 
     if (!strError.empty()) {
-        std::cout << strError << std::endl;
         QMessageBox::critical(this, "Prepare Proposal Error", QString::fromStdString(strError));
         return;
     }
