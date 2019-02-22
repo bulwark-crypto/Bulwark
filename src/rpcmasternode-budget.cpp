@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2015 The Dash Developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Bulwark Developers
+// Copyright (c) 2017-2019 The Bulwark developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -970,7 +970,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp) {
         BOOST_FOREACH(CFinalizedBudget* finalizedBudget, winningFbs) {
             // Ignore old finalized budgets to avoid displaying misleading error
             // messages about missing proposals.  Include the previous final budget cycle.
-            if (finalizedBudget->GetBlockStart() < (chainActive.Tip()->nHeight - GetBudgetPaymentCycleBlocks())) continue;
+            //if (finalizedBudget->GetBlockStart() < (chainActive.Tip()->nHeight - GetBudgetPaymentCycleBlocks())) continue;
 
             UniValue bObj(UniValue::VOBJ);
             bObj.push_back(Pair("FeeTX", finalizedBudget->nFeeTXHash.ToString()));
