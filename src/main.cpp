@@ -4247,25 +4247,26 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
             unsigned int minStakeAge = nStakeMinAgeConsensus;
             int minStakeConfirmations = Params().Stake_MinConfirmations();
 
-            // Bulwark's "Re-Stake". Because Bulwark stores metadata identifying stake in tx we know that previously this was a POS reward
-            // If you have not previously staked on this input then you will have to wait longer for your stake to mature.
-            // This penalizes "Stake Grinding" and gives reason to leave stakes alone reducing traffic on the network.
-            if (IsSporkActive(SPORK_25_BWK_RESTAKE_DEFAULT) && nTxTime >= GetSporkValue(SPORK_25_BWK_RESTAKE_DEFAULT)) {
-                if (!tx.IsCoinStake()) {
-                    minStakeAge *= 2;
-                    minStakeConfirmations *= 2;
-                }
-            }
-    
-            // Ensure the output of the stake is above min amount (100 for BWK)
-            if (block.vtx[1].vout[1].nValue < stakeMinAmount)
-                return state.DoS(100, error("CheckBlock() : stake under min. stake value"));
 
             // Get transaction of the staked input
             CTransaction txPrev;
             uint256 hashBlockPrev;
             if (!GetTransaction(block.vtx[1].vin[0].prevout.hash, txPrev, hashBlockPrev, true))
                 return state.DoS(100, error("CheckBlock() : stake failed to find vin transaction"));
+                
+            // Bulwark's "Re-Stake". Because Bulwark stores metadata identifying stake in tx we know that previously this was a POS reward
+            // If you have not previously staked on this input then you will have to wait longer for your stake to mature.
+            // This penalizes "Stake Grinding" and gives reason to leave stakes alone reducing traffic on the network.
+            if (IsSporkActive(SPORK_25_BWK_RESTAKE) && block.GetBlockTime() >= GetSporkValue(SPORK_25_BWK_RESTAKE)) {
+                if (!txPrev.IsCoinStake()) {
+                    minStakeAge *= 2;
+                    minStakeConfirmations *= 2;
+                }
+            }
+    
+            // Ensure the output of the stake is above min amount (100 for BWK)
+            if (block.vtx[1].vout[1].nValue < minStakeAmount)
+                return state.DoS(100, error("CheckBlock() : stake under min. stake value"));
 
             // Get block of this transaction (the transaction of staked input)
             CBlockIndex* pindex = NULL;
