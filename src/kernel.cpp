@@ -278,18 +278,23 @@ bool stakeTargetHit(uint256 hashProofOfStake, int64_t nValueIn, uint256 bnTarget
 
 //instead of looping outside and reinitializing variables many times, we will give a nTimeTx and also search interval so that we can do all the hashing here
 bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTransaction txPrev, const COutPoint prevout, unsigned int& nTimeTx, unsigned int nHashDrift, bool fCheck, uint256& hashProofOfStake, bool fPrintProofOfStake) {
-    //assign new variables to make it easier to read
+    //Get stake input amount (output amount of a previous tx)
     int64_t nValueIn = txPrev.vout[prevout.n].nValue;
-    unsigned int nTimeBlockFrom = blockFrom.GetBlockTime();
+    unsigned int nTimeBlockFrom = blockFrom.GetBlockTime(); // When was the block of the tx we've staked created?
 
+    // Ensure we can't stake a tx on same block or any blocks before that
     if (nTimeTx < nTimeBlockFrom) // Transaction timestamp violation
         return error("CheckStakeKernelHash() : nTime violation");
 
-    // Consensus implementation of protocol change.
+    // Default requirement for stake is nStakeMinAge (1 * 60 * 60 for BWK)
     unsigned int nMinStakeAge = nStakeMinAge;
+
+    // IF spork is enabled (check "spork active") the requiremnt will be changed (12 * 60 * 60 for BWK)
     if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS) && nTimeBlockFrom >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS)) {
         nMinStakeAge = nStakeMinAgeConsensus;
     }
+
+    // Ensure at least nMinStakeAge passed between tx and tx with stake
     if (nTimeBlockFrom + nMinStakeAge > nTimeTx) // Min age requirement
         return error("CheckStakeKernelHash() : min age violation - nTimeBlockFrom=%d nStakeMinAge=%d nTimeTx=%d", nTimeBlockFrom, nMinStakeAge, nTimeTx);
 
