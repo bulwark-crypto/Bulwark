@@ -134,6 +134,8 @@ int64_t GetSporkValue(int nSporkID) {
         if (nSporkID == SPORK_21_ENABLE_ZEROCOIN) r = SPORK_21_ENABLE_ZEROCOIN_DEFAULT;
         if (nSporkID == SPORK_22_ZEROCOIN_MAINTENANCE_MODE) r = SPORK_22_ZEROCOIN_MAINTENANCE_MODE_DEFAULT;
         if (nSporkID == SPORK_23_STAKING_REQUIREMENTS) r = SPORK_23_STAKING_REQUIREMENTS_DEFAULT;
+        if (nSporkID == SPORK_24_QUERY_NODES) r = SPORK_24_QUERY_NODES_DEFAULT;
+        if (nSporkID == SPORK_25_BWK_RESTAKE) r = SPORK_25_BWK_RESTAKE_DEFAULT;
 
         if (r == -1) LogPrintf("GetSpork::Unknown Spork %d\n", nSporkID);
     }
@@ -286,6 +288,8 @@ int CSporkManager::GetSporkIDByName(std::string strName) {
     if (strName == "SPORK_21_ENABLE_ZEROCOIN") return SPORK_21_ENABLE_ZEROCOIN;
     if (strName == "SPORK_22_ZEROCOIN_MAINTENANCE_MODE") return SPORK_22_ZEROCOIN_MAINTENANCE_MODE;
     if (strName == "SPORK_23_STAKING_REQUIREMENTS") return SPORK_23_STAKING_REQUIREMENTS;
+    if (strName == "SPORK_24_QUERY_NODES") return SPORK_24_QUERY_NODES;
+    if (strName == "SPORK_25_BWK_RESTAKE") return SPORK_25_BWK_RESTAKE;
 
     return -1;
 }
@@ -311,6 +315,8 @@ std::string CSporkManager::GetSporkNameByID(int id) {
     if (id == SPORK_21_ENABLE_ZEROCOIN) return "SPORK_21_ENABLE_ZEROCOIN";
     if (id == SPORK_22_ZEROCOIN_MAINTENANCE_MODE) return "SPORK_22_ZEROCOIN_MAINTENANCE_MODE";
     if (id == SPORK_23_STAKING_REQUIREMENTS) return "SPORK_23_STAKING_REQUIREMENTS";
+    if (id == SPORK_24_QUERY_NODES) return "SPORK_24_QUERY_NODES";
+    if (id == SPORK_25_BWK_RESTAKE) return "SPORK_25_BWK_RESTAKE";
 
     return "Unknown";
 }
