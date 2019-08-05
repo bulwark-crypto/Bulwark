@@ -298,7 +298,8 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTra
     // If you have not previously staked on this input then you will have to wait longer for your stake to mature.
     // This penalizes "Stake Grinding" and gives reason to leave stakes alone reducing traffic on the network.
     if (IsSporkActive(SPORK_25_BWK_RESTAKE) && nTimeBlockFrom >= GetSporkValue(SPORK_25_BWK_RESTAKE)) {
-        if (!txPrev.IsCoinStake()) {
+        // Make sure this was a basic stake with no splitthreshold (vout[0]=0 nonstandard,vout[1/2]=pos/mn)
+        if (!txPrev.IsCoinStake() || txPrev.vout.size() != 3) {
             nMinStakeAge *= 2;
         }
     }

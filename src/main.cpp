@@ -4258,12 +4258,12 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
             // If you have not previously staked on this input then you will have to wait longer for your stake to mature.
             // This penalizes "Stake Grinding" and gives reason to leave stakes alone reducing traffic on the network.
             if (IsSporkActive(SPORK_25_BWK_RESTAKE) && block.GetBlockTime() >= GetSporkValue(SPORK_25_BWK_RESTAKE)) {
-                if (!txPrev.IsCoinStake()) {
+                // Time is doubled if it's not a basic steak (without split)
+                if (!txPrev.IsCoinStake() || txPrev.vout.size() != 3) {
                     minStakeAge *= 2;
                     minStakeConfirmations *= 2;
                 }
             }
-    
             // Ensure the output of the stake is above min amount (100 for BWK)
             if (block.vtx[1].vout[1].nValue < minStakeAmount)
                 return state.DoS(100, error("CheckBlock() : stake under min. stake value"));

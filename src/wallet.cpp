@@ -1709,7 +1709,8 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
 
         //For Bulwark Re-staking since we know if a tx is previous stake it'll be considered re-stake resulting in various advantages
         if (IsSporkActive(SPORK_25_BWK_RESTAKE)) {
-            if (!out.tx->IsCoinStake()) {
+            // Basic restakes will receive rewards 2x faster. (These must not be split)
+            if (!out.tx->IsCoinStake() || out.tx->vout.size()!=3) {
                 minStakeAge *= 2;
                 minStakeDepth *= 2;
             }
