@@ -297,7 +297,7 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTra
     // Bulwark's "Re-Stake". Because Bulwark stores metadata identifying stake in tx we know that previously this was a POS reward
     // If you have not previously staked on this input then you will have to wait longer for your stake to mature.
     // This penalizes "Stake Grinding" and gives reason to leave stakes alone reducing traffic on the network.
-    if (IsSporkActive(SPORK_25_BWK_RESTAKE_DEFAULT) && nTimeBlockFrom >= GetSporkValue(SPORK_25_BWK_RESTAKE_DEFAULT)) {
+    if (IsSporkActive(SPORK_25_BWK_RESTAKE) && nTimeBlockFrom >= GetSporkValue(SPORK_25_BWK_RESTAKE)) {
         if (!txPrev.IsCoinStake()) {
             nMinStakeAge *= 2;
         }
