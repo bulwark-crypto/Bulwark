@@ -2087,13 +2087,13 @@ UniValue printAddresses() {
     return ret;
 }
 
-unsigned int sumMultiSend() {
+unsigned int sumMultiSend()
+{
     unsigned int sum = 0;
-    for (unsigned int i = 0; i < pwalletMain->vMultiSend[0].second.size(); i++)
-        sum += pwalletMain->vMultiSend[i].second[i].second;
+    for (unsigned int i = 0; i < pwalletMain->vMultiSend.size(); i++)
+        sum += pwalletMain->vMultiSend[i].second;
     return sum;
 }
-
 UniValue multisend(const UniValue& params, bool fHelp) {
     CWalletDB walletdb(pwalletMain->strWalletFile);
 
