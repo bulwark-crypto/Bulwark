@@ -55,7 +55,7 @@ static const int MAX_URI_LENGTH = 255;
 
 #define QAPP_ORG_NAME "Bulwark"
 #define QAPP_ORG_DOMAIN "trascendence.org"
-#define QAPP_APP_NAME_DEFAULT "TRANSCENDENCE-Qt"
-#define QAPP_APP_NAME_TESTNET "TRANSCENDENCE-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "Bulwark-Qt"
+#define QAPP_APP_NAME_TESTNET "Bulwark-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

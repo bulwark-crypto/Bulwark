@@ -994,7 +994,7 @@
                            stake zBWK or take advantage of the privacy benefit it brings,
                            you can disable the automatic minting in your PIVX wallet by
                            going to Settings-&gt;Options and deselecting “Enable zBWK Automint”.
-                           If you are not making use of the TRANSCENDENCE-QT or GUI you can simply open
+                           If you are not making use of the Bulwark-QT or GUI you can simply open
                            your pivx.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;

@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.pivx.TRANSCENDENCE-Qt";
+        return @"io.pivx.Bulwark-Qt";
     } else {
         return [self __bundleIdentifier];
     }
