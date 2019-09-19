@@ -209,7 +209,6 @@ libbitcoin_server_a_SOURCES = \
   script/sigcache.cpp \
   sporkdb.cpp \
   timedata.cpp \
-  torcontrol.cpp \
   txdb.cpp \
   txmempool.cpp \
   validationinterface.cpp \
