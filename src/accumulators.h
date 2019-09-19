@@ -10,6 +10,7 @@
 #include "libzerocoin/Coin.h"
 #include "primitives/zerocoin.h"
 #include "uint256.h"
+std::map<libzerocoin::CoinDenomination, int> GetMintMaturityHeight();
 
 bool GenerateAccumulatorWitness(const libzerocoin::PublicCoin &coin, libzerocoin::Accumulator& accumulator, libzerocoin::AccumulatorWitness& witness, int nSecurityLevel, int& nMintsAdded, std::string& strError);
 bool GetAccumulatorValueFromDB(uint256 nCheckpoint, libzerocoin::CoinDenomination denom, CBigNum& bnAccValue);

@@ -1635,7 +1635,7 @@ CAmount CWalletTx::GetLockedWatchOnlyCredit() const
         }
 
         // Add masternode collaterals which are handled likc locked coins
-        else if (fMasterNode && IsMasternodeOutput(vout[i].nValue, 604795)) {
+        else if (fMasterNode && vout[i].nValue == 5000 * COIN) {
             nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
         }
 
@@ -1696,13 +1696,13 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
                 if (nCoinType == ONLY_DENOMINATED) {
                     found = IsDenominatedAmount(pcoin->vout[i].nValue);
                 } else if (nCoinType == ONLY_NOT10000IFMN) {
-                    found = !(fMasterNode && IsMasternodeOutput(pcoin->vout[i].nValue, currentBlock));
+                    found = !(fMasterNode && pcoin->vout[i].nValue == 5000 * COIN);
                 } else if (nCoinType == ONLY_NONDENOMINATED_NOT10000IFMN) {
                     if (IsCollateralAmount(pcoin->vout[i].nValue)) continue; // do not use collateral amounts
                     found = !IsDenominatedAmount(pcoin->vout[i].nValue);
-                    if (found && fMasterNode) found = !IsMasternodeOutput(pcoin->vout[i].nValue, currentBlock); // do not use Hot MN funds
+                    if (found && fMasterNode) found = !pcoin->vout[i].nValue == 5000 * COIN; // do not use Hot MN funds
                 } else if (nCoinType == ONLY_10000) {
-                    found = IsMasternodeOutput(pcoin->vout[i].nValue, currentBlock);
+                    found = pcoin->vout[i].nValue == 5000 * COIN;
                 } else {
                     found = true;
                 }
