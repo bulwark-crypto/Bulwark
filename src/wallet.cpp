@@ -476,7 +476,7 @@ void CWallet::AddToSpends(const uint256& wtxid)
         AddToSpends(txin.prevout, wtxid);
 }
 
-bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, unsigned int& tierRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash, std::string strOutputIndex)
+bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash, std::string strOutputIndex)
 {
     // wait for reindex and/or import to finish
     if (fImporting || fReindex) return false;
@@ -490,7 +490,7 @@ bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, unsigned int& tierRet, CPu
     }
 
     if (strTxHash.empty()) // No output specified, select the first one
-        return GetVinAndKeysFromOutput(vPossibleCoins[0], txinRet, tierRet, pubKeyRet, keyRet);
+        return GetVinAndKeysFromOutput(vPossibleCoins[0], txinRet, pubKeyRet, keyRet);
 
     // Find specific vin
     uint256 txHash = uint256S(strTxHash);
@@ -505,13 +505,13 @@ bool CWallet::GetMasternodeVinAndKeys(CTxIn& txinRet, unsigned int& tierRet, CPu
 
     BOOST_FOREACH (COutput& out, vPossibleCoins)
         if (out.tx->GetHash() == txHash && out.i == nOutputIndex) // found it!
-            return GetVinAndKeysFromOutput(out, txinRet, tierRet, pubKeyRet, keyRet);
+            return GetVinAndKeysFromOutput(out, txinRet, pubKeyRet, keyRet);
 
     LogPrintf("CWallet::GetMasternodeVinAndKeys -- Could not locate specified masternode vin\n");
     return false;
 }
 
-bool CWallet::GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, unsigned int& tierRet, CPubKey& pubKeyRet, CKey& keyRet)
+bool CWallet::GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet)
 {
     // wait for reindex and/or import to finish
     if (fImporting || fReindex) return false;
@@ -519,7 +519,6 @@ bool CWallet::GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, unsigned int&
     CScript pubScript;
 
     txinRet = CTxIn(out.tx->GetHash(), out.i);
-    tierRet = GetMasternodeTierFromOutput(out.tx->vout[out.i].nValue, chainActive.Height());
     pubScript = out.tx->vout[out.i].scriptPubKey; // the inputs PubKey
 
     CTxDestination address1;

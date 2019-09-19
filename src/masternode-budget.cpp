@@ -201,7 +201,7 @@ void CBudgetManager::SubmitFinalBudget() {
 
     if (!mapCollateralTxids.count(tempBudget.GetHash())) {
         CWalletTx wtx;
-        if (!pwalletMain->GetBudgetFinalizationCollateralTX(wtx, tempBudget.GetHash(), false)) {
+        if (!pwalletMain->GetBudgetSystemCollateralTX(wtx, tempBudget.GetHash(), false)) {
             LogPrint("mnbudget","CBudgetManager::SubmitFinalBudget - Can't make collateral transaction\n");
             return;
         }
