@@ -43,7 +43,7 @@ public:
         Encrypt,        /** Encrypt unencrypted wallet */
         ToggleLock,     /** Toggle wallet lock state */
         ChangePass,     /** Change passphrase */
-        Send_PIV,       /** Send BWK */
+        Send_BWK,       /** Send BWK */
         Send_zBWK,      /** Send zBWK */
         Mint_zBWK,      /** Mint zBWK */
         BIP_38,         /** BIP38 menu */

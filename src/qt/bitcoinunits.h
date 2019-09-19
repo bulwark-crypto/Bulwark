@@ -62,8 +62,8 @@ public:
      */
     enum Unit {
         BWK,
-        mPIV,
-        uPIV
+        mBWK,
+        uBWK
     };
 
     enum SeparatorStyle {

@@ -22,8 +22,8 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
     unitlist.append(BWK);
-    unitlist.append(mPIV);
-    unitlist.append(uPIV);
+    unitlist.append(mBWK);
+    unitlist.append(uBWK);
     return unitlist;
 }
 
@@ -31,8 +31,8 @@ bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
     case BWK:
-    case mPIV:
-    case uPIV:
+    case mBWK:
+    case uBWK:
         return true;
     default:
         return false;
@@ -44,9 +44,9 @@ QString BitcoinUnits::id(int unit)
     switch (unit) {
     case BWK:
         return QString("pivx");
-    case mPIV:
+    case mBWK:
         return QString("mpivx");
-    case uPIV:
+    case uBWK:
         return QString::fromUtf8("upivx");
     default:
         return QString("???");
@@ -61,9 +61,9 @@ QString BitcoinUnits::name(int unit, bool isZTelos)
         switch (unit) {
         case BWK:
             return z + QString("BWK");
-        case mPIV:
-            return z + QString("mPIV");
-        case uPIV:
+        case mBWK:
+            return z + QString("mBWK");
+        case uBWK:
             return z + QString::fromUtf8("μPIV");
         default:
             return QString("???");
@@ -71,11 +71,11 @@ QString BitcoinUnits::name(int unit, bool isZTelos)
     } else {
         switch (unit) {
         case BWK:
-            return z + QString("tPIV");
-        case mPIV:
-            return z + QString("mtPIV");
-        case uPIV:
-            return z + QString::fromUtf8("μtPIV");
+            return z + QString("tBWK");
+        case mBWK:
+            return z + QString("mtBWK");
+        case uBWK:
+            return z + QString::fromUtf8("μtBWK");
         default:
             return QString("???");
         }
@@ -88,9 +88,9 @@ QString BitcoinUnits::description(int unit)
         switch (unit) {
         case BWK:
             return QString("BWK");
-        case mPIV:
+        case mBWK:
             return QString("Milli-BWK (1 / 1" THIN_SP_UTF8 "000)");
-        case uPIV:
+        case uBWK:
             return QString("Micro-BWK (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
@@ -98,11 +98,11 @@ QString BitcoinUnits::description(int unit)
     } else {
         switch (unit) {
         case BWK:
-            return QString("TestPIVs");
-        case mPIV:
-            return QString("Milli-TestPIV (1 / 1" THIN_SP_UTF8 "000)");
-        case uPIV:
-            return QString("Micro-TestPIV (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("TestBWKs");
+        case mBWK:
+            return QString("Milli-TestBWK (1 / 1" THIN_SP_UTF8 "000)");
+        case uBWK:
+            return QString("Micro-TestBWK (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -114,9 +114,9 @@ qint64 BitcoinUnits::factor(int unit)
     switch (unit) {
     case BWK:
         return 100000000;
-    case mPIV:
+    case mBWK:
         return 100000;
-    case uPIV:
+    case uBWK:
         return 100;
     default:
         return 100000000;
@@ -128,9 +128,9 @@ int BitcoinUnits::decimals(int unit)
     switch (unit) {
     case BWK:
         return 8;
-    case mPIV:
+    case mBWK:
         return 5;
-    case uPIV:
+    case uBWK:
         return 2;
     default:
         return 0;
