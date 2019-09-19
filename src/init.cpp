@@ -886,6 +886,7 @@ bool AppInit2(boost::thread_group& threadGroup) {
     bSpendZeroConfChange = GetBoolArg("-spendzeroconfchange", true);
     bdisableSystemnotifications = GetBoolArg("-disablesystemnotifications", false);
     fSendFreeTransactions = GetBoolArg("-sendfreetransactions", false);
+    fEnableAutoConvert = GetBoolArg("-enableautoconvertaddress", false);
 
     std::string strWalletFile = GetArg("-wallet", "wallet.dat");
 #endif // ENABLE_WALLET

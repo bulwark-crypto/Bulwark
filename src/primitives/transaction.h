@@ -286,6 +286,7 @@ class CTransaction {
     friend bool operator!=(const CTransaction& a, const CTransaction& b) {
         return a.hash != b.hash;
     }
+    unsigned int GetTotalSize() const;
 
     std::string ToString() const;
 

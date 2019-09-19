@@ -231,3 +231,7 @@ std::string CTransaction::ToString() const {
         str += "    " + vout[i].ToString() + "\n";
     return str;
 }
+unsigned int CTransaction::GetTotalSize() const
+{
+    return ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION);
+}

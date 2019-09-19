@@ -113,8 +113,9 @@ bool fLiteMode = false;
 bool fEnableSwiftTX = true;
 int nSwiftTXDepth = 5;
 // Automatic Zerocoin minting
-bool fEnableZeromint = true;
-int nZeromintPercentage = 10;
+bool fEnableZeromint = false;
+bool fEnableAutoConvert = false;
+int nZeromintPercentage = 0;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
 
