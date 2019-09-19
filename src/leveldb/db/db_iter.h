@@ -9,8 +9,7 @@
 #include "leveldb/db.h"
 #include "db/dbformat.h"
 
-namespace leveldb
-{
+namespace leveldb {
 
 class DBImpl;
 

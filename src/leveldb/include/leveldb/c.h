@@ -200,10 +200,9 @@ extern void leveldb_options_set_cache(leveldb_options_t*, leveldb_cache_t*);
 extern void leveldb_options_set_block_size(leveldb_options_t*, size_t);
 extern void leveldb_options_set_block_restart_interval(leveldb_options_t*, int);
 
-enum
-{
-    leveldb_no_compression = 0,
-    leveldb_snappy_compression = 1
+enum {
+  leveldb_no_compression = 0,
+  leveldb_snappy_compression = 1
 };
 extern void leveldb_options_set_compression(leveldb_options_t*, int);
 
