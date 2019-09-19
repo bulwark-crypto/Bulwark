@@ -445,7 +445,7 @@ bool SendWidget::sendZTelos(QList<SendCoinsRecipient> recipients){
         return true;
     } else {
         QString body;
-        if (receipt.GetStatus() == ZTRANSCENDENCE_SPEND_V1_SEC_LEVEL) {
+        if (receipt.GetStatus() == ZBWK_SPEND_V1_SEC_LEVEL) {
             body = tr("Version 1 zBWK require a security level of 100 to successfully spend.");
         } else {
             int nNeededSpends = receipt.GetNeededSpends(); // Number of spends we would need for this transaction

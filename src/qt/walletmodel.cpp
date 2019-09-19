@@ -491,7 +491,7 @@ bool WalletModel::createZTelosSpend(
     }
 
     if (wallet->IsLocked()) {
-        receipt.SetStatus("Error: Wallet locked, unable to create transaction!", ZTRANSCENDENCE_WALLET_LOCKED);
+        receipt.SetStatus("Error: Wallet locked, unable to create transaction!", ZBWK_WALLET_LOCKED);
         return false;
     }
 
