@@ -118,7 +118,10 @@ struct CompactTallyItem {
         nAmount = 0;
     }
 };
-
+bool IsMasternodeOutput(CAmount nValue)
+{
+    return 5000 * COIN == nValue;
+}
 /** A key pool entry */
 class CKeyPool
 {
@@ -192,8 +195,6 @@ private:
 
 public:
     static const int STAKE_SPLIT_THRESHOLD = 2000;
-    bool IsMasternodeOutput(CAmount nValue);
-
     bool MintableCoins();
     bool SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int> >& setCoins, CAmount nTargetAmount) const;
     bool SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax) const;
