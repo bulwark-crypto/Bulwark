@@ -379,7 +379,7 @@ bool SendWidget::sendZTelos(QList<SendCoinsRecipient> recipients){
     if (!walletModel || !walletModel->getOptionsModel())
         return false;
 
-    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    if(GetAdjustedTime() > GetSporkValue(SPORK_22_ZEROCOIN_MAINTENANCE_MODE)) {
         emit message(tr("Spend Zerocoin"), tr("zBWK is currently undergoing maintenance."), CClientUIInterface::MSG_ERROR);
         return false;
     }
