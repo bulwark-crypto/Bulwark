@@ -6810,7 +6810,7 @@ bool SendMessages(CNode* pto, bool fSendTrickle) {
                     pnode->setAddrKnown.clear();
 
                 // Rebroadcast our address
-                AdvertiseLocal(pnode);
+                AdvertizeLocal(pnode);
             }
             if (!vNodes.empty())
                 nLastRebroadcast = GetTime();
@@ -6847,7 +6847,7 @@ bool SendMessages(CNode* pto, bool fSendTrickle) {
                 if (pto->addr.IsLocal())
                     LogPrintf("Warning: not banning local peer %s!\n", pto->addr.ToString());
                 else {
-                    CNode::Ban(pto->addr);
+                    CNode::Ban(pto->addr,BanReasonNodeMisbehaving);
                 }
             }
             state.fShouldBan = false;
