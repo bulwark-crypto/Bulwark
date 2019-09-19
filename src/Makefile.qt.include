@@ -65,7 +65,7 @@ QT_FORMS_UI = \
   qt/forms/signverifymessagedialog.ui \
   qt/forms/transactiondescdialog.ui \
   qt/bulwark/forms/loadingdialog.ui \
-  qt/forms/zbulwarkcontroldialog.ui \
+  qt/forms/zbwkcontroldialog.ui \
   qt/bulwark/forms/snackbar.ui \
   qt/bulwark/forms/navmenuwidget.ui \
   qt/bulwark/forms/lockunlock.ui \
@@ -168,7 +168,7 @@ QT_MOC_CPP = \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp \
   qt/bulwark/moc_loadingdialog.cpp \
-  qt/moc_zbulwarkcontroldialog.cpp \
+  qt/moc_zbwkcontroldialog.cpp \
   qt/bulwark/moc_pwidget.cpp \
   qt/bulwark/moc_snackbar.cpp \
   qt/bulwark/moc_navmenuwidget.cpp \
@@ -303,7 +303,7 @@ BITCOIN_QT_H = \
   qt/bulwark/loadingdialog.h \
   qt/walletview.h \
   qt/winshutdownmonitor.h \
-  qt/zbulwarkcontroldialog.h \
+  qt/zbwkcontroldialog.h \
   qt/bulwark/pwidget.h \
   qt/bulwark/snackbar.h \
   qt/bulwark/navmenuwidget.h \
@@ -533,11 +533,11 @@ RES_ICONS = \
   qt/bulwark/res/img/ic-receive-off.svg \
   qt/bulwark/res/img/img-empty-staking-on.svg \
   qt/bulwark/res/img/ic-arrow-drop-up-white.svg \
-  qt/bulwark/res/img/ic-coin-zbulwark.png \
+  qt/bulwark/res/img/ic-coin-zbwk.png \
   qt/bulwark/res/img/ic-receive-on.svg \
   qt/bulwark/res/img/img-empty-transactions.svg \
   qt/bulwark/res/img/ic-arrow-drop-up.svg \
-  qt/bulwark/res/img/ic-coin-zbulwark.svg \
+  qt/bulwark/res/img/ic-coin-zbwk.svg \
   qt/bulwark/res/img/ic-received.svg \
   qt/bulwark/res/img/img-logo-bulwark.png \
   qt/bulwark/res/img/ic-arrow-drop-white-down.svg \
@@ -683,7 +683,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
   qt/bulwark/loadingdialog.cpp \
-  qt/zbulwarkcontroldialog.cpp \
+  qt/zbwkcontroldialog.cpp \
   qt/bulwark/pwidget.cpp \
   qt/bulwark/snackbar.cpp \
   qt/bulwark/navmenuwidget.cpp \
