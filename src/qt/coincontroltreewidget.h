@@ -8,13 +8,14 @@
 #include <QKeyEvent>
 #include <QTreeWidget>
 
-class CoinControlTreeWidget : public QTreeWidget {
+class CoinControlTreeWidget : public QTreeWidget
+{
     Q_OBJECT
 
-  public:
+public:
     explicit CoinControlTreeWidget(QWidget* parent = 0);
 
-  protected:
+protected:
     virtual void keyPressEvent(QKeyEvent* event);
 };
 

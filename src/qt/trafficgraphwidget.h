@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,23 +16,24 @@ class QPaintEvent;
 class QTimer;
 QT_END_NAMESPACE
 
-class TrafficGraphWidget : public QWidget {
+class TrafficGraphWidget : public QWidget
+{
     Q_OBJECT
 
-  public:
+public:
     explicit TrafficGraphWidget(QWidget* parent = 0);
     void setClientModel(ClientModel* model);
     int getGraphRangeMins() const;
 
-  protected:
+protected:
     void paintEvent(QPaintEvent*);
 
-  public slots:
+public slots:
     void updateRates();
     void setGraphRangeMins(int mins);
     void clear();
 
-  private:
+private:
     void paintPath(QPainterPath& path, QQueue<float>& samples);
 
     QTimer* timer;

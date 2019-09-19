@@ -10,7 +10,7 @@
         <translation>Stvori novu adresu</translation>
     </message>
     <message>
-        <source>New</source>
+        <source>&amp;New</source>
         <translation>Novo</translation>
     </message>
     <message>
@@ -18,7 +18,7 @@
         <translation>Kopirajte trenutno odabranu adresu u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Copy</source>
+        <source>&amp;Copy</source>
         <translation>Kopiraj</translation>
     </message>
     <message>
@@ -26,7 +26,7 @@
         <translation>Izbrisati trenutno odabranu adresu s popisa</translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>&amp;Delete</source>
         <translation>Izbriši</translation>
     </message>
     <message>
@@ -34,11 +34,11 @@
         <translation>Izvoz podataka iz trenutne kartice u datoteku</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Izvoz</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Zatvori</translation>
     </message>
     <message>
@@ -50,7 +50,7 @@
         <translation>Odaberite adresu za primanje novčića</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Odaberi</translation>
     </message>
     <message>
@@ -62,23 +62,23 @@
         <translation>Adresa primatelja</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše Bulwark adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše BWK adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše Bulwark adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše BWK adrese za primanje uplata. Preporuča se upotreba nove adrese primatelja za svaku transakciju.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>&amp;Copy Address</source>
         <translation>Kopiraj adresu</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>Kopiraj oznaku</translation>
     </message>
     <message>
-        <source>Edit</source>
+        <source>&amp;Edit</source>
         <translation>Uredi</translation>
     </message>
     <message>
@@ -176,16 +176,16 @@
         <translation>Potvrdi šifriranje novčanika</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše Bulwark od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše BWK od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Jeste li sigurni da želite šifrirati svoj novčanik?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše Bulwarkove 1 !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše PIVove 1 !</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 Alat</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
+        <source>&amp;BIP 38 Encrypt</source>
         <translation>BIP 38 Šifra</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>Adresa:</translation>
+        <translation>Adresa: </translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Unesite Bulwark adresu koju želite šifrirati pomoću BIP 38. Unesite zaporku u srednjem okviru. Pritisnite šifriranje za izračunavanje šifriranog privatnog ključa.</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Unesite BWK adresu koju želite šifrirati pomoću BIP 38. Unesite zaporku u srednjem okviru. Pritisnite šifriranje za izračunavanje šifriranog privatnog ključa.</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Bulwark adresa za šifriranje</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>BWK adresa za šifriranje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Šifriranje privatnog ključa za ovu Bulwark adresu</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Šifriranje privatnog ključa za ovu BWK adresu</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,15 +306,15 @@
         <translation>Dešifriranje unesenog ključa pomoću zaporke</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
+        <source>Encrypt &amp;Key</source>
         <translation>Šifriraj ključ</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Poništi sve</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
+        <source>&amp;BIP 38 Decrypt</source>
         <translation>BIP 38 Dešifriranje</translation>
     </message>
     <message>
@@ -322,7 +322,7 @@
         <translation>Unesite BIP 38 šifrirani privatni ključ. Unesite zaporku u srednji okvir. Pritisnite gumb za dešifriranje da biste izračunali privatni ključ. Nakon dešifriranja ključa, klikom na "Import Address" dodati će taj privatni ključ u novčanik.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
+        <source>Decrypt &amp;Key</source>
         <translation>Dešifriraj ključ</translation>
     </message>
     <message>
@@ -409,7 +409,7 @@
         <translation>Node ( čvor )</translation>
     </message>
     <message>
-        <source>Overview</source>
+        <source>&amp;Overview</source>
         <translation>Pregled</translation>
     </message>
     <message>
@@ -417,15 +417,15 @@
         <translation>Prikaži opći pregled novčanika</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>&amp;Send</source>
         <translation>Šalji</translation>
     </message>
     <message>
-        <source>Receive</source>
+        <source>&amp;Receive</source>
         <translation>Primi</translation>
     </message>
     <message>
-        <source>Transactions</source>
+        <source>&amp;Transactions</source>
         <translation>Transakcije</translation>
     </message>
     <message>
@@ -437,7 +437,7 @@
         <translation>Postavke privatnosti za zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
+        <source>E&amp;xit</source>
         <translation>Izlaz</translation>
     </message>
     <message>
@@ -445,7 +445,7 @@
         <translation>Napusti aplikaciju</translation>
     </message>
     <message>
-        <source>About Qt</source>
+        <source>About &amp;Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
@@ -453,11 +453,11 @@
         <translation>Prikažiinformacije o Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
+        <source>&amp;Options...</source>
         <translation>Mogućnosti</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
+        <source>&amp;Show / Hide</source>
         <translation>Prikaži / Sakrij</translation>
     </message>
     <message>
@@ -465,7 +465,7 @@
         <translation>Prikaži ili sakrij glavni prozor</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
+        <source>&amp;Encrypt Wallet...</source>
         <translation>Šifriraj novčanik</translation>
     </message>
     <message>
@@ -473,7 +473,7 @@
         <translation>Šifriranje privatnih ključeva koji pripadaju vašem novčaniku</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
+        <source>&amp;Backup Wallet...</source>
         <translation>Sigurnosna kopija novčanika ...</translation>
     </message>
     <message>
@@ -481,7 +481,7 @@
         <translation>Sigurnosna kopija novčanika na drugo mjesto</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
+        <source>&amp;Change Passphrase...</source>
         <translation>Promijeni zaporku</translation>
     </message>
     <message>
@@ -489,7 +489,7 @@
         <translation>Promjena zaporke koja se koristi za šifriranje lisnice</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
+        <source>&amp;Unlock Wallet...</source>
         <translation>Otključaj novčanik ...</translation>
     </message>
     <message>
@@ -497,19 +497,19 @@
         <translation>Otključaj novčanik</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
+        <source>&amp;Lock Wallet</source>
         <translation>Zaključaj novčanik</translation>
     </message>
     <message>
-        <source>Sign message...</source>
+        <source>Sign &amp;message...</source>
         <translation>Potpišite poruku ...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
+        <source>&amp;Verify message...</source>
         <translation>Potvrdite poruku ...</translation>
     </message>
     <message>
-        <source>Information</source>
+        <source>&amp;Information</source>
         <translation>Informacije</translation>
     </message>
     <message>
@@ -517,7 +517,7 @@
         <translation>Prikaz dijagnostičkih podataka</translation>
     </message>
     <message>
-        <source>Debug console</source>
+        <source>&amp;Debug console</source>
         <translation>Konzola za uklanjanje pogrešaka</translation>
     </message>
     <message>
@@ -525,7 +525,7 @@
         <translation>Otvorite konzolu za uklanjanje pogrešaka</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
+        <source>&amp;Network Monitor</source>
         <translation>Monitor mreže</translation>
     </message>
     <message>
@@ -533,7 +533,7 @@
         <translation>Prikaži mrežni monitor</translation>
     </message>
     <message>
-        <source>Peers list</source>
+        <source>&amp;Peers list</source>
         <translation>Popis suradnika</translation>
     </message>
     <message>
@@ -541,7 +541,7 @@
         <translation>Prikaži podatke o vršnjacima</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
+        <source>Wallet &amp;Repair</source>
         <translation>Popravak novčanika</translation>
     </message>
     <message>
@@ -553,7 +553,7 @@
         <translation>Otvorite konfiguracijsku datoteku</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
+        <source>Show Automatic &amp;Backups</source>
         <translation>Prikaži automatsko sigurnosno kopiranje</translation>
     </message>
     <message>
@@ -561,7 +561,7 @@
         <translation>Pokaži automatski stvorene sigurnosne kopije novčanika</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation>Adrese slanja ...</translation>
     </message>
     <message>
@@ -569,7 +569,7 @@
         <translation>Prikaz popisa upotrijebljenih adresa slanja i oznaka</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>Adresa primatelja...</translation>
     </message>
     <message>
@@ -577,7 +577,7 @@
         <translation>Prikaz popisa korištenih adresa primatelja i oznaka</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
+        <source>&amp;Multisignature creation...</source>
         <translation>Stvaranje višestruke oznake ...</translation>
     </message>
     <message>
@@ -585,7 +585,7 @@
         <translation>Izradite novu višestruk adresu i dodaj je u novčanik</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
+        <source>&amp;Multisignature spending...</source>
         <translation>Višepotpisno trošenje...</translation>
     </message>
     <message>
@@ -593,7 +593,7 @@
         <translation>Provedite s višestruke adrese </translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
+        <source>&amp;Multisignature signing...</source>
         <translation>Višestruki potpis</translation>
     </message>
     <message>
@@ -601,16 +601,12 @@
         <translation>Prijavite se s višestrukom adresom</translation>
     </message>
     <message>
-        <source>Open URI...</source>
+        <source>Open &amp;URI...</source>
         <translation>Otvori URI</translation>
     </message>
     <message>
-        <source>Command-line options</source>
+        <source>&amp;Command-line options</source>
         <translation>Opcije naredbene linije</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,19 +621,19 @@
         <translation>Novčanik je šifriran i trenutačno je otključan samo radi anonimizacije i stakinga</translation>
     </message>
     <message>
-        <source>File</source>
+        <source>&amp;File</source>
         <translation>Datoteka</translation>
     </message>
     <message>
-        <source>Settings</source>
+        <source>&amp;Settings</source>
         <translation>Postavke</translation>
     </message>
     <message>
-        <source>Tools</source>
+        <source>&amp;Tools</source>
         <translation>Alati</translation>
     </message>
     <message>
-        <source>Help</source>
+        <source>&amp;Help</source>
         <translation>Pomoć</translation>
     </message>
     <message>
@@ -645,23 +641,23 @@
         <translation>Alatna traka kartica</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Pošaljite kovanice na Bulwark adresu</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Pošaljite kovanice na BWK adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Zahtjev za plaćanje (generira QR kodove i Bulwark: URI)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Zahtjev za plaćanje (generira QR kodove i pivx: URI)</translation>
     </message>
     <message>
-        <source>Privacy</source>
+        <source>&amp;Privacy</source>
         <translation>Privatnost</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>&amp;Masternodes</source>
         <translation>Masternodes</translation>
     </message>
     <message>
@@ -669,27 +665,27 @@
         <translation>Pretraži masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>O Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>O BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Prikaz informacija o Bulwark Core-u</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Prikaz informacija o BWK Core-u</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Izmijenite konfiguracijske opcije za Bulwark</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Izmijenite konfiguracijske opcije za BWK</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Potpišite poruke s vašim Bulwark adresama kako biste dokazali da ih posjedujete</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Potpišite poruke s vašim BWK adresama kako biste dokazali da ih posjedujete</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim Bulwark adresama</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim BWK adresama</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
+        <source>&amp;BIP38 tool</source>
         <translation>BIP38 Alat</translation>
     </message>
     <message>
@@ -697,7 +693,7 @@
         <translation>Šifriranje i dešifriranje privatnih ključeva pomoću zaporke</translation>
     </message>
     <message>
-        <source>MultiSend</source>
+        <source>&amp;MultiSend</source>
         <translation>Višestruko slanje</translation>
     </message>
     <message>
@@ -705,11 +701,11 @@
         <translation>Postavke Višestrukog slanja</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
+        <source>Open Wallet &amp;Configuration File</source>
         <translation>Otvorite konfiguracijsku datoteku novčanika</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
+        <source>Open &amp;Masternode Configuration File</source>
         <translation>Otvori Masternode konfiguracijsku datoteku</translation>
     </message>
     <message>
@@ -717,11 +713,11 @@
         <translation>Otvori Masternode konfiguracijsku datoteku</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Otvori Bulwark: URI zahtjev za plačanje</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Otvori BWK: URI zahtjev za plačanje</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
+        <source>&amp;Blockchain explorer</source>
         <translation>Blockchain istraživač</translation>
     </message>
     <message>
@@ -729,16 +725,12 @@
         <translation>Prozor Block preglednika</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Pokažite poruku Bulwark Core pomoći da biste dobili popis s mogućim Bulwark opcijama naredbenog retka</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Pokažite poruku BWK Core pomoći da biste dobili popis s mogućim BWK opcijama naredbenog retka</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>BulwarkIX Core Klijent</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n aktivne veze na Bulwark mrežu</numerusform><numerusform>%n aktivne veze na Bulwark mrežu</numerusform><numerusform>%n aktivne veze na Bulwark mrežu</numerusform></translation>
+        <source>BWK Core client</source>
+        <translation>PIVIX Core Klijent</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Ažurirano</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n sati</numerusform><numerusform>%n sati</numerusform><numerusform>%n sati</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n dana</numerusform><numerusform>%n dana</numerusform><numerusform>%n dana</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n tjedni</numerusform><numerusform>%n tjedni</numerusform><numerusform>%n tjedni</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 i %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n godine</numerusform><numerusform>%n godine</numerusform><numerusform>%n godine</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -836,7 +812,7 @@ Višestruko slanje: %1</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>Aktivno</translation>
+        <translation>Aktivno </translation>
     </message>
     <message>
         <source>Not Active</source>
@@ -864,7 +840,7 @@ Višestruko slanje: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Novčanik je 1. šifriran 1. i trenutno 2. zaključan 2.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +868,8 @@ Višestruko slanje: %1</translation>
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Nisu prikazane sve transakcije. Za pregled svih transakcija morate postaviti txindex = 1 u konfiguracijskoj datoteci (bulwark.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Nisu prikazane sve transakcije. Za pregled svih transakcija morate postaviti txindex = 1 u konfiguracijskoj datoteci (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1106,8 @@ Višestruko slanje: %1</translation>
         <translation>Ova oznaka postaje crvena ako neki primatelj prima iznos manji od %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Može varirati +/- %1 uBulwark po unosu.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Može varirati +/- %1 upiv po unosu.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1153,7 +1129,7 @@ Višestruko slanje: %1</translation>
         <translation>Uredi Adresu</translation>
     </message>
     <message>
-        <source>Label</source>
+        <source>&amp;Label</source>
         <translation>Oznaka</translation>
     </message>
     <message>
@@ -1161,7 +1137,7 @@ Višestruko slanje: %1</translation>
         <translation>Oznaka povezana s ovim unosom popisa adresa</translation>
     </message>
     <message>
-        <source>Address</source>
+        <source>&amp;Address</source>
         <translation>Adresa</translation>
     </message>
     <message>
@@ -1185,8 +1161,8 @@ Višestruko slanje: %1</translation>
         <translation>Uređivanje adrese slanja</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Unesena adresa "%1" nije važeća Bulwark adresa.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Unesena adresa "%1" nije važeća BWK adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1201,33 @@ Višestruko slanje: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>verzija</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>O Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>O BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1273,16 @@ Višestruko slanje: %1</translation>
         <translation>Dobrodošli</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Dobrodošli u Bulwark Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Dobrodošli u BWK Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će Bulwark Core pohraniti svoje podatke.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Budući da je prvi put pokrenut program, možete odabrati gdje će BWK Core pohraniti svoje podatke.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core preuzima i pohranjuje kopiju Bulwark blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core preuzima i pohranjuje kopiju BWK blok-lanca. Barem će %1GB podataka biti pohranjeno u ovom direktoriju i to će s vremenom rasti. Novčanik će također biti pohranjena u ovom direktoriju.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1293,8 @@ Višestruko slanje: %1</translation>
         <translation>Koristite prilagođeni direktorij podataka:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1369,19 +1356,19 @@ Višestruko slanje: %1</translation>
         <translation>Pubkey</translation>
     </message>
     <message>
-        <source>Start alias</source>
+        <source>S&amp;tart alias</source>
         <translation>Započni pseudonim</translation>
     </message>
     <message>
-        <source>Start all</source>
+        <source>Start &amp;all</source>
         <translation>Započni sve</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
+        <source>Start &amp;MISSING</source>
         <translation> Započni NEDOSTAJE</translation>
     </message>
     <message>
-        <source>Update status</source>
+        <source>&amp;Update status</source>
         <translation>Ažuriraj status</translation>
     </message>
     <message>
@@ -1448,12 +1435,12 @@ Višestruko slanje: %1</translation>
         <translation>Unesite adresu za slanje</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svoje nagrade za ulog ili masternode  nagrade na popis drugih Bulwark adresa nakon što sazrijete.
-Za Dodaj: unesite postotak za davanje i Bulwark adresu za dodavanje MultiSend vektoru.
+        <translation>MultiSend vam omogućuje da automatski pošaljete do 100% svoje nagrade za ulog ili masternode  nagrade na popis drugih BWK adresa nakon što sazrijete.
+Za Dodaj: unesite postotak za davanje i BWK adresu za dodavanje MultiSend vektoru.
 Za brisanje: Unesite adresu za brisanje i pritisnite Delete.
 MultiSend neće biti aktiviran dok ne kliknete Aktiviraj</translation>
     </message>
@@ -1542,45 +1529,8 @@ MultiSend neće biti aktiviran dok ne kliknete Aktiviraj</translation>
         <translation>(bez oznake)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Unesena adresa:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>je netočna.
-Provjerite adresu i pokušajte ponovo.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Ukupna količina vašeg MultiSend vektora iznosi preko 100% vaše nagrade uloga
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Unesite 1 - 100 za postotak.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Spremio je MultiSend u memoriju, ali nije spasio svojstva u bazi podataka.</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Uklonjeno</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nije moguće pronaći adresu</translation>
     </message>
 </context>
 <context>
@@ -1590,7 +1540,7 @@ Provjerite adresu i pokušajte ponovo.</translation>
         <translation>Multisignature interakcije adresa</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
+        <source>Create MultiSignature &amp;Address</source>
         <translation>Kreiraj MultiSignature Adresu</translation>
     </message>
     <message>
@@ -1610,7 +1560,7 @@ Provjerite adresu i pokušajte ponovo.</translation>
         <translation>Dodajte drugu adresu koja bi se mogla potpisati da biste potvrdili transakciju s multisig adrese.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
+        <source>&amp;Add Address / Key</source>
         <translation>Dodaj adresu/ključ</translation>
     </message>
     <message>
@@ -1622,7 +1572,7 @@ Provjerite adresu i pokušajte ponovo.</translation>
         <translation>Stvori novu multisig adresu</translation>
     </message>
     <message>
-        <source>Create</source>
+        <source>C&amp;reate</source>
         <translation>Stvori</translation>
     </message>
     <message>
@@ -1638,11 +1588,11 @@ Imajte na umu da će novčanik ponovno skenirati blok-mrežu kako bi pronašao t
 Budite strpljivi nakon što kliknete uvoz.</translation>
     </message>
     <message>
-        <source>Import Redeem</source>
+        <source>&amp;Import Redeem</source>
         <translation>Uvoz Redeem</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
+        <source>&amp;Create MultiSignature Tx</source>
         <translation>Kreiraj MultiSignature Tx</translation>
     </message>
     <message>
@@ -1679,12 +1629,12 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Adresa / iznos:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Dodajte odredišta za slanje Bulwark
+        <source>Add destinations to send BWK to</source>
+        <translation>Dodajte odredišta za slanje BWK
 </translation>
     </message>
     <message>
-        <source>Add Destination</source>
+        <source>Add &amp;Destination</source>
         <translation>Dodaj odredište</translation>
     </message>
     <message>
@@ -1692,11 +1642,11 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Stvaranje transakcijskog objekta pomoću zadanih ulaza na navedene izlaze</translation>
     </message>
     <message>
-        <source>Create</source>
+        <source>Cr&amp;eate</source>
         <translation>Kreiraj</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
+        <source>&amp;Sign MultiSignature Tx</source>
         <translation>Potpiši MultiSignature Tx</translation>
     </message>
     <message>
@@ -1708,7 +1658,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Potpišite transakciju iz novčanika ili privatnih ključeva</translation>
     </message>
     <message>
-        <source>Sign</source>
+        <source>S&amp;ign</source>
         <translation>potpiši</translation>
     </message>
     <message>
@@ -1716,7 +1666,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED dok transakcija nije potpisana dovoljno puta.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Commit</source>
+        <source>Co&amp;mmit</source>
         <translation>Izvršiti</translation>
     </message>
     <message>
@@ -1724,7 +1674,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Dodajte privatne ključeve da biste potpisali transakciju</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
+        <source>Add Private &amp;Key</source>
         <translation>Dodaj privatni ključ</translation>
     </message>
     <message>
@@ -1757,73 +1707,6 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfiguriraj Obfuscation</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Osnovna privatnost</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Visoka privatnost</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimalna privatnost</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Odaberi razinu privatnosti.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Koristite 2 odvojene masternode za miješanje sredstava do 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Koristite 8 zasebnih masternoda za miješanje sredstava do 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Koristite 16 zasebnih masternodova</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Ova je opcija najbrža i košta oko 0,025 Bulwark da anonimizira 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Ova je opcija umjereno brza i košta oko 0,05 Bulwark da anonimizira 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Ovo je najsporiji i najsigurniji izbor. Korištenje maksimalne anonimnosti košta</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0,1 Bulwark po 10000 Bulwark za anonimizaciju.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Obfuscation Konfiguracija</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation je uspješno postavljen na osnovne (%1 i 2 runde). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju Bulwark-a.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation je uspješno postavljen na visoku razinu (%1 i 8 krugova). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju Bulwark-a</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation je uspješno postavljen na maksimalnu razinu (%1 i 16 krugova). To možete promijeniti u bilo kojem trenutku otvaranjem zaslona za konfiguraciju Bulwark-a.</translation>
-    </message>
-</context>
-<context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
@@ -1853,11 +1736,11 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Mogućnosti</translation>
     </message>
     <message>
-        <source>Main</source>
+        <source>&amp;Main</source>
         <translation>Glavno</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
+        <source>Size of &amp;database cache</source>
         <translation>Veličina database cachea</translation>
     </message>
     <message>
@@ -1865,7 +1748,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
+        <source>Number of script &amp;verification threads</source>
         <translation>Broj skripti i foruma za potvrdu</translation>
     </message>
     <message>
@@ -1873,7 +1756,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>(0 = auto, &lt;0 = ostavi toliko jezgri)</translation>
     </message>
     <message>
-        <source>Wallet</source>
+        <source>W&amp;allet</source>
         <translation>Novčanik</translation>
     </message>
     <message>
@@ -1881,8 +1764,8 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Ako onemogućite potrošnju nepotvrđenih promjena, promjena s transakcijskog kanala bit će upotrijebljena sve dok ta transakcija nema barem jednu potvrdu. To također utječe na izračun salda.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvorite Bulwark klijentski priključak na rooteru. To funkcionira samo kada vaš rooter podržava UPnP i omogućen je.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvorite BWK klijentski priključak na rooteru. To funkcionira samo kada vaš rooter podržava UPnP i omogućen je.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1893,7 +1776,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Dopusti dolazne veze</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
         <translation>Povežite se putem SOCKS5 proxyja (zadani proxy):</translation>
     </message>
     <message>
@@ -1901,19 +1784,19 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Stručnjak</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Automatski pokrenite Bulwark nakon prijave u sustav.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Automatski pokrenite BWK nakon prijave u sustav.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Pokrenite Bulwark na prijavi u sustav</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>Pokrenite BWK na prijavi u sustav</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Bilo da pokazuju značajke kontrole novčića ili ne.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
+        <source>Enable coin &amp;control features</source>
         <translation>Omogućite značajke kontrole novčića</translation>
     </message>
     <message>
@@ -1925,47 +1808,47 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Prikaži Masternodes Tab</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
+        <source>&amp;Spend unconfirmed change</source>
         <translation>Provedite nepotvrđene promjene</translation>
     </message>
     <message>
-        <source>Network</source>
+        <source>&amp;Network</source>
         <translation>Mreža</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>Ovdje se može postaviti jezik korisničkog sučelja. Ova postavka će stupiti na snagu nakon ponovnog pokretanja Bulwark-a.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>Ovdje se može postaviti jezik korisničkog sučelja. Ova postavka će stupiti na snagu nakon ponovnog pokretanja BWK-a.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodima ovdje:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
+        <source>Map port using &amp;UPnP</source>
         <translation>Karte porta pomoću UPnP
 </translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>Omogućite automint Bulwark jedinica na zBWK</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>Omogućite automint BWK jedinica na zBWK</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>Omogući zBWK Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Postotak dolaznih Bulwark koji se automatski pretvara u zBWK putem protokola Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Postotak dolaznih BWK koji se automatski pretvara u zBWK putem protokola Zerocoin (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>Postotak automatiziranog zBWK</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
-        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno Bulwark za apoen</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
+        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno BWK za apoen</translation>
     </message>
     <message>
         <source>Preferred Automint zBWK Denomination</source>
@@ -1976,11 +1859,11 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Prag razdvajanja Stake-a:</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Povežite se s Bulwark mrežom putem SOCKS5 proxy poslužitelja.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Povežite se s BWK mrežom putem SOCKS5 proxy poslužitelja.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
+        <source>Proxy &amp;IP:</source>
         <translation>Proxy IP:</translation>
     </message>
     <message>
@@ -1988,7 +1871,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>IP adresa proxya (npr. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
+        <source>&amp;Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
@@ -1996,7 +1879,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Port proxya (npr. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
+        <source>&amp;Window</source>
         <translation>Prozor</translation>
     </message>
     <message>
@@ -2004,7 +1887,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Prikaži samo ikonu trake nakon minimaliziranja prozora.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
         <translation>Minimaliziraj na traku umjesto Taskbar</translation>
     </message>
     <message>
@@ -2012,24 +1895,20 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Minimiziraj umjesto izlaska iz aplikacije kada je prozor zatvoren. Kada je ova opcija omogućena, program će biti zatvoren samo nakon odabira opcije Quit u izborniku.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
+        <source>M&amp;inimize on close</source>
         <translation>Minimiziraj pri zatvaranju</translation>
     </message>
     <message>
-        <source>Display</source>
+        <source>&amp;Display</source>
         <translation>Prikaz</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
+        <source>User Interface &amp;language:</source>
         <translation>Jezik sučelja korisnika:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Tema sučelja korisnika:</translation>
-    </message>
-    <message>
-        <source>Unit to show amounts in:</source>
-        <translation>Jedinica za prikaz količine:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2060,15 +1939,15 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Ponovno postavite sve opcije klijenta na zadano.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
+        <source>&amp;Reset Options</source>
         <translation>Mogućnosti ponovnog postavljanja</translation>
     </message>
     <message>
-        <source>OK</source>
+        <source>&amp;OK</source>
         <translation>U redu</translation>
     </message>
     <message>
-        <source>Cancel</source>
+        <source>&amp;Cancel</source>
         <translation>Poništi</translation>
     </message>
     <message>
@@ -2131,8 +2010,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Ukupni saldo, uključujući sve nedostupne kovanice.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark Saldo</translation>
+        <source>BWK Balance</source>
+        <translation>BWK Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,8 +2034,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Trenutačno zaključana ravnoteža u adresama samo za gledanje</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Uključena je vaša trenutna bilanca Bulwark, nepotvrđene i nezrele transakcije</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Uključena je vaša trenutna bilanca BWK, nepotvrđene i nezrele transakcije</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -2175,8 +2054,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s Bulwark mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s BWK mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2219,8 +2098,8 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
         <translation>Po potrošiti:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Zaključani Bulwark ili Masternode kolateral. Oni su isključeni iz zBWK kovanja.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Zaključani BWK ili Masternode kolateral. Oni su isključeni iz zBWK kovanja.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2255,14 +2134,14 @@ Ako je omogućeno automatsko navođenje, ovaj postotak će se podmiriti oko konf
         <translation>AutoMint je trenutno omogućen i podešen na</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>Da biste onemogućili AutoMint, dodajte 'enablezeromint=0' u bulwark.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Da biste onemogućili AutoMint, dodajte 'enablezeromint=0' u pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint je trenutno onemogućen.
-Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablezeromint=1' u bulwark.conf</translation>
+Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablezeromint=1' u pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2288,12 +2167,12 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Nevažeća adresa za plaćanje %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Ne može se pokrenuti Bulwark: clik-to-pay handler</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Ne može se pokrenuti pivx: clik-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom Bulwark adresom ili nepravilnim URI parametrima.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URI se ne može analizirati! To može biti uzrokovana nevažećom BWK adresom ili nepravilnim URI parametrima.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2378,8 +2257,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Zerocoin radnje:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s Bulwark mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazane informacije mogu biti zastarjele. Vaš se novčanik automatski sinkronizira s BWK mrežom nakon uspostavljanja veze, ali taj postupak još nije dovršen.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2394,36 +2273,12 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Dostupne za mintanje su kovanice koje su potvrđene i nisu zaključane ili Masternode kolateralne.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Dostupno za Minting:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Ponovno postavite Zerocoin Wallet DB. Briše transakcije koje nisu dospjele u blockchain.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Reset</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Upravljanje novčićem...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Količina:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Iznos:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2440,10 +2295,6 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
     <message>
         <source>PRIVACY</source>
         <translation>PRIVATNOST</translation>
-    </message>
-    <message>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation>Unesite iznos Bulwark za pretvorbu u zBWK</translation>
     </message>
     <message>
         <source>zBWK Control</source>
@@ -2486,24 +2337,12 @@ zBWK su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominac
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Razina sigurnosti za Zerocoin transakcije. Više je bolje, ali treba više vremena i resursa.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Razina sigurnosti:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Razina sigurnosti 1 - 100 (zadano: 42)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
+        <source>Pay &amp;To:</source>
         <translation>Platiti:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Bulwark adresa za slanje uplate. Stvara lokalno plaćanje za sebe kada je prazno.</translation>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>BWK adresa za slanje uplate. Stvara lokalno plaćanje za sebe kada je prazno.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2522,7 +2361,7 @@ zBWK su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominac
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
+        <source>&amp;Label:</source>
         <translation>Oznaka:</translation>
     </message>
     <message>
@@ -2530,7 +2369,7 @@ zBWK su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominac
         <translation>Unesite oznaku za ovu adresu da biste ga dodali na popis upotrijebljenih adresa</translation>
     </message>
     <message>
-        <source>Amount:</source>
+        <source>A&amp;mount:</source>
         <translation>Količina:</translation>
     </message>
     <message>
@@ -2579,8 +2418,8 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to bulwark.conf
-- disable: add 'enablezeromint=0' to bulwark.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -2589,8 +2428,8 @@ To change the percentage (no restart required):
         <translation>Pokažite trenutačni status automatskog zBWK mintanja.
 
 Da biste promijenili status (potrebno je ponovno pokretanje):
-- omogući: dodajte 'enablezeromint = 1' u bulwark.conf
-- onemogućiti: dodajte 'enablezeromint = 0' na bulwark.conf
+- omogući: dodajte 'enablezeromint = 1' u pivx.conf
+- onemogućiti: dodajte 'enablezeromint = 0' na pivx.conf
 
 Promjena postotka (nije potrebno ponovno pokretanje):
 - izbornik Postavke-&gt; Opcije-&gt; Postotak zBWK</translation>
@@ -2760,31 +2599,9 @@ Promjena postotka (nije potrebno ponovno pokretanje):
         <translation>Mint Status: U redu</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopirajte količinu</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopiraj iznos</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>Pokretanje ResetMintZerocoin: ponovno skeniranje potpunog blockchain, to će trajati i do 30 minuta, ovisno o vašem hardveru.</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Potrošnja Zerocoina.
-Zahtjevan izračun, možda će trebati nekoliko minuta ovisno o odabranoj razini sigurnosti i vašem hardveru.
-Budite strpljivi ...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) potrebno.
-Maksimalno dopušteno:</translation>
     </message>
     <message>
         <source>zBWK Spend #: </source>
@@ -2883,31 +2700,6 @@ Maksimalno dopušteno:</translation>
         <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Pogreška: vaš je novčanik zaključan. Najprije unesite zaporku novčanika.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Poruka: unesite iznos&gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Minting </translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Uspješno mintano</translation>
-    </message>
-    <message>
-        <source> zBWK in </source>
-        <translation> ulazni zBWK </translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>sek. Upotrijebljene denominacije:</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Trajanje:</translation>
     </message>
@@ -2926,8 +2718,8 @@ Maksimalno dopušteno:</translation>
         <translation>Nije dodijeljena adresa "Plati", stvarajući lokalnu uplatu</translation>
     </message>
     <message>
-        <source>Invalid BWK address</source>
-        <translation>Nevažeća Bulwark Adresa</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Nevažeća Pivx Adresa</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2950,42 +2742,16 @@ Maksimalno dopušteno:</translation>
         <translation>na novo generiranu (neiskorištenu i stoga anonimnu) lokalnu adresu</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>s razinom sigurnosti</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Potvrdite slanje novca</translation>
-    </message>
-    <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Verzija 1 zBWK zahtjeva sigurnosnu razinu 100 da se uspješno utroši.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zBWK</source>
-        <translation>Neuspjelo trošenje zBWK</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation>Neuspjelo dohvaćanje minta asociranog s serijskim hashom</translation>
     </message>
     <message>
-        <source>Too much inputs (</source>
-        <translation>Previše unosa (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>Ili mintaj više vrijedne denominacije (tako da je potrebno manje ulaza) ili smanjiti iznos potrošnje</translation>
-    </message>
-    <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Utrošak Zerocoina nije uspjela s statusom =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of BWK to convert to zBWK</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3021,14 +2787,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Unesite Bulwark adresu (npr., %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Unesite BWK adresu (npr., %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3070,15 +2839,19 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
+        <source>&amp;Save Image...</source>
         <translation>Spremi sliku...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
+        <source>&amp;Copy Image</source>
         <translation>Kopiraj sliku</translation>
     </message>
     <message>
@@ -3097,7 +2870,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Alatni prozor</translation>
     </message>
     <message>
-        <source>Information</source>
+        <source>&amp;Information</source>
         <translation>Informacije</translation>
     </message>
     <message>
@@ -3122,7 +2895,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Broj veza</translation>
     </message>
     <message>
-        <source>Open</source>
+        <source>&amp;Open</source>
         <translation>Otvori</translation>
     </message>
     <message>
@@ -3166,15 +2939,15 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorite Bulwark debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorite BWK debug log datoteku iz aktualnog direktorija podataka. To može potrajati nekoliko sekundi za velike datoteke zapisnika.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Broj Masternoda</translation>
     </message>
     <message>
-        <source>Console</source>
+        <source>&amp;Console</source>
         <translation>Konzola</translation>
     </message>
     <message>
@@ -3182,11 +2955,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Očisti konzolu</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
+        <source>&amp;Network Traffic</source>
         <translation>Promet Mreže</translation>
     </message>
     <message>
-        <source>Clear</source>
+        <source>&amp;Clear</source>
         <translation>Očisti</translation>
     </message>
     <message>
@@ -3202,7 +2975,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Poslano</translation>
     </message>
     <message>
-        <source>Peers</source>
+        <source>&amp;Peers</source>
         <translation>Peers</translation>
     </message>
     <message>
@@ -3262,7 +3035,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ping Time</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
+        <source>&amp;Wallet Repair</source>
         <translation>Popravak novčanika</translation>
     </message>
     <message>
@@ -3382,11 +3155,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Iz:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Dobrodošli na Bulwark RPC konzolu.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Dobrodošli na BWK RPC konzolu.</translation>
     </message>
     <message>
-        <source>Disconnect Node</source>
+        <source>&amp;Disconnect Node</source>
         <translation>Odspoji Node</translation>
     </message>
     <message>
@@ -3394,23 +3167,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ban Node za</translation>
     </message>
     <message>
-        <source>1 hour</source>
+        <source>1 &amp;hour</source>
         <translation>1 sat</translation>
     </message>
     <message>
-        <source>1 day</source>
+        <source>1 &amp;day</source>
         <translation>1 dan</translation>
     </message>
     <message>
-        <source>1 week</source>
+        <source>1 &amp;week</source>
         <translation>1 tjedan</translation>
     </message>
     <message>
-        <source>1 year</source>
+        <source>1 &amp;year</source>
         <translation>1 godinu</translation>
     </message>
     <message>
-        <source>Unban Node</source>
+        <source>&amp;Unban Node</source>
         <translation>Nebanani Nodovi</translation>
     </message>
     <message>
@@ -3432,10 +3205,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Potvrdite resync Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Upotrijebite strelice gore i dolje za kretanje po povijesti, a Ctrl-L za brisanje zaslona.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3497,11 +3266,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ponovno upotrijebite jednu od prethodno korištenih adresa za primanje. Ponovno korištenje adresa ima sigurnosne i privatne probleme. Nemojte to koristiti ako ponovno ne generirate prethodno izvršeni zahtjev za plaćanje.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>Ponovno upotrijebite postojeću adresu primatelja (nije preporučeno)</translation>
     </message>
     <message>
-        <source>Message:</source>
+        <source>&amp;Message:</source>
         <translation>Poruka:</translation>
     </message>
     <message>
@@ -3509,23 +3278,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dodatna oznaka za povezivanje s novom adresom primatelja.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Dodatna poruka priložena zahtjevu za plaćanje, koji će se prikazati kada se zahtjev otvori. Napomena: poruka neće biti poslana s plaćanjem putem Bulwark mreže.</translation>
+        <source>A&amp;mount:</source>
+        <translation>Količina:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Dodatna poruka priložena zahtjevu za plaćanje, koji će se prikazati kada se zahtjev otvori. Napomena: poruka neće biti poslana s plaćanjem putem BWK mreže.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>PRIMI</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Dodatna poruka za pridruživanje zahtjevu za plaćanje koja će se prikazati kada se zahtjev otvori.Napomena: poruka neće biti poslana s plaćanjem putem Bulwark mreže.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Dodatna poruka za pridruživanje zahtjevu za plaćanje koja će se prikazati kada se zahtjev otvori.Napomena: poruka neće biti poslana s plaćanjem putem BWK mreže.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Upotrijebite ovaj obrazac da biste zatražili plaćanja. Sva su polja neobvezna.</translation>
     </message>
     <message>
-        <source>Label:</source>
+        <source>&amp;Label:</source>
         <translation>Oznaka:</translation>
     </message>
     <message>
@@ -3533,11 +3306,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Neobavezna količina za zahtjev. Ostavite ovo prazno ili nulu da ne zatražite određeni iznos.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Iznos:</translation>
-    </message>
-    <message>
-        <source>Request payment</source>
+        <source>&amp;Request payment</source>
         <translation>Zatraži plaćanje</translation>
     </message>
     <message>
@@ -3580,6 +3349,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Copy amount</source>
         <translation>Kopiraj iznos</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiraj adresu</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -3588,15 +3361,15 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>QR Kod</translation>
     </message>
     <message>
-        <source>Copy URI</source>
+        <source>Copy &amp;URI</source>
         <translation>Kopiraj URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>Copy &amp;Address</source>
         <translation>Kopiraj adresu</translation>
     </message>
     <message>
-        <source>Save Image...</source>
+        <source>&amp;Save Image...</source>
         <translation>Spremi sliku...</translation>
     </message>
     <message>
@@ -3650,6 +3423,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>Poruka</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3747,8 +3524,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Veličina UTXO:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3805,16 +3582,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Kovanice se automatski odabiru</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ako je prilagođena naknada postavljena na 1000 uBulwark-ova, a transakcija je samo 250 bajta, tada "po kilobajtu" se plaća samo 250 uBulwark-a, dok se "barem" plaća 1000 uBulwark-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ako je prilagođena naknada postavljena na 1000 uPIV-ova, a transakcija je samo 250 bajta, tada "po kilobajtu" se plaća samo 250 uPIV-a, dok se "barem" plaća 1000 uPIV-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ako je prilagođena naknada postavljena na 1000 uBulwark, a transakcija je samo 250 bajta, tada "po kilobajtu" plaća se samo 250 uBulwark-ova, a "ukupno barem" plaća 1000 uBulwark-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ako je prilagođena naknada postavljena na 1000 uPIV, a transakcija je samo 250 bajta, tada "po kilobajtu" plaća se samo 250 uPIV-ova, a "ukupno barem" plaća 1000 uPIV-ova. Za transakcije veće od kilobajta, oboje plaćaju po kilobajtu.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
-        <translation>Plaćanje samo minimalne naknade je sasvim u redu sve dok j obujma transakcija manji od prostora u blokovima. No, budite svjesni da to može dovesti do transakcije koja nikada se ne potvrđuje kada se pojavi više zahtjeva za Bulwark transakcijama nego što mreža može obraditi.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
+        <translation>Plaćanje samo minimalne naknade je sasvim u redu sve dok j obujma transakcija manji od prostora u blokovima. No, budite svjesni da to može dovesti do transakcije koja nikada se ne potvrđuje kada se pojavi više zahtjeva za BWK transakcijama nego što mreža može obraditi.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3841,7 +3618,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Potvrdite slanje</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>S&amp;end</source>
         <translation>Pošalji</translation>
     </message>
     <message>
@@ -3849,7 +3626,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izbriši sva polja obrasca.</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Poništi sve</translation>
     </message>
     <message>
@@ -3857,12 +3634,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Pošaljite više primatelja odjednom</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
+        <source>Add &amp;Recipient</source>
         <translation>Dodaj primatelja</translation>
     </message>
     <message>
         <source>Anonymized BWK</source>
-        <translation>Anonimiziran Bulwark</translation>
+        <translation>Anonimiziran BWK</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3910,7 +3687,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>Upozorenje: Nevažeća Bulwark adresa</translation>
+        <translation>Upozorenje: Nevažeća BWK adresa</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3935,10 +3712,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Naknada %1 puta veća od %2 po kB smatra se nerazumljivo visokom naknadom.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Procijenjeno za početak potvrde u%n blokova.</numerusform><numerusform>Procijenjeno za početak potvrde u%n blokova.</numerusform><numerusform>Procijenjeno za početak potvrde u %n blokova.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4008,12 +3781,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ovo je uobičajeno plaćanje.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
+        <source>Pay &amp;To:</source>
         <translation>Platiti:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>Bulwark adresa za slanje uplate</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>BWK adresa za slanje uplate</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4036,7 +3809,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ukloni ovaj unos</translation>
     </message>
     <message>
-        <source>Label:</source>
+        <source>&amp;Label:</source>
         <translation>Oznaka:</translation>
     </message>
     <message>
@@ -4044,7 +3817,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Unesite oznaku za ovu adresu da biste ga dodali na popis upotrijebljenih adresa</translation>
     </message>
     <message>
-        <source>Amount:</source>
+        <source>A&amp;mount:</source>
         <translation>Količina:</translation>
     </message>
     <message>
@@ -4052,8 +3825,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Poruka:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>Poruka koja je bila povezana s Bulwark: URI koji će biti pohranjen s transakcijom za vašu referencu. Napomena: ova poruka neće biti poslana preko Bulwark mreže.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>Poruka koja je bila povezana s BWK: URI koji će biti pohranjen s transakcijom za vašu referencu. Napomena: ova poruka neće biti poslana preko BWK mreže.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4079,8 +3852,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core se zatvara ...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core se zatvara ...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4094,7 +3867,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Potpisi - potpišite / potvrdite poruku</translation>
     </message>
     <message>
-        <source>Sign Message</source>
+        <source>&amp;Sign Message</source>
         <translation>Potpiši poruku</translation>
     </message>
     <message>
@@ -4102,8 +3875,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Možete potpisati poruke s vašim adresama kako biste dokazali da ih posjedujete. Pazite da ne potpišete ništa nejasno, jer napadi za krađu identiteta mogu Vas pokušati uvjeriti da vam potpišu identitet. Potpišite samo detalje oko kojih se slažete.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark adresa za potpisivanje poruke</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK adresa za potpisivanje poruke</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4134,19 +3907,19 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove Bulwark adrese</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove BWK adrese</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark adresa s kojom je potpisana poruka</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Potvrdite poruku kako biste bili sigurni da je potpisana s navedenom Bulwark adresom</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Potvrdite poruku kako biste bili sigurni da je potpisana s navedenom BWK adresom</translation>
     </message>
     <message>
-        <source>Sign Message</source>
+        <source>Sign &amp;Message</source>
         <translation>Potpiši poruku</translation>
     </message>
     <message>
@@ -4154,11 +3927,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ponovno postavite sva polja s obavijestima o potpisima</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Poništi sve</translation>
     </message>
     <message>
-        <source>Verify Message</source>
+        <source>&amp;Verify Message</source>
         <translation>Potvrdi poruku</translation>
     </message>
     <message>
@@ -4166,7 +3939,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Unesite adresu potpisivanja, poruku (provjerite da točno kopirate presjeke, razmake, kartice itd.) I potpis ispod da biste potvrdili poruku. Budite pažljivi da ne čitate više u potpisu od onoga što je u samoj potpisanoj poruci kako bi se izbjegla prijevara s čovjekom u sredini.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
+        <source>Verify &amp;Message</source>
         <translation>Potvrdite poruku</translation>
     </message>
     <message>
@@ -4229,8 +4002,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4245,8 +4018,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dash Core programeri</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>Bulwark Core programeri</translation>
+        <source>The BWK Core developers</source>
+        <translation>BWK Core programeri</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4262,10 +4035,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Otvori dok %1</translation>
@@ -4326,10 +4095,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>, has not been successfully broadcast yet</source>
         <translation>, još nije uspješno emitiran</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, emitiraju se preko %n čvorova</numerusform><numerusform>, emitiraju se preko %n čvorova</numerusform><numerusform>, emitiraju se preko %n čvorova</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Datum</translation>
@@ -4369,10 +4134,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>sazrijeva se u %n više blokova</numerusform><numerusform>sazrijeva se u %n više blokova</numerusform><numerusform>sazrijeva se u %n više blokova</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4473,10 +4234,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Address</source>
         <translation>Adresa</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Otvori dok %1</translation>
@@ -4526,8 +4283,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Zaprimljeno preko Zametanja</translation>
     </message>
     <message>
-        <source>Bulwark Stake</source>
-        <translation>Bulwark Stake</translation>
+        <source>BWK Stake</source>
+        <translation>BWK Stake</translation>
     </message>
     <message>
         <source>zBWK Stake</source>
@@ -4550,24 +4307,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Prikrivanje Stvara Denominacije</translation>
     </message>
     <message>
-        <source>Converted Bulwark to zBWK</source>
-        <translation>Pretvoreni Bulwark u zBWK</translation>
+        <source>Converted BWK to zBWK</source>
+        <translation>Pretvoreni BWK u zBWK</translation>
     </message>
     <message>
         <source>Spent zBWK</source>
         <translation>Utrošeni zBWK</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Primljeni Bulwark od zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Primljeni BWK od zBWK</translation>
     </message>
     <message>
         <source>Minted Change as zBWK from zBWK Spend</source>
         <translation>Mintana razlika zBWK od zBWK Utroška</translation>
     </message>
     <message>
-        <source>Converted zBWK to Bulwark</source>
-        <translation>Pretvoreni zBWK u Bulwark</translation>
+        <source>Converted zBWK to BWK</source>
+        <translation>Pretvoreni zBWK u BWK</translation>
     </message>
     <message>
         <source>Anonymous (zBWK Transaction)</source>
@@ -4785,8 +4542,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izvoz uspješan</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Primljeni Bulwark od zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Primljeni BWK od zBWK</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zBWK</source>
@@ -4826,8 +4583,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Salji novac</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 Bulwark.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 BWK.</translation>
     </message>
 </context>
 <context>
@@ -4837,7 +4594,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>POVIJEST</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Izvoz</translation>
     </message>
     <message>
@@ -4858,7 +4615,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Select zBWK to Spend</source>
         <translation>Odabrani zBWK za utrošiti</translation>
@@ -4879,13 +4636,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>Odaberite/poništi odabir za Sve</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Je moguće utrošiti</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = zadržite metapodatke tx, npr. Vlasnika računa i podatke o zahtjevu za plaćanje, 2 = odbaci meta podataka tx)</translation>
@@ -4911,8 +4664,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izračunata kontrolna točka akumulatora nije ono što se bilježi indeksom blokova</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. Bulwark Core vjerojatno već radi.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>Nije moguće dobiti zaključavanje na direktoriju podataka %s. BWK Core vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4943,8 +4696,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Omogući automatsko sigurnosno kopiranje novčanika nakon svakog zBWK mintanja (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
-        <translation>Omogući ili onemogući staking funkcionalnosti za Bulwark unose (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</source>
+        <translation>Omogući ili onemogući staking funkcionalnosti za BWK unose (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zBWK inputs (0-1, default: %u)</source>
@@ -4983,20 +4736,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izvrši naredbu kada se promijeni najbolji blok (%s u cmd zamjenjuje se blokovskim raspršivanjem)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Naknade (u Bulwark / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Naknade (u BWK / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Naknade (u Bulwark / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Naknade (u BWK / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Ispraznite aktivnost baze podataka iz baze memorije na dnevnik diska svakog megabajta (zadano: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Pronađeni su nepotvrđeni denonimi izlaza, čekat će dok ne potvrde nastavak.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5087,20 +4836,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ovaj proizvod uključuje softver razvijen od strane OpenSSL projekta za uporabu u OpenSSL Toolkitu i kriptografskom softveru kojeg je napisao Eric Young i UPnP softver koji je napisao Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
-        <translation>Nije moguće vezati se na %s na ovom računalu. Bulwark Core vjerojatno već radi.</translation>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
+        <translation>Nije moguće vezati se na %s na ovom računalu. BWK Core vjerojatno već radi.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Nije moguće locirati dovoljno sredstava s domenom Prikrivanja za tu transakciju.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 Bulwark.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 BWK.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 Bulwark.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 BWK.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5115,8 +4864,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Upozorenje: -paytxfee je vrlo visoka! To je transakcijska naknada koju ćete platiti ako šaljete transakciju.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, Bulwark Core neće raditi ispravno.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>Upozorenje: Provjerite jesu li datum i vrijeme vašeg računala točni! Ako je vaš sat pogrešan, BWK Core neće raditi ispravno.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5183,10 +4932,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dopustite traženja DNS-a za -addnode, -seednode i -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Već imate taj unos.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Uvijek se upita za peer adrese putem DNS pretraživanja (zadano: %u)</translation>
     </message>
@@ -5207,18 +4952,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izračun akumulatora koji nedostaju ...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Nije moguće denominirati: nema kompatibilnih ulaza.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Nije moguće pronaći slučajni Masternode.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Nije moguće miješati dok je sinkronizacija u tijeku.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Nije moguće novčanik vratiti na nižu verziju</translation>
     </message>
@@ -5237,10 +4970,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Cannot write default address</source>
         <translation>Ne možete zapisati zadanu adresu</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Zalog nije valjan.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5267,8 +4996,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Autorska prava (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Autorska prava (C) 2015-%i The Bulwark Core Developers</translation>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
+        <translation>Autorska prava (C) 2015-%i The BWK Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5328,14 +5057,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Omogućite klijentu da djeluje kao masternode (0-1, zadano: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Unosi su puni.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Pogreška pri povezivanju s Masternodeom.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Pogreška prilikom inicijalizacije baze blokova</translation>
     </message>
@@ -5356,8 +5077,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Pogreška pri učitavanju wallet.dat: novčanik oštećen</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Pogreška prilikom učitavanja wallet.dat: Novčanik zahtijeva noviju verziju Bulwark jezgre</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>Pogreška prilikom učitavanja wallet.dat: Novčanik zahtijeva noviju verziju BWK jezgre</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5372,16 +5093,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Pogreška prilikom vraćanja javnog ključa.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Greška u zapisivanju zerocoinDB na disk</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Greška</translation>
     </message>
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Pogreška: Došlo je do kobne interne pogreške, pogledajte detalje o debug.logu</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Pogreška: Nije moguće odabrati trenutne unose</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5394,10 +5115,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
         <translation>Pogreška: Novčanik zaključan, ne može stvoriti transakciju!</translation>
-    </message>
-    <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Pogreška: već imate unose čekanja u grupi za Prekrivanje</translation>
     </message>
     <message>
         <source>Failed to calculate accumulator checkpoint</source>
@@ -5413,23 +5130,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Fee (in BWK/kB) to add to transactions you send (default: %s)</source>
-        <translation>Naknada (u Bulwark / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
-    </message>
-    <message>
-        <source>Finalizing transaction.</source>
-        <translation>Završavanje transakcije.</translation>
+        <translation>Naknada (u BWK / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Prisilno poktretanje sigurnosnog načina rada (zadano: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Pronađeno dovoljno korisnika, potpisivanje (čekanje %s)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Pronađeno dovoljno korisnika, potpisivanje ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5456,14 +5161,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Uključi IP adrese u izlaz za ispravljanje pogrešaka (zadano: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Nepodudarni način rada.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Nepodudarna verzija.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Netočan ili nijedan blok geneze nije pronađen. Pogrešan datadir za mrežu?</translation>
     </message>
@@ -5472,12 +5169,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Informacije</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
-        <translation>Provjera ispravnosti inicijalizacije nije uspjela. Bulwark Core se zatvara.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Unos nije valjan.</translation>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
+        <translation>Provjera ispravnosti inicijalizacije nije uspjela. BWK Core se zatvara.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5536,16 +5229,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Nevažeći privatni ključ.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Otkriven nevažeća skripta.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Postotak automatskog kovanog Zerocoina (1-100, zadano: %u)</translation>
     </message>
     <message>
-        <source>Reindex the Bulwark and zBWK money supply statistics</source>
-        <translation>Ponovno indeksirati statistiku Bulwark i zBWK ponude novca</translation>
+        <source>Reindex the BWK and zBWK money supply statistics</source>
+        <translation>Ponovno indeksirati statistiku BWK i zBWK ponude novca</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5583,8 +5272,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>uklonjene nepotvrđene transakcije</translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Onemogući sve specifične funkcije Bulwark (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, zadano: %u)</translation>
+        <source>Disable all BWK specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Onemogući sve specifične funkcije BWK (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, zadano: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5683,10 +5372,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Nije uspjelo kovanje</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Deserializiranje nije uspjelo</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Neuspjelo pronalaženje Zerocoina u wallet.dat</translation>
     </message>
@@ -5705,14 +5390,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Zadržite najviše &lt;n&gt; neprenosive transakcije u memoriji (zadano: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Poslijednje prikrivanje je bilo nedavno.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Posljednje uspješno Prikrivanje je bilo nedavno.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5767,10 +5444,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Lokacija autentičnog kolačića (zadano: dir. Podataka)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Zaključavanje na mjestu.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Zaključaj masternode iz masternode konfiguracijske datoteke (zadano: %u)</translation>
     </message>
@@ -5787,14 +5460,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Opcije Masternoda:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Niz Masternoda je pun.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maksimalni međuspremnik za primanje veze, &lt;n&gt;* 1000 bajta (zadano: %u)</translation>
     </message>
@@ -5807,14 +5472,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Kovanje nije ušlo u blockchain</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Nedostaju informacije o ulaznoj transakciji.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Miješanje u tijeku ...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Trebate adresu, jer ostatak nije točan</translation>
     </message>
@@ -5823,40 +5480,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Morate navesti vezu s -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Masternode nije pronađen.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Nema kompatibilnog Masternoda.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Nema otkrivenih sredstava kojima je potrebna denominacija.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Za miješanje nisu pronađeni odgovarajući apoeni.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Opcije releja čvorova:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Otkriven je nestandardni javni ključ.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Nije kompatibilno s postojećim transakcijama.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Nije dostupno dovoljno deskriptora datoteka.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Nije na popisu Masternode.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5865,18 +5494,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Broj sigurnosnih kopija prilagođenih lokacija za zadržavanje (zadano: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Prikrivanje je u stanju mirovanja.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Zahtjev za Prikrivanje dovršeno:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Nedovršeni zahtjevi za Prikrivanje:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5969,10 +5586,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Ako je moguće, pošaljite transakcije kao transakcije s nultom naknadom (zadano: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Sjednica nije dovršena!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -6079,18 +5692,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Prestani prikazivati nakon uvoza blokova s diska (zadano: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Sljedeće unose podnesi na masternode: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Poslano na masternode, čeka se više unosa ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>poslano na masternode, čeka se %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Sinkronizacija neuspjela</translation>
     </message>
@@ -6127,14 +5728,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Korištena je potrošnja novčića</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Nova transakcija potrošnje novca nije potvrđena</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Odabrano je kovanje novčića za nevažeći novčić</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Transakcija nije potvrđena</translation>
     </message>
@@ -6149,10 +5742,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>To je namijenjeno alatima za test regresije i razvoju aplikacija.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Ovo nije Masternode.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6187,18 +5776,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Iznos transakcije mora biti pozitivan</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transakcija uspješno stvorena.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Previsoka naknada za transakciju.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transakcija nije valjana.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transakcija prevelika da bi bila besplatna</translation>
     </message>
@@ -6207,24 +5784,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Transakcija prevelika</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Šaljem finalnu transakciju. </translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Pokušajte potrošiti s višom razinom sigurnosti kako biste uključili više novca</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Pokušavate potrošiti već utrošeni serijski broj #, pokušajte ponovo.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Nije moguće vezati se na %s na ovom računalu (vezanje vraćene pogreške %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Nije moguće pronaći transakciju koja sadrži mintanje</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6237,10 +5802,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Nepoznata mreža specificirana u -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Nepoznato stanje: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6271,10 +5832,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Vrijednost je niža od najmanje dostupne denominacije (= 1) zBWK-a</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Vrijednost veća od maksimalnog broja Prikrivanja zbirnih sredstava.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Provjera blokova ...</translation>
     </message>
@@ -6283,20 +5840,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Provjera novčanika...</translation>
     </message>
     <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Verzija 1 zBWK zahtjeva sigurnosnu razinu 100 da se uspješno utroši.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Novčanik %s nalazi se izvan direktorija podataka %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Novčanik zaključan.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Potrebno je prepisati novčanik: ponovo pokrenite Bulwark Core</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>Potrebno je prepisati novčanik: ponovo pokrenite BWK Core</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6323,24 +5872,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Upozorenje: nepodržani argument -debugnet ignoriran, upotrijebite -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Ponovno pokušati...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Nemate dovoljno Zerocoina u novčaniku</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>orate obnoviti bazu podataka koristeći -index za promjenu -txindexa</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Unosi uspješno dodani.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Vaša transakcija je prihvaćena u bazen!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

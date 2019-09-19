@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +19,8 @@
 class OptionsModel;
 class WalletModel;
 
-namespace Ui {
+namespace Ui
+{
 class ReceiveCoinsDialog;
 }
 
@@ -27,10 +29,11 @@ class QModelIndex;
 QT_END_NAMESPACE
 
 /** Dialog for requesting payment of bitcoins */
-class ReceiveCoinsDialog : public QDialog {
+class ReceiveCoinsDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     enum ColumnWidths {
         DATE_COLUMN_WIDTH = 130,
         LABEL_COLUMN_WIDTH = 120,
@@ -43,24 +46,28 @@ class ReceiveCoinsDialog : public QDialog {
 
     void setModel(WalletModel* model);
 
-  public slots:
+public slots:
     void clear();
     void reject();
     void accept();
 
-  protected:
+protected:
     virtual void keyPressEvent(QKeyEvent* event);
 
-  private:
+private:
     Ui::ReceiveCoinsDialog* ui;
     GUIUtil::TableViewLastColumnResizingFixer* columnResizingFixer;
     WalletModel* model;
     QMenu* contextMenu;
+    QString address;
+
+    QString getAddress(QString label = "");
     void copyColumnToClipboard(int column);
     virtual void resizeEvent(QResizeEvent* event);
 
-  private slots:
+private slots:
     void on_receiveButton_clicked();
+    void on_receivingAddressesButton_clicked();
     void on_showRequestButton_clicked();
     void on_removeRequestButton_clicked();
     void on_recentRequestsView_doubleClicked(const QModelIndex& index);
@@ -70,6 +77,8 @@ class ReceiveCoinsDialog : public QDialog {
     void copyLabel();
     void copyMessage();
     void copyAmount();
+    void copyAddress();
+    void receiveAddressUsed();
 };
 
 #endif // BITCOIN_QT_RECEIVECOINSDIALOG_H

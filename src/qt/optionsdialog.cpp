@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +14,6 @@
 #include "guiutil.h"
 #include "obfuscation.h"
 #include "optionsmodel.h"
-#include "qtmaterialflatbutton.h"
 
 #include "main.h" // for MAX_SCRIPTCHECK_THREADS
 #include "netbase.h"
@@ -33,10 +33,11 @@
 #include <QTimer>
 
 OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::OptionsDialog),
-    model(0),
-    mapper(0),
-    fProxyIpValid(true) {
+                                                                   ui(new Ui::OptionsDialog),
+                                                                   model(0),
+                                                                   mapper(0),
+                                                                   fProxyIpValid(true)
+{
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nOptionsDialogWindow", this->size(), this);
 
@@ -59,16 +60,20 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     connect(ui->connectSocks, SIGNAL(toggled(bool)), ui->proxyPort, SLOT(setEnabled(bool)));
 
     ui->proxyIp->installEventFilter(this);
+    ui->proxyPort->installEventFilter(this);
 
-    /* Window elements init */
+/* Window elements init */
 #ifdef Q_OS_MAC
     /* remove Window tab on Mac */
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWindow));
 #endif
 
-    /* remove Wallet tab in case of -disablewallet */
+    /* remove Wallet tab and zTelos options in case of -disablewallet */
     if (!enableWallet) {
         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWallet));
+
+        ui->verticalZTelosOptionsWidget->hide();
+        ui->verticalZTelosDisplayWidget->hide();
     }
 
     /* Display elements init */
@@ -92,6 +97,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->preferredDenom->addItem(QString("100"), QVariant("100"));
     ui->preferredDenom->addItem(QString("500"), QVariant("500"));
     ui->preferredDenom->addItem(QString("1000"), QVariant("1000"));
+    ui->preferredDenom->addItem(QString("5000"), QVariant("5000"));
 
     /* Theme selector external themes */
     boost::filesystem::path pathAddr = GetDataDir() / "themes";
@@ -111,10 +117,13 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
         QLocale locale(langStr);
 
         /** check if the locale name consists of 2 parts (language_country) */
-        if(langStr.contains("_")) {
+        if(langStr.contains("_"))
+        {
             /** display language strings as "native language - native country (locale name)", e.g. "Deutsch - Deutschland (de)" */
             ui->lang->addItem(locale.nativeLanguageName() + QString(" - ") + locale.nativeCountryName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
-        } else {
+        }
+        else
+        {
             /** display language strings as "native language (locale name)", e.g. "Deutsch (de)" */
             ui->lang->addItem(locale.nativeLanguageName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
         }
@@ -129,15 +138,17 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     mapper->setOrientation(Qt::Vertical);
 
     /* setup/change UI elements when proxy IP is invalid/valid */
-    connect(this, SIGNAL(proxyIpChecks(QValidatedLineEdit*, int)), this, SLOT(doProxyIpChecks(QValidatedLineEdit*, int)));
+    connect(this, SIGNAL(proxyIpChecks(QValidatedLineEdit*, QLineEdit*)), this, SLOT(doProxyIpChecks(QValidatedLineEdit*, QLineEdit*)));
 }
 
-OptionsDialog::~OptionsDialog() {
+OptionsDialog::~OptionsDialog()
+{
     GUIUtil::saveWindowGeometry("nOptionsDialogWindow", this);
     delete ui;
 }
 
-void OptionsDialog::setModel(OptionsModel* model) {
+void OptionsDialog::setModel(OptionsModel* model)
+{
     this->model = model;
 
     if (model) {
@@ -153,6 +164,9 @@ void OptionsDialog::setModel(OptionsModel* model) {
         mapper->setModel(model);
         setMapper();
         mapper->toFirst();
+
+        /* keep consistency for action triggered elsewhere */
+        connect(model, SIGNAL(hideOrphansChanged(bool)), this, SLOT(updateHideOrphans(bool)));
     }
 
     /* warn when one of the following settings changes by user action (placed here so init via mapper doesn't trigger them) */
@@ -162,7 +176,6 @@ void OptionsDialog::setModel(OptionsModel* model) {
     connect(ui->threadsScriptVerif, SIGNAL(valueChanged(int)), this, SLOT(showRestartWarning()));
     /* Wallet */
     connect(ui->spendZeroConfChange, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
-    connect(ui->showOrphans, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     /* Network */
     connect(ui->allowIncoming, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
     connect(ui->connectSocks, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
@@ -174,11 +187,16 @@ void OptionsDialog::setModel(OptionsModel* model) {
     connect(ui->showMasternodesTab, SIGNAL(clicked(bool)), this, SLOT(showRestartWarning()));
 }
 
-void OptionsDialog::setMapper() {
+void OptionsDialog::setMapper()
+{
     /* Main */
     mapper->addMapping(ui->bitcoinAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
+    // Zeromint Enabled
+    mapper->addMapping(ui->checkBoxZeromintEnable, OptionsModel::ZeromintEnable);
+    // Zeromint Addresses
+    mapper->addMapping(ui->checkBoxZeromintAddresses, OptionsModel::ZeromintAddresses);
     // Zerocoin mint percentage
     mapper->addMapping(ui->zeromintPercentage, OptionsModel::ZeromintPercentage);
     // Zerocoin preferred denomination
@@ -186,8 +204,8 @@ void OptionsDialog::setMapper() {
 
     /* Wallet */
     mapper->addMapping(ui->spendZeroConfChange, OptionsModel::SpendZeroConfChange);
-    mapper->addMapping(ui->showOrphans, OptionsModel::ShowOrphans);
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
+    mapper->addMapping(ui->spinBoxStakeSplitThreshold, OptionsModel::StakeSplitThreshold);
 
     /* Network */
     mapper->addMapping(ui->mapPortUpnp, OptionsModel::MapPortUPnP);
@@ -210,31 +228,37 @@ void OptionsDialog::setMapper() {
     mapper->addMapping(ui->lang, OptionsModel::Language);
     mapper->addMapping(ui->unit, OptionsModel::DisplayUnit);
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
+    mapper->addMapping(ui->checkBoxHideZeroBalances, OptionsModel::HideZeroBalances);
+    mapper->addMapping(ui->checkBoxHideOrphans, OptionsModel::HideOrphans);
 
     /* Masternode Tab */
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
 }
 
-void OptionsDialog::enableOkButton() {
+void OptionsDialog::enableOkButton()
+{
     /* prevent enabling of the OK button when data modified, if there is an invalid proxy address present */
     if (fProxyIpValid)
         setOkButtonState(true);
 }
 
-void OptionsDialog::disableOkButton() {
+void OptionsDialog::disableOkButton()
+{
     setOkButtonState(false);
 }
 
-void OptionsDialog::setOkButtonState(bool fState) {
+void OptionsDialog::setOkButtonState(bool fState)
+{
     ui->okButton->setEnabled(fState);
 }
 
-void OptionsDialog::on_resetButton_clicked() {
+void OptionsDialog::on_resetButton_clicked()
+{
     if (model) {
         // confirmation dialog
         QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
-                                                tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
-                                                QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+            tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown, do you want to proceed?"),
+            QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
 
         if (btnRetVal == QMessageBox::Cancel)
             return;
@@ -245,18 +269,20 @@ void OptionsDialog::on_resetButton_clicked() {
     }
 }
 
-void OptionsDialog::on_okButton_clicked() {
+void OptionsDialog::on_okButton_clicked()
+{
     mapper->submit();
-    obfuScationPool.cachedNumBlocks = std::numeric_limits<int>::max();
     pwalletMain->MarkDirty();
     accept();
 }
 
-void OptionsDialog::on_cancelButton_clicked() {
+void OptionsDialog::on_cancelButton_clicked()
+{
     reject();
 }
 
-void OptionsDialog::showRestartWarning(bool fPersistent) {
+void OptionsDialog::showRestartWarning(bool fPersistent)
+{
     ui->statusLabel->setStyleSheet("QLabel { color: red; }");
 
     if (fPersistent) {
@@ -269,33 +295,61 @@ void OptionsDialog::showRestartWarning(bool fPersistent) {
     }
 }
 
-void OptionsDialog::clearStatusLabel() {
+void OptionsDialog::clearStatusLabel()
+{
     ui->statusLabel->clear();
 }
 
-void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort) {
-    Q_UNUSED(nProxyPort);
+void OptionsDialog::updateHideOrphans(bool fHide)
+{
+    if(ui->checkBoxHideOrphans->isChecked() != fHide)
+        ui->checkBoxHideOrphans->setChecked(fHide);
+}
 
+void OptionsDialog::doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, QLineEdit* pUiProxyPort)
+{
     const std::string strAddrProxy = pUiProxyIp->text().toStdString();
     CService addrProxy;
 
-    /* Check for a valid IPv4 / IPv6 address */
+    // Check for a valid IPv4 / IPv6 address
     if (!(fProxyIpValid = LookupNumeric(strAddrProxy.c_str(), addrProxy))) {
         disableOkButton();
         pUiProxyIp->setValid(false);
         ui->statusLabel->setStyleSheet("QLabel { color: red; }");
         ui->statusLabel->setText(tr("The supplied proxy address is invalid."));
-    } else {
-        enableOkButton();
-        ui->statusLabel->clear();
+        return;
     }
+    // Check proxy port
+    if (!pUiProxyPort->hasAcceptableInput()){
+        disableOkButton();
+        ui->statusLabel->setStyleSheet("QLabel { color: red; }");
+        ui->statusLabel->setText(tr("The supplied proxy port is invalid."));
+        return;
+    }
+
+    proxyType checkProxy = proxyType(addrProxy);
+    if (!checkProxy.IsValid()) {
+        disableOkButton();
+        ui->statusLabel->setStyleSheet("QLabel { color: red; }");
+        ui->statusLabel->setText(tr("The supplied proxy settings are invalid."));
+        return;
+    }
+
+    enableOkButton();
+    ui->statusLabel->clear();
 }
 
-bool OptionsDialog::eventFilter(QObject* object, QEvent* event) {
+bool OptionsDialog::eventFilter(QObject* object, QEvent* event)
+{
     if (event->type() == QEvent::FocusOut) {
-        if (object == ui->proxyIp) {
-            emit proxyIpChecks(ui->proxyIp, ui->proxyPort->text().toInt());
+        if (object == ui->proxyIp || object == ui->proxyPort) {
+            emit proxyIpChecks(ui->proxyIp, ui->proxyPort);
         }
     }
     return QDialog::eventFilter(object, event);
+}
+
+void OptionsDialog::setCurrentIndex(int index)
+{
+    ui->tabWidget->setCurrentIndex(index);
 }

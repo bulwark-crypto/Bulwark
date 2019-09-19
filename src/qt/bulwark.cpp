@@ -1,7 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Bulwark developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,7 +8,7 @@
 #include "config/bulwark-config.h"
 #endif
 
-#include "bitcoingui.h"
+#include "qt/bulwark/bulwarkgui.h"
 
 #include "clientmodel.h"
 #include "guiconstants.h"
@@ -18,7 +17,8 @@
 #include "net.h"
 #include "networkstyle.h"
 #include "optionsmodel.h"
-#include "splashscreen.h"
+#include "qt/bulwark/splash.h"
+#include "qt/bulwark/welcomecontentwidget.h"
 #include "utilitydialog.h"
 #include "winshutdownmonitor.h"
 
@@ -31,14 +31,11 @@
 #include "init.h"
 #include "main.h"
 #include "rpcserver.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
-#include "qtmaterialstyle.h"
-#include <QFontDatabase>
-#include "qtmaterialtheme.h"
 
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif
 
 #include <stdint.h>
@@ -59,6 +56,9 @@
 
 #if defined(QT_STATICPLUGIN)
 #include <QtPlugin>
+#if QT_VERSION < 0x050400
+Q_IMPORT_PLUGIN(AccessibleFactory)
+#endif
 #if defined(QT_QPA_PLATFORM_XCB)
 Q_IMPORT_PLUGIN(QXcbIntegrationPlugin);
 #elif defined(QT_QPA_PLATFORM_WINDOWS)
@@ -66,24 +66,29 @@ Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin);
 #elif defined(QT_QPA_PLATFORM_COCOA)
 Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin);
 #endif
+Q_IMPORT_PLUGIN(QSvgPlugin);
+Q_IMPORT_PLUGIN(QSvgIconPlugin);
 #endif
 
 // Declare meta types used for QMetaObject::invokeMethod
 Q_DECLARE_METATYPE(bool*)
 Q_DECLARE_METATYPE(CAmount)
 
-static void InitMessage(const std::string& message) {
+static void InitMessage(const std::string& message)
+{
     LogPrintf("init message: %s\n", message);
 }
 
 /*
    Translate string to current locale using Qt.
  */
-static std::string Translate(const char* psz) {
-    return QCoreApplication::translate("bulwark-core", psz).toStdString();
+static std::string Translate(const char* psz)
+{
+    return QCoreApplication::translate("pivx-core", psz).toStdString();
 }
 
-static QString GetLangTerritory() {
+static QString GetLangTerritory()
+{
     QSettings settings;
     // Get desired locale (e.g. "de_DE")
     // 1) System default language
@@ -98,7 +103,8 @@ static QString GetLangTerritory() {
 }
 
 /** Set up translations */
-static void initTranslations(QTranslator& qtTranslatorBase, QTranslator& qtTranslator, QTranslator& translatorBase, QTranslator& translator) {
+static void initTranslations(QTranslator& qtTranslatorBase, QTranslator& qtTranslator, QTranslator& translatorBase, QTranslator& translator)
+{
     // Remove old translators
     QApplication::removeTranslator(&qtTranslatorBase);
     QApplication::removeTranslator(&qtTranslator);
@@ -135,7 +141,8 @@ static void initTranslations(QTranslator& qtTranslatorBase, QTranslator& qtTrans
 }
 
 /* qDebug() message handler --> debug.log */
-void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, const QString& msg) {
+void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, const QString& msg)
+{
     Q_UNUSED(context);
     const char* category = (type == QtDebugMsg) ? "qt" : NULL;
     LogPrint(category, "GUI: %s\n", msg.toStdString());
@@ -144,48 +151,37 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 /** Class encapsulating Bulwark Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
-class BitcoinCore : public QObject {
+class BitcoinCore : public QObject
+{
     Q_OBJECT
-  public:
+public:
     explicit BitcoinCore();
 
-  public slots:
+public slots:
     void initialize();
     void shutdown();
     void restart(QStringList args);
 
-  signals:
+signals:
     void initializeResult(int retval);
     void shutdownResult(int retval);
     void runawayException(const QString& message);
 
-  private:
-    boost::thread_group threadGroup;
-
+private:
     /// Flag indicating a restart
     bool execute_restart;
-
+    boost::thread_group threadGroup;
     /// Pass fatal exception message to UI thread
     void handleRunawayException(std::exception* e);
 };
 
 /** Main Bulwark application object */
-class BitcoinApplication : public QApplication {
+class BitcoinApplication : public QApplication
+{
     Q_OBJECT
-  public:
+public:
     explicit BitcoinApplication(int& argc, char** argv);
     ~BitcoinApplication();
-
-    /// Override notify for Qt errors that propagate.
-    virtual bool notify(QObject *receiver, QEvent *e) override {
-        try {
-            return QApplication::notify(receiver, e);
-        } catch (...) {
-            LogPrintf("ERROR: BitcoinApplication::notify from %s of type %s\n", receiver->objectName().toStdString(), e->type());
-            QMessageBox::information(0, tr("Error"), tr("There was an unexpected error, please check the debug.log for more details."));
-        }
-        return false;
-    }
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -198,58 +194,64 @@ class BitcoinApplication : public QApplication {
     /// Create splash screen
     void createSplashScreen(const NetworkStyle* networkStyle);
 
+    /// Create tutorial screen
+    bool createTutorialScreen();
+
     /// Request core initialization
     void requestInitialize();
     /// Request core shutdown
     void requestShutdown();
 
     /// Get process return value
-    int getReturnValue() {
-        return returnValue;
-    }
+    int getReturnValue() { return returnValue; }
 
-    /// Get window identifier of QMainWindow (BitcoinGUI)
+    /// Get window identifier of QMainWindow (BWKGUI)
     WId getMainWinId() const;
 
-  public slots:
+public slots:
     void initializeResult(int retval);
     void shutdownResult(int retval);
     /// Handle runaway exceptions. Shows a message box with the problem and quits the program.
     void handleRunawayException(const QString& message);
+    void updateTranslation();
 
-  signals:
+signals:
     void requestedInitialize();
     void requestedRestart(QStringList args);
     void requestedShutdown();
     void stopThread();
     void splashFinished(QWidget* window);
 
-  private:
+private:
     QThread* coreThread;
     OptionsModel* optionsModel;
     ClientModel* clientModel;
-    BitcoinGUI* window;
+    BWKGUI* window;
     QTimer* pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
     WalletModel* walletModel;
 #endif
     int returnValue;
+    QTranslator qtTranslatorBase, qtTranslator, translatorBase, translator;
 
     void startThread();
 };
 
 #include "bulwark.moc"
 
-BitcoinCore::BitcoinCore() : QObject() {
+BitcoinCore::BitcoinCore() : QObject()
+{
 }
 
-void BitcoinCore::handleRunawayException(std::exception* e) {
+void BitcoinCore::handleRunawayException(std::exception* e)
+{
     PrintExceptionContinue(e, "Runaway exception");
     emit runawayException(QString::fromStdString(strMiscWarning));
 }
 
-void BitcoinCore::initialize() {
+	void BitcoinCore::initialize()
+{
     execute_restart = true;
 
     try {
@@ -269,7 +271,9 @@ void BitcoinCore::initialize() {
     }
 }
 
-void BitcoinCore::restart(QStringList args) {
+
+void BitcoinCore::restart(QStringList args)
+{
     if (execute_restart) { // Only restart 1x, no matter how often a user clicks on a restart-button
         execute_restart = false;
         try {
@@ -291,7 +295,8 @@ void BitcoinCore::restart(QStringList args) {
     }
 }
 
-void BitcoinCore::shutdown() {
+void BitcoinCore::shutdown()
+{
     try {
         qDebug() << __func__ << ": Running Shutdown in thread";
         threadGroup.interrupt_all();
@@ -307,20 +312,22 @@ void BitcoinCore::shutdown() {
 }
 
 BitcoinApplication::BitcoinApplication(int& argc, char** argv) : QApplication(argc, argv),
-    coreThread(0),
-    optionsModel(0),
-    clientModel(0),
-    window(0),
-    pollShutdownTimer(0),
+                                                                 coreThread(0),
+                                                                 optionsModel(0),
+                                                                 clientModel(0),
+                                                                 window(0),
+                                                                 pollShutdownTimer(0),
 #ifdef ENABLE_WALLET
-    paymentServer(0),
-    walletModel(0),
+                                                                 paymentServer(0),
+                                                                 walletModel(0),
 #endif
-    returnValue(0) {
+                                                                 returnValue(0)
+{
     setQuitOnLastWindowClosed(false);
 }
 
-BitcoinApplication::~BitcoinApplication() {
+BitcoinApplication::~BitcoinApplication()
+{
     if (coreThread) {
         qDebug() << __func__ << ": Stopping thread";
         emit stopThread();
@@ -336,7 +343,7 @@ BitcoinApplication::~BitcoinApplication() {
 #endif
     // Delete Qt-settings if user clicked on "Reset Options"
     QSettings settings;
-    if (optionsModel->resetSettings) {
+    if (optionsModel && optionsModel->resetSettings) {
         settings.clear();
         settings.sync();
     }
@@ -345,25 +352,29 @@ BitcoinApplication::~BitcoinApplication() {
 }
 
 #ifdef ENABLE_WALLET
-void BitcoinApplication::createPaymentServer() {
+void BitcoinApplication::createPaymentServer()
+{
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void BitcoinApplication::createOptionsModel() {
+void BitcoinApplication::createOptionsModel()
+{
     optionsModel = new OptionsModel();
 }
 
-void BitcoinApplication::createWindow(const NetworkStyle* networkStyle) {
-    window = new BitcoinGUI(networkStyle, 0);
+void BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
+{
+    window = new BWKGUI(networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));
     pollShutdownTimer->start(200);
 }
 
-void BitcoinApplication::createSplashScreen(const NetworkStyle* networkStyle) {
-    SplashScreen* splash = new SplashScreen(0, networkStyle);
+void BitcoinApplication::createSplashScreen(const NetworkStyle* networkStyle)
+{
+    Splash* splash = new Splash(0);
     // We don't hold a direct pointer to the splash screen after creation, so use
     // Qt::WA_DeleteOnClose to make sure that the window will be deleted eventually.
     splash->setAttribute(Qt::WA_DeleteOnClose);
@@ -371,7 +382,29 @@ void BitcoinApplication::createSplashScreen(const NetworkStyle* networkStyle) {
     connect(this, SIGNAL(splashFinished(QWidget*)), splash, SLOT(slotFinish(QWidget*)));
 }
 
-void BitcoinApplication::startThread() {
+bool BitcoinApplication::createTutorialScreen()
+{
+    WelcomeContentWidget* widget = new WelcomeContentWidget();
+    //widget->setOptionsModel(optionsModel);
+
+    connect(widget, &WelcomeContentWidget::onLanguageSelected, [this](){
+        std::cout << "updating translations.." << std::endl;
+        updateTranslation();
+    });
+
+    widget->exec();
+    bool ret = widget->isOk;
+    widget->deleteLater();
+    return ret;
+}
+
+void BitcoinApplication::updateTranslation(){
+    // Re-initialize translations after change them
+    initTranslations(this->qtTranslatorBase, this->qtTranslator, this->translatorBase, this->translator);
+}
+
+void BitcoinApplication::startThread()
+{
     if (coreThread)
         return;
     coreThread = new QThread(this);
@@ -392,13 +425,15 @@ void BitcoinApplication::startThread() {
     coreThread->start();
 }
 
-void BitcoinApplication::requestInitialize() {
+void BitcoinApplication::requestInitialize()
+{
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     emit requestedInitialize();
 }
 
-void BitcoinApplication::requestShutdown() {
+void BitcoinApplication::requestShutdown()
+{
     qDebug() << __func__ << ": Requesting shutdown";
     startThread();
     window->hide();
@@ -420,7 +455,8 @@ void BitcoinApplication::requestShutdown() {
     emit requestedShutdown();
 }
 
-void BitcoinApplication::initializeResult(int retval) {
+void BitcoinApplication::initializeResult(int retval)
+{
     qDebug() << __func__ << ": Initialization result: " << retval;
     // Set exit result: 0 if successful, 1 if failure
     returnValue = retval ? 0 : 1;
@@ -437,11 +473,11 @@ void BitcoinApplication::initializeResult(int retval) {
         if (pwalletMain) {
             walletModel = new WalletModel(pwalletMain, optionsModel);
 
-            window->addWallet(BitcoinGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(BitcoinGUI::DEFAULT_WALLET);
+            window->addWallet(BWKGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(BWKGUI::DEFAULT_WALLET);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*, SendCoinsRecipient, QByteArray)),
-                    paymentServer, SLOT(fetchPaymentACK(CWallet*, const SendCoinsRecipient&, QByteArray)));
+                paymentServer, SLOT(fetchPaymentACK(CWallet*, const SendCoinsRecipient&, QByteArray)));
         }
 #endif
 
@@ -455,13 +491,13 @@ void BitcoinApplication::initializeResult(int retval) {
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // Bulwark: URIs or payment requests:
+        // PIVX: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
-                window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
+            window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
-                paymentServer, SLOT(handleURIOrFile(QString)));
+            paymentServer, SLOT(handleURIOrFile(QString)));
         connect(paymentServer, SIGNAL(message(QString, QString, unsigned int)),
-                window, SLOT(message(QString, QString, unsigned int)));
+            window, SLOT(message(QString, QString, unsigned int)));
         QTimer::singleShot(100, paymentServer, SLOT(uiReady()));
 #endif
     } else {
@@ -469,17 +505,20 @@ void BitcoinApplication::initializeResult(int retval) {
     }
 }
 
-void BitcoinApplication::shutdownResult(int retval) {
+void BitcoinApplication::shutdownResult(int retval)
+{
     qDebug() << __func__ << ": Shutdown result: " << retval;
     quit(); // Exit main loop after shutdown finished
 }
 
-void BitcoinApplication::handleRunawayException(const QString& message) {
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. Bulwark can no longer continue safely and will quit.") + QString("\n\n") + message);
+void BitcoinApplication::handleRunawayException(const QString& message)
+{
+    QMessageBox::critical(0, "Runaway exception", BWKGUI::tr("A fatal error occurred. Bulwark can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(1);
 }
 
-WId BitcoinApplication::getMainWinId() const {
+WId BitcoinApplication::getMainWinId() const
+{
     if (!window)
         return 0;
 
@@ -487,7 +526,8 @@ WId BitcoinApplication::getMainWinId() const {
 }
 
 #ifndef BITCOIN_QT_TEST
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
     SetupEnvironment();
 
     /// 1. Parse command-line options. These take precedence over anything else.
@@ -501,8 +541,13 @@ int main(int argc, char* argv[]) {
     Q_INIT_RESOURCE(bulwark);
 
     BitcoinApplication app(argc, argv);
+#if QT_VERSION > 0x050100
+    // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+#endif
+#if QT_VERSION >= 0x050600
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
 #ifdef Q_OS_MAC
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
@@ -523,21 +568,9 @@ int main(int argc, char* argv[]) {
 
     /// 4. Initialization of translations, so that intro dialog is in user's language
     // Now that QSettings are accessible, initialize translations
-    QTranslator qtTranslatorBase, qtTranslator, translatorBase, translator;
-    initTranslations(qtTranslatorBase, qtTranslator, translatorBase, translator);
+    //initTranslations(qtTranslatorBase, qtTranslator, translatorBase, translator);
+    app.updateTranslation();
     uiInterface.Translate.connect(Translate);
-
-#ifdef Q_OS_MAC
-#if __clang_major__ < 4
-    QString s = QSysInfo::kernelVersion();
-    std::string ver_info = s.toStdString();
-    // ver_info will be like 17.2.0 for High Sierra. Check if true and exit if build via cross-compile
-    if (ver_info[0] == '1' && ver_info[1] == '7') {
-        QMessageBox::critical(0, "Unsupported", BitcoinGUI::tr("High Sierra not supported with this build") + QString("\n\n"));
-        ::exit(1);
-    }
-#endif
-#endif
 
     // Show help message immediately after parsing command-line options (for "-lang") and setting locale,
     // but before showing splash screen.
@@ -549,20 +582,21 @@ int main(int argc, char* argv[]) {
 
     /// 5. Now that settings and translations are available, ask user for data directory
     // User language is set up: pick a data directory
-    Intro::pickDataDirectory();
+    if (!Intro::pickDataDirectory())
+        return 0;
 
-    /// 6. Determine availability of data directory and parse bulwark.conf
+    /// 6. Determine availability of data directory and parse pivx.conf
     /// - Do not call GetDataDir(true) before this step finishes
     if (!boost::filesystem::is_directory(GetDataDir(false))) {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
-                              QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
+            QObject::tr("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
     try {
         ReadConfigFile(mapArgs, mapMultiArgs);
     } catch (std::exception& e) {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
-                              QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
+            QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return 0;
     }
 
@@ -587,14 +621,14 @@ int main(int argc, char* argv[]) {
     // Allow for separate UI settings for testnets
     QApplication::setApplicationName(networkStyle->getAppName());
     // Re-initialize translations after changing application name (language in network-specific settings can be different)
-    initTranslations(qtTranslatorBase, qtTranslator, translatorBase, translator);
+    app.updateTranslation();
 
 #ifdef ENABLE_WALLET
     /// 7a. parse masternode.conf
-    string strErr;
+    std::string strErr;
     if (!masternodeConfig.read(strErr)) {
         QMessageBox::critical(0, QObject::tr("Bulwark Core"),
-                              QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
+            QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return 0;
     }
 
@@ -608,7 +642,7 @@ int main(int argc, char* argv[]) {
         exit(0);
 
     // Start up the payment server early, too, so impatient users that click on
-    // bulwark: links repeatedly have their payment requests routed to this process:
+    // pivx: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 
@@ -627,6 +661,27 @@ int main(int argc, char* argv[]) {
     // Subscribe to global signals from core
     uiInterface.InitMessage.connect(InitMessage);
 
+    bool ret = true;
+#ifdef ENABLE_WALLET
+    // Check if the wallet exists or need to be created
+    std::string strWalletFile = GetArg("-wallet", "wallet.dat");
+    std::string strDataDir = GetDataDir().string();
+    // Wallet file must be a plain filename without a directory
+    if (strWalletFile != boost::filesystem::basename(strWalletFile) + boost::filesystem::extension(strWalletFile)){
+        throw std::runtime_error(strprintf(_("Wallet %s resides outside data directory %s"), strWalletFile, strDataDir));
+    }
+
+    boost::filesystem::path pathBootstrap = GetDataDir() / strWalletFile;
+    if (!boost::filesystem::exists(pathBootstrap)) {
+        // wallet doesn't exist, popup tutorial screen.
+        ret = app.createTutorialScreen();
+    }
+#endif
+    if(!ret){
+        // wallet not loaded.
+        return 0;
+    }
+
     if (GetBoolArg("-splash", true) && !GetBoolArg("-min", false))
         app.createSplashScreen(networkStyle.data());
 
@@ -634,7 +689,7 @@ int main(int argc, char* argv[]) {
         app.createWindow(networkStyle.data());
         app.requestInitialize();
 #if defined(Q_OS_WIN)
-        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("Bulwark Core didn't yet exit safely..."), (HWND)app.getMainWinId());
+        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("PIVX Core didn't yet exit safely..."), (HWND)app.getMainWinId());
 #endif
         app.exec();
         app.requestShutdown();

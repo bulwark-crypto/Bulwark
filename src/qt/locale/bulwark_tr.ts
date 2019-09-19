@@ -10,35 +10,35 @@
         <translation>Yeni bir adres oluştur</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Yeni</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Yeni</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Seçili olan adresi sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopyala</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopyala</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Seçili olan adresi listeden sil</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Sil</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Sil</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Güncel sekmedeki verileri bir dosyaya aktar</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Çıkart</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Kapat</translation>
     </message>
     <message>
@@ -50,7 +50,7 @@
         <translation>Coinleri Alacak adresi seçin</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Seçin</translation>
     </message>
     <message>
@@ -62,23 +62,23 @@
         <translation>Alıcı Adres</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Bunlar ödemeleri göndermek için olan Bulwark adreslerinizdir.Coinleri göndermeden önce her zaman gönderilen miktarı ve adresi kontrol edin</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Bunlar ödemeleri göndermek için olan BWK adreslerinizdir.Coinleri göndermeden önce her zaman gönderilen miktarı ve adresi kontrol edin</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Bunlar ödemeleri almak için olan Bulwark adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Bunlar ödemeleri almak için olan BWK adreslerinizdirHer işlem için yeni bir adres kullanmanız önerilir.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>&amp;Copy Address</source>
         <translation>Adresi kopyala</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>Etiketi Kopyala</translation>
     </message>
     <message>
-        <source>Edit</source>
+        <source>&amp;Edit</source>
         <translation>Düzelt</translation>
     </message>
     <message>
@@ -176,15 +176,15 @@
         <translation>cüzdan şifrelemesini onayla</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, Bulwark'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK şifreleme işlemini tamamlamak için şimdi kapanacaktır. Cüzdanınızı şifrelemenin, BWK'lerinizi bilgisayarınıza bulaşan kötücül yazılımlar tarafından çalınmasına tamamen engelleyemediğini unutmayın</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Cüzdanınızı şifrelemek istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
         <translation>Dikkat! Eğer cüzdanınızı şifrelerseniz ve şifrenizi unutursanız &lt;b&gt;Tüm Pıvlerinizi kaybedersiniz&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -246,20 +246,20 @@
         <translation>BIP 38 Tool</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 şifrele</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 şifrele</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>adres</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>BIP 38 ile şifrelemek isteğiniz Bulwark Adresini giriniz. Ortadaki kutucuğa bir parola giriniz. Şifrelenmiş özel anahtarı hesaplamak için şifrele tuşuna basınız. </translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>BIP 38 ile şifrelemek isteğiniz BWK Adresini giriniz. Ortadaki kutucuğa bir parola giriniz. Şifrelenmiş özel anahtarı hesaplamak için şifrele tuşuna basınız. </translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Şifrelenecek Bulwark adresi</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>Şifrelenecek BWK adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Geçerli imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Bu Bulwark adresinin özel anahtarını şifreleyin</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Bu BWK adresinin özel anahtarını şifreleyin</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,23 +306,23 @@
         <translation>Parolayı kullanarak girmiş olduğunuz anahtarın şifresini çözünüz</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
+        <source>Encrypt &amp;Key</source>
         <translation>Şifrele ve anahtar</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Hepsini temizle</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation> BIP 38 Şifreyi çöz</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp; BIP 38 Şifreyi çöz</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>BIP 38 şifreli özel anahtarını girin. Orta kutuya şifreyi  girin. Özel anahtarı hesaplamak için Anahtarın Çözülmesini tıklayın. Anahtar çözüldükten sonra 'Alma Adresi'ni tıklamak, bu özel anahtarı cüzdana ekleyecektir.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
+        <source>Decrypt &amp;Key</source>
         <translation>Şifre ve Anahtar</translation>
     </message>
     <message>
@@ -409,7 +409,7 @@
         <translation>nod</translation>
     </message>
     <message>
-        <source>Overview</source>
+        <source>&amp;Overview</source>
         <translation>özet</translation>
     </message>
     <message>
@@ -417,15 +417,15 @@
         <translation>cüzdanın genel özetini göster</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>&amp;Send</source>
         <translation>Gönder</translation>
     </message>
     <message>
-        <source>Receive</source>
+        <source>&amp;Receive</source>
         <translation>Al</translation>
     </message>
     <message>
-        <source>Transactions</source>
+        <source>&amp;Transactions</source>
         <translation>İşlem</translation>
     </message>
     <message>
@@ -437,7 +437,7 @@
         <translation>Gizlilik Aksiyonları zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
+        <source>E&amp;xit</source>
         <translation>Çık</translation>
     </message>
     <message>
@@ -445,7 +445,7 @@
         <translation>Uygulamayı sonlandır</translation>
     </message>
     <message>
-        <source>About Qt</source>
+        <source>About &amp;Qt</source>
         <translation>Qt hakkında</translation>
     </message>
     <message>
@@ -453,11 +453,11 @@
         <translation>Qt hakkında bilgi ver</translation>
     </message>
     <message>
-        <source>Options...</source>
+        <source>&amp;Options...</source>
         <translation>Seçenekler...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
+        <source>&amp;Show / Hide</source>
         <translation>Göster/Gizle</translation>
     </message>
     <message>
@@ -465,7 +465,7 @@
         <translation>Ana pencereyi göster veya gizle</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
+        <source>&amp;Encrypt Wallet...</source>
         <translation>Cüzdan şifrele...</translation>
     </message>
     <message>
@@ -473,7 +473,7 @@
         <translation>Cüzdanınıza ait özel anahtarları şifreleyin</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
+        <source>&amp;Backup Wallet...</source>
         <translation>Cüzdanı yedekle</translation>
     </message>
     <message>
@@ -481,7 +481,7 @@
         <translation>Cüzdanı başka biryere yedekle</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
+        <source>&amp;Change Passphrase...</source>
         <translation>Parolayı değiştir</translation>
     </message>
     <message>
@@ -489,7 +489,7 @@
         <translation>Cüzdan şifrelemesi için kullanılan parolayı değiştir.</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
+        <source>&amp;Unlock Wallet...</source>
         <translation>Cüzdanı aç</translation>
     </message>
     <message>
@@ -497,19 +497,19 @@
         <translation>Cüzdanı aç</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
+        <source>&amp;Lock Wallet</source>
         <translation>Cüzdanı kilitle</translation>
     </message>
     <message>
-        <source>Sign message...</source>
+        <source>Sign &amp;message...</source>
         <translation>İmza ve mesaj</translation>
     </message>
     <message>
-        <source>Verify message...</source>
+        <source>&amp;Verify message...</source>
         <translation>Mesajı doğrula</translation>
     </message>
     <message>
-        <source>Information</source>
+        <source>&amp;Information</source>
         <translation>bilgi</translation>
     </message>
     <message>
@@ -517,7 +517,7 @@
         <translation>Tanısal bilgiyi göster</translation>
     </message>
     <message>
-        <source>Debug console</source>
+        <source>&amp;Debug console</source>
         <translation>Debug konsolu</translation>
     </message>
     <message>
@@ -525,7 +525,7 @@
         <translation>debuggıng konsolunu aç</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
+        <source>&amp;Network Monitor</source>
         <translation>Ağ Gözlemcisi</translation>
     </message>
     <message>
@@ -533,7 +533,7 @@
         <translation>Ağ gözlemcisini göster</translation>
     </message>
     <message>
-        <source>Peers list</source>
+        <source>&amp;Peers list</source>
         <translation>Eşler listesi</translation>
     </message>
     <message>
@@ -541,7 +541,7 @@
         <translation>Eşler bilgisini göster</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
+        <source>Wallet &amp;Repair</source>
         <translation>Cüzdan ve tamir</translation>
     </message>
     <message>
@@ -553,7 +553,7 @@
         <translation>Yapılandırma dosyasını aç</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
+        <source>Show Automatic &amp;Backups</source>
         <translation>Otomatik ve Yedeklemeleri Göster</translation>
     </message>
     <message>
@@ -561,15 +561,15 @@
         <translation>Otomatik olarak oluşturulan cüzdan yedeklerini göster</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation> Adres gönderiliyor ...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp; Adres gönderiliyor ...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Kullanılan gönderilen adres ve etiketlerin listesini göster</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>Adresler alınıyor ...</translation>
     </message>
     <message>
@@ -577,36 +577,36 @@
         <translation>Alınan alıcı adres ve etiketlerin listesini göster</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation> Çoklu imza oluşturma ...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp; Çoklu imza oluşturma ...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Yeni bir çoklu imzalı adres oluşturun ve bu cüzdana ekleyin</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation> Çoklu imza harcamaları ...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp; Çoklu imza harcamaları ...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Çok imzalı bir adresten harcama yapın</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation> Çoklu imzalı imzalama ...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp; Çoklu imzalı imzalama ...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>Çok imzalı bir adresle imzala</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Aç  URI ...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Aç &amp; URI ...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation> Komut satırı seçenekleri</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp; Komut satırı seçenekleri</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -617,103 +617,111 @@
         <translation>%1 geride. blok tarıyor %2</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Dosya</translation>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
+        <translation>Cüzdan şifrelenmiştirve şu anda sadece anonimleştirme ve staking yapılabilmesi amacıyla kilitsiz&lt;/b&gt; hale getirilmiştir.</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Ayarlar</translation>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor &lt;b&gt;etkin&lt;/b&gt; hale getirilmiştir: %1</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Aletler</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Dosya</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Yardım</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Ayarlar</translation>
+    </message>
+    <message>
+        <source>&amp;Tools</source>
+        <translation>&amp;Aletler</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Yardım</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Sekme tablosu</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark CORE</translation>
+        <source>BWK Core</source>
+        <translation>BWK CORE</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Koinleri Bulwark adresine gönder</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Koinleri BWK adresine gönder</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Ödeme talep etme (QR kodları ve Bulwark üretir: URI'ler)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Ödeme talep etme (QR kodları ve pivx üretir: URI'ler)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Özel</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Özel</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodlar</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodlar</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Masternodları ara</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Bulwark Core Hakkında</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>Pıvx core Hakkında</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Bulwark Core hakkında bilgi göster</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Pıvx Core hakkında bilgi göster</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Bulwark için yapılandırma seçeneklerini değiştirin</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>BWK için yapılandırma seçeneklerini değiştirin</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Sahip olduğunuzu kanıtlamak için mesajlarınızı Bulwark adresleriyle imzalayın</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Sahip olduğunuzu kanıtlamak için mesajlarınızı BWK adresleriyle imzalayın</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Belirtilen Bulwark adresleriyle imzalanmış olduklarından emin olmak için iletileri doğrulayın</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Belirtilen BWK adresleriyle imzalanmış olduklarından emin olmak için iletileri doğrulayın</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 tool</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 tool</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Bir şifre kullanarak özel anahtarları şifrele ve şifresini çöz</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>ÇokluGönderi</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;ÇokluGönderi</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Çoklu Gönderi ayarları</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
+        <source>Open Wallet &amp;Configuration File</source>
         <translation>Cüzdan ve Yapılandırma Dosyasını Aç</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Aç  Masternode Konfigürasyon Dosyası</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Aç &amp; Masternode Konfigürasyon Dosyası</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Açık Masternode yapılandırma dosyası</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Bir Bulwark: URI veya ödeme isteği açın</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Bir BWK: URI veya ödeme isteği açın</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
+        <source>&amp;Blockchain explorer</source>
         <translation>Blok zincirli kaşif</translation>
     </message>
     <message>
@@ -721,12 +729,12 @@
         <translation>Kaşif penceresini engelle</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Olası Bulwark komut satırı seçeneklerine sahip bir liste almak için Bulwark Core yardım mesajını gösterin</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Olası BWK komut satırı seçeneklerine sahip bir liste almak için BWK Core yardım mesajını gösterin</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core istemci</translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core istemci</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -786,7 +794,7 @@
     </message>
     <message>
         <source>Sent MultiSend transaction</source>
-        <translation>MultiSend işlemi gönderildi</translation>
+        <translation>ÇokluGönderi işlemi gönderildi</translation>
     </message>
     <message>
         <source>Date: %1
@@ -804,7 +812,7 @@ Adres: %4
         <source>Staking is active
  MultiSend: %1</source>
         <translation>Staking aktif
- Multisend: %1</translation>
+ ÇokluGönderi: %1</translation>
     </message>
     <message>
         <source>Active</source>
@@ -817,8 +825,8 @@ Adres: %4
     <message>
         <source>Staking is not active
  MultiSend: %1</source>
-        <translation>staking inaktif
- Multisend: %1</translation>
+        <translation>Staking etkin değildir
+ÇokluGönderi: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
@@ -836,7 +844,7 @@ Adres: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Cüzdan&lt;b&gt;şifreli&lt;/b&gt;ve şu anda&lt;b&gt;kilitli&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -864,8 +872,8 @@ Adres: %4
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Tüm işlemler gösterilmez. Tüm işlemleri görmek için yapılandırma dosyasında txindex = 1 ayarlamanız gerekir (bulwark.conf).
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Tüm işlemler gösterilmez. Tüm işlemleri görmek için yapılandırma dosyasında txindex = 1 ayarlamanız gerekir (pivx.conf).
 </translation>
     </message>
 </context>
@@ -1122,16 +1130,16 @@ Adres: %4
         <translation>Adres Düzenle</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Etiket</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Etiket</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Bu adres listesi girişiyle ilişkilendirilen etiket</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adres</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Adres</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1154,8 +1162,8 @@ Adres: %4
         <translation>Gönderen adresini düzenle</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Girilen "%1" adresi geçerli bir Bulwark adresi değil.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Girilen "%1" adresi geçerli bir BWK adresi değil.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1194,22 +1202,33 @@ Adres: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versiyon</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark CORE</translation>
+        <source>BWK Core</source>
+        <translation>BWK CORE</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>hakkında Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>hakkında BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1255,16 +1274,16 @@ Adres: %4
         <translation>Hoşgeldiniz</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Bulwark Core'a hoşgeldiniz.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>BWK Core'a hoşgeldiniz.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Program ilk başlatıldığında Bulwark Core'un verilerini nerede saklayacağını seçebilirsiniz.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Program ilk başlatıldığında BWK Core'un verilerini nerede saklayacağını seçebilirsiniz.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core, Bulwark blok zincirinin bir kopyasını indirecek ve depolayacaktır. Bu dizinde en az %1GB veri saklanacak ve zamanla büyüyecek. Cüzdan ayrıca bu dizinde saklanır.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core, BWK blok zincirinin bir kopyasını indirecek ve depolayacaktır. Bu dizinde en az %1GB veri saklanacak ve zamanla büyüyecek. Cüzdan ayrıca bu dizinde saklanır.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1275,8 +1294,8 @@ Adres: %4
         <translation>Özel bir veri dizini kullanın:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark CORE</translation>
+        <source>BWK Core</source>
+        <translation>BWK CORE</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1338,20 +1357,20 @@ Adres: %4
         <translation>Pubkey</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Start alias</translation>
+        <source>S&amp;tart alias</source>
+        <translation>S&amp;tart alias</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Start all</translation>
+        <source>Start &amp;all</source>
+        <translation>Start &amp;all</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Start MISSING</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Start &amp;MISSING</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Durum güncelle</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Durum güncelle</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1402,7 +1421,7 @@ Adres: %4
     <name>MultiSendDialog</name>
     <message>
         <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <translation>ÇokluGönderi</translation>
     </message>
     <message>
         <source>Enter whole numbers 1 - 100</source>
@@ -1417,18 +1436,18 @@ Adres: %4
         <translation>Gönderim adresi girin</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend, olgunlaştıktan sonra diğer Bulwark adreslerinin bir listesine otomatik olarak kazancınızın 100% 'ünü veya grup yazınızı ödüllendirmenize olanak tanır.
-Eklemek için: Verilecek yüzdeyi ve MultiSend vektörüne eklemek için Bulwark adresi girin.
+        <translation>ÇokluGönderi, olgunlaştıktan sonra diğer BWK adreslerinin bir listesine staking ya da masternode ödülünüzün 100% 'ünü otomatik olarak göndermenize olanak tanır.
+Eklemek için: Verilecek yüzdeyi ve ÇokluGönderi vektörüne eklemek için BWK adresi girin.
 Silme: Silinecek adresi girin ve silmek için basın.
-MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</translation>
+ÇokluGönderi, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</translation>
     </message>
     <message>
         <source>Add to MultiSend Vector</source>
-        <translation>Ekle MultiSend Vector</translation>
+        <translation>ÇokluGönderi Vektörüne Ekle</translation>
     </message>
     <message>
         <source>Add</source>
@@ -1436,7 +1455,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Deactivate MultiSend</source>
-        <translation>Deaktif et MultiSend</translation>
+        <translation>ÇokluGönderi'yi Etkisiz hale getir</translation>
     </message>
     <message>
         <source>Deactivate</source>
@@ -1476,7 +1495,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Delete Address From MultiSend Vector</source>
-        <translation>MultiSend Vector den adresi sil</translation>
+        <translation>ÇokluGönderi Vektöründen Adresi Sil</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1484,7 +1503,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Activate MultiSend</source>
-        <translation>aktifle MultiSend</translation>
+        <translation>ÇokluGönderi'yi Etkinleştir</translation>
     </message>
     <message>
         <source>Activate</source>
@@ -1492,11 +1511,11 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>View MultiSend Vector</source>
-        <translation>GösterMultiSend Vector</translation>
+        <translation>ÇokluGönderi Vektörünü Görüntüle</translation>
     </message>
     <message>
         <source>View MultiSend</source>
-        <translation>Göster multisend</translation>
+        <translation>ÇokluGönderi'yi Görüntüle</translation>
     </message>
     <message>
         <source>Send For Stakes</source>
@@ -1511,42 +1530,42 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
         <translation>(etiket yok)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Girilen adres:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>Masternode Ödülleri için ÇokluGönderi Etkinleştirilmiştir</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>Masternode Ödülleri için ÇokluGönderi Etkinleştirilmiştir</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>ÇokluGönderi Etkin değildir</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>geçersiz.
-Lütfen adresi kontrol edin ve tekrar deneyin.</translation>
+        <translation>Girili adres: %1 geçersiz.
+Lütfen adresi kontrol ediniz ve tekrar deneyiniz.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation> MultiSend vectorünüzün toplam miktarı stake ödülünün  100% ünden fazla 
-</translation>
+        <source>Removed %1</source>
+        <translation>Kaldırıldı %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Adres bulunamadı.</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>ÇokluGönderi geçerli hale getirildi</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>İlk Adres Geçersiz</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Lütfen 1 - 100 arası yüzdelik miktarı girin</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Silindi</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Adres bulunamıyor
-</translation>
     </message>
 </context>
 <context>
@@ -1556,8 +1575,8 @@ Lütfen adresi kontrol edin ve tekrar deneyin.</translation>
         <translation>Multisignature Address etkileşimleri</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>Oluştur MultiSignature Address</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Oluştur MultiSignature &amp;Address</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1576,8 +1595,8 @@ Lütfen adresi kontrol edin ve tekrar deneyin.</translation>
         <translation>Çok adımlı adresten bir işlemi doğrulamak için imzalayabilecek başka bir adres ekleyin.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>ekle Address / Key</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;ekle Address / Key</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1588,8 +1607,8 @@ Lütfen adresi kontrol edin ve tekrar deneyin.</translation>
         <translation>yeni multisig addres oluştur</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>oluştur</translation>
+        <source>C&amp;reate</source>
+        <translation>o&amp;luştur</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1604,12 +1623,12 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
 İçe aktarmayı tıkladıktan sonra lütfen sabırlı olun.</translation>
     </message>
     <message>
-        <source>Import Redeem</source>
-        <translation>Içe aktar kullan</translation>
+        <source>&amp;Import Redeem</source>
+        <translation>&amp;Içe aktar kullan</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation> MultiSignature Tx oluştur</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp; MultiSignature Tx oluştur</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1644,24 +1663,24 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Address /miktar:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Bulwark göndermek için varış yerleri ekleyin</translation>
+        <source>Add destinations to send BWK to</source>
+        <translation>BWK göndermek için varış yerleri ekleyin</translation>
     </message>
     <message>
-        <source>Add Destination</source>
-        <translation>ekle Varış yeri</translation>
+        <source>Add &amp;Destination</source>
+        <translation>ekle &amp;Varış yeri</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
         <translation>Verilen çıktılara verilen girdileri kullanarak bir işlem nesnesi oluşturma</translation>
     </message>
     <message>
-        <source>Create</source>
+        <source>Cr&amp;eate</source>
         <translation>oluştur</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>imzala Multiimza Transfer</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;imzala Multiimza Transfer</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1672,7 +1691,7 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>İşlemi bu cüzdandan veya sağlanan gizli anahtarlardan imzala</translation>
     </message>
     <message>
-        <source>Sign</source>
+        <source>S&amp;ign</source>
         <translation>imzala</translation>
     </message>
     <message>
@@ -1680,7 +1699,7 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Işlem yeterince imzalanana kadar İZİN YOKTUR.&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Commit</source>
+        <source>Co&amp;mmit</source>
         <translation>uygula</translation>
     </message>
     <message>
@@ -1688,7 +1707,7 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>İşlemi imzalamak için özel anahtarlar ekleyin.</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
+        <source>Add Private &amp;Key</source>
         <translation>Özel Anahtar Ekle</translation>
     </message>
     <message>
@@ -1721,73 +1740,6 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Şaşırtmayı Yapılandır</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Temel Gizlilik</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Yüksek Gizlilik</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimum Gizlilik</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Lütfen bir gizlilik düzeyi seçin.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>10000 Bulwark'e kadar fonları karıştırmak için 2 ayrı matternod kullanın</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>10000 Bulwark'ye kadar olan fonları karıştırmak için 8 ayrı matternod kullanın</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>16 ayrı matternod kullan</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Bu seçenek en hızlıdır ve 10000 Bulwark'yi anonimleştirmek için ~ 0.025 Bulwark'lik bir maliyeti olacaktır</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Bu seçenek orta derecede hızlıdır ve 10000 Bulwark'yi anonimleştirmek için yaklaşık 0.05 Bulwark'e mal olur</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Bu en yavaş ve en güvenli seçenektir. Maksimum anonimlik kullanmak maliyete gelecek</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 Bulwark her 10000 Bulwark anonimleştirmeye.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Şaşırtma ayarlama</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Şaşırtma başarıyla temele ayarlandı. (%1 ve  2 turlar) Bunu istediğiniz zaman değiştirmek için Bulwark in ayarlar ekranını açmanız yeterli</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Şaşırtma başarıyla Yüksek e ayarlandı. (%1 ve 8 turlar) Bunu istediğiniz zaman değiştirmek için Bulwark in ayarlar ekranını açmanız yeterli</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Şaşırtma başarıyla maksimuma ayarlandı. (%1 ve 16 turlar) Bunu istediğiniz zaman değiştirmek için Bulwark in ayarlar ekranını açmanız yeterli</translation>
-    </message>
-</context>
-<context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
@@ -1817,19 +1769,19 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Seçenekler</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Main</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Main</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation> Veritabanı önbellek boyutu</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>&amp; Veritabanı önbellek boyutu</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
+        <source>Number of script &amp;verification threads</source>
         <translation>Komut dosyası ve doğrulama iş parçacığı sayısı</translation>
     </message>
     <message>
@@ -1837,7 +1789,7 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>(0 = auto, &lt;0 = birçok çekirdeği serbest bırak)</translation>
     </message>
     <message>
-        <source>Wallet</source>
+        <source>W&amp;allet</source>
         <translation>Cüzdan</translation>
     </message>
     <message>
@@ -1845,8 +1797,8 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Doğrulanmamış değişikliğin harcamasını devre dışı bırakırsanız, bir işlemdeki değişiklik&lt;br/&gt;Bu işlem en az bir onay alıncaya kadar kullanılamaz.&lt;br/&gt;Bu aynı zamanda bakiyenizin nasıl hesaplandığını etkiler.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönelticideki Bulwark istemci bağlantı noktasını otomatik olarak açın. Bu, yalnızca yönlendiriciniz UPnP'yi destekliyorsa ve etkinleştirilmişse çalışır.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönelticideki BWK istemci bağlantı noktasını otomatik olarak açın. Bu, yalnızca yönlendiriciniz UPnP'yi destekliyorsa ve etkinleştirilmişse çalışır.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1857,27 +1809,27 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Gelen bağlantılara izin ver</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Connect through SOCKS5 proxy (default proxy):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Uzman</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Sisteme giriş yaptıktan sonra otomatik olarak Bulwark'i başlatın.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Sisteme giriş yaptıktan sonra otomatik olarak BWK'i başlatın.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation> Sistem oturum açma işleminde Bulwark'i başlat</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp; Sistem oturum açma işleminde BWK'i başlat</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Paranın kontrol özelliklerini gösterip göstermeyeceği.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
+        <source>Enable coin &amp;control features</source>
         <translation>Köşe ve kontrol özelliklerini etkinleştir</translation>
     </message>
     <message>
@@ -1889,53 +1841,57 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Göster Masternodlar Sekmesini</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
+        <source>&amp;Spend unconfirmed change</source>
         <translation>Doğrulanmamış değişikliği harcama</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>ağ</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;ağ</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, Bulwark yeniden başlatıldıktan sonra geçerli olur.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>Kullanıcı arabirimi dili burada ayarlanabilir. Bu ayar, BWK yeniden başlatıldıktan sonra geçerli olur.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Dil eksik veya çeviri tamamlanmamış mı? Katkıda bulunan çevirilere yardımcı olun:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Map port using UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Map port using &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>BWK birimlerinin zBWK'e otomatik basımını ektinleştir</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>zBWK Otomatik basımı etkinleştir</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Zerocoin Protokolü üzerinden otomatik olarak zBWK'ye dönüştürülen gelen Bulwark yüzdesi (dakika: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Zerocoin Protokolü üzerinden otomatik olarak zBWK'ye dönüştürülen gelen BWK yüzdesi (dakika: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>Otomatikleştirilmiş zBWK yüzdesi</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
-        <translation>Bu mezhebi için yeterli Bulwark bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
+        <translation>Bu mezhebi için yeterli BWK bulunana kadar Zerocoin'e otomatik dönüşümle birlikte bekleyin</translation>
     </message>
     <message>
         <source>Preferred Automint zBWK Denomination</source>
         <translation>Tercih edilen Automint zBWK Nominal değeri</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Bir SOCKS5 proxy vasıtasıyla Bulwark ağına bağlanın.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Bir SOCKS5 proxy vasıtasıyla BWK ağına bağlanın.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
+        <source>Proxy &amp;IP:</source>
         <translation>&lt;br&gt;</translation>
     </message>
     <message>
@@ -1943,23 +1899,23 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Port:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Port:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port of the proxy (e.g. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Window</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Window</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Pencereyi en aza indirdikten sonra yalnızca bir tepsi simgesi gösterin.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
         <translation>Görev çubuğu yerine tepsiye simge durumuna küçült</translation>
     </message>
     <message>
@@ -1967,24 +1923,20 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Pencere kapatıldığında uygulamadan çıkmak yerine simge durumuna küçültün. Bu seçenek etkinleştirildiğinde, uygulama yalnızca menüden Çık'ı seçtikten sonra kapatılacaktır.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
+        <source>M&amp;inimize on close</source>
         <translation>Küçült kapatırken</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Göster</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Göster</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
+        <source>User Interface &amp;language:</source>
         <translation>Kullanıcı Arayüzü ve dil:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Kullanıcı Arabirimi Teması:</translation>
-    </message>
-    <message>
-        <source>Unit to show amounts in:</source>
-        <translation> Birim tutarları göstermek için:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2015,16 +1967,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Tüm istemci seçeneklerini varsayılana sıfırlayın.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Ayarları sıfırla</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Ayarları sıfırla</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>İptal</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;İptal</translation>
     </message>
     <message>
         <source>Any</source>
@@ -2058,7 +2010,15 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <source>The supplied proxy address is invalid.</source>
         <translation>Verilen proxy adresi geçersiz.</translation>
     </message>
-    </context>
+    <message>
+        <source>The supplied proxy port is invalid.</source>
+        <translation>Verilen proxy port adresi geçersiz.</translation>
+    </message>
+    <message>
+        <source>The supplied proxy settings are invalid.</source>
+        <translation>Verilen proxy seçenekleri geçersiz.</translation>
+    </message>
+</context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -2078,8 +2038,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Toplam Bakiye, mevcut olmayan tüm paralar dahil.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark Bakiyesi</translation>
+        <source>BWK Balance</source>
+        <translation>BWK Bakiyesi</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2098,16 +2058,32 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Staklanmış veya masternod ödülleri henüz olgunlaşmamış</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Güncel Bulwark bakiyeniz, onaylanmamış ve olgunlaşmamış işlemler dahil</translation>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Mevcut kilitli bakiye sadece görüntülenebilir adreslerde.</translation>
+    </message>
+    <message>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Güncel BWK bakiyeniz, onaylanmamış ve olgunlaşmamış işlemler dahil</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
         <translation>zBWK Bakiyesi</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak Bulwark şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zBWK are spendable.</source>
+        <translation>Olgun: basılmış olduktan sonra 20'den fazla onay alınmış ve aynı ölçü biriminden 1 kereden fazla basılmış.
+Bu zBWK ler harcanabilir.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Doğrulanmamış: 20'den az doğrulama
+Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 taneden daha az basım bulunmakta.</translation>
+    </message>
+    <message>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak BWK şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2150,8 +2126,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Harcanabilir:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Kilitli Bulwark veya Masternode teminatları. Bunlar zBWK matlaştırmadan çıkarılır.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Kilitli BWK veya Masternode teminatları. Bunlar zBWK matlaştırmadan çıkarılır.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2186,14 +2162,14 @@ AutoMint etkinleştirilirse, bu yüzde, yapılandırılmış AutoMint yüzdesi e
         <translation>AutoMint şu anda etkinleştirilmiş ve</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>AutoMint kapatmak için ekle  'enablezeromint=0'  bulwark.conf. dosyasına</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>AutoMint kapatmak için ekle  'enablezeromint=0'  pivx.conf. dosyasına</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint şu anda aktif değil.
- AutoMint aktive etmek için  değiştir 'enablezeromint=0' yazan kısmı 'enablezeromint=1' şeklinde bulwark.conf dosyasında</translation>
+ AutoMint aktive etmek için  değiştir 'enablezeromint=0' yazan kısmı 'enablezeromint=1' şeklinde pivx.conf dosyasında</translation>
     </message>
 </context>
 <context>
@@ -2219,12 +2195,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>Geçersiz ödeme adresi %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Bulwark başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Pivx başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamaz! Bunun nedeni, geçersiz bir Bulwark adresi veya hatalı biçimlendirilmiş URI parametrelerinden kaynaklanabilir.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamaz! Bunun nedeni, geçersiz bir BWK adresi veya hatalı biçimlendirilmiş URI parametrelerinden kaynaklanabilir.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2309,8 +2285,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>Zerocoin Actions:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak Bulwark şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Görüntülenen bilgiler güncelliğini yitirmiş olabilir. Bir bağlantı kurulduktan sonra M-cüzdanınız otomatik olarak BWK şebekesiyle senkronize edilir, ancak bu işlem henüz tamamlanmadı.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2325,36 +2301,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Minting için teyit edilmiş ve kilitli olmayan paralar veya Masternode teminatları mevcuttur.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Mintinge hazır</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Zerocoin Cüzdan DB'yi sıfırlayın. Blok zincirine sokmayan işlemleri siler.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Sıfırla</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Coin kontrol...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Miktar</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Tutar:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2371,6 +2323,14 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
     <message>
         <source>PRIVACY</source>
         <translation>GİZLİLİK</translation>
+    </message>
+    <message>
+        <source>zBWK Control</source>
+        <translation>zBWK Kontrolü</translation>
+    </message>
+    <message>
+        <source>zBWK Selected:</source>
+        <translation>zTelos Seçildi:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2405,24 +2365,12 @@ zBWK, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Zerocoin İşlemleri için Güvenlik Seviyesi. Daha fazlası iyidir, ancak daha fazla zaman ve kaynak gerekmektedir.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Güvenlik seviyesi:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Güvenlik seviyesi 1 - 100 (varsayılan: 42)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
+        <source>Pay &amp;To:</source>
         <translation>şuna öde:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Ödemeyi göndermek için Bulwark adresi. Boş olduğunda kendinize yerel ödeme oluşturur.</translation>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>Ödemeyi göndermek için BWK adresi. Boş olduğunda kendinize yerel ödeme oluşturur.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2441,15 +2389,15 @@ zBWK, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiket:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiket:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Kullanılan adresler listesine eklemek için bu adres için bir etiket girin</translation>
     </message>
     <message>
-        <source>Amount:</source>
+        <source>A&amp;mount:</source>
         <translation>Miktar:</translation>
     </message>
     <message>
@@ -2487,6 +2435,12 @@ zBWK, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
     <message>
         <source>Denom. with value 1:</source>
         <translation>Denom. değer 1 ile:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Doğrulanmamış: 20'den az doğrulama
+Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 taneden daha az basım bulunmakta.</translation>
     </message>
     <message>
         <source>AutoMint Status</source>
@@ -2621,32 +2575,10 @@ zBWK, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
         <translation>Mint Durumu: Tamam</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Miktarı kopyala</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Miktarı kopyala</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>ResetMintZerocoin: tam blok zinciri yeniden tarama, bu donanımınıza bağlı olarak 30 dakika kadar sürmelidir.
 Lütfen sabırlı olun...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Harcanıyor Zerocoin.
-Hesaplaması pahalı, biraz fazla  hardware. ve seçili güvenlik seviyesine bağlı olarak.
-Lütfen sabırlı olun...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) gerekli.
-Maksimum bırakılan: </translation>
     </message>
     <message>
         <source>zBWK is currently disabled due to maintenance.</source>
@@ -2659,32 +2591,6 @@ Maksimum bırakılan: </translation>
     <message>
         <source>AutoMint Status:</source>
         <translation>Otomatik Basım Durumu:</translation>
-    </message>
-    <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Hata: Cüzdan kilitlendi. Lütfen önce cüzdan parolasını girin.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Mesaj: Değer girin  &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Minting </translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Başarılı şekilde mint edildi</translation>
-    </message>
-    <message>
-        <source> zBWK in </source>
-        <translation> zBWK in </translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation> sec. Used denominations:
-</translation>
     </message>
     <message>
         <source>Duration: </source>
@@ -2705,8 +2611,8 @@ Maksimum bırakılan: </translation>
         <translation>Sağlanan 'Ödeme Yapmak İçin' adresi yok, yerel ödeme oluşturun</translation>
     </message>
     <message>
-        <source>Invalid BWK address</source>
-        <translation>Geçersiz Bulwark Adresi</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Geçersiz Pivx Adresi</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2729,22 +2635,8 @@ Maksimum bırakılan: </translation>
         <translation>yeni üretilen (kullanılmayan ve bu nedenle isimsiz) yerel adrese &lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>Güvenlik seviyesi ile</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Coin gönderimini onayla</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Çok fazla girdi (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama miktarını azaltın.</translation>
     </message>
     <message>
         <source>Spend Zerocoin failed with status = </source>
@@ -2784,14 +2676,17 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Miktar</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Gir bir Bulwark addres (e.g. %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Gir bir BWK addres (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2833,16 +2728,20 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK CORE</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Görüntüyü kaydet...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Görüntüyü kaydet...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Fotoğrafı Kopyala</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Fotoğrafı Kopyala</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2860,7 +2759,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Araçlar penceresi</translation>
     </message>
     <message>
-        <source>Information</source>
+        <source>&amp;Information</source>
         <translation>bilgi</translation>
     </message>
     <message>
@@ -2884,8 +2783,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>bağlantı sayısı</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Açık</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Açık</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2928,28 +2827,28 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Geçerli veri dizininden Bulwark hata ayıklama günlük dosyasını açın. Bu, büyük günlük dosyaları için birkaç saniye sürebilir.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Geçerli veri dizininden BWK hata ayıklama günlük dosyasını açın. Bu, büyük günlük dosyaları için birkaç saniye sürebilir.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Masternodların sayısı</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Konsol</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Konsol</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Temizle konsolu</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Ağ Trafiği</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Ağ Trafiği</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Temizle</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Temizle</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2964,8 +2863,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Gitti</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Peers</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -3016,8 +2915,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Ping Time</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Cüzdan Tamiri</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Cüzdan Tamiri</translation>
     </message>
     <message>
         <source>Delete local Blockchain Folders</source>
@@ -3112,8 +3011,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Dışa:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Bulwark RPC konsola hoşgeldiniz</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>BWK RPC konsola hoşgeldiniz</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3134,10 +3033,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Blockchaini resenkronize etmeyi onaylayın</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Geçmişi görmek için ukarı ve aşağı okları kullanın, ve &lt;b&gt;Ctrl-L&lt;/b&gt; ekranı silmek için.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3187,43 +3082,43 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Önceden kullanılmış ödeme alma adresini tekrar kullanın.&lt;br&gt;Kullanılmış bir adresi tekrar kullanmanın güvenlik ve gizlilik riski mevcuttur..&lt;br&gt;Daha önce yapılmış bir ödeme talebi yeniden oluşturulmadığı sürece bunu kullanmayın.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>VAr olan ödeme alma adresini tekrar kullanın (önerilmez)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Mesaj:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Mesaj:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Yeni alma adresi ile ilişkilendirilebilecek isteğe bağlı bir etiket.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin Bulwark şebekesi üzerinden gönderilmeyecektir.</translation>
+        <source>A&amp;mount:</source>
+        <translation>Miktar:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Talep açıldığında görüntülenecek, ödeme isteğine eklemek için isteğe bağlı bir mesaj.&lt;br&gt;Not: Mesaj, ödemenin Bulwark şebekesi üzerinden gönderilmeyecektir.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin BWK şebekesi üzerinden gönderilmeyecektir.</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Talep açıldığında görüntülenecek, ödeme isteğine eklemek için isteğe bağlı bir mesaj.&lt;br&gt;Not: Mesaj, ödemenin BWK şebekesi üzerinden gönderilmeyecektir.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Bu formu ödeme talebinde bulunmak için kullanın.Tüm kısımlar &lt;b&gt;tercihe bağlıdır&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiket:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiket:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>İsteğe bağlı olarak isteğe bağlı bir miktar. Belirli bir miktar talep etmemek için bu boş bırakın veya sıfırlayın.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>miktar:</translation>
-    </message>
-    <message>
-        <source>Request payment</source>
+        <source>&amp;Request payment</source>
         <translation>Ödeme talep et</translation>
     </message>
     <message>
@@ -3266,6 +3161,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <source>Copy amount</source>
         <translation>Miktarı kopyala</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Adresi Kopyala</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -3274,16 +3173,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>QR Code</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Kopyala URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Kopyala &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copy Address</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Copy &amp;Address</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Görüntüyü kaydet...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Görüntüyü kaydet...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3335,6 +3234,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Message</source>
         <translation>Mesaj</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>adres</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3428,8 +3331,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>UTXO Boyutu:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3484,16 +3387,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Koinler otomatik seçildi</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Özel ücret 1000 uBulwark olarak ayarlanmış ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uBulwark öder,&lt;br /&gt;"en az" ise 1000 uBulwark öder. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Özel ücret 1000 uPIV olarak ayarlanmış ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uPIV öder,&lt;br /&gt;"en az" ise 1000 uPIV öder. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Özel ücret 1000 uBulwark olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uBulwark ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uBulwark ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Özel ücret 1000 uPIV olarak ayarlanırsa ve işlem sadece 250 bayt ise, "kilobayt başına" ücret karşılığında yalnızca 250 uPIV ücreti verilir,&lt;br /&gt;"toplam en az" ise 1000 uPIV ödüyor. Bir kilobayttan daha büyük işlemler için kilobayt ödersiniz.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
-        <translation>Yalnızca minimum ücreti ödemek, işlem hacmi bloklardaki alana göre daha az olduğu sürece iyidir.&lt;br /&gt;Ancak, bunun, Bulwark işlemleri için ağın işleyebileceğinden daha fazla talep olması durumunda, onaylama işleminde asla sonuçlanamayacağına dikkat edin.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
+        <translation>Yalnızca minimum ücreti ödemek, işlem hacmi bloklardaki alana göre daha az olduğu sürece iyidir.&lt;br /&gt;Ancak, bunun, BWK işlemleri için ağın işleyebileceğinden daha fazla talep olması durumunda, onaylama işleminde asla sonuçlanamayacağına dikkat edin.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3520,7 +3423,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Gönderme işlemini onayla</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>S&amp;end</source>
         <translation>Gönder</translation>
     </message>
     <message>
@@ -3528,7 +3431,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Formun tüm kısımlarını temizle</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Hepsini temizle</translation>
     </message>
     <message>
@@ -3536,12 +3439,12 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Tek seferde birçok kişiye gönder</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
+        <source>Add &amp;Recipient</source>
         <translation>Alıcı ekle</translation>
     </message>
     <message>
         <source>Anonymized BWK</source>
-        <translation>anonim edilmiş Bulwark</translation>
+        <translation>anonim edilmiş BWK</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3589,7 +3492,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>Uyarı: Geçersiz Bulwark adresi</translation>
+        <translation>Uyarı: Geçersiz BWK adresi</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3679,12 +3582,12 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Bu normal bir ödeme.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
+        <source>Pay &amp;To:</source>
         <translation>şuna öde:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>Ödemeyi göndermek için Bulwark adresi</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>Ödemeyi göndermek için BWK adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3707,15 +3610,15 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Bu girişi kaldır</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiket:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiket:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Kullanılan adresler listesine eklemek için bu adres için bir etiket girin</translation>
     </message>
     <message>
-        <source>Amount:</source>
+        <source>A&amp;mount:</source>
         <translation>Miktar:</translation>
     </message>
     <message>
@@ -3723,8 +3626,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Mesaj:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>Bulwark e eklenmiş olan bir mesaj: İşleminizle beraber saklanacak olan URI hatırlamanız için. Not: Bu mesaj Bulwark ağında yayınlanmayacak.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>BWK e eklenmiş olan bir mesaj: İşleminizle beraber saklanacak olan URI hatırlamanız için. Not: Bu mesaj BWK ağında yayınlanmayacak.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3750,8 +3653,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core kapanıyor ...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core kapanıyor ...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3765,16 +3668,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>İmzalar - Bir Mesaj İmzalama / Doğrulama</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Sign Message</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Sign Message</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Sahip olduğunuzu kanıtlamak için adreslerinizle mesaj imzalayabilirsiniz. Kimlik avı saldırıları sizi kimliğini onlara yazmaya kandırmaya çalışabilir, çünkü belirsiz bir şey imzalamamaya dikkat edin. Kabul ettiğiniz tamamen ayrıntılı ifadeleri yalnızca imzalayın.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Ile mesaj imzalamak için Bulwark adresi</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>Ile mesaj imzalamak için BWK adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3805,19 +3708,19 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Geçerli imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Bu Bulwark adresinin sahibi olduğunuzu kanıtlamak için mesajı imzala</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Bu BWK adresinin sahibi olduğunuzu kanıtlamak için mesajı imzala</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Mesajın imzalandığı Bulwark adresi</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>Mesajın imzalandığı BWK adresi</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Belirtilen Bulwark adresi ile imzalanmış olduğundan emin olmak için iletiyi doğrulayın</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Belirtilen BWK adresi ile imzalanmış olduğundan emin olmak için iletiyi doğrulayın</translation>
     </message>
     <message>
-        <source>Sign Message</source>
+        <source>Sign &amp;Message</source>
         <translation>İmzalama ve Mesaj</translation>
     </message>
     <message>
@@ -3825,20 +3728,20 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Tüm imzalama mesajı alanlarını sıfırlayın</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Hepsini temizle</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>İletiyi Doğrula</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;İletiyi Doğrula</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>İmzalı adres, ileti girin (tam olarak satır sonlarını, boşlukları, sekmeleri vs. kopyaladığınızdan emin olun) ve iletiyi doğrulamak için aşağıdaki imzayı yazın. Bir adam-in-the-middle saldırısı tarafından kandırdın önlemek için imzalı mesajın kendisinden daha fazla imza okumamaya dikkat edin.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Doğrula  Mesaj</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Doğrula &amp; Mesaj</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3900,8 +3803,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark CORE</translation>
+        <source>BWK Core</source>
+        <translation>BWK CORE</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3916,8 +3819,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>The Dash Core developers</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>The Bulwark Core developers</translation>
+        <source>The BWK Core developers</source>
+        <translation>The BWK Core developers</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4436,14 +4339,14 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Koinleri göder</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 Bulwark ile sınırlıdır.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 BWK ile sınırlıdır.</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Çıkart</translation>
     </message>
     <message>
@@ -4464,7 +4367,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Adet</translation>
@@ -4481,13 +4384,9 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <source>Select/Deselect All</source>
         <translation>Seç/Çıkar Hepsini</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Harcanabilir</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = tx meta verileri, örneğin hesap sahibi ve ödeme talebi bilgileri, 2 = tx meta verileri bırak)</translation>
@@ -4513,8 +4412,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Hesaplanan akümülatör kontrol noktası, blok indeksiyle kaydedilen kontrol noktası değildir.</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>Veri dizini %s üzerinde bir kilit elde edemiyor. Bulwark Core muhtemelen zaten çalışıyor.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>Veri dizini %s üzerinde bir kilit elde edemiyor. BWK Core muhtemelen zaten çalışıyor.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4565,20 +4464,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>En iyi blok değiştirildiğinde komutu yürütün (cmd'deki %s yerine blok karması verilir)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Bundan daha küçük ücretler (Bulwark / Kb cinsinden), aktarma için sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Bundan daha küçük ücretler (BWK / Kb cinsinden), aktarma için sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Bundan daha küçük ücretler (Bulwark / Kb cinsinden), işlem yaratmada sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Bundan daha küçük ücretler (BWK / Kb cinsinden), işlem yaratmada sıfır ücret olarak kabul edilir (varsayılan: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Bellek havuzundan disk günlüğüne her veritabanı aktivitesini temizle&lt;n&gt; megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Teyit edilmemiş isimler buldular, devam ettiklerini onaylayana kadar bekleyecekler.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -4615,14 +4510,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Done loading</source>
         <translation>Yükleme tamamlandı</translation>
-    </message>
-    <message>
-        <source>Entries are full.</source>
-        <translation>Girişler full</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Masternod'a bağlanırken hata oluştu.</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
@@ -4699,10 +4586,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Masternode seçenekleri:</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Rescanning...</source>
         <translation>Yeniden taranıyor...</translation>
     </message>
@@ -4719,16 +4602,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Bu yardım mesajı</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Bu masternod değil</translation>
-    </message>
-    <message>
         <source>Transaction amount too small</source>
         <translation>İşlem miktarı çok düşük</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>İşlem geçersiz</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -4737,10 +4612,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Verifying wallet...</source>
         <translation>Cüzdan doğrulanıyor..</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Cüzdan kilitli.</translation>
     </message>
     <message>
         <source>Wallet options:</source>

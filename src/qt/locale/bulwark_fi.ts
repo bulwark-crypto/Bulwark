@@ -10,36 +10,36 @@
         <translation>Luo uusi osoite</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Uusi</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Uusi</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopioi valittu osoite leikepöydälle</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopioi</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopioi</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Poista valittu osoite listalta</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Poista</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Poista</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Vie tiedot nykyisestä välilehdestä tiedostoon</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Vie</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Vie</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Sulje</translation>
+        <source>C&amp;lose</source>
+        <translation>Su&amp;lje</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Valitse osoite jolla vastaanottaa kolikot</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Valitse</translation>
+        <source>C&amp;hoose</source>
+        <translation>V&amp;alitse</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Vastaanottavat osoitteet</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat sinun Bulwark osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat sinun BWK osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Nämä ovat sinun Bulwark osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Nämä ovat sinun BWK osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopioi osoite</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Kopioi osoite</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Kopioi Nimike</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Kopioi &amp;Nimike</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Muokkaa</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Muokkaa</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -172,16 +172,16 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella Bulwarkien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella PIVien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Oletko varma että tahdot salata lompakkosi?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki Bulwarkisi&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki PIVisi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -234,8 +234,8 @@
         <translation>BIP 38 työkalu</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Salaus</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Salaus</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -270,24 +270,24 @@
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Salaus Avain</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Salaus &amp;Avain</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Tyhjennä Kaikki</translation>
+        <source>Clear &amp;All</source>
+        <translation>Tyhjennä &amp;Kaikki</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 salauksen avaus</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 salauksen avaus</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Syötä BIP 38 salattu yksityisavain. Syötä salausavain laatikkoon. Paina Avaa Salaus tuottaaksesi yksityisavaimen. Kun avain on dekryptattu, painamalla "Import osoite" lisää tämän yksityisavaimen lompakkoon.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Salauksen avaus Avain</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Salauksen avaus &amp;Avain</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -373,136 +373,136 @@
         <translation>Solmu</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Yleisnäkymä</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Yleisnäkymä</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Näytä yleinen näkymä lompakosta</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Lähetä</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Lähetä</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Vastaanota</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Vastaanota</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Rahansiirrot</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Rahansiirrot</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Tarkastele rahansiirto historiaa</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Poistu</translation>
+        <source>E&amp;xit</source>
+        <translation>P&amp;oistu</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Lopeta ohjelma</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Tietoa Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Tietoa &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Näytä tietoja Qt:stä</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Vaihtoehdot...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Vaihtoehdot...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Näytä / Piilota</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Näytä / Piilota</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Näytä tai piilota pääikkuna</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Salaa lompakko...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Salaa lompakko...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Salaa yksityisavaimet jotka kuuluvat lompakkoosi</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Varmuuskopioi lompakko...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Varmuuskopioi lompakko...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Varmuuskopioi lompakko toiseen sijaintiin</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Vaihda salausavain...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Vaihda salausavain...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Vaihda salausavain, jota käytetään lompakon salaukseen</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Avaa lompakko...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Avaa lompakko...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Avaa lompakko</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Lukitse lompakko</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Lukitse lompakko</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Allekirjoita viesti...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Allekirjoita &amp;viesti...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Vahvista viesti...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>Vahvista &amp;viesti...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informaatio</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informaatio</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Näytä diagnostiikka informaatio</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Debug konsoli</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Debug konsoli</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Avaa debuggaus konsoli</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Verkkoliikenne monitori</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Verkkoliikenne monitori</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Näytä verkkoliikenne monitori</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Peer lista</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Peer lista</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Näytä peer info</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Lompakko Korjaa</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>Lompakko &amp;Korjaa</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -513,144 +513,144 @@
         <translation>Avaa konfiguraatio tiedosto</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Näytä automaattiset Varmuuskopiot</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Näytä automaattiset &amp;Varmuuskopiot</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Näytä automaattisesti luodut varmuuskopiot lompakosta</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Lähettävät osoitteet...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Lähettävät osoitteet...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Näytä lista käytettävistä lähettävistä osoitteista ja nimikkeistä</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Vastaanottavat osoitteet...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Vastaanottavat osoitteet...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Näytä lista käytettävistä vastaanottavista osoitteista ja nimikkeistä</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Avaa URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Avaa &amp;URI...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Komentolinja vaihtoehdot</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Komentolinja vaihtoehdot</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Synkronisoidaan lisätietoja: %p%</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Tiedosto</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Tiedosto</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Asetukset</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Asetukset</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Työkalut</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Työkalut</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Apua</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Apua</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ydin</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ydin</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Lähetä kolikkoja Bulwark osoitteeseen</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Lähetä kolikkoja BWK osoitteeseen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Pyydä maksuja (Generoi QR koodeja ja Bulwark: URIja)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Pyydä maksuja (Generoi QR koodeja ja pivx: URIja)</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodet</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodet</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Selaa masternodeja</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Bulwark Core ytimestä</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>BWK Core &amp;ytimestä</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Näytä tietoja Bulwark Ytimestä</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Näytä tietoja BWK Ytimestä</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Muokkaa konfiguraatio vaihtoehtoja Bulwark:lle</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Muokkaa konfiguraatio vaihtoehtoja BWK:lle</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
         <translation>Allekirjoita viestejä todistaaksesi, että omistat ne.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä Bulwark osoiteella.</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä BWK osoiteella.</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 työkalu</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 työkalu</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Salaa ja avaa yksityisavainten salaus käyttämällä salasanaa</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>MultiSend asetukset</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Avaa lompakko Konfiguraatiotiedosto</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Avaa lompakko &amp;Konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Avaa Masternode konfiguraatiotiedosto</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Avaa &amp;Masternode konfiguraatiotiedosto</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Avaa Masternode konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Avaa Bulwark: URI tai pyydä maksua</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Avaa BWK: URI tai pyydä maksua</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Blockchain tutkija</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Blockchain tutkija</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Lohkon tutkija näkymä</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Näytä Bulwark Ydin apuviesti saadaksesi lista mahdollisista Bulwark komentolinja komennoista.</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Näytä BWK Ydin apuviesti saadaksesi lista mahdollisista BWK komentolinja komennoista.</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Ydin asiakasohjelma</translation>
+        <source>BWK Core client</source>
+        <translation>BWK Ydin asiakasohjelma</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -882,8 +882,8 @@
         <translation>Muokkaa osoitetta</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Osoite</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Osoite</translation>
     </message>
     <message>
         <source>New receiving address</source>
@@ -906,10 +906,21 @@
     </message>
     </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ydin</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ydin</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -927,12 +938,12 @@
         <translation>Tervetuloa</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Tervetuloa Bulwark Ytimeen.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Tervetuloa BWK Ytimeen.</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ydin</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ydin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -962,12 +973,12 @@
         <translation>Aktiivinen</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Aloita kaikki</translation>
+        <source>Start &amp;all</source>
+        <translation>Aloita &amp;kaikki</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Päivitä tila</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Päivitä tila</translation>
     </message>
     <message>
         <source>0</source>
@@ -1057,37 +1068,8 @@
         <translation>(ei nimikettä)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Syötetty osoite:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>on invalidi. Ole hyvä ja tarkista osoite.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>MultiSend vektorisi kokonaismäärä on yli 100% panoksesi lohkopalkkiosta.</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Syötä 1 - 100 prosenttia</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend vektori</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Poistettu</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Osoitetta ei löytynyt</translation>
     </message>
 </context>
 <context>
@@ -1103,61 +1085,6 @@ Please check the address and try again.</source>
     <message>
         <source>Amount:</source>
         <translation>Määrä:</translation>
-    </message>
-    </context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfiguroi Hämäys</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Perus Yksityisyys</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Korkea Yksityisyys</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimi Yksityisyys</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Valitse yksityisyyden taso.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Käytä 16 erillistä masternodea</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 Bulwark anonymoidaksesi 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Bulwark anonymoidaksesi 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Tämä on hitain ja turvallisin vaihtoehto. Täydesti anonymisoiminen ei maksa mitään.</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 per 10000 Bulwark, jotka anonymisoit.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Hämäys konfiguraatio</translation>
     </message>
     </context>
 <context>
@@ -1182,8 +1109,8 @@ Please check the address and try again.</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Lompakko</translation>
+        <source>W&amp;allet</source>
+        <translation>L&amp;ompakko</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1194,96 +1121,92 @@ Please check the address and try again.</source>
         <translation>Salli sisääntulevat yhteydet</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Yhdistä SOCKS5 proxyn kautta (default proxy):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Yhdistä SOCKS5 proxyn kautta (default proxy):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Ekspertti</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Automaattisesti käynnistä Bulwark kun kirjaudut sisään.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Automaattisesti käynnistä BWK kun kirjaudut sisään.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Aloita Bulwark järjestelmän kirjautumisessa</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;Aloita BWK järjestelmän kirjautumisessa</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>Ota käyttöön coin kontrolli palvelut</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Ota käyttöön coin &amp;kontrolli palvelut</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
         <translation>Näytä Masternode välilehti</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Käytä vahvistamaton vaihtoraha</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Käytä vahvistamaton vaihtoraha</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Verkko</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Verkko</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
         <translation>Käyttöliittymän kielen voi säätää täällä. Tämä asetus tulee voimaan uudelleenkäynnistettyäsi lompakon.</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Bulwark verkkoon SOCKS5 proxyn kautta</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä BWK verkkoon SOCKS5 proxyn kautta</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>Proxyn IP osoite  (esim. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Portti:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Portti:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Proxyn portti (esim. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Ikkuna</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Ikkuna</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Näytä vain tarjotin ikoni pienennettyäsi ikkunan.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>Pienennä tarjottimelle tehtäväpalkin sijaan</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;Pienennä tarjottimelle tehtäväpalkin sijaan</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Pienennä ikkuna poistumisen sijaan kun ikkuna suljetaan. Kun tämä vaihtoehto on valittuna, sovellus sulkeutuu vain kun se Lopetetaan valikosta.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>Pienennä suljettaessa</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>P&amp;ienennä suljettaessa</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Näyttö</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Näyttö</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
-        <translation>Käyttöliittymän kieli:</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>Käyttöliittymän &amp;kieli:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Käyttöliittymän teema:</translation>
-    </message>
-    <message>
-        <source>Unit to show amounts in:</source>
-        <translation>Yksikkö jossa määrä näytetään:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1298,16 +1221,16 @@ Please check the address and try again.</source>
         <translation>Palauta kaikki asetukset oletuksiin</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Palauta valinnat</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Palauta valinnat</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Peruuta</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Peruuta</translation>
     </message>
     <message>
         <source>default</source>
@@ -1394,14 +1317,6 @@ Please check the address and try again.</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Määrä:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Määrä:</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Valitse aikaisemmin käytetty osoite</translation>
     </message>
@@ -1418,16 +1333,16 @@ Please check the address and try again.</source>
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Nimike:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Nimike:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Syötä nimike tälle osoittelle lisätäksesi se käytettävien osoitteiden listaan</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Määrä:</translation>
+        <source>A&amp;mount:</source>
+        <translation>M&amp;äärä:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -1462,17 +1377,12 @@ Please check the address and try again.</source>
         <translation>Muutos:</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopioi määrä</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopioi määrä</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Vahvista kolikoiden lähetys</translation>
     </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -1480,16 +1390,20 @@ Please check the address and try again.</source>
         <source>Amount</source>
         <translation>Määrä</translation>
     </message>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Ydin</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Tallenna Kuva...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Tallenna Kuva...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Kopioi Kuva</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopioi Kuva</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -1503,8 +1417,8 @@ Please check the address and try again.</source>
         <translation>Työkaluikkuna</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informaatio</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informaatio</translation>
     </message>
     <message>
         <source>General</source>
@@ -1519,8 +1433,8 @@ Please check the address and try again.</source>
         <translation>Yhteyksien määrä</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Avaa</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Avaa</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -1535,28 +1449,28 @@ Please check the address and try again.</source>
         <translation>Lohko ketju</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Avaa Bulwark debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Avaa BWK debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Masternodien määrä</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Konsoli</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Konsoli</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Tyhjennä konsoli</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Verkkoliikenne</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Verkkoliikenne</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Tyhjennä</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Tyhjennä</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -1611,8 +1525,8 @@ Please check the address and try again.</source>
         <translation>Ping aika</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Lompakon korjaus</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Lompakon korjaus</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -1647,8 +1561,8 @@ Please check the address and try again.</source>
         <translation>Ulos:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Tervetuloa Bulwark RPC konsoliin.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Tervetuloa BWK RPC konsoliin.</translation>
     </message>
     <message>
         <source>never</source>
@@ -1674,44 +1588,44 @@ Please check the address and try again.</source>
         <translation>Uudelleenkäytä yksi aikaisemmista vastaanottavista osoitteista. &lt;br&gt; Osoitteen uudelleenkäytössä on turvallisuus- ja yksityisyysongelmia.&lt;br&gt; Älä käytä tätä ellet halua uudelleen käyttää vanhaa maksupyyntöä.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
-        <translation>Uudelleenkäytä olemassaoleva vastaanottava osoite (Ei suositeltu)</translation>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>U&amp;udelleenkäytä olemassaoleva vastaanottava osoite (Ei suositeltu)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Viesti:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Viesti:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Vaihtoehtoinen nimike uudelle vastaanottavalle osoitteelle</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana Bulwark verkolle.</translation>
+        <source>A&amp;mount:</source>
+        <translation>M&amp;äärä:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana Bulwark  verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana BWK verkolle.</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana BWK  verkolle.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Käytä tätä lomaketta luodaksesi maksupyyntöjä. Kaikki kentät ovat &lt;b&gt; vaihtoehtoisia&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Nimike:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Nimike:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Pyydä vaihtoehtoinen määrä. Jätä tämä tyhjäksi tai 0, jos haluat pyytää ennaltamääräämättömän summan</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Määrä:</translation>
-    </message>
-    <message>
-        <source>Request payment</source>
-        <translation>Pyydä maksua</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Pyydä maksua</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -1753,6 +1667,10 @@ Please check the address and try again.</source>
         <source>Copy amount</source>
         <translation>Kopioi määrä</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopioi osoite</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -1761,16 +1679,16 @@ Please check the address and try again.</source>
         <translation>QR Koodi</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Kopioi URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Kopioi &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopioi Osoite</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Kopioi &amp;Osoite</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Tallenna Kuva...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Tallenna Kuva...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -1822,6 +1740,10 @@ Please check the address and try again.</source>
     <message>
         <source>Message</source>
         <translation>Viesti</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -1887,8 +1809,8 @@ Please check the address and try again.</source>
         <translation>Muutos:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Choose...</source>
@@ -1927,24 +1849,24 @@ Please check the address and try again.</source>
         <translation>Vahvista lähetys</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Lähetä</translation>
+        <source>S&amp;end</source>
+        <translation>L&amp;ähetä</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Tyhjennä kaikki kentät lomakkeesta</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Tyhjennä Kaikki</translation>
+        <source>Clear &amp;All</source>
+        <translation>Tyhjennä &amp;Kaikki</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Lähetä useammalle vastaanottajalle kerralla</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>Lisää Vastaanottaja</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Lisää &amp;Vastaanottaja</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -1964,7 +1886,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>Varoitus: Virheellinen Bulwark osoite</translation>
+        <translation>Varoitus: Virheellinen BWK osoite</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2014,8 +1936,8 @@ Please check the address and try again.</source>
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>Bulwark osoite johon maksu lähetetään</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>BWK osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2038,16 +1960,16 @@ Please check the address and try again.</source>
         <translation>Poista tämä merkintä</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Nimike:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Nimike:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Syötä nimike tälle osoittelle lisätäksesi se käytettävien osoitteiden listaan</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Määrä:</translation>
+        <source>A&amp;mount:</source>
+        <translation>M&amp;äärä:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -2057,8 +1979,8 @@ Please check the address and try again.</source>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark core sammuu...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK core sammuu...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2068,16 +1990,16 @@ Please check the address and try again.</source>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>Sign Message</source>
-        <translation>Allekirjoita viesti</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Allekirjoita viesti</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Voit allekirjoittaa viestejä osoitteillasi todistaaksesi, että omistat ne. Ole varovainen ettet allekirjoita mitään kummallista, sillä kalasteluyritykset saattavat yrittää huijata sinut luovuttamaan tietoja. Allekirjoita vain täysin yksityiskohtaisia sanomia, jotka hyväksyt.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark osoite, jolla viesti allekirjoitetaan</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2108,36 +2030,36 @@ Please check the address and try again.</source>
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Bulwark osoitteen</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän BWK osoitteen</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark osoite, jolla viesti allekirjoitettiin</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Bulwark osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla BWK osoitteella.</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Allekirjoita Viesti</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Allekirjoita &amp;Viesti</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Tyhjennä kaikki allekirjoita viesti kentät</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Tyhjennä Kaikki</translation>
+        <source>Clear &amp;All</source>
+        <translation>Tyhjennä &amp;Kaikki</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Vahvista Viesti</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Vahvista Viesti</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Vahvista Viesti</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Vahvista &amp;Viesti</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -2199,8 +2121,8 @@ Please check the address and try again.</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ydin</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ydin</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -2215,8 +2137,8 @@ Please check the address and try again.</source>
         <translation>Dash Core kehittäjät</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>Bulwark core kehittäjät</translation>
+        <source>The BWK Core developers</source>
+        <translation>BWK core kehittäjät</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2490,8 +2412,8 @@ Please check the address and try again.</source>
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Vie</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Vie</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -2511,14 +2433,14 @@ Please check the address and try again.</source>
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Varoitus: Verkko ei näytä olevan samaa mieltä! Jotkin mainaajat saattavat kokea ongelmia.</translation>
@@ -2548,10 +2470,6 @@ Please check the address and try again.</source>
         <translation>Lataus valmis</translation>
     </message>
     <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Virhe Masternodeen yhdistyksessä</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Virhe aloittaessa lohko tietokantaa</translation>
     </message>
@@ -2568,8 +2486,8 @@ Please check the address and try again.</source>
         <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko korruptoitunut</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version Bulwark Coresta</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version BWK Coresta</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
@@ -2588,20 +2506,8 @@ Please check the address and try again.</source>
         <translation>Virhe: Lompakko lukittu, ei voida luoda rahansiirtoa!</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Viimeistellään rahansiirto.</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Tuodaan...</translation>
-    </message>
-    <message>
-        <source>Incompatible mode.</source>
-        <translation>Yhteensopimaton tila.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Yhteensopimaton versio.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2614,10 +2520,6 @@ Please check the address and try again.</source>
     <message>
         <source>Invalid private key.</source>
         <translation>Virheellinen yksityisavain.</translation>
-    </message>
-    <message>
-        <source>Invalid script detected.</source>
-        <translation>Virheellinen skripti havaittu.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -2636,20 +2538,12 @@ Please check the address and try again.</source>
         <translation>Lataa lompakkoa...</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Lukitus on jo käytössä.</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Vaihtoehdot:</translation>
     </message>
     <message>
         <source>Rescanning...</source>
         <translation>Skannaa uudelleen...</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Sessio ei valmis!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -2696,28 +2590,12 @@ Please check the address and try again.</source>
         <translation>Rahansiirtojen tulee olla positiivisia</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Rahansiirto luotu onnistuneesti.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Rahansiirron taksat ovat liian korkeat.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Rahansiirto ei onnistu</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Rahansiirto liian iso taksaan nähden</translation>
     </message>
     <message>
         <source>Transaction too large</source>
         <translation>Rahansiirto liian suuri</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Lähetetään viimeinen rahansiirto.</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -2736,10 +2614,6 @@ Please check the address and try again.</source>
         <translation>Tarkistaa lompakkoa...</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Lompakko on lukittu.</translation>
-    </message>
-    <message>
         <source>Wallet options:</source>
         <translation>Lompakon vaihtoehdot:</translation>
     </message>
@@ -2750,10 +2624,6 @@ Please check the address and try again.</source>
     <message>
         <source>Warning: This version is obsolete, upgrade required!</source>
         <translation>Varoitus: Tämä versio on vanha, päivitys vaadittu!</translation>
-    </message>
-    <message>
-        <source>Will retry...</source>
-        <translation>Yrittää uudelleen...</translation>
     </message>
     <message>
         <source>on startup</source>

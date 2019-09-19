@@ -1,5 +1,6 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_WALLETVIEW_H
@@ -8,9 +9,9 @@
 #include "amount.h"
 #include "askpassphrasedialog.h"
 #include "masternodelist.h"
-#include "proposallist.h"
 
 #include <QStackedWidget>
+#include <guiinterface.h>
 
 class BitcoinGUI;
 class ClientModel;
@@ -35,10 +36,11 @@ QT_END_NAMESPACE
   It communicates with both the client and the wallet models to give the user an up-to-date view of the
   current core state.
 */
-class WalletView : public QStackedWidget {
+class WalletView : public QStackedWidget
+{
     Q_OBJECT
 
-  public:
+public:
     explicit WalletView(QWidget* parent);
     ~WalletView();
 
@@ -57,7 +59,7 @@ class WalletView : public QStackedWidget {
 
     void showOutOfSyncWarning(bool fShow);
 
-  private:
+private:
     ClientModel* clientModel;
     WalletModel* walletModel;
 
@@ -68,15 +70,13 @@ class WalletView : public QStackedWidget {
     SendCoinsDialog* sendCoinsPage;
     BlockExplorer* explorerWindow;
     MasternodeList* masternodeListPage;
-    QWidget* proposalListPage;
 
     TransactionView* transactionView;
-    ProposalList* proposalList;
 
     QProgressDialog* progressDialog;
     QLabel* transactionSum;
 
-  public slots:
+public slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
@@ -87,8 +87,6 @@ class WalletView : public QStackedWidget {
     void gotoBlockExplorerPage();
     /** Switch to privacy page */
     void gotoPrivacyPage();
-    /** Switch to proposal page */
-    void gotoProposalPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
@@ -117,7 +115,7 @@ class WalletView : public QStackedWidget {
     /** Change encrypted wallet passphrase */
     void changePassphrase();
     /** Ask for passphrase to unlock wallet temporarily */
-    void unlockWallet();
+    void unlockWallet(AskPassphraseDialog::Context context);
     /** Lock wallet */
     void lockWallet();
     /** Toggle wallet lock state */
@@ -137,7 +135,7 @@ class WalletView : public QStackedWidget {
     /** Update selected BWK amount from transactionview */
     void trxAmount(QString amount);
 
-  signals:
+signals:
     /** Signal that we want to show the main window */
     void showNormalIfMinimized();
     /**  Fired when a message should be reported to the user */

@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2014 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2017-2019 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_PRIVACYDIALOG_H
@@ -19,7 +19,8 @@
 class OptionsModel;
 class WalletModel;
 
-namespace Ui {
+namespace Ui
+{
 class PrivacyDialog;
 }
 
@@ -28,10 +29,11 @@ class QModelIndex;
 QT_END_NAMESPACE
 
 /** Dialog for requesting payment of bitcoins */
-class PrivacyDialog : public QDialog {
+class PrivacyDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     enum ColumnWidths {
         DATE_COLUMN_WIDTH = 130,
         LABEL_COLUMN_WIDTH = 120,
@@ -44,16 +46,16 @@ class PrivacyDialog : public QDialog {
 
     void setModel(WalletModel* model);
     void showOutOfSyncWarning(bool fShow);
-    void setZBwkControlLabels(int64_t nAmount, int nQuantity);
+    void setZTelosControlLabels(int64_t nAmount, int nQuantity);
 
-  public slots:
+public slots:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
                     const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
-  protected:
+protected:
     virtual void keyPressEvent(QKeyEvent* event);
 
-  private:
+private:
     Ui::PrivacyDialog* ui;
     QTimer* timer;
     GUIUtil::TableViewLastColumnResizingFixer* columnResizingFixer;
@@ -69,24 +71,24 @@ class PrivacyDialog : public QDialog {
     CAmount currentWatchUnconfBalance;
     CAmount currentWatchImmatureBalance;
 
-    int nSecurityLevel = 0;
     bool fMinimizeChange = false;
+    bool fDenomsMinimized;
 
     int nDisplayUnit;
     bool updateLabel(const QString& address);
     void sendzBWK();
 
-  private slots:
+private slots:
     void on_payTo_textChanged(const QString& address);
     void on_addressBookButton_clicked();
 //    void coinControlFeatureChanged(bool);
-    void coinControlButtonClicked();
+// MINT disabled   void coinControlButtonClicked();
 //    void coinControlChangeChecked(int);
 //    void coinControlChangeEdited(const QString&);
-    void coinControlUpdateLabels();
+// MINT disabled    void coinControlUpdateLabels();
 
-    void coinControlClipboardQuantity();
-    void coinControlClipboardAmount();
+// MINT disabled    void coinControlClipboardQuantity();
+// MINT disabled    void coinControlClipboardAmount();
 //    void coinControlClipboardFee();
 //    void coinControlClipboardAfterFee();
 //    void coinControlClipboardBytes();
@@ -94,11 +96,18 @@ class PrivacyDialog : public QDialog {
 //    void coinControlClipboardLowOutput();
 //    void coinControlClipboardChange();
 
-    void on_pushButtonMintzBWK_clicked();
+// MINT disabled    void on_pushButtonMintzBWK_clicked();
+    void on_pushButtonMintReset_clicked();
+    void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzBWK_clicked();
-    void on_pushButtonZBWKControl_clicked();
+    void on_pushButtonZTelosControl_clicked();
+    void on_pushButtonHideDenoms_clicked();
+    void on_pushButtonShowDenoms_clicked();
     void on_pasteButton_clicked();
+    void minimizeDenomsSection(bool fMinimize);
     void updateDisplayUnit();
+    void updateAutomintStatus();
+    void updateSPORK16Status();
 };
 
 #endif // BITCOIN_QT_PRIVACYDIALOG_H

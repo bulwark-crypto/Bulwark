@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,7 +10,8 @@
 
 class AddressTableModel;
 
-namespace Ui {
+namespace Ui
+{
 class EditAddressDialog;
 }
 
@@ -19,10 +21,11 @@ QT_END_NAMESPACE
 
 /** Dialog for editing an address and associated information.
  */
-class EditAddressDialog : public QDialog {
+class EditAddressDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     enum Mode {
         NewReceivingAddress,
         NewSendingAddress,
@@ -39,10 +42,10 @@ class EditAddressDialog : public QDialog {
     QString getAddress() const;
     void setAddress(const QString& address);
 
-  public slots:
+public slots:
     void accept();
 
-  private:
+private:
     bool saveCurrentRow();
 
     Ui::EditAddressDialog* ui;

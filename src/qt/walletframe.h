@@ -1,9 +1,12 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2016-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_WALLETFRAME_H
 #define BITCOIN_QT_WALLETFRAME_H
+
+#include "askpassphrasedialog.h"
 
 #include <QFrame>
 #include <QMap>
@@ -13,17 +16,17 @@ class ClientModel;
 class SendCoinsRecipient;
 class WalletModel;
 class WalletView;
-class TradingDialog;
 class BlockExplorer;
 
 QT_BEGIN_NAMESPACE
 class QStackedWidget;
 QT_END_NAMESPACE
 
-class WalletFrame : public QFrame {
+class WalletFrame : public QFrame
+{
     Q_OBJECT
 
-  public:
+public:
     explicit WalletFrame(BitcoinGUI* _gui = 0);
     ~WalletFrame();
 
@@ -38,7 +41,7 @@ class WalletFrame : public QFrame {
 
     void showOutOfSyncWarning(bool fShow);
 
-  private:
+private:
     QStackedWidget* walletStack;
     BitcoinGUI* gui;
     ClientModel* clientModel;
@@ -48,7 +51,7 @@ class WalletFrame : public QFrame {
 
     WalletView* currentWalletView();
 
-  public slots:
+public slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
@@ -65,8 +68,6 @@ class WalletFrame : public QFrame {
     void gotoBlockExplorerPage();
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
-    /** Switch to proposal page */
-    void gotoProposalPage();
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
     /** Show MultiSend Dialog **/
@@ -83,7 +84,8 @@ class WalletFrame : public QFrame {
     /** Change encrypted wallet passphrase */
     void changePassphrase();
     /** Ask for passphrase to unlock wallet temporarily */
-    void unlockWallet();
+    void unlockWallet(AskPassphraseDialog::Context context);
+    void unlockWallet(bool setContext);
     /** Lock wallet */
     void lockWallet();
     /** Toggle Wallet Lock State */

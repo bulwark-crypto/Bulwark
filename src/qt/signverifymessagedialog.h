@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,14 +10,16 @@
 
 class WalletModel;
 
-namespace Ui {
+namespace Ui
+{
 class SignVerifyMessageDialog;
 }
 
-class SignVerifyMessageDialog : public QDialog {
+class SignVerifyMessageDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     explicit SignVerifyMessageDialog(QWidget* parent);
     ~SignVerifyMessageDialog();
 
@@ -27,14 +30,14 @@ class SignVerifyMessageDialog : public QDialog {
     void showTab_SM(bool fShow);
     void showTab_VM(bool fShow);
 
-  protected:
+protected:
     bool eventFilter(QObject* object, QEvent* event);
 
-  private:
+private:
     Ui::SignVerifyMessageDialog* ui;
     WalletModel* model;
 
-  private slots:
+private slots:
     /* sign message */
     void on_addressBookButton_SM_clicked();
     void on_pasteButton_SM_clicked();

@@ -10,36 +10,36 @@
         <translation>Create a new address</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>New</translation>
+        <source>&amp;New</source>
+        <translation>&amp;New</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copy the currently selected address to the system clipboard</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copy</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copy</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Delete the currently selected address from the list</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Delete</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Delete</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Export the data in the current tab to a file</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Export</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Export</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Close</translation>
+        <source>C&amp;lose</source>
+        <translation>C&amp;lose</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Choose the address to receive coins with</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Choose</translation>
+        <source>C&amp;hoose</source>
+        <translation>C&amp;hoose</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Receiving addresses</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copy Address</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Copy Address</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Copy Label</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copy &amp;Label</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Edit</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Edit</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Confirm wallet encryption</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -235,8 +235,8 @@
         <translation>BIP 38 Tool</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Encrypt</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Encrypt</translation>
     </message>
     <message>
         <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -247,8 +247,8 @@
         <translation>Address:</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>The Bulwark address to sign the message with</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>The BWK address to sign the message with</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,40 +279,40 @@
         <translation>Copy the current signature to the system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Sign the message to prove you own this Bulwark address</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Sign the message to prove you own this BWK address</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Encrypt Key</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Encrypt &amp;Key</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reset all sign message fields</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Clear All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Clear &amp;All</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Decrypt</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Decrypt</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>The Bulwark address the message was signed with</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>The BWK address the message was signed with</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verify the message to ensure it was signed with the specified Bulwark address</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Verify the message to ensure it was signed with the specified BWK address</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Decrypt Key</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Decrypt &amp;Key</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -402,136 +402,136 @@
         <translation>Node</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Overview</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Overview</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Show general overview of wallet</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Send</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Send</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Receive</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Receive</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transactions</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transactions</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Browse transaction history</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Exit</translation>
+        <source>E&amp;xit</source>
+        <translation>E&amp;xit</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Quit application</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>About Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>About &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Show information about Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Options...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Options...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Show / Hide</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Show / Hide</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Show or hide the main Window</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Encrypt Wallet...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Encrypt Wallet...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Encrypt the private keys that belong to your wallet</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Backup Wallet...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Backup Wallet...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Backup wallet to another location</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Change Passphrase...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Change Passphrase...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Change the passphrase used for wallet encryption</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Unlock Wallet...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Unlock Wallet...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Unlock wallet</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Lock Wallet</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Lock Wallet</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Sign message...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Sign &amp;message...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verify message...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verify message...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Information</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Show diagnostic information</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Debug console</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Debug console</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Open debugging console</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Network Monitor</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Network Monitor</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Show network monitor</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Peers list</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Peers list</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Show peers info</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Wallet Repair</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>Wallet &amp;Repair</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -542,36 +542,36 @@
         <translation>Open configuration file</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Show Automatic Backups</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Show Automatic &amp;Backups</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Show automatically created wallet backups</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Sending addresses...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Sending addresses...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Show the list of used sending addresses and labels</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Receiving addresses...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Receiving addresses...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Show the list of used receiving addresses and labels</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Open URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Open &amp;URI...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Command-line options</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Command-line options</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
@@ -582,116 +582,116 @@
         <translation>Synchronizing additional data: %p%</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>File</translation>
+        <source>&amp;File</source>
+        <translation>&amp;File</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Settings</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Settings</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Tools</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Tools</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Help</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Send coins to a Bulwark address</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Send coins to a BWK address</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Request payments (generates QR codes and Bulwark: URIs)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Request payments (generates QR codes and pivx: URIs)</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Browse masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>About Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;About BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Show information about Bulwark Core</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Show information about BWK Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Modify configuration options for Bulwark</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Modify configuration options for BWK</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Sign messages with your Bulwark addresses to prove you own them</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Sign messages with your BWK addresses to prove you own them</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Bulwark addresses</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Verify messages to ensure they were signed with specified BWK addresses</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 tool</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 tool</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Encrypt and decrypt private keys using a passphrase</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>MultiSend Settings</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Open Wallet Configuration File</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Open Wallet &amp;Configuration File</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Open Masternode Configuration File</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Open &amp;Masternode Configuration File</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Open Masternode configuration file</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Open a Bulwark: URI or payment request</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Open a BWK: URI or payment request</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Blockchain explorer</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Blockchain explorer</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Block explorer window</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Show the BWK Core help message to get a list with possible BWK command-line options</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core client</translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core client</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n active connection(s) to Bulwark network</numerusform><numerusform>%n active connection(s) to Bulwark network</numerusform></translation>
+        <source>%n active connection(s) to BWK network</source>
+        <translation><numerusform>%n active connection(s) to BWK network</numerusform><numerusform>%n active connection(s) to BWK network</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -837,8 +837,8 @@ Address: %4
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1106,16 +1106,16 @@ Address: %4
         <translation>Edit Address</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Label</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Label</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>The label associated with this address list entry</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Address</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Address</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1138,8 +1138,8 @@ Address: %4
         <translation>Edit sending address</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>The entered address "%1" is not a valid Bulwark address.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>The entered address "%1" is not a valid BWK address.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1184,16 +1184,16 @@ Address: %4
         <translation>version</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>About Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>About BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1239,16 +1239,16 @@ Address: %4
         <translation>Welcome</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Welcome to Bulwark Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Welcome to BWK Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>As this is the first time the program is launched, you can choose where BWK Core will store its data.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1259,8 +1259,8 @@ Address: %4
         <translation>Use a custom data directory:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1322,20 +1322,20 @@ Address: %4
         <translation>Pubkey</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Start alias</translation>
+        <source>S&amp;tart alias</source>
+        <translation>S&amp;tart alias</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Start all</translation>
+        <source>Start &amp;all</source>
+        <translation>Start &amp;all</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Start MISSING</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Start &amp;MISSING</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Update status</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Update status</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1401,12 +1401,12 @@ Address: %4
         <translation>Enter Address to Send to</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <translation>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</translation>
     </message>
@@ -1544,48 +1544,48 @@ Please check the address and try again.</translation>
         <translation>Please select a privacy level.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Use 2 separate masternodes to mix funds up to 10000 Bulwark</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 BWK</source>
+        <translation>Use 2 separate masternodes to mix funds up to 10000 BWK</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Use 8 separate masternodes to mix funds up to 10000 Bulwark</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 BWK</source>
+        <translation>Use 8 separate masternodes to mix funds up to 10000 BWK</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Use 16 separate masternodes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</translation>
+        <source>This option is the quickest and will cost about ~0.025 BWK to anonymize 10000 BWK</source>
+        <translation>This option is the quickest and will cost about ~0.025 BWK to anonymize 10000 BWK</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</translation>
+        <source>This option is moderately fast and will cost about 0.05 BWK to anonymize 10000 BWK</source>
+        <translation>This option is moderately fast and will cost about 0.05 BWK to anonymize 10000 BWK</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>This is the slowest and most secure option. Using maximum anonymity will cost</translation>
     </message>
     <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 Bulwark per 10000 Bulwark you anonymize.</translation>
+        <source>0.1 BWK per 10000 BWK you anonymize.</source>
+        <translation>0.1 BWK per 10000 BWK you anonymize.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
         <translation>Obfuscation Configuration</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening BWK's configuration screen.</source>
+        <translation>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening BWK's configuration screen.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening BWK's configuration screen.</source>
+        <translation>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening BWK's configuration screen.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening BWK's configuration screen.</source>
+        <translation>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening BWK's configuration screen.</translation>
     </message>
 </context>
 <context>
@@ -1618,36 +1618,36 @@ Please check the address and try again.</translation>
         <translation>Options</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Main</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Main</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Size of database cache</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Size of &amp;database cache</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
-        <translation>Number of script verification threads</translation>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Number of script &amp;verification threads</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Wallet</translation>
+        <source>W&amp;allet</source>
+        <translation>W&amp;allet</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1658,20 +1658,20 @@ Please check the address and try again.</translation>
         <translation>Allow incoming connections</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Connect through SOCKS5 proxy (default proxy):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Automatically start Bulwark after logging in to the system.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Automatically start BWK after logging in to the system.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Start Bulwark on system login</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;Start BWK on system login</translation>
     </message>
     <message>
         <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
@@ -1686,16 +1686,16 @@ Please check the address and try again.</translation>
         <translation>This amount acts as a threshold to turn off Obfuscation once it's reached.</translation>
     </message>
     <message>
-        <source>Amount of Bulwark to keep anonymized</source>
-        <translation>Amount of Bulwark to keep anonymized</translation>
+        <source>Amount of BWK to keep anonymized</source>
+        <translation>Amount of BWK to keep anonymized</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>Enable coin control features</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Enable coin &amp;control features</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1706,82 +1706,82 @@ Please check the address and try again.</translation>
         <translation>Show Masternodes Tab</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Spend unconfirmed change</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Spend unconfirmed change</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Network</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Network</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting Bulwark.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting BWK.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Map port using UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Connect to the Bulwark network through a SOCKS5 proxy.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Connect to the BWK network through a SOCKS5 proxy.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Port:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Port:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port of the proxy (e.g. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Window</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Window</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Show only a tray icon after minimizing the window.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>Minimize to the tray instead of the taskbar</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;Minimize to the tray instead of the taskbar</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>Minimize on close</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>M&amp;inimize on close</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Display</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Display</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
-        <translation>User Interface language:</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>User Interface &amp;language:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>User Interface Theme:</translation>
     </message>
     <message>
-        <source>Unit to show amounts in:</source>
-        <translation>Unit to show amounts in:</translation>
+        <source>&amp;Unit to show amounts in:</source>
+        <translation>&amp;Unit to show amounts in:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1808,16 +1808,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Reset all client options to default.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Reset Options</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Reset Options</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Cancel</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancel</translation>
     </message>
     <message>
         <source>default</source>
@@ -1883,8 +1883,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Balances</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1927,8 +1927,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Obfuscation Balance:</translation>
     </message>
     <message>
-        <source>0 Bulwark / 0 Rounds</source>
-        <translation>0 Bulwark / 0 Rounds</translation>
+        <source>0 BWK / 0 Rounds</source>
+        <translation>0 BWK / 0 Rounds</translation>
     </message>
     <message>
         <source>Enabled/Disabled</source>
@@ -2092,12 +2092,12 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Invalid payment address %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Cannot start Bulwark: click-to-pay handler</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Cannot start pivx: click-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2182,8 +2182,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Amount</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Enter a Bulwark address (e.g. %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Enter a BWK address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2225,12 +2225,12 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Save Image...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Save Image...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Copy Image</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Copy Image</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2248,8 +2248,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Tools window</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Information</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <source>General</source>
@@ -2272,8 +2272,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Number of connections</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Open</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Open</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2316,28 +2316,28 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Number of Masternodes</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Console</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Console</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Clear console</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Network Traffic</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Network Traffic</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Clear</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Clear</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -2352,8 +2352,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Sent</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Peers</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2412,8 +2412,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Ping Time</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Wallet Repair</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Wallet Repair</translation>
     </message>
     <message>
         <source>Wallet In Use:</source>
@@ -2484,8 +2484,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Out:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Welcome to the Bulwark RPC console.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Welcome to the BWK RPC console.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2543,44 +2543,44 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
-        <translation>Reuse an existing receiving address (not recommended)</translation>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>R&amp;euse an existing receiving address (not recommended)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Message:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Message:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>An optional label to associate with the new receiving address.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>An optional amount to request. Leave this empty or zero to not request a specific amount.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Amount:</translation>
+        <source>&amp;Amount:</source>
+        <translation>&amp;Amount:</translation>
     </message>
     <message>
-        <source>Request payment</source>
-        <translation>Request payment</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Request payment</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2630,16 +2630,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>QR Code</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Copy URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Copy &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copy Address</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Copy &amp;Address</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Save Image...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Save Image...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -2792,8 +2792,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>UTXO Size:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2840,16 +2840,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Confirmation time:</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
-        <translation>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
+        <translation>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -2876,24 +2876,24 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Confirm the send action</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Send</translation>
+        <source>S&amp;end</source>
+        <translation>S&amp;end</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Clear all fields of the form.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Clear All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Clear &amp;All</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Send to multiple recipients at once</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>Add Recipient</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Add &amp;Recipient</translation>
     </message>
     <message>
         <source>SwiftTX</source>
@@ -3055,12 +3055,12 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>This is a normal payment.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>Pay To:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Pay &amp;To:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>The Bulwark address to send the payment to</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>The BWK address to send the payment to</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3083,24 +3083,24 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Remove this entry</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Enter a label for this address to add it to the list of used addresses</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Amount:</translation>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;mount:</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation>Message:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3126,8 +3126,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core is shutting down...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core is shutting down...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3141,16 +3141,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Signatures - Sign / Verify a Message</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Sign Message</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Sign Message</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>The Bulwark address to sign the message with</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>The BWK address to sign the message with</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3181,40 +3181,40 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Copy the current signature to the system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Sign the message to prove you own this Bulwark address</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Sign the message to prove you own this BWK address</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>The Bulwark address the message was signed with</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>The BWK address the message was signed with</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verify the message to ensure it was signed with the specified Bulwark address</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Verify the message to ensure it was signed with the specified BWK address</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Sign Message</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Sign &amp;Message</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reset all sign message fields</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Clear All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Clear &amp;All</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verify Message</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Verify Message</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verify Message</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Verify &amp;Message</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3276,8 +3276,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3292,8 +3292,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>The Dash Core developers</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>The Bulwark Core developers</translation>
+        <source>The BWK Core developers</source>
+        <translation>The BWK Core developers</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3840,15 +3840,15 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Send Coins</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Export</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Export</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -3884,7 +3884,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
     </message>
 </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
@@ -3910,8 +3910,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -3930,8 +3930,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all Bulwark specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all BWK specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all BWK specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3974,12 +3974,12 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4082,44 +4082,44 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
     </message>
     <message>
-        <source>To use Bulwarkd, or the -server option to Bulwark-qt, you must set an rpcpassword in the configuration file:
+        <source>To use pivxd, or the -server option to pivx-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Bulwarkrpc
+rpcuser=pivxrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
+for example: alertnotify=echo %%s | mail -s "BWK Alert" admin@foo.com
 </source>
-        <translation>To use Bulwarkd, or the -server option to Bulwark-qt, you must set an rpcpassword in the configuration file:
+        <translation>To use pivxd, or the -server option to pivx-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Bulwarkrpc
+rpcuser=pivxrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
+for example: alertnotify=echo %%s | mail -s "BWK Alert" admin@foo.com
 </translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. Bulwark Core is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. BWK Core is probably already running.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Unable to locate enough Obfuscation denominated funds for this transaction.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4134,8 +4134,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4282,8 +4282,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Bulwark Core Developers</translation>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
+        <translation>Copyright (C) 2015-%i The BWK Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4354,8 +4354,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Error loading wallet.dat: Wallet corrupted</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of BWK Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4466,8 +4466,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Information</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
-        <translation>Initialization sanity check failed. Bulwark Core is shutting down.</translation>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
+        <translation>Initialization sanity check failed. BWK Core is shutting down.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -4578,8 +4578,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Enable staking functionality (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Keep N Bulwark anonymized (default: %u)</source>
-        <translation>Keep N Bulwark anonymized (default: %u)</translation>
+        <source>Keep N BWK anonymized (default: %u)</source>
+        <translation>Keep N BWK anonymized (default: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -5086,8 +5086,8 @@ for example: alertnotify=echo %%s | mail -s "Bulwark Alert" admin@foo.com
         <translation>Wallet is locked.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Wallet needed to be rewritten: restart Bulwark Core to complete</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>Wallet needed to be rewritten: restart BWK Core to complete</translation>
     </message>
     <message>
         <source>Wallet options:</source>

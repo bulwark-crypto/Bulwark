@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,30 +10,34 @@
 
 class OptionsModel;
 class QValidatedLineEdit;
+class QLineEdit;
 
 QT_BEGIN_NAMESPACE
 class QDataWidgetMapper;
 QT_END_NAMESPACE
 
-namespace Ui {
+namespace Ui
+{
 class OptionsDialog;
 }
 
 /** Preferences dialog. */
-class OptionsDialog : public QDialog {
+class OptionsDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     explicit OptionsDialog(QWidget* parent, bool enableWallet);
     ~OptionsDialog();
 
     void setModel(OptionsModel* model);
     void setMapper();
+    void setCurrentIndex(int index);
 
-  protected:
+protected:
     bool eventFilter(QObject* object, QEvent* event);
 
-  private slots:
+private slots:
     /* enable OK button */
     void enableOkButton();
     /* disable OK button */
@@ -43,14 +48,16 @@ class OptionsDialog : public QDialog {
     void on_okButton_clicked();
     void on_cancelButton_clicked();
 
+    void updateHideOrphans(bool fHide);
+
     void showRestartWarning(bool fPersistent = false);
     void clearStatusLabel();
-    void doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort);
+    void doProxyIpChecks(QValidatedLineEdit* pUiProxyIp, QLineEdit* pUiProxyPort);
 
-  signals:
-    void proxyIpChecks(QValidatedLineEdit* pUiProxyIp, int nProxyPort);
+signals:
+    void proxyIpChecks(QValidatedLineEdit* pUiProxyIp, QLineEdit* pUiProxyPort);
 
-  private:
+private:
     Ui::OptionsDialog* ui;
     OptionsModel* model;
     QDataWidgetMapper* mapper;

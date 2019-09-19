@@ -10,48 +10,48 @@
         <translation>创建新的地址</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>新地址</translation>
+        <source>&amp;New</source>
+        <translation>&amp;新地址</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>复制当前地址至剪贴板</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>复制</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;复制</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>从列表移除这个地址</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>删除</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;删除</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>导出当前数据至文件</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>导出</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;导出</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>C关闭</translation>
+        <source>C&amp;lose</source>
+        <translation>C&amp;关闭</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>选择发送Bulwark coin的地址</translation>
+        <translation>选择发送BWK coin的地址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>选择接收Bulwark coin的地址</translation>
+        <translation>选择接收BWK coin的地址</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>C选择</translation>
+        <source>C&amp;hoose</source>
+        <translation>C&amp;选择</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这是用于发送Bulwark的地址。在发送Bulwark之前，请认真核查发送金额和接收地址。</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>这是用于发送BWK的地址。在发送BWK之前，请认真核查发送金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>这是用于接收Bulwark的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>这是用于接收BWK的钱包地址。建议每一笔交易都使用一个新的钱包地址。</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>复制地址</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;复制地址</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>复制标签</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>编辑</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;编辑</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -172,16 +172,16 @@
         <translation>确认钱包加密</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取Bulwarks。</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK将关闭以完成加密过程。但是，仅仅加密您的钱包是不够的，因为它并不能阻止恶意软件从您的电脑里面偷取PIVs。</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>您确定加密您的钱包吗？</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>注意：请妥善保管好你的密码，因为在加密后，没有密码将无法打开钱包。这将会让您&lt;b&gt;损失钱包中所有的Bulwark&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>注意：请妥善保管好你的密码，因为在加密后，没有密码将无法打开钱包。这将会让您&lt;b&gt;损失钱包中所有的PIV&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -234,8 +234,8 @@
         <translation>BIP 38 工具</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 加密</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -270,24 +270,24 @@
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>加密秘钥</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>加密&amp;秘钥</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>清除全部</translation>
+        <source>Clear &amp;All</source>
+        <translation>清除&amp;全部</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 解密</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 解密</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>输入BIP 38加密私钥。 在中间框中输入密码。 单击解密密钥计算私钥。 密钥解密后，单击“导入地址”将将该私钥添加到钱包中。</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>解密秘钥</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>解密&amp;秘钥</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -373,136 +373,136 @@
         <translation>节点</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>O概述</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;O概述</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>显示钱包的概述</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>S发送</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;S发送</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>R接收</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;R接收</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>T交易</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;T交易</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>查阅历史交易</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>E退出</translation>
+        <source>E&amp;xit</source>
+        <translation>E&amp;退出</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>关闭应用</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>关于Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>关于&amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>显示Qt的相关信息</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Q选项</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Q选项</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>S显示/隐藏</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;S显示/隐藏</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>显示或隐藏主窗口</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>E加密钱包...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;E加密钱包...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>加密属于您钱包的私钥</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>B备份钱包...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;B备份钱包...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>备份钱包至其他目录</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>C修改密码</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;C修改密码</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>修改用于钱包加密的密码</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>U解锁钱包...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;U解锁钱包...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>解锁钱包</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>L锁定钱包</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;L锁定钱包</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>S签名消息</translation>
+        <source>Sign &amp;message...</source>
+        <translation>S签名&amp;消息</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>验证消息</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;验证消息</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>I信息</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;I信息</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>显示诊断调试信息</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>D调试控制台</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;D调试控制台</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>打开调试控制台</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>N网络监视器</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;N网络监视器</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>查看网络监视器</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>P并列列表</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;P并列列表</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>显示并列信息</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>W钱包修复</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>W钱包&amp;修复</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -513,152 +513,152 @@
         <translation>打开配置文件</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>显示自动备份</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>显示自动&amp;备份</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>查看自动备份建立的钱包</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>S发送地址...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;S发送地址...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>查看已发送地址和标签</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>R接收地址</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;R接收地址</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>查看已接收地址和标签</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>O打开URI</translation>
+        <source>Open &amp;URI...</source>
+        <translation>O打开&amp;URI</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>C命令行选项</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;C命令行选项</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>同步其他数据：%p%</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>F文件</translation>
+        <source>&amp;File</source>
+        <translation>&amp;F文件</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>S设置</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;S设置</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>T工具</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;T工具</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>H帮助</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;H帮助</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>标签工具栏</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>发送数字货币到Bulwark地址</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>发送数字货币到BWK地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>请求支付（生成二维码和Bulwark：URIs）</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>请求支付（生成二维码和pivx：URIs）</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>P隐私</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;P隐私</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>M主节点</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;M主节点</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>浏览主节点</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>A关于Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;A关于BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>显示Bulwark  Core的相关信息</translation>
+        <source>Show information about BWK Core</source>
+        <translation>显示BWK  Core的相关信息</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>修改Bulwark的配置选项</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>修改BWK的配置选项</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>使用您的Bulwark地址验证消息，以证明您拥有他们</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>使用您的BWK地址验证消息，以证明您拥有他们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>验证消息确保它已使用指定的Bulwark地址进行签名</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>验证消息确保它已使用指定的BWK地址进行签名</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38工具</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38工具</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>使用密码加密和解密私钥</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>M多重发送</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;M多重发送</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>多重发送设置</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>打开钱包配置文件</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>打开钱包&amp;配置文件</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>打开主节点配置文件</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>打开&amp;主节点配置文件</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>打开主节点配置文件</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>打开Bulwark：URI或付款请求</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>打开BWK：URI或付款请求</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>B区块浏览器</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;B区块浏览器</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>区块浏览窗口</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>显示Bulwark Core帮助信息并获取Bulwark命令行选项列表</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>显示BWK Core帮助信息并获取BWK命令行选项列表</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core 客户端</translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core 客户端</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -679,6 +679,10 @@
     <message>
         <source>Up to date</source>
         <translation>最新</translation>
+    </message>
+    <message>
+        <source>%1 and %2</source>
+        <translation>%1 和 %2</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -773,16 +777,16 @@ Address: %4
         <translation>编辑地址</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>标签</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;标签</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>与该地址列表条目相关联的标签</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>地址</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;地址</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -801,33 +805,40 @@ Address: %4
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>来自</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>关于Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>关于BWK Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>欢迎使用 Bulwark Core</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>欢迎使用 BWK Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>由于这是该程序第一次启动，您可以选择存储Bulwark Core 数据的位置。</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>由于这是该程序第一次启动，您可以选择存储BWK Core 数据的位置。</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core将下载并存储Bulwark区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core将下载并存储BWK区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -853,20 +864,20 @@ Address: %4
         <translation>激活</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>S开始别名</translation>
+        <source>S&amp;tart alias</source>
+        <translation>S&amp;开始别名</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>开始全部</translation>
+        <source>Start &amp;all</source>
+        <translation>开始&amp;全部</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>开始MISSING</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>开始&amp;MISSING</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>更新状态</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;更新状态</translation>
     </message>
     </context>
 <context>
@@ -892,104 +903,97 @@ Address: %4
     <name>MultisigDialog</name>
     </context>
 <context>
-    <name>ObfuscationConfig</name>
-    </context>
-<context>
     <name>OpenURIDialog</name>
     </context>
 <context>
     <name>OptionsDialog</name>
     <message>
-        <source>Main</source>
-        <translation>主</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;主</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>缓存database 大小</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>缓存&amp;database 大小</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
-        <translation>脚本验证线程数</translation>
+        <source>Number of script &amp;verification threads</source>
+        <translation>脚本&amp;验证线程数</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>W钱包</translation>
+        <source>W&amp;allet</source>
+        <translation>W&amp;钱包</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>如果您要禁用未经确认发送，在至少有一个确认之前&lt;br/&gt;不能更改。&lt;br/&gt;这也将影响您的余额计算。</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自动打开路由器上的Bulwark钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自动打开路由器上的BWK钱包使用的端口。 这只有当您的路由器支持UPnP并且该享生效时才有用。</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>使用SOCKS5代理（默认代理）</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;使用SOCKS5代理（默认代理）</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>开机启动Bulwark</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;开机启动BWK</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>启用硬币控制功能</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>启用硬币&amp;控制功能</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
         <translation>显示附加的标签，列出所有您的主节点在第一子列表上&lt;br/&gt;所有主节点的网络在第二个子列表上。</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>花费未经证实的变化</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;花费未经证实的变化</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>网络</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;网络</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>端口使用UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>端口使用&amp;UPnP</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>代理IP地址:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>代理&amp;IP地址:</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>端口：</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;端口：</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>视窗</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;视窗</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>最小化到托盘而不是任务栏</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;最小化到托盘而不是任务栏</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>M关闭最小化</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>M&amp;关闭最小化</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>显示</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;显示</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
-        <translation>选择语言包</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>选择&amp;语言包</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>界面主题（语言包）:</translation>
     </message>
     <message>
-        <source>Unit to show amounts in:</source>
-        <translation>单位显示金额</translation>
-    </message>
-    <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>选择显示发送Bulwark的默认单位。</translation>
+        <translation>选择显示发送BWK的默认单位。</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1012,16 +1016,16 @@ Address: %4
         <translation>清空当前设置，恢复为初始状态</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>重置选项</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;重置选项</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>取消</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;取消</translation>
     </message>
     <message>
         <source>default</source>
@@ -1067,8 +1071,8 @@ Address: %4
         <translation>您目前的支出余额</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与Bulwark网络同步，但此过程尚未完成。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与BWK网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1084,12 +1088,12 @@ Address: %4
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与Bulwark网络同步，但此过程尚未完成。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与BWK网络同步，但此过程尚未完成。</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>支付</translation>
+        <source>Pay &amp;To:</source>
+        <translation>支&amp;付</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1108,107 +1112,118 @@ Address: %4
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>标签</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;标签</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>A总计</translation>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;总计</translation>
     </message>
     </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>保存图片...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;保存图片...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>复制图像</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;复制图像</translation>
     </message>
     </context>
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Information</source>
-        <translation>I信息</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;I信息</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>打开</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;打开</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>调试台</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;调试台</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>网络流量</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;网络流量</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>清除</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;清除</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>并列</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;并列</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>修复钱包</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;修复钱包</translation>
     </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
-        <translation>R使用现有的地址接收（不推荐）</translation>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>R&amp;使用现有的地址接收（不推荐）</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>消息：</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;消息：</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过Bulwark网络发送。</translation>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;总计</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>附加到付款请求的可选消息，将在请求打开时显示。&lt;br&gt; 注意：消息不会在付款时通过Bulwark网络发送。</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过BWK网络发送。</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>标签</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>附加到付款请求的可选消息，将在请求打开时显示。&lt;br&gt; 注意：消息不会在付款时通过BWK网络发送。</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>总计</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;标签</translation>
     </message>
     <message>
-        <source>Request payment</source>
-        <translation>请求支付</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;请求支付</translation>
     </message>
     <message>
         <source>Copy message</source>
         <translation>复制消息</translation>
     </message>
-    </context>
+    <message>
+        <source>Copy address</source>
+        <translation>复制地址</translation>
+    </message>
+</context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
-        <source>Copy URI</source>
-        <translation>复制URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>复制&amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>复制地址</translation>
+        <source>Copy &amp;Address</source>
+        <translation>复制&amp;地址</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>保存图片...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;保存图片...</translation>
     </message>
     <message>
         <source>Address</source>
@@ -1238,6 +1253,10 @@ Address: %4
         <translation>消息 </translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>未设置标签</translation>
     </message>
@@ -1249,16 +1268,16 @@ Address: %4
 <context>
     <name>SendCoinsDialog</name>
     <message>
-        <source>Send</source>
-        <translation>S发送</translation>
+        <source>S&amp;end</source>
+        <translation>S&amp;发送</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>清除全部</translation>
+        <source>Clear &amp;All</source>
+        <translation>清除&amp;全部</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>增加收件人</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>增加&amp;收件人</translation>
     </message>
     <message>
         <source>The amount exceeds your balance.</source>
@@ -1280,8 +1299,8 @@ Address: %4
 <context>
     <name>SendCoinsEntry</name>
     <message>
-        <source>Pay To:</source>
-        <translation>支付</translation>
+        <source>Pay &amp;To:</source>
+        <translation>支&amp;付</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1300,20 +1319,20 @@ Address: %4
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>标签</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;标签</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>A总计</translation>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;总计</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation>消息:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>附加到Bulwark：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过Bulwark网络发送。</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>附加到BWK：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过BWK网络发送。</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -1330,16 +1349,16 @@ Address: %4
         <translation>签名 - 签署 / 验证消息</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>签名消息</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;签名消息</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>您可以使用地址签名消息，以证明您拥有他们。 小心不要签名任何您不了解的，因为网络钓鱼攻击可能会试图欺骗您，以让您签名。 只能签署您熟悉并且了解和同意的。</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>该Bulwark地址签名的消息</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>该BWK地址签名的消息</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1366,40 +1385,40 @@ Address: %4
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>签署消息以证明您拥有此Bulwark地址</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>签署消息以证明您拥有此BWK地址</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>由Bulwark地址签名的消息</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>由BWK地址签名的消息</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>验证消息确保它已使用指定的Bulwark地址进行签名</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>验证消息确保它已使用指定的BWK地址进行签名</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>签名消息</translation>
+        <source>Sign &amp;Message</source>
+        <translation>签名&amp;消息</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>重置所有签名信息</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>清除全部</translation>
+        <source>Clear &amp;All</source>
+        <translation>清除&amp;全部</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>验证消息</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;验证消息</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>输入签名地址，消息（确保您准确地复制换行符，空格，制表符等）和签名以验证消息。注意不要比签名的消息本身更多地阅读签名，以避免被中间人的袭击所欺骗。</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>验证消息</translation>
+        <source>Verify &amp;Message</source>
+        <translation>验证&amp;消息</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -1453,8 +1472,8 @@ Address: %4
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -1524,8 +1543,8 @@ Address: %4
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>导出</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;导出</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -1533,17 +1552,17 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>在收到相关警报时执行命令，或者看到一个很长的分叉（cmd中的%s被消息替换）</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，Bulwark Core将无法正常工作。</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>注意：请检查您的电脑的日期和时间是否正确！ 如果您的时间设置不正确，BWK Core将无法正常工作。</translation>
     </message>
     <message>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
@@ -1568,14 +1587,6 @@ Address: %4
     <message>
         <source>Warning</source>
         <translation>注意</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>您的输入成功添加。</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>您的交易被矿池接受！</translation>
     </message>
     </context>
 </TS>

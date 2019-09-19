@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +11,8 @@
 class AddressTableModel;
 class OptionsModel;
 
-namespace Ui {
+namespace Ui
+{
 class AddressBookPage;
 }
 
@@ -24,10 +26,11 @@ QT_END_NAMESPACE
 
 /** Widget that shows a list of sending or receiving addresses.
   */
-class AddressBookPage : public QDialog {
+class AddressBookPage : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     enum Tabs {
         SendingTab = 0,
         ReceivingTab = 1
@@ -42,14 +45,12 @@ class AddressBookPage : public QDialog {
     ~AddressBookPage();
 
     void setModel(AddressTableModel* model);
-    const QString& getReturnValue() const {
-        return returnValue;
-    }
+    const QString& getReturnValue() const { return returnValue; }
 
-  public slots:
+public slots:
     void done(int retval);
 
-  private:
+private:
     Ui::AddressBookPage* ui;
     AddressTableModel* model;
     Mode mode;
@@ -60,7 +61,7 @@ class AddressBookPage : public QDialog {
     QAction* deleteAction; // to be able to explicitly disable it
     QString newAddressToSelect;
 
-  private slots:
+private slots:
     /** Delete currently selected address entry */
     void on_deleteAddress_clicked();
     /** Create a new address for receiving coins and / or add a new address book entry */
@@ -81,7 +82,7 @@ class AddressBookPage : public QDialog {
     /** New entry/entries were added to address table */
     void selectNewAddress(const QModelIndex& parent, int begin, int /*end*/);
 
-  signals:
+signals:
     void sendCoins(QString addr);
 };
 

@@ -10,36 +10,36 @@
         <translation>Crea un nuovo indirizzo</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Nuovo</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Nuovo</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copia l'indirizzo selezionato negli appunti</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copia</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copia</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Elimina l'indirizzo selezionato dalla lista</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Elimina</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Esporta i dati della scheda corrente in un file</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Esporta</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Esporta</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Chiudi</translation>
+        <source>C&amp;lose</source>
+        <translation>C&amp;hiudi</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Seleziona l'indirizzo a cui ricevere valuta</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Seleziona</translation>
+        <source>C&amp;hoose</source>
+        <translation>&amp;Seleziona</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Indirizzi di ricezione</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Questi sono gli indirizzi Bulwark per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Questi sono gli indirizzi BWK per l'invio di pagamenti. Controlla sempre l'importo e l'indirizzo di ricezione prima di inviare valuta.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono gli indirizzi Bulwark per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Questi sono gli indirizzi BWK per la ricezione di pagamenti. Si raccomanda di utilizzare un indirizzo diverso per ogni transazione.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copia indirizzo</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Copia indirizzo</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Copia etichetta</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copia &amp;etichetta</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Modifica</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Modifica</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Conferma cifratura portafoglio</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi Bulwark dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi BWK dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Confermi di voler crittografare il portafoglio?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI Bulwark&lt;7b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI BWK&lt;7b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 Strumento</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Criptato</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Criptato</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Indirizzo:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Inserire un indirizzo Bulwark da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Inserire un indirizzo BWK da crittografare utilizzando BIP 38. Inserire una password nel campo centrale. Cliccare su "cripta" per generare la chiave privata crittografata.</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Indirizzo Bulwark da crittografare</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>Indirizzo BWK da crittografare</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Crittografa la chiave privata per questo indirizzo Bulwark</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Crittografa la chiave privata per questo indirizzo BWK</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,24 +306,24 @@
         <translation>Decrittografa la chiave inserita utilizzando la password</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Cripta Key</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Cripta &amp;Key</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Cancella All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Cancella &amp;All</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Decripta</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Decripta</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Immettere la chiave privata codificata BIP 38. Inserire la passphrase nella casella centrale. Fare clic su Decripta Chiave per calcolare la chiave privata. Dopo che la chiave viene decrittata, cliccando su "Importa indirizzo" verrà aggiunta questa chiave privata al portafoglio.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Decripta Key</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Decripta &amp;Key</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -409,24 +409,24 @@
         <translation>Nodo</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Riepilogo</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Riepilogo</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Mostra un riepilogo generale del portafoglio</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Invia</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Invia</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Ricevi</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Ricevi</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transazioni</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transazioni</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -437,112 +437,112 @@
         <translation>Operazioni di privacy per zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Esci</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Esci</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Chiude l'applicazione</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Informazioni su Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Informazioni su &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Visualizza informazioni su Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Opzioni...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Opzioni...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Mostra / Nascondi</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Mostra / Nascondi</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Mostra o nasconde la finestra principale</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Cifra portafoglio...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Cifra portafoglio...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Crittografa le chiavi private nel tuo portafoglio</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Backup portafoglio...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Backup portafoglio...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Fa una copia di sicurezza del tuo portafoglio in un'altra posizione</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Modifica parola d'ordine...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Modifica parola d'ordine...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Modifica la parola d'ordine utilizzata per la crittografia del portafoglio</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Sblocca portafoglio</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Sblocca portafoglio</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Sblocca portafoglio</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Blocca portafoglio</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Blocca portafoglio</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Firma messaggio...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>&amp;Firma messaggio...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verifica messaggio...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verifica messaggio...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informazioni</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informazioni</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Visualizza informazioni di diagnostica</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Console di debug</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Console di debug</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Apri la console di debug</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Monitor rete</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Monitor rete</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Mostra monitor di rete</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Lista peers</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Lista peers</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Mostra le informazioni sui peer</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Ripara portafoglio</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;Ripara portafoglio</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -553,64 +553,60 @@
         <translation>Apri il file di configurazione</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Mostra Backup automatici</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Mostra &amp;Backup automatici</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Mostra i backup dei portafogli creati automaticamente</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Indirizzi Sorgente</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Indirizzi Sorgente</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Mostra l'elenco degli indirizzi e delle etichette di invio utilizzati</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Indirizzi di Destinazione</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Indirizzi di Destinazione</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Mostra l'elenco degli indirizzi e delle etichette di ricezione utilizzati</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>Creazione Firma multipla...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>Creazione &amp;Firma multipla...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Aggiunta di un nuovo indirizzo a firma multipla a questo wallet</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>Pagamento a firma Multipla...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>Pagamento a firma &amp;Multipla...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Paga da un indirizzo a firma multipla</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>Firma digitale Multipla...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>Firma digitale &amp;Multipla...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>Firma digitale con un indirizzo a firma multipla</translation>
     </message>
     <message>
-        <source>Open URI...</source>
+        <source>Open &amp;URI...</source>
         <translation>Apri URL</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Opzioni riga di Comando</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Elaborato 1 blocco dalla cronologia delle transazioni</numerusform><numerusform>Elaborati %n blocchi dalla cronologia delle transazioni.</numerusform></translation>
+        <source>&amp;Command-line options</source>
+        <translation>Opzioni riga di &amp;Comando</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,120 +621,116 @@
         <translation>Il wallet è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt; sbloccato&lt;/b&gt; solo per anonimizzazione e staking</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>File</translation>
+        <source>&amp;File</source>
+        <translation>&amp;File</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Impostazioni</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Impostazioni</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Strumenti</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Strumenti</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Aiuto</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Schede degli strumenti</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Invia valuta all'indirizzo Bulwark</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Invia valuta all'indirizzo BWK</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Richiedi pagamenti (genera codici QR e Bulwark: URIs)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Richiedi pagamenti (genera codici QR e pivx: URIs)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>pRIVACY</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;pRIVACY</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Esplora i masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Informazioni Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;Informazioni BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Visualizza informazioni su Bulwark Core</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Visualizza informazioni su BWK Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Modifica le opzioni di configurazione per Bulwark</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Modifica le opzioni di configurazione per BWK</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Firma i messaggi con i tuoi indirizzi Bulwark per dimostrare di essere il proprietario </translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Firma i messaggi con i tuoi indirizzi BWK per dimostrare di essere il proprietario </translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi Bulwark specifici</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Verifica i messaggi per assicurarsi che siano stati firmati con indirizzi BWK specifici</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>Strumenti BIP38</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>Strumenti &amp;BIP38</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Crittografa e decrittografa le chiavi private usando una passphrase</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Impostazioni MultiSend</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Apri file di Configurazione wallet</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Apri file di &amp;Configurazione wallet</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Apri file di configurazione Masternodo</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Apri file di configurazione &amp;Masternodo</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Apri file di configurazione del Masternodo</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Apri un Bulwark: URI o richiesta di pagamento</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Apri un BWK: URI o richiesta di pagamento</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Esplora Blockchain</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>Esplora &amp;Blockchain</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Finestra Block Explorer</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Mostra il messaggio di aiuto Bulwark Core per ottenere un elenco con le possibili opzioni di riga di comando Bulwark</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Mostra il messaggio di aiuto BWK Core per ottenere un elenco con le possibili opzioni di riga di comando BWK</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n connessione attiva alla rete BulwarkIX</numerusform><numerusform>%n connessioni attive alla rete BulwarkIX</numerusform></translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Aggiornato</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n ora</numerusform><numerusform>%n ore</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n giorno</numerusform><numerusform>%n giorni</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n settimana</numerusform><numerusform>%n settimane</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 e %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n anno</numerusform><numerusform>%n anni</numerusform></translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -860,7 +836,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Il portafoglio è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt;bloccato&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -888,8 +864,8 @@ MultiSend: %1</translation>
         <translation>Etichetta</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (bulwark.conf)</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (pivx.conf)</translation>
     </message>
 </context>
 <context>
@@ -1126,8 +1102,8 @@ MultiSend: %1</translation>
         <translation>Questa etichetta diventa rossa se uno dei destinatari riceve un importo inferiore a %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Può variare di +/- %1 uBulwark per input.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Può variare di +/- %1 uPIV per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1149,12 +1125,12 @@ MultiSend: %1</translation>
         <translation>Modifica indirizzo</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Etichetta</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Etichetta</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Indirizzo</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Indirizzo</translation>
     </message>
     <message>
         <source>New receiving address</source>
@@ -1173,8 +1149,8 @@ MultiSend: %1</translation>
         <translation>Modifica indirizzo di invio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>L'indirizzo inserito "%1" non è un indirizzo Bulwark valido.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>L'indirizzo inserito "%1" non è un indirizzo BWK valido.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1213,22 +1189,33 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versione</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Informazioni su Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>Informazioni su BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1274,16 +1261,16 @@ MultiSend: %1</translation>
         <translation>Benvenuto</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Benvenuto in BulwarkIX Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Benvenuto in PIVIX Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Essendo il primo avvio dell'applicazione, puoi scegliere dove Bulwark Core salverà i propri dati.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Essendo il primo avvio dell'applicazione, puoi scegliere dove BWK Core salverà i propri dati.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core scaricherà e salverà una copia della blockchain Bulwark. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core scaricherà e salverà una copia della blockchain BWK. Verranno salvati almeno %1GB di dati in questa cartella, che cresceranno nel tempo. In questa cartella verrà salvato anche il portafoglio.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1294,8 +1281,8 @@ MultiSend: %1</translation>
         <translation>Utilizza una cartella dati personalizzata:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1357,20 +1344,20 @@ MultiSend: %1</translation>
         <translation>Chiave pubblica</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Avvia alias</translation>
+        <source>S&amp;tart alias</source>
+        <translation>A&amp;vvia alias</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Avvia tutti</translation>
+        <source>Start &amp;all</source>
+        <translation>Avvia &amp;tutti</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Avvia MANCANTI</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Avvia &amp;MANCANTI</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Aggiorna stato</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Aggiorna stato</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1436,12 +1423,12 @@ MultiSend: %1</translation>
         <translation>Inserire indirizzo destinatario</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi Bulwark fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
-Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo Bulwark da aggiungere al vettore MultiSend.
+        <translation>MultiSend ti permette di inviare automaticamente ad una lista di indirizzi BWK fino al 100% delle ricompense di stake o masternodi, dopo che queste sono mature.
+Per Aggiunger: inserisci la percentuale da inviare e l'indirizzo BWK da aggiungere al vettore MultiSend.
 Per Eliminare: Inserisci l'indirizzo da eliminare e premi elimina.
 MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
     </message>
@@ -1530,47 +1517,8 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>(nessuna etichetta)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>L'indirizzo immesso:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>è invalido.
-Per favore controlla l'indirizzo e riprova nuovamente.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>L'ammontare totale del tuo vettore MultiSend è superiore al 100% della tua ricompensa per lo stake
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Per favore inserisci 1 - 100 come percentuale.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>MultiSend è stato salvato con successo in memoria, ma il salvataggio delle proprietà nel database non è andato a buon fine.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vettore InvioMultiplo
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Eliminato</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Impossibile trovare l'indirizzo
-</translation>
     </message>
 </context>
 <context>
@@ -1580,8 +1528,8 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Interazioni indirizzo multifirma</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>Crea indirizzo a firme Multiple</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Crea indirizzo a firme &amp;Multiple</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1592,24 +1540,24 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Etichetta indirizzo:</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>Aggiungi indirizzo / codice</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;Aggiungi indirizzo / codice</translation>
     </message>
     <message>
         <source>Create a new multisig address</source>
         <translation>Crea un nuovo indirizzo multifirma</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Crea</translation>
+        <source>C&amp;reate</source>
+        <translation>C&amp;rea</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Stato:</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation>Crea Tx multifirma</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Crea Tx multifirma</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1636,24 +1584,24 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Indirizzo / Quantità:</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Crea</translation>
+        <source>Cr&amp;eate</source>
+        <translation>Cr&amp;ea</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>Firma Tx a firma multipla</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Firma Tx a firma multipla</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
         <translation>Hex Transazione:</translation>
     </message>
     <message>
-        <source>Sign</source>
-        <translation>Firma</translation>
+        <source>S&amp;ign</source>
+        <translation>F&amp;irma</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
-        <translation>Aggiungi Chiave Privata</translation>
+        <source>Add Private &amp;Key</source>
+        <translation>Aggiungi &amp;Chiave Privata</translation>
     </message>
     <message>
         <source>Amount: </source>
@@ -1664,29 +1612,6 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Massimo (15)</translation>
     </message>
 </context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configura Offuscamento</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Usa 8 masternodi diversi per mixare fino a 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Usa 16 masternodi diversi</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Configurazione Offuscamento</translation>
-    </message>
-    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1709,20 +1634,20 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Mappa la porta utilizzando UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Mappa la porta utilizzando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>Attiva il conio automatico di unità Bulwark in zBWK</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>Attiva il conio automatico di unità BWK in zBWK</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>Attiva Conio automatico zBWK</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentuale di Bulwark in entrata che viene automaticamente convertita in zBWK attraverso il protocollo Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentuale di BWK in entrata che viene automaticamente convertita in zBWK attraverso il protocollo Zerocoin (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
@@ -1733,16 +1658,16 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Denominazione preferita conio automatico zBWK</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Porta:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Porta:</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Finestra</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Finestra</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1753,16 +1678,16 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Nascondi bilanci vuoti</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Opzioni Reset</translation>
+        <source>&amp;Reset Options</source>
+        <translation>Opzioni &amp;Reset</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Cancella</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancella</translation>
     </message>
     <message>
         <source>default</source>
@@ -1792,8 +1717,8 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bilancio Bulwark</translation>
+        <source>BWK Balance</source>
+        <translation>Bilancio BWK</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1804,8 +1729,8 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Saldo corrente bloccato in indirizzi sola-lettura.</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Il tuo saldo Bulwark corrente, incluse le transazioni non confermate e non mature</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Il tuo saldo BWK corrente, incluse le transazioni non confermate e non mature</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -1846,8 +1771,8 @@ Questi zBWK sono spendibili.</translation>
         <translation>Spendibili:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Bulwark bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zBWK.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>BWK bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zBWK.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -1875,17 +1800,17 @@ Se il conio automatico è attivato questa percentuale si stabilizzerà all'incir
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint è attivo e impostato su</translation>
+        <translation>Conio automatico è attivo e impostato su</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>Per disabilitare il conio automatico aggiungi 'enablezeromint=0' in bulwark.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Per disabilitare il conio automatico aggiungi 'enablezeromint=0' in pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>Conio automatico è correntemente disattivato.
-Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=1' in bulwark.conf</translation>
+Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=1' in pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -1937,32 +1862,12 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation>Reset</translation>
     </message>
     <message>
-        <source>Coin Control...</source>
-        <translation>Controllo Monete...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Quantità:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Totale:</translation>
-    </message>
-    <message>
         <source>PRIVACY</source>
         <translation>PRIVACY</translation>
-    </message>
-    <message>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation>Immetti un importo di Bulwark da convertire in zBWK</translation>
     </message>
     <message>
         <source>zBWK Control</source>
@@ -2000,8 +1905,8 @@ Gli zBWK sono maturi quando hanno più di 20 conferme E più di 2 conii della st
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>Paga A:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Paga &amp;A:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2020,12 +1925,12 @@ Gli zBWK sono maturi quando hanno più di 20 conferme E più di 2 conii della st
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etichetta:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etichetta:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Quantità:</translation>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2051,8 +1956,8 @@ Gli zBWK sono maturi quando hanno più di 20 conferme E più di 2 conii della st
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to bulwark.conf
-- disable: add 'enablezeromint=0' to bulwark.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -2060,8 +1965,8 @@ To change the percentage (no restart required):
 </source>
         <translation>Mostra lo stato corrente del conio automatico zBWK.
 Per cambiare lo stato (riavvio necessario):
-- attivato: aggiungi 'enablezeromint=1' a bulwark.conf
-- disattivato: aggiungi 'enablezeromint=0' a bulwark.conf
+- attivato: aggiungi 'enablezeromint=1' a pivx.conf
+- disattivato: aggiungi 'enablezeromint=0' a pivx.conf
 
 Per cambiare la percentuale (riavvio non necessario):
 - menu Impostazioni-&gt;Opzioni-&gt;Percentuale di zBWK da coniare automaticamente
@@ -2174,7 +2079,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -2193,20 +2098,16 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Fondi insufficienti!</translation>
     </message>
     <message>
+        <source>medium</source>
+        <translation>media</translation>
+    </message>
+    <message>
         <source>Amount After Fee:</source>
         <translation>Importo al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
         <translation>Differenza:</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Copia importo</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Copia ammontare</translation>
     </message>
     <message>
         <source>zBWK Mint</source>
@@ -2226,7 +2127,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Converma invio monete</translation>
+        <translation>Conferma invio monete</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -2238,10 +2139,17 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Ammontare</translation>
+    </message>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -2250,8 +2158,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Information</source>
-        <translation>Informazioni</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informazioni</translation>
     </message>
     <message>
         <source>Protocol</source>
@@ -2269,8 +2177,12 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>Label:</source>
-        <translation>Etichetta:</translation>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
+    </message>
+    <message>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etichetta:</translation>
     </message>
     <message>
         <source>Copy label</source>
@@ -2279,6 +2191,10 @@ Per cambiare la percentuale (riavvio non necessario):
     <message>
         <source>Copy amount</source>
         <translation>Copia ammontare</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copia indirizzo</translation>
     </message>
 </context>
 <context>
@@ -2305,6 +2221,10 @@ Per cambiare la percentuale (riavvio non necessario):
     <message>
         <source>Label</source>
         <translation>Etichetta</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Indirizzo</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2346,8 +2266,12 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Priorità:</translation>
     </message>
     <message>
+        <source>medium</source>
+        <translation>media</translation>
+    </message>
+    <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -2359,7 +2283,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Al netto della commissione:</translation>
+        <translation>Importo al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -2386,8 +2310,8 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Conferma l'azione di invio</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Cancella All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Cancella &amp;All</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
@@ -2407,15 +2331,19 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Copia commissioni</translation>
+        <translation>Copia commissione</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Copia al netto della commissione</translation>
+        <translation>Copia importo al netto della commissione</translation>
     </message>
     <message>
         <source>Copy bytes</source>
         <translation>Copia byte</translation>
+    </message>
+    <message>
+        <source>Copy priority</source>
+        <translation>Copia priorità</translation>
     </message>
     <message>
         <source>Copy dust</source>
@@ -2445,8 +2373,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>SendCoinsEntry</name>
     <message>
-        <source>Pay To:</source>
-        <translation>Paga A:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Paga &amp;A:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2465,12 +2393,12 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etichetta:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etichetta:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Quantità:</translation>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -2483,8 +2411,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>L'indirizzo Bulwark per firmare il messaggio con</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>L'indirizzo BWK per firmare il messaggio con</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2507,24 +2435,24 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Copiare la firma corrente negli Appunti di sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo Bulwark</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Firmare il messaggio per dimostrare di possedere questo indirizzo BWK</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>L'indirizzo Bulwark con cui è stato firmato il messaggio</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>L'indirizzo BWK con cui è stato firmato il messaggio</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo Bulwark specificato </translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Verificare il messaggio per assicurarsi che sia stato firmato con l'indirizzo BWK specificato </translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reimposta tutti i campi del messaggio segno</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Cancella All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Cancella &amp;All</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -2554,8 +2482,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -2657,8 +2585,8 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Esporta</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Esporta</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -2666,7 +2594,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
@@ -2677,7 +2605,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Error</source>
         <translation>Errore</translation>

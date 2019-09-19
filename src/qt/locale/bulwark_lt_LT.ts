@@ -10,36 +10,36 @@
         <translation>Sukurti naują adresą</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Naujas</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Naujas</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopijuoti pažymėtą adresą</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopijuoti</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopijuoti</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Ištrinti dabartinį pažymėtą adresą iš sąrašo</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Ištrinti</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Ištrinti</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Eksportuoti duomenis dabartiniame skirtuke į failą</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Eksportuoti</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Eksportuoti</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Uždaryti</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;Uždaryti</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Pasirinkite adresą, kuriuo gausite monetas</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Pasirinkti</translation>
+        <source>C&amp;hoose</source>
+        <translation>&amp;Pasirinkti</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Gavimo adresai</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tai jūsų Bulwark adresai mokėjimų išsiuntimams. Visada patikrinkite sumą ir gavėjo adresą prieš siųsdami monetas.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tai jūsų BWK adresai mokėjimų išsiuntimams. Visada patikrinkite sumą ir gavėjo adresą prieš siųsdami monetas.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Tai jūsų Bulwark adresai mokėjimų gavimams. Rekomenduojama naudoti naują adresą kiekvienam pavedimui.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Tai jūsų BWK adresai mokėjimų gavimams. Rekomenduojama naudoti naują adresą kiekvienam pavedimui.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopijuoti Adresą</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Kopijuoti Adresą</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Kopijuoti Etiketė</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Kopijuoti &amp;Etiketė</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Redaguoti</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Redaguoti</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Patvirtinkite piniginės užšifravimą.</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Dabar Bulwark išsijungs, kad būtų užbaigtas šifravimo procesas. Atminkite, kad jūsų piniginės užšifravimas negali visiškai apsaugoti jūsų Bulwark nuo kenkėjiškų programų, užkrėsto jūsų kompiuterio.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>Dabar BWK išsijungs, kad būtų užbaigtas šifravimo procesas. Atminkite, kad jūsų piniginės užšifravimas negali visiškai apsaugoti jūsų BWK nuo kenkėjiškų programų, užkrėsto jūsų kompiuterio.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Ar tikrai norite užšifruoti savo piniginę?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Įspėjimas: jei užšifruosite savo piniginę ir prarasite slaptafrazę, jūs &lt;b&gt;PRARASITE VISUS SAVO Bulwark&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Įspėjimas: jei užšifruosite savo piniginę ir prarasite slaptafrazę, jūs &lt;b&gt;PRARASITE VISUS SAVO BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 įrankis</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Užšifravimas</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Užšifravimas</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresas:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Įveskite Bulwark adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Įveskite Pivx adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Bulwark adresas, kurį norite užšifruoti</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>BWK adresas, kurį norite užšifruoti</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Kopijuoti dabartinį parašą</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Užšifruoti šio Bulwark adreso privatų raktą</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Užšifruoti šio BWK adreso privatų raktą</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,24 +306,24 @@
         <translation>Iššifruoti įvestą raktą naudojant slaptą frazę</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Užšifruoti Raktas</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Užšifruoti &amp;Raktas</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Išvalyti Viskas</translation>
+        <source>Clear &amp;All</source>
+        <translation>Išvalyti &amp;Viskas</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Iššifruoti</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Iššifruoti</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Įveskite BIP 38 užšifruotą privatųjį raktą. Įveskite slaptafrazę viduriniame laukelyje. Paspauskite "Iššifruoti raktą", jei norite apskaičiuoti privatųjį raktą. Kai raktas bus iššifruotas, spustelėjus "Importuoti adresą" šis asmeninis raktas bus pridėtas į piniginę.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Iššifruoti Raktas</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Iššifruoti &amp;Raktas</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -409,24 +409,24 @@
         <translation>"Node'as"</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Peržiūra</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Peržiūra</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Rodyti bendrą piniginės vaizdą.</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Siųsti</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Siųsti</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Priimti</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Priimti</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Pavedimai</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Pavedimai</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -437,112 +437,112 @@
         <translation>zBWK Saugumo Veiksmai </translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Išeiti</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Išeiti</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Uždaryti programą</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Apie Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Apie &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Rodyti informaciją apie Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Nustatymai</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Nustatymai</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Rodyti / Paslėpti</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Rodyti / Paslėpti</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Rodyti arba paslėpti pagrindinį langą</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Užšifruoti Piniginę</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Užšifruoti Piniginę</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Užšifruoti privačius raktus, kurie priklauso jūsų piniginei</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Sukurti atsarginę piniginės kopiją</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Sukurti atsarginę piniginės kopiją</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>Sukurti atsarginę piniginės kopiją kitoje vietoje</translation>
+        <translation>&amp;Sukurti atsarginę piniginės kopiją kitoje vietoje</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Pakeisti slaptafrazę</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Pakeisti slaptafrazę</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Pakeisti slaptafrazę naudojama piniginės šifravimui</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Atrakinti piniginę</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Atrakinti piniginę</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Atrakinti piniginę</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Užrakinti piniginę</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Užrakinti piniginę</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Žinutės pasirašymas</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Žinutės &amp;pasirašymas</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Patvirtinti žinutę</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Patvirtinti žinutę</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informacija</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informacija</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Rodyti diagnostinę informaciją</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Debug konsolė</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Debug konsolė</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Atidaryti debugging konsolę</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Tinklo Monitorius</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Tinklo Monitorius</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Rodyti tinklo monitorių</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>"Peers" sąrašas</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;"Peers" sąrašas</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Rodyti "peers" informacija</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Piniginės Taisymas</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>Piniginės &amp;Taisymas</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -553,7 +553,7 @@
         <translation>Atidaryti konfiguracijos failą</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
+        <source>Show Automatic &amp;Backups</source>
         <translation>Rodyti Automatines Atsargines Kopijas</translation>
     </message>
     <message>
@@ -561,56 +561,52 @@
         <translation>Rodyti automatiškai sukurtas piniginės atsargines kopijas</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Siuntimo adresai...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Siuntimo adresai...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Rodyti naudotų siuntimo adresų ir etikečių sąrašą</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Gavimo adresai...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Gavimo adresai...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Rodyti naudotų gavimo adresų ir etikečių sąrašą</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>"Daugiaparašo" kūrimas...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp;"Daugiaparašo" kūrimas...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Sukurti naują multisignature adresą ir pridėti jį prie šios piniginės</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>"Multisignature" išlaidos...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp;"Multisignature" išlaidos...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Išleisti iš "multisignature" adreso</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>"Multisignature" parašas...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp;"Multisignature" parašas...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>P</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Atidaryti URI</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Atidaryti &amp;URI</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Komandinės eilutės parinktys</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform></translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Komandinės eilutės parinktys</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,120 +621,116 @@
         <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;atrakinta&lt;/b&gt; tik anonimizacijos ir stake'inimo tikslais</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Failas</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Failas</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Nustatymai</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Nustatymai</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Įrankiai</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Įrankiai</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Pagalba</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Pagalba</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Skirtukų įrankių juosta</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Siųsti monetas į Bulwark adresą</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Siųsti monetas į BWK adresą</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir Bulwark URI)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir pivx URI)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Privatumas</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Privatumas</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternod'ai</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternod'ai</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Naršyti masternod'us</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Apie Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;Apie BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Rodyti informaciją apie Bulwark Core</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Rodyti informaciją apie BWK Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Keisti Bulwark konfigūravimo parinktis</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Keisti BWK konfigūravimo parinktis</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Pasirašykite pranešimus naudodami savo Bulwark adresus, kad įrodytumėte, kad juos turite</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Pasirašykite pranešimus naudodami savo BWK adresus, kad įrodytumėte, kad juos turite</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais Bulwark adresais</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais BWK adresais</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 įrankis</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 įrankis</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Užšifruoti ir iššifruoti privačius raktus naudojant slaptafrazę</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
-        <translation>MultiSend Nustatymai</translation>
+        <translation>&amp;MultiSend Nustatymai</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Atidaryti Piniginės Konfigūracijos Failą</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Atidaryti Piniginės &amp;Konfigūracijos Failą</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Atidaryti Masternod'o Konfigūracijos Failą</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Atidaryti &amp;Masternod'o Konfigūracijos Failą</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Atidaryti Masternod'o konfigūracijos failą</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Atidaryti Bulwark: URI arba mokėjimo prašymą</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Atidaryti BWK: URI arba mokėjimo prašymą</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Blockchain naršyklė</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Blockchain naršyklė</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Blokų naršyklės langas</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Rodyti Bulwark Core žinyną, kad gautumėte sąrašą su galimomis Bulwark komandinės eilutės parinktimis</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Rodyti BWK Core žinyną, kad gautumėte sąrašą su galimomis BWK komandinės eilutės parinktimis</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core piniginė</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n aktyvių prisijungimų Bulwark tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų Bulwark tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų Bulwark tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų Bulwark tinkle ()</numerusform></translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core piniginė</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Atnaujinta</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n valanda</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n diena</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n savaitė</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 ir %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n metai</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;užrakinta&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +868,8 @@ MultiSend: %1</translation>
         <translation>Teksto etiketė</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Ne visi pavedimai bus rodomi. Norėdami peržiūrėti visus pavedimus, reikia nustatyti txindex = 1 konfigūracijos faile (bulwark.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Ne visi pavedimai bus rodomi. Norėdami peržiūrėti visus pavedimus, reikia nustatyti txindex = 1 konfigūracijos faile (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1122,8 +1098,8 @@ MultiSend: %1</translation>
         <translation>Ši etiketė taps raudona, jei gavėjas gaus sumą mažesnę už %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Gali skirtis +/- %1 uBulwark kiekvienoje įvestyje.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Gali skirtis +/- %1 upiv kiekvienoje įvestyje.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1145,16 +1121,16 @@ MultiSend: %1</translation>
         <translation>Keisti Adresą</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Etiketė</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Etiketė</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Etiketė, susieta su šiuo adresų sąrašo įrašu</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adresas</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Adresas</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1177,8 +1153,8 @@ MultiSend: %1</translation>
         <translation>Keisti siuntimo adresą</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Įvestas adresas "%1" nėra galiojantis Bulwark adresas.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Įvestas adresas "%1" nėra galiojantis BWK adresas.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1217,22 +1193,33 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versija</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bitai)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Apie Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>Apie BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1278,16 +1265,16 @@ MultiSend: %1</translation>
         <translation>Sveiki</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Sveiki atvykę į Bulwark Core</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Sveiki atvykę į BWK Core</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Kadangi programa paleista pirmą kartą, galite pasirinkti kur Bulwark Core saugos savo duomenis.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Kadangi programa paleista pirmą kartą, galite pasirinkti kur BWK Core saugos savo duomenis.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core atsisiųs ir saugos Bulwark blockchain'o kopiją. Šiame kataloge bus saugomas ne mažesnis kaip %1GB duomenų kiekis, kuris laikui bėgant augs. Piniginė taip pat bus saugoma šiame kataloge.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core atsisiųs ir saugos BWK blockchain'o kopiją. Šiame kataloge bus saugomas ne mažesnis kaip %1GB duomenų kiekis, kuris laikui bėgant augs. Piniginė taip pat bus saugoma šiame kataloge.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1298,8 +1285,8 @@ MultiSend: %1</translation>
         <translation>Naudoti pasirinktą duomenų katalogą:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1361,20 +1348,20 @@ MultiSend: %1</translation>
         <translation>Viešas raktas</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Paleisti slapyvardį</translation>
+        <source>S&amp;tart alias</source>
+        <translation>&amp;Paleisti slapyvardį</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Paleisti visus</translation>
+        <source>Start &amp;all</source>
+        <translation>Paleisti &amp;visus</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Paleisti TRŪKSTAMUS</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Paleisti &amp;TRŪKSTAMUS</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Atnaujinti statusą</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Atnaujinti statusą</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1440,12 +1427,12 @@ MultiSend: %1</translation>
         <translation>Įveskite adresą kuriam norite siųsti</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus Bulwark adresus.
-Norėdami pridėti: įveskite pateiktą procentą ir Bulwark adresą, kurį norite pridėti prie MultiSend sąrašo.
+        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus BWK adresus.
+Norėdami pridėti: įveskite pateiktą procentą ir BWK adresą, kurį norite pridėti prie MultiSend sąrašo.
 Norėdami ištrinti: įveskite adresą, kurį norite ištrinti, ir paspauskite ištrinti
 MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
     </message>
@@ -1534,42 +1521,8 @@ MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
         <translation>(nėra etiketės)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Įvestas adresas: 
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>yra netinkamas.
-Patikrinkite adresą ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Bendra MultiSend sąrašo suma yra didesnė nei 100% jūsų stake'inimo atlygio
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Įveskite 1-100 procentų</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Sąrašas
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Pašalintas</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nepavyko rasti adreso
-</translation>
     </message>
 </context>
 <context>
@@ -1579,8 +1532,8 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Multisignature Adreso Sąveikos</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>Sukurti MultiSignature Adresą</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Sukurti MultiSignature &amp;Adresą</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1599,8 +1552,8 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Pridėkite kitą adresą, kuris galėtų pasirašyti, kad patvirtina operaciją iš MultiSignature adreso.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>Pridėti Adresą / Raktą</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;Pridėti Adresą / Raktą</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1611,16 +1564,16 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Sukurti naują MultiSignature adresą</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Sukurti</translation>
+        <source>C&amp;reate</source>
+        <translation>&amp;Sukurti</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Statusas:</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation>Sukurti MultiSignature Tx</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Sukurti MultiSignature Tx</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1651,24 +1604,24 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Adresas / Suma:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Pridėkite vietas, kurioms norite siųsti Bulwark</translation>
+        <source>Add destinations to send BWK to</source>
+        <translation>Pridėkite vietas, kurioms norite siųsti BWK</translation>
     </message>
     <message>
-        <source>Add Destination</source>
-        <translation>Pridėti Vietą</translation>
+        <source>Add &amp;Destination</source>
+        <translation>Pridėti &amp;Vietą</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
-        <translation>Sukurti pavedimų objektą naudodami nurodytas įvestis ir išvestis.</translation>
+        <translation>&amp;Sukurti pavedimų objektą naudodami nurodytas įvestis ir išvestis.</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Sukurti</translation>
+        <source>Cr&amp;eate</source>
+        <translation>&amp;Sukurti</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>Pasirašyti MultiSignature Pavedimą</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Pasirašyti MultiSignature Pavedimą</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1679,24 +1632,24 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Pasirašykite pavedima iš šios piniginės arba iš privačių raktų</translation>
     </message>
     <message>
-        <source>Sign</source>
-        <translation>Pasirašyti</translation>
+        <source>S&amp;ign</source>
+        <translation>&amp;Pasirašyti</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IŠJUNGTA, kol sandoris bus patvirtintas pakankamai kartų.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Commit</source>
-        <translation>Skirti</translation>
+        <source>Co&amp;mmit</source>
+        <translation>Sk&amp;irti</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
         <translation>Pridėti privačius raktus, skirtus pasirašyti operacijoms</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
-        <translation>Pridėti Privatų Raktą</translation>
+        <source>Add Private &amp;Key</source>
+        <translation>Pridėti Privatų &amp;Raktą</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1728,73 +1681,6 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfigūruoti Obfuscation</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Pagrindinis Privatumas</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Aukštas Privatumas</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimalus Privatumas</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Pasirinkite privatumo lygmenį.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Naudokite 2 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Naudokite 8 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Naudokite 16 atskirų masternod'ų</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Ši parinktis yra greičiausia ir kainuos apie ~0.025 Bulwark, kad anonimizuotų 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Ši parinktis yra vidutiniškai greita ir kainuoja apie 0,05 Bulwark, kad anonimizuotų 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Tai yra lėčiausias ir saugiausias variantas. Maksimalus anonimiškumas kainuos.</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 Bulwark kas 1000 Bulwark kuriuos anonimizuosite.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Obfuscation Konfigūracija</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į paprastą (%1 ir 2 raundai). Bet kada galite tai pakeisti, atidarę Bulwark konfigūracijos ekraną.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į aukštą (%1 ir 8 raundai). Bet kada galite tai pakeisti, atidarę Bulwark konfigūracijos ekraną.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į maksimumą (%1 ir 16 raundai). Bet kada galite tai pakeisti, atidarę Bulwark konfigūracijos ekraną.</translation>
-    </message>
-</context>
-<context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
@@ -1820,16 +1706,16 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Nustatymai</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Duomenų bazės talpyklos dydis</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>&amp;Duomenų bazės talpyklos dydis</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Piniginė</translation>
+        <source>W&amp;allet</source>
+        <translation>P&amp;iniginė</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1844,20 +1730,20 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Ekspertas</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Automatiškai paleisti Bulwark prisijungus prie sistemos.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Automatiškai paleisti BWK prisijungus prie sistemos.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Paleisti Bulwark sistemai įsijungiant</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;Paleisti BWK sistemai įsijungiant</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Ar rodyti monetos kontrolės funkcijas ar ne.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>Įgalinti monetų valdymo funkcijas</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Įgalinti monetų &amp;valdymo funkcijas</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1868,38 +1754,38 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Rodyti Masternod'ų Langelį</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Išleisti nepatvirtintą grąžą</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Išleisti nepatvirtintą grąžą</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Tinklas</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Tinklas</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "Bulwark".</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>Čia galite nustatyti vartotojo sąsajos kalbą. Šis nustatymas įsigalios iš naujo paleidus "BWK".</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia: 
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Įrašyti prievadą naudojant UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Įrašyti prievadą naudojant &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>Įgalinti automatinį konvertavimą iš Bulwark į zBWK</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>Įgalinti automatinį konvertavimą iš BWK į zBWK</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>Įgalinti zBWK Automatinį nukaldinima</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procentas gauto Bulwark, kuris automatiškai bus konvertuotas į zBWK naudojant Zerocoin Protokolą (min: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procentas gauto BWK, kuris automatiškai bus konvertuotas į zBWK naudojant Zerocoin Protokolą (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
@@ -1910,36 +1796,36 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Pageidautinas zBWK Automatinio Nukaldinimo Nominalas</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Jungtis prie Bulwark tinklo naudojant SOCKS5 tarpinį serverį.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Jungtis prie BWK tinklo naudojant SOCKS5 tarpinį serverį.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP: </translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP: </translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP proxy adresas (pvz. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Prievadas (angl. port):</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Prievadas (angl. port):</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Proxy prievadas (pvz. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Langas</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Langas</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Po lango minimizavimo rodyti tik piktogramą.</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Rodyti</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Rodyti</translation>
     </message>
     <message>
         <source>Decimal digits</source>
@@ -1958,16 +1844,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Iš naujo nustatyti visas parinktis.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Atstatyti Nustatymus</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Atstatyti Nustatymus</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>Gerai</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;Gerai</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Atšaukti</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Atšaukti</translation>
     </message>
     <message>
         <source>Any</source>
@@ -2029,8 +1915,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Bendras balansas, įskaitant visas nepasiekiamas monetas.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark Balansas</translation>
+        <source>BWK Balance</source>
+        <translation>BWK Balansas</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2053,8 +1939,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Dabartinis bendras užrakintas balansas tik žiūrėjimo adresuose</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Jūsų dabartinis Bulwark balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Jūsų dabartinis BWK balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -2073,8 +1959,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Bulwark tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su BWK tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2117,8 +2003,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Prienamas išleidimui:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Užrakinti Bulwark arba Masternode užstatai. Jie yra neįtraukti į zBWK kalimą.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Užrakinti BWK arba Masternode užstatai. Jie yra neįtraukti į zBWK kalimą.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2141,8 +2027,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>AutoMint šiuo metu įgalintas ir nustatytas</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' bulwark.conf faile.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' pivx.conf faile.</translation>
     </message>
     </context>
 <context>
@@ -2156,8 +2042,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Netinkamas mokėjimo adresas %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Nepavyksta paleisti Bulwark: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Nepavyksta paleisti pivx: apdorojimo "spustelėjimo ir apmokėjimo" funkcijos klaida</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2210,8 +2096,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Zerocoin Veiksmai:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su Bulwark tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su BWK tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2226,32 +2112,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Galimos konvertavimui monetos, kurios yra patvirtintos ir neužrakintos, arba Masternod'ų užstatai.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Prieinama Konvertavimui:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation>Atitaisyti</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Monetų Kontrolė...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kiekis:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2267,7 +2129,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     <message>
         <source>zBWK Control</source>
-        <translation>zBWK Kontrolė</translation>
+        <translation>zTelos Kontrolė</translation>
     </message>
     <message>
         <source>zBWK Selected:</source>
@@ -2294,16 +2156,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level:</source>
-        <translation>Saugumo Lygmuo:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Saugumo Lygmuo 1 - 100 (numatytas: 42)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>Mokėti:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>&amp;Mokėti:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2322,12 +2176,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiketė:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiketė:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
         <source>Minimize Change</source>
@@ -2357,7 +2211,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <source>Unconfirmed: less than 20 confirmations
 Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
-Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominalo po to, kai buvo konvertuota.</translation>
+Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
     </message>
     <message>
         <source>Denom. 1:</source>
@@ -2501,19 +2355,11 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     <message>
         <source>out of sync</source>
-        <translation>ne sinchronizuotas</translation>
+        <translation>nesinchronizuotas</translation>
     </message>
     <message>
         <source>Mint Status: Okay</source>
         <translation>Konvertavimo Statusas: Geras</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopijuoti kiekį</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
     </message>
     <message>
         <source>zBWK Spend #: </source>
@@ -2600,12 +2446,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Nomin. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Klaida: jūsų piniginė užrakinta. Pirmiausia įveskite piniginės slaptažodį.</translation>
-    </message>
-    <message>
-        <source>Invalid BWK address</source>
-        <translation>Netinkamas Bulwark Adresas</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Netinkamas Pivx Adresas</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2624,14 +2466,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>į adresą</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>su Saugumo Lygmeniu</translation>
-    </message>
-    <message>
-        <source>Failed to spend zBWK</source>
-        <translation>Nepavyko išleisti zBWK</translation>
-    </message>
-    <message>
         <source>serial: </source>
         <translation>serija:</translation>
     </message>
@@ -2645,14 +2479,17 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Suma</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Įveskite Bulwark adresą (pvz. %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Įveskite BWK adresą (pvz. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2686,16 +2523,20 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Išsaugoti Paveikslėlį</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Išsaugoti Paveikslėlį</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Kopijuoti Paveikslėlį</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopijuoti Paveikslėlį</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -2713,8 +2554,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Įrankių langas</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informacija</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informacija</translation>
     </message>
     <message>
         <source>General</source>
@@ -2733,8 +2574,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Prisijungimų skaičius</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Atidaryti</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Atidaryti</translation>
     </message>
     <message>
         <source>Network</source>
@@ -2765,20 +2606,20 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Masternod'ų skaičius</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Konsolė</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Konsolė</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Išvalyti konsolę</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Tinklo Srautas</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Tinklo Srautas</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Išvalyti</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Išvalyti</translation>
     </message>
     <message>
         <source>Received</source>
@@ -2789,8 +2630,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Išsiųsta</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Peers</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
@@ -2817,8 +2658,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Ping'o laikas</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Piniginės Taisymas</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Piniginės Taisymas</translation>
     </message>
     <message>
         <source>In:</source>
@@ -2829,8 +2670,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Iš:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Sveiki atvykę į Bulwark RPC konsolę.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Sveiki atvykę į BWK RPC konsolę.</translation>
     </message>
     <message>
         <source>never</source>
@@ -2840,16 +2681,16 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>Label:</source>
-        <translation>Etiketė:</translation>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiketė:</translation>
     </message>
     <message>
-        <source>Request payment</source>
-        <translation>Prašyti mokėjimo</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Prašyti mokėjimo</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2883,6 +2724,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <source>Copy amount</source>
         <translation>Kopijuoti sumą</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopijuoti adresą</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -2891,8 +2736,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>QR Kodas</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Išsaugoti Paveikslėlį</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Išsaugoti Paveikslėlį</translation>
     </message>
     <message>
         <source>URI</source>
@@ -2928,6 +2773,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Message</source>
         <translation>Žinutė</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3001,8 +2850,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Pasirinktinio pakeitimo adresas</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3065,8 +2914,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Išvalyti visus laukelius.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Išvalyti Viskas</translation>
+        <source>Clear &amp;All</source>
+        <translation>Išvalyti &amp;Viskas</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3120,8 +2969,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Tai normalus mokėjimas.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>Mokėti:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>&amp;Mokėti:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3140,12 +2989,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etiketė:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etiketė:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
+        <source>A&amp;mount:</source>
+        <translation>S&amp;uma:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -3158,8 +3007,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark adresas, kuriuo pasirašyti žinute</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK adresas, kuriuo pasirašyti žinute</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3182,24 +3031,24 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Kopijuoti dabartinį parašą</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio Bulwark adreso savininkas</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio BWK adreso savininkas</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark adresas, kurio buvo pasirašyta žinutė</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK adresas, kurio buvo pasirašyta žinutė</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu Bulwark adresu</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu BWK adresu</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Atstatyti visus pažymėtus laukus</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Išvalyti Viskas</translation>
+        <source>Clear &amp;All</source>
+        <translation>Išvalyti &amp;Viskas</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3229,8 +3078,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -3440,8 +3289,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>ISTORIJA</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Eksportuoti</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Eksportuoti</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -3449,7 +3298,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
@@ -3460,7 +3309,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(default: %s)</source>
         <translation>(numatytas: %s)</translation>
@@ -3470,16 +3319,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>(numatytas: 1)</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Jau turi tą įvestį.</translation>
-    </message>
-    <message>
         <source>Done loading</source>
         <translation>Krovimas baigtas</translation>
-    </message>
-    <message>
-        <source>Entries are full.</source>
-        <translation>Įvestys pilnos.</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -3494,8 +3335,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida kraunant wallet.dat: Piniginė yra sugadinta</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Klaida kraunant wallet.dat: Piniginė reikalauja naujesnės Bulwark Core versijos</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>Klaida kraunant wallet.dat: Piniginė reikalauja naujesnės BWK Core versijos</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -3510,10 +3351,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida: Įvyko vidinė klaida, dėl išsamesnės informacijos žr. Debug.log</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Klaida: Nepavyko pasirinkti esamų nominalo įvesčių</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Klaida: Diske mažai vietos!</translation>
     </message>
@@ -3522,28 +3359,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida nuskaitant bloką</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Sandoris užbaiginėjamas.</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Importuojama...</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Nesuderinamas režimas.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Nesuderinama versija.</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Informacija</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Įvestis neteisinga.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3562,16 +3383,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Neteisingas privatus raktas.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Aptiktas netinkamas programos kodas.</translation>
-    </message>
-    <message>
         <source>SwiftX options:</source>
         <translation>SwiftX nustatymai:</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Nepavyko deserializuoti</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
@@ -3612,14 +3425,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Masternode options:</source>
         <translation>Masternod'ų nustatymai:</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternod'as:</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Nėra Masternod'ų sąraše.</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -3682,24 +3487,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Sandorio sumos turi būti teigiamos</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Sandoris sėkmingai sukurtas.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Sandorio mokesčiai yra per dideli.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Sandoris negalioja.</translation>
-    </message>
-    <message>
         <source>Transaction too large</source>
         <translation>Sandoris per didelis</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Perduodamas galutinis sandoris.</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -3722,12 +3511,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Piniginė %s yra ne duomenų kataloge %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Piniginė užrakinta.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Piniginę reikia perrašyti: paleiskite Bulwark Core iš naujo</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>Piniginę reikia perrašyti: paleiskite BWK Core iš naujo</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -3756,14 +3541,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Neturite pakankamai Zerocoin monetų savo piniginėje</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Jūsų įrašai sėkmingai pridėti.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Jūsų sandoris buvo priimtas į "baseiną"!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

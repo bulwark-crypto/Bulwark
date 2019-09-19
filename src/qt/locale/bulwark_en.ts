@@ -15,8 +15,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>New</source>
-        <translation>New</translation>
+        <source>&amp;New</source>
+        <translation>&amp;New</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -25,8 +25,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Copy</source>
-        <translation>Copy</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copy</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -35,8 +35,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Delete</source>
-        <translation>Delete</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Delete</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -45,13 +45,13 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Export</source>
-        <translation>Export</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Export</translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>Close</source>
-        <translation>Close</translation>
+        <source>C&amp;lose</source>
+        <translation>C&amp;lose</translation>
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+44"/>
@@ -65,8 +65,8 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>Choose</source>
-        <translation>Choose</translation>
+        <source>C&amp;hoose</source>
+        <translation>C&amp;hoose</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -80,28 +80,28 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Copy Address</source>
-        <translation>Copy Address</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Copy Address</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Copy Label</source>
-        <translation>Copy Label</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copy &amp;Label</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Edit</source>
-        <translation>Edit</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Edit</translation>
     </message>
     <message>
         <location line="+182"/>
@@ -221,7 +221,7 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -315,7 +315,7 @@
     </message>
     <message>
         <location line="+13"/>
-        <source>BIP 38 Encrypt</source>
+        <source>&amp;BIP 38 Encrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -326,12 +326,12 @@
     </message>
     <message>
         <location line="-424"/>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>The Bulwark address to encrypt</source>
+        <source>The BWK address to encrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -375,7 +375,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>Encrypt the private key for this Bulwark address</source>
+        <source>Encrypt the private key for this BWK address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -396,18 +396,18 @@
     </message>
     <message>
         <location line="-168"/>
-        <source>Encrypt Key</source>
+        <source>Encrypt &amp;Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+17"/>
         <location line="+171"/>
-        <source>Clear All</source>
-        <translation type="unfinished">Clear All</translation>
+        <source>Clear &amp;All</source>
+        <translation type="unfinished">Clear &amp;All</translation>
     </message>
     <message>
         <location line="-112"/>
-        <source>BIP 38 Decrypt</source>
+        <source>&amp;BIP 38 Decrypt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -417,7 +417,7 @@
     </message>
     <message>
         <location line="+89"/>
-        <source>Decrypt Key</source>
+        <source>Decrypt &amp;Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -516,7 +516,7 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+122"/>
+        <location filename="../bitcoingui.cpp" line="+123"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
@@ -527,8 +527,8 @@
     </message>
     <message>
         <location line="+174"/>
-        <source>Overview</source>
-        <translation>Overview</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Overview</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -537,18 +537,18 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>Send</source>
-        <translation>Send</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Send</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Receive</source>
-        <translation>Receive</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Receive</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Transactions</source>
-        <translation>Transactions</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transactions</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -561,9 +561,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+42"/>
-        <source>Exit</source>
-        <translation>Exit</translation>
+        <location line="+28"/>
+        <source>&amp;Governance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show Proposals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>E&amp;xit</source>
+        <translation>E&amp;xit</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -572,8 +582,8 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>About Qt</source>
-        <translation>About Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>About &amp;Qt</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -582,13 +592,13 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Options...</source>
-        <translation>Options...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Options...</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Show / Hide</source>
-        <translation>Show / Hide</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Show / Hide</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -597,8 +607,8 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Encrypt Wallet...</source>
-        <translation>Encrypt Wallet...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Encrypt Wallet...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -607,8 +617,8 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Backup Wallet...</source>
-        <translation>Backup Wallet...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Backup Wallet...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -617,8 +627,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Change Passphrase...</source>
-        <translation>Change Passphrase...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Change Passphrase...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -627,8 +637,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Unlock Wallet...</source>
-        <translation>Unlock Wallet...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Unlock Wallet...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -637,23 +647,23 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Lock Wallet</source>
-        <translation>Lock Wallet</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Lock Wallet</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Sign message...</source>
-        <translation>Sign message...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Sign &amp;message...</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify message...</source>
-        <translation>Verify message...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verify message...</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>Information</source>
-        <translation>Information</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -662,8 +672,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Debug console</source>
-        <translation>Debug console</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Debug console</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -672,8 +682,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Network Monitor</source>
-        <translation>Network Monitor</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Network Monitor</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -682,8 +692,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Peers list</source>
-        <translation>Peers list</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Peers list</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -692,8 +702,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet Repair</source>
-        <translation>Wallet Repair</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>Wallet &amp;Repair</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -707,8 +717,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Show Automatic Backups</source>
-        <translation>Show Automatic Backups</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Show Automatic &amp;Backups</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -717,8 +727,8 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Sending addresses...</source>
-        <translation>Sending addresses...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Sending addresses...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -727,8 +737,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Receiving addresses...</source>
-        <translation>Receiving addresses...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Receiving addresses...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -737,7 +747,7 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Multisignature creation...</source>
+        <source>&amp;Multisignature creation...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -747,7 +757,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Multisignature spending...</source>
+        <source>&amp;Multisignature spending...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -757,7 +767,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Multisignature signing...</source>
+        <source>&amp;Multisignature signing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -767,16 +777,16 @@
     </message>
     <message>
         <location line="+2"/>
-        <source>Open URI...</source>
-        <translation>Open URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Open &amp;URI...</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Command-line options</source>
-        <translation>Command-line options</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Command-line options</translation>
     </message>
     <message numerus="yes">
-        <location line="+482"/>
+        <location line="+490"/>
         <source>Processed %n blocks of transaction history.</source>
         <translation>
             <numerusform>Processed %n block of transaction history.</numerusform>
@@ -794,7 +804,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+233"/>
+        <location line="+242"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -804,24 +814,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-762"/>
-        <source>File</source>
-        <translation>File</translation>
+        <location line="-779"/>
+        <source>&amp;File</source>
+        <translation>&amp;File</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>Settings</source>
-        <translation>Settings</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Settings</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Tools</source>
-        <translation>Tools</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Tools</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Help</source>
-        <translation>Help</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -829,29 +839,29 @@
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <location line="-436"/>
-        <location line="+918"/>
-        <source>Bulwark Core</source>
+        <location line="-448"/>
+        <location line="+938"/>
+        <source>BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-722"/>
-        <source>Send coins to a Bulwark address</source>
+        <location line="-742"/>
+        <source>Send coins to a BWK address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Privacy</source>
+        <source>&amp;Privacy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+15"/>
-        <source>Masternodes</source>
+        <source>&amp;Masternodes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -860,33 +870,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>About Bulwark Core</source>
+        <location line="+43"/>
+        <source>&amp;About BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about Bulwark Core</source>
+        <source>Show information about BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Modify configuration options for Bulwark</source>
+        <source>Modify configuration options for BWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>BIP38 tool</source>
+        <source>&amp;BIP38 tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -896,7 +906,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>MultiSend</source>
+        <source>&amp;MultiSend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -906,12 +916,12 @@
     </message>
     <message>
         <location line="+13"/>
-        <source>Open Wallet Configuration File</source>
+        <source>Open Wallet &amp;Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Open Masternode Configuration File</source>
+        <source>Open &amp;Masternode Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -921,12 +931,12 @@
     </message>
     <message>
         <location line="+17"/>
-        <source>Open a Bulwark: URI or payment request</source>
+        <source>Open a BWK: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Blockchain explorer</source>
+        <source>&amp;Blockchain explorer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -936,17 +946,17 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+233"/>
-        <source>Bulwark Core client</source>
+        <location line="+234"/>
+        <source>BWK Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location line="+212"/>
-        <source>%n active connection(s) to Bulwark network</source>
+        <location line="+219"/>
+        <source>%n active connection(s) to BWK network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -1074,20 +1084,20 @@ Address: %4
 </translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+54"/>
         <source>Staking is active
  MultiSend: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-4"/>
-        <location line="+4"/>
+        <location line="-6"/>
+        <location line="+6"/>
         <source>Not Active</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1098,17 +1108,17 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+12"/>
         <source>AutoMint is currently enabled and set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>AutoMint is disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+30"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
@@ -1116,6 +1126,11 @@ Address: %4
         <location line="+20"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../pivx.cpp" line="+478"/>
+        <source>A fatal error occurred. BWK can no longer continue safely and will quit.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1152,7 +1167,7 @@ Address: %4
     </message>
     <message>
         <location filename="../blockexplorer.cpp" line="+480"/>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1452,7 +1467,7 @@ Address: %4
     </message>
     <message>
         <location line="+8"/>
-        <source>Can vary +/- %1 uBulwark per input.</source>
+        <source>Can vary +/- %1 upiv per input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1481,8 +1496,8 @@ Address: %4
     </message>
     <message>
         <location line="+11"/>
-        <source>Label</source>
-        <translation>Label</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Label</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1491,8 +1506,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Address</source>
-        <translation>Address</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Address</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1521,7 +1536,7 @@ Address: %4
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid Bulwark address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid BWK address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1569,6 +1584,64 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <location filename="../forms/governancepage.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>GOVERNANCE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+141"/>
+        <source>Update Proposals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Next super block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Blocks to next super block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Days to budget payout (estimate):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Allotted budget:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Budget left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Masternodes count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+37"/>
@@ -1577,7 +1650,7 @@ Address: %4
     </message>
     <message>
         <location line="+0"/>
-        <source>Bulwark Core</source>
+        <source>BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1588,7 +1661,7 @@ Address: %4
     </message>
     <message>
         <location line="+4"/>
-        <source>About Bulwark Core</source>
+        <source>About BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1646,17 +1719,17 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Welcome to Bulwark Core.</source>
+        <source>Welcome to BWK Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1671,7 +1744,7 @@ Address: %4
     </message>
     <message>
         <location filename="../intro.cpp" line="+77"/>
-        <source>Bulwark Core</source>
+        <source>BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1703,12 +1776,12 @@ Address: %4
         <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+41"/>
         <source>MASTERNODES</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+83"/>
         <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see &quot;MISSING&quot; in &quot;Status&quot; field.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1749,22 +1822,22 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>Start alias</source>
+        <source>S&amp;tart alias</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Start all</source>
+        <source>Start &amp;all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Start MISSING</source>
+        <source>Start &amp;MISSING</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Update status</source>
+        <source>&amp;Update status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1831,7 +1904,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+96"/>
+        <location line="+87"/>
         <source>Enter whole numbers 1 - 100</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1847,8 +1920,8 @@ Address: %4
     </message>
     <message>
         <location line="-106"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
         <translation type="unfinished"></translation>
@@ -2059,7 +2132,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+19"/>
-        <source>Create MultiSignature Address</source>
+        <source>Create MultiSignature &amp;Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2084,7 +2157,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Add Address / Key</source>
+        <source>&amp;Add Address / Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2099,7 +2172,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Create</source>
+        <source>C&amp;reate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2118,12 +2191,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+23"/>
-        <source>Import Redeem</source>
+        <source>&amp;Import Redeem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Create MultiSignature Tx</source>
+        <source>&amp;Create MultiSignature Tx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2169,12 +2242,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Add destinations to send Bulwark to</source>
+        <source>Add destinations to send BWK to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Add Destination</source>
+        <source>Add &amp;Destination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2184,12 +2257,12 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Create</source>
+        <source>Cr&amp;eate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+76"/>
-        <source>Sign MultiSignature Tx</source>
+        <source>&amp;Sign MultiSignature Tx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2204,7 +2277,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Sign</source>
+        <source>S&amp;ign</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2214,7 +2287,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Commit</source>
+        <source>Co&amp;mmit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2224,7 +2297,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Add Private Key</source>
+        <source>Add Private &amp;Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2260,91 +2333,6 @@ Please be patient after clicking import.</source>
     <message>
         <location line="+26"/>
         <source>Maximum (15)</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <location filename="../forms/obfuscationconfig.ui" line="+14"/>
-        <source>Configure Obfuscation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Basic Privacy</source>
-        <translation type="unfinished">Basic Privacy</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>High Privacy</source>
-        <translation type="unfinished">High Privacy</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Maximum Privacy</source>
-        <translation type="unfinished">Maximum Privacy</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Please select a privacy level.</source>
-        <translation type="unfinished">Please select a privacy level.</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Use 16 separate masternodes</source>
-        <translation type="unfinished">Use 16 separate masternodes</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation type="unfinished">This is the slowest and most secure option. Using maximum anonymity will cost</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../obfuscationconfig.cpp" line="+47"/>
-        <location line="+14"/>
-        <location line="+14"/>
-        <source>Obfuscation Configuration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-27"/>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark&apos;s configuration screen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark&apos;s configuration screen.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2385,13 +2373,13 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Main</source>
-        <translation>Main</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Main</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>Size of database cache</source>
-        <translation>Size of database cache</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Size of &amp;database cache</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -2400,8 +2388,8 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>Number of script verification threads</source>
-        <translation>Number of script verification threads</translation>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Number of script &amp;verification threads</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -2409,9 +2397,9 @@ Please be patient after clicking import.</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <location line="+115"/>
-        <source>Wallet</source>
-        <translation>Wallet</translation>
+        <location line="+141"/>
+        <source>W&amp;allet</source>
+        <translation>W&amp;allet</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -2420,7 +2408,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2435,8 +2423,8 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+10"/>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Connect through SOCKS5 proxy (default proxy):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
     </message>
     <message>
         <location line="-82"/>
@@ -2444,24 +2432,24 @@ Please be patient after clicking import.</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="-210"/>
-        <source>Automatically start Bulwark after logging in to the system.</source>
+        <location line="-236"/>
+        <source>Automatically start BWK after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Start Bulwark on system login</source>
+        <source>&amp;Start BWK on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+239"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable coin control features</source>
-        <translation>Enable coin control features</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Enable coin &amp;control features</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2475,33 +2463,33 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+10"/>
-        <source>Spend unconfirmed change</source>
-        <translation>Spend unconfirmed change</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Spend unconfirmed change</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Network</source>
-        <translation>Network</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Network</translation>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-204"/>
-        <source>Map port using UPnP</source>
-        <translation>Map port using UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <location line="-169"/>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
+        <location line="-187"/>
+        <source>Enable automatic minting of BWK units to zBWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2510,8 +2498,18 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <location line="+7"/>
+        <source>Enable automatic zBWK minting from specific addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Enable Automint Addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2522,7 +2520,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     <message>
         <location line="+30"/>
         <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2531,19 +2529,19 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+40"/>
         <source>Stake split threshold:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+98"/>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+12"/>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -2552,8 +2550,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>Port:</source>
-        <translation>Port:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Port:</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -2562,8 +2560,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+36"/>
-        <source>Window</source>
-        <translation>Window</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Window</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2572,8 +2570,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>Minimize to the tray instead of the taskbar</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;Minimize to the tray instead of the taskbar</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2582,18 +2580,18 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Minimize on close</source>
-        <translation>Minimize on close</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>M&amp;inimize on close</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Display</source>
-        <translation>Display</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Display</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>User Interface language:</source>
-        <translation>User Interface language:</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>User Interface &amp;language:</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -2601,12 +2599,12 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation>User Interface Theme:</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+27"/>
         <source>Unit to show amounts in:</source>
-        <translation>Unit to show amounts in:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+10"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Choose the default subdivision unit to show in the interface and when sending coins.</translation>
     </message>
@@ -2633,12 +2631,12 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+24"/>
-        <location line="+13"/>
+        <location line="+10"/>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
     </message>
     <message>
-        <location line="-10"/>
+        <location line="-7"/>
         <source>Third party transaction URLs</source>
         <translation>Third party transaction URLs</translation>
     </message>
@@ -2654,21 +2652,21 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>Reset Options</source>
-        <translation>Reset Options</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Reset Options</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Cancel</source>
-        <translation>Cancel</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+89"/>
+        <location filename="../optionsdialog.cpp" line="+92"/>
         <source>Any</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2683,23 +2681,23 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+96"/>
+        <location line="+98"/>
         <source>Confirm options reset</source>
         <translation>Confirm options reset</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+30"/>
+        <location line="+29"/>
         <source>Client restart required to activate changes.</source>
         <translation>Client restart required to activate changes.</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-29"/>
         <source>Client will be shutdown, do you want to proceed?</source>
         <translation>Client will be shutdown, do you want to proceed?</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+31"/>
         <source>This change would require a client restart.</source>
         <translation>This change would require a client restart.</translation>
     </message>
@@ -2727,7 +2725,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
         <translation>Form</translation>
     </message>
     <message>
-        <location line="+297"/>
+        <location line="+270"/>
         <location line="+192"/>
         <location line="+403"/>
         <source>Available:</source>
@@ -2746,7 +2744,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     </message>
     <message>
         <location line="+71"/>
-        <source>Bulwark Balance</source>
+        <source>BWK Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2778,7 +2776,7 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
     <message>
         <location line="+16"/>
         <location line="+19"/>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2805,16 +2803,16 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="-725"/>
         <location line="+852"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-999"/>
+        <location line="-990"/>
         <source>OVERVIEW</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+134"/>
+        <location line="+125"/>
         <source>Combined Balance (including unconfirmed and immature coins)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2863,7 +2861,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
     <message>
         <location line="+191"/>
         <location line="+19"/>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2888,7 +2886,7 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>Recent transactions</translation>
     </message>
     <message>
-        <location filename="../overviewpage.cpp" line="+132"/>
+        <location filename="../overviewpage.cpp" line="+131"/>
         <location line="+1"/>
         <source>out of sync</source>
         <translation>out of sync</translation>
@@ -2907,20 +2905,20 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     </message>
     <message>
         <location line="+1"/>
-        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in bulwark.conf.</source>
+        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in pivx.conf.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
         <source>AutoMint is currently disabled.
-To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in bulwark.conf</source>
+To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in pivx.conf</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+292"/>
+        <location filename="../paymentserver.cpp" line="+291"/>
         <location line="+205"/>
         <location line="+33"/>
         <location line="+104"/>
@@ -2953,12 +2951,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="-104"/>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
+        <source>Cannot start pivx: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+110"/>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3060,52 +3058,33 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <location filename="../forms/privacydialog.ui" line="+184"/>
+        <location filename="../forms/privacydialog.ui" line="+157"/>
         <source>Zerocoin Actions:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+190"/>
-        <location filename="../privacydialog.cpp" line="+172"/>
-        <location line="+112"/>
+        <location filename="../privacydialog.cpp" line="+280"/>
         <source>Mint Zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <location line="+351"/>
+        <location filename="../forms/privacydialog.ui" line="+373"/>
         <location line="+30"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-371"/>
-        <location line="+651"/>
+        <location line="+229"/>
         <source>zBWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-644"/>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Available for Minting:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>0.000 000 00 BWK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
+        <location line="-392"/>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3115,22 +3094,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
         <translation type="unfinished">Reset</translation>
     </message>
     <message>
-        <location line="+26"/>
-        <source>Coin Control...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+36"/>
-        <source>Quantity:</source>
-        <translation type="unfinished">Quantity:</translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>Amount:</source>
-        <translation type="unfinished">Amount:</translation>
-    </message>
-    <message>
-        <location line="+91"/>
+        <location line="-19"/>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3140,23 +3104,17 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+30"/>
         <source>Status and/or Mesages from the last Mint Action.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-600"/>
+        <location line="-360"/>
         <source>PRIVACY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+308"/>
-        <location line="+52"/>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+301"/>
+        <location line="+462"/>
         <source>zBWK Control</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3172,19 +3130,16 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+37"/>
-        <location filename="../privacydialog.cpp" line="+563"/>
+        <location filename="../privacydialog.cpp" line="+546"/>
         <source>Spend Zerocoin. Without &apos;Pay To:&apos; address creates payments to yourself.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <location filename="../privacydialog.cpp" line="-514"/>
+        <location filename="../privacydialog.cpp" line="-497"/>
         <location line="+4"/>
         <location line="+12"/>
-        <location line="+84"/>
-        <location line="+32"/>
-        <location line="+11"/>
-        <location line="+4"/>
+        <location line="+112"/>
         <source>Spend Zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3206,10 +3161,10 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-548"/>
+        <location line="-367"/>
         <location line="+49"/>
-        <location line="+504"/>
-        <location line="+421"/>
+        <location line="+323"/>
+        <location line="+370"/>
         <location line="+544"/>
         <location line="+31"/>
         <location line="+31"/>
@@ -3223,28 +3178,13 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1190"/>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Security Level:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Pay To:</source>
-        <translation type="unfinished">Pay To:</translation>
+        <location line="-1126"/>
+        <source>Pay &amp;To:</source>
+        <translation type="unfinished">Pay &amp;To:</translation>
     </message>
     <message>
         <location line="+27"/>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3269,8 +3209,8 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
     </message>
     <message>
         <location line="+15"/>
-        <source>Label:</source>
-        <translation type="unfinished">Label:</translation>
+        <source>&amp;Label:</source>
+        <translation type="unfinished">&amp;Label:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -3279,8 +3219,8 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
     </message>
     <message>
         <location line="+13"/>
-        <source>Amount:</source>
-        <translation type="unfinished">Amount:</translation>
+        <source>A&amp;mount:</source>
+        <translation type="unfinished">A&amp;mount:</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -3308,16 +3248,16 @@ zBWK are mature when they have more than 20 confirmations AND more than 2 mints 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-893"/>
+        <location line="-661"/>
         <location line="+25"/>
-        <location line="+936"/>
+        <location line="+704"/>
         <location line="+38"/>
         <source>Total Balance including unconfirmed and immature zBWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-996"/>
-        <location line="+961"/>
+        <location line="-764"/>
+        <location line="+729"/>
         <source>Total Zerocoin  Balance:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3349,8 +3289,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add &apos;enablezeromint=1&apos; to bulwark.conf
-- disable: add &apos;enablezeromint=0&apos; to bulwark.conf
+- enable: add &apos;enablezeromint=1&apos; to pivx.conf
+- disable: add &apos;enablezeromint=0&apos; to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -3364,8 +3304,8 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1410"/>
-        <location line="+1459"/>
+        <location line="-1178"/>
+        <location line="+1227"/>
         <source>Global Supply:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3422,7 +3362,7 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1324"/>
+        <location line="-1092"/>
         <source>Show zBWK denominations list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3432,7 +3372,17 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+967"/>
+        <location line="+29"/>
+        <source>zBWK minting is DISABLED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+131"/>
+        <source>zBWK spending is NOT private (links back to the mint transaction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+575"/>
         <source>Denominations with value 5:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3507,7 +3457,7 @@ To change the percentage (no restart required):
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+147"/>
+        <location line="+138"/>
         <source>Priority:</source>
         <translation type="unfinished">Priority:</translation>
     </message>
@@ -3543,10 +3493,6 @@ To change the percentage (no restart required):
     </message>
     <message>
         <location line="+75"/>
-        <location filename="../privacydialog.cpp" line="-438"/>
-        <location line="+1"/>
-        <location line="+545"/>
-        <location line="+1"/>
         <source>Coins automatically selected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3556,12 +3502,12 @@ To change the percentage (no restart required):
         <translation type="unfinished">medium</translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+71"/>
         <source>Coin Control Features</source>
         <translation type="unfinished">Coin Control Features</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+63"/>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
         <translation type="unfinished">If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</translation>
     </message>
@@ -3581,47 +3527,23 @@ To change the percentage (no restart required):
         <translation type="unfinished">Change:</translation>
     </message>
     <message>
-        <location filename="../privacydialog.cpp" line="-545"/>
+        <location filename="../privacydialog.cpp" line="-413"/>
         <source>out of sync</source>
         <translation type="unfinished">out of sync</translation>
     </message>
     <message>
         <location line="+6"/>
-        <location line="+129"/>
         <source>Mint Status: Okay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-123"/>
-        <source>Copy quantity</source>
-        <translation type="unfinished">Copy quantity</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy amount</source>
-        <translation type="unfinished">Copy amount</translation>
-    </message>
-    <message>
-        <location line="+192"/>
+        <location line="+195"/>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+171"/>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+54"/>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+34"/>
+        <location line="+240"/>
         <source>zBWK Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3631,7 +3553,7 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+293"/>
+        <location line="+294"/>
         <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3646,19 +3568,17 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+12"/>
-        <location line="+4"/>
+        <location line="+17"/>
         <source>zBWK is currently disabled due to maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-666"/>
-        <location line="+112"/>
+        <location line="-537"/>
         <source>zBWK is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-221"/>
+        <location line="-215"/>
         <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3699,12 +3619,12 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+740"/>
+        <location line="+716"/>
         <source>AutoMint Status:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-737"/>
+        <location line="-713"/>
         <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3744,53 +3664,22 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+103"/>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Minting </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Successfully minted </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source> zBWK in </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source> sec. Used denominations:
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+35"/>
+        <location line="+165"/>
         <location line="+15"/>
-        <location line="+260"/>
+        <location line="+241"/>
         <source>Duration: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-275"/>
+        <location line="-256"/>
         <location line="+15"/>
-        <location line="+260"/>
+        <location line="+241"/>
         <source> sec.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-265"/>
+        <location line="-246"/>
         <source>Starting ResetSpentZerocoin: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3801,7 +3690,7 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Invalid BWK address</source>
+        <source>Invalid Pivx Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3815,7 +3704,7 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+21"/>
         <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3830,65 +3719,34 @@ Maximum allowed: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>with Security Level </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>Confirm send coins</source>
         <translation type="unfinished">Confirm send coins</translation>
     </message>
     <message>
-        <location line="+24"/>
-        <location line="+32"/>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-31"/>
-        <location line="+32"/>
-        <source>Failed to spend zBWK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-25"/>
+        <location line="+23"/>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+33"/>
-        <source>Too much inputs (</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <location line="+4"/>
+        <location line="+35"/>
         <source>Spend Zerocoin failed with status = </source>
         <translation type="unfinished"></translation>
     </message>
-    <message numerus="yes">
-        <location line="+362"/>
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of BWK to convert to zBWK</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
     <message>
-        <location line="-334"/>
+        <location line="+28"/>
         <source>denomination: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-75"/>
+        <source>Spending Zerocoin.
+Computationally expensive, might need several minutes depending on your hardware.
+Please be patient...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+76"/>
         <source>serial: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3924,6 +3782,90 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    <message>
+        <location filename="../proposalframe.cpp" line="+92"/>
+        <source>Open proposal page in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source> remaining payment(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Yes:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Abstain:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>No:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Open link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>Wallet Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You must unlock your wallet to vote.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Do you want to vote %1 on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>using all your masternodes?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Proposal Hash:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Proposal URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Confirm Vote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <source>Vote Results</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <location filename="../bitcoinunits.cpp" line="+252"/>
@@ -3932,7 +3874,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+105"/>
-        <source>Enter a Bulwark address (e.g. %1)</source>
+        <source>Enter a BWK address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3952,18 +3894,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <location line="+40"/>
+        <location line="+43"/>
         <source>%1 s</source>
         <translation>%1 s</translation>
     </message>
     <message>
-        <location line="-25"/>
+        <location line="-28"/>
         <source>NETWORK</source>
         <translation>NETWORK</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>BLOOM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ZK_BLOOM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3986,18 +3933,51 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
+    <message>
+        <location filename="../pivx.cpp" line="+75"/>
+        <location line="+7"/>
+        <location line="+13"/>
+        <location line="+19"/>
+        <source>BWK Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-38"/>
+        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Error: Invalid combination of -regtest and -testnet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Error reading masternode configuration file: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>BWK Core didn&apos;t yet exit safely...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QRImageWidget</name>
     <message>
         <location filename="../receiverequestdialog.cpp" line="+33"/>
-        <source>Save Image...</source>
-        <translation>Save Image...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Save Image...</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Copy Image</source>
-        <translation>Copy Image</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Copy Image</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -4019,8 +3999,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>Information</source>
-        <translation>Information</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4080,8 +4060,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+134"/>
-        <source>Open</source>
-        <translation>Open</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Open</translation>
     </message>
     <message>
         <location line="-193"/>
@@ -4135,7 +4115,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+79"/>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4145,8 +4125,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+122"/>
-        <source>Console</source>
-        <translation>Console</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Console</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -4155,13 +4135,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+23"/>
-        <source>Network Traffic</source>
-        <translation>Network Traffic</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Network Traffic</translation>
     </message>
     <message>
         <location line="+52"/>
-        <source>Clear</source>
-        <translation>Clear</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Clear</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -4180,8 +4160,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+41"/>
-        <source>Peers</source>
-        <translation>Peers</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -4257,8 +4237,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+89"/>
-        <source>Wallet Repair</source>
-        <translation>Wallet Repair</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Wallet Repair</translation>
     </message>
     <message>
         <location line="+347"/>
@@ -4407,12 +4387,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-39"/>
-        <source>Welcome to the Bulwark RPC console.</source>
+        <source>Welcome to the BWK RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-218"/>
-        <source>Disconnect Node</source>
+        <source>&amp;Disconnect Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4425,27 +4405,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-3"/>
-        <source>1 hour</source>
+        <source>1 &amp;hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>1 day</source>
+        <source>1 &amp;day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>1 week</source>
+        <source>1 &amp;week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>1 year</source>
+        <source>1 &amp;year</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+46"/>
-        <source>Unban Node</source>
+        <source>&amp;Unban Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4554,19 +4534,19 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <location filename="../forms/receivecoinsdialog.ui" line="+263"/>
+        <location filename="../forms/receivecoinsdialog.ui" line="+245"/>
         <source>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</source>
         <translation>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Reuse an existing receiving address (not recommended)</source>
-        <translation>Reuse an existing receiving address (not recommended)</translation>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>R&amp;euse an existing receiving address (not recommended)</translation>
     </message>
     <message>
         <location line="-30"/>
-        <source>Message:</source>
-        <translation>Message:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Message:</translation>
     </message>
     <message>
         <location line="-87"/>
@@ -4582,27 +4562,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-22"/>
-        <source>Address:</source>
+        <source>&amp;Address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+32"/>
-        <source>Amount:</source>
-        <translation type="unfinished">Amount:</translation>
+        <source>A&amp;mount:</source>
+        <translation type="unfinished">A&amp;mount:</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-166"/>
         <source>RECEIVE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+191"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
+        <location line="+182"/>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4612,8 +4592,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <location line="+52"/>
@@ -4623,8 +4603,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+62"/>
-        <source>Request payment</source>
-        <translation>Request payment</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Request payment</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4696,18 +4676,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+46"/>
-        <source>Copy URI</source>
-        <translation>Copy URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Copy &amp;URI</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Copy Address</source>
-        <translation>Copy Address</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Copy &amp;Address</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Save Image...</source>
-        <translation>Save Image...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Save Image...</translation>
     </message>
     <message>
         <location filename="../receiverequestdialog.cpp" line="+63"/>
@@ -4758,7 +4738,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
-        <location filename="../recentrequeststablemodel.cpp" line="+28"/>
+        <location filename="../recentrequeststablemodel.cpp" line="+27"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -4809,12 +4789,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Send Coins</translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+47"/>
         <source>SEND</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+156"/>
+        <location line="+147"/>
         <source>Coin Control Features</source>
         <translation>Coin Control Features</translation>
     </message>
@@ -4824,7 +4804,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Insufficient funds!</translation>
     </message>
     <message>
-        <location line="+89"/>
+        <location line="+80"/>
         <source>Quantity:</source>
         <translation>Quantity:</translation>
     </message>
@@ -4900,11 +4880,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>0 Bulwark</source>
+        <source>0 BWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+149"/>
         <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 BWK applies</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4929,7 +4909,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Minimize</translation>
     </message>
     <message>
-        <location line="+135"/>
+        <location line="+126"/>
         <source>per kilobyte</source>
         <translation>per kilobyte</translation>
     </message>
@@ -4949,7 +4929,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Custom:</translation>
     </message>
     <message>
-        <location line="-211"/>
+        <location line="-202"/>
         <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
         <translation>(Smart fee not initialized yet. This usually takes a few blocks...)</translation>
     </message>
@@ -4964,7 +4944,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Confirmation time:</translation>
     </message>
     <message>
-        <location line="-750"/>
+        <location line="-723"/>
         <source>Open Coin Control...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4974,23 +4954,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1062"/>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uBWKs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <location line="+1026"/>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uBWKs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uPIVs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+33"/>
         <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-374"/>
+        <location line="-365"/>
         <source>normal</source>
         <translation>normal</translation>
     </message>
@@ -5000,7 +4980,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>fast</translation>
     </message>
     <message>
-        <location line="+360"/>
+        <location line="+351"/>
         <source>Recommended</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5021,8 +5001,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Send</source>
-        <translation>Send</translation>
+        <source>S&amp;end</source>
+        <translation>S&amp;end</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -5031,8 +5011,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Clear All</source>
-        <translation>Clear All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Clear &amp;All</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -5041,8 +5021,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Add Recipient</source>
-        <translation>Add Recipient</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Add &amp;Recipient</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -5240,12 +5220,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>Pay To:</source>
-        <translation>Pay To:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Pay &amp;To:</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The Bulwark address to send the payment to</source>
+        <source>The BWK address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5277,8 +5257,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-1044"/>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -5289,8 +5269,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+7"/>
         <location line="+521"/>
         <location line="+536"/>
-        <source>Amount:</source>
-        <translation>Amount:</translation>
+        <source>A&amp;mount:</source>
+        <translation>A&amp;mount:</translation>
     </message>
     <message>
         <location line="-1041"/>
@@ -5299,7 +5279,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5334,7 +5314,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+75"/>
-        <source>Bulwark Core is shutting down...</source>
+        <source>BWK Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5352,8 +5332,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+13"/>
-        <source>Sign Message</source>
-        <translation>Sign Message</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Sign Message</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -5362,7 +5342,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>The Bulwark address to sign the message with</source>
+        <source>The BWK address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5404,23 +5384,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+18"/>
-        <source>Sign the message to prove you own this Bulwark address</source>
+        <source>Sign the message to prove you own this BWK address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+103"/>
-        <source>The Bulwark address the message was signed with</source>
+        <source>The BWK address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-134"/>
-        <source>Sign Message</source>
-        <translation>Sign Message</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Sign &amp;Message</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -5430,13 +5410,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+3"/>
         <location line="+137"/>
-        <source>Clear All</source>
-        <translation>Clear All</translation>
+        <source>Clear &amp;All</source>
+        <translation>Clear &amp;All</translation>
     </message>
     <message>
         <location line="-78"/>
-        <source>Verify Message</source>
-        <translation>Verify Message</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Verify Message</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -5445,8 +5425,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+55"/>
-        <source>Verify Message</source>
-        <translation>Verify Message</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Verify &amp;Message</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -5529,7 +5509,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+36"/>
-        <source>Bulwark Core</source>
+        <source>BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5549,7 +5529,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>The Bulwark Core developers</source>
+        <source>The BWK Core developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5926,7 +5906,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>Bulwark Stake</source>
+        <source>BWK Stake</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5956,7 +5936,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+4"/>
-        <source>Converted Bulwark to zBWK</source>
+        <source>Converted BWK to zBWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5966,7 +5946,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Received Bulwark from zBWK</source>
+        <source>Received BWK from zBWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5976,7 +5956,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zBWK to Bulwark</source>
+        <source>Converted zBWK to BWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6255,7 +6235,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-310"/>
-        <source>Received Bulwark from zBWK</source>
+        <source>Received BWK from zBWK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6307,21 +6287,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
-        <location filename="../walletview.cpp" line="+63"/>
+        <location filename="../walletview.cpp" line="+64"/>
         <source>HISTORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+32"/>
-        <source>Export</source>
-        <translation>Export</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Export</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6334,7 +6314,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Selected amount:</translation>
     </message>
     <message>
-        <location line="+257"/>
+        <location line="+265"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -6345,9 +6325,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
-        <location filename="../forms/zBWKcontroldialog.ui" line="+20"/>
+        <location filename="../forms/zbwkcontroldialog.ui" line="+20"/>
         <source>Select zBWK to Spend</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6373,15 +6353,15 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+74"/>
-        <source>Is Spendable</source>
+        <location line="+79"/>
+        <source>Spendable?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
-        <location filename="../Bulwarkstrings.cpp" line="+15"/>
+        <location filename="../pivxstrings.cpp" line="+15"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation type="unfinished">(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
@@ -6412,7 +6392,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6447,12 +6427,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+5"/>
+        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Enable automatic wallet backups triggered after each zBWK minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
+        <source>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6502,23 +6487,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+8"/>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation type="unfinished">Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation type="unfinished">Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -6557,11 +6537,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
+        <source>Maximum average size of an index occurrence in the block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation type="unfinished">Maximum size of data in data carrier transactions we relay and mine (default: %u)</translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>Maximum size of the list of indexes in the block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
         <translation type="unfinished">Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</translation>
     </message>
@@ -6607,6 +6597,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
+        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation type="unfinished">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
@@ -6626,6 +6621,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+5"/>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+8"/>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation type="unfinished">This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
@@ -6637,7 +6637,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6647,12 +6647,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6672,7 +6672,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6752,13 +6752,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation type="unfinished">Allow DNS lookups for -addnode, -seednode and -connect</translation>
+        <source>Adding Wrapped Serials supply...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Already have that input.</source>
-        <translation type="unfinished">Already have that input.</translation>
+        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
+        <translation type="unfinished">Allow DNS lookups for -addnode, -seednode and -connect</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6791,22 +6791,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Can&apos;t denominate: no compatible inputs left.</source>
-        <translation type="unfinished">Can&apos;t denominate: no compatible inputs left.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Can&apos;t find random Masternode.</source>
-        <translation type="unfinished">Can&apos;t find random Masternode.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Can&apos;t mix while sync in progress.</source>
-        <translation type="unfinished">Can&apos;t mix while sync in progress.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Cannot downgrade wallet</source>
         <translation type="unfinished">Cannot downgrade wallet</translation>
     </message>
@@ -6832,8 +6817,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Collateral not valid.</source>
-        <translation type="unfinished">Collateral not valid.</translation>
+        <source>CoinSpend: failed check</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6867,7 +6852,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6879,6 +6864,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Could not parse masternode.conf</source>
         <translation type="unfinished">Could not parse masternode.conf</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Couldn&apos;t generate the accumulator witness</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6926,6 +6916,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Enable precomputation of zBWK spends and stakes (0-1, default %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
         <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
         <translation type="unfinished"></translation>
@@ -6939,16 +6934,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+3"/>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation type="unfinished">Enable the client to act as a masternode (0-1, default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Entries are full.</source>
-        <translation type="unfinished">Entries are full.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Error connecting to Masternode.</source>
-        <translation type="unfinished">Error connecting to Masternode.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6977,7 +6962,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7012,11 +6997,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Error: Can&apos;t select current denominated inputs</source>
-        <translation type="unfinished">Error: Can&apos;t select current denominated inputs</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Error: Disk space is low!</source>
         <translation type="unfinished">Error: Disk space is low!</translation>
     </message>
@@ -7032,16 +7012,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation type="unfinished">Failed to listen on any port. Use -listen=0 if you want this.</translation>
     </message>
@@ -7051,7 +7026,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Failed to read block</source>
         <translation type="unfinished">Failed to read block</translation>
     </message>
@@ -7062,23 +7037,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Finalizing transaction.</source>
-        <translation type="unfinished">Finalizing transaction.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Force safe mode (default: %u)</source>
         <translation type="unfinished">Force safe mode (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation type="unfinished">Found enough users, signing ( waiting %s )</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Found enough users, signing ...</source>
-        <translation type="unfinished">Found enough users, signing ...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7112,16 +7072,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Incompatible mode.</source>
-        <translation type="unfinished">Incompatible mode.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Incompatible version.</source>
-        <translation type="unfinished">Incompatible version.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation type="unfinished">Incorrect or no genesis block found. Wrong datadir for network?</translation>
     </message>
@@ -7132,13 +7082,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Input is not valid.</source>
-        <translation type="unfinished">Input is not valid.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7211,18 +7156,28 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Invalid private key.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid script detected.</source>
-        <translation type="unfinished">Invalid script detected.</translation>
-    </message>
-    <message>
-        <location line="+49"/>
+        <location line="+32"/>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Reindex the Bulwark and zBWK money supply statistics</source>
+        <source>Recalculating BWK supply...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Recalculating minted ZBWK...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Recalculating spent ZBWK...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Reindex the BWK and zBWK money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7241,17 +7196,22 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+28"/>
+        <source>Support the zerocoin light node protocol (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>SwiftX options:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-274"/>
+        <location line="-247"/>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-187"/>
         <source> mints deleted
 </source>
         <translation type="unfinished"></translation>
@@ -7269,7 +7229,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+38"/>
-        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all BWK specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7278,7 +7238,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+20"/>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7303,17 +7263,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+14"/>
         <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+37"/>
         <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Specify custom backup path to add a copy of any automatic zBWK backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7328,7 +7288,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+66"/>
         <source>&lt;category&gt; can be:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7338,12 +7298,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+5"/>
+        <source>Cannot create public spend input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>CoinSpend: Accumulator witness does not verify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>Display the stake modifier calculations in the debug.log file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7353,7 +7318,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Enable publish hash block in &lt;address&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7378,23 +7343,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+14"/>
         <source>Error: A fatal internal error occurred, see debug.log for details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Error: No valid utxo!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Failed to create mint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Failed to deserialize</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7403,7 +7363,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
+        <source>Failed to parse public spend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Failed to select a zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7418,19 +7383,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+26"/>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation type="unfinished">Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Last Obfuscation was too recent.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7499,11 +7454,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Lock is already in place.</source>
-        <translation type="unfinished">Lock is already in place.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation type="unfinished">Lock masternodes from masternode configuration file (default: %u)</translation>
     </message>
@@ -7524,16 +7474,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Masternode queue is full.</source>
-        <translation type="unfinished">Masternode queue is full.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Masternode:</source>
-        <translation type="unfinished">Masternode:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation type="unfinished">Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
     </message>
@@ -7549,16 +7489,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Missing input transaction information.</source>
-        <translation type="unfinished">Missing input transaction information.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Mixing in progress...</source>
-        <translation type="unfinished">Mixing in progress...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Need address because change is not exact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7569,48 +7499,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>No Masternodes detected.</source>
-        <translation type="unfinished">No Masternodes detected.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No compatible Masternode found.</source>
-        <translation type="unfinished">No compatible Masternode found.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No funds detected in need of denominating.</source>
-        <translation type="unfinished">No funds detected in need of denominating.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No matching denominations found for mixing.</source>
-        <translation type="unfinished">No matching denominations found for mixing.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Node relay options:</source>
         <translation type="unfinished">Node relay options:</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Non-standard public key detected.</source>
-        <translation type="unfinished">Non-standard public key detected.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Not compatible with existing transactions.</source>
-        <translation type="unfinished">Not compatible with existing transactions.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Not enough file descriptors available.</source>
         <translation type="unfinished">Not enough file descriptors available.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Not in the Masternode list.</source>
-        <translation type="unfinished">Not in the Masternode list.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7620,21 +7515,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+1"/>
         <source>Number of custom location backups to retain (default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Obfuscation is idle.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Obfuscation request complete:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Obfuscation request incomplete:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7658,12 +7538,32 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Password for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="+81"/>
+        <source>Unable to find transaction containing mint %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Unable to find transaction containing mint, txHash: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Use block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>could not get lock on cs_spendcache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>isValid(): Invalid -proxy address or hostname: &apos;%s&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-109"/>
         <source>Preparing for resync...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7675,6 +7575,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+1"/>
         <source>Print version and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pubcoin not found in mint tx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7698,7 +7603,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Rebuild block chain index from current blk000??.dat files</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>Receive and display P2P network alerts (default: %u)</source>
         <translation type="unfinished">Receive and display P2P network alerts (default: %u)</translation>
     </message>
@@ -7751,11 +7656,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+2"/>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation type="unfinished">Send transactions as zero-fee transactions if possible (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Session not complete!</source>
-        <translation type="unfinished">Session not complete!</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7888,22 +7788,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Stop running after importing blocks from disk (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation type="unfinished">Submitted following entries to masternode: %u / %d</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation type="unfinished">Submitted to masternode, waiting for more entries ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation type="unfinished">Submitted to masternode, waiting in queue %s</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Synchronization failed</source>
         <translation type="unfinished">Synchronization failed</translation>
     </message>
@@ -7949,16 +7834,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>The new spend coin transaction did not verify</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>The transaction did not verify</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7976,11 +7851,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>This is intended for regression testing tools and app development.</source>
         <translation type="unfinished">This is intended for regression testing tools and app development.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This is not a Masternode.</source>
-        <translation type="unfinished">This is not a Masternode.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8024,21 +7894,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Transaction created successfully.</source>
-        <translation type="unfinished">Transaction created successfully.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transaction fees are too high.</source>
-        <translation type="unfinished">Transaction fees are too high.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transaction not valid.</source>
-        <translation type="unfinished">Transaction not valid.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Transaction too large for fee policy</source>
         <translation type="unfinished">Transaction too large for fee policy</translation>
     </message>
@@ -8046,16 +7901,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Transaction too large</source>
         <translation type="unfinished">Transaction too large</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transmitting final transaction.</source>
-        <translation type="unfinished">Transmitting final transaction.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8068,12 +7913,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Unable to bind to %s on this computer (bind returned error %s)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Unable to find transaction containing mint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Unable to sign spork message, wrong key?</source>
         <translation type="unfinished">Unable to sign spork message, wrong key?</translation>
     </message>
@@ -8086,11 +7926,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
         <translation type="unfinished">Unknown network specified in -onlynet: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Unknown state: id = %u</source>
-        <translation type="unfinished">Unknown state: id = %u</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8113,7 +7948,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Use the test network</source>
         <translation type="unfinished">Use the test network</translation>
     </message>
@@ -8134,11 +7969,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Verifying blocks...</source>
         <translation type="unfinished">Verifying blocks...</translation>
     </message>
@@ -8149,22 +7979,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Wallet %s resides outside data directory %s</source>
         <translation type="unfinished">Wallet %s resides outside data directory %s</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet is locked.</source>
-        <translation type="unfinished">Wallet is locked.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8199,11 +8019,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Will retry...</source>
-        <translation type="unfinished">Will retry...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>You don&apos;t have enough Zerocoins in your wallet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8211,16 +8026,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation type="unfinished">You need to rebuild the database using -reindex to change -txindex</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your entries added successfully.</source>
-        <translation type="unfinished">Your entries added successfully.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation type="unfinished">Your transaction was accepted into the pool!</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8238,7 +8043,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>on startup</source>
         <translation type="unfinished">on startup</translation>
     </message>

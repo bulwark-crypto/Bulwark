@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2017-2018 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_BIP38DIALOG_H
@@ -9,14 +9,16 @@
 
 class WalletModel;
 
-namespace Ui {
+namespace Ui
+{
 class Bip38ToolDialog;
 }
 
-class Bip38ToolDialog : public QDialog {
+class Bip38ToolDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     explicit Bip38ToolDialog(QWidget* parent);
     ~Bip38ToolDialog();
 
@@ -27,14 +29,14 @@ class Bip38ToolDialog : public QDialog {
     void showTab_ENC(bool fShow);
     void showTab_DEC(bool fShow);
 
-  protected:
+protected:
     bool eventFilter(QObject* object, QEvent* event);
 
-  private:
+private:
     Ui::Bip38ToolDialog* ui;
     WalletModel* model;
 
-  private slots:
+private slots:
     /* encrypt key */
     void on_addressBookButton_ENC_clicked();
     void on_pasteButton_ENC_clicked();
@@ -42,6 +44,7 @@ class Bip38ToolDialog : public QDialog {
     void on_copyKeyButton_ENC_clicked();
     void on_clearButton_ENC_clicked();
     /* decrypt key */
+    void on_pasteButton_DEC_clicked();
     void on_decryptKeyButton_DEC_clicked();
     void on_importAddressButton_DEC_clicked();
     void on_clearButton_DEC_clicked();

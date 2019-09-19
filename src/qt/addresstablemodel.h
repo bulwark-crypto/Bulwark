@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,16 +17,18 @@ class CWallet;
 /**
    Qt model of the address book in the core. This allows views to access and modify the address book.
  */
-class AddressTableModel : public QAbstractTableModel {
+class AddressTableModel : public QAbstractTableModel
+{
     Q_OBJECT
 
-  public:
+public:
     explicit AddressTableModel(CWallet* wallet, WalletModel* parent = 0);
     ~AddressTableModel();
 
     enum ColumnIndex {
         Label = 0,  /**< User specified label */
-        Address = 1 /**< Bitcoin address */
+        Address = 1, /**< Bitcoin address */
+        Date = 2 /**< Address creation date */
     };
 
     enum RoleIndex {
@@ -50,6 +53,8 @@ class AddressTableModel : public QAbstractTableModel {
         @{*/
     int rowCount(const QModelIndex& parent) const;
     int columnCount(const QModelIndex& parent) const;
+    int sizeSend() const;
+    int sizeRecv() const;
     QVariant data(const QModelIndex& index, int role) const;
     bool setData(const QModelIndex& index, const QVariant& value, int role);
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
@@ -72,11 +77,14 @@ class AddressTableModel : public QAbstractTableModel {
      */
     int lookupAddress(const QString& address) const;
 
-    EditStatus getEditStatus() const {
-        return editStatus;
-    }
+    /**
+     * Return last unused address
+     */
+    QString getLastUnusedAddress() const;
 
-  private:
+    EditStatus getEditStatus() const { return editStatus; }
+
+private:
     WalletModel* walletModel;
     CWallet* wallet;
     AddressTablePriv* priv;
@@ -86,7 +94,7 @@ class AddressTableModel : public QAbstractTableModel {
     /** Notify listeners that data changed. */
     void emitDataChanged(int index);
 
-  public slots:
+public slots:
     /* Update address list from core.
      */
     void updateEntry(const QString& address, const QString& label, bool isMine, const QString& purpose, int status);

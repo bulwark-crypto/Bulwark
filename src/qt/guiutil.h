@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,6 +7,7 @@
 #define BITCOIN_QT_GUIUTIL_H
 
 #include "amount.h"
+#include "askpassphrasedialog.h"
 
 #include <QEvent>
 #include <QHeaderView>
@@ -30,9 +32,10 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Bulwark Qt UI.
+/** Utility functions used by the PIVX Qt UI.
  */
-namespace GUIUtil {
+namespace GUIUtil
+{
 // Create human-readable string from date
 QString dateTimeStr(const QDateTime& datetime);
 QString dateTimeStr(qint64 nTime);
@@ -40,16 +43,20 @@ QString dateTimeStr(qint64 nTime);
 // Render Bulwark addresses in monospace font
 QFont bitcoinAddressFont();
 
+// Parse string into a CAmount value
+CAmount parseValue(const QString& text, int displayUnit, bool* valid_out = 0);
+
+// Format an amount
+QString formatBalance(CAmount amount, int nDisplayUnit = 0, bool isZTelos = false);
+
+// Request wallet unlock
+bool requestUnlock(WalletModel* walletModel, AskPassphraseDialog::Context context, bool relock);
+
 // Set up widgets for address and amounts
 void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent);
-void setupAliasWidget(QValidatedLineEdit* widget, QWidget* parent);
-void setupIPWidget(QValidatedLineEdit* widget, QWidget* parent);
-void setupPrivKeyWidget(QValidatedLineEdit* widget, QWidget* parent);
-void setupTXIDWidget(QValidatedLineEdit* widget, QWidget* parent);
-void setupTXIDIndexWidget(QValidatedLineEdit* widget, QWidget* parent);
 void setupAmountWidget(QLineEdit* widget, QWidget* parent);
 
-// Parse "bulwark:" URI into recipient object, return true on successful parsing
+// Parse "pivx:" URI into recipient object, return true on successful parsing
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out);
 bool parseBitcoinURI(QString uri, SendCoinsRecipient* out);
 QString formatBitcoinURI(const SendCoinsRecipient& info);
@@ -69,6 +76,12 @@ QString HtmlEscape(const std::string& str, bool fMultiLine = false);
      */
 void copyEntryData(QAbstractItemView* view, int column, int role = Qt::EditRole);
 
+/** Return a field of the currently selected entry as a QString. Does nothing if nothing
+        is selected.
+       @param[in] column  Data column to extract from the model
+       @param[in] role    Data role to extract from the model
+       @see  TransactionView::copyLabel, TransactionView::copyAmount, TransactionView::copyAddress
+     */
 QString getEntryData(QAbstractItemView *view, int column, int role);
 
 void setClipboard(const QString& str);
@@ -107,16 +120,16 @@ Qt::ConnectionType blockingGUIThreadConnection();
 bool isObscured(QWidget* w);
 
 // Open debug.log
-void openDebugLogfile();
+bool openDebugLogfile();
 
-// Open bulwark.conf
-void openConfigfile();
+// Open pivx.conf
+bool openConfigfile();
 
 // Open masternode.conf
-void openMNConfigfile();
+bool openMNConfigfile();
 
 // Browse backup folder
-void showBackups();
+bool showBackups();
 
 // Replace invalid default fonts with known good ones
 void SubstituteFonts(const QString& language);
@@ -125,16 +138,17 @@ void SubstituteFonts(const QString& language);
       representation if needed. This assures that Qt can word-wrap long tooltip messages.
       Tooltips longer than the provided size threshold (in characters) are wrapped.
      */
-class ToolTipToRichTextFilter : public QObject {
+class ToolTipToRichTextFilter : public QObject
+{
     Q_OBJECT
 
-  public:
+public:
     explicit ToolTipToRichTextFilter(int size_threshold, QObject* parent = 0);
 
-  protected:
+protected:
     bool eventFilter(QObject* obj, QEvent* evt);
 
-  private:
+private:
     int size_threshold;
 };
 
@@ -148,14 +162,15 @@ class ToolTipToRichTextFilter : public QObject {
      * This helper object takes care of this issue.
      *
      */
-class TableViewLastColumnResizingFixer : public QObject {
+class TableViewLastColumnResizingFixer : public QObject
+{
     Q_OBJECT
 
-  public:
+public:
     TableViewLastColumnResizingFixer(QTableView* table, int lastColMinimumWidth, int allColsMinimumWidth);
     void stretchColumnWidth(int column);
 
-  private:
+private:
     QTableView* tableView;
     int lastColumnMinimumWidth;
     int allColumnsMinimumWidth;
@@ -171,7 +186,7 @@ class TableViewLastColumnResizingFixer : public QObject {
     void setViewHeaderResizeMode(int logicalIndex, QHeaderView::ResizeMode resizeMode);
     void resizeColumn(int nColumnIndex, int width);
 
-  private slots:
+private slots:
     void on_sectionResized(int logicalIndex, int oldSize, int newSize);
     void on_geometriesChanged();
 };
@@ -180,12 +195,13 @@ class TableViewLastColumnResizingFixer : public QObject {
      * Extension to QTableWidgetItem that facilitates proper ordering for "DHMS"
      * strings (primarily used in the masternode's "active" listing).
      */
-class DHMSTableWidgetItem : public QTableWidgetItem {
-  public:
+class DHMSTableWidgetItem : public QTableWidgetItem
+{
+public:
     DHMSTableWidgetItem(const int64_t seconds);
     virtual bool operator<(QTableWidgetItem const& item) const;
 
-  private:
+private:
     // Private backing value for DHMS string, used for sorting.
     int64_t value;
 };
@@ -223,13 +239,17 @@ QString formatPingTime(double dPingTime);
 QString formatTimeOffset(int64_t nTimeOffset);
 
 #if defined(Q_OS_MAC)
-class ProgressBar : public QProgressBar {
-    bool event(QEvent *e) {
-        return (e->type() != QEvent::StyleAnimationUpdate) ? QProgressBar::event(e) : false;
-    }
-};
+    // workaround for Qt OSX Bug:
+    // https://bugreports.qt-project.org/browse/QTBUG-15631
+    // QProgressBar uses around 10% CPU even when app is in background
+    class ProgressBar : public QProgressBar
+    {
+        bool event(QEvent *e) {
+            return (e->type() != QEvent::StyleAnimationUpdate) ? QProgressBar::event(e) : false;
+        }
+    };
 #else
-typedef QProgressBar ProgressBar;
+    typedef QProgressBar ProgressBar;
 #endif
 
 } // namespace GUIUtil

@@ -10,11 +10,11 @@
         <translation>Tạo địa chỉ mới </translation>
     </message>
     <message>
-        <source>New</source>
+        <source>&amp;New</source>
         <translation>Mới</translation>
     </message>
     <message>
-        <source>Copy</source>
+        <source>&amp;Copy</source>
         <translation>Sao chép</translation>
     </message>
     <message>
@@ -22,7 +22,7 @@
         <translation>Xóa các địa chỉ được chọn khỏi danh sách</translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>&amp;Delete</source>
         <translation>Xóa</translation>
     </message>
     <message>
@@ -30,11 +30,11 @@
         <translation>Xuất dữ liệu của tab hiện tại sang file</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Xuất</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Đóng</translation>
     </message>
     <message>
@@ -46,7 +46,7 @@
         <translation>Chọn địa chỉ để nhận coin về</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Chọn</translation>
     </message>
     <message>
@@ -58,12 +58,12 @@
         <translation>Địa chỉ gửi </translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Đây là địa chỉ ví Bulwark của bạn để gửi đi. Luôn luôn kiểm tra số lượng và địa chỉ ví nhận trước khi gửi.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Đây là địa chỉ ví BWK của bạn để gửi đi. Luôn luôn kiểm tra số lượng và địa chỉ ví nhận trước khi gửi.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Đây là địa chỉ ví Bulwark của bạn để nhận. Bạn nên sử dụng địa chỉ ví nhận mới cho mỗi giao dịch</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Đây là địa chỉ ví BWK của bạn để nhận. Bạn nên sử dụng địa chỉ ví nhận mới cho mỗi giao dịch</translation>
     </message>
     </context>
 <context>
@@ -105,6 +105,9 @@
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     </context>
 <context>
@@ -118,9 +121,6 @@
     </context>
 <context>
     <name>MultisigDialog</name>
-    </context>
-<context>
-    <name>ObfuscationConfig</name>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -139,6 +139,9 @@
     </context>
 <context>
     <name>PrivacyDialog</name>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -200,7 +203,7 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Xuất</translation>
     </message>
     <message>
@@ -209,9 +212,9 @@
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     </context>
 </TS>

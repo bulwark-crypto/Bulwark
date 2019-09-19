@@ -10,35 +10,35 @@
         <translation>Skapa en ny adress</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Ny</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Ny</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopiera den markerade adressen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopiera</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopiera</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Radera den valda adressen från listan</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Radera</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Radera</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exportera data in den nuvarande fliken till en fil</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exportera</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportera</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Stäng</translation>
     </message>
     <message>
@@ -50,7 +50,7 @@
         <translation>Välj adress att ta emot mynt med</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Välj</translation>
     </message>
     <message>
@@ -62,24 +62,24 @@
         <translation>Mottagar adresser</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Det här är dina Bulwark adresser för att skicka betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Det här är dina BWK adresser för att skicka betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Det här är dina Bulwark adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Det här är dina BWK adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopiera Adress</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Kopiera Adress</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Kopiera  Ettiket</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Kopiera &amp; Ettiket</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Redigera</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Redigera</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Bekräfta plånboks krypering</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina Bulwarks från att bli stulna av skadeprogram som infekterat din dator.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina PIVs från att bli stulna av skadeprogram som infekterat din dator.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Är du säker på att du vill kryptera din plånbok?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA Bulwark&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -232,7 +232,7 @@
     <name>BanTableModel</name>
     <message>
         <source>IP/Netmask</source>
-        <translation>IP/Nätmask</translation>
+        <translation>IP/Netmask</translation>
     </message>
     <message>
         <source>Banned Until</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 Verktyg</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Kryptering</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Kryptering</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adress:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Fyll i en Bulwark Adress som du skulle vilja cryptera med BIP 38. Skriv in en lösenfras i den mittersta lådan. Tryck kryptera för att beräkna fram den krypterade privata nyckeln.</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Fyll i en BWK Adress som du skulle vilja kryptera med BIP 38. Skriv in en lösenfras i den mittersta raden. Tryck kryptera för att beräkna fram den krypterade privata nyckeln.</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Bulwark adressen som ska krypteras</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>BWK adressen som ska krypteras</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -271,7 +271,7 @@
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>Limma in adress från urklipp</translation>
+        <translation>Infoga adress från urklipp</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -290,8 +290,8 @@
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Kryptera den privata nyckeln för denna Bulwark adressen</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Kryptera den privata nyckeln för denna BWK adressen</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,24 +306,24 @@
         <translation>Dekryptera den inmatade nyckeln med lösenordsfrasen</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Kryptera Nyckel</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Kryptera &amp;Nyckel</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Rensa allt</translation>
+        <source>Clear &amp;All</source>
+        <translation>Rensa &amp;allt</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Dekryptera</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Dekryptera</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Ange BIP 38 krypterade privata nyckeln. Ange lösenfrasen i med mittersta boxen. Tryck på krypetra nyckel för att beräkna den privata nyckeln. Efter att nyckeln är avkrypterad, tryck på 'Importera Adress' kommer att lägga till denna privata nyckel till plånboken.</translation>
+        <translation>Ange den BIP 38 krypterade privata nyckeln. Ange lösenfrasen i mittersta boxen. Tryck på kryptera nyckel för att göra den privat. Efter att nyckeln är krypterad, tryck på 'Importera Adress' och kommer sen att lägga till denna privata nyckel till plånboken.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Dekryptera Nyckel</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Dekryptera &amp;Nyckel</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -409,24 +409,24 @@
         <translation>Nod</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Översikt</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Översikt</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Visa generell översikt av plånbok</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Skicka</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Skicka</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Mottaga</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Mottaga</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transaktioner</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transaktioner</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -437,51 +437,59 @@
         <translation>Integritets funktioner för zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>gå ur</translation>
+        <source>&amp;Governance</source>
+        <translation>&amp;Management</translation>
+    </message>
+    <message>
+        <source>Show Proposals</source>
+        <translation>Visa förslag</translation>
+    </message>
+    <message>
+        <source>E&amp;xit</source>
+        <translation>Exit</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Avsluta applikationen</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Om Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Om &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Visa information om Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Alternativ...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Alternativ...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Visa / Dölj</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Visa / Dölj</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Visa eller Dölj huvudfönstret</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Kryptera Plånbok...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Kryptera Plånbok...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Kryptera privata nycklar som tillhör din plånbok</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Säkerhetskopiera Plånbok...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Säkerhetskopiera Plånbok...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Säkerhetskopiera din plånbok till en annan plats</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
+        <source>&amp;Change Passphrase...</source>
         <translation>Ändra lösenfras</translation>
     </message>
     <message>
@@ -489,7 +497,7 @@
         <translation>Ändra lösenfrasen som används för kryptering av plånbok</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
+        <source>&amp;Unlock Wallet...</source>
         <translation>lås upp plånbok</translation>
     </message>
     <message>
@@ -497,27 +505,27 @@
         <translation>lås upp plånbok</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
+        <source>&amp;Lock Wallet</source>
         <translation>lås plånbok</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>signera meddelande...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>signera &amp;meddelande...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verifiera meddelande</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verifiera meddelande</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Information</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Visa diagnostisk information</translation>
     </message>
     <message>
-        <source>Debug console</source>
+        <source>&amp;Debug console</source>
         <translation>Felsökningskonsol</translation>
     </message>
     <message>
@@ -525,15 +533,15 @@
         <translation>Öppna felsökningskonsol</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Nätverks Övervakare</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Nätverks Övervakare</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Visa nätverksövervakare</translation>
     </message>
     <message>
-        <source>Peers list</source>
+        <source>&amp;Peers list</source>
         <translation>enhets lista</translation>
     </message>
     <message>
@@ -541,8 +549,8 @@
         <translation>Visa enhetslista</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Plånbok Reparera</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>Plånbok &amp;Reparera</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -553,15 +561,15 @@
         <translation>Öppna konfigurations fil</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Visa Automatiskt Säkerthetskopior</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Visa Automatiskt &amp;Säkerthetskopior</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Visa automatiskt skapade säkerhetskopior av plånbok</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation>Sändnings adresser</translation>
     </message>
     <message>
@@ -569,7 +577,7 @@
         <translation>Visa listan över använda sändningsadresser och etiketter</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>Mottagar adresser</translation>
     </message>
     <message>
@@ -577,40 +585,40 @@
         <translation>Visa listan över använda mottagar adresser och etiketter</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>Multisignaturskapande...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp;Multisignaturskapande...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Skapa en ny multisignaturadress och lägg till den till denna plånbok</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>Multisignatur spendering...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp;Multisignatur spendering...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Spendera från en multisignaturadress</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>Multisignatur signerar...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp;Multisignatur signerar...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>Signera med en multisignaturadress</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Öppna  URl</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Öppna &amp; URl</translation>
     </message>
     <message>
-        <source>Command-line options</source>
+        <source>&amp;Command-line options</source>
         <translation>komanndo linje val</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Bearbetar %n block av transaktionshistoriken.</numerusform><numerusform>Bearbetar %n block av transaktionshistoriken.</numerusform></translation>
+        <translation><numerusform>Bearbetade %n block från transaktions historiken.</numerusform><numerusform>Bearbetade %n block från transaktions historiken.</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,19 +633,23 @@
         <translation>Plånboken är &lt;b&gt;krypterad&lt;/b&gt; och för tillfället &lt;b&gt;olåst&lt;/b&gt; för anonymisering och staking enbart</translation>
     </message>
     <message>
-        <source>File</source>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor är &lt;b&gt;aktiverat&lt;/b&gt;: %1</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
         <translation>Fil</translation>
     </message>
     <message>
-        <source>Settings</source>
+        <source>&amp;Settings</source>
         <translation>Inställningar</translation>
     </message>
     <message>
-        <source>Tools</source>
+        <source>&amp;Tools</source>
         <translation>Verktyg</translation>
     </message>
     <message>
-        <source>Help</source>
+        <source>&amp;Help</source>
         <translation>Hjälp</translation>
     </message>
     <message>
@@ -645,23 +657,23 @@
         <translation>flik vertygsrad</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Kärna</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Skicka mynt till en Bulwark adress</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Skicka mynt till en BWK adress</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Begär betalning (genererar QR kod och Bulwark: URls)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Begär betalning (genererar QR kod och pivx: URls)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Sekretess</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Sekretess</translation>
     </message>
     <message>
-        <source>Masternodes</source>
+        <source>&amp;Masternodes</source>
         <translation>Masternoder</translation>
     </message>
     <message>
@@ -669,27 +681,27 @@
         <translation>Utforska masternoder</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Om Bulwark Kärnan</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>Om BWK Kärnan</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Visa information om Bulwark Kärnan</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Visa information om BWK Kärnan</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Ändra konfigurationsval för Bulwark</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Ändra konfigurationsval för BWK</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Signera meddelanden med din Bulwark adress för att visa att du äger dem</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Signera meddelanden med din BWK adress för att visa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Bulwark adressen.</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika BWK adressen.</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
+        <source>&amp;BIP38 tool</source>
         <translation>BIP38 Verktyg</translation>
     </message>
     <message>
@@ -697,48 +709,48 @@
         <translation>Kryptera och dekryptera privata nycklar genom användning av lösenfras</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>MultiSend Inställningar</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Öppna Plånbok Konfigurations Fil</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Öppna Plånbok &amp;Konfigurations Fil</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Öppna Huvudnod Konfigurations Fil</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Öppna &amp;Huvudnod Konfigurations Fil</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Öppna Huvudnodens konfigurations fil </translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Öppna en Bulwark: URI eller betalningsförfrågan</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Öppna en BWK: URI eller betalningsförfrågan</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Blockchain Utforskare</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Blockchain Utforskare</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Blockera utforskarfönstret</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Visa Bulwark Core hjälp meddelande för att få en lista med möjliga Bulwark kommandorad alternativ</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Visa BWK Core hjälp meddelande för att få en lista med möjliga BWK kommandorad alternativ</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark kärn klient</translation>
+        <source>BWK Core client</source>
+        <translation>BWK kärn klient</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n aktiv(a) annslutning(ar) till Bulwark nätverket</numerusform><numerusform>%n aktiv(a) annslutning(ar) till Bulwark nätverket</numerusform></translation>
+        <source>%n active connection(s) to BWK network</source>
+        <translation><numerusform>%n aktiva anslutningar till BWK nätverket</numerusform><numerusform>%n aktiva  anslutningar till BWK nätverket</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -762,15 +774,15 @@
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n timme</numerusform><numerusform>%n timmar</numerusform></translation>
+        <translation><numerusform>%n timmar</numerusform><numerusform>%n timmar</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n dag</numerusform><numerusform>%n dagar</numerusform></translation>
+        <translation><numerusform>%n dagar</numerusform><numerusform>%n dagar</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n vecka</numerusform><numerusform>%n veckor</numerusform></translation>
+        <translation><numerusform>%n veckor</numerusform><numerusform>%n veckor</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -850,7 +862,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint är för tillfället aktiverat och inställd på</translation>
+        <translation>AutoMint är för tillfället aktiverat och inställt på</translation>
     </message>
     <message>
         <source>AutoMint is disabled</source>
@@ -863,6 +875,10 @@ MultiSend: %1</translation>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Plånbok är &lt;b&gt;krypterad&lt;/b&gt; och tillfälligt &lt;b&gt;låst&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>A fatal error occurred. BWK can no longer continue safely and will quit.</source>
+        <translation>Ett fel inträffade. BWK kan inte längre köras säkert och kommer att stängas ned för tillfället.</translation>
     </message>
 </context>
 <context>
@@ -892,8 +908,8 @@ MultiSend: %1</translation>
         <translation>text etikett</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Alla transaktioner kommer inte visas. För att visa alla transaktioner behöver du sätta txindex=1 i konfigurationsfilen (bulwark.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Alla transaktioner kommer inte visas. För att visa alla transaktioner behöver du sätta txindex=1 i konfigurationsfilen (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1146,8 @@ MultiSend: %1</translation>
         <translation>Den här etiketten blir röd, ifall någon mottagare får en mängd som är mindre än %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Kan variera med +/- %1 uBulwark per inmatning.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Kan variera med +/- %1 upiv per inmatning.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1153,16 +1169,16 @@ MultiSend: %1</translation>
         <translation>Redigera Adress</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Etikett</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Etikett</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Etiketten som associeras med denna adresslista</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adress</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Adress</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1185,8 +1201,8 @@ MultiSend: %1</translation>
         <translation>Redigera skickande adress</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Den inmatade adressen "%1" är ej en giltig Bulwark adress.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Den inmatade adressen "%1" är ej en giltig BWK adress.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1241,65 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulär</translation>
+    </message>
+    <message>
+        <source>GOVERNANCE</source>
+        <translation>MANAGEMENT</translation>
+    </message>
+    <message>
+        <source>Update Proposals</source>
+        <translation>Uppdatera förslag</translation>
+    </message>
+    <message>
+        <source>Next super block:</source>
+        <translation>Nästa Superblock</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Blocks to next super block:</source>
+        <translation>Block till nästa superblock:</translation>
+    </message>
+    <message>
+        <source>Days to budget payout (estimate):</source>
+        <translation>Dagar till budget utbetalning (estimerad):</translation>
+    </message>
+    <message>
+        <source>Allotted budget:</source>
+        <translation>Utvald budget:</translation>
+    </message>
+    <message>
+        <source>Budget left:</source>
+        <translation>Kvar av budget:</translation>
+    </message>
+    <message>
+        <source>Masternodes count:</source>
+        <translation>Masternode beräkning:</translation>
+    </message>
+</context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Kärna</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Om Bulwark Kärna</translation>
+        <source>About BWK Core</source>
+        <translation>Om BWK Kärna</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1345,16 @@ MultiSend: %1</translation>
         <translation>Välkommen</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Välkommen till Bulwark Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Välkommen till BWK Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Eftersom detta är första gången programmet körs så kan du välja var Bulwark Core ska spara sin data.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Eftersom detta är första gången programmet körs så kan du välja var BWK Core ska spara sin data.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Kärnan kommer ladda ner och spara en kopia av Bulwark block chain. Minst %1GB data kommer sparas i denna katalog och den kommer växa med tiden. Plånboken kommer också sparas i denna katalog.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Kärnan kommer ladda ner och spara en kopia av BWK block chain. Minst %1GB data kommer sparas i denna katalog och den kommer växa med tiden. Plånboken kommer också sparas i denna katalog.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1365,8 @@ MultiSend: %1</translation>
         <translation>Använd en skräddarsydd data katalog</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1369,20 +1428,20 @@ MultiSend: %1</translation>
         <translation>Pubkey</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Start alias</translation>
+        <source>S&amp;tart alias</source>
+        <translation>Start &amp;alias</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Start allt</translation>
+        <source>Start &amp;all</source>
+        <translation>Start &amp;allt</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Start FATTAS</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Start &amp;FATTAS</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Uppdatera status</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Uppdatera status</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1448,12 +1507,12 @@ MultiSend: %1</translation>
         <translation>Mata in Adress att Skicka till</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend tillåter dig att automatiskt skicka upp till 100% av dina staking eller huvudnod belöningar till en lista av andra Bulwark adresser efter att belöningarna har mognat.
-För att Lägga till: Ange procent att ge och Bulwark adress för att lägga till i MultiSend vektorn.
+        <translation>MultiSend tillåter dig att automatiskt skicka upp till 100% av dina staking eller huvudnod belöningar till en lista av andra BWK adresser efter att belöningarna har mognat.
+För att Lägga till: Ange procent att ge och BWK adress för att lägga till i MultiSend vektorn.
 För att Ta Bort: Ange adressen som ska tas bort och tryck ta bort.
 MultiSend kommer inte aktiveras om du inte tryckt på Aktivera</translation>
     </message>
@@ -1542,47 +1601,78 @@ MultiSend kommer inte aktiveras om du inte tryckt på Aktivera</translation>
         <translation>(Ingen etikett)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Den inmatade adressen:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Aktivt för Stakes och Huvudnods Belöningar</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Aktiv för Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Aktivt för Huvudnods Belöningar</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend inte Aktivt</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>är ogiltig.
+        <translation>Den angivna adressen: %1 är ej giltig.
 Var vänlig kontrollera adressen och försök igen.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Din totala MultiSend vektor mängd överstiger 100% av din staking belöning
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>Den totala mängden av din MultiSend vektor är över 100% av din stake belöning</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>Sparade MultiSend till minne, men misslyckades spara egenskaperna till databasen.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>MultiSend Vektor</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Borttaget %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Kunde inte lokalisera adress</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>Kan ej aktivera MultiSend, kontrollera MultiSend vektor</translation>
+    </message>
+    <message>
+        <source>Need to select to send on stake and/or masternode rewards</source>
+        <translation>Behöver välja att skicka på stake och/eller huvudnods belöningar</translation>
+    </message>
+    <message>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation>MultiSend aktiverat men misslyckades att skriva inställningar till DB</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend aktiverat</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>Första Adress Ej Giltig</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation>MultiSend avaktiverat men misslyckades skriva inställningar till DB</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend avaktiverat</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Var vänlig mata in 1 - 100 i procent.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Sparade MultiSend till minne, men misslyckades spara egenskaperna till databasen.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Borttagen</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Kunde inte lokalisera adress
-</translation>
     </message>
 </context>
 <context>
@@ -1592,8 +1682,8 @@ Var vänlig kontrollera adressen och försök igen.</translation>
         <translation>Multisignatur Adress Interaktioner</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>Skapa MultiSignatur Adress</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Skapa MultiSignatur &amp;Adress</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1612,8 +1702,8 @@ Var vänlig kontrollera adressen och försök igen.</translation>
         <translation>Lägg till en annan adress som kan skriva under för att verifiera en transaktion från multisig adressen.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>Lägg till Adress / Nyckel</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;Lägg till Adress / Nyckel</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1624,8 +1714,8 @@ Var vänlig kontrollera adressen och försök igen.</translation>
         <translation>Skapa en ny multisig adress</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Create</translation>
+        <source>C&amp;reate</source>
+        <translation>C&amp;reate</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1640,12 +1730,12 @@ Kom ihåg att plånboken kommer scanna om the blockchain för att hitta transakt
 Var god vänta efter att du trycker på importera.</translation>
     </message>
     <message>
-        <source>Import Redeem</source>
-        <translation>Importera Inlösning</translation>
+        <source>&amp;Import Redeem</source>
+        <translation>&amp;Importera Inlösning</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation>Skapa MultiSignatur Tx</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Skapa MultiSignatur Tx</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1657,7 +1747,7 @@ Var god vänta efter att du trycker på importera.</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
-        <translation>Kvantitet Vald:</translation>
+        <translation>Vald Kvantitet:</translation>
     </message>
     <message>
         <source>0</source>
@@ -1680,24 +1770,24 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Adress / Mängd:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Lägg till destination att skicka Bulwark till</translation>
+        <source>Add destinations to send BWK to</source>
+        <translation>Lägg till destination att skicka BWK till</translation>
     </message>
     <message>
-        <source>Add Destination</source>
-        <translation>Lägg till Destination</translation>
+        <source>Add &amp;Destination</source>
+        <translation>Lägg till &amp;Destination</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
         <translation>Skapa ett transaktionsobjekt genom att använda de givna inmatningarna till de givna utmatningarna</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Create</translation>
+        <source>Cr&amp;eate</source>
+        <translation>Cr&amp;eate</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>Skriv under MultiSignatur Tx</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Skriv under MultiSignatur Tx</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1708,24 +1798,24 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Skriv under från denna plånbok eller från försedd privat nyckel</translation>
     </message>
     <message>
-        <source>Sign</source>
-        <translation>Signera</translation>
+        <source>S&amp;ign</source>
+        <translation>S&amp;ignera</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IINAKTIVERAD tills transaktion har blivit signerad tillräckligt många gånger.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Commit</source>
-        <translation>Commit</translation>
+        <source>Co&amp;mmit</source>
+        <translation>Co&amp;mmit</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
         <translation>Lägg till privata nycklar att skriva under transaktionen med</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
-        <translation>Lägg till Privat Nyckel</translation>
+        <source>Add Private &amp;Key</source>
+        <translation>Lägg till Privat &amp;Nyckel</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1754,73 +1844,6 @@ Var god vänta efter att du trycker på importera.</translation>
     <message>
         <source>Maximum (15)</source>
         <translation>Max antal (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfigurera Fördunkling</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Grundläggande sekretess</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Hög Sekretess</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximal Sekretess</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Var vänlig och välj en sekretess nivå.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Använd 2 separata huvudnoder för att blanda tillgångar upp till 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Använd 8 separata huvudnoderför att blanda tillgångar upp till 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Använd 16 separata huvudnoder</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Det här alternativet är det snabbaste och kommer kostar ungefär ~0.025 Bulwark för att anonymisera 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Det här alternativet är måttligt snabb och kommer kostar ungefär 0.05 Bulwark för att anonymisera 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Det här är det långsammaste och säkraste alternativet. Använda maximal anonymitet kommer kosta</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 Bulwark per 10000 Bulwark du anonymiserar.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Fördunkling Konfiguration</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Fördunkling sattes framgångsrikt till grundläggande (%1 och 2 rundor). Du kan ändra det här när du vill genom att öppna Bulwark's konfigurationsskärm.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Fördunkling sattes framgångsrikt till hög (%1 och 8 rundor). Du kan ändra det här när du vill genom att öppna Bulwark's konfigurationsskärm.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Fördunkling sattes framgångsrikt till maximal (%1 och 16 rundor). Du kan ändra det här när du vill genom att öppna Bulwark's konfigurationsskärm.</translation>
     </message>
 </context>
 <context>
@@ -1853,32 +1876,36 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Alternativ</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Main</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Main</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Storlek på databasbuffert</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Storlek på &amp;databasbuffert</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Antal script &amp;verifications trådar</translation>
+    </message>
+    <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = auto, &lt;0 = lämna så många "kärnor" fria)</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Wallet</translation>
+        <source>W&amp;allet</source>
+        <translation>W&amp;allet</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Om du avaktiverar spenderandet av okonfirmerad växel så kommer växeln från en transaktion &lt;br/&gt;ej kunna användas föräns transaktionen har minst en bekräftelse. &lt;br/&gt; Detta påverkar även hur ditt saldo beräknas.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt Bulwark klient porten på denna router. Detta funkar endast om din router stödjer UPnP och är påslaget.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt BWK klient porten på denna router. Detta funkar endast om din router stödjer UPnP och är påslaget.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1889,20 +1916,28 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Tillåt inkommande anslutningar</translation>
     </message>
     <message>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Koppla upp genom SOCKS5 proxy (standard proxy):</translation>
+    </message>
+    <message>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Starta Bulwark automatiskt efter inloggning på systemet.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Starta BWK automatiskt efter inloggning på systemet.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Starta Bulwark vid systeminloggning</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;Starta BWK vid systeminloggning</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Huruvida mynt kontroll funktioner ska visas eller inte.</translation>
+    </message>
+    <message>
+        <source>Enable coin &amp;control features</source>
+        <translation>Tillåt mynt &amp;kontroll funktioner</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1913,46 +1948,54 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Visa Huvudnoder Flik</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Spendera ej bekräftad växel</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Spendera ej bekräftad växel</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Nätverk</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Nätverk</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>Användargränssnittets språk kan väljas här. Denna inställning börjar gälla efter att man startat om Bulwark.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>Användargränssnittets språk kan väljas här. Denna inställning börjar gälla efter att man startat om BWK.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Fattas språk eller är översättningen ofullständig? Hjälp till att bidra med översättning här:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Kartlägg port med UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Kartlägg port med &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>Tillåt automatisk prägling med Bulwark enheter till zBWK</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>Tillåt automatisk prägling med BWK enheter till zBWK</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>Tillåt zBWK Autoprägling</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procent av inkommande Bulwark som automatiskt konverteras till zBWK via Zerocoin Protokollet (min: 10%)</translation>
+        <source>Enable automatic zBWK minting from specific addresses</source>
+        <translation>Aktivera automatisk zBWK prägling från specifika adresser</translation>
+    </message>
+    <message>
+        <source>Enable Automint Addresses</source>
+        <translation>Aktivera autopräglingsadresser</translation>
+    </message>
+    <message>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procent av inkommande BWK som automatiskt konverteras till zBWK via Zerocoin Protokollet (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>Procent av autopräglade zBWK</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
-        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många Bulwark för denna valör är tillgängliga</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
+        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många BWK för denna valör är tillgängliga</translation>
     </message>
     <message>
         <source>Preferred Automint zBWK Denomination</source>
@@ -1963,48 +2006,52 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Staking delnings tröskel:</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Anslut till Bulwark nätverket via en SOCKS5 proxy.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Anslut till BWK nätverket via en SOCKS5 proxy.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>Proxyns IP adress (t.ex. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Port:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Port:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Proxyns port (t.ex. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Window</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Window</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>När fönstret minimeras visa endast en icon.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>Minimera till "tray" istället för aktivitetsfältet</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;Minimera till "tray" istället för aktivitetsfältet</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimera istället för att stänga ner applikationen när fönstret stängs. När denna inställning är tillåten kan applikationen endast stängas ner av att välja Avsluta i menyn.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>Minimera på stäng</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>M&amp;inimera på stäng</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Display</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Display</translation>
+    </message>
+    <message>
+        <source>User Interface &amp;language:</source>
+        <translation>Användargränssnitt och &amp;språk:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -2023,6 +2070,14 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Dölj tomma saldon</translation>
     </message>
     <message>
+        <source>Hide orphan stakes in transaction lists</source>
+        <translation>Göm föräldralösa stakes i transaktionslistan</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Göm föräldralösa stakes</translation>
+    </message>
+    <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Tredjeparts URLs (t.ex. en blockutforskare) som visar sig i transaktionsfliken som objekt i innehållsmeny. %s i URLen ersätts med transaktionshash. Flera URLs separeras med vertical stång |.</translation>
     </message>
@@ -2039,12 +2094,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Starta om alla klient alternativ till standard.</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Återställnings Inställningar</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>ta bort</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>&amp;ta bort</translation>
     </message>
     <message>
         <source>Any</source>
@@ -2106,8 +2165,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Totalt saldo, inkluderar alla otillgängliga mynt.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark Saldo</translation>
+        <source>BWK Balance</source>
+        <translation>BWK Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2130,8 +2189,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Nuvarande låst saldo endast i "watch only" adresser</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Ditt nuvarande Bulwark saldo, obekräftade och omogna transaktioner är inkluderade</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Ditt nuvarande BWK saldo, obekräftade och omogna transaktioner är inkluderade</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -2150,8 +2209,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med Bulwark nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med BWK nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2194,8 +2253,8 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
         <translation>Spenderbar:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Låsta Bulwark eller masternode som säkerhet. Dessa är uteslutna från zBWK minting.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Låsta BWK eller masternode som säkerhet. Dessa är uteslutna från zBWK minting.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2230,14 +2289,14 @@ Om AutoMint är tillåten så kommer denna procent att vara som den konfigurerad
         <translation>AutoMint är för tillfället aktiverat och inställt på</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>För att inaktivera AutoMint, lägg till 'enablezeromint=0' i bulwark.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>För att inaktivera AutoMint, lägg till 'enablezeromint=0' i pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint är för närvarande inaktiverat.
-För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i bulwark.conf</translation>
+För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2263,12 +2322,12 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i b
         <translation>Ogiltig betalningsadress %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Kan ej starta Bulwark: klicka-för-att-betala hanterare</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Kan ej starta pivx: klicka-för-att-betala hanterare</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URI kunde ej analyseras! Detta kan orsakas av en ogiltig Bulwark adress eller felproducerade URI parametrar.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URI kunde ej analyseras! Detta kan orsakas av en ogiltig BWK adress eller felproducerade URI parametrar.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2353,8 +2412,8 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i b
         <translation>Zerocoin Handlingar:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med Bulwark nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>nformationen kan vara föråldrad. Din plånbok synkroniserar automatiskt med BWK nätverket efter att en anslutning är etablerad, men denna process har inte blivit klar än.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2369,36 +2428,12 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i b
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Tillgänglig att prägla med mynt som är bekräftade och ej låsta eller som är en masternod säkerhet.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Tillgängligt att prägla:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 Bulwark</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Starta om Zerocoin Wallet DB. Raderar transaktioner som ej kom med i blockchain.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Starta om</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Mynt Kontroll</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kvantitet:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Antal:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2415,10 +2450,6 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i b
     <message>
         <source>PRIVACY</source>
         <translation>SEKRETESS</translation>
-    </message>
-    <message>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation>Mata in en mängd Bulwark att konvertera till zBWK</translation>
     </message>
     <message>
         <source>zBWK Control</source>
@@ -2461,24 +2492,12 @@ zBWK är mogna när de har över 20 bekräftelser OCH över 2 präglingar av sam
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Säkerhetsnivå på Zerocoin Transaktioner. Mer är bättre, men behöver mer tid och resurser.</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Betala &amp;Till:</translation>
     </message>
     <message>
-        <source>Security Level:</source>
-        <translation>Säkerhetsnivå:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Säkerhetsnivå 1- 100 (standard: 42)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>Betala Till:</translation>
-    </message>
-    <message>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Bulwark adress att skicka betalningen till. Skapar betalning till dig själv när den är tom.</translation>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>BWK adress att skicka betalningen till. Skapar betalning till dig själv när den är tom.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2497,16 +2516,16 @@ zBWK är mogna när de har över 20 bekräftelser OCH över 2 präglingar av sam
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etikett:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etikett:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Mata in en etikett till denna adress för att lägga till den till listan med använda adresser</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Mängd:</translation>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Mängd:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2548,14 +2567,14 @@ zBWK är mogna när de har över 20 bekräftelser OCH över 2 präglingar av sam
         <source>Unconfirmed: less than 20 confirmations
 Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
         <translation>Obekräftade: Under 20 bekräftelser
-Omogna: bekräftade men under 1 mint av samma valör efter den blev mintad</translation>
+Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad</translation>
     </message>
     <message>
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to bulwark.conf
-- disable: add 'enablezeromint=0' to bulwark.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -2564,8 +2583,8 @@ To change the percentage (no restart required):
         <translation>Visa den nuvarande statusen av automatisk zBWK minting.
 
 För att ändra statusen (omstart krävs):
--aktivera: lägg till 'enablezeromint=1' i bulwark.conf
--inaktivera: lägg till 'enablezeromint=0' i bulwark.conf
+-aktivera: lägg till 'enablezeromint=1' i pivx.conf
+-inaktivera: lägg till 'enablezeromint=0' i pivx.conf
 
 För att ändra procenten (ingen omstart krävs):
 -meny Inställningar-&gt;Alternativ-&gt;Procent på autominted zBWK
@@ -2615,6 +2634,22 @@ För att ändra procenten (ingen omstart krävs):
     <message>
         <source>0 x</source>
         <translation>0 x</translation>
+    </message>
+    <message>
+        <source>Show zBWK denominations list</source>
+        <translation>Visa zBWK valör lista</translation>
+    </message>
+    <message>
+        <source>Show Denominations</source>
+        <translation>Visa Valörer</translation>
+    </message>
+    <message>
+        <source>zBWK minting is DISABLED</source>
+        <translation>zBWK prägling är inaktiverad</translation>
+    </message>
+    <message>
+        <source>zBWK spending is NOT private (links back to the mint transaction)</source>
+        <translation>Att spendera zBWK är INTE privat (länkar tillbaka till den myntade transaktionen)</translation>
     </message>
     <message>
         <source>Denominations with value 5:</source>
@@ -2671,6 +2706,10 @@ För att ändra procenten (ingen omstart krävs):
     <message>
         <source>Denom. with value 5000:</source>
         <translation>Valörer med värde 5000:</translation>
+    </message>
+    <message>
+        <source>Hide Denominations</source>
+        <translation>Göm Valörer</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -2737,32 +2776,10 @@ För att ändra procenten (ingen omstart krävs):
         <translation>Myntnings Status: Okej</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopiera kvantitet</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopiera antal</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>Startar ResetMintZerocoin: skannar om hela blockchain, detta kan ta upp till 30 minuter beroende på din hårdvara.
 Ha lite tålamod...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Spendera Zerocoin.
-Beräkningsmässigt krävande, kan behöva flera minuter beroende på den valda säkerhetsnivån och din hårdvara.
-Var god dröj...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) behövda.
-Högsta tillåtna:</translation>
     </message>
     <message>
         <source>zBWK Spend #: </source>
@@ -2861,32 +2878,6 @@ Högsta tillåtna:</translation>
         <translation>Valör &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Fel: Din plånbok är låst. Var vänlig och mata in plånbokens lösenfras först.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Message: Mata in en mängd &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Myntade</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Framgångsrikt Myntade</translation>
-    </message>
-    <message>
-        <source> zBWK in </source>
-        <translation>zBWK i</translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>sek. Använda valörer:
-</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Varaktighet:</translation>
     </message>
@@ -2905,8 +2896,8 @@ Högsta tillåtna:</translation>
         <translation>Ingen 'Betala Till' adress inmatad, skapar lokal betalning</translation>
     </message>
     <message>
-        <source>Invalid BWK address</source>
-        <translation>Ogiltig Bulwark Adress</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Ogiltig Pivx Adress</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2929,47 +2920,28 @@ Högsta tillåtna:</translation>
         <translation>till en nygjord (oanvänd och därför anonym) lokal adress&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>med Säkerhetsnivå</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Bekräfta att skicka mynt</translation>
-    </message>
-    <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zBWK kräver en säkerhetsnivå på 100 för att kunna spenderas med framgång.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zBWK</source>
-        <translation>Misslyckades med att spendera zBWK</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation>Misslyckades med att hämta myntning associerat med serie hashen</translation>
     </message>
     <message>
-        <source>Too much inputs (</source>
-        <translation>För många input (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Minta antingen högre valörer (så att färre inputs behövs) eller spendera mindre.</translation>
-    </message>
-    <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Spendering av Zerocoin misslyckades med status =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of BWK to convert to zBWK</comment>
-        <translation><numerusform>SekretessRuta</numerusform><numerusform>SekretessDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
         <translation>valör:</translation>
+    </message>
+    <message>
+        <source>Spending Zerocoin.
+Computationally expensive, might need several minutes depending on your hardware.
+Please be patient...</source>
+        <translation>Spendera Zerocoin.
+Beroende på maskinvaran kan det behövas flera minuter på datorn.
+Var tålmodig...</translation>
     </message>
     <message>
         <source>serial: </source>
@@ -3001,14 +2973,77 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    <message>
+        <source>Open proposal page in browser</source>
+        <translation>Öppna förslagssida i webbläsare</translation>
+    </message>
+    <message>
+        <source> remaining payment(s).</source>
+        <translation>återstående betalningar</translation>
+    </message>
+    <message>
+        <source>Yes:</source>
+        <translation>Ja:</translation>
+    </message>
+    <message>
+        <source>Abstain:</source>
+        <translation>Avstå:</translation>
+    </message>
+    <message>
+        <source>No:</source>
+        <translation>Nej:</translation>
+    </message>
+    <message>
+        <source>Open link</source>
+        <translation>Öppna länk:</translation>
+    </message>
+    <message>
+        <source>Copy link</source>
+        <translation>Kopiera länk:</translation>
+    </message>
+    <message>
+        <source>Wallet Locked</source>
+        <translation>Plånbok låst:</translation>
+    </message>
+    <message>
+        <source>You must unlock your wallet to vote.</source>
+        <translation>Du måste låsa upp din plånbok för att rösta.</translation>
+    </message>
+    <message>
+        <source>Do you want to vote %1 on</source>
+        <translation>Vill du rösta %1 på</translation>
+    </message>
+    <message>
+        <source>using all your masternodes?</source>
+        <translation>använda alla dina masternodes ?</translation>
+    </message>
+    <message>
+        <source>Proposal Hash:</source>
+        <translation>Föreslags hash:</translation>
+    </message>
+    <message>
+        <source>Proposal URL:</source>
+        <translation>Föreslags URL:</translation>
+    </message>
+    <message>
+        <source>Confirm Vote</source>
+        <translation>Bekräfta Röst:</translation>
+    </message>
+    <message>
+        <source>Vote Results</source>
+        <translation>Röst resultat:</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Mängd</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Mata in en Bulwark adress (e.g. %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Mata in en BWK adress (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3035,6 +3070,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>"BLOOM"</translation>
     </message>
     <message>
+        <source>ZK_BLOOM</source>
+        <translation>ZK_BLOOM</translation>
+    </message>
+    <message>
         <source>UNKNOWN</source>
         <translation>OKÄND</translation>
     </message>
@@ -3050,12 +3089,32 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
+    <message>
+        <source>Error: Specified data directory "%1" does not exist.</source>
+        <translation>Fel: Den angivna datakatalogen "%1" existerar inte.</translation>
+    </message>
+    <message>
+        <source>Error reading masternode configuration file: %1</source>
+        <translation>Fel vid inläsning av masternodens konfigurationsfil: %1</translation>
+    </message>
+    <message>
+        <source>BWK Core didn't yet exit safely...</source>
+        <translation>BWK Core avslutades ännu inte säkert...</translation>
+    </message>
 </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Spara Bild...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Spara Bild...</translation>
+    </message>
+    <message>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopiera Bild</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -3073,8 +3132,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Verktygsfönster</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>information</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Information</translation>
     </message>
     <message>
         <source>General</source>
@@ -3095,6 +3154,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Number of connections</source>
         <translation>Antal anslutningar</translation>
+    </message>
+    <message>
+        <source>&amp;Open</source>
+        <translation>&amp;Öppna</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -3137,20 +3200,28 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öppna Bulwark felsökningslogg från den nuvarande data katalogen. Detta kan ta några sekunder för stora logg filer.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öppna BWK felsökningslogg från den nuvarande data katalogen. Detta kan ta några sekunder för stora logg filer.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Antal Huvudnoder "masternodes"</translation>
     </message>
     <message>
+        <source>&amp;Console</source>
+        <translation>&amp;Konsoll</translation>
+    </message>
+    <message>
         <source>Clear console</source>
         <translation>Rensa konsol</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Nätverkstrafik</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Nätverkstrafik</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>&amp;Rensa</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -3165,8 +3236,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Skickat</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Peers</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <source>Banned peers</source>
@@ -3223,6 +3294,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Ping Time</source>
         <translation>Ping Tid</translation>
+    </message>
+    <message>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Plånboks Reparation</translation>
     </message>
     <message>
         <source>Delete local Blockchain Folders</source>
@@ -3341,16 +3416,36 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Ut:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Välkommen till Bulwark RPC konsol.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Välkommen till BWK RPC konsol.</translation>
     </message>
     <message>
-        <source>Disconnect Node</source>
-        <translation>stänga av nod</translation>
+        <source>&amp;Disconnect Node</source>
+        <translation>&amp;stänga av nod</translation>
     </message>
     <message>
         <source>Ban Node for</source>
         <translation>förbjud Nod för att</translation>
+    </message>
+    <message>
+        <source>1 &amp;hour</source>
+        <translation>1 &amp;timme</translation>
+    </message>
+    <message>
+        <source>1 &amp;day</source>
+        <translation>1 &amp;dag</translation>
+    </message>
+    <message>
+        <source>1 &amp;week</source>
+        <translation>1 &amp;vecka</translation>
+    </message>
+    <message>
+        <source>1 &amp;year</source>
+        <translation>1 &amp;år</translation>
+    </message>
+    <message>
+        <source>&amp;Unban Node</source>
+        <translation>&amp;Ta bort bann från Nod</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3373,12 +3468,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Godkänn omsynkronisering av Blockchain</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Använd upp- och ner-pilarna för att navigera historiken, och &lt;b&gt;Ctrl-L&lt;/b&gt; för att rensa skärm.</translation>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Använd upp- och ner-pilarna för att navigera historiken, och %1 för att rensa skärm.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Skriv &lt;b&gt;help&lt;/b&gt; för en överblick av tillgängliga kommandon.</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>VARNING: Bedrägare har varit aktiva, säger åt användare att skriva kommandon här, stjäl deras innehåll i plånboken. Använd inte denna konsoll utan att fullt förstå vad ett kommando kan leda till.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3436,40 +3535,56 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Återanvänd en av de föregående använda adresserna.&lt;br&gt;Återanvända adresser har säkerhets och sekretess problem.&lt;br&gt;Använd inte detta utöver att generera om en tidigare betalningsförfrågan.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>Återanvänd en befintlig mottagande adress (inte att rekommendera)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Meddelande:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Meddelande:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>En valfri etikett att associera med den nya mottagaradressen.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, som kommer visas när förfrågan öppnas. Observera: Medelandet kommer inte skickas med betalningen över Bulwark nätverket.</translation>
+        <source>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</source>
+        <translation>Din mottagaradress. Du kan kopiera och använda den för att ta emot mynt på denna plånbok. En ny kommer genereras när den har använts.</translation>
+    </message>
+    <message>
+        <source>&amp;Address:</source>
+        <translation>&amp;Adress</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Mängd:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, som kommer visas när förfrågan öppnas. Observera: Medelandet kommer inte skickas med betalningen över BWK nätverket.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>ERHÅLLA</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, vilket kommer visas när förfrågan öppnas.&lt;br&gt;Observera: Medelandet kommer inte skickas med betalningen över Bulwark nätverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Ett frivilligt meddelande att bifoga till betalningsförfrågan, vilket kommer visas när förfrågan öppnas.&lt;br&gt;Observera: Medelandet kommer inte skickas med betalningen över BWK nätverket.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Använd detta formulär till betalningsförfrågningar. Alla fält är &lt;b&gt;frivilliga&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etikett:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etikett:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>En frivillig mängd att anhålla om. Lämna den tom eller på noll för att inte fråga efter en specifik mängd.</translation>
+    </message>
+    <message>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Förfråga betalning</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -3478,6 +3593,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Clear</source>
         <translation>Rensa</translation>
+    </message>
+    <message>
+        <source>Receiving Addresses</source>
+        <translation>Mottagar Adress</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -3511,6 +3630,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <source>Copy amount</source>
         <translation>Kopiera antal</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiera Adress</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -3519,16 +3642,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>QR Kod</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Kopiera URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Kopiera &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopiera Adress</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Kopiera &amp;Adress</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Spara Bild...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Spara Bild...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3579,7 +3702,11 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Message</source>
-        <translation>Medelande</translation>
+        <translation>Meddelande</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3614,7 +3741,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Insufficient funds!</source>
-        <translation>Otillräckliga pengar!</translation>
+        <translation>Otillräckliga medel !</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -3658,7 +3785,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Om detta är aktiverat, men växeladressen är tom eller ogiltig så kommer växel skickas till en nybildad adress.</translation>
+        <translation>Om detta är aktiverat, men växeladressen är tom eller ogiltig så kommer växeln att skickas till en nybildad adress.</translation>
     </message>
     <message>
         <source>Custom change address</source>
@@ -3677,8 +3804,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>UTXO Storlek:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
+    </message>
+    <message>
+        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 BWK applies</source>
+        <translation>SwiftX teknologi tillåter nästan omedelbara transaktioner - En fast avgift på 0.01PIV tillkommer</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3687,6 +3818,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Choose...</source>
         <translation>Välj...</translation>
+    </message>
+    <message>
+        <source>collapse fee-settings</source>
+        <translation>göm avgifts-inställningar</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -3729,16 +3864,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mynt automatiskt valda</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Om 1000 uBWKs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uBWKs i avgift,&lt;br /&gt;medans "minst" betalar 1000 uBWKs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Om 1000 uPIVs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uPIVs i avgift,&lt;br /&gt;medans "minst" betalar 1000 uPIVs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Om 1000 uBWKs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uBWKs i avgift,&lt;br /&gt;medans "minst totalt" betalar 1000 uBWKs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Om 1000 uPIVs är den valda skräddarsydda avgiften och transaktionen är bara 250 bytes så kommer "per kilobyte" bara betala 250 uPIVs i avgift,&lt;br /&gt;medans "minst totalt" betalar 1000 uPIVs. För transaktioner större än en kilobyte så betalar båda per kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
-        <translation>Att endast betala minimum avgift är okej så länge som transaktionsvolymen är mindre än rummet i blocken.&lt;br /&gt;Men var medveten om att detta kan sluta som en transaktion som aldrig blir bekräftad när det finns ett större behov av Bulwark transaktioner än nätverket kan bearbeta.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
+        <translation>Att endast betala minimum avgift är okej så länge som transaktionsvolymen är mindre än rummet i blocken.&lt;br /&gt;Men var medveten om att detta kan sluta som en transaktion som aldrig blir bekräftad när det finns ett större behov av BWK transaktioner än nätverket kan bearbeta.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3765,20 +3900,28 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Bekräfta skickandet</translation>
     </message>
     <message>
+        <source>S&amp;end</source>
+        <translation>S&amp;icka</translation>
+    </message>
+    <message>
         <source>Clear all fields of the form.</source>
         <translation>Rensa alla fält i formuläret.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Rensa allt</translation>
+        <source>Clear &amp;All</source>
+        <translation>Rensa &amp;allt</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Skicka till flera mottagare på en gång</translation>
     </message>
     <message>
+        <source>Add &amp;Recipient</source>
+        <translation>Lägg till &amp;Mottagare</translation>
+    </message>
+    <message>
         <source>Anonymized BWK</source>
-        <translation>Anonymiserade Bulwark</translation>
+        <translation>Anonymiserade BWK</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3826,7 +3969,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>Varning: Ogiltig Bulwark adress</translation>
+        <translation>Varning: Ogiltig BWK adress</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3851,10 +3994,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>En avgift %1 gånger större än %2 per kB anses vara en galet hög avgift.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Bekräftelse börjar om uppskattningsvis %n block.</numerusform><numerusform>Bekräftelse börjar om uppskattningsvis %n block.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -3909,6 +4048,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Betala endast minsta avgift på %1</translation>
     </message>
     <message>
+        <source>Estimated to get 6 confirmations near instantly with &lt;b&gt;SwiftX&lt;/b&gt;!</source>
+        <translation>Upskattar att få 6 konfirmationer nästan omedelbart med &lt;b&gt;SwiftX&lt;/b&gt;!</translation>
+    </message>
+    <message>
         <source>Warning: Unknown change address</source>
         <translation>Varning: Okänd växeladress</translation>
     </message>
@@ -3924,12 +4067,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Detta är en normal betalning.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>Betala Till:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Betala &amp;Till:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>Bulwark adressen att skicka betalningen till</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>BWK adressen att skicka betalningen till</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3952,24 +4095,24 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Ta bort den här artikeln</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Etikett:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Etikett:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Mata in en etikett till denna adress för att lägga till den till listan med använda adresser</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>mängd:</translation>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Mängd:</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation>Medelande:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>Ett medelande som var bifogat till Bulwark: URI som kommer sparas med transaktionen som din referens. Lägg märke till: Detta meddelande kommer inte skickas genom Bulwark nätverket.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>Ett medelande som var bifogat till BWK: URI som kommer sparas med transaktionen som din referens. Lägg märke till: Detta meddelande kommer inte skickas genom BWK nätverket.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3995,8 +4138,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core stängs ner...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core stängs ner...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4010,16 +4153,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Signaturer - Signera / Verifiera ett Meddelande</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Signera Meddelande</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Signera Meddelande</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Du kan signera meddelanden med din egna adress för att bevisa att du äger dem. Se upp för att signera något vagt, då phishing-attacker kan försöka lura dig att signera din identitet åt dom. Signera endast fullt detaljerade påståenden du går med på.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark adressen för signera meddelandet med</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK adressen för signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4050,40 +4193,40 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna Bulwark adress</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna BWK adress</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark adressen meddelandet blev signerat med</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK adressen meddelandet blev signerat med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Bulwark adressen.</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika BWK adressen.</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Signera Meddelande</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Signera &amp;Meddelande</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Återställ alla signatur meddelande fält</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Rensa allt</translation>
+        <source>Clear &amp;All</source>
+        <translation>Rensa &amp;allt</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verifiera Meddelande</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Verifiera Meddelande</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Skriv in den signerande adressen, meddelande (var säker på att du kopierar radbrytningar, mellanslag, tabs, etc. exakt) och signera under för att verifiera meddelandet. Var försiktig med att inte läsa in mer i signaturen än själva signerade meddelandet, för att undvika att bli lurad av en "man i mitten" attack.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verifiera Meddelande</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Verifiera &amp;Meddelande</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -4103,15 +4246,15 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>Den angivna adressen refererar inte till en nyckel.</translation>
+        <translation>Den angivna adressen visar inte till en nyckel.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Upplåsningen av plånboken var avbruten.</translation>
+        <translation>Upplåsningen av plånboken blev avbruten.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Den privata nyckel som angivits flr adressen är inte tillgänglig.</translation>
+        <translation>Den privata nyckel som angivits till adressen är inte tillgänglig.</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -4145,8 +4288,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4161,8 +4304,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Dash Core utvecklarna</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>Bulwark Core utvecklarna</translation>
+        <source>The BWK Core developers</source>
+        <translation>BWK Core utvecklarna</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4180,7 +4323,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Öppen för %n fler block</numerusform><numerusform>Öppen för %n fler block</numerusform></translation>
+        <translation><numerusform>Öppna till %n flera block</numerusform><numerusform>Öppna till %n flera block</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4244,7 +4387,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message numerus="yes">
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, sänder via %n nod</numerusform><numerusform>, sänder via %n noder</numerusform></translation>
+        <translation><numerusform>, sänder via %n noder</numerusform><numerusform>,sänder via %n noder </numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4288,7 +4431,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>mognar om %n fler block</numerusform><numerusform>mognar om %n fler block</numerusform></translation>
+        <translation><numerusform>mognar på %n flera block</numerusform><numerusform>mognar på %n flera block    </numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4388,10 +4531,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <source>Address</source>
         <translation>Adress</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Öppen för %n fler block</numerusform><numerusform>Öppen för %n fler block</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Öppna tills %1</translation>
@@ -4441,8 +4580,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mottaget via Fördunkling</translation>
     </message>
     <message>
-        <source>Bulwark Stake</source>
-        <translation>Bulwark staking</translation>
+        <source>BWK Stake</source>
+        <translation>BWK staking</translation>
     </message>
     <message>
         <source>zBWK Stake</source>
@@ -4465,24 +4604,24 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Obfuscation Skapa tecken</translation>
     </message>
     <message>
-        <source>Converted Bulwark to zBWK</source>
-        <translation>Konvertera Bulwark till zBWK</translation>
+        <source>Converted BWK to zBWK</source>
+        <translation>Konvertera BWK till zBWK</translation>
     </message>
     <message>
         <source>Spent zBWK</source>
         <translation>Spendera zBWK</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Mottog Bulwark från zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Mottog BWK från zBWK</translation>
     </message>
     <message>
         <source>Minted Change as zBWK from zBWK Spend</source>
         <translation>Myntad Växel som zBWK från zBWK Spendering</translation>
     </message>
     <message>
-        <source>Converted zBWK to Bulwark</source>
-        <translation>Konverterad zBWK till Bulwark</translation>
+        <source>Converted zBWK to BWK</source>
+        <translation>Konverterad zBWK till BWK</translation>
     </message>
     <message>
         <source>Anonymous (zBWK Transaction)</source>
@@ -4601,7 +4740,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Masternode Reward</source>
-        <translation>Huvudnods Belöning</translation>
+        <translation>Masternode Belöning</translation>
     </message>
     <message>
         <source>Zerocoin Mint</source>
@@ -4641,7 +4780,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Kopiera transactions ID</translation>
+        <translation>Kopiera transaktions ID</translation>
     </message>
     <message>
         <source>Edit label</source>
@@ -4650,6 +4789,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Show transaction details</source>
         <translation>Visa Transaktionsdetaljer</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Göm föräldralösa stakes</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -4689,7 +4832,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Exportering Misslyckad</translation>
+        <translation>Exportering Misslyckades</translation>
     </message>
     <message>
         <source>There was an error trying to save the transaction history to %1.</source>
@@ -4700,8 +4843,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Exportering Lyckat</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Mottog Bulwark från zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Mottog BWK från zBWK</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zBWK</source>
@@ -4741,8 +4884,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Skicka Mynt</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 Bulwark.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 BWK.</translation>
     </message>
 </context>
 <context>
@@ -4752,8 +4895,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>HISTORIK</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exportera</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportera</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -4773,7 +4916,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Select zBWK to Spend</source>
         <translation>Välj zBWK att Spendera</translation>
@@ -4794,13 +4937,9 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <source>Select/Deselect All</source>
         <translation>Markera/Avmarkera alla</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Är Spenderbar</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = behåll tx meta data t.ex. kontoägare och information om betalningsförfråga, 2 = släpp tx meta data)</translation>
@@ -4826,8 +4965,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Beräknade ackumulator kontrollstation är inte vad som sparats av block index</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>Kan ej låsa in på data katalog %s. Bulwark Kärna körs förmodligen redan.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>Kan ej låsa in på data katalog %s. BWK Kärna körs förmodligen redan.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4858,8 +4997,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Aktivera automatisk plånboksbackup efter varje zBWK minting (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
-        <translation>Aktivera eller avaktivera staking funktionalitet för Bulwark inmatningar (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</source>
+        <translation>Aktivera eller avaktivera staking funktionalitet för BWK inmatningar (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zBWK inputs (0-1, default: %u)</source>
@@ -4898,20 +5037,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Exekvera kommando när den bästa block ändras (%s i cmd är utbytt mot block hash)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Avgifter (i BWK/kB) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Avgifter (i BWK/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Avgifter (i BWK/kB) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Avgifter (i BWK/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Spola databasaktivitet från minnes pool till disk log varje &lt;n&gt;megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Obekräftade betecknade utmatningar hittade, kommer vänta tills de bekräftar för att fortsätta.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5002,20 +5137,24 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Denna produkt inkluderar mjukvara utvecklad av OpenSSL Projektet för användning i OpenSSL Toolkit &lt;https://www.openssl.org/&gt; och kryptografisk mjukvara skriven av Eric Young och UPnP mjukvara skriven av Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
-        <translation>Kan inte binda till %s på denna dator. Bulwark Core körs förmodligen redan.</translation>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
+        <translation>Totala längden av nätverks verisionens sträng (%i) överskrider maximala längd (%i). Minska mängden eller storleken av uakommentarer.</translation>
+    </message>
+    <message>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
+        <translation>Kan inte binda till %s på denna dator. BWK Core körs förmodligen redan.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Kan ej lokalisera tillräckligt Fördunklingsdenominationerade pengar för denna transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 Bulwark.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 BWK.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 Bulwark.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 BWK.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5030,8 +5169,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Varning: -maxtxfee är sätt väldigt högt! Detta är transaktionsavgiften du kommer betala om du skickar en transaktion.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>Varning: Var vänlig kontrollera att din dators tid och datum är korrekt! Om din klocka är fel så kommer Bulwark Core inte att fungera korrekt.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>Varning: Var vänlig kontrollera att din dators tid och datum är korrekt! Om din klocka är fel så kommer BWK Core inte att fungera korrekt.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5098,12 +5237,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Tillåt DNS lookups för -addnode, -seednode och -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Har redan den inmatningen.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Fråga alltid efter peer adresser via DNS lookup (standard: %u)</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Bifoga kommentar till användaragent strängen</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
@@ -5120,18 +5259,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Calculating missing accumulators...</source>
         <translation>Beräknar fattandes ackumulatorer...</translation>
-    </message>
-    <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Kan ej kalla: inga kompatibla inmatningar kvar.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Kan ej hitta slumpmässig Huvudnod.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Kan ej blanda när synkronisering håller på.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
@@ -5152,10 +5279,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Cannot write default address</source>
         <translation>Kan ej skriva standard adress</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Kollateral ej giltig.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5182,8 +5305,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Bulwark Core Developers</translation>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
+        <translation>Copyright (C) 2015-%i The BWK Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5242,14 +5365,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Tillåt klinten att bete sig som en huvudnod (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Poster är fulla.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Fel vid anslutning till Huvudnoder.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Fel vid initialisering av blockdatabas</translation>
     </message>
@@ -5270,8 +5385,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Fel vid laddning av wallet.dat: Plånbok korrupterad</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Fel vid laddning av wallet.dat: Plånbok  kräver nyare Bulwark Kärna version</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>Fel vid laddning av wallet.dat: Plånbok  kräver nyare BWK Kärna version</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5286,16 +5401,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Fel vid återhämtning av offentlig nyckel.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fel vid skrivning av zerocoinDB till disk</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Fel: Ett fatalt internt fel inträffade, se debug.log för detaljer</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Fel: Kan ej välja nuvarande benämnda inmatningar</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5310,16 +5425,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Fel: Plånbok låst, kan ej genomföra transaktion!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Fel: Du har redan avvaktande poster i Fördunklingspoolen</translation>
-    </message>
-    <message>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation>Misslyckades att beräkna ackumulator kontrollstation</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Misslyckades att lyssna på någon port. Använd -listen=0 om du vill detta.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Misslyckades ta ut satsdelarna i host:port sträng</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5330,20 +5445,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Avgift (i BWK/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Slutgiltiggör transaktion.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Tvinga säkert läga (standard: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Hittat tillräckligt många användare, signerar (väntar %s)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Hittade tillräckligt många användare, signerar ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5370,14 +5473,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Inkludera IP adress i felsökningens utmatning (standard: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Okompatibel sätt.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Okompatibel version.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Ogiltig eller ingen tillblivelse block hittat. Fel datadir för nätverk?</translation>
     </message>
@@ -5386,12 +5481,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Information</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
-        <translation>Initierings renlighetscheck misslyckades. Bulwark Kärna stängs ner.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>inmatning är inte giltig.</translation>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
+        <translation>Initierings renlighetscheck misslyckades. BWK Kärna stängs ner.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5450,16 +5541,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Fel privat nyckel.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Ogiltigt script upptäckt.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Procent automatiskt mintad Zerocoin (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the Bulwark and zBWK money supply statistics</source>
-        <translation>Indexera Bulwark och zBWK pengarna tillgång statistik på nytt</translation>
+        <source>Reindex the BWK and zBWK money supply statistics</source>
+        <translation>Indexera BWK och zBWK pengarna tillgång statistik på nytt</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5472,6 +5559,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Selected coins value is less than payment target</source>
         <translation>Valda mynts värde är under betalningsmål</translation>
+    </message>
+    <message>
+        <source>Support the zerocoin light node protocol (default: %u)</source>
+        <translation>Stöd zerocoin protokollet för light node (standard: %u)</translation>
     </message>
     <message>
         <source>SwiftX options:</source>
@@ -5498,8 +5589,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
 </translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Avaktivera all Bulwark funktionalitet (Huvudnoder, Zerocoin, SwiftX, Budgeting) (0-1, standard: %u)</translation>
+        <source>Disable all BWK specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Avaktivera all BWK funktionalitet (Huvudnoder, Zerocoin, SwiftX, Budgeting) (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5598,10 +5689,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Misslyckades skapa mint</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Misslyckades att deserialize</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Misslyckades hitta Zerocoins i wallet.dat</translation>
     </message>
@@ -5620,14 +5707,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Behåll som mest &lt;n&gt; oanslutningsbara transaktioner i minne (standard: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Senaste obfuscation var för ny.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Den senaste framgångsrika Obfuscation-åtgärden var för ny.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5682,10 +5761,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Lokation av auth cookie (standard: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Lås är redan på plats.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Lås huvudnoder från huvudnod konfigurations fil (standard: %u)</translation>
     </message>
@@ -5702,14 +5777,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Masternod val:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternodens kö är full.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternod:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maximala mottagna per-anslutning buffer, &lt;n&gt;*1000 bytes (standard: %u)</translation>
     </message>
@@ -5722,14 +5789,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mint kom inte med i blockchain</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Inmatad transaktions information fattas.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Blandning pågår...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Adress behövs för att växel ej är exakt</translation>
     </message>
@@ -5738,40 +5797,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Port behöver specifieras med -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Inga Huvudnoder upptäckta.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Inga kompatibla Huvudnoder hittade.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Inga pengar o behov av benämnelse upptäckta.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Inga matchande valörer hittade till blandning.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Nod relä val:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Ej-standard offentlig nyckel upptäckt.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Ej kompatibel med existerande transaktioner.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Ej tillräckliga fil deskriptorer tillgängliga.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Inte i Huvudnod listan.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5780,18 +5811,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Antal skräddarsydda platser för backup att behålla (standard: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Fördunkling är overksam.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Fördunkling förfrågan avslutad:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Fördunkling förfrågan ej avslutad:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5808,6 +5827,10 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Lösenord för JSON-RPC anslutningar</translation>
+    </message>
+    <message>
+        <source>Unable to find transaction containing mint %s</source>
+        <translation>Det gick inte att hitta transaktionen som innehöll prägling %s</translation>
     </message>
     <message>
         <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
@@ -5884,10 +5907,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Skicka transaktioner som avgiftsfria transaktioner om möjligt (standard: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Sessionen är inte klar</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -5994,18 +6013,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Sluta kör efter block har importerats från disk (standard: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Skickade in följande poster till huvudnod: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Inskickat till huvudnod, väntar på fler poster ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Inskickat till huvudnod, väntar i kö %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Synchronisering misslyckad</translation>
     </message>
@@ -6042,14 +6049,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mynt spenderingen har redan använts</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Den nya spendera mynt transaktionen kunde inte verifieras</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Den valda mint myntet är ett ogiltigt mynt</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Transaktionen verifierades inte</translation>
     </message>
@@ -6064,10 +6063,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Det här är menat för regression testverktyg och app utveckling.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dehär är ingen Masternod</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6102,18 +6097,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Transaktionens värde måste vara possitivt</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transaktion skapad framgångsrikt</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transaktionsavgifter är för stora.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transaktionen inte giltig.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transaktionen för stor för avgifts policy</translation>
     </message>
@@ -6122,24 +6105,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Transaktion för stor</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Sänder ut slutgiltig transaktion.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Försök att spendera med en högre säkerhetsnivå för att inkludera fler mynt</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Försöker spendera en redan spendera serie #, försök igen.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Kan ej binda till %s på denna dator (bind återgav fel %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Kan ej hitta transaktion innehållandes mint</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6152,10 +6123,6 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Okänt nätverk specifierat i -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Okänt tillstånd: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6178,16 +6145,16 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Använd test nätverket</translation>
     </message>
     <message>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>Användaragent kommentar (%s) innehåller osäkra tecken.</translation>
+    </message>
+    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Användarnamn för JSON-RPC anslutningar</translation>
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zBWK</source>
         <translation>Värde är under den minsta tillgängliga valören (=1) av zBWK</translation>
-    </message>
-    <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Värde högre än fördunklingspoolen maximalt tillåter.</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6198,20 +6165,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Verifierar plånbok</translation>
     </message>
     <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zBWK kräver en säkerhetsnivå på 100 för att kunna spenderas med framgång.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Plånbok %s finns utanför data katalog %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Plånboken är låst.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Plånbok behöver skrivas om: starta om Bulwark Kärna för att göra klart</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>Plånbok behöver skrivas om: starta om BWK Kärna för att göra klart</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6238,24 +6197,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Varning: Argument -debugnet stödjes ej, ignoreras. Använd -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Kommer försöka igen...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Du har inte tillräckligt med Zerocoins i din plånbok</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Du behöver bygga om databasen genom att använda -reindex för att ändra -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Dina poster lyckades läggas till.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Din transaktion accepterades in i poolen!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

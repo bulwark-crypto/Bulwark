@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,10 +16,11 @@ QT_END_NAMESPACE
 /** Export a Qt table model to a CSV file. This is useful for analyzing or post-processing the data in
     a spreadsheet.
  */
-class CSVModelWriter : public QObject {
+class CSVModelWriter : public QObject
+{
     Q_OBJECT
 
-  public:
+public:
     explicit CSVModelWriter(const QString& filename, QObject* parent = 0);
 
     void setModel(const QAbstractItemModel* model);
@@ -29,7 +31,7 @@ class CSVModelWriter : public QObject {
     */
     bool write();
 
-  private:
+private:
     QString filename;
     const QAbstractItemModel* model;
 

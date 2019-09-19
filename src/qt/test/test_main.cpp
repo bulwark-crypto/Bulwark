@@ -1,7 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Bulwark developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,6 +19,8 @@
 #include <QObject>
 #include <QTest>
 
+#include <openssl/ssl.h>
+
 #if defined(QT_STATICPLUGIN)
 #include <QtPlugin>
 #if defined(QT_QPA_PLATFORM_MINIMAL)
@@ -37,14 +38,17 @@ Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin);
 extern void noui_connect();
 
 // This is all you need to run all the tests
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     SetupEnvironment();
     bool fInvalid = false;
 
     // Don't remove this, it's needed to access
     // QCoreApplication:: in the tests
     QCoreApplication app(argc, argv);
-    app.setApplicationName("Bulwark-Qt-test");
+    app.setApplicationName("TRANSCENDENCE-Qt-test");
+
+    SSL_library_init();
 
     URITests test1;
     if (QTest::qExec(&test1) != 0)

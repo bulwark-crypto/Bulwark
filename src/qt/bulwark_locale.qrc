@@ -6,7 +6,9 @@
         <file alias="da">locale/bulwark_da.qm</file>
         <file alias="de">locale/bulwark_de.qm</file>
         <file alias="en">locale/bulwark_en.qm</file>
+        <file alias="en_GB">locale/bulwark_en_GB.qm</file>
         <file alias="en_US">locale/bulwark_en_US.qm</file>
+        <file alias="eo">locale/bulwark_eo.qm</file>
         <file alias="es">locale/bulwark_es.qm</file>
         <file alias="es_ES">locale/bulwark_es_ES.qm</file>
         <file alias="fi">locale/bulwark_fi.qm</file>

@@ -10,48 +10,48 @@
         <translation>產生新位址</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>新增</translation>
+        <source>&amp;New</source>
+        <translation>&amp;新增</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>複製目前選取的位址到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>刪除</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;刪除</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>刪除列表中已選擇的位址</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>刪除</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;刪除</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>匯出目前面板中的資料</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>匯出</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;匯出</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>關閉</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;關閉</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>選擇要匯出Bulwark幣的位址</translation>
+        <translation>選擇要匯出BWK幣的位址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>選擇要接收Bulwark幣的位址</translation>
+        <translation>選擇要接收BWK幣的位址</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>選取</translation>
+        <source>C&amp;hoose</source>
+        <translation>&amp;選取</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>接收的位址</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>這是你用來付款的 Bulwark 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>這是你用來付款的 BWK 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>這是你用來接收款項的 Bulwark 位址, 建議你每次付款都使用新的位址.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>這是你用來接收款項的 BWK 位址, 建議你每次付款都使用新的位址.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>拷貝位址</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;拷貝位址</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>複製標記</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>編輯</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;編輯</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -164,16 +164,16 @@
         <translation>錢包確認加密</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark 現在會關閉程式來處理加密流程, 請注意, 僅僅是加密你的錢包並不能完全保護你的 Bulwark 幣被可疑軟體或病毒偷走的風險.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK 現在會關閉程式來處理加密流程, 請注意, 僅僅是加密你的錢包並不能完全保護你的 BWK 幣被可疑軟體或病毒偷走的風險.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>確定要加密你的錢包?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>請注意: 如果你加密了你的錢包但是卻忘記你設定的密碼, &lt;b&gt;你將會失去錢包裡的錢(Bulwark)&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>請注意: 如果你加密了你的錢包但是卻忘記你設定的密碼, &lt;b&gt;你將會失去錢包裡的錢(BWK)&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -226,8 +226,8 @@
         <translation>BIP 38 工具</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 加密</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -262,20 +262,20 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>加密 鑰匙</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>加密 &amp;鑰匙</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>清除 全部</translation>
+        <source>Clear &amp;All</source>
+        <translation>清除 &amp;全部</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 解密</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 解密</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>解密 鑰匙</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>解密 &amp;鑰匙</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -361,136 +361,136 @@
         <translation>節點</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>總覽</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;總覽</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>顯示錢包資訊</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>發送</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;發送</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>接收</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;接收</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>交易</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;交易</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>瀏覽交易紀錄</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>退出</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;退出</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>關閉程式</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>關於 Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>關於 &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>顯示 Qt 資訊</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>選項</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;選項</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>顯示 / 隱藏</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;顯示 / 隱藏</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>顯示或隱藏主視窗</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>錢包加密</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;錢包加密</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>將你錢包中的私鑰加密</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>備份錢包</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;備份錢包</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>備份錢包到另外的位置</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>更改密碼</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;更改密碼</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>更改使用中的錢包密碼</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>錢包解鎖</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;錢包解鎖</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>錢包解鎖</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>錢包上鎖</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;錢包上鎖</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>訊息簽章</translation>
+        <source>Sign &amp;message...</source>
+        <translation>&amp;訊息簽章</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>查驗訊息</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;查驗訊息</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>資訊</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;資訊</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>顯示診斷訊息</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>除錯命令列</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;除錯命令列</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>開啟除錯命令列</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>網路監控</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;網路監控</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>顯示網路監控</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>接點(Peers)列表</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;接點(Peers)列表</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>顯示接點(Peers)資訊</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>錢包修復</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;錢包修復</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -501,148 +501,148 @@
         <translation>打開設定檔</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>顯示自動備份</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>&amp;顯示自動備份</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>顯示自動建立的錢包備份</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>發送地址</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;發送地址</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>顯示曾經使用的發送地址及標籤</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>接收地址</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;接收地址</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>顯示曾經使用過的接收地址</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>打開網址</translation>
+        <source>Open &amp;URI...</source>
+        <translation>&amp;打開網址</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>命令列工具</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;命令列工具</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>其他資料同步中: %p%</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>檔案</translation>
+        <source>&amp;File</source>
+        <translation>&amp;檔案</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>設定</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;設定</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>工具</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;工具</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>幫助</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;幫助</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Tabs 工具列</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>送出錢幣到 Bulwark 地址</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>送出錢幣到 BWK 地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>請求付款 (會產生 QR Code跟 Bulwark 位址)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>請求付款 (會產生 QR Code跟 pivx 位址)</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>瀏覽 Masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>關於 Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;關於 BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>顯示 Bulwark Core 相關資訊</translation>
+        <source>Show information about BWK Core</source>
+        <translation>顯示 BWK Core 相關資訊</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>修改 Bulwark 設定</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>修改 BWK 設定</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>使用你的 Bulwark 位址對訊息簽章, 來證明你是擁有者</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>使用你的 BWK 位址對訊息簽章, 來證明你是擁有者</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>驗證訊息簽章與 Bulwark 位址吻合</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>驗證訊息簽章與 BWK 位址吻合</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 工具</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 工具</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>使用密碼對私鑰加密解密</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>多重發送</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;多重發送</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>多重發送設定</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>打開錢包設定檔</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>&amp;打開錢包設定檔</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>打開Masternode設定檔</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>&amp;打開Masternode設定檔</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>打開Masternode設定檔</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>打開Bulwark: 位址或付款請求 </translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>打開BWK: 位址或付款請求 </translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>區塊鏈瀏覽</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;區塊鏈瀏覽</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>區塊鏈瀏覽視窗</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>顯示 Bulwark Core 幫助訊息以取得 Bulwark 命令列表選項</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>顯示 BWK Core 幫助訊息以取得 BWK 命令列表選項</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core 客戶端</translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core 客戶端</translation>
     </message>
     </context>
 <context>
@@ -669,17 +669,20 @@
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -706,9 +709,6 @@
     </context>
 <context>
     <name>MultisigDialog</name>
-    </context>
-<context>
-    <name>ObfuscationConfig</name>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -749,7 +749,14 @@
     </message>
     </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
@@ -757,8 +764,8 @@
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Information</source>
-        <translation>資訊</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;資訊</translation>
     </message>
     </context>
 <context>
@@ -782,6 +789,10 @@
         <translation>標記</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>位址</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(沒有標記)</translation>
     </message>
@@ -789,8 +800,8 @@
 <context>
     <name>SendCoinsDialog</name>
     <message>
-        <source>Clear All</source>
-        <translation>清除 全部</translation>
+        <source>Clear &amp;All</source>
+        <translation>清除 &amp;全部</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -822,8 +833,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>對訊息簽名的 Bulwark 位址</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>對訊息簽名的 BWK 位址</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -846,24 +857,24 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>使用簽章來證明你是該  Bulwark 位址的擁有者,</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>使用簽章來證明你是該  BWK 位址的擁有者,</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>此訊息之 Bulwark 位址已簽章於</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>此訊息之 BWK 位址已簽章於</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>驗證訊息以確保該  Bulwark 位址已被簽章</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>驗證訊息以確保該  BWK 位址已被簽章</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>重設所有已簽章訊息</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>清除 全部</translation>
+        <source>Clear &amp;All</source>
+        <translation>清除 &amp;全部</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -893,8 +904,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -948,8 +959,8 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>匯出</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;匯出</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -957,9 +968,9 @@
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     </context>
 </TS>

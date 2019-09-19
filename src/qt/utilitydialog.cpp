@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Bulwark developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,6 +13,8 @@
 #include "guiconstants.h"
 #include "intro.h"
 #include "guiutil.h"
+
+#include "qt/bulwark/qtutils.cpp"
 
 #include "clientversion.h"
 #include "init.h"
@@ -30,20 +31,24 @@
 
 /** "Help message" or "About" dialog box */
 HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::HelpMessageDialog) {
+                                                                    ui(new Ui::HelpMessageDialog)
+{
     ui->setupUi(this);
+    this->setStyleSheet(parent->styleSheet());
     GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
 
-    QString version = tr("Bulwark core") + " " + tr("version") + " " + QString::fromStdString(FormatFullVersion());
-    /* On x86 add a bit specifier to the version so that users can distinguish between
-         * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
-         */
+    QString version = tr("Bulwark Core") + " " + tr("version") + " " + QString::fromStdString(FormatFullVersion());
+/* On x86 add a bit specifier to the version so that users can distinguish between
+     * 32 and 64 bit builds. On other architectures, 32/64 bit may be more ambigious.
+     */
 #if defined(__x86_64__)
     version += " " + tr("(%1-bit)").arg(64);
 #elif defined(__i386__)
     version += " " + tr("(%1-bit)").arg(32);
 #endif
 
+    setCssBtnPrimary(ui->pushButtonOk);
+    connect(ui->pushButtonOk, &QPushButton::clicked, this, &HelpMessageDialog::close);
     if (about) {
         setWindowTitle(tr("About Bulwark Core"));
 
@@ -54,7 +59,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         // Make URLs clickable
         QRegExp uri("<(.*)>", Qt::CaseSensitive, QRegExp::RegExp2);
         uri.setMinimal(true); // use non-greedy matching
-        licenseInfoHTML.replace(uri, "<a href=\"\\1\">\\1</a>");
+        licenseInfoHTML.replace(uri, "<a style='color: #b088ff;text-decoration:none'  href=\"\\1\">\\1</a>");
         // Replace newlines with HTML breaks
         licenseInfoHTML.replace("\n\n", "<br><br>");
 
@@ -67,7 +72,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
     } else {
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
-                         "  bulwark-qt [" + tr("command-line options") + "]                     " + "\n";
+                         "  TRANSCENDENCE-qt [" + tr("command-line options") + "]                     " + "\n";
         QTextCursor cursor(ui->helpMessage->document());
         cursor.insertText(version);
         cursor.insertBlock();
@@ -96,7 +101,8 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
         bold.setFontWeight(QFont::Bold);
 
         Q_FOREACH (const QString &line, coreOptions.split("\n")) {
-            if (line.startsWith("  -")) {
+            if (line.startsWith("  -"))
+            {
                 cursor.currentTable()->appendRows(1);
                 cursor.movePosition(QTextCursor::PreviousCell);
                 cursor.movePosition(QTextCursor::NextRow);
@@ -119,17 +125,20 @@ HelpMessageDialog::HelpMessageDialog(QWidget* parent, bool about) : QDialog(pare
     }
 }
 
-HelpMessageDialog::~HelpMessageDialog() {
+HelpMessageDialog::~HelpMessageDialog()
+{
     GUIUtil::saveWindowGeometry("nHelpMessageDialogWindow", this);
     delete ui;
 }
 
-void HelpMessageDialog::printToConsole() {
+void HelpMessageDialog::printToConsole()
+{
     // On other operating systems, the expected action is to print the message to the console.
     fprintf(stdout, "%s\n", qPrintable(text));
 }
 
-void HelpMessageDialog::showOrPrint() {
+void HelpMessageDialog::showOrPrint()
+{
 #if defined(WIN32)
     // On Windows, show a message box, as there is no stderr/stdout in windowed applications
     exec();
@@ -139,21 +148,19 @@ void HelpMessageDialog::showOrPrint() {
 #endif
 }
 
-void HelpMessageDialog::on_okButton_accepted() {
-    close();
-}
-
 
 /** "Shutdown" window */
-ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f) {
+ShutdownWindow::ShutdownWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent, f)
+{
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
-                          tr("Bulwark Core is shutting down...") + "<br /><br />" +
-                          tr("Do not shut down the computer until this window disappears.")));
+        tr("Bulwark Core is shutting down...") + "<br /><br />" +
+        tr("Do not shut down the computer until this window disappears.")));
     setLayout(layout);
 }
 
-void ShutdownWindow::showShutdownWindow(BitcoinGUI* window) {
+void ShutdownWindow::showShutdownWindow(QMainWindow* window)
+{
     if (!window)
         return;
 
@@ -170,6 +177,7 @@ void ShutdownWindow::showShutdownWindow(BitcoinGUI* window) {
     shutdownWindow->show();
 }
 
-void ShutdownWindow::closeEvent(QCloseEvent* event) {
+void ShutdownWindow::closeEvent(QCloseEvent* event)
+{
     event->ignore();
 }

@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Bulwark developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,10 +17,12 @@
   - All lower-case letters except for 'l'
 */
 
-BitcoinAddressEntryValidator::BitcoinAddressEntryValidator(QObject* parent) : QValidator(parent) {
+BitcoinAddressEntryValidator::BitcoinAddressEntryValidator(QObject* parent) : QValidator(parent)
+{
 }
 
-QValidator::State BitcoinAddressEntryValidator::validate(QString& input, int& pos) const {
+QValidator::State BitcoinAddressEntryValidator::validate(QString& input, int& pos) const
+{
     Q_UNUSED(pos);
 
     // Empty address is "intermediate" input
@@ -64,7 +65,7 @@ QValidator::State BitcoinAddressEntryValidator::validate(QString& input, int& po
         if (((ch >= '0' && ch <= '9') ||
                 (ch >= 'a' && ch <= 'z') ||
                 (ch >= 'A' && ch <= 'Z')) &&
-                ch != 'l' && ch != 'I' && ch != '0' && ch != 'O') {
+            ch != 'l' && ch != 'I' && ch != '0' && ch != 'O') {
             // Alphanumeric and not a 'forbidden' character
         } else {
             state = QValidator::Invalid;
@@ -74,10 +75,12 @@ QValidator::State BitcoinAddressEntryValidator::validate(QString& input, int& po
     return state;
 }
 
-BitcoinAddressCheckValidator::BitcoinAddressCheckValidator(QObject* parent) : QValidator(parent) {
+BitcoinAddressCheckValidator::BitcoinAddressCheckValidator(QObject* parent) : QValidator(parent)
+{
 }
 
-QValidator::State BitcoinAddressCheckValidator::validate(QString& input, int& pos) const {
+QValidator::State BitcoinAddressCheckValidator::validate(QString& input, int& pos) const
+{
     Q_UNUSED(pos);
     // Validate the passed Bulwark address
     CBitcoinAddress addr(input.toStdString());

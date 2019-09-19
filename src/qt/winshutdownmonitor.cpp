@@ -1,4 +1,5 @@
 // Copyright (c) 2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +17,8 @@
 
 // If we don't want a message to be processed by Qt, return true and set result to
 // the value that the window procedure should return. Otherwise return false.
-bool WinShutdownMonitor::nativeEventFilter(const QByteArray& eventType, void* pMessage, long* pnResult) {
+bool WinShutdownMonitor::nativeEventFilter(const QByteArray& eventType, void* pMessage, long* pnResult)
+{
     Q_UNUSED(eventType);
 
     MSG* pMsg = static_cast<MSG*>(pMessage);
@@ -26,7 +28,7 @@ bool WinShutdownMonitor::nativeEventFilter(const QByteArray& eventType, void* pM
         // Warn only once as this is performance-critical
         static bool warned = false;
         if (!warned) {
-            LogPrint("windows", "%s: OpenSSL RAND_event() failed to seed OpenSSL PRNG with enough data.\n", __func__);
+            LogPrint("%s: OpenSSL RAND_event() failed to seed OpenSSL PRNG with enough data.\n", __func__);
             warned = true;
         }
     }
@@ -49,7 +51,8 @@ bool WinShutdownMonitor::nativeEventFilter(const QByteArray& eventType, void* pM
     return false;
 }
 
-void WinShutdownMonitor::registerShutdownBlockReason(const QString& strReason, const HWND& mainWinId) {
+void WinShutdownMonitor::registerShutdownBlockReason(const QString& strReason, const HWND& mainWinId)
+{
     typedef BOOL(WINAPI * PSHUTDOWNBRCREATE)(HWND, LPCWSTR);
     PSHUTDOWNBRCREATE shutdownBRCreate = (PSHUTDOWNBRCREATE)GetProcAddress(GetModuleHandleA("User32.dll"), "ShutdownBlockReasonCreate");
     if (shutdownBRCreate == NULL) {

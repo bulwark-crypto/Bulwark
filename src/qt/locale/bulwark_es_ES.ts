@@ -10,7 +10,7 @@
         <translation>Crear una nueva dirección</translation>
     </message>
     <message>
-        <source>New</source>
+        <source>&amp;New</source>
         <translation>Nueva</translation>
     </message>
     <message>
@@ -18,7 +18,7 @@
         <translation>Copiar la dirección seleccionada al portapapeles</translation>
     </message>
     <message>
-        <source>Copy</source>
+        <source>&amp;Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
@@ -26,7 +26,7 @@
         <translation>Quitar la dirección seleccionada de la lista</translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>&amp;Delete</source>
         <translation>Eliminar</translation>
     </message>
     <message>
@@ -34,11 +34,11 @@
         <translation>Exportar los datos de la pestaña actual a un archivo</translation>
     </message>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Exportar</translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>C&amp;lose</source>
         <translation>Cerrar</translation>
     </message>
     <message>
@@ -50,7 +50,7 @@
         <translation>Elija la dirección desde la que recibir moneda</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Elegir</translation>
     </message>
     <message>
@@ -62,24 +62,24 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones de Bulwark para enviar pagos. Compruebe siempre la cantidad así como la dirección de destino antes de enviar moneda.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son sus direcciones de BWK para enviar pagos. Compruebe siempre la cantidad así como la dirección de destino antes de enviar moneda.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son sus direcciones de Bulwark para recibir pagos. Es recomendable que use una dirección nueva para cada transacción.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son sus direcciones de BWK para recibir pagos. Es recomendable que use una dirección nueva para cada transacción.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
+        <source>&amp;Copy Address</source>
         <translation>Copiar dirección</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>Copiar etiqueta</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Editar</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Confirmar encriptación del monedero</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark se cerrará ahora para completar el proceso de encriptación. Recuerde que la encriptación no le protege completamente del robo de sus Bulwarks frente a malware que infecte su ordenador.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK se cerrará ahora para completar el proceso de encriptación. Recuerde que la encriptación no le protege completamente del robo de sus PIVs frente a malware que infecte su ordenador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>¿Está seguro de que quiere encriptar su monedero?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Advertencia: si encripta su monedero y pierde su clave de seguridad, ¡&lt;b&gt;PERDERÁ TODOS SUS Bulwark&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Advertencia: si encripta su monedero y pierde su clave de seguridad, ¡&lt;b&gt;PERDERÁ TODOS SUS BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>Utilidad BIP 38</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>Encriptar BIP 38</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>Encriptar &amp;BIP 38</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Dirección:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Ingrese una dirección Bulwark que le gustaría encriptar usando BIP 38. Ingrese una contraseña en el cuadro del medio. Presione encriptar para calcular la clave privada encriptada.</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Ingrese una dirección BWK que le gustaría encriptar usando BIP 38. Ingrese una contraseña en el cuadro del medio. Presione encriptar para calcular la clave privada encriptada.</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>La dirección Bulwark a encriptar</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>La dirección BWK a encriptar</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Cifrar la llave privada para esta dirección Bulwark</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Cifrar la llave privada para esta dirección BWK</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,15 +306,15 @@
         <translation>Descifrar la llave ingresada usando la frase de contraseña</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
+        <source>Encrypt &amp;Key</source>
         <translation>Encriptar Clave</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Limpiar todo</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
+        <source>&amp;BIP 38 Decrypt</source>
         <translation>Desencriptar BIP 38</translation>
     </message>
     <message>
@@ -322,7 +322,7 @@
         <translation>Ingrese la clave privada cifrada BIP 38. Ingrese la frase de contraseña en el cuadro del medio. Haga clic en Descifrar clave para calcular la clave privada. Después de descifrar la clave, al hacer clic en "Importar dirección" para agregar esta clave privada al monedero.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
+        <source>Decrypt &amp;Key</source>
         <translation>Descifrar clave</translation>
     </message>
     <message>
@@ -393,6 +393,9 @@
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     </context>
 <context>
@@ -422,9 +425,6 @@
     </context>
 <context>
     <name>MultisigDialog</name>
-    </context>
-<context>
-    <name>ObfuscationConfig</name>
     </context>
 <context>
     <name>OpenURIDialog</name>
@@ -461,6 +461,9 @@
     </message>
     </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     </context>
 <context>
@@ -490,6 +493,10 @@
         <translation>Etiqueta</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Dirección</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(sin etiqueta)</translation>
     </message>
@@ -497,7 +504,7 @@
 <context>
     <name>SendCoinsDialog</name>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Limpiar todo</translation>
     </message>
     <message>
@@ -530,8 +537,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Dirección Bulwark con la que firmar el mensaje</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>Dirección BWK con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -554,15 +561,15 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Firme el mensaje para probar que Ud. es el propietario de esta dirección Bulwark</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Firme el mensaje para probar que Ud. es el propietario de esta dirección BWK</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Limpiar todos los campos de firma de mensaje</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Limpiar todo</translation>
     </message>
     <message>
@@ -636,7 +643,7 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
+        <source>&amp;Export</source>
         <translation>Exportar</translation>
     </message>
     <message>
@@ -645,10 +652,10 @@
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Zapping all transactions from wallet...</source>
         <translation>Saltando todas las transacciones del monedero...</translation>

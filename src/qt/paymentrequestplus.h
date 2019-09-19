@@ -1,13 +1,19 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_PAYMENTREQUESTPLUS_H
 #define BITCOIN_QT_PAYMENTREQUESTPLUS_H
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #include "paymentrequest.pb.h"
+#pragma GCC diagnostic pop
 
 #include "base58.h"
+
+#include <openssl/x509.h>
 
 #include <QByteArray>
 #include <QList>
@@ -18,8 +24,9 @@
 // with extra methods
 //
 
-class PaymentRequestPlus {
-  public:
+class PaymentRequestPlus
+{
+public:
     PaymentRequestPlus() {}
 
     bool parse(const QByteArray& data);
@@ -34,11 +41,9 @@ class PaymentRequestPlus {
     // Returns list of outputs, amount
     QList<std::pair<CScript, CAmount> > getPayTo() const;
 
-    const payments::PaymentDetails& getDetails() const {
-        return details;
-    }
+    const payments::PaymentDetails& getDetails() const { return details; }
 
-  private:
+private:
     payments::PaymentRequest paymentRequest;
     payments::PaymentDetails details;
 };

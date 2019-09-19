@@ -10,36 +10,36 @@
         <translation>Stvori novu adresu</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Novo</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Novo</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopiraj trenutno odabranu adresu u spremnik</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopiraj</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopiraj</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Izbriši trenutno odabranu adresu iz liste</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Izbriši</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Izbriši</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Izvezi podatke iz trenutne kartice u datoteku</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Izvezi</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Izvezi</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Zatvori</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;Zatvori</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,7 +50,7 @@
         <translation>Izaberi adresu na koju primiti kovanice</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>C&amp;hoose</source>
         <translation>Izaberi</translation>
     </message>
     <message>
@@ -62,24 +62,24 @@
         <translation>Adrese za primanje</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>To su vaše Bulwark adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>To su vaše BWK adrese za slanje plaćanja. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>To su vaše Bulwark adrese za primanje uplata. Preporuča se upotreba nove adrese primanja za svaku transakciju.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>To su vaše BWK adrese za primanje uplata. Preporuča se upotreba nove adrese primanja za svaku transakciju.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation> Kopiraj adresu</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp; Kopiraj adresu</translation>
     </message>
     <message>
-        <source>Copy Label</source>
+        <source>Copy &amp;Label</source>
         <translation>Kopiraj i označite</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Uredi</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Uredi</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -172,16 +172,16 @@
         <translation>Potvrdite šifriranje novčanika</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše Bulwark od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše BWK od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Jeste li sigurni da želite šifrirati svoj novčanik?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite vašu zaporku, vi ćete1 IZGUBITI ĆE TE SAV VAŠ Bulwark1!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite vašu zaporku, vi ćete1 IZGUBITI ĆE TE SAV VAŠ PIV1!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -234,8 +234,8 @@
         <translation>BIP 38 Alat</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Šifriranje</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Šifriranje</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -270,24 +270,36 @@
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Šifriranje Ključ</translation>
+        <source>Reset all fields</source>
+        <translation>Resetiraj sva polja</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Očistiti Sve</translation>
+        <source>The encrypted private key</source>
+        <translation>Šifrirani privatni ključ</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation> BIP 38 Dešifriranje</translation>
+        <source>Decrypt the entered key using the passphrase</source>
+        <translation>Dešifriraj uneseni ključ pomoću zaporke</translation>
+    </message>
+    <message>
+        <source>Encrypt &amp;Key</source>
+        <translation>Šifriranje &amp;Ključ</translation>
+    </message>
+    <message>
+        <source>Clear &amp;All</source>
+        <translation>Očistiti &amp;Sve</translation>
+    </message>
+    <message>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp; BIP 38 Dešifriranje</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Unesite BIP 38 šifrirani privatni ključ. Unesite zaporku u srednji okvir. Pritisnite Dešifrujte Ključ da biste izračunali privatni ključ. Nakon dešifriranja ključa, klikom na "Import Address" dodati će taj privatni ključ u novčanik.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Dešifrujte Kljuc</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Dešifrujte &amp;Kljuc</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -373,24 +385,24 @@
         <translation>Čvor</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Pregled</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Pregled</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Pokaži opći pregled novčanika</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Pošalji</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Pošalji</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Primite</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Primite</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transakcije</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transakcije</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -401,43 +413,43 @@
         <translation>Aktivnosti na privatnost za zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>EIzlaz</translation>
+        <source>E&amp;xit</source>
+        <translation>E&amp;Izlaz</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Napusti aplikaciju</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>O Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>O &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Prikaži informacije o Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Opcije ...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Opcije ...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Prikaži / Sakrij</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Prikaži / Sakrij</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Prikaži ili sakrij glavni prozor</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Šifrirajte novčanik ...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Šifrirajte novčanik ...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Šifriranje privatnih ključeva koji pripadaju vašem novčaniku</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
+        <source>&amp;Backup Wallet...</source>
         <translation>Sigurnosna kopija novčanika ...</translation>
     </message>
     <message>
@@ -445,67 +457,67 @@
         <translation>Sigurnosna kopija novčanika na drugu lokaciju</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation> Promijeni zaporku ...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp; Promijeni zaporku ...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Promjena zaporke koja se koristi za šifriranje novčanika.</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation> Otključaj novčanik ...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp; Otključaj novčanik ...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Otključaj novčanik</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation> Zaključaj novčanik</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp; Zaključaj novčanik</translation>
     </message>
     <message>
-        <source>Sign message...</source>
+        <source>Sign &amp;message...</source>
         <translation>Prijava i poruka ...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation> Potvrdite poruku ...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp; Potvrdite poruku ...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informacije</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informacije</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Prikaz dijagnostičkih podataka</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Konzola za uklanjanje pogrešaka</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Konzola za uklanjanje pogrešaka</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Otvorite konzolu za uklanjanje pogrešaka</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation> Monitor mreže</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp; Monitor mreže</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Prikaži mrežni monitor</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation> Popis suradnika</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp; Popis suradnika</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Prikaži podatke o suradnicima</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
+        <source>Wallet &amp;Repair</source>
         <translation>Novčanik i popravak</translation>
     </message>
     <message>
@@ -517,7 +529,7 @@
         <translation>Otvori konfiguracijsku datoteku</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
+        <source>Show Automatic &amp;Backups</source>
         <translation>Prikaži automatsko i sigurnosno kopiranje</translation>
     </message>
     <message>
@@ -525,15 +537,15 @@
         <translation>Prikaži automatski stvorene sigurnosne kopije za novčanik.</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation> Slanje adresa ...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp; Slanje adresa ...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Prikaz popisa upotrijebljenih poslanih adresa i oznaka</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>Primanje adresa ...</translation>
     </message>
     <message>
@@ -541,23 +553,23 @@
         <translation>Prikaz popisa upotrijebljenih primljenih adresa i oznaka</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation> Stvaranje višestruke oznake ...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp; Stvaranje višestruke oznake ...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Izradite novu adresu s višestrukim adresama i dodajte je u taj novčanik</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation> Izdaci za više osoba ...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp; Izdaci za više osoba ...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Potrošite s adrese s više adresa</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
+        <source>&amp;Multisignature signing...</source>
         <translation>Potpisivanje više znakova ...</translation>
     </message>
     <message>
@@ -565,12 +577,12 @@
         <translation>Prijavite se s adresom s više adresa</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Otvori  URI ...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Otvori &amp; URI ...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Opcije-naredbene linije</translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Opcije-naredbene linije</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -581,80 +593,108 @@
         <translation>%1 iza. Skeniranje blokiranjem %2</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Datoteka</translation>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor je &lt;b&gt; omogućen &lt;b&gt;: %1</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation> Postavke</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Alati</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp; Postavke</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Pomoc</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Alati</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Pomoc</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Alatna traka kartica</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Pošaljite kovanice na Bulwark adresu</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Pošaljite kovanice na BWK adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Zahtjev za plaćanja (generira QR kodove i Bulwark: URI)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Zahtjev za plaćanja (generira QR kodove i pivx: URI)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Privatnost</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Privatnost</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternode</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternode</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Pregledajte masternode</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation> O Bulwark Coreu</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp; O BWK Coreu</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Prikaz informacija o Bulwark Coreu</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Prikaz informacija o BWK Coreu</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Izmijenite opcije konfiguracije za Bulwark</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Izmijenite opcije konfiguracije za BWK</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Potpišite poruke s vašim Bulwark adresama kako biste dokazali da ih posjedujete</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Potpišite poruke s vašim BWK adresama kako biste dokazali da ih posjedujete</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim Bulwark adresama</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Potvrdite poruke kako biste bili sigurni da su potpisani s određenim BWK adresama</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 alat</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 alat</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Šifriranje i dešifriranje privatnih ključeva pomoću zaporke</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core klijent</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
+    </message>
+    <message>
+        <source>MultiSend Settings</source>
+        <translation>MultiSend postavke</translation>
+    </message>
+    <message>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Otvori novčanik i konfiguracijsku datoteku</translation>
+    </message>
+    <message>
+        <source>Open Masternode configuration file</source>
+        <translation>Otvori konfiguracijsku datoteku za Masternode</translation>
+    </message>
+    <message>
+        <source>BWK Core client</source>
+        <translation>BWK Core klijent</translation>
+    </message>
+    <message>
+        <source>Importing blocks from disk...</source>
+        <translation>Unos blokova s diska</translation>
+    </message>
+    <message>
+        <source>Up to date</source>
+        <translation>Ažurirano</translation>
     </message>
     <message>
         <source>Error</source>
@@ -668,12 +708,40 @@
         <source>Information</source>
         <translation>Informacija</translation>
     </message>
+    <message>
+        <source>Sent transaction</source>
+        <translation>Poslana transakcija</translation>
+    </message>
+    <message>
+        <source>Incoming transaction</source>
+        <translation>Nadolazeća tranksakcija</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktivan</translation>
+    </message>
+    <message>
+        <source>Not Active</source>
+        <translation>Neaktivan</translation>
+    </message>
     </context>
 <context>
     <name>BlockExplorer</name>
     <message>
+        <source>Back</source>
+        <translation>Povratak</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Naprijed</translation>
+    </message>
+    <message>
         <source>Address / Block / Transaction</source>
         <translation>Adresa / Blok / Transakcija</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Traži</translation>
     </message>
     </context>
 <context>
@@ -694,8 +762,40 @@
         <translation>Prioritet:</translation>
     </message>
     <message>
+        <source>Fee:</source>
+        <translation>Naknada:</translation>
+    </message>
+    <message>
+        <source>After Fee:</source>
+        <translation>Nakon naknade:</translation>
+    </message>
+    <message>
+        <source>Change:</source>
+        <translation>Ostatak:</translation>
+    </message>
+    <message>
+        <source>(un)select all</source>
+        <translation>(od)znači sve</translation>
+    </message>
+    <message>
+        <source>Tree mode</source>
+        <translation>Stablo prikaz</translation>
+    </message>
+    <message>
+        <source>List mode</source>
+        <translation>Popis prikaz</translation>
+    </message>
+    <message>
+        <source>(1 locked)</source>
+        <translation>(1 zaključan)</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Iznos</translation>
+    </message>
+    <message>
+        <source>Received with address</source>
+        <translation>Primljeno s adresom</translation>
     </message>
     <message>
         <source>Type</source>
@@ -714,6 +814,10 @@
         <translation>Potvrđeno</translation>
     </message>
     <message>
+        <source>Priority</source>
+        <translation>Prioritet</translation>
+    </message>
+    <message>
         <source>Copy address</source>
         <translation>Kopiraj adrese</translation>
     </message>
@@ -726,8 +830,64 @@
         <translation>Kopiraj iznos</translation>
     </message>
     <message>
+        <source>Copy transaction ID</source>
+        <translation>Kopiraj ID transakcije</translation>
+    </message>
+    <message>
+        <source>Lock unspent</source>
+        <translation>Zaključaj neiskorišteno</translation>
+    </message>
+    <message>
+        <source>Unlock unspent</source>
+        <translation>Otključaj neiskorišteno</translation>
+    </message>
+    <message>
         <source>Copy quantity</source>
         <translation>Kopiraj količinu</translation>
+    </message>
+    <message>
+        <source>Copy fee</source>
+        <translation>Kopiraj naknadu</translation>
+    </message>
+    <message>
+        <source>Copy after fee</source>
+        <translation>Kopiraj nakon naknade</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Kopiraj naknadu</translation>
+    </message>
+    <message>
+        <source>highest</source>
+        <translation>Najviši</translation>
+    </message>
+    <message>
+        <source>higher</source>
+        <translation>viši</translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation>visok</translation>
+    </message>
+    <message>
+        <source>medium-high</source>
+        <translation>srednje-visoki</translation>
+    </message>
+    <message>
+        <source>medium</source>
+        <translation>Srednji</translation>
+    </message>
+    <message>
+        <source>low</source>
+        <translation>nizak</translation>
+    </message>
+    <message>
+        <source>lower</source>
+        <translation>niži</translation>
+    </message>
+    <message>
+        <source>lowest</source>
+        <translation>najniži</translation>
     </message>
     <message>
         <source>yes</source>
@@ -741,7 +901,11 @@
         <source>(no label)</source>
         <translation>(nema oznake)</translation>
     </message>
-    </context>
+    <message>
+        <source>(change)</source>
+        <translation>(ostatak)</translation>
+    </message>
+</context>
 <context>
     <name>EditAddressDialog</name>
     </context>
@@ -749,17 +913,24 @@
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -775,6 +946,10 @@
     <message>
         <source>Status</source>
         <translation>Status</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktivan</translation>
     </message>
     <message>
         <source>0</source>
@@ -808,9 +983,6 @@
     </message>
     </context>
 <context>
-    <name>ObfuscationConfig</name>
-    </context>
-<context>
     <name>OpenURIDialog</name>
     </context>
 <context>
@@ -830,14 +1002,6 @@
     <message>
         <source>0</source>
         <translation>0</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Količina:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Iznos:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -860,17 +1024,24 @@
         <translation>Prioritet:</translation>
     </message>
     <message>
+        <source>Fee:</source>
+        <translation>Naknada:</translation>
+    </message>
+    <message>
         <source>no</source>
         <translation>ne</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopiraj količinu</translation>
+        <source>medium</source>
+        <translation>Srednji</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Kopiraj iznos</translation>
+        <source>Change:</source>
+        <translation>Ostatak:</translation>
     </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -886,6 +1057,10 @@
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
@@ -897,8 +1072,8 @@
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Information</source>
-        <translation>Informacije</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informacije</translation>
     </message>
     <message>
         <source>Name</source>
@@ -909,8 +1084,8 @@
         <translation>N/A</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Otvori</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Otvori</translation>
     </message>
     <message>
         <source>Network</source>
@@ -963,6 +1138,10 @@
         <source>Copy amount</source>
         <translation>Kopiraj iznos</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiraj adrese</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -971,12 +1150,12 @@
         <translation>QR Kod</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Kopiraj URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Kopiraj &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopiraj Adresu</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Kopiraj &amp;Adresu</translation>
     </message>
     <message>
         <source>URI</source>
@@ -1014,6 +1193,10 @@
         <translation>Poruka</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Iznos</translation>
     </message>
@@ -1041,12 +1224,28 @@
         <translation>Prioritet:</translation>
     </message>
     <message>
+        <source>medium</source>
+        <translation>Srednji</translation>
+    </message>
+    <message>
+        <source>Fee:</source>
+        <translation>Naknada:</translation>
+    </message>
+    <message>
         <source>no</source>
         <translation>ne</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>After Fee:</source>
+        <translation>Nakon naknade:</translation>
+    </message>
+    <message>
+        <source>Change:</source>
+        <translation>Ostatak:</translation>
+    </message>
+    <message>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -1057,8 +1256,8 @@
         <translation>Obiši sva polja obrasca.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Očistiti Sve</translation>
+        <source>Clear &amp;All</source>
+        <translation>Očistiti &amp;Sve</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1067,6 +1266,18 @@
     <message>
         <source>Copy amount</source>
         <translation>Kopiraj iznos</translation>
+    </message>
+    <message>
+        <source>Copy fee</source>
+        <translation>Kopiraj naknadu</translation>
+    </message>
+    <message>
+        <source>Copy after fee</source>
+        <translation>Kopiraj nakon naknade</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation>Kopiraj naknadu</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -1111,15 +1322,15 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core se gasi...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core se gasi...</translation>
     </message>
     </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark adresa za potpisivanje poruke s</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK adresa za potpisivanje poruke s</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1142,24 +1353,24 @@
         <translation>Kopirajte trenutačni potpis u međuspremnik sustava</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove Bulwark adrese</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Potpišite poruku da biste dokazali da ste vlasnik ove BWK adrese</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark adresa s kojom je potpisana poruka</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Potvrdite poruku kako biste bili sigurni da je potpisan s navedenom Bulwark adresom</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Potvrdite poruku kako biste bili sigurni da je potpisan s navedenom BWK adresom</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Ponovno postavite sva polja s obavijestima o znakovima</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Očistiti Sve</translation>
+        <source>Clear &amp;All</source>
+        <translation>Očistiti &amp;Sve</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -1197,8 +1408,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -1292,6 +1503,10 @@
         <translation>Kopiraj iznos</translation>
     </message>
     <message>
+        <source>Copy transaction ID</source>
+        <translation>Kopiraj ID transakcije</translation>
+    </message>
+    <message>
         <source>Comma separated file (*.csv)</source>
         <translation>Comma separated file (*.csv)</translation>
     </message>
@@ -1336,8 +1551,8 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Izvezi</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Izvezi</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -1345,14 +1560,14 @@
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Error</source>
         <translation>Greška</translation>
@@ -1362,12 +1577,64 @@
         <translation>Informacija</translation>
     </message>
     <message>
+        <source>Options:</source>
+        <translation>Mogućnosti:</translation>
+    </message>
+    <message>
+        <source>Synchronization failed</source>
+        <translation>Sinkronizacija neuspjela</translation>
+    </message>
+    <message>
+        <source>Synchronization finished</source>
+        <translation>Usklađivanje završeno</translation>
+    </message>
+    <message>
+        <source>Synchronization pending...</source>
+        <translation>Sinkronizacija je na čekanju...</translation>
+    </message>
+    <message>
+        <source>Synchronizing budgets...</source>
+        <translation>Usklađivanje proračuna...</translation>
+    </message>
+    <message>
+        <source>This is experimental software.</source>
+        <translation>Ovo je eksperimentalan softver.</translation>
+    </message>
+    <message>
+        <source>Transaction Created</source>
+        <translation>Transakcija stvorena</translation>
+    </message>
+    <message>
+        <source>Transaction too large for fee policy</source>
+        <translation>Transakcija je prevelika za trenutnu naknadu</translation>
+    </message>
+    <message>
+        <source>Transaction too large</source>
+        <translation>Transakcija je prevelika</translation>
+    </message>
+    <message>
         <source>Use the test network</source>
         <translation>Koristi testnu mrežu</translation>
     </message>
     <message>
+        <source>Verifying blocks...</source>
+        <translation>Provjera blokova...</translation>
+    </message>
+    <message>
+        <source>Verifying wallet...</source>
+        <translation>Provjera novčanika...</translation>
+    </message>
+    <message>
+        <source>Wallet options:</source>
+        <translation>Opcije novčanika:</translation>
+    </message>
+    <message>
         <source>Warning</source>
         <translation>Upozorenje</translation>
+    </message>
+    <message>
+        <source>Zerocoin options:</source>
+        <translation>Zerocoin opcije:</translation>
     </message>
     </context>
 </TS>

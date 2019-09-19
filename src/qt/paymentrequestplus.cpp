@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,21 +12,19 @@
 
 #include <stdexcept>
 
-#include <openssl/x509.h>
-#include <openssl/x509_vfy.h>
-
 #include <QDateTime>
 #include <QDebug>
 #include <QSslCertificate>
 
-using namespace std;
 
-class SSLVerifyError : public std::runtime_error {
-  public:
+class SSLVerifyError : public std::runtime_error
+{
+public:
     SSLVerifyError(std::string err) : std::runtime_error(err) {}
 };
 
-bool PaymentRequestPlus::parse(const QByteArray& data) {
+bool PaymentRequestPlus::parse(const QByteArray& data)
+{
     bool parseOK = paymentRequest.ParseFromArray(data.data(), data.size());
     if (!parseOK) {
         qWarning() << "PaymentRequestPlus::parse : Error parsing payment request";
@@ -45,20 +44,24 @@ bool PaymentRequestPlus::parse(const QByteArray& data) {
     return true;
 }
 
-bool PaymentRequestPlus::SerializeToString(string* output) const {
+bool PaymentRequestPlus::SerializeToString(std::string* output) const
+{
     return paymentRequest.SerializeToString(output);
 }
 
-bool PaymentRequestPlus::IsInitialized() const {
+bool PaymentRequestPlus::IsInitialized() const
+{
     return paymentRequest.IsInitialized();
 }
 
-QString PaymentRequestPlus::getPKIType() const {
+QString PaymentRequestPlus::getPKIType() const
+{
     if (!IsInitialized()) return QString("none");
     return QString::fromStdString(paymentRequest.pki_type());
 }
 
-bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) const {
+bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) const
+{
     merchant.clear();
 
     if (!IsInitialized())
@@ -157,8 +160,8 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
         EVP_PKEY* pubkey = X509_get_pubkey(signing_cert);
         EVP_MD_CTX_init(ctx);
         if (!EVP_VerifyInit_ex(ctx, digestAlgorithm, NULL) ||
-                !EVP_VerifyUpdate(ctx, data_to_verify.data(), data_to_verify.size()) ||
-                !EVP_VerifyFinal(ctx, (const unsigned char*)paymentRequest.signature().data(), paymentRequest.signature().size(), pubkey)) {
+            !EVP_VerifyUpdate(ctx, data_to_verify.data(), data_to_verify.size()) ||
+            !EVP_VerifyFinal(ctx, (const unsigned char*)paymentRequest.signature().data(), paymentRequest.signature().size(), pubkey)) {
             throw SSLVerifyError("Bad signature, invalid PaymentRequest.");
         }
 #if OPENSSL_VERSION_NUMBER >= 0x10100000L
@@ -188,13 +191,14 @@ bool PaymentRequestPlus::getMerchant(X509_STORE* certStore, QString& merchant) c
     return fResult;
 }
 
-QList<std::pair<CScript, CAmount> > PaymentRequestPlus::getPayTo() const {
+QList<std::pair<CScript, CAmount> > PaymentRequestPlus::getPayTo() const
+{
     QList<std::pair<CScript, CAmount> > result;
     for (int i = 0; i < details.outputs_size(); i++) {
         const unsigned char* scriptStr = (const unsigned char*)details.outputs(i).script().data();
         CScript s(scriptStr, scriptStr + details.outputs(i).script().size());
 
-        result.append(make_pair(s, details.outputs(i).amount()));
+        result.append(std::make_pair(s, details.outputs(i).amount()));
     }
     return result;
 }

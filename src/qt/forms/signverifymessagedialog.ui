@@ -20,11 +20,11 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabSignMessage">
       <attribute name="title">
-       <string>Sign Message</string>
+       <string>&amp;Sign Message</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_SM">
        <item>
@@ -42,9 +42,6 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_1_SM">
-         <property name="spacing">
-          <number>0</number>
-         </property>
          <item>
           <widget class="QValidatedLineEdit" name="addressIn_SM">
            <property name="toolTip">
@@ -53,42 +50,36 @@
           </widget>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="addressBookButton_SM" native="true">
+          <widget class="QToolButton" name="addressBookButton_SM">
            <property name="toolTip">
             <string>Choose previously used address</string>
            </property>
-           <property name="text" stdset="0">
+           <property name="text">
             <string/>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
            </property>
-           <property name="shortcut" stdset="0">
+           <property name="shortcut">
             <string>Alt+A</string>
-           </property>
-           <property name="autoDefault" stdset="0">
-            <bool>false</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="pasteButton_SM" native="true">
+          <widget class="QToolButton" name="pasteButton_SM">
            <property name="toolTip">
             <string>Paste address from clipboard</string>
            </property>
-           <property name="text" stdset="0">
+           <property name="text">
             <string/>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
            </property>
-           <property name="shortcut" stdset="0">
+           <property name="shortcut">
             <string>Alt+P</string>
-           </property>
-           <property name="autoDefault" stdset="0">
-            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -113,9 +104,6 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2_SM">
-         <property name="spacing">
-          <number>0</number>
-         </property>
          <item>
           <widget class="QLineEdit" name="signatureOut_SM">
            <property name="font">
@@ -129,19 +117,16 @@
           </widget>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="copySignatureButton_SM" native="true">
+          <widget class="QToolButton" name="copySignatureButton_SM">
            <property name="toolTip">
             <string>Copy the current signature to the system clipboard</string>
            </property>
-           <property name="text" stdset="0">
+           <property name="text">
             <string/>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/editcopy</normaloff>:/icons/editcopy</iconset>
-           </property>
-           <property name="autoDefault" stdset="0">
-            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -150,35 +135,35 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3_SM">
          <item>
-          <widget class="QtMaterialFlatButton" name="signMessageButton_SM" native="true">
+          <widget class="QPushButton" name="signMessageButton_SM">
            <property name="toolTip">
             <string>Sign the message to prove you own this Bulwark address</string>
            </property>
-           <property name="text" stdset="0">
-            <string>Sign Message</string>
+           <property name="text">
+            <string>Sign &amp;Message</string>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/edit</normaloff>:/icons/edit</iconset>
            </property>
-           <property name="autoDefault" stdset="0">
+           <property name="autoDefault">
             <bool>false</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="clearButton_SM" native="true">
+          <widget class="QPushButton" name="clearButton_SM">
            <property name="toolTip">
             <string>Reset all sign message fields</string>
            </property>
-           <property name="text" stdset="0">
-            <string>Clear All</string>
+           <property name="text">
+            <string>Clear &amp;All</string>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
            </property>
-           <property name="autoDefault" stdset="0">
+           <property name="autoDefault">
             <bool>false</bool>
            </property>
           </widget>
@@ -231,7 +216,7 @@
      </widget>
      <widget class="QWidget" name="tabVerifyMessage">
       <attribute name="title">
-       <string>Verify Message</string>
+       <string>&amp;Verify Message</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_VM">
        <item>
@@ -252,9 +237,6 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_1_VM">
-         <property name="spacing">
-          <number>0</number>
-         </property>
          <item>
           <widget class="QValidatedLineEdit" name="addressIn_VM">
            <property name="toolTip">
@@ -263,22 +245,19 @@
           </widget>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="addressBookButton_VM" native="true">
+          <widget class="QToolButton" name="addressBookButton_VM">
            <property name="toolTip">
             <string>Choose previously used address</string>
            </property>
-           <property name="text" stdset="0">
+           <property name="text">
             <string/>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
            </property>
-           <property name="shortcut" stdset="0">
+           <property name="shortcut">
             <string>Alt+A</string>
-           </property>
-           <property name="autoDefault" stdset="0">
-            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -293,35 +272,35 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2_VM">
          <item>
-          <widget class="QtMaterialFlatButton" name="verifyMessageButton_VM" native="true">
+          <widget class="QPushButton" name="verifyMessageButton_VM">
            <property name="toolTip">
             <string>Verify the message to ensure it was signed with the specified Bulwark address</string>
            </property>
-           <property name="text" stdset="0">
-            <string>Verify Message</string>
+           <property name="text">
+            <string>Verify &amp;Message</string>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/transaction_0</normaloff>:/icons/transaction_0</iconset>
            </property>
-           <property name="autoDefault" stdset="0">
+           <property name="autoDefault">
             <bool>false</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QtMaterialFlatButton" name="clearButton_VM" native="true">
+          <widget class="QPushButton" name="clearButton_VM">
            <property name="toolTip">
             <string>Reset all verify message fields</string>
            </property>
-           <property name="text" stdset="0">
-            <string>Clear All</string>
+           <property name="text">
+            <string>Clear &amp;All</string>
            </property>
-           <property name="icon" stdset="0">
+           <property name="icon">
             <iconset resource="../bulwark.qrc">
              <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
            </property>
-           <property name="autoDefault" stdset="0">
+           <property name="autoDefault">
             <bool>false</bool>
            </property>
           </widget>
@@ -377,11 +356,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>QtMaterialFlatButton</class>
-   <extends>QWidget</extends>
-   <header>qtmaterialflatbutton.h</header>
-  </customwidget>
   <customwidget>
    <class>QValidatedLineEdit</class>
    <extends>QLineEdit</extends>

@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,8 +14,9 @@
 
 class CWallet;
 
-class RecentRequestEntry {
-  public:
+class RecentRequestEntry
+{
+public:
     RecentRequestEntry() : nVersion(RecentRequestEntry::CURRENT_VERSION), id(0) {}
 
     static const int CURRENT_VERSION = 1;
@@ -26,7 +28,8 @@ class RecentRequestEntry {
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         unsigned int nDate = date.toTime_t();
 
         READWRITE(this->nVersion);
@@ -40,31 +43,34 @@ class RecentRequestEntry {
     }
 };
 
-class RecentRequestEntryLessThan {
-  public:
+class RecentRequestEntryLessThan
+{
+public:
     RecentRequestEntryLessThan(int nColumn, Qt::SortOrder fOrder) : column(nColumn), order(fOrder) {}
     bool operator()(RecentRequestEntry& left, RecentRequestEntry& right) const;
 
-  private:
+private:
     int column;
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / bulwark: URIs.
+/** Model for list of recently generated payment requests / pivx: URIs.
  * Part of wallet model.
  */
-class RecentRequestsTableModel : public QAbstractTableModel {
+class RecentRequestsTableModel : public QAbstractTableModel
+{
     Q_OBJECT
 
-  public:
+public:
     explicit RecentRequestsTableModel(CWallet* wallet, WalletModel* parent);
     ~RecentRequestsTableModel();
 
     enum ColumnIndex {
         Date = 0,
         Label = 1,
-        Message = 2,
-        Amount = 3,
+        Address = 2,
+        Message = 3,
+        Amount = 4,
         NUMBER_OF_COLUMNS
     };
 
@@ -80,18 +86,16 @@ class RecentRequestsTableModel : public QAbstractTableModel {
     Qt::ItemFlags flags(const QModelIndex& index) const;
     /*@}*/
 
-    const RecentRequestEntry& entry(int row) const {
-        return list[row];
-    }
+    const RecentRequestEntry& entry(int row) const { return list[row]; }
     void addNewRequest(const SendCoinsRecipient& recipient);
     void addNewRequest(const std::string& recipient);
     void addNewRequest(RecentRequestEntry& recipient);
 
-  public slots:
+public slots:
     void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
     void updateDisplayUnit();
 
-  private:
+private:
     WalletModel* walletModel;
     QStringList columns;
     QList<RecentRequestEntry> list;

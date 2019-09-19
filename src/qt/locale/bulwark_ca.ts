@@ -10,36 +10,36 @@
         <translation>Crea una nova adreça</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Nou</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Nou</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copia l'adreça seleccionada al porta-retalls del sistema</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copia</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copia</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Elimina l'adreça seleccionada de la llista</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Elimina</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exporta les dades de la pestanya actual a un fitxer</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exporta</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exporta</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Tanca</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;Tanca</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Tria l'adreça on rebre les monedes</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Tria</translation>
+        <source>C&amp;hoose</source>
+        <translation>&amp;Tria</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Adreces de recepció</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Aquestes són les teves adreces Bulwark per fer enviar pagaments. Sempre comprova l'import i l'adreça de recepció abans d'enviar les monedes.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Aquestes són les teves adreces BWK per fer enviar pagaments. Sempre comprova l'import i l'adreça de recepció abans d'enviar les monedes.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Aquestes són les teves adreces Bulwark per rebre pagaments. Es recomana utilitzar noves adreces de recepció per cada transacció.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Aquestes són les teves adreces BWK per rebre pagaments. Es recomana utilitzar noves adreces de recepció per cada transacció.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copia adreça</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Copia adreça</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Copia l'etiqueta</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copia l'eti&amp;queta</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Edita</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Edita</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -168,16 +168,16 @@
         <translation>Confirma l'encriptació del moneder</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus Bulwark de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus BWK de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Estàs segur que vols encriptar el moneder?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Avís: Si encripteu el vostre moneder i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS VOSTRES BulwarkS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Avís: Si encripteu el vostre moneder i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS VOSTRES PIVS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -218,8 +218,8 @@
         <translation>Eina BIP 38</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>Encriptació BIP 38</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;Encriptació BIP 38</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -242,12 +242,12 @@
         <translation>Clau encriptada:</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>Desencriptació BIP 38</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;Desencriptació BIP 38</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Desencriptar Clau</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Desencriptar &amp;Clau</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -289,180 +289,180 @@
         <translation>Node</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Vista general</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Vista general</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Mostra la vista general del moneder</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Envia</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Envia</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Rep</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Rep</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transaccions</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transaccions</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
         <translation>Mostra històric de transaccions</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Surt</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Surt</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Surt de l'aplicació</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Sobre Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Mostra informació sobre el Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Opcions...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Opcions...</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Mostra o oculta la Finestra principal</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Encripta el moneder...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Encripta el moneder...</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Realitza una còpia de seguretat del moneder...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>Realitza una &amp;còpia de seguretat del moneder...</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Canvia la contrasenya...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Canvia la contrasenya...</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Desbloqueja el moneder...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Desbloqueja el moneder...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Desbloqueja el moneder</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Bloqueja el moneder</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>B&amp;loqueja el moneder</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Signa missatge...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Signa &amp;missatge...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verifica un missatge...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verifica un missatge...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informació</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informació</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Consola de Depuració</translation>
+        <source>&amp;Debug console</source>
+        <translation>Consola de &amp;Depuració</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Monitor de Xarxa</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>Monitor de &amp;Xarxa</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Mostra el monitor de xarxa</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Repara el moneder</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;Repara el moneder</translation>
     </message>
     <message>
         <source>Open configuration file</source>
         <translation>Obre el fitxer de configuració</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Adreces d'enviament...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>Adreces d'&amp;enviament...</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Adreces de recepció...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>Adreces de &amp;recepció...</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Obre l'URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Obre l'&amp;URI...</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Fitxer</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Fitxer</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Configuració</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Configuració</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Eines</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Eines</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Ajuda</translation>
+        <source>&amp;Help</source>
+        <translation>A&amp;juda</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Envia monedes a una adreça Bulwark</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Envia monedes a una adreça BWK</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Privacitat</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Privacitat</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Sobre Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;Sobre BWK Core</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>Eina BIP38</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>Eina &amp;BIP38</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Obre el fitxer de configuració del moneder</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Obre el fitxer de &amp;configuració del moneder</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Obre el fitxer de configuració del Masternode</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Obre el fitxer de &amp;configuració del Masternode</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Obre el fitxer de configuració del Masternode</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Client Bulwark core</translation>
+        <source>BWK Core client</source>
+        <translation>Client BWK core</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -516,7 +516,7 @@
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>El moneder està &lt;b&gt;encriptat&lt;/b&gt; i bloquejat&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -781,8 +781,8 @@
         <translation>L'etiqueta associada amb aquesta entrada de la llibreta d'adreces</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adreça</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Adreça</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -805,8 +805,8 @@
         <translation>Edita l'adreça d'enviament</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>L'adreça introduïda "%1" no és una adreça Bulwark vàlida.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>L'adreça introduïda "%1" no és una adreça BWK vàlida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -845,22 +845,33 @@
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versió</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Sobre Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>Sobre BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -906,12 +917,12 @@
         <translation>Benvingut</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Benvingut a Bulwark Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Benvingut a BWK Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Al ser el primer cop que s'inicia el programa, pots escollir on es desaran les dades del Bulwark Core.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Al ser el primer cop que s'inicia el programa, pots escollir on es desaran les dades del BWK Core.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -922,8 +933,8 @@
         <translation>Usar una carpeta de dades personalitzada:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1084,30 +1095,8 @@
         <translation>(sense etiqueta)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>L'adreça introduïda:
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Si us plau introdueix 1 - 100 per al percentatge</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vector MultiSend
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Eliminat</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>No s'ha trobat l'adreça
-</translation>
     </message>
 </context>
 <context>
@@ -1123,57 +1112,6 @@
     <message>
         <source>Amount:</source>
         <translation>Import:</translation>
-    </message>
-    </context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configura ofuscació</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Privacitat bàsica</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Privacitat alta</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Privacitat màxima</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Si us plau, selecciona un nivell de privacitat.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Utilitza 2 masternodes diferents per mesclar fons de fins a 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Utilitza 8 masternodes diferents per mesclar fons de fins a 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Utilitza 16 masternodes diferents</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Aquesta opció és la més ràpida i té un cost d'uns ~0.025 Bulwark per anonimitzar 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Aquesta opció és moderadament ràpida i té un cost d'uns 0.05 Bulwark per anonimitzar 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Aquesta és l'opció més lenta però més segura. Usar l'anonimitzat màxim té un cost de</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Configuració de l'ofuscació</translation>
     </message>
     </context>
 <context>
@@ -1206,48 +1144,48 @@
         <translation>Permet connexions entrants</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Connecta a través d'un proxy SOCKS5 (proxy per defecte):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Connecta a través d'un proxy SOCKS5 (proxy per defecte):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Inicia Bulwark automàticament després d'identificar-te en el sistema.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Inicia BWK automàticament després d'identificar-te en el sistema.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Mostra o no les funcionalitats de control de monedes.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>Activa la funcionalitat de control de monedes</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Activa la funcionalitat de &amp;control de monedes</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
         <translation>Mostra la pestanya de Masternodes</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Port:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Port:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Tema de la interfície d'usuari:</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Restableix les opcions</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Restableix les opcions</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>D'acord</translation>
+        <source>&amp;OK</source>
+        <translation>D'ac&amp;ord</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Cancel·la</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancel·la</translation>
     </message>
     <message>
         <source>none</source>
@@ -1306,20 +1244,8 @@
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset</source>
         <translation>Restableix</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Quantitat:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Import:</translation>
     </message>
     <message>
         <source>0 zBWK</source>
@@ -1334,8 +1260,8 @@
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Import:</translation>
+        <source>A&amp;mount:</source>
+        <translation>I&amp;mport:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -1365,14 +1291,9 @@
         <source>Change:</source>
         <translation>Canvi:</translation>
     </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Copia la quantitat</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Copia l'import</translation>
-    </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -1404,12 +1325,16 @@
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Copy Image</source>
-        <translation>Copia la imatge</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Copia la imatge</translation>
     </message>
     </context>
 <context>
@@ -1419,8 +1344,8 @@
         <translation>Finestra d'eines</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informació</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informació</translation>
     </message>
     <message>
         <source>General</source>
@@ -1435,8 +1360,8 @@
         <translation>Nombre de connexions</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Obre</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Obre</translation>
     </message>
     <message>
         <source>Network</source>
@@ -1447,8 +1372,8 @@
         <translation>Data de compilació</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Consola</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Consola</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -1518,8 +1443,12 @@
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>Message:</source>
-        <translation>Missatge:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Missatge:</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>I&amp;mport:</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -1537,6 +1466,10 @@
         <source>Copy amount</source>
         <translation>Copia l'import</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copia l'adreça</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -1545,8 +1478,8 @@
         <translation>Codi QR</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copia l'adreça</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Copia l'&amp;adreça</translation>
     </message>
     <message>
         <source>URI</source>
@@ -1582,6 +1515,10 @@
     <message>
         <source>Message</source>
         <translation>Missatge</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreça</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -1698,8 +1635,8 @@
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Import:</translation>
+        <source>A&amp;mount:</source>
+        <translation>I&amp;mport:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -1713,8 +1650,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core s'està tancant...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core s'està tancant...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -1728,8 +1665,8 @@
         <translation>Signatures - Signa / Verifica un Missatge</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Signa un missatge</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Signa un missatge</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1744,16 +1681,16 @@
         <translation>Signatura</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Signa un missatge</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Signa un &amp;missatge</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verifica un missatge</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Verifica un missatge</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verifica un missatge</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Verifica un &amp;missatge</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -1779,8 +1716,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -1950,8 +1887,8 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Exporta</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exporta</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -1959,7 +1896,7 @@
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantitat</translation>
@@ -1974,18 +1911,10 @@
     </message>
     </context>
 <context>
-    <name>bulwark-core</name>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>No es pot mesclar mentre s'està sincronitzant.</translation>
-    </message>
+    <name>pivx-core</name>
     <message>
         <source>Connection options:</source>
         <translation>Opcions de connexió:</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Error connectant al Masternode.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2012,22 +1941,6 @@
         <translation>S'està carregant el moneder...</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Mescla en curs...</translation>
-    </message>
-    <message>
-        <source>No Masternodes detected.</source>
-        <translation>No s'han detectat masternodes.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>No s'han trobat masternodes compatibles.</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Opcions:</translation>
     </message>
@@ -2040,18 +1953,6 @@
         <translation>S'està reescanejant...</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>S'ha enviat les següents entrades al masternode: %u /%d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Enviat al masternode, esperant més entrades ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Enviat al masternode, esperant a la cua %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>La sincronització ha fallat</translation>
     </message>
@@ -2060,20 +1961,12 @@
         <translation>Sincronització finalitzada</translation>
     </message>
     <message>
-        <source>Transaction not valid.</source>
-        <translation>Transacció no vàlida.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Verificant blocs...</translation>
     </message>
     <message>
         <source>Verifying wallet...</source>
         <translation>Verificant moneder...</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>El moneder està bloquejat.</translation>
     </message>
     <message>
         <source>Warning</source>

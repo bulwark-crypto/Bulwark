@@ -1,36 +1,41 @@
-#ifndef MULTISENDDIALOG_H
-#define MULTISENDDIALOG_H
+// Copyright (c) 2017-2018 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#ifndef PIVX_QT_MULTISENDDIALOG_H
+#define PIVX_QT_MULTISENDDIALOG_H
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 class MultiSendDialog;
 }
 
 class WalletModel;
-class MultiSendDialog : public QDialog {
+class QLineEdit;
+class MultiSendDialog : public QDialog
+{
     Q_OBJECT
-    void updateStatus();
     void updateCheckBoxes();
 
-  private:
-    Ui::MultiSendDialog* ui;
-    WalletModel* model;
-
-  public:
-    explicit MultiSendDialog(QWidget* parent = 0);
+public:
+    explicit MultiSendDialog(QWidget* parent = nullptr);
     ~MultiSendDialog();
     void setModel(WalletModel* model);
-
-  private slots:
-    void addAddress(std::string address, bool onLoad);
-    void deleteFrame();
+    void setAddress(const QString& address);
+    void setAddress(const QString& address, QLineEdit* addrEdit);
+private slots:
+    void on_viewButton_clicked();
+    void on_addButton_clicked();
+    void on_deleteButton_clicked();
     void on_activateButton_clicked();
     void on_disableButton_clicked();
     void on_addressBookButton_clicked();
-    void configureMultiSend();
 
-
+private:
+    Ui::MultiSendDialog* ui;
+    WalletModel* model;
 };
 
-#endif // MULTISENDDIALOG_H
+#endif // PIVX_QT_MULTISENDDIALOG_H

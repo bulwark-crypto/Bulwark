@@ -10,36 +10,36 @@
         <translation>Maak een nieuw adres aan</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Nieuw</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Nieuw</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopieer het geselecteerde adres naar het klembord</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopiëren</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopiëren</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Verwijder het geselecteerde adres uit de lijst</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Verwijderen</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exporteer de data in de huidige tab naar een bestand</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exporteren</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exporteren</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Sluiten</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;Sluiten</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Kies het adres om munten op te ontvangen</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Kiezen</translation>
+        <source>C&amp;hoose</source>
+        <translation>K&amp;iezen</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw Bulwark adressen om betalingen mee te verzenden. Controleer altijd zowel het bedrag als het ontvangstadres voor het verzenden van geld.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit zijn uw BWK adressen om betalingen mee te verzenden. Controleer altijd zowel het bedrag als het ontvangstadres voor het verzenden van geld.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dit zijn uw Bulwark adressen waarop betalingen kunnen worden ontvangen. Het wordt aangeraden om een nieuw ontvangstadres voor elke transactie te gebruiken.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dit zijn uw BWK adressen waarop betalingen kunnen worden ontvangen. Het wordt aangeraden om een nieuw ontvangstadres voor elke transactie te gebruiken.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopiëer Adres</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Kopiëer Adres</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Kopiëer Label</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Kopiëer &amp;Label</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Bewerken</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Bewerken</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Bevestig versleuteling van de portemonnee</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw Bulwark's kunnen stelen.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw BWK's kunnen stelen.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Weet u zeker dat u uw portemonnee wilt versleutelen?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW Bulwark VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW BWK VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 Tool</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Versleuteling</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Versleuteling</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adres:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Voer een Bulwark adres in dat u wilt coderen met BIP 38. Voer een wachtwoordzin in in het middelste vak. Druk op versleutelen om de versleutelde privé sleutel te berekenen.</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Voer een BWK adres in dat u wilt coderen met BIP 38. Voer een wachtwoordzin in in het middelste vak. Druk op versleutelen om de versleutelde privé sleutel te berekenen.</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Het Bulwark adres om te versleutelen</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>Het BWK adres om te versleutelen</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Versleutel de privé sleutel voor dit Bulwark adres</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Versleutel de privé sleutel voor dit BWK adres</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,24 +306,24 @@
         <translation>Decodeer de ingevoerde sleutel met behulp van de wachtwoordzin</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Versleutel Sleutel</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Versleutel &amp;Sleutel</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Verwijder Alles</translation>
+        <source>Clear &amp;All</source>
+        <translation>Verwijder &amp;Alles</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 ontsleuteling</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 ontsleuteling</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Voer de BIP 38 versleutelde geheime sleutel in. Voer de wachtwoordzin in, in het middelste veld. Druk op Ontsleutel Sleutel om de privé sleutel te berekenen.  Nadat de privé sleutel is ontsleuteld, zal het klikken op 'Adres Importeren' de privé sleutel toevoegen aan de portemonnee.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Ontsleutelen Sleutel</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Ontsleutelen &amp;Sleutel</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -409,24 +409,24 @@
         <translation>Node</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Overzicht</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Overzicht</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Toon algemeen overzicht van de portemonnee</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Verzenden</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Verzenden</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Ontvangen</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Ontvangen</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transacties</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transacties</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -437,35 +437,43 @@
         <translation>Privacy Acties voor zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Sluiten</translation>
+        <source>&amp;Governance</source>
+        <translation>&amp;Bestuur</translation>
+    </message>
+    <message>
+        <source>Show Proposals</source>
+        <translation>Toon Voorstellen</translation>
+    </message>
+    <message>
+        <source>E&amp;xit</source>
+        <translation>S&amp;luiten</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Programma afsluiten</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Over Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Over &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Toon informatie over Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Opties...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Opties...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Tonen / Verbergen</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Tonen / Verbergen</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Toon of verberg het hoofdvenster</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
+        <source>&amp;Encrypt Wallet...</source>
         <translation>$Versleutel portemonnee...</translation>
     </message>
     <message>
@@ -473,76 +481,76 @@
         <translation>Versleutel de privé sleutels die bij uw portemonnee horen</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Backup Portemonnee...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Backup Portemonnee...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Backup portemonnee naar een andere locatie</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Wijzig Wachtwoordzin...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Wijzig Wachtwoordzin...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Wijzig de wachtwoordzin die gebruikt wordt voor uw portemonnee versleuteling</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Open portemonnee...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Open portemonnee...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Open portemonnee</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Sluit portemonnee</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Sluit portemonnee</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Bericht Ondertekenen...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Bericht &amp;Ondertekenen...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Bericht Verifiëren... </translation>
+        <source>&amp;Verify message...</source>
+        <translation>Bericht &amp;Verifiëren... </translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informatie</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informatie</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Toon diagnostische informatie</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Debug console</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Debug console</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Open debugging console</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Netwerk Monitor</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Netwerk Monitor</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Toon netwerk monitor</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Peers lijst</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Peers lijst</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Toon informatie van peers</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Portemonnee Repareren </translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>Portemonnee &amp;Repareren </translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -553,64 +561,60 @@
         <translation>Open configuratie bestand</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Toon Automatische Backups</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Toon Automatische &amp;Backups</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Toon automatisch aangemaakte portemonnee backups</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Verzendadressen...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Verzendadressen...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Toon de lijst van gebruikte verzendadressen en labels</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Ontvangstadressen...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Ontvangstadressen...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Toon de lijst van gebruikte ontvangstadressen en labels</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>Multisignature aanmaak...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp;Multisignature aanmaak...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Creëer een nieuw multisignature adres en voeg het toe aan deze portemonnee</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>Multisignature spenderen...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp;Multisignature spenderen...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Besteden vanuit een multisignature adres</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>Ondertekenen van Multisignature...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>Ondertekenen van &amp;Multisignature...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>Onderteken met een multisignature adres</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Open URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Open &amp;URI...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Opdrachtregelopties</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n blokken aan transactiegeschiedenis verwerkt.</numerusform><numerusform>%n blokken aan transactiegeschiedenis verwerkt.</numerusform></translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;Opdrachtregelopties</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,120 +629,120 @@
         <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;geopend&lt;/b&gt;enkel voor anonimisering en staking</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Bestand</translation>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Instellingen</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Gereedschap</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Instellingen</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Help</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Gereedschap</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Tabblad werkbalk</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Verstuur munten naar een Bulwark adres</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Verstuur munten naar een BWK adres</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Vraag betaling aan (genereert QR codes en Bulwark: URI's)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Vraag betaling aan (genereert QR codes en BWK: URI's)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Privacy</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Privacy</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternodes</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Bekijk masternodes</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Over Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;Over BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Toon informatie over Bulwark Kern</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Toon informatie over BWK Kern</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Wijzig Bulwark configuratie opties</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Wijzig BWK configuratie opties</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Onderteken berichten met uw Bulwark adressen om te bewijzen dat deze adressen in uw bezit zijn</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Onderteken berichten met uw BWK adressen om te bewijzen dat deze adressen in uw bezit zijn</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Controleer berichten om te verzekeren dat deze ondertekend zijn met de gespecificeerde Bulwark adressen</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Controleer berichten om te verzekeren dat deze ondertekend zijn met de gespecificeerde BWK adressen</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 tool</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 tool</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Versleutelen en ontsleutel privé sleutels door middel van een wachtwoordzin</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>MultiSend instellingen</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Open Portemonnee Configuratiebestand</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Open Portemonnee &amp;Configuratiebestand</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Open Masternode Configuratiebestand</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Open &amp;Masternode Configuratiebestand</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Open Masternode configuratiebestand</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Open een Bulwark: URI of betaalverzoek</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Open een BWK: URI of betaalverzoek</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Blockchain verkenner</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Blockchain verkenner</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Block verkenner venster</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Toon het Bulwark Core help bericht om een ​​lijst te krijgen met mogelijke Bulwark command line opties</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Toon het BWK Core help bericht om een ​​lijst te krijgen met mogelijke BWK command line opties</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core client</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n actieve verbindingen met het Bulwark netwerk</numerusform><numerusform>%n actieve connectie(s) naar Bulwark netwerk</numerusform></translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core client</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +764,9 @@
         <source>Up to date</source>
         <translation>Bijgewerkt</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n uren</numerusform><numerusform>%n uren</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n day</numerusform><numerusform>%n dagen</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n weken</numerusform><numerusform>%n weken</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 en %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n year</numerusform><numerusform>%n jaren</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +852,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Portemonnee is versleuteld &lt;/b&gt;en momenteel &lt;b&gt; vergrendeld&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +880,8 @@ MultiSend: %1</translation>
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Niet alle transacties zullen worden getoond. Om alle transacties te bekijken moet u txindex=1 instellen in het configuratie bestand (bulwark.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Niet alle transacties zullen worden getoond. Om alle transacties te bekijken moet u txindex=1 instellen in het configuratie bestand (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1118,8 @@ MultiSend: %1</translation>
         <translation>Dit label wordt rood, als een ontvanger een hoeveelheid kleiner dan %1 ontvangt.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Kan +/-%1 uBulwark per invoer variëren.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Kan +/-%1 upiv per invoer variëren.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1153,16 +1141,16 @@ MultiSend: %1</translation>
         <translation>Wijzig Adres</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Label</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Label</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Het label dat geassocieerd is met deze adreslijst invoer</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adres</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Adres</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1185,8 +1173,8 @@ MultiSend: %1</translation>
         <translation>Wijzig verzend adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Het ingevoerde adres: "%1" is geen geldig Bulwark adres.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Het ingevoerde adres: "%1" is geen geldig BWK adres.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1213,61 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>GOVERNANCE</source>
+        <translation>BESTUUR</translation>
+    </message>
+    <message>
+        <source>Update Proposals</source>
+        <translation>Voorstellen Bijwerken</translation>
+    </message>
+    <message>
+        <source>Next super block:</source>
+        <translation>Volgende superblok:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Blocks to next super block:</source>
+        <translation>Blokken tot de volgende superblok:</translation>
+    </message>
+    <message>
+        <source>Allotted budget:</source>
+        <translation>Toegewezen budget:</translation>
+    </message>
+    <message>
+        <source>Budget left:</source>
+        <translation>Resterend budget:</translation>
+    </message>
+    <message>
+        <source>Masternodes count:</source>
+        <translation>Masternodes aantal:</translation>
+    </message>
+</context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>versie</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Over Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>Over BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1313,16 @@ MultiSend: %1</translation>
         <translation>Welkom</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Welkom bij Bulwark Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Welkom bij BWK Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Aangezien dit de eerste keer is dat het programma is gestart, kun je kiezen waar Bulwark Core zijn data opslaat.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Aangezien dit de eerste keer is dat het programma is gestart, kun je kiezen waar BWK Core zijn data opslaat.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core zal een kopie van de Bulwark blockchain downloaden en opslaan. Tenminste %1GB aan data zal worden opgeslagen in deze map en het zal over de tijd groeien. De portemonnee zal ook in deze map worden opgeslagen.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core zal een kopie van de BWK blockchain downloaden en opslaan. Tenminste %1GB aan data zal worden opgeslagen in deze map en het zal over de tijd groeien. De portemonnee zal ook in deze map worden opgeslagen.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1333,8 @@ MultiSend: %1</translation>
         <translation>Gebruik een aangepaste data directory:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1369,20 +1396,20 @@ MultiSend: %1</translation>
         <translation>Pubkey</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Start alias</translation>
+        <source>S&amp;tart alias</source>
+        <translation>S&amp;tart alias</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>all starten</translation>
+        <source>Start &amp;all</source>
+        <translation>&amp;all starten</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Start MISSING</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Start &amp;MISSING</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Status bijwerken</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Status bijwerken</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1448,12 +1475,12 @@ MultiSend: %1</translation>
         <translation>Vul het adres in om naar te verzenden</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend stelt je in staat om automatisch tot 100% van uw stake of masternode beloning automatisch te verzenden naar een lijst van andere Bulwark adressen nadat het volwassen is. 
-Toevoegen: voer het te geven percentage in en Bulwark adres om toe te voegen aan de MultiSend vector.
+        <translation>MultiSend stelt je in staat om automatisch tot 100% van uw stake of masternode beloning automatisch te verzenden naar een lijst van andere BWK adressen nadat het volwassen is. 
+Toevoegen: voer het te geven percentage in en BWK adres om toe te voegen aan de MultiSend vector.
 Verwijderen: Voer adres in om te verwijderen en druk op delete.
 MultiSend zal niet worden geactiveerd tenzij je op Activeer hebt geklikt</translation>
     </message>
@@ -1542,48 +1569,74 @@ MultiSend zal niet worden geactiveerd tenzij je op Activeer hebt geklikt</transl
         <translation>(geen label)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Het ingevoerde adres:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Actief voor Stakes en Masternodebeloningen</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Actief voor Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Actief voor Masternodebeloningen</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend Niet Actief</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>is ongeldig.
-Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
+        <translation>Het ingevoerde adres: %1 is ongeldig.
+Controleer het adres en probeer opnieuw.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>De totale hoeveelheid van je MultiSend vector is meer dan 100% van je stake beloning
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>De totale hoeveelheid van je MultiSend vector is meer dan 100% van je inzet beloning</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>De MultiSend in het geheugen opgeslagen, maar mislukt om de eigenschappen op te slaan in de database.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>MultiSend Vector</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Verwijderd %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Kan het adres niet lokaliseren</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>Onmogelijk om MultiSend te activeren, controleer MultiSend vector</translation>
+    </message>
+    <message>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation>MultiSend geactiveerd maar instellingen naar DB wegschrijven mislukt</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend geactiveerd</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>Eerste Adres Niet Gevalideerd</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation>MultiSend gedeactiveerd maar instellingen naar DB wegschrijven mislukt</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend gedeactiveerd</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Vul alsjeblieft 1 - 100 voor procent in.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>De MultiSend in het geheugen opgeslagen, maar mislukt om de eigenschappen op te slaan in de database.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Verwijderd</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Kan het adres niet lokaliseren
-</translation>
     </message>
 </context>
 <context>
@@ -1593,8 +1646,8 @@ Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
         <translation>Multisignature Adres Interacties</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>Creëer MultiSignature Adres</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Creëer MultiSignature &amp;Adres</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1613,8 +1666,8 @@ Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
         <translation>Voeg een ander adres toe die kan ondertekenen om een transactie vanuit het multisig adres te verifiëren.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>Voeg Adres / Sleutel toe</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;Voeg Adres / Sleutel toe</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1625,8 +1678,8 @@ Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
         <translation>Creëer een nieuw multisig adres</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Creëer</translation>
+        <source>C&amp;reate</source>
+        <translation>C&amp;reëer</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1641,12 +1694,12 @@ Houd er rekening mee dat de portemonnee de blockchain opnieuw doorzoekt om trans
 Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
     </message>
     <message>
-        <source>Import Redeem</source>
-        <translation>Importeer Inlossen</translation>
+        <source>&amp;Import Redeem</source>
+        <translation>&amp;Importeer Inlossen</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation>Creëer MultiSignature Tx</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Creëer MultiSignature Tx</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1681,24 +1734,24 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Adres / Bedrag:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Voeg bestemmingen toe om Bulwark naar te verzenden</translation>
+        <source>Add destinations to send BWK to</source>
+        <translation>Voeg bestemmingen toe om BWK naar te verzenden</translation>
     </message>
     <message>
-        <source>Add Destination</source>
-        <translation>Voeg Bestemming toe</translation>
+        <source>Add &amp;Destination</source>
+        <translation>Voeg &amp;Bestemming toe</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
         <translation>Maak een transactie object aan met behulp van de gegeven invoer voor de gegeven uitvoer</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Creëer</translation>
+        <source>Cr&amp;eate</source>
+        <translation>Cr&amp;eëer</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>Onderteken MultiSignature Tx</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Onderteken MultiSignature Tx</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1709,24 +1762,24 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Onderteken de transactie vanuit deze portemonnee of vanuit aangeboden privésleutels</translation>
     </message>
     <message>
-        <source>Sign</source>
-        <translation>Onderteken</translation>
+        <source>S&amp;ign</source>
+        <translation>O&amp;nderteken</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UITGESCHAKELD totdat de transactie voldoende is ondertekend.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Commit</source>
-        <translation>Engageer</translation>
+        <source>Co&amp;mmit</source>
+        <translation>&amp;Engageer</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
         <translation>Voeg privésleutels toe om de transactie met te ondertekenen</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
-        <translation>Voeg Privésleutel toe</translation>
+        <source>Add Private &amp;Key</source>
+        <translation>Voeg &amp;Privésleutel toe</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1755,73 +1808,6 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
     <message>
         <source>Maximum (15)</source>
         <translation>Maximum (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configureer verduistering</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Basis Privacy</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Hoge Privacy</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximum Privacy</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Selecteer de privacy level.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Gebruik 2 aparte masternodes om fondsen te mixen tot 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Gebruik 8 aparte masternodes om fondsen te mixen tot 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Gebruik 16 aparte masternodes</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Deze optie is het snelst en kost ongeveer ~0,025 Bulwark om 10000 Bulwark te anonimiseren</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Deze optie is gematigd snel en kost ongeveer 0,05 Bulwark om 10000 Bulwark te anonimiseren</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Dit is de langzaamste en veiligste optie. Het gebruik van maximale anonimiteit kost</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>je anonimiseert 0,1 Bulwark per 10000 Bulwark.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Verduistering configuratie</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op basic (%1 en 2 rondes). Je kunt dit op elk gewenst moment wijzigen door het configuratiescherm van Bulwark te openen.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 8 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van Bulwark te openen.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 16 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van Bulwark te openen.</translation>
     </message>
 </context>
 <context>
@@ -1854,19 +1840,19 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Opties</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Algemeen</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Algemeen</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Grootte van cache gegevens</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Grootte van cache &amp;gegevens</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
+        <source>Number of script &amp;verification threads</source>
         <translation>Aantal script en verificatie threads</translation>
     </message>
     <message>
@@ -1874,16 +1860,16 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>(0 = auto, &lt;0 = laat dat aantal cores vrij)</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Portemonnee</translation>
+        <source>W&amp;allet</source>
+        <translation>P&amp;ortemonnee</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Als je de uitgaven van onbevestigde wijzigingen uitschakelt, de wijziging van een transactie&lt;br/&gt;kan niet worden gebruikt tot die transactie tenminste één bevestiging heeft.&lt;br/&gt;Dit beïnvloedt ook hoe uw saldo is berekend.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Open de Bulwark client poort automatisch op de router. Dit werkt alleen als je router UPnP ondersteunt en het is ingeschakeld.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Open de BWK client poort automatisch op de router. Dit werkt alleen als je router UPnP ondersteunt en het is ingeschakeld.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1894,27 +1880,27 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Sta inkomende connecties toe</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation> Verbind via SOCKS5 proxy (standaard proxy):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp; Verbind via SOCKS5 proxy (standaard proxy):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Bulwark automatisch opstarten na inloggen op het systeem.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>BWK automatisch opstarten na inloggen op het systeem.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Bulwark starten bij systeemlogin</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;BWK starten bij systeemlogin</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Of je de muntcontrolefuncties wilt tonen of niet.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
+        <source>Enable coin &amp;control features</source>
         <translation>Munt- en controlefuncties inschakelen</translation>
     </message>
     <message>
@@ -1926,46 +1912,50 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Toon Masternodes Tab</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation> Besteed onbevestigd wisselgeld</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp; Besteed onbevestigd wisselgeld</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Netwerk</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Netwerk</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>De gebruikersinterface taal kan hier ingesteld worden. Deze instelling zal uitgevoerd na herstart van Bulwark.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>De gebruikersinterface taal kan hier ingesteld worden. Deze instelling zal uitgevoerd na herstart van BWK.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Taal ontbreekt of vertaling onvolledig? Help om bij te dragen aan vertalingen:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Map poort gebruikt UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Map poort gebruikt &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>Schakel automatisch slaan van Bulwark-eenheden in op zBWK</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>Schakel automatisch slaan van BWK-eenheden in op zBWK</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>Schakel zBWK Automint in</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentage inkomende Bulwark die automatisch wordt omgezet naar zBWK via Zerocoin Protocol (min: 10%)</translation>
+        <source>Enable Automint Addresses</source>
+        <translation>Automint Adressen Inschakelen</translation>
+    </message>
+    <message>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentage inkomende BWK die automatisch wordt omgezet naar zBWK via Zerocoin Protocol (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>Percentage autominted zBWK</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
-        <translation>Wacht met automatische omzetting naar Zerocoin totdat er genoeg Bulwark voor deze denominatie beschikbaar is</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
+        <translation>Wacht met automatische omzetting naar Zerocoin totdat er genoeg BWK voor deze denominatie beschikbaar is</translation>
     </message>
     <message>
         <source>Preferred Automint zBWK Denomination</source>
@@ -1976,60 +1966,56 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Inzet splitdrempel:</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Maak verbinding met het Bulwark netwerk via een SOCKS5 proxy.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Maak verbinding met het BWK netwerk via een SOCKS5 proxy.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP adres van de proxy (bijvoorbeeld IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Poort:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Poort:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Proxy-poort (v.b. 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Venster</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Venster</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Toon alleen een tray icoon na minimalisering van het venster.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation> Minimaliseer naar de tray in plaats van de taakbalk</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp; Minimaliseer naar de tray in plaats van de taakbalk</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Minimaliseer in plaats van de applicatie te verlaten wanneer het venster wordt gesloten. Wanneer deze optie is ingeschakeld, wordt de applicatie alleen gesloten nadat in het menu Quit wordt gekozen.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
+        <source>M&amp;inimize on close</source>
         <translation>Minimaliseer bij sluiten</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Weergave</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Weergave</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
-        <translation>Gebruiksinterface language:</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>Gebruiksinterface &amp;language:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Gebruiksinterface thema:</translation>
-    </message>
-    <message>
-        <source>Unit to show amounts in:</source>
-        <translation>Toon Unit in volgende hoeveelheden:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2042,6 +2028,14 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
     <message>
         <source>Hide empty balances</source>
         <translation>Verberg lege saldi</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes in transaction lists</source>
+        <translation>Verberg orphan stakes in transactielijsten</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Verberg orphan stakes</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2060,16 +2054,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Reset alle client instellingen naar standaardinstellingen.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Herstellings Opties</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Herstellings Opties</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Annuleren</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Annuleren</translation>
     </message>
     <message>
         <source>Any</source>
@@ -2131,8 +2125,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Totaal saldo, inclusief alle niet-beschikbare munten.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark Saldi</translation>
+        <source>BWK Balance</source>
+        <translation>BWK Saldi</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,8 +2149,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Huidige vergrendelde balans in alleen-lezen-adressen</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Uw huidige Bulwark-saldo, onbevestigde en onvolgroeide transacties inbegrepen</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Uw huidige BWK-saldo, onbevestigde en onvolgroeide transacties inbegrepen</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -2175,8 +2169,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat het gemint was.</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het Bulwark netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het BWK netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2219,8 +2213,8 @@ Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat he
         <translation>Uitgeefbaar:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Vergrendelde Bulwark of Masternode onderpanden. Deze zijn uitgesloten van de zBWK muntage.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Vergrendelde BWK of Masternode onderpanden. Deze zijn uitgesloten van de zBWK muntage.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2255,14 +2249,14 @@ Als AutoMint ingeschakeld is zal deze percentage afhangen van de geconfigureerde
         <translation>AutoMint is momenteel ingeschakeld en ingesteld op</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>Om AutoMint uit te schakelen, voeg je 'enablezeromint=0' toe aan bulwark.conf.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Om AutoMint uit te schakelen, voeg je 'enablezeromint=0' toe aan pivx.conf.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>AutoMint is momenteel uitgeschakeld.
-Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint=1' in bulwark.conf</translation>
+Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint=1' in pivx.conf</translation>
     </message>
 </context>
 <context>
@@ -2288,12 +2282,12 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Ongeldig betalingsadres %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Kan Bulwark niet starten: click-to-pay handler</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Kan pivx niet starten: click-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URL kan niet ontleed worden! Dit kan worden veroorzaakt door een ongeldig Bulwark adres of misvormde URL parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URL kan niet ontleed worden! Dit kan worden veroorzaakt door een ongeldig BWK adres of misvormde URL parameters.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2378,8 +2372,8 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>Zerocoin Acties:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het Bulwark netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het BWK netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2394,36 +2388,12 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Beschikbaar voor muntage zijn munten die bevestigd en niet vergrendeld of Masternode onderpanden zijn.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Beschikbaar voor minting:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Zerocoin Wallet DB opnieuw instellen. Verwijdert transacties die het niet in de blockchain hebben gered.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Resetten</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Munt controle...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kwantiteit:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2440,10 +2410,6 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
     <message>
         <source>PRIVACY</source>
         <translation>PRIVACY</translation>
-    </message>
-    <message>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation>Vul het aantal Bulwark in om te converteren naar zBWK</translation>
     </message>
     <message>
         <source>zBWK Control</source>
@@ -2479,31 +2445,19 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
 zBWK are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation>Beschikbare (volwwassen en uitgeefbaar) zBWK voor besteding
 
-zBWK zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
+zTelos zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
     </message>
     <message>
         <source>0 zBWK</source>
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Beveiligingsniveau voor Zerocoin transacties. Meer is beter, maar heeft meer tijd en middelen nodig.</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Betaal &amp;Naar:</translation>
     </message>
     <message>
-        <source>Security Level:</source>
-        <translation>Beveiligings niveau:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Beveiligingsniveau 1 - 100 (standaard: 42)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>Betaal Naar:</translation>
-    </message>
-    <message>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Het Bulwark adres om de betaling naar te verzenden. Maakt lokale betaling aan jezelf als je leeg bent.</translation>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>Het BWK adres om de betaling naar te verzenden. Maakt lokale betaling aan jezelf als je leeg bent.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2522,16 +2476,16 @@ zBWK zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 m
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Vul een label in voor dit adres om deze toe te voegen aan de lijst met gebruikte adressen</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Hoeveelheid:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2579,8 +2533,8 @@ Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat he
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to bulwark.conf
-- disable: add 'enablezeromint=0' to bulwark.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -2589,8 +2543,8 @@ To change the percentage (no restart required):
         <translation>Toon de huidige status van automatische zBWK-markering.
 
 Om de status te wijzigen (opnieuw opstarten vereist): 
-- enable: voeg 'enablezeromint = 1' toe aan bulwark.conf
-- uitschakelen: voeg 'enablezeromint = 0' toe aan bulwark.conf
+- enable: voeg 'enablezeromint = 1' toe aan pivx.conf
+- uitschakelen: voeg 'enablezeromint = 0' toe aan pivx.conf
 
 Om het percentage te wijzigen (geen herstart vereist): 
 - menu Instellingen-&gt; Opties-&gt; Percentage van geautomatiseerde zBWK
@@ -2639,6 +2593,14 @@ Om het percentage te wijzigen (geen herstart vereist):
     <message>
         <source>0 x</source>
         <translation> 0 x</translation>
+    </message>
+    <message>
+        <source>Show zBWK denominations list</source>
+        <translation>Toon zBWK denominatielijst</translation>
+    </message>
+    <message>
+        <source>Show Denominations</source>
+        <translation>Toon Denominaties</translation>
     </message>
     <message>
         <source>Denominations with value 5:</source>
@@ -2697,6 +2659,10 @@ Om het percentage te wijzigen (geen herstart vereist):
         <translation>Denom. met waarde 5000:</translation>
     </message>
     <message>
+        <source>Hide Denominations</source>
+        <translation>Verberg Denominaties</translation>
+    </message>
+    <message>
         <source>Priority:</source>
         <translation>Prioriteit:</translation>
     </message>
@@ -2706,11 +2672,11 @@ Om het percentage te wijzigen (geen herstart vereist):
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Kost:</translation>
+        <translation>Fee:</translation>
     </message>
     <message>
         <source>Dust:</source>
-        <translation>Stof:</translation>
+        <translation>Dust:</translation>
     </message>
     <message>
         <source>no</source>
@@ -2750,7 +2716,7 @@ Om het percentage te wijzigen (geen herstart vereist):
     </message>
     <message>
         <source>Change:</source>
-        <translation>Wijzig:</translation>
+        <translation>Wisselgeld:</translation>
     </message>
     <message>
         <source>out of sync</source>
@@ -2761,32 +2727,10 @@ Om het percentage te wijzigen (geen herstart vereist):
         <translation>Mint status: Oké</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopieer kwanititeit</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>Start ResetMintZerocoin: rescanning complete blockchain, dit zal tot 30 minuten nodig hebben, afhankelijk van uw hardware.
 Wees alsjeblieft geduldig...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Zerocoin besteden.
-Computationeel duur, zou mogelijk enkele minuten nodig hebben, afhankelijk van het geselecteerde beveiligingsniveau en je hardware.
-Wees alsjeblieft geduldig...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) vereist.
-Maximaal toegestaan:</translation>
     </message>
     <message>
         <source>zBWK Spend #: </source>
@@ -2885,32 +2829,6 @@ Maximaal toegestaan:</translation>
         <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Fout: Je portemonnee is vergrendeld. Voer alsjeblieft de wachtwoord zin voor de portemonnee in.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Bericht: voer een bedrag in &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Minting </translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Succesvol gemint</translation>
-    </message>
-    <message>
-        <source> zBWK in </source>
-        <translation> zBWK in </translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>sec. gebruikte denominaties:
-</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Duur:</translation>
     </message>
@@ -2929,8 +2847,8 @@ Maximaal toegestaan:</translation>
         <translation>Geen 'Betaal aan' adres verstrekt, lokale betaling wordt gemaakt</translation>
     </message>
     <message>
-        <source>Invalid BWK address</source>
-        <translation>Ongeldig Bulwark addres</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Ongeldig Pivx addres</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2953,43 +2871,16 @@ Maximaal toegestaan:</translation>
         <translation>naar een nieuw gegenereerd (ongebruikt en dus anoniem) lokaal adres&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>met beveiligingsniveau</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Bevestig verzending coins</translation>
-    </message>
-    <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zBWK vereist een beveiligingsniveau van 100 om succesvol te besteden.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zBWK</source>
-        <translation>Mislukt om zBWK te besteden.</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation>Mislukt om de mint op te halen geassocieerd met de seriële hash</translation>
     </message>
     <message>
-        <source>Too much inputs (</source>
-        <translation>Teveel invoer (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te besteden bedrag verminderen.</translation>
-    </message>
-    <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Bestede Zerocoin mislukt met status =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of BWK to convert to zBWK</comment>
-        <translation><numerusform>PrivacyDialoog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3025,14 +2916,65 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    <message>
+        <source>Open proposal page in browser</source>
+        <translation>Voorstelpagina in browser openen</translation>
+    </message>
+    <message>
+        <source>Yes:</source>
+        <translation>Voor:</translation>
+    </message>
+    <message>
+        <source>Abstain:</source>
+        <translation>Onthouden:</translation>
+    </message>
+    <message>
+        <source>No:</source>
+        <translation>Tegen:</translation>
+    </message>
+    <message>
+        <source>Open link</source>
+        <translation>Link openen</translation>
+    </message>
+    <message>
+        <source>Copy link</source>
+        <translation>Link kopiëren</translation>
+    </message>
+    <message>
+        <source>Wallet Locked</source>
+        <translation>Portemonnee Vergrendeld</translation>
+    </message>
+    <message>
+        <source>You must unlock your wallet to vote.</source>
+        <translation>Je moet uw portemonnee ontgrendelen om te stemmen.</translation>
+    </message>
+    <message>
+        <source>Proposal Hash:</source>
+        <translation>Voorstel Hash:</translation>
+    </message>
+    <message>
+        <source>Proposal URL:</source>
+        <translation>Voorstel URL:</translation>
+    </message>
+    <message>
+        <source>Confirm Vote</source>
+        <translation>Stem bevestigen</translation>
+    </message>
+    <message>
+        <source>Vote Results</source>
+        <translation>Stemresultaten</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Voer een Bulwark adres in (b.v. %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Voer een BWK adres in (b.v. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3059,6 +3001,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>BLOOM</translation>
     </message>
     <message>
+        <source>ZK_BLOOM</source>
+        <translation>ZK_BLOOM</translation>
+    </message>
+    <message>
         <source>UNKNOWN</source>
         <translation>ONBEKEND</translation>
     </message>
@@ -3074,16 +3020,20 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Afbeelding opslaan...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Afbeelding opslaan...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Kopieer afbeelding</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Kopieer afbeelding</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -3101,8 +3051,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Tools venster</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informatie</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informatie</translation>
     </message>
     <message>
         <source>General</source>
@@ -3125,8 +3075,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Aantal connecties</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Open</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Open</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -3169,28 +3119,28 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open het Bulwark debug log bestand uit de huidige data directory. Dit kan enkele seconden duren voor grote logbestanden.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open het BWK debug log bestand uit de huidige data directory. Dit kan enkele seconden duren voor grote logbestanden.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Aantal Masternodes</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Console</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Console</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Console leegmaken</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Netwerk verkeer</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Netwerk verkeer</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Leegmaken</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Leegmaken</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -3205,8 +3155,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verstuurd</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Peers</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peers</translation>
     </message>
     <message>
         <source>Banned peers</source>
@@ -3265,8 +3215,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Pingtijd</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Portemonnee herstel</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Portemonnee herstel</translation>
     </message>
     <message>
         <source>Delete local Blockchain Folders</source>
@@ -3385,36 +3335,36 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Uit:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Welkom bij de Bulwark RPC console.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Welkom bij de BWK RPC console.</translation>
     </message>
     <message>
-        <source>Disconnect Node</source>
-        <translation> Koppel Node los</translation>
+        <source>&amp;Disconnect Node</source>
+        <translation>&amp; Koppel Node los</translation>
     </message>
     <message>
         <source>Ban Node for</source>
         <translation>Ban Node voor</translation>
     </message>
     <message>
-        <source>1 hour</source>
-        <translation>1 hour</translation>
+        <source>1 &amp;hour</source>
+        <translation>1 &amp;hour</translation>
     </message>
     <message>
-        <source>1 day</source>
-        <translation>1 day</translation>
+        <source>1 &amp;day</source>
+        <translation>1 &amp;day</translation>
     </message>
     <message>
-        <source>1 week</source>
-        <translation>1 week</translation>
+        <source>1 &amp;week</source>
+        <translation>1 &amp;week</translation>
     </message>
     <message>
-        <source>1 year</source>
-        <translation>1 year</translation>
+        <source>1 &amp;year</source>
+        <translation>1 &amp;year</translation>
     </message>
     <message>
-        <source>Unban Node</source>
-        <translation> Veel succes</translation>
+        <source>&amp;Unban Node</source>
+        <translation>&amp; Veel succes</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3435,10 +3385,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Bevestig hersynchronisering van Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Gebruik omhoog en omlaag pijlen om de geschiedenis te navigeren, en&lt;b&gt;Ctrl-L&lt;/b&gt;om scherm te wissen.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3500,48 +3446,56 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Hergebruik een van de eerder gebruikte ontvangstadressen.&lt;br&gt;Hergebruik van adressen heeft beveiligings- en privacyproblemen. &lt;br&gt;Gebruik dit niet tenzij u eerder een betalingsverzoek heeft aangemaakt.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>Hergebruik een bestaand ontvangstadres (niet aanbevolen)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Bericht:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Bericht:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Een optioneel label om te associëren met het nieuwe ontvangstadres.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend. Opmerking: het bericht wordt niet verzonden met de betaling via het Bulwark netwerk.</translation>
+        <source>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</source>
+        <translation>Je ontvangstadres. Je kan deze kopieren en gebruiken om munten te ontvangen in deze portemonnee. Een nieuwe zal gegenereerd worden van zodra het gebruikt is.</translation>
+    </message>
+    <message>
+        <source>&amp;Address:</source>
+        <translation>&amp;Adres:</translation>
+    </message>
+    <message>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Hoeveelheid:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend. Opmerking: het bericht wordt niet verzonden met de betaling via het BWK netwerk.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>ontvangen</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend.&lt;br&gt;Opmerking: het bericht wordt niet verzonden met de betaling via het Bulwark netwerk.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend.&lt;br&gt;Opmerking: het bericht wordt niet verzonden met de betaling via het BWK netwerk.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Gebruik dit formulier om betalingen aan te vragen. Alle velden zijn&lt;b&gt;optioneel&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Een optioneel bedrag om te vragen. Laat dit leeg of vul een nul in om geen specifiek bedrag te vragen.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
-    </message>
-    <message>
-        <source>Request payment</source>
-        <translation>Verzoek betaling</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Verzoek betaling</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -3550,6 +3504,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Clear</source>
         <translation>Leegmaken</translation>
+    </message>
+    <message>
+        <source>Receiving Addresses</source>
+        <translation>Ontvangstadressen</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -3581,7 +3539,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopieer adres</translation>
     </message>
 </context>
 <context>
@@ -3591,16 +3553,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>QR Code</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Kopieer URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Kopieer &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopieer Adres</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Kopieer &amp;Adres</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Afbeelding opslaan...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Afbeelding opslaan...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3620,7 +3582,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>Label</source>
@@ -3654,8 +3616,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Bericht</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -3698,7 +3664,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
+        <translation>Bedrag:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -3710,11 +3676,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Kost:</translation>
+        <translation>Fee:</translation>
     </message>
     <message>
         <source>Dust:</source>
-        <translation>Stof:</translation>
+        <translation>Dust:</translation>
     </message>
     <message>
         <source>no</source>
@@ -3722,11 +3688,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Na de kost:</translation>
+        <translation>Na de fee:</translation>
     </message>
     <message>
         <source>Change:</source>
-        <translation>Wijzig:</translation>
+        <translation>Wisselgeld:</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
@@ -3749,8 +3715,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>UTXO grootte:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3805,16 +3771,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Munten automatisch geselecteerd</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uBWKs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uBulwark's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uBulwark's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uPIVs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uPIV's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uPIV's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uBWKs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uBulwark's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uBulwark's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uPIVs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uPIV's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uPIV's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
-        <translation>Alleen de minimale vergoeding betalen is prima, zolang er minder transactie volume is dan ruimte in de blokken. &lt;br /&gt;Maar wees ervan bewust dat dit kan leiden tot een nooit bevestigende transactie wanneer er meer vraag is naar Bulwark transacties dan het netwerk kan verwerken.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
+        <translation>Alleen de minimale vergoeding betalen is prima, zolang er minder transactie volume is dan ruimte in de blokken. &lt;br /&gt;Maar wees ervan bewust dat dit kan leiden tot een nooit bevestigende transactie wanneer er meer vraag is naar BWK transacties dan het netwerk kan verwerken.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3841,28 +3807,28 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Bevestig de verzendactie</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Verzenden</translation>
+        <source>S&amp;end</source>
+        <translation>V&amp;erzenden</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>Leeg alle velden van het formulier.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Verwijder Alles</translation>
+        <source>Clear &amp;All</source>
+        <translation>Verwijder &amp;Alles</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Verzend naar meerdere ontvangers tegelijk</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>Voeg ontvanger toe</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Voeg &amp;ontvanger toe</translation>
     </message>
     <message>
         <source>Anonymized BWK</source>
-        <translation>Geanonimiseerde Bulwark</translation>
+        <translation>Geanonimiseerde BWK</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3870,19 +3836,19 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>Kopieer kwanititeit</translation>
+        <translation>Kopieer kwantiteit</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Kopiëer kost</translation>
+        <translation>Kopieer fee</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Kopiëer na kost</translation>
+        <translation>Kopieer na fee</translation>
     </message>
     <message>
         <source>Copy bytes</source>
@@ -3910,7 +3876,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>Waarschuwing: Ongeldig Bulwark adres</translation>
+        <translation>Waarschuwing: Ongeldig BWK adres</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3935,10 +3901,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Een vergoeding %1 keer hoger dan %2 per kB wordt beschouwd als een zwaar hoge vergoeding.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Schatting om te beginnen met bevestiging in %n blokken.</numerusform><numerusform>Schatting om te beginnen met bevestiging in %n blokken.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4008,12 +3970,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Dit is een normale betaling.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>Betaal Naar:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>Betaal &amp;Naar:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>Het Bulwark adres om de betaling naar te verzenden</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>Het BWK adres om de betaling naar te verzenden</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4036,24 +3998,24 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verwijder dit item</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Label:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Label:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>Vul een label in voor dit adres om deze toe te voegen aan de lijst met gebruikte adressen</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Hoeveelheid:</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation>Bericht:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>Een bericht dat is gehecht aan de Bulwark: URI die bij de transactie wordt opgeslagen voor uw referentie. Opmerking: dit bericht wordt niet verzonden via het Bulwark netwerk.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>Een bericht dat is gehecht aan de BWK: URI die bij de transactie wordt opgeslagen voor uw referentie. Opmerking: dit bericht wordt niet verzonden via het BWK netwerk.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4079,8 +4041,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core is aan het afsluiten...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core is aan het afsluiten...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4094,16 +4056,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Handtekeningen - Onderteken / Verifieer een Bericht</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Onderteken Bericht</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Onderteken Bericht</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Je kunt berichten met je adressen ondertekenen om te bewijzen dat je ze bezit. Wees voorzichtig om niets vaags te ondertekenen, omdat phishing aanvallen je misschien kunnen proberen om je identiteit over te geven. Teken alleen volledig gedetailleerde verklaringen aan waar je mee akkoord gaat.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Het Bulwark adres om het bericht met te ondertekenen</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>Het BWK adres om het bericht met te ondertekenen</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4134,40 +4096,40 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Onderteken het bericht om te bewijzen dat u het Bulwark adres bezit</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Onderteken het bericht om te bewijzen dat u het BWK adres bezit</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Het Bulwark adres waarmee het bericht was ondertekend</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>Het BWK adres waarmee het bericht was ondertekend</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Controleer een bericht om te verifiëren dat het ondertekend is door het gespecificeerde Bulwark adres</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Controleer een bericht om te verifiëren dat het ondertekend is door het gespecificeerde BWK adres</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Onderteken Bericht</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Onderteken &amp;Bericht</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Maak alle ondertekenvelden leeg</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Verwijder Alles</translation>
+        <source>Clear &amp;All</source>
+        <translation>Verwijder &amp;Alles</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verifieer Bericht</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Verifieer Bericht</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>Voer het ondertekening adres in, verifieer het bericht (zorg ervoor dat je line breaks, spaties, tabs, enz.) en onderteken hieronder om het bericht te verifiëren. Wees voorzichtig om niet meer in de handtekening te lezen dan in het ondertekende bericht zelf, om te voorkomen dat je door een man-in-de-middle aanval wordt getroffen.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>Verifeer Message</translation>
+        <source>Verify &amp;Message</source>
+        <translation>Verifeer &amp;Message</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -4191,11 +4153,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Portemonnee-ontsleuteling is geannuleerd.</translation>
+        <translation>Portemonnee ontsleuteling is geannuleerd.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Geheime sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
+        <translation>Privé sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -4229,8 +4191,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Kern</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4245,8 +4207,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>De Dash Kernontwikkelaars</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>De Bulwark Kernontwikkelaars</translation>
+        <source>The BWK Core developers</source>
+        <translation>De BWK Kernontwikkelaars</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4262,10 +4224,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Klaar voor %n meer blokken</numerusform><numerusform>Klaar voor %n meer blokken</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Open tot %1</translation>
@@ -4326,10 +4284,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <source>, has not been successfully broadcast yet</source>
         <translation>, is nog niet succesvol uitgezonden</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, uitgezonden via %n nodes</numerusform><numerusform>, uitgezonden via %n nodes</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Datum</translation>
@@ -4369,10 +4323,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Credit</source>
         <translation>Credit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>maturiteit in %n meer blokken</numerusform><numerusform>maturiteit in %n meer blokken</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4436,7 +4386,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>true</source>
@@ -4471,10 +4421,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Address</source>
         <translation>Adres</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Klaar voor %n meer blokken</numerusform><numerusform>Klaar voor %n meer blokken</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4525,8 +4471,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verkregen via verduistering</translation>
     </message>
     <message>
-        <source>Bulwark Stake</source>
-        <translation>Bulwark Stake</translation>
+        <source>BWK Stake</source>
+        <translation>BWK Stake</translation>
     </message>
     <message>
         <source>zBWK Stake</source>
@@ -4549,24 +4495,24 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verduistering creëert denominaties</translation>
     </message>
     <message>
-        <source>Converted Bulwark to zBWK</source>
-        <translation>Geconverteerde Bulwark naar zBWK</translation>
+        <source>Converted BWK to zBWK</source>
+        <translation>Geconverteerde BWK naar zBWK</translation>
     </message>
     <message>
         <source>Spent zBWK</source>
         <translation>Bestede zBWK</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Ontvangen Bulwark van zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Ontvangen BWK van zBWK</translation>
     </message>
     <message>
         <source>Minted Change as zBWK from zBWK Spend</source>
         <translation>Gemint wisselgeld als zBWK van bestede zBWK</translation>
     </message>
     <message>
-        <source>Converted zBWK to Bulwark</source>
-        <translation>Geconverteerde zBWK naar Bulwark</translation>
+        <source>Converted zBWK to BWK</source>
+        <translation>Geconverteerde zBWK naar BWK</translation>
     </message>
     <message>
         <source>Anonymous (zBWK Transaction)</source>
@@ -4721,11 +4667,11 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <translation>Kopieer bedrag</translation>
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Kopier transactie ID</translation>
+        <translation>Kopieer transactie ID</translation>
     </message>
     <message>
         <source>Edit label</source>
@@ -4734,6 +4680,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Show transaction details</source>
         <translation>Bekijk transactiedetails</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Verberg orphan stakes</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
@@ -4784,8 +4734,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Exporteren succesvol</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Ontvangen Bulwark van zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Ontvangen BWK van zBWK</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zBWK</source>
@@ -4825,8 +4775,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Verzend Munten</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 Bulwark.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 BWK.</translation>
     </message>
 </context>
 <context>
@@ -4836,8 +4786,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>GESCHIEDENIS</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exporteren</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exporteren</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -4857,7 +4807,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Select zBWK to Spend</source>
         <translation>Selecteer zBWK om te besteden</translation>
@@ -4879,12 +4829,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Selecteer/Deselecteer Alles</translation>
     </message>
     <message>
-        <source>Is Spendable</source>
-        <translation>Is Uitgeefbaar</translation>
+        <source>Spendable?</source>
+        <translation>Besteedbaar?</translation>
     </message>
 </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = houd tx meta data, bijvoorbeeld account eigenaar en betalingsverzoek informatie, 2 = drop tx meta data)</translation>
@@ -4910,8 +4860,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Het berekende accumulatie controlepunt is niet wat wordt geregistreerd door de blokindex</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>Kan geen vergrendeling op data directory %s verkrijgen. Bulwark Core loopt waarschijnlijk al.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>Kan geen vergrendeling op data directory %s verkrijgen. BWK Core loopt waarschijnlijk al.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4942,8 +4892,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zBWK (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
-        <translation>In- of uitschakelen staking functionaliteit voor Bulwark inputs (0-1, standaard: %u)</translation>
+        <source>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</source>
+        <translation>In- of uitschakelen staking functionaliteit voor BWK inputs (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zBWK inputs (0-1, default: %u)</source>
@@ -4982,20 +4932,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Uitvoeren commando wanneer het beste blok verandert (%s in cmd is vervangen door block hash)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Kosten (in BWK/kB) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Kosten (in BWK/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Kosten (in BWK/kB) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Kosten (in BWK/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Leeg database activiteit uit geheugen pool naar schijf log elke keer&lt;n&gt;megabytes (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Gevonden onbevestigde gedenomineerde outputs, wachten tot ze bevestigd zijn om verder te gaan.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5086,20 +5032,20 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in de OpenSSL Toolkit &lt;https://www.openssl.org/&gt; en cryptografische software geschreven door Eric Young en UPnP software geschreven door Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
-        <translation>Niet mogelijk te binden aan %s op deze computer. Bulwark Core loopt waarschijnlijk al.</translation>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
+        <translation>Niet mogelijk te binden aan %s op deze computer. BWK Core loopt waarschijnlijk al.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Kan niet genoeg verduistering gedenomineerde fondsen voor deze transactie vinden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 Bulwark.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 BWK.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 Bulwark.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 BWK.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5114,8 +5060,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Waarschuwing: -paytxfee is zeer hoog ingesteld! Dit zijn de transactie kosten die je betaalt als je een transactie verstuurt.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>Waarschuwing: Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt Bulwark Core niet goed.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>Waarschuwing: Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt BWK Core niet goed.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5182,12 +5128,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>DNS lookups toestaan voor -addnode, -seednode en -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Heeft die input al.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Vraag altijd naar peer adressen via DNS lookup (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Voeg opmerking toe aan de user agent string</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
@@ -5204,18 +5150,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Calculating missing accumulators...</source>
         <translation>Calculeren van ontbrekende accumulators...</translation>
-    </message>
-    <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Kan niet denomineren: er zijn geen compatibele inputs over.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Kan geen willekeurige Masternode vinden.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Kan niet mixen terwijl synchronisatie wordt uitgevoerd.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
@@ -5236,10 +5170,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Cannot write default address</source>
         <translation>Kan standaard adres niet schrijven</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Terugbetaling niet geldig.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5266,8 +5196,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Copyright (C) 2014-%i The Dash Kernontwikkelaars</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Bulwark Kernontwikkelaars</translation>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
+        <translation>Copyright (C) 2015-%i The BWK Kernontwikkelaars</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5326,14 +5256,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Schakel de client in als masternode (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>De entries zijn vol.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Fout bij verbinden met Masternode.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Fout bij het initialiseren van blok database</translation>
     </message>
@@ -5354,8 +5276,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Error tijdens het laden van wallet.dat: Portemonnee corrupt</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>Fout bij het laden van wallet.dat: Portemonnee vereist een nieuwere versie van Bulwark Core</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>Fout bij het laden van wallet.dat: Portemonnee vereist een nieuwere versie van BWK Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5370,16 +5292,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Fout bij het herstellen van de publieke sleutel.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fout bij het schrijven van zerocoinDB naar schijf</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Fout: Er is een fatale interne fout opgetreden, zie debug.log voor details</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Fout: Kan de huidige gedenomineerde inputs niet selecteren</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5394,16 +5316,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Fout: Portemonnee vergrendeld, niet in staat om transactie te creëren!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Fout: U heeft al entries in afwachting in de verduistering pool</translation>
-    </message>
-    <message>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation>Kon het controlepunt van de accumulator niet berekenen</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Niet gelukt om te luisteren op een poort. Gebruik -listen=0 als je dit wilt.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Kan host: poortreeks niet parseren</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5414,20 +5336,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Fee (in BWK/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Transactie aan het voltooien.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Forceer safe mode (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Genoeg gebruikers gevonden, aan het ondertekenen (%s aan het wachten)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Genoeg gebruikers gevonden, aan het ondertekenen ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5454,14 +5364,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Inclusief IP adressen in debug output (standaard: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Modus is niet compatibel.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Versie is niet compatibel.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Het genesis block kan niet worden gevonden of is incorrect. Klopt datadir voor het netwerk?</translation>
     </message>
@@ -5470,12 +5372,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Informatie</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
-        <translation>Initialisatie saniteitscontrole mislukt. Bulwark Core wordt afgesloten.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Ongeldige invoer.</translation>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
+        <translation>Initialisatie saniteitscontrole mislukt. BWK Core wordt afgesloten.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5534,16 +5432,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Ongeldige privésleutel.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Ongeldige script gedetecteerd.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Percentage automatisch geminte Zerocoin (10-100, standaard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the Bulwark and zBWK money supply statistics</source>
-        <translation>Indexeer de Bulwark- en zBWK-geldvoorraadstatistieken opnieuw</translation>
+        <source>Reindex the BWK and zBWK money supply statistics</source>
+        <translation>Indexeer de BWK- en zBWK-geldvoorraadstatistieken opnieuw</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5582,8 +5476,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
 </translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Schakel alle specifieke Bulwark functionaliteit uit (Masternodes, Zerocoin, SwiftTX, Budgeting) (0-1, standaard: %u)</translation>
+        <source>Disable all BWK specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Schakel alle specifieke BWK functionaliteit uit (Masternodes, Zerocoin, SwiftTX, Budgeting) (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5682,10 +5576,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Het is niet gelukt om mint te maken</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Kan deserialiseren niet</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Niet gelukt om Zerocoins in wallet.dat te vinden.</translation>
     </message>
@@ -5704,14 +5594,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Houd maximaal &lt;n&gt;niet te verbinden transacties in het geheugen (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Laatste verduistering was te recent.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Laatste succesvolle verduistering actie was te recent.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5766,10 +5648,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Locatie van de auth cookie (standaard: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Vergrendeling is al uitgevoerd.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Masternodes vergrendelen van masternode configuratiebestand (standaard: %u)</translation>
     </message>
@@ -5786,14 +5664,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Masternode opties:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode wachtrij zit vol.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maximaal per connectie ontvangst buffer, &lt;n&gt;*1000 bytes (standaard: %u)</translation>
     </message>
@@ -5806,14 +5676,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Mint heeft de blockchain niet gehaald</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Ontbrekende invoer transactie informatie ontbreekt.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Bezig met mixen...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Noodzaak van adres omdat wijziging niet exact is</translation>
     </message>
@@ -5822,40 +5684,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Moet een poort opgeven met -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Geen Masternodes gedetecteerd.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Geen compatibele Masternode gevonden.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Geen fondsen gedetecteerd die denominatie nodig hebben.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Geen passende denominaties gevonden voor mixing.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Node relay opties:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Niet standaard publieke sleutel gedetecteerd.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Niet compatibel met bestaande transacties.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Niet genoeg bestandsbeschrijvingen beschikbaar.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Niet in de Masternode lijst.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5864,18 +5698,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Aantal aangepaste locatie back-ups om te behouden (standaard: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Verduistering is inactief.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Verduistering verzoek compleet:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Verduistering verzoek incompleet:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5968,10 +5790,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Zend transacties als zero fee transacties indien mogelijk (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Sessie niet voltooid!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -6078,18 +5896,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Stop na het importeren van blokken van schijf (standaard: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Ingediende volgende vermeldingen in masternode: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Ingediend naar masternode, wachten op meer inzendingen (%u / %d) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Ingediend naar masternode, wachten in de wachtrij %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Synchronisatie mislukt</translation>
     </message>
@@ -6126,14 +5932,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>De muntuitgaven zijn gebruikt</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>De nieuwe uitgave voor uitgavengeld heeft niet geverifieerd</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>De geselecteerde muntmunt is een ongeldige munt</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>De transactie heeft niet geverifieerd</translation>
     </message>
@@ -6148,10 +5946,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Dit is bedoeld voor regressie test tools en app ontwikkeling.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dit is geen Masternode.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6186,18 +5980,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Transactie bedragen moeten positief zijn</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transactie is succesvol gemaakt.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transactiekosten zijn te hoog.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transactie is niet geldig.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transactie te groot voor kosten beleid</translation>
     </message>
@@ -6206,24 +5988,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Transactie te groot</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Verzending van de definitieve transactie.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Probeer te spenderen met een hoger beveiligingsniveau om meer munten op te nemen</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Probeer een reeds bestaand serienummer nog een keer uit te geven, probeer het opnieuw.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Niet mogelijk te binden aan %s op deze computer (bind stuurt fout %s terug)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Kan transactie met mint niet vinden</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6236,10 +6006,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Onbekend netwerk gespecificeerd in -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Onbekende staat: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6262,16 +6028,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Gebruik het test netwerk</translation>
     </message>
     <message>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>User Agent opmerking (%s) bevat onveilige karakters.</translation>
+    </message>
+    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Gebruikersnaam voor JSON-RPC verbindingen</translation>
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zBWK</source>
         <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zBWK</translation>
-    </message>
-    <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Waarde meer dan verduistering pool maximaal toestaat.</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6282,20 +6048,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Portemonnee verifiëren...</translation>
     </message>
     <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zBWK vereist een beveiligingsniveau van 100 om succesvol uit te geven.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Portemonnee %s verblijft buiten de data directory %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Portemonnee is vergrendeld.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Wallet moest worden herschreven: start Bulwark Core opnieuw om te voltooien</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>Wallet moest worden herschreven: start BWK Core opnieuw om te voltooien</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6322,24 +6080,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Waarschuwing: Niet ondersteunde argument -debugnet genegeerd, gebruik -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Zal het opnieuw proberen...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Je hebt niet genoeg Zerocoins in je portemonnee</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Je moet de database herbouwen met -reindex om -txindex te wijzigen</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Je gegevens zijn succesvol toegevoegd.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Je transactie is geaccepteerd in de pool!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,12 +9,14 @@
 #include "guiconstants.h"
 
 QValidatedLineEdit::QValidatedLineEdit(QWidget* parent) : QLineEdit(parent),
-    valid(true),
-    checkValidator(0) {
+                                                          valid(true),
+                                                          checkValidator(0)
+{
     connect(this, SIGNAL(textChanged(QString)), this, SLOT(markValid()));
 }
 
-void QValidatedLineEdit::setValid(bool valid) {
+void QValidatedLineEdit::setValid(bool valid)
+{
     if (valid == this->valid) {
         return;
     }
@@ -26,30 +29,35 @@ void QValidatedLineEdit::setValid(bool valid) {
     this->valid = valid;
 }
 
-void QValidatedLineEdit::focusInEvent(QFocusEvent* evt) {
+void QValidatedLineEdit::focusInEvent(QFocusEvent* evt)
+{
     // Clear invalid flag on focus
     setValid(true);
 
     QLineEdit::focusInEvent(evt);
 }
 
-void QValidatedLineEdit::focusOutEvent(QFocusEvent* evt) {
+void QValidatedLineEdit::focusOutEvent(QFocusEvent* evt)
+{
     checkValidity();
 
     QLineEdit::focusOutEvent(evt);
 }
 
-void QValidatedLineEdit::markValid() {
+void QValidatedLineEdit::markValid()
+{
     // As long as a user is typing ensure we display state as valid
     setValid(true);
 }
 
-void QValidatedLineEdit::clear() {
+void QValidatedLineEdit::clear()
+{
     setValid(true);
     QLineEdit::clear();
 }
 
-void QValidatedLineEdit::setEnabled(bool enabled) {
+void QValidatedLineEdit::setEnabled(bool enabled)
+{
     if (!enabled) {
         // A disabled QValidatedLineEdit should be marked valid
         setValid(true);
@@ -61,7 +69,8 @@ void QValidatedLineEdit::setEnabled(bool enabled) {
     QLineEdit::setEnabled(enabled);
 }
 
-void QValidatedLineEdit::checkValidity() {
+void QValidatedLineEdit::checkValidity()
+{
     if (text().isEmpty()) {
         setValid(true);
     } else if (hasAcceptableInput()) {
@@ -80,6 +89,7 @@ void QValidatedLineEdit::checkValidity() {
         setValid(false);
 }
 
-void QValidatedLineEdit::setCheckValidator(const QValidator* v) {
+void QValidatedLineEdit::setCheckValidator(const QValidator* v)
+{
     checkValidator = v;
 }

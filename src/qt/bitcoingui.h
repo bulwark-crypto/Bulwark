@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +31,6 @@ class UnitDisplayStatusBarControl;
 class WalletFrame;
 class WalletModel;
 class MasternodeList;
-class ProposalList;
 
 class CWallet;
 
@@ -44,10 +44,11 @@ QT_END_NAMESPACE
   Bitcoin GUI main class. This class represents the main window of the Bitcoin UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class BitcoinGUI : public QMainWindow {
+class BitcoinGUI : public QMainWindow
+{
     Q_OBJECT
 
-  public:
+public:
     static const QString DEFAULT_WALLET;
 
     explicit BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent = 0);
@@ -70,19 +71,20 @@ class BitcoinGUI : public QMainWindow {
     bool enableWallet;
     bool fMultiSend = false;
 
-  protected:
+protected:
     void changeEvent(QEvent* e);
     void closeEvent(QCloseEvent* event);
     void dragEnterEvent(QDragEnterEvent* event);
     void dropEvent(QDropEvent* event);
     bool eventFilter(QObject* object, QEvent* event);
 
-  private:
+private:
     ClientModel* clientModel;
     WalletFrame* walletFrame;
 
     UnitDisplayStatusBarControl* unitDisplayControl;
     QLabel* labelStakingIcon;
+    QPushButton* labelAutoMintIcon;
     QPushButton* labelEncryptionIcon;
     QLabel* labelTorIcon;
     QPushButton* labelConnectionsIcon;
@@ -100,7 +102,6 @@ class BitcoinGUI : public QMainWindow {
     QAction* usedSendingAddressesAction;
     QAction* usedReceivingAddressesAction;
     QAction* signMessageAction;
-    QAction* proposalAction;
     QAction* verifyMessageAction;
     QAction* bip38ToolAction;
     QAction* multisigCreateAction;
@@ -108,6 +109,7 @@ class BitcoinGUI : public QMainWindow {
     QAction* multisigSignAction;
     QAction* aboutAction;
     QAction* receiveCoinsAction;
+    QAction* governanceAction;
     QAction* privacyAction;
     QAction* optionsAction;
     QAction* toggleHideAction;
@@ -159,13 +161,13 @@ class BitcoinGUI : public QMainWindow {
     /** Disconnect core signals from GUI client */
     void unsubscribeFromCoreSignals();
 
-  signals:
+signals:
     /** Signal raised when a URI was entered or dragged to the GUI */
     void receivedURI(const QString& uri);
     /** Restart handling */
     void requestedRestart(QStringList args);
 
-  public slots:
+public slots:
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
@@ -182,11 +184,10 @@ class BitcoinGUI : public QMainWindow {
     */
     void message(const QString& title, const QString& message, unsigned int style, bool* ret = NULL);
 
-    void setStakingStatus();
-    /** Set the Tor-enabled icon as shown in the UI. */
-    void updateTorIcon();
-
 #ifdef ENABLE_WALLET
+    void setStakingStatus();
+    void setAutoMintStatus();
+
     /** Set the encryption status as shown in the UI.
        @param[in] status            current encryption status
        @see WalletModel::EncryptionStatus
@@ -199,9 +200,11 @@ class BitcoinGUI : public QMainWindow {
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address);
 #endif // ENABLE_WALLET
 
-  private:
+private:
+    /** Set the Tor-enabled icon as shown in the UI. */
+    void updateTorIcon();
 
-  private slots:
+private slots:
 #ifdef ENABLE_WALLET
     /** Switch to overview (home) page */
     void gotoOverviewPage();
@@ -217,8 +220,6 @@ class BitcoinGUI : public QMainWindow {
     void gotoPrivacyPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
-    /** Switch to proposal page */
-    void gotoProposalPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
@@ -226,12 +227,10 @@ class BitcoinGUI : public QMainWindow {
     void gotoVerifyMessageTab(QString addr = "");
     /** Show MultiSend Dialog */
     void gotoMultiSendDialog();
-
     /** Show MultiSig Dialog */
     void gotoMultisigCreate();
     void gotoMultisigSpend();
     void gotoMultisigSign();
-
     /** Show BIP 38 tool - default to Encryption tab */
     void gotoBip38Tool();
 
@@ -262,19 +261,20 @@ class BitcoinGUI : public QMainWindow {
     void showProgress(const QString& title, int nProgress);
 };
 
-class UnitDisplayStatusBarControl : public QLabel {
+class UnitDisplayStatusBarControl : public QLabel
+{
     Q_OBJECT
 
-  public:
+public:
     explicit UnitDisplayStatusBarControl();
     /** Lets the control know about the Options Model (and its signals) */
     void setOptionsModel(OptionsModel* optionsModel);
 
-  protected:
+protected:
     /** So that it responds to left-button clicks */
     void mousePressEvent(QMouseEvent* event);
 
-  private:
+private:
     OptionsModel* optionsModel;
     QMenu* menu;
 
@@ -283,7 +283,7 @@ class UnitDisplayStatusBarControl : public QLabel {
     /** Creates context menu, its actions, and wires up all the relevant signals for mouse events. */
     void createContextMenu();
 
-  private slots:
+private slots:
     /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
     void updateDisplayUnit(int newUnits);
     /** Tells underlying optionsModel to update its current display unit. */

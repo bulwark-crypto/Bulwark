@@ -1,5 +1,6 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_TRANSACTIONVIEW_H
@@ -9,6 +10,7 @@
 
 #include <QKeyEvent>
 #include <QWidget>
+#include <QAction>
 
 class TransactionFilterProxy;
 class WalletModel;
@@ -28,10 +30,11 @@ QT_END_NAMESPACE
 /** Widget showing the transaction list for a wallet, including a filter row.
     Using the filter row, the user can view or export a subset of the transactions.
   */
-class TransactionView : public QWidget {
+class TransactionView : public QWidget
+{
     Q_OBJECT
 
-  public:
+public:
     explicit TransactionView(QWidget* parent = 0);
 
     void setModel(WalletModel* model);
@@ -56,7 +59,7 @@ class TransactionView : public QWidget {
         MINIMUM_COLUMN_WIDTH = 23
     };
 
-  private:
+private:
     WalletModel* model;
     TransactionFilterProxy* transactionProxyModel;
     QTableView* transactionView;
@@ -65,6 +68,7 @@ class TransactionView : public QWidget {
     QComboBox* watchOnlyWidget;
     QLineEdit* addressWidget;
     QLineEdit* amountWidget;
+    QAction* hideOrphansAction;
 
     QMenu* contextMenu;
     QSignalMapper* mapperThirdPartyTxUrls;
@@ -81,7 +85,7 @@ class TransactionView : public QWidget {
 
     bool eventFilter(QObject* obj, QEvent* event);
 
-  private slots:
+private slots:
     void contextualMenu(const QPoint&);
     void dateRangeChanged();
     void showDetails();
@@ -93,7 +97,7 @@ class TransactionView : public QWidget {
     void openThirdPartyTxUrl(QString url);
     void updateWatchOnlyColumn(bool fHaveWatchOnly);
 
-  signals:
+signals:
     void doubleClicked(const QModelIndex&);
 
     /**  Fired when a message should be reported to the user */
@@ -102,9 +106,11 @@ class TransactionView : public QWidget {
     /** Send computed sum back to wallet-view */
     void trxAmount(QString amount);
 
-  public slots:
+public slots:
     void chooseDate(int idx);
     void chooseType(int idx);
+    void hideOrphans(bool fHide);
+    void updateHideOrphans(bool fHide);
     void chooseWatchonly(int idx);
     void changedPrefix(const QString& prefix);
     void changedAmount(const QString& amount);

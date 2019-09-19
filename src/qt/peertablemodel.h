@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,12 +25,13 @@ struct CNodeCombinedStats {
     bool fNodeStateStatsAvailable;
 };
 
-class NodeLessThan {
-  public:
+class NodeLessThan
+{
+public:
     NodeLessThan(int nColumn, Qt::SortOrder fOrder) : column(nColumn), order(fOrder) {}
     bool operator()(const CNodeCombinedStats& left, const CNodeCombinedStats& right) const;
 
-  private:
+private:
     int column;
     Qt::SortOrder order;
 };
@@ -38,10 +40,11 @@ class NodeLessThan {
    Qt model providing information about connected peers, similar to the
    "getpeerinfo" RPC call. Used by the rpc console UI.
  */
-class PeerTableModel : public QAbstractTableModel {
+class PeerTableModel : public QAbstractTableModel
+{
     Q_OBJECT
 
-  public:
+public:
     explicit PeerTableModel(ClientModel* parent = 0);
     const CNodeCombinedStats* getNodeStats(int idx);
     int getRowByNodeId(NodeId nodeid);
@@ -65,10 +68,10 @@ class PeerTableModel : public QAbstractTableModel {
     void sort(int column, Qt::SortOrder order);
     /*@}*/
 
-  public slots:
+public slots:
     void refresh();
 
-  private:
+private:
     ClientModel* clientModel;
     QStringList columns;
     PeerTablePriv* priv;

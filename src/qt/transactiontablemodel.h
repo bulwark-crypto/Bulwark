@@ -18,10 +18,11 @@ class CWallet;
 
 /** UI model for the transaction table of a wallet.
  */
-class TransactionTableModel : public QAbstractTableModel {
+class TransactionTableModel : public QAbstractTableModel
+{
     Q_OBJECT
 
-  public:
+public:
     explicit TransactionTableModel(CWallet* wallet, WalletModel* parent = 0);
     ~TransactionTableModel();
 
@@ -63,19 +64,24 @@ class TransactionTableModel : public QAbstractTableModel {
         /** Formatted amount, without brackets when unconfirmed */
         FormattedAmountRole,
         /** Transaction status (TransactionRecord::Status) */
-        StatusRole
+        StatusRole,
+        /** Transaction size in bytes */
+        SizeRole
     };
 
     int rowCount(const QModelIndex& parent) const;
     int columnCount(const QModelIndex& parent) const;
+    int size() const;
+    bool hasZcTxes();
     QVariant data(const QModelIndex& index, int role) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
-    bool processingQueuedTransactions() {
-        return fProcessingQueuedTransactions;
-    }
+    bool processingQueuedTransactions() { return fProcessingQueuedTransactions; }
 
-  private:
+signals:
+    void txArrived(const QString& hash);
+
+private:
     CWallet* wallet;
     WalletModel* walletModel;
     QStringList columns;
@@ -97,7 +103,7 @@ class TransactionTableModel : public QAbstractTableModel {
     QVariant txWatchonlyDecoration(const TransactionRecord* wtx) const;
     QVariant txAddressDecoration(const TransactionRecord* wtx) const;
 
-  public slots:
+public slots:
     /* New transaction, or transaction changed status */
     void updateTransaction(const QString& hash, int status, bool showTransaction);
     void updateConfirmations();
@@ -105,9 +111,7 @@ class TransactionTableModel : public QAbstractTableModel {
     /** Updates the column title to "Amount (DisplayUnit)" and emits headerDataChanged() signal for table headers to react. */
     void updateAmountColumnTitle();
     /* Needed to update fProcessingQueuedTransactions through a QueuedConnection */
-    void setProcessingQueuedTransactions(bool value) {
-        fProcessingQueuedTransactions = value;
-    }
+    void setProcessingQueuedTransactions(bool value) { fProcessingQueuedTransactions = value; }
 
     friend class TransactionTablePriv;
 };

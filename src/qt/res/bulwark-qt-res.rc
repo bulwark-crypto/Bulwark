@@ -19,14 +19,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bulwark"
-            VALUE "FileDescription",    "Bulwark Core (OSS GUI client for Bulwark)"
+            VALUE "CompanyName",        "TRANSCENDENCE"
+            VALUE "FileDescription",    "TRANSCENDENCE Core (OSS GUI client for TRANSCENDENCE)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "bulwark-qt"
+            VALUE "InternalName",       "pivx-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "bulwark-qt.exe"
-            VALUE "ProductName",        "Bulwark Core"
+            VALUE "ProductName",        "TRANSCENDENCE Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

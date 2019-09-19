@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,7 +18,8 @@ class OptionsModel;
 class SendCoinsEntry;
 class SendCoinsRecipient;
 
-namespace Ui {
+namespace Ui
+{
 class SendCoinsDialog;
 }
 
@@ -26,10 +28,11 @@ class QUrl;
 QT_END_NAMESPACE
 
 /** Dialog for sending bitcoins */
-class SendCoinsDialog : public QDialog {
+class SendCoinsDialog : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     explicit SendCoinsDialog(QWidget* parent = 0);
     ~SendCoinsDialog();
 
@@ -45,17 +48,17 @@ class SendCoinsDialog : public QDialog {
     bool handlePaymentRequest(const SendCoinsRecipient& recipient);
     bool fSplitBlock;
 
-  public slots:
+public slots:
     void clear();
     void reject();
     void accept();
     SendCoinsEntry* addEntry();
     void updateTabsAndLabels();
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
                     const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 
-  private:
+private:
     Ui::SendCoinsDialog* ui;
     ClientModel* clientModel;
     WalletModel* model;
@@ -70,7 +73,7 @@ class SendCoinsDialog : public QDialog {
     void minimizeFeeSection(bool fMinimize);
     void updateFeeMinimizedLabel();
 
-  private slots:
+private slots:
     void on_sendButton_clicked();
     void on_buttonChooseFee_clicked();
     void on_buttonMinimizeFee_clicked();
@@ -98,7 +101,7 @@ class SendCoinsDialog : public QDialog {
     void updateSmartFeeLabel();
     void updateGlobalFeeVariables();
 
-  signals:
+signals:
     // Fired when a message should be reported to the user
     void message(const QString& title, const QString& message, unsigned int style);
 };

@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +15,8 @@ class TransactionFilterProxy;
 class TxViewDelegate;
 class WalletModel;
 
-namespace Ui {
+namespace Ui
+{
 class OverviewPage;
 }
 
@@ -23,10 +25,11 @@ class QModelIndex;
 QT_END_NAMESPACE
 
 /** Overview ("home") page widget */
-class OverviewPage : public QWidget {
+class OverviewPage : public QWidget
+{
     Q_OBJECT
 
-  public:
+public:
     explicit OverviewPage(QWidget* parent = 0);
     ~OverviewPage();
 
@@ -34,15 +37,16 @@ class OverviewPage : public QWidget {
     void setWalletModel(WalletModel* walletModel);
     void showOutOfSyncWarning(bool fShow);
 
-  public slots:
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
+public slots:
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
                     const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
+    void hideOrphans(bool fHide);
 
-  signals:
+signals:
     void transactionClicked(const QModelIndex& index);
 
-  private:
+private:
     QTimer* timer;
     Ui::OverviewPage* ui;
     ClientModel* clientModel;
@@ -57,12 +61,12 @@ class OverviewPage : public QWidget {
     CAmount currentWatchUnconfBalance;
     CAmount currentWatchImmatureBalance;
     int nDisplayUnit;
-    void getPercentage(CAmount nTotalBalance, CAmount nZerocoinBalance, QString& sBWKPercentage, QString& szBWKPercentage);
+    void getPercentage(CAmount nTotalBalance, CAmount nZerocoinBalance, QString& sPIVPercentage, QString& szBWKPercentage);
 
     TxViewDelegate* txdelegate;
     TransactionFilterProxy* filter;
 
-  private slots:
+private slots:
     void updateDisplayUnit();
     void handleTransactionClicked(const QModelIndex& index);
     void updateAlerts(const QString& warnings);

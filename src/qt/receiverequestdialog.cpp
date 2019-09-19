@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +11,6 @@
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "walletmodel.h"
-#include "qtmaterialflatbutton.h"
 
 #include <QClipboard>
 #include <QDrag>
@@ -27,7 +27,8 @@
 #include <qrencode.h>
 #endif
 
-QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0) {
+QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0)
+{
     contextMenu = new QMenu();
     QAction* saveImageAction = new QAction(tr("&Save Image..."), this);
     connect(saveImageAction, SIGNAL(triggered()), this, SLOT(saveImage()));
@@ -37,13 +38,15 @@ QRImageWidget::QRImageWidget(QWidget* parent) : QLabel(parent), contextMenu(0) {
     contextMenu->addAction(copyImageAction);
 }
 
-QImage QRImageWidget::exportImage() {
+QImage QRImageWidget::exportImage()
+{
     if (!pixmap())
         return QImage();
     return pixmap()->toImage().scaled(EXPORT_IMAGE_SIZE, EXPORT_IMAGE_SIZE);
 }
 
-void QRImageWidget::mousePressEvent(QMouseEvent* event) {
+void QRImageWidget::mousePressEvent(QMouseEvent* event)
+{
     if (event->button() == Qt::LeftButton && pixmap()) {
         event->accept();
         QMimeData* mimeData = new QMimeData;
@@ -57,7 +60,8 @@ void QRImageWidget::mousePressEvent(QMouseEvent* event) {
     }
 }
 
-void QRImageWidget::saveImage() {
+void QRImageWidget::saveImage()
+{
     if (!pixmap())
         return;
     QString fn = GUIUtil::getSaveFileName(this, tr("Save QR Code"), QString(), tr("PNG Image (*.png)"), NULL);
@@ -66,21 +70,24 @@ void QRImageWidget::saveImage() {
     }
 }
 
-void QRImageWidget::copyImage() {
+void QRImageWidget::copyImage()
+{
     if (!pixmap())
         return;
     QApplication::clipboard()->setImage(exportImage());
 }
 
-void QRImageWidget::contextMenuEvent(QContextMenuEvent* event) {
+void QRImageWidget::contextMenuEvent(QContextMenuEvent* event)
+{
     if (!pixmap())
         return;
     contextMenu->exec(event->globalPos());
 }
 
 ReceiveRequestDialog::ReceiveRequestDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::ReceiveRequestDialog),
-    model(0) {
+                                                              ui(new Ui::ReceiveRequestDialog),
+                                                              model(0)
+{
     ui->setupUi(this);
 
 #ifndef USE_QRCODE
@@ -91,11 +98,13 @@ ReceiveRequestDialog::ReceiveRequestDialog(QWidget* parent) : QDialog(parent, Qt
     connect(ui->btnSaveAs, SIGNAL(clicked()), ui->lblQRCode, SLOT(saveImage()));
 }
 
-ReceiveRequestDialog::~ReceiveRequestDialog() {
+ReceiveRequestDialog::~ReceiveRequestDialog()
+{
     delete ui;
 }
 
-void ReceiveRequestDialog::setModel(OptionsModel* model) {
+void ReceiveRequestDialog::setModel(OptionsModel* model)
+{
     this->model = model;
 
     if (model)
@@ -105,12 +114,14 @@ void ReceiveRequestDialog::setModel(OptionsModel* model) {
     update();
 }
 
-void ReceiveRequestDialog::setInfo(const SendCoinsRecipient& info) {
+void ReceiveRequestDialog::setInfo(const SendCoinsRecipient& info)
+{
     this->info = info;
     update();
 }
 
-void ReceiveRequestDialog::update() {
+void ReceiveRequestDialog::update()
+{
     if (!model)
         return;
     QString target = info.label;
@@ -124,7 +135,7 @@ void ReceiveRequestDialog::update() {
     html += "<html><font face='verdana, arial, helvetica, sans-serif'>";
     html += "<b>" + tr("Payment information") + "</b><br>";
     html += "<b>" + tr("URI") + "</b>: ";
-    html += "<a style=\"color:#000000;\" href=\"" + uri + "\">" + GUIUtil::HtmlEscape(uri) + "</a><br>";
+    html += "<a style=\"color:#5B4C7C;\" href=\"" + uri + "\">" + GUIUtil::HtmlEscape(uri) + "</a><br>";
     html += "<b>" + tr("Address") + "</b>: " + GUIUtil::HtmlEscape(info.address) + "<br>";
     if (info.amount)
         html += "<b>" + tr("Amount") + "</b>: " + BitcoinUnits::formatWithUnit(model->getDisplayUnit(), info.amount) + "<br>";
@@ -164,14 +175,12 @@ void ReceiveRequestDialog::update() {
 #endif
 }
 
-void ReceiveRequestDialog::on_btnCopyURI_clicked() {
+void ReceiveRequestDialog::on_btnCopyURI_clicked()
+{
     GUIUtil::setClipboard(GUIUtil::formatBitcoinURI(info));
 }
 
-void ReceiveRequestDialog::on_closeButton_clicked() {
-    this->close();
-}
-
-void ReceiveRequestDialog::on_btnCopyAddress_clicked() {
+void ReceiveRequestDialog::on_btnCopyAddress_clicked()
+{
     GUIUtil::setClipboard(info.address);
 }

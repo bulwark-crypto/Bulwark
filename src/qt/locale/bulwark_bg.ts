@@ -10,36 +10,36 @@
         <translation>Създайте нов адрес</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Нов</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Нов</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Копиране на избраните адреси в системния буфер</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Копирай</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Копирай</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Изтриване на избраните адреси от списъка</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Изтрий</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Изтрий</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Експортиране информацията от сегашния таб във файл</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Експортиране</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Експортиране</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Затвори</translation>
+        <source>C&amp;lose</source>
+        <translation>&amp;Затвори</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Изберете адрес, в който да получавате монети</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Избери</translation>
+        <source>C&amp;hoose</source>
+        <translation>Из&amp;бери</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Получаващ адрес</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Това са вашите Bulwark адреси за изпращане на плащания. Винаги проверявайте количеството и адреса на получателя, преди да изпратите монети.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Това са вашите BWK адреси за изпращане на плащания. Винаги проверявайте количеството и адреса на получателя, преди да изпратите монети.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Това са вашите Bulwark адреси за получаване на плащания. Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Това са вашите BWK адреси за получаване на плащания. Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Копиране на адреса</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Копиране на адреса</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Копиране на Етикета</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Копиране на &amp;Етикета</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Редактиране</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Редактиране</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>Потвърдете шифрирането на портфейла</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия Bulwark от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия BWK от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Сигурни ли сте, че искате да шифрирате вашия портфейл?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ Bulwark&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 инструменти</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Шифриране</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Шифриране</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Адрес:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Въведете Bulwark адрес, който искате да криптиране с BIP 38. Въведете парола в средното поле. Натиснете 'криптирай', за да се изчисли криптирания таен ключ. </translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Въведете Pivx адрес, който искате да криптиране с BIP 38. Въведете парола в средното поле. Натиснете 'криптирай', за да се изчисли криптирания таен ключ. </translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>Bulwark Адреса за криптиране</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>BWK Адреса за криптиране</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>Копирай сегашния подпис в системния буфер</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>Криптирай тайния ключ за този Bulwark адрес</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>Криптирай тайния ключ за този BWK адрес</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,24 +306,24 @@
         <translation>Разшифровай въведения ключ с парола</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Шифрирай ключ</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Шифрирай &amp;ключ</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Изчисти Всички</translation>
+        <source>Clear &amp;All</source>
+        <translation>Изчисти &amp;Всички</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Дешфриране</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Дешфриране</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Въведете личният си BIP 38 ключ. Въведете тайната фраза в средното поле. Избери Дешифриращия Ключ за да изчислим личния ключ. След като ключа се дешифрира, за да добаите ключа към портфейла, кликнете "Импортирай адрес".</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Дешифрирай Ключ</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Дешифрирай &amp;Ключ</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -409,24 +409,24 @@
         <translation>Ноуд</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Общ Изглед</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Общ Изглед</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Покажи общия изглед на портфейла</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Изпрати</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Изпрати</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Получи</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Получи</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Tранзакции</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Tранзакции</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -434,115 +434,115 @@
     </message>
     <message>
         <source>Privacy Actions for zBWK</source>
-        <translation>Поверителни Действия за zBWK</translation>
+        <translation>Поверителни Действия за ZBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Изход</translation>
+        <source>E&amp;xit</source>
+        <translation>Из&amp;ход</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Затоври приложението</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Относно Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>Относно &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Покази информация за Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Опции...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Опции...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Покажи / Скрий</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Покажи / Скрий</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Покажи или скрий главния прозорец</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Шифрирай Портфейла...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Шифрирай Портфейла...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Шифрирай личните ключове на портфейла</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Резерва на портфейла...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Резерва на портфейла...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Направи резерва на друго място</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Промени фразата...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Промени фразата...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Промени фразата използвана за шифриране</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Отключи Портфейла...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Отключи Портфейла...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Отключване на портфейла</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Заключи портфейла</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Заключи портфейла</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Подпиши съобщение...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Подпиши &amp;съобщение...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Провери съобщение...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Провери съобщение...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Информация</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Информация</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Покажи диагностична информация</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Конзолен Дебъг</translation>
+        <source>&amp;Debug console</source>
+        <translation>Конзолен &amp;Дебъг</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Отвори дебъг конзола</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Мрежови мониторинг</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Мрежови мониторинг</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Покажи мрежовия монитор</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Списък с участници</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Списък с участници</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Покажи информация за участниците</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Поправка на Портфейла</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;Поправка на Портфейла</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -553,64 +553,60 @@
         <translation>Отвори конфигурационния файл</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Покажи автоматичните Резерви</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Покажи автоматичните &amp;Резерви</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Покажи автоматично създадените резерви</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Изпращане на адреси...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Изпращане на адреси...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Покази списък с използваните адреси и етикети</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Получаващи адреси...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Получаващи адреси...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Покажи списък с използваните получаващи адреси</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>Създаване на Мултиподпис</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>Създаване на &amp;Мултиподпис</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Създаване на нов мултиподписен адрес и добавянето му към този портфейл</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>Разход с Мултиподпис...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>Разход с &amp;Мултиподпис...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Направи разход от адрес с мултиподпис</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>Подписване с Мултиподпис...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>Подписване с &amp;Мултиподпис...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>Подпиши с мултиподписен адрес</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Отвори URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Отвори &amp;URI...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>Опции за Командното-поле</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Обработени %n блока от преводната история.</numerusform><numerusform>Обработени %n блока от преводна история.</numerusform></translation>
+        <source>&amp;Command-line options</source>
+        <translation>Опции за &amp;Командното-поле</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,120 +621,116 @@
         <translation>Портфейла е &lt;b&gt;криптиран&lt;/b&gt; и в момента &lt;b&gt;отключен&lt;/b&gt; за анонимизация и съхранение.</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Файл</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Настройки</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Настройки</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Инструменти</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Инструменти</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Помощ</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Помощ</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Колан с инструменти</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ядро</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ядро</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Изпратете монети до Bulwark адрес</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Изпратете монети до BWK адрес</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Поискай плащане (генерира QR кодове и  Bulwark:URI)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Поискай плащане (генерира QR кодове и  BWK:URI)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Поверителност</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Поверителност</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Мастърноуд</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Мастърноуд</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Разгледай мастърноудове</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Относно Bulwark Ядрото</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;Относно BWK Ядрото</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Информациза за Bulwark Ядрото</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Информациза за BWK Ядрото</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Промени Bulwark конфигурацията</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Промени BWK конфигурацията</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Подпишете съобщения със своте Bulwark адреси, за да докажете че са Ваши</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Подпишете съобщения със своте BWK адреси, за да докажете че са Ваши</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Проеврете съобщения, за да се убедите, че са подписани с указаните Bulwark адреси</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Проеврете съобщения, за да се убедите, че са подписани с указаните BWK адреси</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 инструмент</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 инструмент</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Шифрирай и дешифрирай личните ключове с фраза</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>МултиИзпращане</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;МултиИзпращане</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Настройки за МултиИзпращане</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Отвори Конфигурационния Файл на Портфейла</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Отвори &amp;Конфигурационния Файл на Портфейла</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Отвори Мастърноуд Конфигурационния Файл</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Отвори &amp;Мастърноуд Конфигурационния Файл</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Отвори Мастърноуд конфигурационния файл</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Отвори Bulwark:URI платежно нареждане</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Отвори BWK:URI платежно нареждане</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Блокчейн сонда</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Блокчейн сонда</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Прозорец на блок сондата</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Разкрийте Помощ за Bulwark Ядрото, за да видите списък с възможни писмени команди.</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Разкрийте Помощ за BWK Ядрото, за да видите списък с възможни писмени команди.</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Клиент Bulwark Ядро</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform> %n активни свръзки към Bulwark мрежата </numerusform><numerusform>%n активни свръзка(и) към Bulwark мрежата </numerusform></translation>
+        <source>BWK Core client</source>
+        <translation>Клиент BWK Ядро</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,21 +752,9 @@
         <source>Up to date</source>
         <translation>Актуален</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n часа</numerusform><numerusform>%n часа</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n седмици</numerusform><numerusform>%n седмици</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 и %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n години</numerusform><numerusform>%n години</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -846,7 +826,7 @@ Address: %4
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>АвтоЕмитирането е включено в момента и настроено на </translation>
+        <translation>АвтоЕмисията е включена и настроена на</translation>
     </message>
     <message>
         <source>AutoMint is disabled</source>
@@ -860,7 +840,7 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Портфейла е &lt;b&gt;шифриран&lt;/b&gt; и в момента е &lt;b&gt;отключен&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -888,8 +868,8 @@ Address: %4
         <translation>ТекстовЕтикет</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Не всички преводи ще бъдат показани. За да разгледате всички преводи, трябва да зададете txindex=1 в конфигурационния файл (bulwark.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Не всички преводи ще бъдат показани. За да разгледате всички преводи, трябва да зададете txindex=1 в конфигурационния файл (pivx.conf).</translation>
     </message>
 </context>
 <context>
@@ -1126,8 +1106,8 @@ Address: %4
         <translation>Етикета става червен, когато получателя ще получи сума по-малка от %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Може да има разлика от +/- %1 uBulwark на вх.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Може да има разлика от +/- %1 upiv на вх.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1149,16 +1129,16 @@ Address: %4
         <translation>Промени Адреса</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Етикет</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Етикет</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>Етикета асоцииран с този адрес</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Адрес</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Адрес</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1181,8 +1161,8 @@ Address: %4
         <translation>Редактирай адрес за изпращане</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Зададения адрес "%1"не е валиден Bulwark адрес.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Зададения адрес "%1"не е валиден BWK адрес.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1221,22 +1201,33 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>От</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>версия</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ядро</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ядро</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Относно Bulwark Ядрото</translation>
+        <source>About BWK Core</source>
+        <translation>Относно BWK Ядрото</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1282,16 +1273,16 @@ Address: %4
         <translation>Привет</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Добре Дошли в Bulwark Ядрото</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Добре Дошли в BWK Ядрото</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Тъй като това е първия път, в който стартирате програмата, имате възможността да изберете къде Bulwark Ядрото ще съхранява своите данни.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Тъй като това е първия път, в който стартирате програмата, имате възможността да изберете къде BWK Ядрото ще съхранява своите данни.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Ядрото ще изтегли и запише копие на целия Bulwark блокчейн. Поне %1 гигабайта ще бъдат съхранявани в тази папка, като тенденцията е файла да расте. Портфейла също ще бъде запазен в тази папка.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Ядрото ще изтегли и запише копие на целия BWK блокчейн. Поне %1 гигабайта ще бъдат съхранявани в тази папка, като тенденцията е файла да расте. Портфейла също ще бъде запазен в тази папка.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1302,8 +1293,8 @@ Address: %4
         <translation>Задай своя папка за данни:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ядро</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ядро</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1365,20 +1356,20 @@ Address: %4
         <translation>Публичен адрес</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Започни псевдоним</translation>
+        <source>S&amp;tart alias</source>
+        <translation>&amp;Започни псевдоним</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Започни всички</translation>
+        <source>Start &amp;all</source>
+        <translation>Започни &amp;всички</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Започни ЛИПСВАЩ</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Започни &amp;ЛИПСВАЩ</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Обнови състояние</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Обнови състояние</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1444,12 +1435,12 @@ Address: %4
         <translation>Въведете адреса на Получателя</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>МултиИзпращане Ви позволява автоматично да изпращате до 100% от вашите стейк или мастърноуд възнаграждения към списък от други Bulwark адреси.
-Да Добавите: въведете процент и задайте Bulwark адрес към вектора за МултиИзпращане
+        <translation>МултиИзпращане Ви позволява автоматично да изпращате до 100% от вашите стейк или мастърноуд възнаграждения към списък от други BWK адреси.
+Да Добавите: въведете процент и задайте BWK адрес към вектора за МултиИзпращане
 Да Прамахнете: Въведете адрес за изстриване и натиснете истрий (del).
 МултиИзпращането няма да бъде активирано докато не кликнете "Активирай"</translation>
     </message>
@@ -1538,48 +1529,8 @@ MultiSend will not be activated unless you have clicked Activate</source>
         <translation>(без етикет)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Въведения адрес:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>е невалиден.
-Моля проверете адреса отново и опитайте пак.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Сумата по Вашия вектор за МултиИзпращане надхвърля 100% от вашето стейк възнаграждение.
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Използвайте числата 1 - 100 за процент.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>МултиСенд е успешно запазен в паметта, но свойствата не бяха записани в базата данни.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Вектор по МултиИзпращане
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Премахнат</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Не намирам адреса
-</translation>
     </message>
 </context>
 <context>
@@ -1589,8 +1540,8 @@ Please check the address and try again.</source>
         <translation>Взаимодействия с Мултиподписния Адрес</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>Създай МултиПодпис Адрес</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>Създай МултиПодпис &amp;Адрес</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1609,8 +1560,8 @@ Please check the address and try again.</source>
         <translation>Добави друг адрес, който може да подпише за оторизация на превод от мултиподписния адрес.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>Добави Адрес / Ключ</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;Добави Адрес / Ключ</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1621,8 +1572,8 @@ Please check the address and try again.</source>
         <translation>Създай нов мултиподписен адрес</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Създай</translation>
+        <source>C&amp;reate</source>
+        <translation>Съ&amp;здай</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1637,12 +1588,12 @@ Please be patient after clicking import.</source>
 Бъдете търпеливи след старта на Импортирането.</translation>
     </message>
     <message>
-        <source>Import Redeem</source>
-        <translation>Импортирай Погасяване</translation>
+        <source>&amp;Import Redeem</source>
+        <translation>&amp;Импортирай Погасяване</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation>Създай МултиПодписна Т-я</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>&amp;Създай МултиПодписна Т-я</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1677,24 +1628,24 @@ Please be patient after clicking import.</source>
         <translation>Адрес / Сума:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Добави получател на Bulwark</translation>
+        <source>Add destinations to send BWK to</source>
+        <translation>Добави получател на BWK</translation>
     </message>
     <message>
-        <source>Add Destination</source>
-        <translation>Добави Получател</translation>
+        <source>Add &amp;Destination</source>
+        <translation>Добави &amp;Получател</translation>
     </message>
     <message>
         <source>Create a transaction object using the given inputs to the given outputs</source>
         <translation>Създай преводен обект със зададените вход. към зададените изходи</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>Създай</translation>
+        <source>Cr&amp;eate</source>
+        <translation>Съ&amp;здай</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>Подпиши МултиПодписна т-я</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>&amp;Подпиши МултиПодписна т-я</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1705,24 +1656,24 @@ Please be patient after clicking import.</source>
         <translation>Подпиши транзакцията от този портфейл или от зададения таен ключ</translation>
     </message>
     <message>
-        <source>Sign</source>
-        <translation>Подпиши</translation>
+        <source>S&amp;ign</source>
+        <translation>П&amp;одпиши</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ИЗКЛЮЧЕН докато превода се подпише нужния брой пъти.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Commit</source>
-        <translation>Ангажирай</translation>
+        <source>Co&amp;mmit</source>
+        <translation>Анга&amp;жирай</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
         <translation>Добави тайни ключове, с които ще се подписва превода</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
-        <translation>Добави Таен Ключ</translation>
+        <source>Add Private &amp;Key</source>
+        <translation>Добави Таен &amp;Ключ</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1751,73 +1702,6 @@ Please be patient after clicking import.</source>
     <message>
         <source>Maximum (15)</source>
         <translation>Максимум (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Конфигурирай Обфускацията</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Елементарна Поверителност</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Високо ниво на Поверителност</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Максимална Поверителност</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Изберете ниво на поверителност.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Използвай 16 различни мастърноуда</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Това е най-бързия метод и ще струва около 0.025 Bulwark за да скриете 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Тази опция е сравнително бърза и ще струва около 0.05 Bulwark за да скриете 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Това е най-бавния и най-сигурен вариант за скриване на Bulwark. Използването й ще струва</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 Bulwark за 10000 скрити Bulwark</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Конфигурация на Обфускацията</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на елементарно ниво (%1 и 2 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на високо ниво (%1 и 8 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>Обфускацията е успешно конфигурирана на максимално ниво (%1 и 16 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
     </message>
 </context>
 <context>
@@ -1850,19 +1734,19 @@ Please be patient after clicking import.</source>
         <translation>Опции</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Главен</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Главен</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Размер на кеша в базата данни</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Размер на кеша в &amp;базата данни</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>Мегабайта</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
+        <source>Number of script &amp;verification threads</source>
         <translation>Брой проверяващи нишки</translation>
     </message>
     <message>
@@ -1870,16 +1754,16 @@ Please be patient after clicking import.</source>
         <translation>(0 = автоматичен, &lt;0 = остави толкова ядра неангажирани)</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Портфейл</translation>
+        <source>W&amp;allet</source>
+        <translation>Порт&amp;фейл</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Aко изключите харча на непотвърдено ресто, рестото от превод&lt;br/&gt;не може да се използва, докато превода не получи поне 1 потвърждение. &lt;br/&gt;Това влияе и на начина по който общите Ви средства се преизчисляват.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматично отвори Bulwark порта в рутера. Това става само ако рутера Ви подържа UPnP и последния е включен.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматично отвори BWK порта в рутера. Това става само ако рутера Ви подържа UPnP и последния е включен.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1890,28 +1774,28 @@ Please be patient after clicking import.</source>
         <translation>Приемай входящи свръзки</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>Свуржи се чрез SOCKS5 прокси (по подразбиране):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Свуржи се чрез SOCKS5 прокси (по подразбиране):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>Експерт</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Стартирай Bulwark автоматично след влизане в системата.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Стартирай BWK автоматично след влизане в системата.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Стартирай Bulwark заедно с операционната система</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;Стартирай BWK заедно с операционната система</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Дали да показва възможностите за контрол на монетите или не.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>Включи възможностите за контрол на монетите.</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>Включи възможностите за &amp;контрол на монетите.</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1922,46 +1806,46 @@ Please be patient after clicking import.</source>
         <translation>Покажи Мастърноуд Таба</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>Похарви непотвърденото ресто</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;Похарви непотвърденото ресто</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Мрежа</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Мрежа</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
         <translation>Промяна на езика. Настройката е активна след рестарт на портфейла.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>Липсващ език или непълен превод? Помогнете с преводите тук:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>Картографирай портовете използвайки UPnP</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>Картографирай портовете използвайки &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>Включи автоматичното емитиране на Bulwark единици в zBWK</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>Включи автоматичното емитиране на BWK единици в zBWK</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>Включи Автоматично емитиране на zBWK</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент от входящите Bulwark, който автоматично да се конвертира в zBWK посредтвом Zerocoin Протокола (мин: 10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>Процент от входящите BWK, който автоматично да се конвертира в zBWK посредтвом Zerocoin Протокола (мин: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>Процент автоматично сечени zBWK</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
-        <translation>Не бързай с автоматичното конвертиране в zBWK докато не се съберат достатъчно Bulwark за тази деноминация</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
+        <translation>Не бързай с автоматичното конвертиране в zBWK докато не се съберат достатъчно BWK за тази деноминация</translation>
     </message>
     <message>
         <source>Preferred Automint zBWK Denomination</source>
@@ -1972,60 +1856,56 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Праг на споделеното съхранение:</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>Свържи се с Bulwark мрежата със SOCKS5 прокси.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>Свържи се с BWK мрежата със SOCKS5 прокси.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Прокси IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Прокси &amp;IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP адрес на проксито (например: IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Порт:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Порт:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Порт за проксито (например 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Прозорец</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Прозорец</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>Показвай само системна иконка след минимизране на портфейла.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>Минимизирай в системния трей вместо в работната лента.</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;Минимизирай в системния трей вместо в работната лента.</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>Минимизирай вместо да затваряш програмата, когато прозореца се затвори. Когато тази опция е включена, програмата може да бъде напълно затворена само от "Излез" в менюто.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>Минимизирай при затваряне</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>М&amp;инимизирай при затваряне</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Екранизация</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Екранизация</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
+        <source>User Interface &amp;language:</source>
         <translation>Език на интерфейса:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>Тема на интерфейса:</translation>
-    </message>
-    <message>
-        <source>Unit to show amounts in:</source>
-        <translation>Мерни единици:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2056,16 +1936,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Възстанови всички опции до техните критерии по подразбиране.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Възстанови Опциите</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Възстанови Опциите</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Отказ</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Отказ</translation>
     </message>
     <message>
         <source>Any</source>
@@ -2127,8 +2007,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Обща Наличност, включително и неналичните монети.</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark Наличности</translation>
+        <source>BWK Balance</source>
+        <translation>BWK Наличности</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2151,8 +2031,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Сегашния баланс по портфейли в режим на наблюдение само</translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>Вашите Bulwark наличности, включително непотвърдените и неузрели преводи</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>Вашите BWK наличности, включително непотвърдените и неузрели преводи</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -2171,8 +2051,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 Неузрели: потвърдени, но с по-малко от 1 емисии от същата деноминация след като са биле емитирани</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Bulwark мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с BWK мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2215,8 +2095,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>Налични за харчене:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>Заключен Bulwark или допълнителни гаранции в Главни Възли. Тези не са включени в zBWK емитирането.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>Заключен BWK или допълнителни гаранции в Главни Възли. Тези не са включени в zBWK емитирането.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2243,14 +2123,14 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>АвтоЕмисията е включена и настроена на</translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>Да изключите АвтоЕмисия добавете  'enablezeromint=0' в bulwark.conf файла.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>Да изключите АвтоЕмисия добавете  'enablezeromint=0' в pivx.conf файла.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>АвтоЕмисия е изключено.
-За да включите АвтоЕмисия сменете 'enablezeromint=0' на 'enablezeromint=1' в bulwark.conf файла.</translation>
+За да включите АвтоЕмисия сменете 'enablezeromint=0' на 'enablezeromint=1' в pivx.conf файла.</translation>
     </message>
 </context>
 <context>
@@ -2276,12 +2156,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>Грешен адрес за плащане %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Провал при стартирането на Bulwark: click-to-pay обработвател</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>Провал при стартирането на pivx: click-to-pay обработвател</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URI не може да се парсне. Вероятна причина е невалиден Bulwark адрес или зле-форматирани URI Параметри.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URI не може да се парсне. Вероятна причина е невалиден BWK адрес или зле-форматирани URI Параметри.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2366,8 +2246,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>Zerocoin Действия:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Bulwark мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с BWK мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2382,36 +2262,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Наличните за емитиране са онези монети, които са биле потвърдени и не са заключени като гаранция в Главни Възли.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Налични за сечене:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>Ресетна базата данни на Zerocoin Портфейла. Изтрива преводите, които не са успели да се качат на блокчена.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>Ресет</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Монетен контрол...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Количество:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Сума:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2428,10 +2284,6 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
     <message>
         <source>PRIVACY</source>
         <translation>КОНФИДЕНЦИАЛНОСТ</translation>
-    </message>
-    <message>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation>Въведете колко Bulwark  да се конвертират в zBWK</translation>
     </message>
     <message>
         <source>zBWK Control</source>
@@ -2474,23 +2326,11 @@ zBWK са узрели, тогава когато имат повече от 20 
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Сигурност на Zerocoin Преводите. Повече - означава по-добра сигурност, но изисква повече време и ресурси.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Сигурност:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Ниво на Сигурност 1 - 100 (42 по подразбиране)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
+        <source>Pay &amp;To:</source>
         <translation>Плати На:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
         <translation>Адреса на който да изпратим плащането. Ако е празно - плащането е до себе си.</translation>
     </message>
     <message>
@@ -2510,7 +2350,7 @@ zBWK са узрели, тогава когато имат повече от 20 
         <translation>Алт+П</translation>
     </message>
     <message>
-        <source>Label:</source>
+        <source>&amp;Label:</source>
         <translation>Етикет:</translation>
     </message>
     <message>
@@ -2518,7 +2358,7 @@ zBWK са узрели, тогава когато имат повече от 20 
         <translation>Въведете етикет за този адрес.</translation>
     </message>
     <message>
-        <source>Amount:</source>
+        <source>A&amp;mount:</source>
         <translation>Сума:</translation>
     </message>
     <message>
@@ -2567,8 +2407,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to bulwark.conf
-- disable: add 'enablezeromint=0' to bulwark.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -2577,8 +2417,8 @@ To change the percentage (no restart required):
         <translation>Покажи състоянието на автоматичното zBWK емитиране.
 
 За да пормените състоянието (изисква рестарт):
-- вклчване: добавете 'enablezeromint=1' в bulwark.conf
-- изключване: добавете 'enablezeromint=0' в bulwark.conf
+- вклчване: добавете 'enablezeromint=1' в pivx.conf
+- изключване: добавете 'enablezeromint=0' в pivx.conf
 
 За промяна в процентите (не изисква рестарт):
 - меню Настройки -&gt; Опции -&gt; Процент на автоемитиран zBWK
@@ -2749,32 +2589,10 @@ To change the percentage (no restart required):
         <translation>Състояние на монето-сечене: OK</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Копирай количеството</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Копирай сумата</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>Стартиране на ResetMintZerocoin: сканираме цялия блокчейн, това ще изисква около 30 минути, в зависимост от вашия компютър.
 Моля изчакате...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Харчене на Zerocoin.
-Математически скъп превод, който може да има нужда от няколко минути за потвърждение, в зависимост от избраното Ниво на Сигурност и Вашият хардуер.
-Моля проявете търпение...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) нужни.
-Максимум позволени:</translation>
     </message>
     <message>
         <source>zBWK Spend #: </source>
@@ -2873,32 +2691,6 @@ Maximum allowed: </source>
         <translation>Деноминация. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Грешка: Портфейла е заключен. Моля първо въведете Вашата парола.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Съобщение: Въведете стойност &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Сечене</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Успешно изсечени</translation>
-    </message>
-    <message>
-        <source> zBWK in </source>
-        <translation>zBWK в</translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation>сек. Използвани деноминации:
-</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>Времетраене:</translation>
     </message>
@@ -2917,8 +2709,8 @@ Maximum allowed: </source>
         <translation>Без 'Плати На' адрес, плащането е локално</translation>
     </message>
     <message>
-        <source>Invalid BWK address</source>
-        <translation>Невалиден Bulwark адрес</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Невалиден BWK адрес</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2941,43 +2733,16 @@ Maximum allowed: </source>
         <translation>на ново-генериран (неизползван до сега и поради това - анонимен) локален адрес &lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>с Ниво на Сигурност</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Потвърждаване на изпращането</translation>
-    </message>
-    <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Версия 1 zBWK изисква ниво на сигурност от 100 за успешно изразходване.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zBWK</source>
-        <translation>Неуспешно изразходване на zBWK</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation>Неуспешно извличане на мента, свързана със сериен хеш</translation>
     </message>
     <message>
-        <source>Too much inputs (</source>
-        <translation>Твърде много входящи (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Или емитирайте по-големи деноминации (за да се ползват по малко входящи) или намалете сумата за плащане.</translation>
-    </message>
-    <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Харченето на Zerocoin се провали със статус =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of BWK to convert to zBWK</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3013,14 +2778,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Сума</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Задайте Bulwark адрес (например %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>Задайте BWK адрес (например %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3062,16 +2830,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 милисек.</translation>
     </message>
-</context>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Ядро</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Запази Картинката...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Запази Картинката...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>Копирай Картинката</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;Копирай Картинката</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -3089,8 +2861,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Колан с инструменти</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Информация</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Информация</translation>
     </message>
     <message>
         <source>General</source>
@@ -3113,8 +2885,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Брой свръзки</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Отвори</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Отвори</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -3157,28 +2929,28 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Блокчейн</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Отвори Bulwark дебъг лог файла от сегашната папка. Това може да отнеме известно време за по-дълги файлове.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Отвори BWK дебъг лог файла от сегашната папка. Това може да отнеме известно време за по-дълги файлове.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>Брой мастърноудове</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>Конзола</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;Конзола</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>Изчисти конзолата</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>Мрежови Трафик</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;Мрежови Трафик</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Изчисти</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Изчисти</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -3193,8 +2965,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изпратени</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Пиъри</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Пиъри</translation>
     </message>
     <message>
         <source>Banned peers</source>
@@ -3253,8 +3025,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ping отговор</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Поправка на портфейла</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Поправка на портфейла</translation>
     </message>
     <message>
         <source>Delete local Blockchain Folders</source>
@@ -3373,36 +3145,36 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изходящи:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Добре Дошли в RPC конзолата на Bulwark.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>Добре Дошли в RPC конзолата на BWK.</translation>
     </message>
     <message>
-        <source>Disconnect Node</source>
-        <translation>Изключи Възела</translation>
+        <source>&amp;Disconnect Node</source>
+        <translation>&amp;Изключи Възела</translation>
     </message>
     <message>
         <source>Ban Node for</source>
         <translation>Забрани Възела за</translation>
     </message>
     <message>
-        <source>1 hour</source>
-        <translation>1час</translation>
+        <source>1 &amp;hour</source>
+        <translation>1&amp;час</translation>
     </message>
     <message>
-        <source>1 day</source>
-        <translation>1ден</translation>
+        <source>1 &amp;day</source>
+        <translation>1&amp;ден</translation>
     </message>
     <message>
-        <source>1 week</source>
-        <translation>1седмица</translation>
+        <source>1 &amp;week</source>
+        <translation>1&amp;седмица</translation>
     </message>
     <message>
-        <source>1 year</source>
-        <translation>1година</translation>
+        <source>1 &amp;year</source>
+        <translation>1&amp;година</translation>
     </message>
     <message>
-        <source>Unban Node</source>
-        <translation>Разреши възела</translation>
+        <source>&amp;Unban Node</source>
+        <translation>&amp;Разреши възела</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3423,10 +3195,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Потвърдете ресинх на Блокчейна</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Използвайте стрелките за на доре и на долу, за да разгледате историята и &lt;b&gt;Ctrol-L&lt;/b&gt;за да изчистите екрана.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3488,35 +3256,39 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Използвайте отновно един от предходно използваните адреси за получаване. &lt;br&gt;Повторното използване на адреси може да застраши сигурността и поверителността на преводите. &lt;br&gt;Не използвайте тази функция, освен ако не генерирате повторно, платежно нареждане правено преди.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
         <translation>Повторно използване на съществуващ адрес за получаване (не се препоръчва)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>Съобщение:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;Съобщение:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>Незадължителен етикет, който да асоциираме с адреса за получаване.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по Bulwark мрежата.</translation>
+        <source>A&amp;mount:</source>
+        <translation>Сума:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по BWK мрежата.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>ПОЛУЧИ</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. &lt;br&gt;Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по Bulwark мрежата.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. &lt;br&gt;Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по BWK мрежата.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>Използвайте този формуляр за да изисквате плащания. Всички полета са &lt;b&gt;по желание&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>Label:</source>
+        <source>&amp;Label:</source>
         <translation>Етикет:</translation>
     </message>
     <message>
@@ -3524,12 +3296,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Незадължителна сума за поискване. Оставете полето празно или напишете нула, за да не изисквате определена сума.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Сума:</translation>
-    </message>
-    <message>
-        <source>Request payment</source>
-        <translation>Поискай плащане</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Поискай плащане</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -3571,6 +3339,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Copy amount</source>
         <translation>Копирай сумата</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Копирай адрес</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -3579,16 +3351,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>QR код</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Копирай URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Копирай &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Копирай Адрес</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Копирай &amp;Адрес</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Запази Картинката...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Запази Картинката...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3640,6 +3412,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>Съобщение</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3737,8 +3513,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Размер на UTXO:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3793,15 +3569,15 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Автоматично избрани монети</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uBulwark и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uBulwark входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uBulwark. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uPIV и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uPIV входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uPIV. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uBulwark и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uBulwark входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uBulwark. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uPIV и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uPIV входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uPIV. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
         <translation>Няма проблем да платите минималната такса, стига обема преводи да е по-малък от наличното място в блоковете. &lt;br /&gt;Но имайте впредвид, че това може да се окаже в превод, който никога не получава потвърждение ако заявките за преводи са повече от колкото мрежата може да понесе.</translation>
     </message>
     <message>
@@ -3829,7 +3605,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Потвърди изпращането</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>S&amp;end</source>
         <translation>Изпрати</translation>
     </message>
     <message>
@@ -3837,20 +3613,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изчисти всичко полета.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Изчисти Всички</translation>
+        <source>Clear &amp;All</source>
+        <translation>Изчисти &amp;Всички</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>Изпрати до няколко получателя едновременно</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
+        <source>Add &amp;Recipient</source>
         <translation>Добави Получател</translation>
     </message>
     <message>
         <source>Anonymized BWK</source>
-        <translation>Анонимизиран Bulwark</translation>
+        <translation>Анонимизиран BWK</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3898,7 +3674,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>Предупреждение: Невалиден Bulwark адрес</translation>
+        <translation>Предупреждение: Невалиден BWK адрес</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3923,10 +3699,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Такса %1 пъти по-голяма от %2 за кБ се счита неразумно голяма такса.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Очаквано начало на потвърждения след %n блока.</numerusform><numerusform>Очаквано начало на потвърждения след %n блока.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -3996,12 +3768,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Това е нормално плащане.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
+        <source>Pay &amp;To:</source>
         <translation>Плати На:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>Bulwark адреса - получател на плащането</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>BWK адреса - получател на плащането</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4024,7 +3796,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изтрий</translation>
     </message>
     <message>
-        <source>Label:</source>
+        <source>&amp;Label:</source>
         <translation>Етикет:</translation>
     </message>
     <message>
@@ -4032,7 +3804,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Въведете етикет за този адрес.</translation>
     </message>
     <message>
-        <source>Amount:</source>
+        <source>A&amp;mount:</source>
         <translation>Сума:</translation>
     </message>
     <message>
@@ -4040,8 +3812,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Съобщение:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>Съобщение, което е било прикачено към Bulwark:URI и което ще бъде запазено заедно с превода за ваша информация. Внимание: Това съобщение е само за Вас, то няма да бъде изпратено по Bulwark мрежата.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>Съобщение, което е било прикачено към BWK:URI и което ще бъде запазено заедно с превода за ваша информация. Внимание: Това съобщение е само за Вас, то няма да бъде изпратено по BWK мрежата.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4067,8 +3839,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Изключване на Bulwark Ядрото...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>Изключване на BWK Ядрото...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4082,16 +3854,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Подписи - Подпиши / Провери Съобщение</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Подпиши Съобщение</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;Подпиши Съобщение</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Може да подписвате съобщения с Вашите адреси, за да докажете че сте техен притежател. Внимавайте да не подписвате нищо съмнително, тъй като има хакерски атаки, които целят да придобият вашата самоличност. Само подписвайте пълен и ясен текст, с който сте напълно съгласни.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark адреса, с който да подпишете съобщението</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK адреса, с който да подпишете съобщението</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4122,31 +3894,31 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Копирай сегашния подпис в системния буфер</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Подпишете съобщението, за да докажете, че притежавате този Bulwark адрес</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Подпишете съобщението, за да докажете, че притежавате този BWK адрес</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark адреса, който е подписано съобщението</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK адреса, който е подписано съобщението</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Поверете съобщението, за да се уверите, че е подписано със зададения Bulwark адрес</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Поверете съобщението, за да се уверите, че е подписано със зададения BWK адрес</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Подпиши Съобщение</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Подпиши &amp;Съобщение</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Ресет на всички полета</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Изчисти Всички</translation>
+        <source>Clear &amp;All</source>
+        <translation>Изчисти &amp;Всички</translation>
     </message>
     <message>
-        <source>Verify Message</source>
+        <source>&amp;Verify Message</source>
         <translation>Провери Съобщение</translation>
     </message>
     <message>
@@ -4154,7 +3926,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Въведете одписващия адрес, съобщението и подписа по-долу за да проверите съобщението. Внимавайте да не четете повече от подписа от колкото има в самото съобщение, за да избегнете "man in the middle" атака.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
+        <source>Verify &amp;Message</source>
         <translation>Провери Съобщение</translation>
     </message>
     <message>
@@ -4217,8 +3989,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Ядро</translation>
+        <source>BWK Core</source>
+        <translation>BWK Ядро</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4233,8 +4005,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dash Core разработчици</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>Bulwark Core разработчици</translation>
+        <source>The BWK Core developers</source>
+        <translation>BWK Core разработчици</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4250,10 +4022,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Отворен за още %n блока</numerusform><numerusform>Отворен за още %n блока</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Отворен до %1</translation>
@@ -4314,10 +4082,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>, has not been successfully broadcast yet</source>
         <translation>, все още неуспешно обявени</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, обявени през %n възела</numerusform><numerusform>, обявени през %n нода</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Дата</translation>
@@ -4357,10 +4121,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>Кредит</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>узрява след още %n блока</numerusform><numerusform>узрява след още %n блока</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4460,10 +4220,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Отворен за още %n блока</numerusform><numerusform>Отворен за още %n блока</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Отворен до %1</translation>
@@ -4513,8 +4269,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Получен посредством обфускация</translation>
     </message>
     <message>
-        <source>Bulwark Stake</source>
-        <translation>Bulwark Stake</translation>
+        <source>BWK Stake</source>
+        <translation>BWK Stake</translation>
     </message>
     <message>
         <source>zBWK Stake</source>
@@ -4537,24 +4293,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Обфускация и направа на Деноминации</translation>
     </message>
     <message>
-        <source>Converted Bulwark to zBWK</source>
-        <translation>Конвертиран Bulwark във zBWK</translation>
+        <source>Converted BWK to zBWK</source>
+        <translation>Конвертиран BWK във zBWK</translation>
     </message>
     <message>
         <source>Spent zBWK</source>
         <translation>Похарчени zBWK</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Получен Bulwark от zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Получен BWK от zBWK</translation>
     </message>
     <message>
         <source>Minted Change as zBWK from zBWK Spend</source>
         <translation>Исечено ресто като zBWK от похарчените zBWK</translation>
     </message>
     <message>
-        <source>Converted zBWK to Bulwark</source>
-        <translation>Конвертиран zBWK във Bulwark</translation>
+        <source>Converted zBWK to BWK</source>
+        <translation>Конвертиран zBWK във BWK</translation>
     </message>
     <message>
         <source>Anonymous (zBWK Transaction)</source>
@@ -4772,8 +4528,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Експортирането Успешно</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>Получен Bulwark от zBWK</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>Получен BWK от zBWK</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zBWK</source>
@@ -4813,8 +4569,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изпрати Монети</translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 Bulwark.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 BWK.</translation>
     </message>
 </context>
 <context>
@@ -4824,8 +4580,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>ИСТОРИЯ</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Експортиране</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Експортиране</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -4845,7 +4601,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Select zBWK to Spend</source>
         <translation>Изберете zBWK за Изпращане</translation>
@@ -4866,13 +4622,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>Избери/Премахни Всички</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>В Налични за харечене</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = пази мета данните от преводи, например собственик на акаунта и ифнормация за изисквани плащания, 2 = изхръвли мета данните от преводи)</translation>
@@ -4898,8 +4650,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изчисления чекпойнт на акумулатора не е същия като записания в блок индекса.</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>Не може да заключи папката с данни %s. Bulwark Портфейла вероятно вече е стартиран.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>Не може да заключи папката с данни %s. BWK Портфейла вероятно вече е стартиран.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4926,8 +4678,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Разпространява се пот MIT софтуерен лиценз, виж съпровождащия файл от &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
-        <translation>Активиране или деактивиране на функцията за зареждане за Bulwark входове (0-1, по подразбиране: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zBWK minting (0-1, default: %u)</source>
+        <translation>Включи автоматичните бекъпи на портфейла след всяко zBWK емитиране (0-1, по подразбиране: %u)</translation>
+    </message>
+    <message>
+        <source>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за BWK входове (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zBWK inputs (0-1, default: %u)</source>
@@ -4966,20 +4722,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Командата влиза в сила, когато най-добрия блок се промени (%s в cmd се замества от хаш на блока)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Такси (в Bulwark/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Такси (в BWK/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Такси (в Bulwark/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Такси (в BWK/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>Изпразни паметта за дейности по базата данни в лог файл на диска на всеки &lt;n&gt; мегабайта (default: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Намерени са непотвърдени деноминации, ще изчакаме докато се потвърдят преди да продължим.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5070,20 +4822,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Този продукт включва софтуер разработен от OpenSSL Project &lt;https://www.openssl.org/&gt; и крипто софтуер написан от Ерик Юнг и UPnP софтуер от Томас Бернард.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
-        <translation>Не може да се прикачи към %s на този компютър. Bulwark Портфейла вероятно вече е стартиран.</translation>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
+        <translation>Не може да се прикачи към %s на този компютър. BWK Портфейла вероятно вече е стартиран.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>Не намираме достатъчно Обфускационно деноминирани средства за този превод.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 Bulwark.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 BWK.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 Bulwark.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 BWK.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5098,8 +4850,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Внимание: -paytxfee е зададена твърде голяма! Това е преводната такса, която ще платите ако изпратите този превод.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>Внимание: Проверете дали датата и часа на компютъра са верни! Ако Вашият часовник греши, Bulwark Портфейла няма да работи правилно.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>Внимание: Проверете дали датата и часа на компютъра са верни! Ако Вашият часовник греши, BWK Портфейла няма да работи правилно.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5166,10 +4918,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Позволявай DNS запитвания за -addnote, -seednode и -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Този въвод вече съществува.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Винаги извършвай запитване за пиъри посредствим DNS търсене (по подразбиране: %u)</translation>
     </message>
@@ -5190,18 +4938,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изчислява липсващите акумулатори...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Не може да деноминира: не са останали съвместими входящи.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Не откривам случан Главен възел.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Не може да се миксира по време на синхронизация.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Променяне софтуерната версия на портфейла към по-ниска е невъзможно.</translation>
     </message>
@@ -5220,10 +4956,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Cannot write default address</source>
         <translation>Не можем да запишем адреса по подразбиране</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Гаранцията е невалидна.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5250,8 +4982,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Всички права запазени (c) 2014-%i Dash Core разработчици</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Всички права запазени (c) 2015-%i Bulwark Core разработчици</translation>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
+        <translation>Всички права запазени (c) 2015-%i BWK Core разработчици</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5310,14 +5042,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Вкл. клиента да действа като влаген възел (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Запълнени полета.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Грешка при свързването с Главен възел.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Грешка при стартирането на блок базата данни</translation>
     </message>
@@ -5338,7 +5062,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешка в зареждането на wallet.dat: Портфейла е повреден</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
         <translation>Грешка в зареждането на wallet.dat: Портфейла изисква по-нова версия</translation>
     </message>
     <message>
@@ -5362,10 +5086,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешка: Фатална вътрешна грешка, вижте debug.log за повече подробности.</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Грешка: Така зададените деноминации не могат да бъдат избрани</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Грешка: Намаляващо Дисково пространство!</translation>
     </message>
@@ -5376,10 +5096,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
         <translation>Грешка: Портфейла е заключен, неуспешен превод!</translation>
-    </message>
-    <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Грешка: Вече имате изчакващи входящи в басейна за Обфускация</translation>
     </message>
     <message>
         <source>Failed to calculate accumulator checkpoint</source>
@@ -5398,20 +5114,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Такса (в BWK/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Приключване на превода.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Предизвикай безопасен режим (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Имаме достатъчно потребители, подписване ( изчаква %s )</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Имаме достатучно потребители, подписване ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5438,14 +5142,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Включи и IP адресите при дебъг (по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Несъвместим режим.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Несъвместима версия.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Няма намерен генезис блок или намерения е несъвместим. Грешен datadlr за мрежата?</translation>
     </message>
@@ -5454,12 +5150,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Информация</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
         <translation>Стартирането на проверка на здравословното състояние на портфейла се провали. Изключваме Портфейла.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Зададените стойности са невалидни.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5518,16 +5210,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Грешен личен ключ.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Невалиден скрипт, засечен.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Процент автоматично емитирани Zerocoin (1-100, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Reindex the Bulwark and zBWK money supply statistics</source>
-        <translation>Индексирай наново Bulwark и zBWK данните по наличности</translation>
+        <source>Reindex the BWK and zBWK money supply statistics</source>
+        <translation>Индексирай наново BWK и zBWK данните по наличности</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5566,8 +5254,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Изключи Bulwark специфичната функционалност (Главни възли, Zerocoin, SwiftX, Бюджетиране) (0-1, po podrazbirane: %u)</translation>
+        <source>Disable all BWK specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Изключи BWK специфичната функционалност (Главни възли, Zerocoin, SwiftX, Бюджетиране) (0-1, po podrazbirane: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5666,10 +5354,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Неуспешно емитиране</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Неуспешно изтриване на серийния номер</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Няма намерени Zerocoin монети в wallet.dat файла</translation>
     </message>
@@ -5688,14 +5372,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Пази най-много &lt;n&gt; несвързани превода в паметта (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Последната обфускация бе твърде скоро.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Последното действие по Обфускация е било твърде скоро.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5750,10 +5426,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Местоположение на оторизационната бисквитка (по подразбиране: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Вече е заключен.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Заключи главен възел от конфигурационния файл (по подразбиране: %u)</translation>
     </message>
@@ -5770,14 +5442,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Опции за Главни възли</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Опашката за Главни възли е пълна.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Главен Възел:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Максимум буфер за Получаване, за връзка, &lt;n&gt;*1000 байта (по подразбиране: %u)</translation>
     </message>
@@ -5790,14 +5454,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Емисията не успя да се включи в блокчейна</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Липсваща вх. информация за превода.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>В момента тече смесване...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>Необходим е адрес, понеже рестото не е кръгла сума</translation>
     </message>
@@ -5806,40 +5462,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Нужно е да се зададе порт с -whitebind: '%s'</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>Не се засичат Мастърноудове.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Не е намерен съвместим Мастърноуд.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Не засякохме средства, които да имат нужда от деноминация.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Не намерихме съвпадащи деноминации за смесване.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>Опции на възел релето:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Засякохме нестандартен публичен ключ.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Несъвместимост със съществуващите преводи.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Недостатъчно налични файл описания.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Не е в списъка с Главни възли.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5848,18 +5476,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Брой запазени резервни копия за местоположението (по подразбиране: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Обфускацията е в режим на изчакване.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Обфускацията приключи.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Обфускацията не успя да приключи.</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5952,10 +5568,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Ако е възможно, изпращай транзакциите като нулево-таксуван превод (по подразбиране: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Недовърешна сесия!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -6062,18 +5674,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изключи се след импортирането на блоквоете от диска (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Следните са изпратени до главния възел: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Изпратени до главния възел, чакаме още ( %u %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Изпратено до главния възел, чака си реда %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Неуспешна синхронизация</translation>
     </message>
@@ -6110,14 +5710,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Монетното плащане е използвано</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Новото преводно плащане не бе потвърдено</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Избраната емисия е невалидна монета</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Превода не бе потвърден</translation>
     </message>
@@ -6132,10 +5724,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Това е за регресионен тест и софтуерна разработка.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Това не е Главен Възел.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6170,18 +5758,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Преводните суми трябва да са положително число</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Превода е създаден успешно</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Преводните таски са твърде високи.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Превода е невалиден.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Твърде голям превод за таксионната политика</translation>
     </message>
@@ -6190,24 +5766,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Твърде голям превод</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Изпращане на последния превод.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Опитайте да платите с по-високо ниво на сигурност, за да включите повече монети.</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Опитвате се да похарчите, вече похарчен сериен номер. Опитайте отново.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Не можем да прикачим %s към този компютър (прикачването даде грешка %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Не можем да намерим превод, който съдържа емисията</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6220,10 +5784,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Непозната мрежа е зададена в -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Непознато състояние: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6254,10 +5814,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Стойността е под най-малката налична деноминация (= 1) в zBWK</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Стойността е по-голяма от позволената от басейна Обфускация.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Проверява блоковете...</translation>
     </message>
@@ -6266,19 +5822,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Проверява портфейла...</translation>
     </message>
     <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>Версия 1 zBWK изисква ниво на сигурност от 100 за успешно изразходване.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Портфейла %s е извън папката с данни %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Портфейла е заключен.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
         <translation>Портфейла трябва да се пренапише: рестартирайте програмата за завършване на процеса</translation>
     </message>
     <message>
@@ -6306,24 +5854,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Внимание: Неподдържанния аргумент -debugnet бе игнориран, използвайте -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Ще опита...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Нямате достатъчно Zerocoin в портфейла си</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Трябва да построите базата данни наново, използвайки -reindex вместо -txindex</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Въведени успешно.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Превода е приет в басейна!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

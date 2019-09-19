@@ -10,36 +10,36 @@
         <translation>Vytvořit novou adresu</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Nová</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Nová</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Kopírovat vybranou adresu do schránky</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Kopírovat</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Kopírovat</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Smazat aktuálně vybranou adresu ze seznamu</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Smazat</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Smazat</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exportovat data z aktulní záložky do souboru</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exportovat</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportovat</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Zavřít</translation>
+        <source>C&amp;lose</source>
+        <translation>Z&amp;avřít</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Vybrat adresu pro přijetí peněz</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Vybrat</translation>
+        <source>C&amp;hoose</source>
+        <translation>V&amp;ybrat</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Adresy pro přijetí peněz</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto jsou Vaše Bulwark adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto jsou Vaše BWK adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Toto jsou Vaše Bulwark adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Toto jsou Vaše BWK adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopírovat Adresu</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Kopírovat Adresu</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Kopírovat Popis</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Kopírovat &amp;Popis</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Upravit</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Upravit</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -172,16 +172,16 @@
         <translation>Potvrdit zašifrování peněženky</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark se teď zavře pro dokončení šifrovacího procesu. Prosím, vemte na vědomí, že zašifrování Vaší peněženky plně neochrání Vaše Bulwarky před krádží, pokud je Váš počítač infikován malwarem.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK se teď zavře pro dokončení šifrovacího procesu. Prosím, vemte na vědomí, že zašifrování Vaší peněženky plně neochrání Vaše PIVy před krádží, pokud je Váš počítač infikován malwarem.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Opravdu chcete zašifrovat Vaši peněženku?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Varování: Pokud zašifrujete svou peněženku a ztratíte frázové heslo, tak &lt;b&gt;ZTRATÍTE VŠECHNY VAŠE Bulwarky&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Varování: Pokud zašifrujete svou peněženku a ztratíte frázové heslo, tak &lt;b&gt;ZTRATÍTE VŠECHNY VAŠE PIVy&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -234,8 +234,8 @@
         <translation>BIP 38 Nástroj</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 Šifrovat</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 Šifrovat</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -270,24 +270,24 @@
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>Šifrovat Klíč</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>Šifrovat &amp;Klíč</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Smazat Vše</translation>
+        <source>Clear &amp;All</source>
+        <translation>Smazat &amp;Vše</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 Dešifrování</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 Dešifrování</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>Vložte BIP 38 šifrovaný privítní klíc. Frázové heslo vložte do prostředního boxu. Kliknětě na Dešifrovat Klíč pro výpočet privátního klíče. Poté co bude klíč dešifrován, kliknutím na 'Importovat Adresu' přidáte privátní klíč do Vaší peněženky.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>Dešifrovat Klíč</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>Dešifrovat &amp;Klíč</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -373,24 +373,24 @@
         <translation>Uzel</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>Přehled</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;Přehled</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>Ukaž celkový přehled peněženky</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Odeslat</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Odeslat</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Přijmout</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Přijmout</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transakce</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transakce</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -401,112 +401,112 @@
         <translation>Řešení soukromí pro zBWK</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>Exit</translation>
+        <source>E&amp;xit</source>
+        <translation>E&amp;xit</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>Zavřít aplikaci</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>O Qt</translation>
+        <source>About &amp;Qt</source>
+        <translation>O &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Ukaž informace o Qt</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>Možnosti...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;Možnosti...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>Zobrazit / Schovat</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Zobrazit / Schovat</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>Zobrazit nebo schovat hlavní okno</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>Šifrovat Peněženku...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;Šifrovat Peněženku...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Šifrovat privátní klíče náležící Vaší peněžence</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>Zálohovat peněženku...</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;Zálohovat peněženku...</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>Zálohovat peněženku na jiné místo</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>Změnit frázové heslo...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;Změnit frázové heslo...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Změnit frázové heslo pro šifrování peněženky</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>Odemknout peněženku...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Odemknout peněženku...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>Odemknout peněženku</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>Zamknout Peněženku</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Zamknout Peněženku</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>Podepsat zprávu...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>Podepsat &amp;zprávu...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>Verifikovat zprávu...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;Verifikovat zprávu...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>Informace</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informace</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>Zobrazit diagnostická data</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>Ladící konzolce</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;Ladící konzolce</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>Otevřít ladící konzoli</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>Monitorování sítě</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;Monitorování sítě</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>Zobrazit monitorování sítě</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>Seznam peerů</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;Seznam peerů</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>Zobrazit info peerů</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Oprava Peněženky</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>&amp;Oprava Peněženky</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -517,59 +517,59 @@
         <translation>Otevřít konfigurační soubor</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>Zobrazit Automatické Zálohy</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>Zobrazit Automatické &amp;Zálohy</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>Zobrazit automaticky vytvořené zálohy peněženky</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>Odesílací adresy...</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Odesílací adresy...</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Zobrazit seznam použitých adres  a popisků pro odedslání platby</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>Příjimací adresy...</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Příjimací adresy...</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Zobrazit seznam použitých adres  a popisků pro přijetí plateb</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>Vytvoření multisignatury</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp;Vytvoření multisignatury</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>Vytvořit novou multisignaturní adresu a přidat ji do této peněženky</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>Multisignaturní výdaje...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp;Multisignaturní výdaje...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>Uhradit z multisignaturní adresy</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>Multisignaturní podepisování...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp;Multisignaturní podepisování...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>Podepsat multisignaturní adresou</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>Otevřít URI...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>Otevřít &amp;URI...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
+        <source>&amp;Command-line options</source>
         <translation>Možnosti příkazové řádky</translation>
     </message>
     <message>
@@ -581,116 +581,116 @@
         <translation>Zbývá %1 bloků. Skenuji blok %2</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>Soubor</translation>
+        <source>&amp;File</source>
+        <translation>&amp;Soubor</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>Nastavení</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;Nastavení</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>Nástroje</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;Nástroje</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>Pomoc</translation>
+        <source>&amp;Help</source>
+        <translation>&amp;Pomoc</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>Nástrojová lišta záložek</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Odeslat platbuna Bulwark adresu</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>Odeslat platbuna BWK adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>Vyžádat platbu (generování QK kódu a Bulwark: URIs)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>Vyžádat platbu (generování QK kódu a pivx: URIs)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>Soukromí</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;Soukromí</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>Masternody</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternody</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>Procházet masternody</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>O Bulwark Core</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>&amp;O BWK Core</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Zobraz informace o Bulwark Core</translation>
+        <source>Show information about BWK Core</source>
+        <translation>Zobraz informace o BWK Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Upravit možnosti konfigurace pro Bulwark</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>Upravit možnosti konfigurace pro BWK</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Podepsat zprávy Vaší Bulwark adresou pro prokázaní, že jste jejich vlastníkem</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>Podepsat zprávy Vaší BWK adresou pro prokázaní, že jste jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými Bulwark adresami</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými BWK adresami</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 nástroj</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 nástroj</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>Šifrovat a dešivraovat klíče s použitím frázového hesla</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;MultiSend</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>Nastavení MultiSendu</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>Otevřít Pěněženkový Konfigurační soubor</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Otevřít Pěněženkový &amp;Konfigurační soubor</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>Otevřít Masternodový Konfigurační Soubor</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Otevřít &amp;Masternodový Konfigurační Soubor</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>Otevřít Masternodový konfigurační soubor</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Otevřít Bulwark: URI nebo platební žádost</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>Otevřít BWK: URI nebo platební žádost</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>Blockchanový průzkumník</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;Blockchanový průzkumník</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>Okno blokového průzkumníka</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Zobrazit Bulwark Core pomocnou zpráv pro získání seznamu možných parametrů Bulwark pro příkazy do příkazové řádky</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>Zobrazit BWK Core pomocnou zpráv pro získání seznamu možných parametrů BWK pro příkazy do příkazové řádky</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core klient</translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -792,7 +792,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Peněženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálně je &lt;b&gt;zamčená&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -820,8 +820,8 @@ MultiSend: %1</translation>
         <translation>TextPopisku</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>Ne všechny transakce budou zobrazeny. Pro zobrazení všech transackí nastavte v konfiguračním souboru (bulwark.conf) txindex=1.</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>Ne všechny transakce budou zobrazeny. Pro zobrazení všech transackí nastavte v konfiguračním souboru (pivx.conf) txindex=1.</translation>
     </message>
 </context>
 <context>
@@ -1057,12 +1057,12 @@ MultiSend: %1</translation>
         <translation>Upravit adresu</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Popis</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Popis</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adresy</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Adresy</translation>
     </message>
     <message>
         <source>New receiving address</source>
@@ -1081,8 +1081,8 @@ MultiSend: %1</translation>
         <translation>Upravit adresu k odeslání platby</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>Zadaná adresa "%1" není validní Bulwark adresa.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>Zadaná adresa "%1" není validní BWK adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1121,18 +1121,29 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>verze</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>O Bulwark Core</translation>
+        <source>About BWK Core</source>
+        <translation>O BWK Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1166,16 +1177,16 @@ MultiSend: %1</translation>
         <translation>Vítejte</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Vítejte v Bulwark Core.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>Vítejte v BWK Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>Při prvním spuštění programu si můžete vybrat, kam bude Bulwark Core ukládat svá data.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>Při prvním spuštění programu si můžete vybrat, kam bude BWK Core ukládat svá data.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core stáhne a uloží kopii Bulwark blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core stáhne a uloží kopii BWK blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1186,8 +1197,8 @@ MultiSend: %1</translation>
         <translation>Použít vlastní složku pro data</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1237,20 +1248,20 @@ MultiSend: %1</translation>
         <translation>Veřejný klíč</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Spustit alias</translation>
+        <source>S&amp;tart alias</source>
+        <translation>S&amp;pustit alias</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>Spustit vše</translation>
+        <source>Start &amp;all</source>
+        <translation>Spustit &amp;vše</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>Spustit CHYBĚJÍCÍ</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>Spustit &amp;CHYBĚJÍCÍ</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>Update stavu</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;Update stavu</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1392,42 +1403,8 @@ MultiSend: %1</translation>
         <translation>(bez popisku)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Zadaná adresa:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>není validní.
-Prosím zkontrolujte adresu a zkuste to znovu.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Celkovvá hodnota Vašeho MultiSend Vekktoru je přes 100% vaší odměny ze vsázení
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Prosím, zadejte 1-100 procent.</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Odstraněno</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nemůžu najít adresu
-</translation>
     </message>
 </context>
 <context>
@@ -1443,53 +1420,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     <message>
         <source>Amount:</source>
         <translation>Hodnota:</translation>
-    </message>
-    </context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfigurace obfuskace</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Základní ochrana soukromí</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Vysoká ochrana soukromí</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximální ochrana soukromí</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Vyberte úrpvěň ochrany soukromí</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>Použí 2 oddělené masternody k promíchání prostředků až do 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Použít 16 oddělených masternodů</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>Tato možnost je nejrychleší a bude stát zhruba ~0.025 Bulwark pro anonymizaci 10000 Bulwark</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Toto je nejpomalejší a nejvíce bezpečná volba. Použití maximalní anonymity bude stát</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>0.1 Bulwark za 10000 Bulwark anonymizujete.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Konfigurace obufuskace</translation>
     </message>
     </context>
 <context>
@@ -1518,24 +1448,24 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Možnosti</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>Hlavní</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;Hlavní</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>Velikost databatové cahce</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>Velikost &amp;databatové cahce</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
-        <translation>Počet skriptových ověřovacích vláken</translation>
+        <source>Number of script &amp;verification threads</source>
+        <translation>Počet skriptových &amp;ověřovacích vláken</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>Peněženka</translation>
+        <source>W&amp;allet</source>
+        <translation>P&amp;eněženka</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1550,64 +1480,64 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>Automaticky spustit Bulwark po přihlášení do systému</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>Automaticky spustit BWK po přihlášení do systému</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>Spusti Bulwark při přihlášení do systému</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;Spusti BWK při přihlášení do systému</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
         <translation>Zobrazit záložku Masternodů</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>Síť</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;Síť</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>Proxy IP</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>Proxy &amp;IP</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP adresa proxy (například IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>Port</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;Port</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port proxy (například 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>Okno</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;Okno</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
+        <source>M&amp;inimize on close</source>
         <translation>Při zavření minimalizovat</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>Zobrazit</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;Zobrazit</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
         <translation>Resetovat všechny klintské volby na defaultní hodnoty.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>Resetovat Volby</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;Resetovat Volby</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>OK</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;OK</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Zrušit</translation>
     </message>
     <message>
         <source>none</source>
@@ -1674,14 +1604,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Reset</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Množství:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Hodnota:</translation>
-    </message>
-    <message>
         <source>Choose previously used address</source>
         <translation>Vyberte již dříve použitou adresu</translation>
     </message>
@@ -1698,12 +1620,12 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Popis</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Popis</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hodnota:</translation>
+        <source>A&amp;mount:</source>
+        <translation>H&amp;odnota:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -1737,14 +1659,9 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <source>Change:</source>
         <translation>Změna:</translation>
     </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopíroat množstí</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopírovat hodnotu</translation>
-    </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -1772,19 +1689,23 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>Uložit Obrázek...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Uložit Obrázek...</translation>
     </message>
     </context>
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Information</source>
-        <translation>Informace</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;Informace</translation>
     </message>
     <message>
         <source>General</source>
@@ -1807,8 +1728,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Počet spojení</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>Otevřít</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;Otevřít</translation>
     </message>
     <message>
         <source>Network</source>
@@ -1843,7 +1764,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Počet Masternodů</translation>
     </message>
     <message>
-        <source>Console</source>
+        <source>&amp;Console</source>
         <translation>Konzole</translation>
     </message>
     <message>
@@ -1851,8 +1772,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Vymazat konzoli</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>Vymazat</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;Vymazat</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -1867,8 +1788,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Odesláno</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>Peerů</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peerů</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -1907,8 +1828,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Čas pingnutí</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>Oprava Peněženky</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;Oprava Peněženky</translation>
     </message>
     <message>
         <source>Rescan blockchain files</source>
@@ -1946,16 +1867,16 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>Label:</source>
-        <translation>Popis</translation>
+        <source>A&amp;mount:</source>
+        <translation>H&amp;odnota:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hodnota</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Popis</translation>
     </message>
     <message>
-        <source>Request payment</source>
-        <translation>Vyžádat platbu</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Vyžádat platbu</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -1981,6 +1902,10 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <source>Copy amount</source>
         <translation>Kopírovat hodnotu</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopírovat adresu</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -1989,16 +1914,16 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>QR kód</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>Kopírovat URI</translation>
+        <source>Copy &amp;URI</source>
+        <translation>Kopírovat &amp;URI</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Kopírovat Adresu</translation>
+        <source>Copy &amp;Address</source>
+        <translation>Kopírovat &amp;Adresu</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>Uložit Obrázek...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>&amp;Uložit Obrázek...</translation>
     </message>
     <message>
         <source>URI</source>
@@ -2034,6 +1959,10 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     <message>
         <source>Message</source>
         <translation>Zpráva</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2087,8 +2016,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Změna:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2119,16 +2048,16 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Doporučeno</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Odeslat</translation>
+        <source>S&amp;end</source>
+        <translation>O&amp;deslat</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Smazat Vše</translation>
+        <source>Clear &amp;All</source>
+        <translation>Smazat &amp;Vše</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>Přidat Příjemce</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>Přidat &amp;Příjemce</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2190,12 +2119,12 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>Popis</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;Popis</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hodnota:</translation>
+        <source>A&amp;mount:</source>
+        <translation>H&amp;odnota:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -2212,8 +2141,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Bulwark adresa pro podepsání zprávy</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>BWK adresa pro podepsání zprávy</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2240,28 +2169,28 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Podepsat zprávu k prokázání, že vlastníte tuto Bulwark adresu</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Podepsat zprávu k prokázání, že vlastníte tuto BWK adresu</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>Bulwark adresa zprávy byla podpsána</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>BWK adresa zprávy byla podpsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou Bulwark adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou BWK adresou</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>Podepsat Zprávu</translation>
+        <source>Sign &amp;Message</source>
+        <translation>Podepsat &amp;Zprávu</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Resetovat všechny položky podepsání zprávy</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>Smazat Vše</translation>
+        <source>Clear &amp;All</source>
+        <translation>Smazat &amp;Vše</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -2291,8 +2220,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     </context>
 <context>
@@ -2386,8 +2315,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Exportovat</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportovat</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -2395,14 +2324,14 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Error</source>
         <translation>Chyba</translation>
@@ -2440,28 +2369,12 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Toto je experimentální software.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Toto není Masternode.</translation>
-    </message>
-    <message>
         <source>Transaction amount too small</source>
         <translation>Hodnota transakce je příliš malá</translation>
     </message>
     <message>
         <source>Transaction amounts must be positive</source>
         <translation>Hodnota transakce musí být kladná</translation>
-    </message>
-    <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transakce byla uspěšně vytvořena.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Poplatek za transakci je příliš vysoký.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transakce není validní.</translation>
     </message>
     <message>
         <source>Transaction too large for fee policy</source>
@@ -2474,10 +2387,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Neznámá síť uvedená v -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Neznámý stav: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -2494,10 +2403,6 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     <message>
         <source>Verifying wallet...</source>
         <translation>Ověřování peněženky...</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Peněženka je zamčená</translation>
     </message>
     <message>
         <source>Wallet options:</source>

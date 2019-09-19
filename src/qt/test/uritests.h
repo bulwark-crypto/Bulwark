@@ -8,10 +8,11 @@
 #include <QObject>
 #include <QTest>
 
-class URITests : public QObject {
+class URITests : public QObject
+{
     Q_OBJECT
 
-  private slots:
+private slots:
     void uriTests();
 };
 

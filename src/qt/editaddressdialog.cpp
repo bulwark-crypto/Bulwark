@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Bulwark developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,10 +14,11 @@
 #include <QMessageBox>
 
 EditAddressDialog::EditAddressDialog(Mode mode, QWidget* parent) : QDialog(parent),
-    ui(new Ui::EditAddressDialog),
-    mapper(0),
-    mode(mode),
-    model(0) {
+                                                                   ui(new Ui::EditAddressDialog),
+                                                                   mapper(0),
+                                                                   mode(mode),
+                                                                   model(0)
+{
     ui->setupUi(this);
 
     GUIUtil::setupAddressWidget(ui->addressEdit, this);
@@ -44,11 +44,13 @@ EditAddressDialog::EditAddressDialog(Mode mode, QWidget* parent) : QDialog(paren
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
 }
 
-EditAddressDialog::~EditAddressDialog() {
+EditAddressDialog::~EditAddressDialog()
+{
     delete ui;
 }
 
-void EditAddressDialog::setModel(AddressTableModel* model) {
+void EditAddressDialog::setModel(AddressTableModel* model)
+{
     this->model = model;
     if (!model)
         return;
@@ -58,11 +60,13 @@ void EditAddressDialog::setModel(AddressTableModel* model) {
     mapper->addMapping(ui->addressEdit, AddressTableModel::Address);
 }
 
-void EditAddressDialog::loadRow(int row) {
+void EditAddressDialog::loadRow(int row)
+{
     mapper->setCurrentIndex(row);
 }
 
-bool EditAddressDialog::saveCurrentRow() {
+bool EditAddressDialog::saveCurrentRow()
+{
     if (!model)
         return false;
 
@@ -70,9 +74,9 @@ bool EditAddressDialog::saveCurrentRow() {
     case NewReceivingAddress:
     case NewSendingAddress:
         address = model->addRow(
-                      mode == NewSendingAddress ? AddressTableModel::Send : AddressTableModel::Receive,
-                      ui->labelEdit->text(),
-                      ui->addressEdit->text());
+            mode == NewSendingAddress ? AddressTableModel::Send : AddressTableModel::Receive,
+            ui->labelEdit->text(),
+            ui->addressEdit->text());
         break;
     case EditReceivingAddress:
     case EditSendingAddress:
@@ -84,7 +88,8 @@ bool EditAddressDialog::saveCurrentRow() {
     return !address.isEmpty();
 }
 
-void EditAddressDialog::accept() {
+void EditAddressDialog::accept()
+{
     if (!model)
         return;
 
@@ -98,23 +103,23 @@ void EditAddressDialog::accept() {
             break;
         case AddressTableModel::INVALID_ADDRESS:
             QMessageBox::warning(this, windowTitle(),
-                                 tr("The entered address \"%1\" is not a valid Bulwark address.").arg(ui->addressEdit->text()),
-                                 QMessageBox::Ok, QMessageBox::Ok);
+                tr("The entered address \"%1\" is not a valid Bulwark address.").arg(ui->addressEdit->text()),
+                QMessageBox::Ok, QMessageBox::Ok);
             break;
         case AddressTableModel::DUPLICATE_ADDRESS:
             QMessageBox::warning(this, windowTitle(),
-                                 tr("The entered address \"%1\" is already in the address book.").arg(ui->addressEdit->text()),
-                                 QMessageBox::Ok, QMessageBox::Ok);
+                tr("The entered address \"%1\" is already in the address book.").arg(ui->addressEdit->text()),
+                QMessageBox::Ok, QMessageBox::Ok);
             break;
         case AddressTableModel::WALLET_UNLOCK_FAILURE:
             QMessageBox::critical(this, windowTitle(),
-                                  tr("Could not unlock wallet."),
-                                  QMessageBox::Ok, QMessageBox::Ok);
+                tr("Could not unlock wallet."),
+                QMessageBox::Ok, QMessageBox::Ok);
             break;
         case AddressTableModel::KEY_GENERATION_FAILURE:
             QMessageBox::critical(this, windowTitle(),
-                                  tr("New key generation failed."),
-                                  QMessageBox::Ok, QMessageBox::Ok);
+                tr("New key generation failed."),
+                QMessageBox::Ok, QMessageBox::Ok);
             break;
         }
         return;
@@ -122,11 +127,13 @@ void EditAddressDialog::accept() {
     QDialog::accept();
 }
 
-QString EditAddressDialog::getAddress() const {
+QString EditAddressDialog::getAddress() const
+{
     return address;
 }
 
-void EditAddressDialog::setAddress(const QString& address) {
+void EditAddressDialog::setAddress(const QString& address)
+{
     this->address = address;
     ui->addressEdit->setText(address);
 }

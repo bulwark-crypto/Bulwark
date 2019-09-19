@@ -1,5 +1,7 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2017-2018 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "transactiondescdialog.h"
@@ -13,7 +15,8 @@
 #include <QString>
 
 TransactionDescDialog::TransactionDescDialog(const QModelIndex& idx, QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::TransactionDescDialog) {
+                                                                                        ui(new Ui::TransactionDescDialog)
+{
     ui->setupUi(this);
 
     /* Open CSS when configured */
@@ -23,6 +26,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex& idx, QWidget* pa
     ui->detailText->setHtml(desc);
 }
 
-TransactionDescDialog::~TransactionDescDialog() {
+TransactionDescDialog::~TransactionDescDialog()
+{
     delete ui;
 }

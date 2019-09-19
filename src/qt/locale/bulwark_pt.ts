@@ -10,36 +10,36 @@
         <translation>Criar novo endereço</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>Novo</translation>
+        <source>&amp;New</source>
+        <translation>&amp;Novo</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copiar o endereço selecionado para a área de transferência</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>Copiar</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Apagar o endereço selecionado da lista</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Apagar</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;Apagar</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exporta os dados da aba ativa para um arquivo</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>Exportar</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>Fechar</translation>
+        <source>C&amp;lose</source>
+        <translation>F&amp;echar</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>Escolha o endereço onde receber moedas</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>Escolher</translation>
+        <source>C&amp;hoose</source>
+        <translation>E&amp;scolher</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>Endereços de recebimento</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Esses são seus endereços Bulwark para onde enviar pagamentos. Confira sempre o montante e os endereços de destino antes de enviar moedas.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Esses são seus endereços BWK para onde enviar pagamentos. Confira sempre o montante e os endereços de destino antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Esses são seus endereços Bulwark onde receber pagamentos. Recomenda-se o uso de um novo endereço para cada transacção.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Esses são seus endereços BWK onde receber pagamentos. Recomenda-se o uso de um novo endereço para cada transacção.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>Copiar Endereço</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;Copiar Endereço</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>Copiar Descrição</translation>
+        <source>Copy &amp;Label</source>
+        <translation>Copiar &amp;Descrição</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Editar</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -172,16 +172,16 @@
         <translation>Confirmar encriptação da carteira</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark encerrará para terminar o processo de encriptação. Lembre-se que encriptar sua carteira não protege completamente suas Bulwarks contra roubo por malware infectando seu computador.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK encerrará para terminar o processo de encriptação. Lembre-se que encriptar sua carteira não protege completamente suas PIVs contra roubo por malware infectando seu computador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Tem certeza que deseja encriptar sua carteira?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>Atenção: Se você encriptar sua carteira e perder a senha, você &lt;B&gt;PERDERÁ TODA SUA Bulwark&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>Atenção: Se você encriptar sua carteira e perder a senha, você &lt;B&gt;PERDERÁ TODA SUA BWK&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -234,8 +234,8 @@
         <translation>BIP 38</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>Encriptar com BIP 38</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>Encriptar com &amp;BIP 38</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -270,15 +270,15 @@
         <translation>Copiar a assinatura para a area de trabalho</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
+        <source>Encrypt &amp;Key</source>
         <translation>Criptografar Chave</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Limpar todos</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
+        <source>&amp;BIP 38 Decrypt</source>
         <translation>Criptografia BIP 38</translation>
     </message>
     <message>
@@ -313,19 +313,19 @@
         <translation>Nó</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Enviar</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;Enviar</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>Receber</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;Receber</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>Transações</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;Transações</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
+        <source>&amp;Backup Wallet...</source>
         <translation>Carteira de backup</translation>
     </message>
     <message>
@@ -385,16 +385,19 @@
         <translation>Alterar endereço</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Descrição</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;Descrição</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Endereço</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;Endereço</translation>
     </message>
     </context>
 <context>
     <name>FreespaceChecker</name>
+    </context>
+<context>
+    <name>GovernancePage</name>
     </context>
 <context>
     <name>HelpMessageDialog</name>
@@ -432,9 +435,6 @@
     </message>
     </context>
 <context>
-    <name>ObfuscationConfig</name>
-    </context>
-<context>
     <name>OpenURIDialog</name>
     </context>
 <context>
@@ -451,10 +451,6 @@
     </context>
 <context>
     <name>PrivacyDialog</name>
-    <message>
-        <source>Amount:</source>
-        <translation>Quantidade:</translation>
-    </message>
     <message>
         <source>Choose previously used address</source>
         <translation>Escolha o endereço usado anteriormente.</translation>
@@ -483,6 +479,9 @@
         <source>no</source>
         <translation>não</translation>
     </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -546,6 +545,10 @@
         <translation>Descrição</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Endereço</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Quantidade</translation>
     </message>
@@ -589,7 +592,7 @@
         <translation>Limpar todos os campos do formulário</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Limpar todos</translation>
     </message>
     <message>
@@ -666,8 +669,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>Um endereço Bulwark para assinar a mensagem</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>Um endereço BWK para assinar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -698,19 +701,19 @@
         <translation>Copiar a assinatura para a area de trabalho</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>Assinar a Mensagem para provar que você e dono desse endereço Bulwark.</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>Assinar a Mensagem para provar que você e dono desse endereço BWK.</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>O endereço Bulwark que foi assinado com</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>O endereço BWK que foi assinado com</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>Reiniciar todas os campos das mensagens assinadas</translation>
     </message>
     <message>
-        <source>Clear All</source>
+        <source>Clear &amp;All</source>
         <translation>Limpar todos</translation>
     </message>
     <message>
@@ -888,8 +891,8 @@
 <context>
     <name>WalletView</name>
     <message>
-        <source>Export</source>
-        <translation>Exportar</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;Exportar</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -901,10 +904,10 @@
     </message>
     </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes do blockchain através de -rescan na inicialização</translation>
@@ -926,10 +929,6 @@
         <translation>Erro: Espaço em disco baixo!</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Finalizando transação.</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Importando...</translation>
     </message>
@@ -946,28 +945,8 @@
         <translation>Chave privada inválida.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>Script inválido detectado.</translation>
-    </message>
-    <message>
         <source>Loading wallet...</source>
         <translation>Carregando carteira...</translation>
-    </message>
-    <message>
-        <source>No Masternodes detected.</source>
-        <translation>Nenhum Masternode detectado.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Nenhum Masternode compatível encontrado.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Requisição de ofuscação completa:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Requisição de ofuscação incompleta:</translation>
     </message>
     <message>
         <source>Options:</source>
@@ -1004,10 +983,6 @@
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Enviar transações como transações de taxa zero, se possível (padrão:%u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>Sessão não concluída!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -1102,18 +1077,6 @@
         <translation>Parar de executar após importar blocos do disco (padrão:%u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Enviado as seguintes entradas para masternode:%u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Enviado para masternode, aguardando mais entradas (%u / %d) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Enviado para masternode, esperando na fila %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Sincronização falhou</translation>
     </message>
@@ -1154,10 +1117,6 @@
         <translation>Isso é destinado a ferramentas de teste de regressão e desenvolvimento de aplicativos.</translation>
     </message>
     <message>
-        <source>This is not a Masternode.</source>
-        <translation>Isto não e um Masternode</translation>
-    </message>
-    <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
         <translation>Limiar para desconectar pares com comportamentos incorretos (padrão:%u)</translation>
     </message>
@@ -1170,28 +1129,12 @@
         <translation>Os valores das transações devem ser positivos</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transação criada com sucesso.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>As taxas de transação são muito altas.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>A transação não é válida.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transação muito grande para a política de tarifas</translation>
     </message>
     <message>
         <source>Transaction too large</source>
         <translation>Transmissão muito grande</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Transmissão da transação final.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
@@ -1204,10 +1147,6 @@
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Rede desconhecida especificada em -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Estado desconhecido: id =%u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -1230,10 +1169,6 @@
         <translation>Nome de usuário para conexões JSON-RPC</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Valor maior do que o máximo permitido pela pool.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>verificando blocos...</translation>
     </message>
@@ -1246,12 +1181,8 @@
         <translation>carteira %s reside fora do diretório %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>Carteira esta bloqueada.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>Carteira precisa ser reescrita: reinicie o Bulwark Core para completar.</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>Carteira precisa ser reescrita: reinicie o BWK Core para completar.</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -1280,10 +1211,6 @@
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Você precisa reconstruir a database usando -reindex para mudar -txindex</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Sua transação foi aceita na pool!</translation>
     </message>
     </context>
 </TS>

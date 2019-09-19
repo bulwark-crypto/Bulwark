@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +14,8 @@ static const bool DEFAULT_CHOOSE_DATADIR = false;
 
 class FreespaceChecker;
 
-namespace Ui {
+namespace Ui
+{
 class Intro;
 }
 
@@ -21,10 +23,11 @@ class Intro;
   Allows the user to choose a data directory,
   in which the wallet and block chain will be stored.
  */
-class Intro : public QDialog {
+class Intro : public QDialog
+{
     Q_OBJECT
 
-  public:
+public:
     explicit Intro(QWidget* parent = 0);
     ~Intro();
 
@@ -33,6 +36,9 @@ class Intro : public QDialog {
 
     /**
      * Determine data directory. Let the user choose if the current one doesn't exist.
+     *
+     * @returns true if a data directory was selected, false if the user cancelled the selection
+     * dialog.
      *
      * @note do NOT call global GetDataDir() before calling this function, this
      * will cause the wrong path to be cached.
@@ -44,20 +50,20 @@ class Intro : public QDialog {
      */
     static QString getDefaultDataDirectory();
 
-  signals:
+signals:
     void requestCheck();
     void stopThread();
 
-  public slots:
+public slots:
     void setStatus(int status, const QString& message, quint64 bytesAvailable);
 
-  private slots:
+private slots:
     void on_dataDirectory_textChanged(const QString& arg1);
     void on_ellipsisButton_clicked();
     void on_dataDirDefault_clicked();
     void on_dataDirCustom_clicked();
 
-  private:
+private:
     Ui::Intro* ui;
     QThread* thread;
     QMutex mutex;
@@ -67,6 +73,7 @@ class Intro : public QDialog {
     void startThread();
     void checkPath(const QString& dataDir);
     QString getPathToCheck();
+    void updateDataDirStatus(bool enabled);
 
     friend class FreespaceChecker;
 };

@@ -1,4 +1,6 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2014-2016 The Dash developers
+// Copyright (c) 2016-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,10 +18,12 @@ class CWalletTx;
 
 /** UI model for transaction status. The transaction status is the part of a transaction that will change over time.
  */
-class TransactionStatus {
-  public:
+class TransactionStatus
+{
+public:
     TransactionStatus() : countsForBalance(false), sortKey(""),
-        matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1) {
+                          matures_in(0), status(Offline), depth(0), open_for(0), cur_num_blocks(-1)
+    {
     }
 
     enum Status {
@@ -66,12 +70,14 @@ class TransactionStatus {
 /** UI model for a transaction. A core transaction can be represented by multiple UI transactions if it has
     multiple outputs.
  */
-class TransactionRecord {
-  public:
+class TransactionRecord
+{
+public:
     enum Type {
         Other,
         Generated,
         StakeMint,
+        StakeZBWK,
         SendToAddress,
         SendToOther,
         RecvWithAddress,
@@ -81,7 +87,7 @@ class TransactionRecord {
         ZerocoinMint,
         ZerocoinSpend,
         RecvFromZerocoinSpend,
-        ZerocoinSpend_Change_zBWK,
+        ZerocoinSpend_Change_zTelos,
         ZerocoinSpend_FromMe,
         RecvWithObfuscation,
         ObfuscationDenominate,
@@ -94,15 +100,18 @@ class TransactionRecord {
     /** Number of confirmation recommended for accepting a transaction */
     static const int RecommendedNumConfirmations = 6;
 
-    TransactionRecord() : hash(), time(0), type(Other), address(""), debit(0), credit(0), idx(0) {
+    TransactionRecord(unsigned int size) : hash(), time(0), type(Other), address(""), debit(0), credit(0), size(size), idx(0)
+    {
     }
 
-    TransactionRecord(uint256 hash, qint64 time) : hash(hash), time(time), type(Other), address(""), debit(0),
-        credit(0), idx(0) {
+    TransactionRecord(uint256 hash, qint64 time, unsigned int size) : hash(hash), time(time), type(Other), address(""), debit(0),
+                                                   credit(0), size(size), idx(0)
+    {
     }
 
-    TransactionRecord(uint256 hash, qint64 time, Type type, const std::string& address, const CAmount& debit, const CAmount& credit) : hash(hash), time(time), type(type), address(address), debit(debit), credit(credit),
-        idx(0) {
+    TransactionRecord(uint256 hash, qint64 time, unsigned int size, Type type, const std::string& address, const CAmount& debit, const CAmount& credit) : hash(hash), time(time), type(type), address(address), debit(debit), credit(credit),
+                                                                                                                                       size(size), idx(0)
+    {
     }
 
     /** Decompose CWallet transaction to model transaction records.
@@ -118,6 +127,7 @@ class TransactionRecord {
     std::string address;
     CAmount debit;
     CAmount credit;
+    unsigned int size;
     /**@}*/
 
     /** Subtransaction index, for sort key */
@@ -142,6 +152,10 @@ class TransactionRecord {
     /** Return whether a status update is needed.
      */
     bool statusUpdateNeeded();
+
+    /** Return transaction status
+     */
+    std::string statusToString();
 };
 
 #endif // BITCOIN_QT_TRANSACTIONRECORD_H

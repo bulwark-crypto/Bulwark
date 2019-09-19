@@ -10,36 +10,36 @@
         <translation>새로운 주소 만들기</translation>
     </message>
     <message>
-        <source>New</source>
-        <translation>생성</translation>
+        <source>&amp;New</source>
+        <translation>&amp;생성</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>현재 선택된 주소를 복사합니다.</translation>
     </message>
     <message>
-        <source>Copy</source>
-        <translation>복사</translation>
+        <source>&amp;Copy</source>
+        <translation>&amp;복사</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
         <translation>현재 선택된 주소를 목록에서 삭제합니다.</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>삭제</translation>
+        <source>&amp;Delete</source>
+        <translation>&amp;삭제</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation>현재 선택된 탭의 데이터를 파일로 내보내기</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>내보내기</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;내보내기</translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation>닫기</translation>
+        <source>C&amp;lose</source>
+        <translation>닫&amp;기</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -50,8 +50,8 @@
         <translation>입금 받을 주소를 선택해주세요.</translation>
     </message>
     <message>
-        <source>Choose</source>
-        <translation>선택</translation>
+        <source>C&amp;hoose</source>
+        <translation>선&amp;택</translation>
     </message>
     <message>
         <source>Sending addresses</source>
@@ -62,24 +62,24 @@
         <translation>받을 주소</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>이 주소들은 송금할 Bulwark 주소입니다. 송금하기 전 항상 금액과 주소를 확인해주세요.</translation>
+        <source>These are your BWK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>이 주소들은 송금할 BWK 주소입니다. 송금하기 전 항상 금액과 주소를 확인해주세요.</translation>
     </message>
     <message>
-        <source>These are your Bulwark addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>이 주소들은 입금 받을 Bulwark 주소입니다. 매 거래마다 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
+        <source>These are your BWK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>이 주소들은 입금 받을 BWK 주소입니다. 매 거래마다 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>주소 복사</translation>
+        <source>&amp;Copy Address</source>
+        <translation>&amp;주소 복사</translation>
     </message>
     <message>
-        <source>Copy Label</source>
-        <translation>라벨 복사</translation>
+        <source>Copy &amp;Label</source>
+        <translation>라벨 &amp;복사</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>수정</translation>
+        <source>&amp;Edit</source>
+        <translation>&amp;수정</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -176,16 +176,16 @@
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>Bulwark will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your BWKS from being stolen by malware infecting your computer.</source>
-        <translation>Bulwark는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 Bulwarks 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
+        <source>BWK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your PIVs from being stolen by malware infecting your computer.</source>
+        <translation>BWK는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 PIVs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>지갑을 암호화 하시겠습니까?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR Bulwark&lt;/b&gt;!</source>
-        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 Bulwark를 잃게 됩니다&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BWK&lt;/b&gt;!</source>
+        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 PIV를 잃게 됩니다&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -246,20 +246,20 @@
         <translation>BIP 38 도구</translation>
     </message>
     <message>
-        <source>BIP 38 Encrypt</source>
-        <translation>BIP 38 암호화</translation>
+        <source>&amp;BIP 38 Encrypt</source>
+        <translation>&amp;BIP 38 암호화</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>주소:</translation>
     </message>
     <message>
-        <source>Enter a Bulwark Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>BIP 38 알고리즘으로 암호화할 Bulwark 지갑 주소를 입력. 중간박스에 암호구절 입력. 암호화된 개인키를 계산하시려면 암호화 클릭</translation>
+        <source>Enter a BWK Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>BIP 38 알고리즘으로 암호화할 BWK 지갑 주소를 입력. 중간박스에 암호구절 입력. 암호화된 개인키를 계산하시려면 암호화 클릭</translation>
     </message>
     <message>
-        <source>The Bulwark address to encrypt</source>
-        <translation>암호화할 Bulwark 주소</translation>
+        <source>The BWK address to encrypt</source>
+        <translation>암호화할 BWK 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -290,8 +290,8 @@
         <translation>현재 서명을 시스템 클립 보드에 복사</translation>
     </message>
     <message>
-        <source>Encrypt the private key for this Bulwark address</source>
-        <translation>이 Bulwark 주소의 개인키 암호화</translation>
+        <source>Encrypt the private key for this BWK address</source>
+        <translation>이 BWK 주소의 개인키 암호화</translation>
     </message>
     <message>
         <source>Reset all fields</source>
@@ -306,24 +306,24 @@
         <translation>암호구절을 사용하여 입력 한 키 암호 해독</translation>
     </message>
     <message>
-        <source>Encrypt Key</source>
-        <translation>암호화  키</translation>
+        <source>Encrypt &amp;Key</source>
+        <translation>암호화 &amp; 키</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>전체 지우기</translation>
+        <source>Clear &amp;All</source>
+        <translation>전체 &amp;지우기</translation>
     </message>
     <message>
-        <source>BIP 38 Decrypt</source>
-        <translation>BIP 38 암호화 해제</translation>
+        <source>&amp;BIP 38 Decrypt</source>
+        <translation>&amp;BIP 38 암호화 해제</translation>
     </message>
     <message>
         <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
         <translation>BIP 38 암호화 된 개인 키를 입력하십시오. 중간 입력창에 암호를 입력하십시오. 키를 암호해제 후 '주소 가져오기'를 클릭하면 개인 키가 지갑에 추가됩니다.</translation>
     </message>
     <message>
-        <source>Decrypt Key</source>
-        <translation>암호해제 키</translation>
+        <source>Decrypt &amp;Key</source>
+        <translation>암호해제 &amp;키</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -409,24 +409,24 @@
         <translation>노드</translation>
     </message>
     <message>
-        <source>Overview</source>
-        <translation>개요</translation>
+        <source>&amp;Overview</source>
+        <translation>&amp;개요</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
         <translation>지갑의 일반적인 개요 표시</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>보내기</translation>
+        <source>&amp;Send</source>
+        <translation>&amp;보내기</translation>
     </message>
     <message>
-        <source>Receive</source>
-        <translation>받기</translation>
+        <source>&amp;Receive</source>
+        <translation>&amp;받기</translation>
     </message>
     <message>
-        <source>Transactions</source>
-        <translation>거래내역</translation>
+        <source>&amp;Transactions</source>
+        <translation>&amp;거래내역</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
@@ -437,112 +437,112 @@
         <translation>zBWK 생성 및 관리</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <translation>종료</translation>
+        <source>E&amp;xit</source>
+        <translation>종&amp;료</translation>
     </message>
     <message>
         <source>Quit application</source>
         <translation>어플리케이션 종료</translation>
     </message>
     <message>
-        <source>About Qt</source>
-        <translation>Qt 정보</translation>
+        <source>About &amp;Qt</source>
+        <translation>&amp;Qt 정보</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
         <translation>Qt에 대한 정보 표시</translation>
     </message>
     <message>
-        <source>Options...</source>
-        <translation>옵션...</translation>
+        <source>&amp;Options...</source>
+        <translation>&amp;옵션...</translation>
     </message>
     <message>
-        <source>Show / Hide</source>
-        <translation>보이기 / 숨기기</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;보이기 / 숨기기</translation>
     </message>
     <message>
         <source>Show or hide the main Window</source>
         <translation>기본 창 보이기 또는 숨기기</translation>
     </message>
     <message>
-        <source>Encrypt Wallet...</source>
-        <translation>지갑 암호화...</translation>
+        <source>&amp;Encrypt Wallet...</source>
+        <translation>&amp;지갑 암호화...</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>지갑 개인 키 암호화</translation>
     </message>
     <message>
-        <source>Backup Wallet...</source>
-        <translation>지갑 백업</translation>
+        <source>&amp;Backup Wallet...</source>
+        <translation>&amp;지갑 백업</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
         <translation>다른 위치에 지갑 백업</translation>
     </message>
     <message>
-        <source>Change Passphrase...</source>
-        <translation>암호 변경...</translation>
+        <source>&amp;Change Passphrase...</source>
+        <translation>&amp;암호 변경...</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>지갑 암호화에 사용되는 암호 변경</translation>
     </message>
     <message>
-        <source>Unlock Wallet...</source>
-        <translation>지갑 잠금해제...</translation>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;지갑 잠금해제...</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
         <translation>지갑 잠금해제</translation>
     </message>
     <message>
-        <source>Lock Wallet</source>
-        <translation>지갑 잠금</translation>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;지갑 잠금</translation>
     </message>
     <message>
-        <source>Sign message...</source>
-        <translation>메세지 서명...</translation>
+        <source>Sign &amp;message...</source>
+        <translation>메세지 &amp;서명...</translation>
     </message>
     <message>
-        <source>Verify message...</source>
-        <translation>메시지 확인...</translation>
+        <source>&amp;Verify message...</source>
+        <translation>&amp;메시지 확인...</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>정보</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;정보</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
         <translation>진단 정보 표시</translation>
     </message>
     <message>
-        <source>Debug console</source>
-        <translation>디버그 콘솔</translation>
+        <source>&amp;Debug console</source>
+        <translation>&amp;디버그 콘솔</translation>
     </message>
     <message>
         <source>Open debugging console</source>
         <translation>디버깅 콘솔 열기</translation>
     </message>
     <message>
-        <source>Network Monitor</source>
-        <translation>네트워크 모니터</translation>
+        <source>&amp;Network Monitor</source>
+        <translation>&amp;네트워크 모니터</translation>
     </message>
     <message>
         <source>Show network monitor</source>
         <translation>네트워크 모니터 표시</translation>
     </message>
     <message>
-        <source>Peers list</source>
-        <translation>피어 목록</translation>
+        <source>&amp;Peers list</source>
+        <translation>&amp;피어 목록</translation>
     </message>
     <message>
         <source>Show peers info</source>
         <translation>피어 정보 표시</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>지갑 복구</translation>
+        <source>Wallet &amp;Repair</source>
+        <translation>지갑 &amp;복구</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
@@ -553,64 +553,60 @@
         <translation>구성 파일 열기</translation>
     </message>
     <message>
-        <source>Show Automatic Backups</source>
-        <translation>자동 백업 폴더 열기</translation>
+        <source>Show Automatic &amp;Backups</source>
+        <translation>자동 &amp;백업 폴더 열기</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
         <translation>자동 생성된 지갑 백업 표시</translation>
     </message>
     <message>
-        <source>Sending addresses...</source>
-        <translation>송금 주소</translation>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;송금 주소</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>송금 주소 및 라벨 목록 표시</translation>
     </message>
     <message>
-        <source>Receiving addresses...</source>
-        <translation>입금 주소</translation>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;입금 주소</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>입금 주소 및 라벨 목록 표시</translation>
     </message>
     <message>
-        <source>Multisignature creation...</source>
-        <translation>멀티시그너쳐 생성...</translation>
+        <source>&amp;Multisignature creation...</source>
+        <translation>&amp;멀티시그너쳐 생성...</translation>
     </message>
     <message>
         <source>Create a new multisignature address and add it to this wallet</source>
         <translation>신규 멀티시그너쳐 주소 생성 및 전송</translation>
     </message>
     <message>
-        <source>Multisignature spending...</source>
-        <translation>멀티시그너쳐 전송중...</translation>
+        <source>&amp;Multisignature spending...</source>
+        <translation>&amp;멀티시그너쳐 전송중...</translation>
     </message>
     <message>
         <source>Spend from a multisignature address</source>
         <translation>멀티시그너쳐 주소에서 전송</translation>
     </message>
     <message>
-        <source>Multisignature signing...</source>
-        <translation>멀티시그너쳐 서명중...</translation>
+        <source>&amp;Multisignature signing...</source>
+        <translation>&amp;멀티시그너쳐 서명중...</translation>
     </message>
     <message>
         <source>Sign with a multisignature address</source>
         <translation>멀티시그너쳐 주소로 서명</translation>
     </message>
     <message>
-        <source>Open URI...</source>
-        <translation>URI 열기...</translation>
+        <source>Open &amp;URI...</source>
+        <translation>&amp;URI 열기...</translation>
     </message>
     <message>
-        <source>Command-line options</source>
-        <translation>명령행 옵션</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n 블록의 거래내역 확인됨</numerusform></translation>
+        <source>&amp;Command-line options</source>
+        <translation>&amp;명령행 옵션</translation>
     </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
@@ -625,120 +621,120 @@
         <translation>현재 지갑은 &lt;b&gt;암호화&lt;/b&gt; 되어 &lt;b&gt;잠긴&lt;/b&gt; 상태로 스테이킹 전용모드로 안전하게 구동중입니다.</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation>파일</translation>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>토큰은 &lt;b&gt;입니다 .&lt;/b&gt; : %1</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>설정</translation>
+        <source>&amp;File</source>
+        <translation>&amp;파일</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation>도구</translation>
+        <source>&amp;Settings</source>
+        <translation>&amp;설정</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation>도움말</translation>
+        <source>&amp;Tools</source>
+        <translation>&amp;도구</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;도움말</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
         <translation>탭 도구 모음</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
-        <source>Send coins to a Bulwark address</source>
-        <translation>Bulwark 주소로 입금하기</translation>
+        <source>Send coins to a BWK address</source>
+        <translation>BWK 주소로 입금하기</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and Bulwark: URIs)</source>
-        <translation>결제 요청 (QR 코드 및 Bulwark: URI 생성)</translation>
+        <source>Request payments (generates QR codes and pivx: URIs)</source>
+        <translation>결제 요청 (QR 코드 및 pivx: URI 생성)</translation>
     </message>
     <message>
-        <source>Privacy</source>
-        <translation>프라이버시</translation>
+        <source>&amp;Privacy</source>
+        <translation>&amp;프라이버시</translation>
     </message>
     <message>
-        <source>Masternodes</source>
-        <translation>마스터노드</translation>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;마스터노드</translation>
     </message>
     <message>
         <source>Browse masternodes</source>
         <translation>마스터노드 검색</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Bulwark Core 정보</translation>
+        <source>&amp;About BWK Core</source>
+        <translation>BWK Core &amp;정보</translation>
     </message>
     <message>
-        <source>Show information about Bulwark Core</source>
-        <translation>Bulwark Core에 대한 정보 표시</translation>
+        <source>Show information about BWK Core</source>
+        <translation>BWK Core에 대한 정보 표시</translation>
     </message>
     <message>
-        <source>Modify configuration options for Bulwark</source>
-        <translation>Bulwark에 대한 구성 옵션 수정</translation>
+        <source>Modify configuration options for BWK</source>
+        <translation>BWK에 대한 구성 옵션 수정</translation>
     </message>
     <message>
-        <source>Sign messages with your Bulwark addresses to prove you own them</source>
-        <translation>Bulwark 주소로 메시지에 서명하여 소유하고 있음을 증명하십시오.</translation>
+        <source>Sign messages with your BWK addresses to prove you own them</source>
+        <translation>BWK 주소로 메시지에 서명하여 소유하고 있음을 증명하십시오.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bulwark addresses</source>
-        <translation>메시지가 지정된 Bulwark 주소로 서명되었는지 확인합니다.</translation>
+        <source>Verify messages to ensure they were signed with specified BWK addresses</source>
+        <translation>메시지가 지정된 BWK 주소로 서명되었는지 확인합니다.</translation>
     </message>
     <message>
-        <source>BIP38 tool</source>
-        <translation>BIP38 도구</translation>
+        <source>&amp;BIP38 tool</source>
+        <translation>&amp;BIP38 도구</translation>
     </message>
     <message>
         <source>Encrypt and decrypt private keys using a passphrase</source>
         <translation>암호를 사용하여 개인 키 암호화 및 암호해제</translation>
     </message>
     <message>
-        <source>MultiSend</source>
-        <translation>다중전송</translation>
+        <source>&amp;MultiSend</source>
+        <translation>&amp;다중전송</translation>
     </message>
     <message>
         <source>MultiSend Settings</source>
         <translation>다중전송 설정</translation>
     </message>
     <message>
-        <source>Open Wallet Configuration File</source>
-        <translation>지갑 구성 파일 열기</translation>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>지갑 &amp;구성 파일 열기</translation>
     </message>
     <message>
-        <source>Open Masternode Configuration File</source>
-        <translation>마스터노드 구성 파일 열기</translation>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>&amp;마스터노드 구성 파일 열기</translation>
     </message>
     <message>
         <source>Open Masternode configuration file</source>
         <translation>마스터노드 구성 파일 열기</translation>
     </message>
     <message>
-        <source>Open a Bulwark: URI or payment request</source>
-        <translation>Bulwark: URI 또는 ​​결제 요청 열기</translation>
+        <source>Open a BWK: URI or payment request</source>
+        <translation>BWK: URI 또는 ​​결제 요청 열기</translation>
     </message>
     <message>
-        <source>Blockchain explorer</source>
-        <translation>블록체인 탐색기</translation>
+        <source>&amp;Blockchain explorer</source>
+        <translation>&amp;블록체인 탐색기</translation>
     </message>
     <message>
         <source>Block explorer window</source>
         <translation>블록 탐색 창</translation>
     </message>
     <message>
-        <source>Show the Bulwark Core help message to get a list with possible Bulwark command-line options</source>
-        <translation>Bulwark Core 도움말 메세지를 표시하여 사용 가능한 Bulwark 명령행 옵션 목록 표시</translation>
+        <source>Show the BWK Core help message to get a list with possible BWK command-line options</source>
+        <translation>BWK Core 도움말 메세지를 표시하여 사용 가능한 BWK 명령행 옵션 목록 표시</translation>
     </message>
     <message>
-        <source>Bulwark Core client</source>
-        <translation>Bulwark Core 클라이언트</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Bulwark network</source>
-        <translation><numerusform>%n 개의 Bulwark 네트웍에 연결됨</numerusform></translation>
+        <source>BWK Core client</source>
+        <translation>BWK Core 클라이언트</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -760,25 +756,9 @@
         <source>Up to date</source>
         <translation>최신</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n 시간</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n 일</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n 주</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 그리고 %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n 년</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +844,7 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>지갑은 &lt;b&gt;암호화&lt;/ b&gt;되어 있으며 현재 &lt;b&gt;잠겨 있습니다&lt;/ b&gt;.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -892,8 +872,8 @@ Address: %4
         <translation>텍스트라벨</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (bulwark.conf).</source>
-        <translation>모든 트랜잭션이 표시되지는 않습니다. 모든 트랜잭션을 보려면 구성 파일 (bulwark.conf)에 txindex = 1을 설정해야합니다.</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).</source>
+        <translation>모든 트랜잭션이 표시되지는 않습니다. 모든 트랜잭션을 보려면 구성 파일 (pivx.conf)에 txindex = 1을 설정해야합니다.</translation>
     </message>
 </context>
 <context>
@@ -1130,8 +1110,8 @@ Address: %4
         <translation>받는 사람이 %1 보다 작은 금액을 받으면 라벨이 빨간색으로 변경됩니다.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uBulwark per input.</source>
-        <translation>Can vary +/- %1 uBulwark per input.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Can vary +/- %1 upiv per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1153,16 +1133,16 @@ Address: %4
         <translation>주소 수정</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>라벨</translation>
+        <source>&amp;Label</source>
+        <translation>&amp;라벨</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
         <translation>이 주소 목록과 관련된 라벨</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>주소</translation>
+        <source>&amp;Address</source>
+        <translation>&amp;주소</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1185,8 +1165,8 @@ Address: %4
         <translation>보내는 주소 수정</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bulwark address.</source>
-        <translation>입력된 주소 "%1"는 올바른 Bulwark 주소가 아닙니다.</translation>
+        <source>The entered address "%1" is not a valid BWK address.</source>
+        <translation>입력된 주소 "%1"는 올바른 BWK 주소가 아닙니다.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1225,22 +1205,33 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
         <translation>버전</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Bulwark Core</source>
-        <translation>Bulwark Core 정보</translation>
+        <source>About BWK Core</source>
+        <translation>BWK Core 정보</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1286,16 +1277,16 @@ Address: %4
         <translation>환영합니다</translation>
     </message>
     <message>
-        <source>Welcome to Bulwark Core.</source>
-        <translation>Bulwark Core에 오신 것을 환영합니다.</translation>
+        <source>Welcome to BWK Core.</source>
+        <translation>BWK Core에 오신 것을 환영합니다.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Bulwark Core will store its data.</source>
-        <translation>이 프로그램이 처음 실행되었으므로 Bulwark Core가 데이터를 저장할 위치를 선택할 수 있습니다.</translation>
+        <source>As this is the first time the program is launched, you can choose where BWK Core will store its data.</source>
+        <translation>이 프로그램이 처음 실행되었으므로 BWK Core가 데이터를 저장할 위치를 선택할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Bulwark Core will download and store a copy of the Bulwark block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Bulwark Core는 Bulwark 블록체인을 다운로드하여 저장합니다. 최소 %1GB의 데이터가 디렉토리에 저장되며 시간이 지날수록 증가합니다. 또한 지갑도 해당 디렉토리에 저장됩니다.</translation>
+        <source>BWK Core will download and store a copy of the BWK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>BWK Core는 BWK 블록체인을 다운로드하여 저장합니다. 최소 %1GB의 데이터가 디렉토리에 저장되며 시간이 지날수록 증가합니다. 또한 지갑도 해당 디렉토리에 저장됩니다.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1306,8 +1297,8 @@ Address: %4
         <translation>사용자 지정 데이터 디렉토리 사용:</translation>
     </message>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1369,20 +1360,20 @@ Address: %4
         <translation>공개키</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>마스트노드 시작</translation>
+        <source>S&amp;tart alias</source>
+        <translation>마스트노드 시&amp;작</translation>
     </message>
     <message>
-        <source>Start all</source>
-        <translation>전체 시작</translation>
+        <source>Start &amp;all</source>
+        <translation>&amp;전체 시작</translation>
     </message>
     <message>
-        <source>Start MISSING</source>
-        <translation>누락된 마스트노드 시작</translation>
+        <source>Start &amp;MISSING</source>
+        <translation>누락된 마스트노드 시&amp;작</translation>
     </message>
     <message>
-        <source>Update status</source>
-        <translation>업데이트 상태</translation>
+        <source>&amp;Update status</source>
+        <translation>&amp;업데이트 상태</translation>
     </message>
     <message>
         <source>Status will be updated automatically in (sec):</source>
@@ -1448,12 +1439,12 @@ Address: %4
         <translation>보낼 주소 입력</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Bulwark addresses after it matures.
-To Add: enter percentage to give and Bulwark address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other BWK addresses after it matures.
+To Add: enter percentage to give and BWK address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>다중전송을 사용하면 성취 한 뒤 다른 Bulwark 주소 목록에 최대 100% 스테이크 또는 마스터노드 보상을 자동으로 보낼 수 있습니다.
-추가하려면 : 부여 할 백분율과 다중전송 벡터에 추가 할 Bulwark 주소를 입력하십시오.
+        <translation>다중전송을 사용하면 성취 한 뒤 다른 BWK 주소 목록에 최대 100% 스테이크 또는 마스터노드 보상을 자동으로 보낼 수 있습니다.
+추가하려면 : 부여 할 백분율과 다중전송 벡터에 추가 할 BWK 주소를 입력하십시오.
 삭제하려면 삭제할 주소를 입력하고 삭제를 누릅니다.
 활성화를 클릭하지 않으면 다중전송이 활성화되지 않습니다.</translation>
     </message>
@@ -1542,48 +1533,8 @@ MultiSend will not be activated unless you have clicked Activate</source>
         <translation>(라벨 없음)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>입력된 주소:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>올바르지 않습니다.
-주소를 확인하고 다시 시도해주세요.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>다중전송 벡터의 총 금액이 스테이크 보상 금액의 100 % 이상입니다
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>퍼센트로 1 - 100을 입력하십시오.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>MultiSend를 메모리에 저장했지만 데이터베이스에 대한 속성 저장에 실패했습니다.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>다중전송 벡터
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>제거됨</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>주소를 찾을 수 없습니다
-</translation>
     </message>
 </context>
 <context>
@@ -1593,8 +1544,8 @@ Please check the address and try again.</source>
         <translation>멀티 서명 주소 상호 작용</translation>
     </message>
     <message>
-        <source>Create MultiSignature Address</source>
-        <translation>멀티시그너쳐 주소 생성</translation>
+        <source>Create MultiSignature &amp;Address</source>
+        <translation>&amp;멀티시그너쳐 주소 생성</translation>
     </message>
     <message>
         <source>How many people must sign to verify a transaction</source>
@@ -1613,8 +1564,8 @@ Please check the address and try again.</source>
         <translation>multisig 주소에서 트랜잭션을 확인하기 위해 서명 할 수있는 다른 주소를 추가하십시오.</translation>
     </message>
     <message>
-        <source>Add Address / Key</source>
-        <translation>주소 / 키 추가</translation>
+        <source>&amp;Add Address / Key</source>
+        <translation>&amp;주소 / 키 추가</translation>
     </message>
     <message>
         <source>Local addresses or public keys that can sign:</source>
@@ -1625,8 +1576,8 @@ Please check the address and try again.</source>
         <translation>신규 멀티시그 주소 생성</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>생성</translation>
+        <source>C&amp;reate</source>
+        <translation>&amp;생성</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1641,12 +1592,12 @@ Please be patient after clicking import.</source>
 가져 오기를 클릭 한 후 기다려주십시오.</translation>
     </message>
     <message>
-        <source>Import Redeem</source>
-        <translation>리딤코드 가져오기</translation>
+        <source>&amp;Import Redeem</source>
+        <translation>&amp;리딤코드 가져오기</translation>
     </message>
     <message>
-        <source>Create MultiSignature Tx</source>
-        <translation>맺음말 Tx 만들기 ( A)</translation>
+        <source>&amp;Create MultiSignature Tx</source>
+        <translation>맺음말 Tx 만들기 (&amp; A)</translation>
     </message>
     <message>
         <source>Inputs:</source>
@@ -1681,11 +1632,11 @@ Please be patient after clicking import.</source>
         <translation>주소 / 금액:</translation>
     </message>
     <message>
-        <source>Add destinations to send Bulwark to</source>
-        <translation>Bulwark를 보낼 목적지 추가</translation>
+        <source>Add destinations to send BWK to</source>
+        <translation>PIV를 보낼 목적지 추가</translation>
     </message>
     <message>
-        <source>Add Destination</source>
+        <source>Add &amp;Destination</source>
         <translation>추가 및 대상</translation>
     </message>
     <message>
@@ -1693,12 +1644,12 @@ Please be patient after clicking import.</source>
         <translation>주어진 출력에 주어진 입력을 사용하여 트랜잭션 객체를 만듭니다.</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation>생성</translation>
+        <source>Cr&amp;eate</source>
+        <translation>&amp;생성</translation>
     </message>
     <message>
-        <source>Sign MultiSignature Tx</source>
-        <translation>멀티 시그니처 Tx 서명 ( S)</translation>
+        <source>&amp;Sign MultiSignature Tx</source>
+        <translation>멀티 시그니처 Tx 서명 (&amp; S)</translation>
     </message>
     <message>
         <source>Transaction Hex:</source>
@@ -1709,24 +1660,24 @@ Please be patient after clicking import.</source>
         <translation>이 지갑이나 제공된 개인 키에서 거래에 서명하십시오.</translation>
     </message>
     <message>
-        <source>Sign</source>
-        <translation>서명</translation>
+        <source>S&amp;ign</source>
+        <translation>&amp;서명</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>거래가 충분히 서명 될 때까지 1234DISABLED</translation>
     </message>
     <message>
-        <source>Commit</source>
-        <translation>Commit</translation>
+        <source>Co&amp;mmit</source>
+        <translation>Co&amp;mmit</translation>
     </message>
     <message>
         <source>Add private keys to sign the transaction with</source>
         <translation>개인 키를 추가하여 다음을 사용하여 트랜잭션에 서명하십시오.</translation>
     </message>
     <message>
-        <source>Add Private Key</source>
-        <translation>개인키 추가</translation>
+        <source>Add Private &amp;Key</source>
+        <translation>&amp;개인키 추가</translation>
     </message>
     <message>
         <source>Sign with only private keys (Not Recommened)</source>
@@ -1755,73 +1706,6 @@ Please be patient after clicking import.</source>
     <message>
         <source>Maximum (15)</source>
         <translation>최대 (15)</translation>
-    </message>
-</context>
-<context>
-    <name>ObfuscationConfig</name>
-    <message>
-        <source>Configure Obfuscation</source>
-        <translation>난독화 구성</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>기본 익명화</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>높은 익명화</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>최대 익명화</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>익명화 레벨을 선택해주세요.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>2개의 개별 마스터노드를 이용하여 최대 10000 Bulwark 를 섞을 수 있습니다.</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 Bulwark</source>
-        <translation>8개의 개별 마스터노드를 이용하여 최대 10000 Bulwark 를 섞을 수 있습니다.</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>16개의 개별 마스터노드를 사용</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>이 옵션은 가장 빠르게 전송되며 10000 Bulwark 익명화에 약 ~0.025 Bulwark의 비용이 들어갑니다.</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 Bulwark to anonymize 10000 Bulwark</source>
-        <translation>이 옵션은 중간 정도의 속도로 전송되며 10000 Bulwark 익명화에 약 0.05 Bulwark의 비용이 들어갑니다.</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>이것은 가장 느리고 안전한 옵션입니다. 최고 익명성을 사용하면 비용이 발생합니다.</translation>
-    </message>
-    <message>
-        <source>0.1 Bulwark per 10000 Bulwark you anonymize.</source>
-        <translation>10000 Bulwark 익명화에 0.1 Bulwark 가 듭니다.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>난독화 구성</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 2 rounds) Bulwark의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 8 rounds) Bulwark의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Bulwark's configuration screen.</source>
-        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 16 rounds) Bulwark의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -1854,36 +1738,36 @@ Please be patient after clicking import.</source>
         <translation>옵션</translation>
     </message>
     <message>
-        <source>Main</source>
-        <translation>메인</translation>
+        <source>&amp;Main</source>
+        <translation>&amp;메인</translation>
     </message>
     <message>
-        <source>Size of database cache</source>
-        <translation>데이터베이스 캐시 크기</translation>
+        <source>Size of &amp;database cache</source>
+        <translation>&amp;데이터베이스 캐시 크기</translation>
     </message>
     <message>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <source>Number of script verification threads</source>
-        <translation>스크립트 검증 스레드 개수</translation>
+        <source>Number of script &amp;verification threads</source>
+        <translation>스크립트 &amp;검증 스레드 개수</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation>(0 = 자동, &lt;0 = 많은 코어들을 여유롭게 두기)</translation>
     </message>
     <message>
-        <source>Wallet</source>
-        <translation>지갑</translation>
+        <source>W&amp;allet</source>
+        <translation>지&amp;갑</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>확인되지 않은 변경사항을 사용하지 않도록 설정하면 해당 트랜잭션에 하나 이상의 컨펌이 진행되야&lt;br/&gt;트랜잭션에 변경사항을 적용할 수 있습니다.&lt;br/&gt;또한 이것은 잔액 계산 방식에도 영향을 줍니다.</translation>
     </message>
     <message>
-        <source>Automatically open the Bulwark client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>라우터에서 Bulwark 클라이언트 포트를 자동으로 엽니다. 이 기능은 라우터가 UPnP를 지원하고 활성화 된 경우에만 사용할 수 있습니다.</translation>
+        <source>Automatically open the BWK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>라우터에서 BWK 클라이언트 포트를 자동으로 엽니다. 이 기능은 라우터가 UPnP를 지원하고 활성화 된 경우에만 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1894,28 +1778,28 @@ Please be patient after clicking import.</source>
         <translation>들어오는 연결 허용</translation>
     </message>
     <message>
-        <source>Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>SOCKS5 프록시를 통해 연결 (기본 프록시):</translation>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;SOCKS5 프록시를 통해 연결 (기본 프록시):</translation>
     </message>
     <message>
         <source>Expert</source>
         <translation>전문적</translation>
     </message>
     <message>
-        <source>Automatically start Bulwark after logging in to the system.</source>
-        <translation>시스템 로그인 후 Bulwark을 자동으로 시작합니다.</translation>
+        <source>Automatically start BWK after logging in to the system.</source>
+        <translation>시스템 로그인 후 BWK을 자동으로 시작합니다.</translation>
     </message>
     <message>
-        <source>Start Bulwark on system login</source>
-        <translation>시스템 로그인시 Bulwark 시작</translation>
+        <source>&amp;Start BWK on system login</source>
+        <translation>&amp;시스템 로그인시 BWK 시작</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>동전 제어 기능을 표시할지 여부를 나타냅니다.</translation>
     </message>
     <message>
-        <source>Enable coin control features</source>
-        <translation>코인 제어 기능 사용</translation>
+        <source>Enable coin &amp;control features</source>
+        <translation>코인 &amp;제어 기능 사용</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
@@ -1926,46 +1810,46 @@ Please be patient after clicking import.</source>
         <translation>마스터노드 탭 표시</translation>
     </message>
     <message>
-        <source>Spend unconfirmed change</source>
-        <translation>확인되지 않은 변경사항 전송</translation>
+        <source>&amp;Spend unconfirmed change</source>
+        <translation>&amp;확인되지 않은 변경사항 전송</translation>
     </message>
     <message>
-        <source>Network</source>
-        <translation>네트워크</translation>
+        <source>&amp;Network</source>
+        <translation>&amp;네트워크</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Bulwark.</source>
-        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 Bulwark을 다시 시작한 후에 적용됩니다.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting BWK.</source>
+        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 BWK을 다시 시작한 후에 적용됩니다.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</source>
+https://www.transifex.com/pivx-project/pivx-project-translations</source>
         <translation>지원 언어가 없거나 번역이 불완전한가요? 번역을 도와주세요 :
-https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translation>
+https://www.transifex.com/pivx-project/pivx-project-translations</translation>
     </message>
     <message>
-        <source>Map port using UPnP</source>
-        <translation>UPnp를 사용하여 포트 매핑</translation>
+        <source>Map port using &amp;UPnP</source>
+        <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
     </message>
     <message>
-        <source>Enable automatic minting of Bulwark units to zBWK</source>
-        <translation>보상받은 Bulwark를 zBWK로 자동변환 활성화</translation>
+        <source>Enable automatic minting of BWK units to zBWK</source>
+        <translation>보상받은 PIV를 zBWK로 자동변환 활성화</translation>
     </message>
     <message>
         <source>Enable zBWK Automint</source>
         <translation>zBWK 자동생성 활성화</translation>
     </message>
     <message>
-        <source>Percentage of incoming Bulwark which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
-        <translation>Bulwark수신시 자동변환 zBWK 비율 (최소값:10%)</translation>
+        <source>Percentage of incoming BWK which get automatically converted to zBWK via Zerocoin Protocol (min: 10%)</source>
+        <translation>PIV수신시 자동변환 zBWK 비율 (최소값:10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zBWK</source>
         <translation>자동 변환되는 zBWK 비율</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough Bulwark for this denomination is available</source>
-        <translation>이 디노미네이션의 Bulwark가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough BWK for this denomination is available</source>
+        <translation>이 디노미네이션의 PIV가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
     </message>
     <message>
         <source>Preferred Automint zBWK Denomination</source>
@@ -1976,60 +1860,56 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>Stake split threshold:</translation>
     </message>
     <message>
-        <source>Connect to the Bulwark network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 프록시를 통해 Bulwark 네트워크에 연결해주세요.</translation>
+        <source>Connect to the BWK network through a SOCKS5 proxy.</source>
+        <translation>SOCKS5 프록시를 통해 BWK 네트워크에 연결해주세요.</translation>
     </message>
     <message>
-        <source>Proxy IP:</source>
-        <translation>프록시 IP:</translation>
+        <source>Proxy &amp;IP:</source>
+        <translation>프록시 &amp;IP:</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>프록시 IP 주소 (예: IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation>포트:</translation>
+        <source>&amp;Port:</source>
+        <translation>&amp;포트:</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>프록시 포트 (예: 9050)</translation>
     </message>
     <message>
-        <source>Window</source>
-        <translation>윈도우</translation>
+        <source>&amp;Window</source>
+        <translation>&amp;윈도우</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
         <translation>창 최소화 후 트레이 아이콘으로만 표시.</translation>
     </message>
     <message>
-        <source>Minimize to the tray instead of the taskbar</source>
-        <translation>최소화시 작업표시줄이 아닌 트레이로 최소화</translation>
+        <source>&amp;Minimize to the tray instead of the taskbar</source>
+        <translation>&amp;최소화시 작업표시줄이 아닌 트레이로 최소화</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
         <translation>창 닫기시 프로그램 종료하지 않고 최소화하기. 이 옵션을 사용하면 메뉴에서 종료를 선택해야 프로그램이 종료됩니다.</translation>
     </message>
     <message>
-        <source>Minimize on close</source>
-        <translation>닫기시 최소화</translation>
+        <source>M&amp;inimize on close</source>
+        <translation>닫&amp;기시 최소화</translation>
     </message>
     <message>
-        <source>Display</source>
-        <translation>디스플레이</translation>
+        <source>&amp;Display</source>
+        <translation>&amp;디스플레이</translation>
     </message>
     <message>
-        <source>User Interface language:</source>
-        <translation>사용자 인터페이스 언어:</translation>
+        <source>User Interface &amp;language:</source>
+        <translation>사용자 인터페이스 &amp;언어:</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
         <translation>사용자 인터페이스 테마:</translation>
-    </message>
-    <message>
-        <source>Unit to show amounts in:</source>
-        <translation>금액을 표시 할 단위:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2060,16 +1940,16 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>모든 클라이언트 옵션을 기본값으로 재설정.</translation>
     </message>
     <message>
-        <source>Reset Options</source>
-        <translation>옵션 재설정</translation>
+        <source>&amp;Reset Options</source>
+        <translation>&amp;옵션 재설정</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation>예</translation>
+        <source>&amp;OK</source>
+        <translation>&amp;예</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>취소</translation>
+        <source>&amp;Cancel</source>
+        <translation>&amp;취소</translation>
     </message>
     <message>
         <source>Any</source>
@@ -2131,8 +2011,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>전체 잔액, (현재 전송이 불가능한 코인 포함)</translation>
     </message>
     <message>
-        <source>Bulwark Balance</source>
-        <translation>Bulwark 잔액</translation>
+        <source>BWK Balance</source>
+        <translation>BWK 잔액</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2155,8 +2035,8 @@ https://www.transifex.com/Bulwark-project/Bulwark-project-translations</translat
         <translation>현재 보기전용 주소의 잠긴 잔액 </translation>
     </message>
     <message>
-        <source>Your current Bulwark balance, unconfirmed and immature transactions included</source>
-        <translation>현재 Bulwark 잔액, 미확정, 생성중인 코인 포함</translation>
+        <source>Your current BWK balance, unconfirmed and immature transactions included</source>
+        <translation>현재 BWK 잔액, 미확정, 생성중인 코인 포함</translation>
     </message>
     <message>
         <source>zBWK Balance</source>
@@ -2175,8 +2055,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
 미성숙 : 확인되었지만 발행 된 후 같은 종파 1 개 미만</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 Bulwark 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 BWK 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
     </message>
     <message>
         <source>OVERVIEW</source>
@@ -2219,8 +2099,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>출금 가능 액수:</translation>
     </message>
     <message>
-        <source>Locked Bulwark or Masternode collaterals. These are excluded from zBWK minting.</source>
-        <translation>잠금 Bulwark 또는 Masternode collaterals. 이들은 zBWK minting에서 제외됩니다.</translation>
+        <source>Locked BWK or Masternode collaterals. These are excluded from zBWK minting.</source>
+        <translation>잠금 BWK 또는 Masternode collaterals. 이들은 zBWK minting에서 제외됩니다.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2254,14 +2134,14 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <translation>자동 생성기능이 현재 작동중 그리고 </translation>
     </message>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in bulwark.conf.</source>
-        <translation>자동생성 기능을 사용하지 않으시려면, bulwark.conf 화일에 enablezeromint=0 를 추가하세요.</translation>
+        <source>To disable AutoMint add 'enablezeromint=0' in pivx.conf.</source>
+        <translation>자동생성 기능을 사용하지 않으시려면, pivx.conf 화일에 enablezeromint=0 를 추가하세요.</translation>
     </message>
     <message>
         <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.conf</source>
+To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in pivx.conf</source>
         <translation>자동 저장 기능이 현재 사용 중지되었습니다 .
-자동 변환을 사용하려면 Bulwarkotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
+자동 변환을 사용하려면 pivotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
     </message>
 </context>
 <context>
@@ -2287,12 +2167,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>잘못된 결제 주소 %1</translation>
     </message>
     <message>
-        <source>Cannot start Bulwark: click-to-pay handler</source>
-        <translation>Bulwark을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
+        <source>Cannot start pivx: click-to-pay handler</source>
+        <translation>BWK을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an Invalid BWK address or malformed URI parameters.</source>
-        <translation>URI를 분석할 수 없습니다! 이는 잘못된 Bulwark 주소 또는 URI 매개변수 손상으로 인해 발생할 수 있습니다.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BWK address or malformed URI parameters.</source>
+        <translation>URI를 분석할 수 없습니다! 이는 잘못된 BWK 주소 또는 URI 매개변수 손상으로 인해 발생할 수 있습니다.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2377,8 +2257,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>제로코인 관리:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bulwark network after a connection is established, but this process has not completed yet.</source>
-        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 Bulwark 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BWK network after a connection is established, but this process has not completed yet.</source>
+        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 BWK 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2393,36 +2273,12 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
         <translation>zBWK</translation>
     </message>
     <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>주화 사용 가능 여부는 확정되고 잠기지 않은 주화 또는 주전원 collaterals입니다.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>생성 가능한 수량:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 BWK</source>
-        <translation>0.000 000 00 BWK</translation>
-    </message>
-    <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
         <translation>제로코인 지갑 DB 재설정. 블록 체인에 포함시키지 않은 트랜잭션을 삭제합니다.</translation>
     </message>
     <message>
         <source>Reset</source>
         <translation>초기화</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>코인 컨트롤...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>수량:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>금액:</translation>
     </message>
     <message>
         <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
@@ -2439,10 +2295,6 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bulwark.co
     <message>
         <source>PRIVACY</source>
         <translation>프라이버시</translation>
-    </message>
-    <message>
-        <source>Enter an amount of BWK to convert to zBWK</source>
-        <translation>zBWK로 변환할 Bulwark 수량을 입력하세요.</translation>
     </message>
     <message>
         <source>zBWK Control</source>
@@ -2485,24 +2337,12 @@ zBWK는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
         <translation>0 zBWK</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>제로코인 전송 시큐리티 레벨.  높을수록 좋지만, 시간과 많은 자원이 필요합니다.</translation>
+        <source>Pay &amp;To:</source>
+        <translation>지불 &amp;대상:</translation>
     </message>
     <message>
-        <source>Security Level:</source>
-        <translation>시큐리티 레벨:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>시큐리티 레벨 1 - 100 (기본값: 42)</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>지불 대상:</translation>
-    </message>
-    <message>
-        <source>The Bulwark address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Bulwark를 전송할 Bulwark 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
+        <source>The BWK address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>PIV를 전송할 BWK 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2521,16 +2361,16 @@ zBWK는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>라벨:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;라벨:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>이 주소의 라벨을 입력하여 사용된 주소 목록에 추가하십시오</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>금액:</translation>
+        <source>A&amp;mount:</source>
+        <translation>금&amp;액:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2578,8 +2418,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <source>Show the current status of automatic zBWK minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to bulwark.conf
-- disable: add 'enablezeromint=0' to bulwark.conf
+- enable: add 'enablezeromint=1' to pivx.conf
+- disable: add 'enablezeromint=0' to pivx.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zBWK
@@ -2588,8 +2428,8 @@ To change the percentage (no restart required):
         <translation>현재 zBWK 자동 생성 상태를 보여줍니다.
 
 자동생성 상태를 변경하시려면 (지갑 재시작 필요함):
-- 활성화: 'enablezeromint=1' 를 bulwark.conf 파일에 추가
-- 비활성화: 'enablezeromint=0' 를 bulwark.conf 파일에 추가
+- 활성화: 'enablezeromint=1' 를 pivx.conf 파일에 추가
+- 비활성화: 'enablezeromint=0' 를 pivx.conf 파일에 추가
 
 자동 생성 비율 변경하시려면 (지갑 재시작 필요없음):
 - 메뉴 설정-&gt;옵션-&gt;zBWK 자동생성 비율
@@ -2718,7 +2558,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Bytes:</translation>
+        <translation>바이트:</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
@@ -2726,11 +2566,11 @@ To change the percentage (no restart required):
     </message>
     <message>
         <source>Coins automatically selected</source>
-        <translation>코인 자동으로 선택됨</translation>
+        <translation>자동으로 선택됩니다.</translation>
     </message>
     <message>
         <source>medium</source>
-        <translation>중간</translation>
+        <translation>5 중간</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2761,32 +2601,10 @@ To change the percentage (no restart required):
         <translation>생성 상태 : Okay</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>수량 복사</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>금액 복사</translation>
-    </message>
-    <message>
         <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
 Please be patient...</source>
         <translation>제로코인 생성 초기화 진행중... : 전체 블록체인을 다시 검색합니다. 하드웨어에 따라 최대 30분이 걸릴수 있습니다.
 기다려주세요...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>제로코인 전송중입니다.
-시큐리티 레벨과 여러분의 하드웨어에 따라 수 분이 걸립니다.
-조금만 기다려주세요...</translation>
-    </message>
-    <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) 가 필요함.
-가능한 최대값 :</translation>
     </message>
     <message>
         <source>zBWK Spend #: </source>
@@ -2885,32 +2703,6 @@ Maximum allowed: </source>
         <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
     </message>
     <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Error : 지갑이 잠겨있습니다. 먼저 지갑을 열어주세요.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Message: 0 이상의 수량을 입력하세요.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>생성중입니다.</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>성공적으로 발행됨</translation>
-    </message>
-    <message>
-        <source> zBWK in </source>
-        <translation> zBWK in </translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation> 초. 사용된 디노미네이션:
-</translation>
-    </message>
-    <message>
         <source>Duration: </source>
         <translation>경과시간:</translation>
     </message>
@@ -2929,8 +2721,8 @@ Maximum allowed: </source>
         <translation>주소를 입력하지 않아, 신규 주소를 생성합니다.</translation>
     </message>
     <message>
-        <source>Invalid BWK address</source>
-        <translation>잘못된 Bulwark 주소</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>잘못된 BWK 주소</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2953,42 +2745,16 @@ Maximum allowed: </source>
         <translation>새로 생성된 개인 지갑 주소(미사용된 익명의) &lt;br /&gt; 로</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>시큐리티 레벨</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>코인 전송 확인</translation>
-    </message>
-    <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>zBWK 버전 1은 성공적으로 보내기 위해서 100 시큐리티 레벨이 필요합니다.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zBWK</source>
-        <translation>zBWK 전송 실패</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
         <translation>Failed to fetch mint associated with serial hash</translation>
     </message>
     <message>
-        <source>Too much inputs (</source>
-        <translation>너무 많은 입력 (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>높은 디노미네션 값으로 생성하거나, 보내실 금액을 줄여주세요.</translation>
-    </message>
-    <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>제로코인 송금 실패 상태 =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of BWK to convert to zBWK</comment>
-        <translation><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3024,14 +2790,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter a Bulwark address (e.g. %1)</source>
-        <translation>Bulwark 주소를 입력하세요 (예 %1)</translation>
+        <source>Enter a BWK address (e.g. %1)</source>
+        <translation>BWK 주소를 입력하세요 (예 %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3073,16 +2842,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>Save Image...</source>
-        <translation>이미지 저장...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>이미지 &amp;저장...</translation>
     </message>
     <message>
-        <source>Copy Image</source>
-        <translation>이미지 복사</translation>
+        <source>&amp;Copy Image</source>
+        <translation>&amp;이미지 복사</translation>
     </message>
     <message>
         <source>Save QR Code</source>
@@ -3100,8 +2873,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>도구 창</translation>
     </message>
     <message>
-        <source>Information</source>
-        <translation>정보</translation>
+        <source>&amp;Information</source>
+        <translation>&amp;정보</translation>
     </message>
     <message>
         <source>General</source>
@@ -3124,8 +2897,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>연결된 수</translation>
     </message>
     <message>
-        <source>Open</source>
-        <translation>열기</translation>
+        <source>&amp;Open</source>
+        <translation>&amp;열기</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -3168,28 +2941,28 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>블록체인</translation>
     </message>
     <message>
-        <source>Open the Bulwark debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>현재 데이터 디렉토리에서 Bulwark 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
+        <source>Open the BWK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>현재 데이터 디렉토리에서 BWK 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
         <translation>마스터노드 개수</translation>
     </message>
     <message>
-        <source>Console</source>
-        <translation>콘솔</translation>
+        <source>&amp;Console</source>
+        <translation>&amp;콘솔</translation>
     </message>
     <message>
         <source>Clear console</source>
         <translation>콘솔 초기화</translation>
     </message>
     <message>
-        <source>Network Traffic</source>
-        <translation>네트워크 트래픽</translation>
+        <source>&amp;Network Traffic</source>
+        <translation>&amp;네트워크 트래픽</translation>
     </message>
     <message>
-        <source>Clear</source>
-        <translation>초기화</translation>
+        <source>&amp;Clear</source>
+        <translation>&amp;초기화</translation>
     </message>
     <message>
         <source>Totals</source>
@@ -3204,8 +2977,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>보냄</translation>
     </message>
     <message>
-        <source>Peers</source>
-        <translation>피어</translation>
+        <source>&amp;Peers</source>
+        <translation>&amp;피어</translation>
     </message>
     <message>
         <source>Banned peers</source>
@@ -3264,8 +3037,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>응답 시간</translation>
     </message>
     <message>
-        <source>Wallet Repair</source>
-        <translation>지갑 복구</translation>
+        <source>&amp;Wallet Repair</source>
+        <translation>&amp;지갑 복구</translation>
     </message>
     <message>
         <source>Delete local Blockchain Folders</source>
@@ -3385,36 +3158,36 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>출력:</translation>
     </message>
     <message>
-        <source>Welcome to the Bulwark RPC console.</source>
-        <translation>Bulwark RPC 콘솔에 오신 것을 환영합니다.</translation>
+        <source>Welcome to the BWK RPC console.</source>
+        <translation>BWK RPC 콘솔에 오신 것을 환영합니다.</translation>
     </message>
     <message>
-        <source>Disconnect Node</source>
-        <translation> 연결이 끊어진 노드</translation>
+        <source>&amp;Disconnect Node</source>
+        <translation>&amp; 연결이 끊어진 노드</translation>
     </message>
     <message>
         <source>Ban Node for</source>
         <translation>제한된 노드</translation>
     </message>
     <message>
-        <source>1 hour</source>
-        <translation>1 시간</translation>
+        <source>1 &amp;hour</source>
+        <translation>1 &amp;시간</translation>
     </message>
     <message>
-        <source>1 day</source>
-        <translation>1 일</translation>
+        <source>1 &amp;day</source>
+        <translation>1 &amp;일</translation>
     </message>
     <message>
-        <source>1 week</source>
-        <translation>1 주일</translation>
+        <source>1 &amp;week</source>
+        <translation>1 &amp;주일</translation>
     </message>
     <message>
-        <source>1 year</source>
-        <translation>1 년</translation>
+        <source>1 &amp;year</source>
+        <translation>1 &amp;년</translation>
     </message>
     <message>
-        <source>Unban Node</source>
-        <translation>제한 해지된 노드</translation>
+        <source>&amp;Unban Node</source>
+        <translation>&amp;제한 해지된 노드</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3435,10 +3208,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>블록체인 동기화를 다시 하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>위 아래 화살표를 사용하여 기록을 탐색하고 &lt;b&gt;Ctrl-L&lt;/b&gt; 화면을 지웁니다.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3500,48 +3269,48 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>이전에 사용한 수신 주소 중 하나를 다시 사용하십시오.&lt;br&gt;주소 재사용은 보안 및 개인정보보호 문제가 있습니다.&lt;br&gt;이전에 만든 결제 요청을 다시 생성하지 않는 한 이것을 사용하지 마십시오.</translation>
     </message>
     <message>
-        <source>Reuse an existing receiving address (not recommended)</source>
-        <translation>기존 수신 주소 재사용 (권장하지 않음)</translation>
+        <source>R&amp;euse an existing receiving address (not recommended)</source>
+        <translation>기&amp;존 수신 주소 재사용 (권장하지 않음)</translation>
     </message>
     <message>
-        <source>Message:</source>
-        <translation>메세지:</translation>
+        <source>&amp;Message:</source>
+        <translation>&amp;메세지:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
         <translation>새로운 수신 주소와 연결할 선택적 라벨.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다. 참고: Bulwark 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
+        <source>A&amp;mount:</source>
+        <translation>금&amp;액:</translation>
+    </message>
+    <message>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다. 참고: BWK 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
     </message>
     <message>
         <source>RECEIVE</source>
         <translation>받기</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Bulwark network.</source>
-        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다.&lt;br&gt;참고: Bulwark 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the BWK network.</source>
+        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다.&lt;br&gt;참고: BWK 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
         <translation>결제 요청을 진행하려면 해당 양식을 입력하세요. 모든 입력란은 &lt;b&gt;선택 사항&lt;/b&gt;입니다.</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>라벨:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;라벨:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>요청할 선택적 금액. 이 금액을 비워두거나 특정 금액을 요청하지 않으려면 0으로 두세요.</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>금액:</translation>
-    </message>
-    <message>
-        <source>Request payment</source>
-        <translation>결제 요청</translation>
+        <source>&amp;Request payment</source>
+        <translation>&amp;결제 요청</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -3583,6 +3352,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Copy amount</source>
         <translation>금액 복사</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>주소 복사</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -3591,16 +3364,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>QR 코드</translation>
     </message>
     <message>
-        <source>Copy URI</source>
-        <translation>URI 복사</translation>
+        <source>Copy &amp;URI</source>
+        <translation>&amp;URI 복사</translation>
     </message>
     <message>
-        <source>Copy Address</source>
-        <translation>주소 복사</translation>
+        <source>Copy &amp;Address</source>
+        <translation>&amp;주소 복사</translation>
     </message>
     <message>
-        <source>Save Image...</source>
-        <translation>이미지 저장...</translation>
+        <source>&amp;Save Image...</source>
+        <translation>이미지 &amp;저장...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -3616,7 +3389,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Address</source>
-        <translation>마스터노드 주소</translation>
+        <translation>주소</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3652,6 +3425,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>메세지</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3706,7 +3483,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>medium</source>
-        <translation>중간</translation>
+        <translation>5 중간</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -3749,8 +3526,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>UTXO 크기:</translation>
     </message>
     <message>
-        <source>0 Bulwark</source>
-        <translation>0 Bulwark</translation>
+        <source>0 BWK</source>
+        <translation>0 BWK</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3805,16 +3582,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>자동으로 선택됩니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uBWKs로 설정되고,&lt;br /&gt;1000 uBWKs 안에는 최소 "킬로바이트당" 250 uBWKs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uPIVs로 설정되고,&lt;br /&gt;1000 uPIVs 안에는 최소 "킬로바이트당" 250 uPIVs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uBWKs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uBWKs in fee,&lt;br /&gt;while "total at least" pays 1000 uBWKs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uBWKs로 설정되고,&lt;br /&gt;1000 uBWKs 안에는 전체에서 최소 "킬로바이트당" 250 uBWKs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
+        <source>If the custom fee is set to 1000 uPIVs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uPIVs in fee,&lt;br /&gt;while "total at least" pays 1000 uPIVs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uPIVs로 설정되고,&lt;br /&gt;1000 uPIVs 안에는 전체에서 최소 "킬로바이트당" 250 uPIVs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Bulwark transactions than the network can process.</source>
-        <translation>블록의 공간보다 트랜잭션량이 적으면 최소 수수료만 지불하면 됩니다.&lt;br /&gt;하지만 Bulwark 트랜잭션 수가 많으면 미확인된 트랜잭션로 네트워크가 처리할 수도 있습니다.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for BWK transactions than the network can process.</source>
+        <translation>블록의 공간보다 트랜잭션량이 적으면 최소 수수료만 지불하면 됩니다.&lt;br /&gt;하지만 BWK 트랜잭션 수가 많으면 미확인된 트랜잭션로 네트워크가 처리할 수도 있습니다.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3841,28 +3618,28 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>전송 작업 확인</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>전송</translation>
+        <source>S&amp;end</source>
+        <translation>전&amp;송</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
         <translation>모든 입력 양식 지우기.</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>전체 지우기</translation>
+        <source>Clear &amp;All</source>
+        <translation>전체 &amp;지우기</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
         <translation>한번에 여러 곳 전송</translation>
     </message>
     <message>
-        <source>Add Recipient</source>
-        <translation>받는 사람 추가</translation>
+        <source>Add &amp;Recipient</source>
+        <translation>&amp;받는 사람 추가</translation>
     </message>
     <message>
         <source>Anonymized BWK</source>
-        <translation>익명화된 Bulwark</translation>
+        <translation>익명화된 BWK</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3910,7 +3687,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Warning: Invalid BWK address</source>
-        <translation>경고: 잘못된 Bulwark 주소</translation>
+        <translation>경고: 잘못된 BWK 주소</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3935,10 +3712,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>KB당 %1보다 %2배 많은 수수료는 너무 높은 수수료입니다.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>%n 개의 블록 내에서 컨펌이 시작할 것으로 추정됨.</numerusform></translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -4008,12 +3781,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>이것은 일반 결제입니다.</translation>
     </message>
     <message>
-        <source>Pay To:</source>
-        <translation>지불 대상:</translation>
+        <source>Pay &amp;To:</source>
+        <translation>지불 &amp;대상:</translation>
     </message>
     <message>
-        <source>The Bulwark address to send the payment to</source>
-        <translation>보낼 Bulwark 주소</translation>
+        <source>The BWK address to send the payment to</source>
+        <translation>보낼 BWK 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4036,24 +3809,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>이 항목 삭제</translation>
     </message>
     <message>
-        <source>Label:</source>
-        <translation>라벨:</translation>
+        <source>&amp;Label:</source>
+        <translation>&amp;라벨:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
         <translation>이 주소의 라벨을 입력하여 사용된 주소 목록에 추가하십시오</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>금액:</translation>
+        <source>A&amp;mount:</source>
+        <translation>금&amp;액:</translation>
     </message>
     <message>
         <source>Message:</source>
         <translation>메세지:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Bulwark: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bulwark network.</source>
-        <translation>참조용으로 트랜잭션과 함께 기록되는 Bulwark : URI에 첨부된 메세지입니다. 참고: 이 메세지는 Bulwark 네트워크를 통해 전송되지 않습니다.</translation>
+        <source>A message that was attached to the BWK: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BWK network.</source>
+        <translation>참조용으로 트랜잭션과 함께 기록되는 BWK : URI에 첨부된 메세지입니다. 참고: 이 메세지는 BWK 네트워크를 통해 전송되지 않습니다.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -4079,8 +3852,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Bulwark Core is shutting down...</source>
-        <translation>Bulwark Core가 종료됩니다...</translation>
+        <source>BWK Core is shutting down...</source>
+        <translation>BWK Core가 종료됩니다...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4094,16 +3867,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>서명 - 서명 / 메세지 검증</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>메세지 서명</translation>
+        <source>&amp;Sign Message</source>
+        <translation>&amp;메세지 서명</translation>
     </message>
     <message>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>자신의 주소로 메세지에 서명할 수 있습니다. 피싱 공격으로 사용자를 속일 수 있으므로 서명에 주의해주세요. 동의하는 바에 한하여 서명하십시오.</translation>
     </message>
     <message>
-        <source>The Bulwark address to sign the message with</source>
-        <translation>메세지를 서명하기 위한 Bulwark 주소</translation>
+        <source>The BWK address to sign the message with</source>
+        <translation>메세지를 서명하기 위한 BWK 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4134,40 +3907,40 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>현재 서명을 시스템 클립 보드에 복사</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Bulwark address</source>
-        <translation>이 Bulwark 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
+        <source>Sign the message to prove you own this BWK address</source>
+        <translation>이 BWK 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
     </message>
     <message>
-        <source>The Bulwark address the message was signed with</source>
-        <translation>메세지에 서명된 Bulwark 주소</translation>
+        <source>The BWK address the message was signed with</source>
+        <translation>메세지에 서명된 BWK 주소</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Bulwark address</source>
-        <translation>메세지가 지정된 Bulwark 주소로 서명되었는지 확인해주세요</translation>
+        <source>Verify the message to ensure it was signed with the specified BWK address</source>
+        <translation>메세지가 지정된 BWK 주소로 서명되었는지 확인해주세요</translation>
     </message>
     <message>
-        <source>Sign Message</source>
-        <translation>서명 메세지</translation>
+        <source>Sign &amp;Message</source>
+        <translation>서명 &amp;메세지</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
         <translation>모든 서명 메세지 입력 지우기</translation>
     </message>
     <message>
-        <source>Clear All</source>
-        <translation>전체 지우기</translation>
+        <source>Clear &amp;All</source>
+        <translation>전체 &amp;지우기</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>메세지 확인</translation>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;메세지 확인</translation>
     </message>
     <message>
         <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
         <translation>메세지를 확인하기 위해 서명 주소, 메세지 (줄 바꿈, 공백, 탭 등을 정확하게 복사해주세요) 및 서명을 입력하십시오. 중간자 공격에 주의해서 서명을 입력해주세요.</translation>
     </message>
     <message>
-        <source>Verify Message</source>
-        <translation>메세지 확인</translation>
+        <source>Verify &amp;Message</source>
+        <translation>&amp;메세지 확인</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -4229,8 +4002,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Bulwark Core</source>
-        <translation>Bulwark Core</translation>
+        <source>BWK Core</source>
+        <translation>BWK Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4245,8 +4018,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dash Core 개발자</translation>
     </message>
     <message>
-        <source>The Bulwark Core developers</source>
-        <translation>Bulwark Core 개발자</translation>
+        <source>The BWK Core developers</source>
+        <translation>BWK Core 개발자</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -4262,10 +4035,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n 블럭 더 열기</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>%1까지 열기</translation>
@@ -4327,10 +4096,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>, has not been successfully broadcast yet</source>
         <translation>, 아직 성공적으로 브로드캐스트되지 않았습니다</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, %n 노드를 통한 브로드캐스트</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>날짜</translation>
@@ -4370,10 +4135,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>크레딧</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>%n 블록안에 생성됨</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4473,10 +4234,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Address</source>
         <translation>주소</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n 블럭 더 열기</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>%1까지 열기</translation>
@@ -4526,8 +4283,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>난독화를 통해 수신 됨</translation>
     </message>
     <message>
-        <source>Bulwark Stake</source>
-        <translation>Bulwark stake</translation>
+        <source>BWK Stake</source>
+        <translation>BWK stake</translation>
     </message>
     <message>
         <source>zBWK Stake</source>
@@ -4550,24 +4307,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>난독화 표시 만들기</translation>
     </message>
     <message>
-        <source>Converted Bulwark to zBWK</source>
-        <translation>Bulwark를 zBWK로 변환</translation>
+        <source>Converted BWK to zBWK</source>
+        <translation>PIV를 zBWK로 변환</translation>
     </message>
     <message>
         <source>Spent zBWK</source>
         <translation>zBWK 사용</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>zBWK를 Bulwark로 받음</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>zBWK를 PIV로 받음</translation>
     </message>
     <message>
         <source>Minted Change as zBWK from zBWK Spend</source>
         <translation>zBWK 전송후 남은 zBWK로 잔돈 생성</translation>
     </message>
     <message>
-        <source>Converted zBWK to Bulwark</source>
-        <translation>zBWK를 Bulwark로 변환</translation>
+        <source>Converted zBWK to BWK</source>
+        <translation>zBWK를 PIV로 변환</translation>
     </message>
     <message>
         <source>Anonymous (zBWK Transaction)</source>
@@ -4666,7 +4423,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Received with</source>
-        <translation>수신 됨</translation>
+        <translation>수신됨</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4746,7 +4503,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Confirmed</source>
-        <translation>확정</translation>
+        <translation>확정됨</translation>
     </message>
     <message>
         <source>Watch-only</source>
@@ -4785,8 +4542,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>내보내기 성공</translation>
     </message>
     <message>
-        <source>Received Bulwark from zBWK</source>
-        <translation>zBWK를 Bulwark로 받음</translation>
+        <source>Received BWK from zBWK</source>
+        <translation>zBWK를 PIV로 받음</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zBWK</source>
@@ -4826,8 +4583,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>코인 전송 </translation>
     </message>
     <message>
-        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 Bulwark.</source>
-        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 Bulwark로 제한됩니다.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 BWK.</source>
+        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 PIV로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -4837,8 +4594,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>거래내역</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation>내보내기</translation>
+        <source>&amp;Export</source>
+        <translation>&amp;내보내기</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -4858,7 +4615,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>zBWKControlDialog</name>
+    <name>ZTelosControlDialog</name>
     <message>
         <source>Select zBWK to Spend</source>
         <translation>사용할 zBWK 선택</translation>
@@ -4879,13 +4636,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>전체 선택 / 해제</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>전송가능한 코인수</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>bulwark-core</name>
+    <name>pivx-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = tx 메타 데이터 유지 예 : 계정 소유자 및 지불 요청 정보, 2 = tx 메타 데이터 삭제)</translation>
@@ -4911,8 +4664,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>계산된 누산기 체크포인트는 블록 인덱스에 의해 기록되는 것이 아닙니다.</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Bulwark Core is probably already running.</source>
-        <translation>        &lt;translation&gt;잠겨진 데이터 디렉토리 %s 를 가져올 수 없습니다. Bulwark Core는 이미 실행 중입니다.</translation>
+        <source>Cannot obtain a lock on data directory %s. BWK Core is probably already running.</source>
+        <translation>        &lt;translation&gt;잠겨진 데이터 디렉토리 %s 를 가져올 수 없습니다. BWK Core는 이미 실행 중입니다.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4943,8 +4696,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Enable automatic wallet backups triggered after each zBWK minting (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</source>
-        <translation>Enable or disable staking functionality for Bulwark inputs (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</source>
+        <translation>Enable or disable staking functionality for BWK inputs (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zBWK inputs (0-1, default: %u)</source>
@@ -4983,20 +4736,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>최고 블록이 변경될 경우 명령을 실행하십시오 (명령 내 %s 는 블록 해시로 대체 되었습니다)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>이것보다 작은 수수료 (BWK/kB)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>이것보다 작은 수수료 (BWK/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
-        <source>Fees (in BWK/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>이것보다 작은 수수료 (BWK/kB)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in BWK/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>이것보다 작은 수수료 (BWK/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
         <translation>메모리 풀에서 디스크로 매 &lt;n&gt; 메가바이트만큼 데이터베이스 활동 플러쉬를 기록합니다 (기본값: %u)</translation>
-    </message>
-    <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>미확인 표시된 출력들을 찾고 계속하기 위한 확인을 받기 전까지 기다립니다.</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -5087,20 +4836,20 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>이 제품은 OpenSSL이 개발한 Open SSL 툴킷 &lt;https://www.openssl.org/&gt; 에서 사용하기 위한 프로젝트 소프트웨어, Eric Young이 개발한 암호화 소프트웨어, Thomas Bernard가 개발한 UPnP 소프트웨어가 포함되어 있습니다.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Bulwark Core is probably already running.</source>
-        <translation>이 컴퓨터를 %s 로 지정하는것은 불가능합니다. Bulwark Core는 이미 실행 중입니다.</translation>
+        <source>Unable to bind to %s on this computer. BWK Core is probably already running.</source>
+        <translation>이 컴퓨터를 %s 로 지정하는것은 불가능합니다. BWK Core는 이미 실행 중입니다.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
         <translation>이 트랜잭션를 위해 난독화 표기된 충분한 금액을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 Bulwark과 일치하지 않음.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 PIV과 일치하지 않음.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 Bulwark.</source>
-        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 Bulwark와 같지 않음</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 BWK.</source>
+        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 PIV와 같지 않음</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5115,8 +4864,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>경고 : -paytxfee가 매우 높게 설정되었습니다! 이것은 전송할 경우 지불 할 트랜잭션 수수료입니다.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bulwark Core will not work properly.</source>
-        <translation>경고: 컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 Bulwark 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong BWK Core will not work properly.</source>
+        <translation>경고: 컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 BWK 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5183,10 +4932,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>-addnode, -seednode, -connect을 위해 DNS 조회를 허용하십시오.</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>이미 연결 중입니다.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>피어 주소에게 DNS 조회를 통한 지속적인 정보 수신 요청을 합니다 (기본값: %u)</translation>
     </message>
@@ -5207,18 +4952,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>누락된 누산기 계산중...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>표시할 수 없음: 남아있는 호환된 연결이 없습니다.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>임의의 마스터노드를 찾을 수 없습니다.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>동기화가 진행 중일 때에는 믹싱을 할 수 없습니다.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>지갑을 다운그레이드 할 수 없습니다.</translation>
     </message>
@@ -5237,10 +4970,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Cannot write default address</source>
         <translation>기본 주소를 사용할 수 없습니다.</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Collateral이 유효하지 않습니다.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5267,8 +4996,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Copyright (C) 2014-%i The Dash Core 개발자들</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Bulwark Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Bulwark Core 개발자</translation>
+        <source>Copyright (C) 2015-%i The BWK Core Developers</source>
+        <translation>Copyright (C) 2015-%i The BWK Core 개발자</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5327,14 +5056,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>클라이언트가 마스터노드로 작동하는 것을 활성화 (0-1, 기본값: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>항목이 가득 찼습니다.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Masternode에 연결하는 중 오류가 발생했습니다.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>블록 데이터베이스를 초기화하는 중 오류가 발생했습니다.</translation>
     </message>
@@ -5355,8 +5076,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>wallet.dat을 불러오는 중 오류가 발생했습니다: 지갑 손상됨</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Bulwark Core</source>
-        <translation>wallet.dat를 로드하는 중 오류가 발생했습니다. 지갑에 최신 버전의 Bulwark 코어가 필요합니다.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of BWK Core</source>
+        <translation>wallet.dat를 로드하는 중 오류가 발생했습니다. 지갑에 최신 버전의 BWK 코어가 필요합니다.</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -5371,16 +5092,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>공개 키를 복구하는 중 오류가 발생했습니다.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>디스크에 zerocoinDB 쓰기 오류</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>에러</translation>
     </message>
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>오류 : 내부에서 치명적인 오류가 발생했습니다. 자세한 내용은 debug.log를 참조하십시오</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>오류 : 현재 표시된 입력을 선택할 수 없습니다</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5395,16 +5116,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>오류 : 지갑이 잠겼습니다, 트랜잭션을 생성할 수 없습니다!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>오류 : 이미 난독화 그룹에 보류중인 항목들이 있습니다.</translation>
-    </message>
-    <message>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation>축 압기 체크 포인트를 계산하지 못했습니다.</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>어떠한 포트에서도 수신하는 것에 실패했습니다. 원하신다면 -listen=0 을 사용하십시오.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>호스트 : 포트 문자열을 구문 분석하지 못했습니다.</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5415,20 +5136,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (BWK/kB) (기본값: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>트랜잭션 완료.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>강제 안전 모드 (기본값: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>충분한 사용자를 찾았습니다, 서명 중 ( %s 기다리는 중 )</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>충분한 사용자를 찾았습니다, 서명 중 ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5455,14 +5164,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>디버그 출력에 IP 주소를 포함합니다 (기본값: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>호환되지 않는 모드.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>호환되지 않는 버전.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>잘못되었거나 블록을 찾지 못하였습니다. 네트워크에 대한 잘못된 데이터 디렉토리 문제?</translation>
     </message>
@@ -5471,12 +5172,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>정보</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Bulwark Core is shutting down.</source>
-        <translation>초기화 정확성 검사에 실패 했습니다. Bulwark Core가 종료됩니다.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>입력이 올바르지 않습니다.</translation>
+        <source>Initialization sanity check failed. BWK Core is shutting down.</source>
+        <translation>초기화 정확성 검사에 실패 했습니다. BWK Core가 종료됩니다.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5535,16 +5232,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>유효하지 않은 개인 키입니다.</translation>
     </message>
     <message>
-        <source>Invalid script detected.</source>
-        <translation>유효하지 않은 스크립트가 발견되었습니다.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>자동생성 zBWK 비율  (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the Bulwark and zBWK money supply statistics</source>
-        <translation>Bulwark 및 zBWK 공급량 다시 색인</translation>
+        <source>Reindex the BWK and zBWK money supply statistics</source>
+        <translation>BWK 및 zBWK 공급량 다시 색인</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>
@@ -5583,8 +5276,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </translation>
     </message>
     <message>
-        <source>Disable all Bulwark specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
-        <translation>Bulwark의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
+        <source>Disable all BWK specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>BWK의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5683,10 +5376,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>생성 실패</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>디시리얼 실패</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>wallet.dat 에서 제로코인을 인식 실패</translation>
     </message>
@@ -5705,14 +5394,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>메모리에서 연결 불가능한 트랜잭션을 &lt;n&gt;개까지 유지하십시오. (기본값: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>최근에 마지막으로 난독화를 진행했습니다.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>최근에 마지막으로 성공한 난독화 작업이 있습니다.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5767,10 +5448,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>auth 쿠기 위치 (default: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>이미 올바르게 잠겨있습니다.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>마스터노드 구성 파일에서 마스터노드를 잠급니다. (기본값: %u)</translation>
     </message>
@@ -5787,14 +5464,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>마스터노드 옵션:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>마스터노드 대기열이 가득 찼습니다.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>마스터노드:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>연결 당 최대 수신 버퍼, &lt;n&gt;*1000 바이트 (기본값: %u)</translation>
     </message>
@@ -5807,14 +5476,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>코인생성이 블록체인에 기록되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>트랜잭션 정보 입력에 누락된 부분이 있습니다.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>믹싱이 진행 중입니다...</translation>
-    </message>
-    <message>
         <source>Need address because change is not exact</source>
         <translation>잔돈을 받을 주소가 필요합니다.</translation>
     </message>
@@ -5823,40 +5484,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>-whitebind: '%s' 의 포트를 지정해야 합니다</translation>
     </message>
     <message>
-        <source>No Masternodes detected.</source>
-        <translation>마스터노드가 발견되지 않았습니다.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>호환되는 마스터노드가 발견되지 않았습니다.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>분류가 필요한 자금이 발견되지 않았습니다.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>믹싱에 대한 일치하는 표기를 찾을 수 없습니다.</translation>
-    </message>
-    <message>
         <source>Node relay options:</source>
         <translation>노드 중계 옵션:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>비 표준 공개 키가 감지되었습니다.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>기존 트랜잭션과 호환되지 않습니다.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>사용 가능한 파일 디스크립터가 충분하지 않습니다.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>마스터노드 목록에 없습니다.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5865,18 +5498,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Number of custom location backups to retain (default: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>난독화는 유휴상태입니다.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>난독화 요청 완료:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>난독화 요청 미완료:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5969,10 +5590,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>무료 수수료 트랜잭션이 가능할 경우 무료 수수료로 트랜잭션을 전송합니다 (기본값: %u)</translation>
-    </message>
-    <message>
-        <source>Session not complete!</source>
-        <translation>세션이 완료되지 않았습니다!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
@@ -6079,18 +5696,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>디스크에서 블록을 가져오면 실행 중지 (기본값: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>마스터노드에 다음 항목들을 제출했습니다: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>마스터노드에 제출했습니다, 남은 항목들 기다리는중 ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>마스터노드에 제출했습니다, 대기열을 기다리는 중 %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>동기화 실패</translation>
     </message>
@@ -6127,14 +5732,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>전송이 이미 되었습니다.</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>신규로 전송된 거래가 확인되지 않았습니다.</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>선택한 생성 코인은 유효하지 않은 동전입니다.</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>거래가 확인되지 않았습니다.</translation>
     </message>
@@ -6149,10 +5746,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>이것은 리그레션 테스팅 및 앱 개발을 위해 만들어졌습니다.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>마스터노드가 아닙니다.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6187,18 +5780,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>트랜잭션 금액에 반드시 양수값이 들어가야 합니다</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>트랜잭션이 성공적으로 생성되었습니다.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>트랜잭션 수수료가 너무 높습니다.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>올바르지 않은 트랜잭션입니다.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>수수료 정책에 비해 트랜잭션이 너무 많습니다</translation>
     </message>
@@ -6207,24 +5788,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>트랜잭션이 너무 큽니다</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>최종 트랜잭션를 전송 중입니다.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>높은 보안 수준으로 더 많은 코인을 전송해주세요.</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>이미 전송된 리얼 번호를 보내려고 했습니다. 다시 시도하십시오.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>이 컴퓨터에서 %s 로 바인드할 수 없습니다 (바인드 리턴 오류 %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>코인 생성이 포함된 거래를 찾을 수 없습니다.</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6237,10 +5806,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>-onlynet: '%s' 에 알 수 없는 네트워크가 지정되었습니다</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>알 수없는 상태: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6271,10 +5836,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Value is below the smallest available denomination (= 1) of zBWK</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>난독화 풀의 최대 허용 값보다 높습니다.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>블록 인증 중...</translation>
     </message>
@@ -6283,20 +5844,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>지갑 인증 중...</translation>
     </message>
     <message>
-        <source>Version 1 zBWK require a security level of 100 to successfully spend.</source>
-        <translation>zBWK 버전 1은 성공적으로 보내기 위해서 100 시큐리티 레벨이 필요합니다.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>지갑 %s 가 데이터 디렉토리 외부에 존재합니다 %s</translation>
     </message>
     <message>
-        <source>Wallet is locked.</source>
-        <translation>지갑이 잠겼습니다.</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart Bulwark Core to complete</source>
-        <translation>지갑을 다시 작성해야 합니다: 완료하려면 Bulwark 코어를 재시작해야 합니다</translation>
+        <source>Wallet needed to be rewritten: restart BWK Core to complete</source>
+        <translation>지갑을 다시 작성해야 합니다: 완료하려면 BWK 코어를 재시작해야 합니다</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6323,24 +5876,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>경고 : 지원하지 않는 인수 -debugnet 무시됨 -debug=net를 사용하십시오.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>다시 시도합니다...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>지갑에 zBWK 가 부족합니다.</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>-treindex를 변경하려면 -reindex를 사용하여 데이터베이스를 다시 빌드해야합니다.</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>항목이 성공적으로 추가되었습니다.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>트랜잭션이 풀로 접수되었습니다!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>

@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2017-2018 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_TRANSACTIONFILTERPROXY_H
@@ -11,10 +12,11 @@
 #include <QSortFilterProxyModel>
 
 /** Filter the transaction list according to pre-specified rules. */
-class TransactionFilterProxy : public QSortFilterProxyModel {
+class TransactionFilterProxy : public QSortFilterProxyModel
+{
     Q_OBJECT
 
-  public:
+public:
     explicit TransactionFilterProxy(QObject* parent = 0);
 
     /** Earliest date that can be represented (far in the past) */
@@ -26,9 +28,7 @@ class TransactionFilterProxy : public QSortFilterProxyModel {
     /** Type filter bit field (all types but Obfuscation-SPAM ... enum 0-14 are common) */
     static const quint32 COMMON_TYPES = 0x0005FFFF;
 
-    static quint32 TYPE(int type) {
-        return 1 << type;
-    }
+    static quint32 TYPE(int type) { return 1 << type; }
 
     enum WatchOnlyFilter {
         WatchOnlyFilter_All,
@@ -37,6 +37,11 @@ class TransactionFilterProxy : public QSortFilterProxyModel {
     };
 
     void setDateRange(const QDateTime& from, const QDateTime& to);
+    void clearDateRange() {
+        if (dateFrom != MIN_DATE || dateTo == MAX_DATE)
+            setDateRange(MIN_DATE, MAX_DATE);
+    }
+
     void setAddressPrefix(const QString& addrPrefix);
     /**
       @note Type filter takes a bit field created with TYPE() or ALL_TYPES
@@ -51,12 +56,24 @@ class TransactionFilterProxy : public QSortFilterProxyModel {
     /** Set whether to show conflicted transactions. */
     void setShowInactive(bool showInactive);
 
-    int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    /** Set whether to hide orphan stakes. */
+    void setHideOrphans(bool fHide);
 
-  protected:
+    /** Only zc txes **/
+    void setShowZcTxes(bool fOnlyZc);
+
+    /** Only stakes txes **/
+    void setOnlyStakes(bool fOnlyStakes);
+
+    int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    static bool isOrphan(const int status, const int type);
+
+    //QVariant dataFromSourcePos(int sourceRow, int role) const;
+
+protected:
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
 
-  private:
+private:
     QDateTime dateFrom;
     QDateTime dateTo;
     QString addrPrefix;
@@ -65,6 +82,12 @@ class TransactionFilterProxy : public QSortFilterProxyModel {
     CAmount minAmount;
     int limitRows;
     bool showInactive;
+    bool fHideOrphans = true;
+    bool fOnlyZc = false;
+    bool fOnlyStakes = false;
+
+    bool isZcTx(int type) const;
+    bool isStakeTx(int type) const;
 };
 
 #endif // BITCOIN_QT_TRANSACTIONFILTERPROXY_H
