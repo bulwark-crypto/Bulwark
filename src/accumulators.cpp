@@ -369,7 +369,7 @@ map<CoinDenomination, int> GetMintMaturityHeight()
     int nMinimumMaturityHeight = nConfirmedHeight - (nConfirmedHeight % 10);
     CBlockIndex* pindex = chainActive[nConfirmedHeight];
 
-    while (pindex && pindex->nHeight > Params().Zerocoin_StartHeight()) {
+    while (pindex && pindex->nHeight > GetZerocoinStartHeight()) {
         bool isFinished = true;
         for (auto denom : libzerocoin::zerocoinDenomList) {
             //If the denom has not already had a mint added to it, then see if it has a mint added on this block
