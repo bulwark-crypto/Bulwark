@@ -21,6 +21,7 @@
 #include "crypto/sph_jh.h"
 #include "crypto/sph_keccak.h"
 #include "crypto/sph_skein.h"
+#include "crypto/sha512.h"
 
 #include <vector>
 #include <iomanip>
