@@ -177,6 +177,7 @@ private:
 
     int64_t nNextResend;
     int64_t nLastResend;
+    bool IsMasternodeOutput(CAmount nValue);
 
     /**
      * Used to keep track of spent outpoints, and
@@ -1068,7 +1069,7 @@ public:
             const CTxIn vin = CTxIn(hashTx, i);
 
             if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-            if (fMasterNode && vout[i].nValue == 5000 * COIN) continue; // do not count MN-like outputs
+            if (fMasterNode && IsMasternodeOutput(vout[i].nValue)) continue; // do not count MN-like outputs
 
             const int rounds = pwallet->GetInputObfuscationRounds(vin);
             if (rounds >= -2 && rounds < nZeromintPercentage) {
@@ -1132,7 +1133,7 @@ public:
             const CTxOut& txout = vout[i];
 
             if (pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-            if (fMasterNode && vout[i].nValue == 5000 * COIN) continue; // do not count MN-like outputs
+            if (fMasterNode && IsMasternodeOutput(vout[i].nValue)) continue; // do not count MN-like outputs
 
             nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
             if (!MoneyRange(nCredit))
@@ -1166,7 +1167,7 @@ public:
             }
 
             // Add masternode collaterals which are handled likc locked coins
-             if (fMasterNode && vout[i].nValue == 5000 * COIN) continue; // do not count MN-like outputs
+            if (fMasterNode && IsMasternodeOutput(vout[i].nValue)) {
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
             }
 
