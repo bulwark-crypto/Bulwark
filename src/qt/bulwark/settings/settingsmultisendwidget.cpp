@@ -10,7 +10,7 @@
 #include "base58.h"
 #include "init.h"
 #include "walletmodel.h"
-#include "wallet/wallet.h"
+#include "wallet.h"
 
 
 #define DECORATION_SIZE 65

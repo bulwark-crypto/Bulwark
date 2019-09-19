@@ -5,7 +5,7 @@
 #include "qt/bulwark/mninfodialog.h"
 #include "qt/bulwark/forms/ui_mninfodialog.h"
 #include "walletmodel.h"
-#include "wallet/wallet.h"
+#include "wallet.h"
 #include "guiutil.h"
 #include "qt/bulwark/qtutils.h"
 #include <QDateTime>

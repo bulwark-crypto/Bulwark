@@ -10,7 +10,7 @@
 #include "walletmodel.h"
 
 #include "base58.h"
-#include "wallet/wallet.h"
+#include "wallet.h"
 #include "askpassphrasedialog.h"
 
 #include <QDebug>

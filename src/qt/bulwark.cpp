@@ -35,7 +35,7 @@
 #include "util.h"
 
 #ifdef ENABLE_WALLET
-#include "wallet/wallet.h"
+#include "wallet.h"
 #endif
 
 #include <stdint.h>

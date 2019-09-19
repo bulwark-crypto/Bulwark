@@ -8,7 +8,7 @@
 #include "walletmodel.h"
 #include "transactiontablemodel.h"
 #include "transactionrecord.h"
-#include "wallet/wallet.h"
+#include "wallet.h"
 #include "guiutil.h"
 #include "qt/bulwark/qtutils.h"
 #include <QList>

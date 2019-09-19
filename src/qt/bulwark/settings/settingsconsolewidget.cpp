@@ -16,7 +16,7 @@
 #include "rpcserver.h"
 #include "util.h"
 #ifdef ENABLE_WALLET
-#include "wallet/wallet.h"
+#include "wallet.h"
 #endif // ENABLE_WALLET
 
 #include <openssl/crypto.h>

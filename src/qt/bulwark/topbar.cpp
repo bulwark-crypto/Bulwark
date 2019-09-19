@@ -16,7 +16,7 @@
 #include "qt/guiutil.h"
 #include "optionsmodel.h"
 #include "qt/platformstyle.h"
-#include "wallet/wallet.h"
+#include "wallet.h"
 #include "walletmodel.h"
 #include "addresstablemodel.h"
 #include "guiinterface.h"

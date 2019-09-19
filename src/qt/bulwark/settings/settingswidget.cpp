@@ -18,7 +18,7 @@
 #include "optionsmodel.h"
 #include "clientmodel.h"
 #include "utilitydialog.h"
-#include "wallet/wallet.h"
+#include "wallet.h"
 #include <QScrollBar>
 #include <QDataWidgetMapper>
 
