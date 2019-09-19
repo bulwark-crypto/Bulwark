@@ -33,7 +33,7 @@
 #   and this notice are preserved. This file is offered as-is, without any
 #   warranty.
 
-#serial 23
+#serial 27
 
 AC_DEFUN([AX_BOOST_BASE],
 [
@@ -95,7 +95,7 @@ if test "x$want_boost" = "xyes"; then
       x86_64)
         libsubdirs="lib64 libx32 lib lib64"
         ;;
-      ppc64|s390x|sparc64|aarch64)
+      ppc64|s390x|sparc64|aarch64|ppc64le)
         libsubdirs="lib64 lib lib64"
         ;;
     esac
@@ -170,7 +170,7 @@ if test "x$want_boost" = "xyes"; then
         AC_MSG_RESULT(yes)
     succeeded=yes
     found_system=yes
-        ],[:
+        ],[
         ])
     AC_LANG_POP([C++])
 
@@ -179,6 +179,10 @@ if test "x$want_boost" = "xyes"; then
     dnl if we found no boost with system layout we search for boost libraries
     dnl built and installed without the --layout=system option or for a staged(not installed) version
     if test "x$succeeded" != "xyes"; then
+        CPPFLAGS="$CPPFLAGS_SAVED"
+        LDFLAGS="$LDFLAGS_SAVED"
+        BOOST_CPPFLAGS=
+        BOOST_LDFLAGS=
         _version=0
         if test "$ac_boost_path" != ""; then
             if test -d "$ac_boost_path" && test -r "$ac_boost_path"; then
@@ -191,6 +195,12 @@ if test "x$want_boost" = "xyes"; then
                     VERSION_UNDERSCORE=`echo $_version | sed 's/\./_/'`
                     BOOST_CPPFLAGS="-I$ac_boost_path/include/boost-$VERSION_UNDERSCORE"
                 done
+                dnl if nothing found search for layout used in Windows distributions
+                if test -z "$BOOST_CPPFLAGS"; then
+                    if test -d "$ac_boost_path/boost" && test -r "$ac_boost_path/boost"; then
+                        BOOST_CPPFLAGS="-I$ac_boost_path"
+                    fi
+                fi
             fi
         else
             if test "$cross_compiling" != yes; then
@@ -253,7 +263,7 @@ if test "x$want_boost" = "xyes"; then
             AC_MSG_RESULT(yes)
         succeeded=yes
         found_system=yes
-            ],[:
+            ],[
             ])
         AC_LANG_POP([C++])
     fi
@@ -262,7 +272,7 @@ if test "x$want_boost" = "xyes"; then
         if test "$_version" = "0" ; then
             AC_MSG_NOTICE([[We could not detect the boost libraries (version $boost_lib_version_req_shorten or higher). If you have a staged boost library (still not installed) please specify \$BOOST_ROOT in your environment and do not give a PATH to --with-boost option.  If you are sure you have boost installed, then check your version number looking in <boost/version.hpp>. See http://randspringer.de/boost for more documentation.]])
         else
-            AC_MSG_NOTICE([Your boost libraries are too old (version $_version).])
+            AC_MSG_NOTICE([Your boost libraries seems to old (version $_version).])
         fi
         # execute ACTION-IF-NOT-FOUND (if present):
         ifelse([$3], , :, [$3])
