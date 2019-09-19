@@ -240,7 +240,6 @@ libbitcoin_wallet_a_SOURCES = \
   masternode-budget.cpp \
   masternode-payments.cpp \
   masternode-sync.cpp \
-  masternode-tiers.cpp \
   masternodeconfig.cpp \
   masternodeman.cpp \
   rpcdump.cpp \
@@ -250,7 +249,6 @@ libbitcoin_wallet_a_SOURCES = \
   wallet_ismine.cpp \
   walletdb.cpp \
   primitives/zerocoin.cpp \
-  primitives/accumulators.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
