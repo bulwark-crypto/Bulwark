@@ -21,7 +21,7 @@
 #include "scheduler.h"
 #include "guiinterface.h"
 #ifdef ENABLE_WALLET
-#include "walletwallet.h"
+#include "wallet.h"
 #endif // ENABLE_WALLET
 
 #ifdef WIN32
