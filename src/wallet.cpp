@@ -80,7 +80,10 @@ const CWalletTx* CWallet::GetWalletTx(const uint256& hash) const
         return NULL;
     return &(it->second);
 }
-
+bool IsMasternodeOutput(CAmount nValue)
+{
+    return 5000 * COIN == nValue;
+}
 CPubKey CWallet::GenerateNewKey()
 {
     AssertLockHeld(cs_wallet);                                 // mapKeyMetadata
@@ -111,10 +114,7 @@ int64_t CWallet::GetKeyCreationTime(CPubKey pubkey)
 {
     return mapKeyMetadata[pubkey.GetID()].nCreateTime;
 }
-bool CWallet::IsMasternodeOutput(CAmount nValue)
-{
-    return 5000 * COIN == nValue;
-}
+
 int64_t CWallet::GetKeyCreationTime(const CBitcoinAddress& address)
 {
     CKeyID keyID;
@@ -1614,6 +1614,7 @@ CAmount CWallet::GetImmatureWatchOnlyBalance() const
     }
     return nTotal;
 }
+
 CAmount CWalletTx::GetLockedWatchOnlyCredit() const
 {
     if (pwallet == 0)

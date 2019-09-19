@@ -60,6 +60,7 @@ static const int DEFAULT_CUSTOMBACKUPTHRESHOLD = 1;
 // Zerocoin denomination which creates exactly one of each denominations:
 // 6666 = 1*5000 + 1*1000 + 1*500 + 1*100 + 1*50 + 1*10 + 1*5 + 1
 static const int ZQ_6666 = 6666;
+bool IsMasternodeOutput(CAmount nValue);
 
 class CAccountingEntry;
 class CCoinControl;
@@ -193,7 +194,6 @@ private:
 public:
     static const int STAKE_SPLIT_THRESHOLD = 2000;
     bool MintableCoins();
-    bool IsMasternodeOutput(CAmount nValue);
     bool SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int> >& setCoins, CAmount nTargetAmount) const;
     bool SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax) const;
     bool SelectCoinsByDenominations(int nDenom, CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& vCoinsRet, std::vector<COutput>& vCoinsRet2, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax);
