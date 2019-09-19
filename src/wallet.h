@@ -1080,7 +1080,8 @@ class CWalletTx : public CMerkleTx {
 
         return nCredit;
     }
-
+	    // Return sum of unlocked coins
+    CAmount GetLockedWatchOnlyCredit() const;
     // Return sum of unlocked coins
     CAmount GetLockedCredit() const {
         if (pwallet == 0)

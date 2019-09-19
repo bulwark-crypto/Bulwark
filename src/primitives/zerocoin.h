@@ -9,7 +9,23 @@
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
 #include "serialize.h"
+//struct that is safe to store essential mint data, without holding any information that allows for actual spending (serial, randomness, private key)
+struct CMintMeta
+{
+    int nHeight;
+    uint256 hashSerial;
+    uint256 hashPubcoin;
+    uint256 hashStake; //requires different hashing method than hashSerial above
+    uint8_t nVersion;
+    libzerocoin::CoinDenomination denom;
+    uint256 txid;
+    bool isUsed;
+    bool isArchived;
+    bool isDeterministic;
+    bool isSeedCorrect;
 
+    bool operator <(const CMintMeta& a) const;
+};
 class CZerocoinMint {
   private:
     libzerocoin::CoinDenomination denomination;
