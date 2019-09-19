@@ -40,6 +40,7 @@
 #include "wallet.h"
 #include "walletdb.h"
 #include "accumulators.h"
+#include "scheduler.h"
 
 #endif
 
@@ -158,6 +159,7 @@ class CCoinsViewErrorCatcher : public CCoinsViewBacked {
 static CCoinsViewDB* pcoinsdbview = NULL;
 static CCoinsViewErrorCatcher* pcoinscatcher = NULL;
 static boost::scoped_ptr<ECCVerifyHandle> globalVerifyHandle;
+static CScheduler scheduler;
 
 /** Preparing steps before shutting down or restarting the wallet */
 void PrepareShutdown() {
@@ -1781,7 +1783,7 @@ bool AppInit2(boost::thread_group& threadGroup) {
     LogPrintf("mapAddressBook.size() = %u\n", pwalletMain ? pwalletMain->mapAddressBook.size() : 0);
 #endif
 
-    StartNode(threadGroup);
+    StartNode(threadGroup,scheduler);
 
 #ifdef ENABLE_WALLET
     // Generate coins in the background
