@@ -44,7 +44,7 @@ static CCriticalSection cs_rpcWarmup;
 static RPCTimerInterface* timerInterface = NULL;
 //! These are created by StartRPCThreads, destroyed in StopRPCThreads
 static asio::io_service* rpc_io_service = NULL;
-static map<string, boost::shared_ptr<deadline_timer> > deadlineTimers;
+static std::map<std::string, boost::shared_ptr<RPCTimerBase> > deadlineTimers;
 static ssl::context* rpc_ssl_context = NULL;
 static boost::thread_group* rpc_worker_group = NULL;
 static boost::asio::io_service::work* rpc_dummy_work = NULL;
