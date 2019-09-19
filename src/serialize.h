@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SERIALIZE_H
-#define BITCOIN_SERIALIZE_H
+#ifndef PIVX_SERIALIZE_H
+#define PIVX_SERIALIZE_H
 
 #include <algorithm>
 #include <assert.h>
@@ -881,6 +881,12 @@ class CSizeComputer {
         return *this;
     }
 
+    /** Pretend _nSize bytes are written, without specifying them. */
+    void seek(size_t _nSize)
+    {
+        this->nSize += _nSize;
+    }
+
     template <typename T>
     CSizeComputer& operator<<(const T& obj) {
         ::Serialize(*this, obj, nType, nVersion);
@@ -892,4 +898,4 @@ class CSizeComputer {
     }
 };
 
-#endif // BITCOIN_SERIALIZE_H
+#endif // PIVX_SERIALIZE_H
