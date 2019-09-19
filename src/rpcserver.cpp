@@ -797,17 +797,6 @@ void RPCRunHandler(const boost::system::error_code& err, boost::function<void(vo
         func();
 }
 
-void RPCRunLater(const std::string& name, boost::function<void(void)> func, int64_t nSeconds) {
-    assert(rpc_io_service != NULL);
-
-    if (deadlineTimers.count(name) == 0) {
-        deadlineTimers.insert(make_pair(name,
-                                        boost::shared_ptr<deadline_timer>(new deadline_timer(*rpc_io_service))));
-    }
-    deadlineTimers[name]->expires_from_now(posix_time::seconds(nSeconds));
-    deadlineTimers[name]->async_wait(boost::bind(RPCRunHandler, _1, func));
-}
-
 class JSONRequest {
   public:
     UniValue id;
