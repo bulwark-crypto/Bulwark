@@ -17,7 +17,7 @@
 #include "timedata.h"
 #include "util.h"
 #include "version.h"
-
+#include "guiinterface.h"
 #include <boost/foreach.hpp>
 
 #include <univalue.h>
