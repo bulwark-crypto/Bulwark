@@ -433,7 +433,7 @@ dnl Outputs: have_qt_test and have_qt_dbus are set (if applicable) to yes|no.
 AC_DEFUN([_BITCOIN_QT_FIND_LIBS_WITH_PKGCONFIG],[
   m4_ifdef([PKG_CHECK_MODULES],[
     QT_LIB_PREFIX=Qt5
-    qt5_modules="Qt5Core Qt5Gui Qt5Network Qt5Widgets"
+    qt5_modules="Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5Svg"
     BITCOIN_QT_CHECK([
       PKG_CHECK_MODULES([QT5], [$qt5_modules], [QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" have_qt=yes],[have_qt=no])
 
@@ -443,7 +443,7 @@ AC_DEFUN([_BITCOIN_QT_FIND_LIBS_WITH_PKGCONFIG],[
       fi
     ])
     BITCOIN_QT_CHECK([
-      PKG_CHECK_MODULES([QT_SVG], [${QT_LIB_PREFIX}Svg], [QT_SVG_INCLUDES="$QT_SVG_CFLAGS"; QT_LIBS="$QT_LIBS $QT_SVG_LIBS"],, BITCOIN_QT_FAIL([QtSvg not found]))
+      PKG_CHECK_MODULES([QT_SVG], [${QT_LIB_PREFIX}Svg], [QT_SVG_INCLUDES="$QT_SVG_CFLAGS"; QT_LIBS="$QT_LIBS $QT_SVG_LIBS"], BITCOIN_QT_FAIL([QtSvg not found]))
     ])
     BITCOIN_QT_CHECK([
       PKG_CHECK_MODULES([QT_TEST], [${QT_LIB_PREFIX}Test], [QT_TEST_INCLUDES="$QT_TEST_CFLAGS"; have_qt_test=yes], [have_qt_test=no])

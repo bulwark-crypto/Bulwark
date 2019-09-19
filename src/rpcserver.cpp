@@ -40,7 +40,8 @@ static bool fRPCRunning = false;
 static bool fRPCInWarmup = true;
 static std::string rpcWarmupStatus("RPC server started");
 static CCriticalSection cs_rpcWarmup;
-
+/* Timer-creating functions */
+static RPCTimerInterface* timerInterface = NULL;
 //! These are created by StartRPCThreads, destroyed in StopRPCThreads
 static asio::io_service* rpc_io_service = NULL;
 static map<string, boost::shared_ptr<deadline_timer> > deadlineTimers;
@@ -1051,5 +1052,29 @@ std::string HelpExampleRpc(string methodname, string args) {
            "\"method\": \"" +
            methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:51473/\n";
 }
+void RPCSetTimerInterfaceIfUnset(RPCTimerInterface *iface)
+{
+    if (!timerInterface)
+        timerInterface = iface;
+}
 
+void RPCSetTimerInterface(RPCTimerInterface *iface)
+{
+    timerInterface = iface;
+}
+
+void RPCUnsetTimerInterface(RPCTimerInterface *iface)
+{
+    if (timerInterface == iface)
+        timerInterface = NULL;
+}
+
+void RPCRunLater(const std::string& name, boost::function<void(void)> func, int64_t nSeconds)
+{
+    if (!timerInterface)
+        throw JSONRPCError(RPC_INTERNAL_ERROR, "No timer handler registered for RPC");
+    deadlineTimers.erase(name);
+    LogPrint("rpc", "queue run of timer %s in %i seconds (using %s)\n", name, nSeconds, timerInterface->Name());
+    deadlineTimers.insert(std::make_pair(name, boost::shared_ptr<RPCTimerBase>(timerInterface->NewTimer(func, nSeconds*1000))));
+}
 const CRPCTable tableRPC;
