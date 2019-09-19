@@ -111,7 +111,10 @@ int64_t CWallet::GetKeyCreationTime(CPubKey pubkey)
 {
     return mapKeyMetadata[pubkey.GetID()].nCreateTime;
 }
-
+bool CWallet::IsMasternodeOutput(CAmount nValue)
+{
+    return 5000 * COIN == nValue;
+}
 int64_t CWallet::GetKeyCreationTime(const CBitcoinAddress& address)
 {
     CKeyID keyID;
