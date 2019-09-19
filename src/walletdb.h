@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2013 The Bitcoin developers
 // Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2017 The Transcendence developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -44,16 +45,19 @@ enum DBErrors {
     DB_NEED_REWRITE
 };
 
-class CKeyMetadata {
-  public:
+class CKeyMetadata
+{
+public:
     static const int CURRENT_VERSION = 1;
     int nVersion;
     int64_t nCreateTime; // 0 means unknown
 
-    CKeyMetadata() {
+    CKeyMetadata()
+    {
         SetNull();
     }
-    CKeyMetadata(int64_t nCreateTime_) {
+    CKeyMetadata(int64_t nCreateTime_)
+    {
         nVersion = CKeyMetadata::CURRENT_VERSION;
         nCreateTime = nCreateTime_;
     }
@@ -61,22 +65,26 @@ class CKeyMetadata {
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
+    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    {
         READWRITE(this->nVersion);
         nVersion = this->nVersion;
         READWRITE(nCreateTime);
     }
 
-    void SetNull() {
+    void SetNull()
+    {
         nVersion = CKeyMetadata::CURRENT_VERSION;
         nCreateTime = 0;
     }
 };
 
 /** Access to the wallet database (wallet.dat) */
-class CWalletDB : public CDB {
-  public:
-    CWalletDB(const std::string& strFilename, const char* pszMode = "r+") : CDB(strFilename, pszMode) {
+class CWalletDB : public CDB
+{
+public:
+    CWalletDB(const std::string& strFilename, const char* pszMode = "r+") : CDB(strFilename, pszMode)
+    {
     }
 
     bool WriteName(const std::string& strAddress, const std::string& strName);
@@ -107,8 +115,8 @@ class CWalletDB : public CDB {
 
     // presstab
     bool WriteStakeSplitThreshold(uint64_t nStakeSplitThreshold);
-    bool WriteMultiSend(std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend);
-    bool EraseMultiSend(std::vector<std::pair<std::string, std::vector<std::pair<std::string, int>>>> vMultiSend);
+    bool WriteMultiSend(std::vector<std::pair<std::string, int> > vMultiSend);
+    bool EraseMultiSend(std::vector<std::pair<std::string, int> > vMultiSend);
     bool WriteMSettings(bool fMultiSendStake, bool fMultiSendMasternode, int nLastMultiSendHeight);
     bool WriteMSDisabledAddresses(std::vector<std::string> vDisabledAddresses);
     bool EraseMSDisabledAddresses(std::vector<std::string> vDisabledAddresses);
@@ -155,7 +163,7 @@ class CWalletDB : public CDB {
     bool EraseZerocoinSpendSerialEntry(const CBigNum& serialEntry);
     bool ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial);
 
-  private:
+private:
     CWalletDB(const CWalletDB&);
     void operator=(const CWalletDB&);
 
