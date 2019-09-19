@@ -1,8 +1,8 @@
 package=openssl
-$(package)_version=1.0.2o
+$(package)_version=1.0.1k
 $(package)_download_path=https://www.openssl.org/source
 $(package)_file_name=$(package)-$($(package)_version).tar.gz
-$(package)_sha256_hash=ec3f5c9714ba0fd45cb4e087301eb1336c317e0d20b575a125050470e8089e4d
+$(package)_sha256_hash=8f9faeaebad088e772f4ef5e38252d472be4d878c6b3a2718c10a4fcebe7a41c
 
 define $(package)_set_vars
 $(package)_config_env=AR="$($(package)_ar)" RANLIB="$($(package)_ranlib)" CC="$($(package)_cc)"
@@ -47,10 +47,18 @@ $(package)_config_opts_linux=-fPIC -Wa,--noexecstack
 $(package)_config_opts_x86_64_linux=linux-x86_64
 $(package)_config_opts_i686_linux=linux-generic32
 $(package)_config_opts_arm_linux=linux-generic32
+$(package)_config_opts_armv7l_linux=linux-generic32
 $(package)_config_opts_aarch64_linux=linux-generic64
 $(package)_config_opts_mipsel_linux=linux-generic32
 $(package)_config_opts_mips_linux=linux-generic32
 $(package)_config_opts_powerpc_linux=linux-generic32
+$(package)_config_opts_riscv32_linux=linux-generic32
+$(package)_config_opts_riscv64_linux=linux-generic64
+$(package)_config_opts_powerpc64le_linux=linux-generic64
+$(package)_config_opts_sparc64_linux=linux-generic64
+$(package)_config_opts_s390x_linux=linux-generic64
+$(package)_config_opts_alpha_linux=linux-generic64
+$(package)_config_opts_m68k_linux=linux-generic32
 $(package)_config_opts_x86_64_darwin=darwin64-x86_64-cc
 $(package)_config_opts_x86_64_mingw32=mingw64
 $(package)_config_opts_i686_mingw32=mingw
@@ -66,7 +74,7 @@ define $(package)_config_cmds
 endef
 
 define $(package)_build_cmds
-  $(MAKE) depend -j1 build_libs libcrypto.pc libssl.pc openssl.pc
+  $(MAKE) -j1 build_libs libcrypto.pc libssl.pc openssl.pc
 endef
 
 define $(package)_stage_cmds
