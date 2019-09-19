@@ -514,7 +514,7 @@ bool WalletModel::createZTelosSpend(
 
     // Double check tx before do anything
     CValidationState state;
-    return CheckTransaction(wtxNew, true, true, state, true);
+    return CheckTransaction(wtxNew, true, true, state);
 }
 
 bool WalletModel::sendZTelos(
