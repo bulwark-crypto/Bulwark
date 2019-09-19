@@ -177,7 +177,6 @@ private:
 
     int64_t nNextResend;
     int64_t nLastResend;
-    bool IsMasternodeOutput(CAmount nValue);
 
     /**
      * Used to keep track of spent outpoints, and
@@ -193,6 +192,7 @@ private:
 
 public:
     static const int STAKE_SPLIT_THRESHOLD = 2000;
+    bool IsMasternodeOutput(CAmount nValue);
 
     bool MintableCoins();
     bool SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int> >& setCoins, CAmount nTargetAmount) const;
