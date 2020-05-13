@@ -1,3 +1,34 @@
+IMPORTANT :loudspeaker: :loudspeaker: :loudspeaker: :loudspeaker: Datamine (DAM) Swap Details  :loudspeaker: :loudspeaker: :loudspeaker: :loudspeaker:  IMPORTANT  
+
+**PLEASE READ CAREFULLY**
+
+We are excited to announce that the first one-time token swap will occur on June 08, 2020 on Graviex exchange. 
+
+Graviex will perform a one-time swap for any account containing Bulwark balance. Swap ratio is 1:1 (meaning 1 BWK = 1 DAM). 
+
+Trading of DAM on Graviex will begin immediately after the swap has taken place. Bulwark will then be officially delisted from Graviex.
+
+Instructions
+:small_orange_diamond: Graviex account registration: You can create an account here: https://graviex.net/signup
+:small_orange_diamond: Deposit Instructions: You must deposit Bulwark BEFORE June 08, 2020. Your Bulwark balance will automatically be swapped to Datamine token on June 08, 2020. 
+:small_orange_diamond: How many swap opportunities?: First token swap date of June 08, 2020 provides ample 30-day notice to our community, with two more subsequent opportunities on Crex24 and Txbit as outlined below.
+:small_orange_diamond: What about Midas Exchange?: Midas exchange swap details are currently being discussed with Midas team, updates to follow. 
+
+( ALTERNATIVE OPTIONS ) If Graviex is NOT an option for you or you miss the first deadline, TxBit and Crex24 are alternative options with DIFFERENT later dates. You will need to deposit Bulwark into your account before the swap date in order for your balance to be swapped to Datamine.
+
+CREX 24 SWAP DATE: June 15, 2020. Sign up: https://crex24.com/register
+TXBIT SWAP DATE : June 22, 2020. Sign up: https://txbit.io/Signup
+
+ :loudspeaker: !!!! IMPORTANT !!!!  :loudspeaker:: TXBIT is the LAST CHANCE to swap your BWK. After TXBIT swap,  we will burn rest of DAM tokens. 
+
+Questions?
+Please post any questions in general chat. 
+
+To read about our leap into Smart Contracts with DAM token check out: https://bitcointalk.org/index.php?topic=5246889
+
+:rotating_light: :rotating_light: :rotating_light:  !!!! IMPORTANT READ ABOVE !!!! :rotating_light: :rotating_light: :rotating_light: 
+=====
+
 ![Bulwark Logo](https://bulwarkcrypto.com/wp-content/uploads/2018/10/Symbol-Color2.svg)
 
 Bulwark Cryptocurrency
