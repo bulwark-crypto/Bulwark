@@ -907,6 +907,7 @@ int GetIXConfirmations(uint256 nTXHash) {
     return 0;
 }
 
+//@todo This function doesn't seem to be used anywhere, remove?
 // ppcoin: total coin age spent in transaction, in the unit of coin-days.
 // Only those coins meeting minimum age requirement counts. As those
 // transactions not in main chain are not currently indexed so we
@@ -915,6 +916,7 @@ int GetIXConfirmations(uint256 nTXHash) {
 // introduced to help nodes establish a consistent view of the coin
 // age (trust score) of competing branches.
 bool GetCoinAge(const CTransaction& tx, const unsigned int nTxTime, uint64_t& nCoinAge) {
+    
     uint256 bnCentSecond = 0; // coin age in the unit of cent-seconds
     nCoinAge = 0;
 
@@ -4225,41 +4227,62 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
     if (block.IsProofOfStake()) {
         // Coinbase output should be empty if proof-of-stake block
+        // The way POS txs are structured is that the first output of first tx is empty with 0 value
         if (block.vtx[0].vout.size() != 1 || !block.vtx[0].vout[0].IsEmpty())
             return state.DoS(100, error("CheckBlock() : coinbase output not empty for proof-of-stake block"));
 
-        // Second transaction must be coinstake, the rest must not be
+        // Ensure there is only one stake in block and it's 1st tx:
         if (block.vtx.empty() || !block.vtx[1].IsCoinStake())
             return state.DoS(100, error("CheckBlock() : second tx is not coinstake"));
+
+        // Ensure there are no other stakes in tx
         for (unsigned int i = 2; i < block.vtx.size(); i++)
             if (block.vtx[i].IsCoinStake())
                 return state.DoS(100, error("CheckBlock() : more than one coinstake"));
 
-        // If consensus level checks are in place.
+        // After spork is enabled we'll perform additional POS checks
+        // If the spork is not enabled these conditions are NOT checked
         if (IsSporkActive(SPORK_23_STAKING_REQUIREMENTS) && block.GetBlockTime() >= GetSporkValue(SPORK_23_STAKING_REQUIREMENTS)) {
-            // Check for minimum value.
-            if (block.vtx[1].vout[1].nValue < Params().Stake_MinAmount())
-                return state.DoS(100, error("CheckBlock() : stake under min. stake value"));
+            CAmount minStakeAmount = Params().Stake_MinAmount();
+            unsigned int minStakeAge = nStakeMinAgeConsensus;
+            int minStakeConfirmations = Params().Stake_MinConfirmations();
 
-            // Check for coin age.
-            // First try finding the previous transaction in database.
+
+            // Get transaction of the staked input
             CTransaction txPrev;
             uint256 hashBlockPrev;
             if (!GetTransaction(block.vtx[1].vin[0].prevout.hash, txPrev, hashBlockPrev, true))
                 return state.DoS(100, error("CheckBlock() : stake failed to find vin transaction"));
-            // Find block in map.
+                
+            // Bulwark's "Re-Stake". Because Bulwark stores metadata identifying stake in tx we know that previously this was a POS reward
+            // If you have not previously staked on this input then you will have to wait longer for your stake to mature.
+            // This penalizes "Stake Grinding" and gives reason to leave stakes alone reducing traffic on the network.
+            if (IsSporkActive(SPORK_25_BWK_RESTAKE) && block.GetBlockTime() >= GetSporkValue(SPORK_25_BWK_RESTAKE)) {
+                // Time is doubled if it's not a basic steak (without split)
+                if (!txPrev.IsCoinStake() || txPrev.vout.size() != 3) {
+                    minStakeAge *= 2;
+                    minStakeConfirmations *= 2;
+                }
+            }
+            // Ensure the output of the stake is above min amount (100 for BWK)
+            if (block.vtx[1].vout[1].nValue < minStakeAmount)
+                return state.DoS(100, error("CheckBlock() : stake under min. stake value"));
+
+            // Get block of this transaction (the transaction of staked input)
             CBlockIndex* pindex = NULL;
             BlockMap::iterator it = mapBlockIndex.find(hashBlockPrev);
             if (it != mapBlockIndex.end())
                 pindex = it->second;
             else
                 return state.DoS(100, error("CheckBlock() :  stake failed to find block index"));
-            // Check block time vs stake age requirement.
-            if (pindex->GetBlockHeader().nTime + nStakeMinAgeConsensus > GetAdjustedTime())
+
+            // Ensure the block age of the staked input block is at least nStakeMinAgeConsensus (12 * 60 * 60 for BWK)
+            //@todo this should probably look at chainActive.Tip()->GetBlockTime() not local computer GetAdjustedTime()
+            if (pindex->GetBlockHeader().nTime + minStakeAge > GetAdjustedTime())
                 return state.DoS(100, error("CheckBlock() : stake under min. stake age"));
-            
-            // Check that the prev. stake block has required confirmations by height.
-            if (chainActive.Tip()->nHeight - pindex->nHeight < Params().Stake_MinConfirmations())
+
+            // Ensure that the difference between latest block and staked block meets min confirmations requirement (475 for BWK)
+            if (chainActive.Tip()->nHeight - pindex->nHeight < minStakeConfirmations)
                 return state.DoS(100, error("CheckBlock() : stake under min. required confirmations"));
         }
     }

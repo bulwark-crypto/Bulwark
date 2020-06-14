@@ -17,9 +17,9 @@ BOOST_AUTO_TEST_CASE(subsidy_limit_test) {
     for (int nHeight = 0; nHeight < 14000000; nHeight += 1000) {
         /* @TODO fix subsidity, add nBits */
         CAmount nSubsidy = GetBlockValue(nHeight);
-        BOOST_CHECK(nSubsidy <= 50 * COIN);
+        BOOST_CHECK_MESSAGE(nSubsidy <= 50 * COIN,"nSubsidy is " << nSubsidy << ". Expected 50 * COIN.");
         nSum += nSubsidy * 1000;
-        BOOST_CHECK(MoneyRange(nSum));
+        BOOST_CHECK_MESSAGE(MoneyRange(nSum),"nSum is " << nSum << ". MaxMoneyOut: " << Params().MaxMoneyOut());
     }
     BOOST_CHECK(nSum == 2099999997690000ULL);
 }

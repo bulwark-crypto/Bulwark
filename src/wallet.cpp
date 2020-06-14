@@ -1696,6 +1696,9 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
     }
 
     BOOST_FOREACH(const COutput& out, vCoins) {
+        unsigned int minStakeAge = nMinStakeAge;
+        int minStakeDepth = nStakeDepth;
+        
         //make sure not to outrun target amount
         if (nAmountSelected + out.tx->vout[out.i].nValue > nTargetAmount)
             continue;
@@ -1704,8 +1707,17 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
         if (out.tx->vout[out.i].nValue < nStakeAmount)
             continue;
 
+        //For Bulwark Re-staking since we know if a tx is previous stake it'll be considered re-stake resulting in various advantages
+        if (IsSporkActive(SPORK_25_BWK_RESTAKE)) {
+            // Basic restakes will receive rewards 2x faster. (These must not be split)
+            if (!out.tx->IsCoinStake() || out.tx->vout.size()!=3) {
+                minStakeAge *= 2;
+                minStakeDepth *= 2;
+            }
+        }
+
         //check that it is matured
-        if (out.nDepth < (out.tx->IsCoinStake() ? nStakeDepth : 10))
+        if (out.nDepth < (out.tx->IsCoinStake() ? minStakeDepth : 10))
             continue;
 
         //if zerocoinspend, then use the block time
@@ -1717,7 +1729,7 @@ bool CWallet::SelectStakeCoins(std::set<std::pair<const CWalletTx*, unsigned int
         }
 
         //check for min age
-        if (GetAdjustedTime() - nTxTime < nMinStakeAge)
+        if (GetAdjustedTime() - nTxTime < minStakeAge)
             continue;
 
         //add to our stake set
